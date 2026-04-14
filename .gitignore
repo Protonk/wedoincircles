@@ -3,7 +3,5 @@ __pycache__/
 *.sage.py
 .sage/
 .ipynb_checkpoints/
-figures/*.png
-!figures/.gitkeep
-!figures/doincircles.png
+sources/
 .DS_store
