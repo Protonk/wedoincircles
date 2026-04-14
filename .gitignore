@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.sage.py
+.sage/
+.ipynb_checkpoints/
+figures/*.png
+!figures/.gitkeep
+.DS_store
