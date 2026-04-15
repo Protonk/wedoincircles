@@ -1,11 +1,18 @@
 # Bidder and Son: Two Approaches to Mental Logarithms
 
-A method note rather than a proof memo: a 19th-century mental-arithmetic record of two distinct procedures for computing log₁₀(n) for arbitrary integers, including large primes. Useful here as a historical hint about the lattice ↔ multiplicative-structure interface and where each side of that interface stops being convenient.
+A method note : a 19th-century mental-arithmetic record of two distinct procedures for computing log₁₀(n) for arbitrary integers, including large primes. Useful here as a historical hint about the lattice ↔ multiplicative-structure interface and where each side of that interface stops being convenient.
 
 Source: W. Pole, F.R.S., "Mental Calculation. A Reminiscence of
 the late Mr. G. P. Bidder, Past-President." Paper No. 2486,
 Institution of Civil Engineers. Published posthumously from a
 memorandum prepared during Bidder's lifetime with his approval.
+
+Contextual supplement: George Parker Bidder's earlier 1856
+address, "On Mental Calculation." That address does not present
+the later seven- or eight-place logarithm procedures in the same
+form, but it does give Bidder's own account of what makes
+mental calculation hard and what a labour-saving method is
+supposed to achieve.
 
 
 ## The problem
@@ -13,6 +20,97 @@ memorandum prepared during Bidder's lifetime with his approval.
 Compute log₁₀(n) to seven or eight decimal places, mentally,
 for any positive integer n — including large primes where no
 factorization shortcut is available.
+
+
+## Earlier frame from Bidder's own address (1856)
+
+The 1856 address adds one important piece of context to Pole's
+later reminiscence: Bidder already described the limiting factor
+in mental calculation as **registration** — the ability to hold a
+string of exact intermediate results in mind without loss or
+misplacement.
+
+His formulation is worth keeping in view:
+
+- reasoning and execution are not the main bottleneck;
+- registration is;
+- and if his powers of registration matched his powers of
+  reasoning, he says he could compile a large table of logarithms
+  in very short time.
+
+That matters here because the father/son contrast in the
+logarithm memo turns out not to be only a contrast of tricks. It
+is also a contrast of how the burden of registration is managed.
+
+The 1856 address goes further. The registration constraint is not
+just a diagnosis; Bidder shows it dictating the structural shape of
+mental algorithms. Three specific consequences:
+
+**Mental multiplication runs left-to-right, not right-to-left.**
+Bidder writes:
+
+> On paper when you multiply any number of figures, you begin
+> with the units' places and proceed successively to the left, and
+> then you add them up. That process is impracticable in the
+> mind … in mental arithmetic you begin at the left hand
+> extremity, and you conclude at the unit, allowing only one fact
+> to be impressed on the mind at a time.
+
+The running total carries continuous magnitude meaning at every
+step — one quantity to register, refined downward as more digits
+enter. Right-to-left would force registration of partial column-sums
+whose meaning isn't fixed until the final addition. So left-to-right is
+registration-driven, not stylistic. Structurally this is the coarse-first /
+refine-later split (see `memos/LANDFALL-EXPORT.md` on Day's
+decoupling): fix the magnitude first, refine downward. Bidder
+arrived at this discipline a century before Mitchell's pseudo-log
+observation made the same shape a hardware concern.
+
+**Deliberate catalog enrichment.** Bidder memorized 68
+multiplication facts (sufficient for 3-figure × 3-figure work) versus
+the standard 72-fact 12-table — a deliberate trade chosen because
+more memorized facts mean fewer operations to register. Beyond
+multiplication, the address records pre-computed unit-conversion
+catalogs (seconds in a year, barleycorns in a mile, etc.) that turn
+long compound conversions into single multiplications. The prime-
+logs catalog the father later used for log computation is one
+instance of the same enrichment strategy applied across many
+domains.
+
+**Honest scope bound.** "The limits within which [mental
+arithmetic] may be usefully and properly applied, should be
+restricted to multiplying 3 figures by 3 figures." Past that, even
+Bidder's own technique struggles.
+
+
+## The substrate, in computational terms
+
+Translating Bidder's self-description into the vocabulary of later
+computing: the substrate is a **strictly sequential,
+memory-bounded machine** on which reasoning is abundant and
+working-memory capacity is scarce. Peak working memory is the
+binding constraint, not total operation count. Memorized facts —
+prime logs, multiplication tables, unit-conversion constants —
+serve as long-term storage: effectively free at run-time but
+pre-paid in advance.
+
+On such a substrate, the optimal algorithm is the one that
+minimizes peak memory, not the one that minimizes operations.
+Bidder states this explicitly as a design rule: his procedures
+"might appear prolix, complicated, and inexpeditious" because
+the extra operations buy memory relief. The same multiplication
+algorithm run on paper (no memory pressure) runs right-to-left;
+run mentally, it runs left-to-right. Algorithmic shape is
+substrate-relative.
+
+What Bidder articulates, without the vocabulary, is the
+first-principles design rule for space-bounded sequential
+computation: on a memory-bounded substrate, trade operations
+for memory relief. The same rule underlies register-pressure-
+aware compilation, streaming algorithms over data too large to
+fit in memory, and complexity classes like LOGSPACE. Bidder set
+it down in 1856 in a mental-arithmetic register; it generalizes
+across substrates.
 
 
 ## The father: G. P. Bidder (1806–1878)
@@ -152,6 +250,10 @@ and 1.00001. In both cases the answer is assembled from a small
 stock of memorized constants rather than from opportunistic
 factor spotting.
 
+This is reinforced by the son's own framing in Pole's paper:
+the desideratum is to relieve the mind, as far as possible, from
+the burden of performing and registering long calculations.
+
 
 ## Comparison
 
@@ -215,7 +317,42 @@ values, simple proportion). The challenge is strategic.
 For the son, the difficulty is registration: holding a running
 total across several scales while computing each contribution.
 There is no strategic choice — the procedure is fixed. The
-challenge is bookkeeping.
+challenge is bookkeeping. This is not just our gloss; it matches
+the son's explicit account of what the method is for.
+
+## Algebraic continuity: the binomial-expansion genealogy
+
+The 1856 address records the father working out the binomial
+expansion from scratch in service of mental compound-interest
+computation. He set up the picking-up-stones puzzle to derive
+∑(1..n) = n(n+1)/2, then iterated to derive successive sums of
+sums, eventually arriving at
+
+    P(1+r)^n = P {1 + n·r
+                  + n(n−1)/2! · r²
+                  + n(n−1)(n−2)/3! · r³
+                  + …}
+
+and explicitly noted that this "is the expansion, by the binomial
+theorem, of (1+r)^n, which is the form in which the problem is
+presented for solution by logarithms."
+
+The series-expansion machinery the son later uses for log₁₀(1+x)
+— the small-argument expansion 0.4343 × [x − ½x² + ⅓x³ − …] —
+is in the same family. The son's multi-scale log technique is not
+a categorical departure from the father's natural-algebra path; it
+is a specialization of the same series-expansion technology
+applied to log corrections at multiple scales.
+
+So the framing of two methods "devised independently" is true at
+the level of procedure but understates the algebraic continuity.
+The father supplied the algebraic substrate, and named it
+explicitly: "I have, in fact, worked out this algebraic formula" —
+where the formula is the distributive expansion
+(a+b+c)(d+e+f) = ad + ae + af + bd + be + bf + cd + ce + cf,
+which Bidder calls the "natural algebra" of mental multiplication.
+The son specialized that substrate to log corrections. The
+continuity is genealogical, not merely typological.
 
 ## Coda
 

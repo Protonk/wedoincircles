@@ -1,10 +1,10 @@
-# Inscription — brief
+# INSCRIPTION
 
-A sibling to Landfall on the circle side. The audience is assumed to have read Landfall and to know its six walls. This brief states what differs.
+A sibling to *Landfall* on the circle side, pursued as a research problem in its own right. The audience is assumed to have read *Landfall* and to know its six walls; this note states what differs and where the original work has to happen.
 
 ---
 
-**Pointer.** This brief describes the structure of a potential sibling paper. Whether a functor F transports Landfall *into* this sibling is pursued separately — see `triad/TRIAD-ABSTRACT-PATTERN.md` for the abstract three-leg framework and `triad/plus_ultra/` for the disciplines developing each leg. Inscription is the target structure any such F would map into; its existence as a sibling paper does not depend on F existing. The triad-level working expectation is that F probably does not exist, and the interesting result is the shape of the obstruction — which reads back into Inscription as "siblings with shared parent structure, not translations."
+**Status.** This is program material, not a source digest. It was promoted out of `memos/` once the structural parallel to *Landfall* became sharp enough to attack directly. The triad layer (`triad/TRIAD-ABSTRACT-PATTERN.md`, `triad/plus_ultra/`) still governs whether a functor F transports *Landfall* into this sibling; the working expectation is that F does not exist and the interesting result is the shape of the obstruction — which reads back into Inscription as "siblings with shared parent structure, not translations." Inscription's existence as a target structure does not depend on F existing.
 
 ---
 

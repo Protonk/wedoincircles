@@ -109,7 +109,7 @@ The pattern to watch for on the full τ-problem: the same loan structure — PER
 
 Three small consequences for the doc set.
 
-**`core/NGON-WHOLENESS.md`.** The $\tau(n) = 0$ set is $\{1, 2, 3, 4, 6\}$ by Niven's theorem; this is worth stating explicitly in section §C1 (where $\tau$ is defined in the CREATI catalog of `triad/plus_ultra/CREATI-THE-CIRCLE.md`). What this note adds is not three independent closed proofs, but two independent algebraic proofs plus one saturation-first route that lands on the same set and exposes exactly where the tail has to be closed.
+**`tangencies/WHOLENESS.md`.** The $\tau(n) = 0$ set is $\{1, 2, 3, 4, 6\}$ by Niven's theorem; this is worth stating explicitly in section §C1 (where $\tau$ is defined in the CREATI catalog of `triad/plus_ultra/CREATI-THE-CIRCLE.md`). What this note adds is not three independent closed proofs, but two independent algebraic proofs plus one saturation-first route that lands on the same set and exposes exactly where the tail has to be closed.
 
 **`triad/plus_ultra/CREATI-THE-CIRCLE.md`.** The CREATI proof of Niven is literally catalog item 7 + catalog item 9 + the {-2,-1,0,1,2} enumeration. This can be added as a worked example of what a CREATI result looks like at the "closed-form result" admissible shape. Useful as a template.
 

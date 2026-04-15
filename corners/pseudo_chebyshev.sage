@@ -1,6 +1,6 @@
 """
 Two-pane visualization of the pseudo-Chebyshev node construction
-(see `core/PSEUDO-CHEBYSHEV-NODES.md`), shown for n = 3, 4, 5, 6, 7, 8.
+(see `corners/PSEUDO-CHEBYSHEV-NODES.md`), shown for n = 3, 4, 5, 6, 7, 8.
 
 Left pane — geometric construction:
   Unit circle (apothem-1 incircle). Shared anchor edge tangent at (1, 0),
