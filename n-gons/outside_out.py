@@ -5,16 +5,19 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-# Inversion z -> 1/z applied to the annulus {1 <= r <= 2}.
-# Result: annulus {1/2 <= r <= 1}.
+# The un-inverted annulus {1 <= r <= 2}: bend the Archimedean strip the
+# natural way, so the strip top (3-cir) lands at the outer boundary r = 2
+# and the strip bottom (incircle) lands at the inner boundary r = 1.
 #
-# n-gon edge k: original r = sec(theta - 2*pi*k/n)
-#   inverted:              r = cos(theta - 2*pi*k/n)
-#   same angular span: theta in [(2k-1)*pi/n, (2k+1)*pi/n]
+# n-gon edge k: straight line at distance 1 from origin, tangent to the
+#   incircle at angle 2*pi*k/n. Polar form r = sec(theta - 2*pi*k/n),
+#   valid on theta in [(2k-1)*pi/n, (2k+1)*pi/n].
+# n-gon corners: at angles (2k+1)*pi/n, radius sec(pi/n).
+# n-cir (circumscribed circle of the n-gon): full circle at r = sec(pi/n).
 #
-# Corners invert to radius cos(pi/n) = node(n).
-# n=3 arcs reach the inner boundary (r=1/2) exactly.
-# n>=4 arcs float; endpoints sit at r = cos(pi/n) > 1/2.
+# As n grows, sec(pi/n) \downarrow 1. The n-cirs converge down onto the
+# incircle from outside; each n-gon is squeezed in the annulus
+# [1, sec(pi/n)].
 
 NS = range(3, 9)
 COLORS = {
@@ -42,10 +45,10 @@ def plot(outpath):
 
     for n in NS:
         color = COLORS[n]
-        r_node = math.cos(math.pi / n)
+        r_outer = 1.0 / math.cos(math.pi / n)  # sec(pi/n)
         ax.plot(
             theta_full,
-            [r_node] * len(theta_full),
+            [r_outer] * len(theta_full),
             color=color,
             lw=1.0,
             linestyle=":",
@@ -57,12 +60,12 @@ def plot(outpath):
             theta_lo = alpha - math.pi / n
             theta_hi = alpha + math.pi / n
             theta = linspace(theta_lo, theta_hi, 300)
-            r = [math.cos(t - alpha) for t in theta]
+            r = [1.0 / math.cos(t - alpha) for t in theta]
             ax.plot(theta, r, color=color, lw=1.5, alpha=0.85)
         corner_angles = [(2 * k + 1) * math.pi / n for k in range(n)]
         ax.plot(
             corner_angles,
-            [r_node] * n,
+            [r_outer] * n,
             "o",
             color=color,
             ms=4,
@@ -72,10 +75,10 @@ def plot(outpath):
         )
 
     ax.set_rmin(0)
-    ax.set_rmax(1.1)
+    ax.set_rmax(2.1)
     ax.set_rticks([])
     ax.set_yticklabels([])
-    ax.set_title("Inside-out annulus\nn = 3 … 8", fontsize=12, pad=15)
+    ax.set_title("Outside-out annulus\nn = 3 … 8", fontsize=12, pad=15)
     ax.grid(True, alpha=0.2)
 
     plt.tight_layout()
@@ -87,6 +90,6 @@ if __name__ == "__main__":
     here = os.path.dirname(os.path.abspath(__file__))
     figdir = os.path.normpath(os.path.join(here, "..", "figures"))
     os.makedirs(figdir, exist_ok=True)
-    out = os.path.join(figdir, "archimedean_inside_out.png")
+    out = os.path.join(figdir, "archimedean_outside_out.png")
     plot(out)
     print(f"wrote {out}")
