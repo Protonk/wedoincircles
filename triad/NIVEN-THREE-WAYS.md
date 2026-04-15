@@ -16,7 +16,7 @@ The theorem has two standard algebraic proofs and an obvious PERMEATE-style atta
 
 ### CREATI proof: explicit minimal polynomial
 
-**Primitives used.** 2cos(2π/n) is an algebraic integer (the sum of a primitive n-th root of unity and its conjugate), closed-form via ζ_n + ζ_n^{-1}. Its minimal polynomial over ℚ has degree φ(n)/2 for n ≥ 3 (catalog item 9 in `triad/plus_ultra/CREATI-THE-CIRCLE.md`). An algebraic integer that is rational must be an integer (standard). An integer x satisfying |x| ≤ 2 is in {-2, -1, 0, 1, 2}.
+**Primitives used.** 2cos(2π/n) is an algebraic integer (the sum of a primitive n-th root of unity and its conjugate), closed-form via ζ_n + ζ_n^{-1}. Its minimal polynomial over ℚ has degree φ(n)/2 for n ≥ 3 (catalog item 9 in `triad/plus_ultra/Creati/CREATI-THE-CIRCLE.md`). An algebraic integer that is rational must be an integer (standard). An integer x satisfying |x| ≤ 2 is in {-2, -1, 0, 1, 2}.
 
 **Proof.** Suppose 2cos(2π/n) is rational. Since it's an algebraic integer, it's an integer. Since |2cos(2π/n)| ≤ 2, it's in {-2, -1, 0, 1, 2}. Solve 2cos(2π/n) = k for k in each of the five values, reading off n from cos(2π/n) = k/2. k = 2 gives n = 1. k = 1 gives n = 6. k = 0 gives n = 4. k = -1 gives n = 3. k = -2 gives n = 2. No other n satisfies 2cos(2π/n) ∈ ℤ.
 
@@ -109,11 +109,11 @@ The pattern to watch for on the full τ-problem: the same loan structure — PER
 
 Three small consequences for the doc set.
 
-**`tangencies/WHOLENESS.md`.** The $\tau(n) = 0$ set is $\{1, 2, 3, 4, 6\}$ by Niven's theorem; this is worth stating explicitly in section §C1 (where $\tau$ is defined in the CREATI catalog of `triad/plus_ultra/CREATI-THE-CIRCLE.md`). What this note adds is not three independent closed proofs, but two independent algebraic proofs plus one saturation-first route that lands on the same set and exposes exactly where the tail has to be closed.
+**`tangencies/WHOLENESS.md`.** The $\tau(n) = 0$ set is $\{1, 2, 3, 4, 6\}$ by Niven's theorem; this is worth stating explicitly in section §C1 (where $\tau$ is defined in the CREATI catalog of `triad/plus_ultra/Creati/CREATI-THE-CIRCLE.md`). What this note adds is not three independent closed proofs, but two independent algebraic proofs plus one saturation-first route that lands on the same set and exposes exactly where the tail has to be closed.
 
-**`triad/plus_ultra/CREATI-THE-CIRCLE.md`.** The CREATI proof of Niven is literally catalog item 7 + catalog item 9 + the {-2,-1,0,1,2} enumeration. This can be added as a worked example of what a CREATI result looks like at the "closed-form result" admissible shape. Useful as a template.
+**`triad/plus_ultra/Creati/CREATI-THE-CIRCLE.md`.** The CREATI proof of Niven is literally catalog item 7 + catalog item 9 + the {-2,-1,0,1,2} enumeration. This can be added as a worked example of what a CREATI result looks like at the "closed-form result" admissible shape. Useful as a template.
 
-**`triad/plus_ultra/BIND-THE-CIRCLE.md`.** The Galois-orbit proof is the cleanest example of a BIND argument that stays entirely inside the algebraic-number-theory primitives without touching τ_c or the continuous-E tool. It's a reminder that BIND has discrete primitives available (Galois theory of cyclotomic fields) and isn't committed to analytic ones. Worth noting as a vocabulary check: when BIND uses Galois theory on ℚ(ζ_n), it's operating in primitives that are native to the circle-side algebraic structure but don't require importing anything from the log side. Erasure holds.
+**`triad/plus_ultra/Eraserhead/BIND-THE-CIRCLE.md`.** The Galois-orbit proof is the cleanest example of a BIND argument that stays entirely inside the algebraic-number-theory primitives without touching τ_c or the continuous-E tool. It's a reminder that BIND has discrete primitives available (Galois theory of cyclotomic fields) and isn't committed to analytic ones. Worth noting as a vocabulary check: when BIND uses Galois theory on ℚ(ζ_n), it's operating in primitives that are native to the circle-side algebraic structure but don't require importing anything from the log side. Erasure holds.
 
 ## What this previews about F
 

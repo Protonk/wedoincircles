@@ -59,7 +59,7 @@ For our program this means: **we have four independent reasons to treat the cont
 The earlier version of this note also carried discipline policy and program-planning material. That content now lives in the docs that actually own it:
 
 - The discipline rule “admit CF computation, forbid the Stern-Brocot tree as organizing frame” now lives in `triad/plus_ultra/PLUS_ULTRA.md`.
-- The saturation-side use of convergents now lives in `triad/plus_ultra/PERMEATE-THE-CIRCLE.md`.
+- The saturation-side use of convergents now lives in `triad/plus_ultra/Lemillion/PERMEATE-THE-CIRCLE.md`.
 - The log-side computational role of Gosper’s machine now lives in `memos/LANDFALL-EXPORT.md`.
 - The cross-leg Liouville/Diophantine axis now lives in `triad/TRIAD-ABSTRACT-PATTERN.md`.
 

@@ -4,7 +4,7 @@ A reference doc stating the three disciplines of our program, one per character.
 
 The character framing is whimsical — very Lewis Carroll if you hold it up to the light. The mathematical content is not. Where a character's quirk maps cleanly to a research discipline, we use the mapping. Where the analogy strains, we drop it and keep the constraint.
 
-Each discipline has its own doc in `triad/plus_ultra/`: BIND-THE-CIRCLE.md, CREATI-THE-CIRCLE.md, PERMEATE-THE-CIRCLE.md. This file is the one-page map that says who does what.
+Each discipline has its own doc one folder down in `triad/plus_ultra/`: `Eraserhead/BIND-THE-CIRCLE.md`, `Creati/CREATI-THE-CIRCLE.md`, `Lemillion/PERMEATE-THE-CIRCLE.md`. This file is the one-page map that says who does what.
 
 ## The three disciplines
 
