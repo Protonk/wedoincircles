@@ -1,20 +1,14 @@
-# INSCRIPTION
+# INSCRIPTION-PAPER-PLAN
 
-A sibling to *Landfall* on the circle side, pursued as a research problem in its own right. The audience is assumed to have read *Landfall* and to know its six walls; this note states what differs and where the original work has to happen.
+Creati's advance planning for *Inscription*, the circle-side sibling paper to *Landfall*. Not the paper itself — the plan of attack, drafted while the catalog matter (`CREATI-THE-CIRCLE.md`) is still accreting.
+
+**Audience of the eventual paper.** Assumed to have read *Landfall* and to know its six walls. The paper will state what differs and where the original work has to happen.
+
+**Scope.** 2D throughout. The ψ-function (`CREATI-THE-CIRCLE.md` item 8) extends the ambient story to higher dimensions; this paper does not.
+
+**Residue object.** τ(n) = 2cos(2π/n) − round(2cos(2π/n)) — defined and cataloged at `CREATI-THE-CIRCLE.md` §C1. The paper plan assumes that definition and its listed properties.
 
 ---
-
-**Status.** This is program material, not a source digest. It was promoted out of `memos/` once the structural parallel to *Landfall* became sharp enough to attack directly. The triad layer (`../BNHA/triad/TRIAD-ABSTRACT-PATTERN.md`, `../BNHA/triad`) still governs whether a functor F transports *Landfall* into this sibling; the working expectation is that F does not exist and the interesting result is the shape of the obstruction — which reads back into Inscription as "siblings with shared parent structure, not translations." Inscription's existence as a target structure does not depend on F existing.
-
----
-
-## The residue
-
-$$\tau(n) = 2\cos(2\pi/n) - \mathrm{round}(2\cos(2\pi/n)),\quad n \in \mathbb{Z}_{\ge 1}.$$
-
-Zero at n ∈ {1, 2, 3, 4, 6} (the crystallographic set, by Niven's theorem). Algebraic of degree exactly φ(n)/2 elsewhere (for n ≥ 5 outside {6}), where φ is Euler's totient. Bounded in [−1/2, 1/2]. Determined by the prime factorization of n via Galois theory of ℚ(ζ_n).
-
-The "free" coarse stage: a 2D rotation matrix R_n in a lattice basis has integer trace iff n ∈ {1, 2, 3, 4, 6} (the 2D crystallographic restriction; higher-dimensional lattices enlarge this set). The rounding to crystallographic is free (lattice arithmetic). The residue τ is what rounding leaves behind. This brief operates in 2D throughout.
 
 ## Three walls port, three walls soften
 
@@ -44,7 +38,7 @@ A structural parallel — stated here as prose observation, not theorem:
 - Binary tiling: translation and scale generate the non-abelian Aff⁺(ℝ); the commutator picks out the protrusion direction, and the per-subgroup measure sees a direction the full group would have to quotient away.
 - Penrose Ω: translation and rotation generate the non-abelian E(2); the commutator picks out the cut-and-project offset, and the per-X measure sees an offset the full group would have to quotient away.
 
-In both cases the per-subgroup invariant measure distinguishes something a full-group-invariant measure would be forced to wash out. Whether this rhyme lifts to a theorem is open (see §6 residue in "Where the original work sits").
+In both cases the per-subgroup invariant measure distinguishes something a full-group-invariant measure would be forced to wash out. Whether this rhyme lifts to a theorem is open (see §6 residue below).
 
 ## Where the original work sits
 
@@ -56,10 +50,10 @@ In both cases the per-subgroup invariant measure distinguishes something a full-
 
 §2, §3, §5 are citation-level work.
 
-## What Inscription is for
+## What the paper is for
 
-Not to port Landfall. To document that when the target is algebraic-of-unbounded-degree rather than transcendental, and when the ambient tiling has a phase rather than a direction, the obstruction has the same overall shape but closes by a structurally distinct mechanism.
+Not to port *Landfall*. To document that when the target is algebraic-of-unbounded-degree rather than transcendental, and when the ambient tiling has a phase rather than a direction, the obstruction has the same overall shape but closes by a structurally distinct mechanism.
 
-The payoff: placing the two obstructions side by side exposes a shared shape — non-abelian symmetry group, per-subgroup invariant measure, full-group measure blocked by a phase the subgroup measure distinguishes. Whether this rises to a unification or remains a rhyme is the open question at the end of §6, not a claim the brief delivers.
+The payoff: placing the two obstructions side by side exposes a shared shape — non-abelian symmetry group, per-subgroup invariant measure, full-group measure blocked by a phase the subgroup measure distinguishes. Whether this rises to a unification or remains a rhyme is the open question at the end of §6, not a claim the paper delivers.
 
 Inscription earns its parallelism by being different in mechanism at §1, §4, §6 — specifically at the places where "port" would have been the easy move. The papers are siblings because they have the same parent structure, not because one is a translation of the other.

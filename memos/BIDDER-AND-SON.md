@@ -1,6 +1,6 @@
-# Bidder and Son: Two Approaches to Mental Logarithms
+# Bidder and Son
 
-A method note : a 19th-century mental-arithmetic record of two distinct procedures for computing log₁₀(n) for arbitrary integers, including large primes. Useful here as a historical hint about the lattice ↔ multiplicative-structure interface and where each side of that interface stops being convenient.
+**Part I** records the 19th-century mental-arithmetic procedures by which George Parker Bidder (1806–1878) and his son G. P. Bidder Jr. (1836–1896) computed log₁₀(n) to seven or eight decimal places, including large primes where no factorization shortcut is available. **Part II** reads those procedures as historical instances of two of this program's three disciplines (CREATI and PERMEATE) on the log-side problem, and as a direct structural rhyme with *Landfall*'s floating-point residue argument. The two halves share a single observation: the residue ε(m) = log₂(1+m) − m that every Bidder correction had to navigate around is the same one every IEEE rounding step has to live with — a substrate-invariant that predates floating-point hardware by a century.
 
 Source: W. Pole, F.R.S., "Mental Calculation. A Reminiscence of
 the late Mr. G. P. Bidder, Past-President." Paper No. 2486,
@@ -14,6 +14,9 @@ form, but it does give Bidder's own account of what makes
 mental calculation hard and what a labour-saving method is
 supposed to achieve.
 
+---
+
+# Part I — The methods
 
 ## The problem
 
@@ -61,7 +64,7 @@ step — one quantity to register, refined downward as more digits
 enter. Right-to-left would force registration of partial column-sums
 whose meaning isn't fixed until the final addition. So left-to-right is
 registration-driven, not stylistic. Structurally this is the coarse-first /
-refine-later split (see `memos/LANDFALL-EXPORT.md` on Day's
+refine-later split (see `LANDFALL-EXPORT.md` on Day's
 decoupling): fix the magnitude first, refine downward. Bidder
 arrived at this discipline a century before Mitchell's pseudo-log
 observation made the same shape a hardware concern.
@@ -320,6 +323,7 @@ There is no strategic choice — the procedure is fixed. The
 challenge is bookkeeping. This is not just our gloss; it matches
 the son's explicit account of what the method is for.
 
+
 ## Algebraic continuity: the binomial-expansion genealogy
 
 The 1856 address records the father working out the binomial
@@ -354,7 +358,8 @@ which Bidder calls the "natural algebra" of mental multiplication.
 The son specialized that substrate to log corrections. The
 continuity is genealogical, not merely typological.
 
-## Coda
+
+## Coda (historical)
 
 Both methods were devised independently for the same
 problem. The father developed his approach first and used it
@@ -369,7 +374,43 @@ the multi-scale decomposition — to be learnable.
 
 Neither claimed superiority over the other.
 
-## Program-Facing Notes
+
+---
+
+# Part II — The bridge to Landfall
+
+## The claim
+
+> Landfall is a crystallization of an arithmetic fact that Bidder already knew and exploited. The hardware substrate changed. The structural fact didn't.
+
+## The shared constraint
+
+Part I described Bidder's substrate as a strictly sequential, memory-bounded machine where reasoning is abundant and working memory is scarce. Landfall's substrate is the same shape in different hardware: a sequential machine with bounded precision, where the register file is finite and the residue
+
+    ε(m) = log₂(1 + m) − m
+
+is what escapes that finite state. Bidder's "if my powers of registration matched my powers of reasoning" and Landfall's §0 "if the register file were unbounded" are the same counterfactual. Mental arithmetic pays for the residue in registration burden; floating-point hardware pays for it in finite precision. No finite strategy erases it on either substrate. ε is substrate-invariant, not an artifact of either particular device.
+
+
+## Four direct correspondences
+
+**1. Registration ↔ register file.** Bidder: "if my powers of registration matched my powers of reasoning, I could compile a large table of logarithms in very short time." Landfall §0: the floating-point register file is itself a coarse log table via Mitchell's pseudo-log L(x) = E + m. Same constraint — limited state through which the computation must be funnelled. The technology is what differs.
+
+**2. Left-to-right mental multiplication ↔ coarse-first / refine-later.** Bidder begins mental multiplication at the most significant digit, preserving a continuously-meaningful running total. Landfall and Day observe that the floating-point coarse stage L(x) fixes magnitude first, and every later correction is a refinement downward. Same structural order. Bidder's constraint was memory; Landfall's is the endpoint-exactness of the affine surrogate L.
+
+**3. Multi-scale log(1+ε) corrections ↔ Landfall's ε(m) machinery.** Bidder's son uses log(1.001), log(1.0001), log(1.00001) as universal scale constants — each captures one decimal of precision. Landfall's ε(m) is the binade-uniform residual every floating-point correction must account for, with its small-m behavior controlled by log₂(1+m). The son's scale constants are *evaluations* of log₁₀(1+m) at the canonical small-m grid points. The son had worked out, in a mental substrate, what a multi-scale ε-correction layer looks like.
+
+**4. Prime-logs catalog ↔ "the representation is the table."** Bidder's father memorized logs of all primes under 100, turning any factorable target into an additive sum of catalog entries. Landfall §0 quotes Mitchell: "the representation contains its own log table" — the bit pattern of x in floating point is already L(x) up to bias. Same fact about what "table lookup" means. The 19th-century solution: memorize. The 21st-century solution: let the hardware encode it.
+
+
+## What Bidder shares with Landfall's closing stance
+
+Landfall's §7 Coda draws Gosper's continued-fraction machine as a model that "survives by refusing finite closure." Its state grows without bound on non-Hurwitz inputs; it reaches periodicity only on quadratic irrationals; its Möbius operations do not produce the logarithmic coordinate change. The machine works by continuing, not by closing.
+
+Bidder is the same shape. He computed eight-place logarithms of arbitrary primes in under four minutes, mentally. He did not reduce the problem to a closed table; he developed methods that worked at *any* precision needed, stopping when the remaining terms could no longer change the answer. The son's compound-interest derivation in the 1856 address is explicit about this: "the remaining terms could not possibly amount to one farthing, the process was stopped and the result stated." Bidder's stance is Landfall's stance: no finite structure flattens ε, and no practical technique needs one to. The work is in disciplined navigation around the residue.
+
+
+## Program-facing notes
 
 The two methods are historical instances of two of this program's three disciplines applied to the log-side problem. A third (BIND) is implicit but not enacted by either Bidder.
 
@@ -379,9 +420,19 @@ The two methods are historical instances of two of this program's three discipli
 
 **The implicit BIND question.** Neither Bidder asks: what reals are *exactly* reachable as ℤ-linear combinations of the son's nine memorized log-constants? The set is dense in ℝ but measure-zero; the structure of the reachable subset is a closure question with depth (touching Baker's theorem on linear forms in logarithms of algebraic numbers). The son's method computes approximations, not exact values; the closure question is where a BIND-flavored discipline would enter, and is not pursued by either historical actor here.
 
-**Day-decoupling, by hand.** The son's "small factorable core × (1.001)^a × (1.0001)^b × (1.00001)^c" decomposition is mental-arithmetic Day-decoupling: a coarse stage (log of the core) plus a multi-scale correction stage where each scale contributes one decimal of resolution. The correction constants log(1+m) for m ∈ {0.001, 0.0001, 0.00001} are evaluated values of log₁₀(1+m) — Landfall's ε territory at small m. The son arrived at this structurally decoupled mental algorithm two generations before floating-point hardware made the same decoupling a hardware concern. See `memos/LANDFALL-EXPORT.md` for the program's reading of Day's decoupling theorem.
+**Day-decoupling, by hand.** The son's "small factorable core × (1.001)^a × (1.0001)^b × (1.00001)^c" decomposition is mental-arithmetic Day-decoupling: a coarse stage (log of the core) plus a multi-scale correction stage where each scale contributes one decimal of resolution. The correction constants log(1+m) for m ∈ {0.001, 0.0001, 0.00001} are evaluated values of log₁₀(1+m) — Landfall's ε territory at small m. The son arrived at this structurally decoupled mental algorithm two generations before floating-point hardware made the same decoupling a hardware concern. See `LANDFALL-EXPORT.md` for the program's reading of Day's decoupling theorem.
 
 **Lattice ↔ multiplicative interface, with a visible seam.** The father lives in the multiplicative structure (factor catalog, navigation by prime decomposition). The son lives in a lattice structure (the multi-scale grid is a ℤ-lattice in log space). Both methods compute the same log values when the target permits; they differ in which structure they prefer. Where one method becomes hard — father: targets in sparse multiplicative regions, requiring helper-multiplier tricks; son: targets that don't decompose cleanly across scales — the other often remains easy. The two methods together delineate the seam between the two structures, which is exactly the seam this program is tracking.
+
+
+## Why "the Navigator"
+
+*Landfall* borrows its title from Paintapu, the Gilbert Islands navigator of the 1780s whose methods were "real, traditional, and entirely alien to her companions." She guided one canoe safely to Abemama by reading the heavens; the rest of the flotilla was lost because her chief would not let her practice her craft.
+
+Bidder is the same kind of navigator, for mental arithmetic. His elementary instruction ended at "count to 100, and there he stopped" — everything after was self-invented. Prime-logs; multi-scale corrections; distributive "natural algebra"; left-to-right multiplication. His results were practical and reliable, but the method was alien to his colleagues in the Institute of Civil Engineers. Stephenson's 1856 introduction says as much: "none of those gifted persons, even after enjoying the benefits of education, have been enabled to render intelligible the source of the power, or to describe clearly the processes employed."
+
+Paintapu navigated by sky. Bidder navigated by number. Both worked because the navigator knew the territory and refused to reduce it to a finite table. The framing gives Landfall's open §7 question — bounded sequential computation exactly flattening ε — a concrete existence proof on the historical side: a navigator can do this, and has.
+
 
 ## Open question (not pursued here)
 

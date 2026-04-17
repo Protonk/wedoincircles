@@ -42,7 +42,7 @@ The n-gon apparatus, the ε-framework, and the divisibility test together produc
 
 8. **ψ(n), the crystallographic function (Bamberg–Cairns–Kilminster).** Arithmetic function built additively from Euler's totient on prime-power parts: ψ(p^k) = φ(p^k) for odd p and k ≥ 1, ψ(2^k) = φ(2^k) for k ≥ 2, ψ(2) = ψ(1) = 0, and ψ(mn) = ψ(m) + ψ(n) for gcd(m, n) = 1. Integer-valued, closed form on prime factorization. ψ(n) is the minimum ambient dimension in which an n-fold rotation is crystallographic (ψ(n) ≤ d ⟺ n-fold rotation preserves some d-dimensional Euclidean lattice). Distinct from φ(n)/2 — e.g., ψ(12) = 4 while φ(12)/2 = 2.
 
-9. **Algebraic degree of 2cos(2π/n).** Equal to φ(n)/2 for n ≥ 3. Closed form via the minimal polynomial of ζ_n + ζ_n^{-1} over ℚ. Not the same object as ψ(n); the two functions disagree whenever n has more than one distinct prime factor in its squarefree part beyond {2}.
+9. **Algebraic degree of 2cos(2π/n).** Equal to φ(n)/2 for n ≥ 3. Closed form via the minimal polynomial of ζ_n + ζ_n^{-1} over ℚ; determined by the prime factorization of n through the Galois theory of ℚ(ζ_n). Not the same object as ψ(n); the two functions disagree whenever n has more than one distinct prime factor in its squarefree part beyond {2}.
 
 ## New constructions to build
 
@@ -53,6 +53,8 @@ Each of these is an object we do not yet have but which can be constructed from 
 Define τ(n) = 2cos(2π/n) − round(2cos(2π/n)). Closed form. Real-valued. Zero exactly on n ∈ {1, 2, 3, 4, 6}, nonzero elsewhere. This is the circle-side analog of the log-side ε(m): an explicit residue function measuring how far the relevant representation object (the trace of the rotation) is from being an integer. BIND extends τ to a continuous-E version τ_c(n, k, E) = frac(k · A · 10^E / n); here we work with the integer-indexed τ. The two objects agree on the intersection where continuous-E lands on integer E.
 
 τ is constructible, countable at every integer n, and has closed-form properties: not periodic in n (a sequence on ℤ_{≥1} with τ(n) → 0 as n → ∞, since 2cos(2π/n) → 2 and round picks up 2 once n is large enough), boundedness in [−1/2, 1/2], and algebraic structure — τ(n) is algebraic of degree φ(n)/2 for n ≥ 5 outside {6}, inherited from 2cos(2π/n) minus an integer.
+
+The zero set {1, 2, 3, 4, 6} is the 2D crystallographic restriction (cf. item 8 on ψ): a 2D rotation matrix R_n in a lattice basis has integer trace exactly for n in this set. The rounding step that defines τ is free — lattice arithmetic — and τ is exactly what that rounding leaves behind. Higher-dimensional lattices enlarge the zero set via ψ; the sibling-paper draft `INSCRIPTION-PAPER-PLAN.md` works 2D throughout.
 
 ### C2. The paired complexity table.
 
@@ -123,7 +125,7 @@ Four forms are admissible — three with known shape, one reserved for shape we 
 
 **An open-form result (reserved slot).** The Chebyshev leg may produce a result whose shape cannot be stated in advance — a structural claim that is neither a count nor a closed form nor a pre-existing identity, but instead names a new constructible object whose own closed form is the deliverable. This is the one place CREATI allows itself to be loose: loose about result-shape for a result we cannot yet name, tight about everything feeding into it. If the work produces an open-form result, that result retroactively extends the admissible catalog.
 
-**Historical instance.** The father's method in `memos/BIDDER-AND-SON.md` is a 19th-century mental-arithmetic enactment of CREATI applied to log₁₀ computation: a memorized catalog of prime logarithms, plus perception of factor structure to decompose any target into catalog elements. Every result is downstream of the catalog; the difficulty is strategic catalog-traversal. Useful as a worked example of what a CREATI result looks like in a problem domain other than the n-gon construction.
+**Historical instance.** The father's method in `../../../memos/BIDDER-AND-SON.md` is a 19th-century mental-arithmetic enactment of CREATI applied to log₁₀ computation: a memorized catalog of prime logarithms, plus perception of factor structure to decompose any target into catalog elements. Every result is downstream of the catalog; the difficulty is strategic catalog-traversal. Useful as a worked example of what a CREATI result looks like in a problem domain other than the n-gon construction.
 
 ## What is not built here
 
