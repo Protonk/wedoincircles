@@ -4,7 +4,7 @@ A research program pursuing the τ_c / ε spectral-rhyme candidate for a functor
 
 ---
 
-**Pointer.** BIND pursues one leg of a three-candidate approach. The abstract triad pattern — identity / polynomial closure (CREATI), arithmetic matching (PERMEATE), and residue / spectral rhyme (this doc) — is in `triad/TRIAD-ABSTRACT-PATTERN.md`. BIND is the home of Leg 3 only; the other legs are not pursued here.
+**Pointer.** BIND pursues one leg of a three-candidate approach. The abstract triad pattern — identity / polynomial closure (CREATI), arithmetic matching (PERMEATE), and residue / spectral rhyme (this doc) — is in `../TRIAD-ABSTRACT-PATTERN.md`. BIND is the home of Leg 3 only; the other legs are not pursued here.
 
 **Complementarity note.** BIND, CREATI, and PERMEATE are complementary disciplines by design, not by convergence. Each imposes a different productive constraint: BIND's is **vocabulary** (Erasure: no ?(x), Farey, SB, Thomae, Denjoy), CREATI's is **form** (every object a count, closed form, or identity), PERMEATE's is **preparation** (no cross-domain move without the saturation table behind it). Future lemmas will need to state what each reaches that the others cannot. This doc tolerates those gaps rather than papering them over.
 
@@ -116,7 +116,7 @@ Failures are the most informative results.
 
 **If Leg 3 fails.** Construct a specific invariant on each side such that any spectral map between the two obstruction structures must either respect both invariants or fail. The Babylonian fossil — v₃ ≤ 2 on the log-DH axis — is a coordinate artifact of 3.6·10^E. The circle-side ψ-constraint is a geometric invariant of any lattice in dimension d. A spectral F would need to send the coordinate artifact to the geometric invariant; the guess is that this cannot be done naturally, and Leg 3's obstruction is an explicit computation of how much the coordinate artifact differs in kind from the geometric invariant. [PLUS ULTRA]
 
-The computation of this difference is the missing center of Leg 3. The other legs' obstructions, if they share this mechanism, triangulate to the triad-level result in `triad/TRIAD-ABSTRACT-PATTERN.md`. [PLUS ULTRA]
+The computation of this difference is the missing center of Leg 3. The other legs' obstructions, if they share this mechanism, triangulate to the triad-level result in `../TRIAD-ABSTRACT-PATTERN.md`. [PLUS ULTRA]
 
 ### Step 5. Write the result in the voice of the primitives.
 
@@ -141,6 +141,6 @@ A note, scoped to Leg 3, that contains:
 5. Leg 3's candidate F, named and typed.
 6. Small-case spectral evidence, for or against.
 7. The main result: Leg 3 construction, or Leg 3 obstruction with computable invariant.
-8. A discussion that does not reach for the shared vocabulary to explain the result, with a pointer to `triad/TRIAD-ABSTRACT-PATTERN.md` for the triad-level synthesis.
+8. A discussion that does not reach for the shared vocabulary to explain the result, with a pointer to `../TRIAD-ABSTRACT-PATTERN.md` for the triad-level synthesis.
 
 Length target: short. The Aizawa method produces dry, ugly writeups. That is correct.

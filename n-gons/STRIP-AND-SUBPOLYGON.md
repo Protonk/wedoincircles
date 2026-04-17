@@ -58,11 +58,20 @@ the pseudo-Chebyshev node sequence of `corners/PSEUDO-CHEBYSHEV-NODES.md`. The t
 
 Subpolygon-theoretic content lives on the first row; pseudo-Chebyshev content lives on the second. Both are derived from the same anchored regular n-gon on the same incircle; the inversion is what exchanges their radial locations.
 
+There is also a second corner-side observable besides the pseudo-Chebyshev node sequence. In strip coordinates `(u,y)`, Euclidean x-coordinate is
+
+$$
+X=(1+y)\cos(2\pi u),
+$$
+
+so the outside-out counting word `M_N` from `n-gons/counting/COUNTING.md` can be read as a corner-incidence count for equal-`X` contours on the same strip. Subpolygon asks which floor points lie on a `DH`-grid; counting asks which corner points lie on the same `X`-contour. See [n-gons/counting/COUNTING-AND-STRIP.md](n-gons/counting/COUNTING-AND-STRIP.md).
+
 ## What this changes
 
 Nothing mathematically new — the gcd theorem in `SUBPOLYGON.md` is unchanged, and the pseudo-Chebyshev node formula is unchanged. What changes is the organizational picture:
 
 - Subpolygons and pseudo-Chebyshev nodes are not two unrelated constructions on the n-gon; they are the two natural things one can do with a regular anchored n-gon on a fixed incircle, split by which part of the n-gon (edge midpoints vs. corners) you look at.
+- Counting extends the corner side further: not just one distinguished corner value per `n`, but the full incidence pattern of all corners against the strip observable `X=(1+y)\cos(2\pi u)`.
 - The strip-flip is the visualization that makes this split visible at a glance.
 - The `DH`-grid on the strip floor is the right visualization for the subpolygon construction. A `DH`-grid plus the n-gon tangency lattice is the entire content of the whole-position test.
 
@@ -71,4 +80,5 @@ Nothing mathematically new — the gcd theorem in `SUBPOLYGON.md` is unchanged, 
 - `tangencies/SUBPOLYGON.md` — the subpolygon construction and gcd theorem.
 - `n-gons/ARCHIMEDEAN-STRIP-FLIP.md` — the strip and flip constructions.
 - `corners/PSEUDO-CHEBYSHEV-NODES.md` — the corner side of the same n-gon.
+- `n-gons/counting/COUNTING-AND-STRIP.md` — the counting construction as the corner-incidence observable on the same strip.
 - `tangencies/WHOLENESS.md` — the binary whole-position test that the subpolygon construction refines.

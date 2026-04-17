@@ -4,7 +4,7 @@ A research program conducted under the discipline of small-case saturation. The 
 
 ---
 
-**Pointer.** PERMEATE is the third character-led discipline alongside BIND (Aizawa, Erasure) and CREATI (Momo, Construction). The abstract triad pattern is in `triad/TRIAD-ABSTRACT-PATTERN.md`. PERMEATE's leg of best fit is Leg 2 (crystallographic ↔ p-adic matching), because Leg 2's central move — pairing an n on the circle side with an m on the log side by shared arithmetic — is exactly the cross-domain phasing that requires saturation to do reliably. The stance is more general than the leg, though: PERMEATE applies wherever tabulation produces predictive intuition, and we expect to find it useful on Legs 1 and 3 at the right grain of attention.
+**Pointer.** PERMEATE is the third character-led discipline alongside BIND (Aizawa, Erasure) and CREATI (Momo, Construction). The abstract triad pattern is in `../TRIAD-ABSTRACT-PATTERN.md`. PERMEATE's leg of best fit is Leg 2 (crystallographic ↔ p-adic matching), because Leg 2's central move — pairing an n on the circle side with an m on the log side by shared arithmetic — is exactly the cross-domain phasing that requires saturation to do reliably. The stance is more general than the leg, though: PERMEATE applies wherever tabulation produces predictive intuition, and we expect to find it useful on Legs 1 and 3 at the right grain of attention.
 
 **Complementarity note.** PERMEATE, BIND, and CREATI are complementary disciplines by design, not by convergence. Each imposes a different productive constraint:
 

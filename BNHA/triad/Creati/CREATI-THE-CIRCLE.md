@@ -4,7 +4,7 @@ A research program conducted by the principle of construction. Every object in s
 
 ---
 
-**Pointer.** CREATI pursues one leg of a three-candidate approach to the functor F. The abstract triad pattern — identity / polynomial closure (this doc), arithmetic matching (PERMEATE), and residue / spectral rhyme (BIND) — is described in `triad/TRIAD-ABSTRACT-PATTERN.md`. CREATI is the home of Leg 1 only; the other legs are not pursued from inside this discipline.
+**Pointer.** CREATI pursues one leg of a three-candidate approach to the functor F. The abstract triad pattern — identity / polynomial closure (this doc), arithmetic matching (PERMEATE), and residue / spectral rhyme (BIND) — is described in `../TRIAD-ABSTRACT-PATTERN.md`. CREATI is the home of Leg 1 only; the other legs are not pursued from inside this discipline.
 
 **Complementarity note.** CREATI, BIND, and PERMEATE are complementary disciplines by design, not by convergence. Each imposes a different productive constraint: CREATI's is **form** (every object a count, closed form, or identity), BIND's is **vocabulary** (Erasure: no ?(x), Farey, SB, Thomae, Denjoy), PERMEATE's is **preparation** (no cross-domain move without the saturation table behind it). Future lemmas will need to state what each reaches that the others cannot. This doc tolerates those gaps rather than papering them over.
 
@@ -79,7 +79,7 @@ The highly composite numbers with prime support in {2, 3, 5} form an explicit li
 
 ### C5. The Chebyshev functor candidate (Leg 1 of the triad).
 
-CREATI pursues the Chebyshev-polynomial leg of F. The other two legs (crystallographic ↔ p-adic, τ_c / ε spectral rhyme) are not pursued from inside this discipline; see `triad/TRIAD-ABSTRACT-PATTERN.md`.
+CREATI pursues the Chebyshev-polynomial leg of F. The other two legs (crystallographic ↔ p-adic, τ_c / ε spectral rhyme) are not pursued from inside this discipline; see `../TRIAD-ABSTRACT-PATTERN.md`.
 
 Define F on identities: the circle-side identity trace(R_n^m) = 2·T_m(cos(2π/n)) is a closed-form polynomial identity tying rotations at different n's. F, if it exists, must send this to a log-side closed-form identity tying ε at different m's. The question is whether such a log-side identity exists.
 

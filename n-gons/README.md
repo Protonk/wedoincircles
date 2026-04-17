@@ -103,4 +103,4 @@ Each new entry gets:
 - A self-contained definition file in `tangencies/`, `corners/`, or `n-gons/` (depending on which side of the apparatus it lives on).
 - A bestiary entry here with three movements: *what it is*, *what it does*, *what it wants* (this last one is permitted to be slightly anthropomorphic; the constructs are creatures, after all).
 
-If a construct is an adaptation of an external object — Niven's theorem, the 3DT, the crystallographic restriction — it belongs in `memos/`. If it is a discipline or program move — BIND, CREATI, PERMEATE, the F-question triad — it belongs in `triad/`. The n-gon constructs are the objects themselves, full stop.
+If a construct is an adaptation of an external object — Niven's theorem, the 3DT, the crystallographic restriction — it belongs in `memos/`. If it is a discipline or program move — BIND, CREATI, PERMEATE, the F-question triad — it belongs in `../BNHA/triad/`. The n-gon constructs are the objects themselves, full stop.

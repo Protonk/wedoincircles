@@ -1,6 +1,6 @@
 # TRIAD-ABSTRACT-PATTERN
 
-The abstract companion to `triad/NIVEN-THREE-WAYS.md`. Niven is the concrete test case: one solved theorem, three routes, one visible handoff. This note states the pattern that test is probing.
+The abstract companion to `memos/NIVEN-THREE-WAYS.md`. Niven is the concrete test case: one solved theorem, three routes, one visible handoff. This note states the pattern that test is probing.
 
 The core claim is modest. We are not assuming a single functor `F` already exists between the log-side and circle-side obstructions. We are testing three distinct *attack shapes* for such an `F`, each with its own primitives, its own discipline of best fit, and its own characteristic way of failing.
 
@@ -30,19 +30,19 @@ The disciplines are complementary, not competing. A leg may borrow from another 
 
 Question: does the circle side's native closed-form identity structure have a genuine log-side cousin, or is the mismatch itself the obstruction?
 
-This is the CREATI leg. The exact formulas belong in `triad/plus_ultra/Creati/CREATI-THE-CIRCLE.md`. At the abstract level, Leg 1 tests whether circle-side algebraic closure transports at all. If it fails, the interesting result is not merely "no formula was found"; it is "the two sides support different kinds of rigid identity."
+This is the CREATI leg. The exact formulas belong in `Creati/CREATI-THE-CIRCLE.md`. At the abstract level, Leg 1 tests whether circle-side algebraic closure transports at all. If it fails, the interesting result is not merely "no formula was found"; it is "the two sides support different kinds of rigid identity."
 
 ### Leg 2: arithmetic matching
 
 Question: can arithmetic invariants on the circle side and log side be matched naturally enough to support a cross-domain rule, at least on a visible finite regime?
 
-This is the PERMEATE leg. The exact arithmetic objects belong in `triad/plus_ultra/Lemillion/PERMEATE-THE-CIRCLE.md` and the crystallographic source brief. At the abstract level, Leg 2 tests whether a matching rule survives saturation, where the decisive datum is often the first witness at which the pattern breaks.
+This is the PERMEATE leg. The exact arithmetic objects belong in `Lemillion/PERMEATE-THE-CIRCLE.md` and the crystallographic source brief. At the abstract level, Leg 2 tests whether a matching rule survives saturation, where the decisive datum is often the first witness at which the pattern breaks.
 
 ### Leg 3: residue / spectral rhyme
 
 Question: if pointwise transport is too strict, do the two sides at least share invariant-level structure such as decay, symmetry, or other residue behavior?
 
-This is the BIND leg. The actual objects and obstructions belong in `triad/plus_ultra/Eraserhead/BIND-THE-CIRCLE.md`. At the abstract level, Leg 3 tests whether any correspondence remains once the shared vocabulary is withheld and only native primitives are allowed.
+This is the BIND leg. The actual objects and obstructions belong in `Eraserhead/BIND-THE-CIRCLE.md`. At the abstract level, Leg 3 tests whether any correspondence remains once the shared vocabulary is withheld and only native primitives are allowed.
 
 ## A shared arithmetic axis
 
@@ -67,7 +67,7 @@ So the outcome taxonomy is:
 
 ## How this pairs with Niven
 
-`triad/NIVEN-THREE-WAYS.md` is the concrete base case.
+`memos/NIVEN-THREE-WAYS.md` is the concrete base case.
 
 - It shows what a triad run looks like on a theorem whose answer is already known.
 - It shows that the disciplines are not just stylistic labels; they sort real proof behavior.
@@ -84,11 +84,11 @@ The triad-level companion sits above the leg docs, not in competition with them.
 
 | Role | Doc |
 |---|---|
-| Concrete worked test | `triad/NIVEN-THREE-WAYS.md` |
-| Abstract pattern / reading frame | `triad/TRIAD-ABSTRACT-PATTERN.md` |
-| Leg 1 home | `triad/plus_ultra/Creati/CREATI-THE-CIRCLE.md` |
-| Leg 2 home | `triad/plus_ultra/Lemillion/PERMEATE-THE-CIRCLE.md` |
-| Leg 3 home | `triad/plus_ultra/Eraserhead/BIND-THE-CIRCLE.md` |
+| Concrete worked test | `memos/NIVEN-THREE-WAYS.md` |
+| Abstract pattern / reading frame | `TRIAD-ABSTRACT-PATTERN.md` |
+| Leg 1 home | `Creati/CREATI-THE-CIRCLE.md` |
+| Leg 2 home | `Lemillion/PERMEATE-THE-CIRCLE.md` |
+| Leg 3 home | `Eraserhead/BIND-THE-CIRCLE.md` |
 
 ## Scope note
 

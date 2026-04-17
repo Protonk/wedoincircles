@@ -1,6 +1,6 @@
 # BIDDER-THE-NAVIGATOR
 
-A bridge doc connecting the 19th-century mental-arithmetic of George Parker Bidder with the 21st-century floating-point argument of *Landfall*. Not a memo on Bidder — see `memos/BIDDER-AND-SON.md` for that. Not a discipline charter — see `triad/plus_ultra/` for those. A standalone observation whose one claim is:
+A bridge doc connecting the 19th-century mental-arithmetic of George Parker Bidder with the 21st-century floating-point argument of *Landfall*. Not a memo on Bidder — see `memos/BIDDER-AND-SON.md` for that. Not a discipline charter — see `../BNHA/triad` for those. A standalone observation whose one claim is:
 
 > Landfall is a crystallization of an arithmetic fact that Bidder already knew and exploited. The hardware substrate changed. The structural fact didn't.
 

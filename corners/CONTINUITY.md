@@ -51,7 +51,7 @@ Each case lands as its own file, with a sage demonstration where geometry permit
 
 ## This is a reading frame, not a discipline
 
-The triad (BIND / CREATI / PERMEATE) lives in `triad/`. Continuity is a reading frame — it says what kind of object we are looking at when we hold integer-indexed and real-continuous readings side by side. Discipline-appropriate treatment of a continuation depends on which discipline is asking. CREATI wants closed forms for curve and samples. BIND wants Erasure-legal tools for the integer/real crossing. PERMEATE wants saturation tables covering integer samples plus nearby rational continuations to anticipate curve behavior.
+The triad (BIND / CREATI / PERMEATE) lives in `../BNHA/triad/`. Continuity is a reading frame — it says what kind of object we are looking at when we hold integer-indexed and real-continuous readings side by side. Discipline-appropriate treatment of a continuation depends on which discipline is asking. CREATI wants closed forms for curve and samples. BIND wants Erasure-legal tools for the integer/real crossing. PERMEATE wants saturation tables covering integer samples plus nearby rational continuations to anticipate curve behavior.
 
 ## Demonstration
 

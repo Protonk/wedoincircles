@@ -38,3 +38,7 @@ Image embeds stay as they are (`![…](figures/foo.png)` or the equivalent `..`-
 ## Repo character
 
 This is a math-research writing repo. Most work is reading papers, promoting notes into reusable internal references, tightening theorem statements, and keeping the document graph coherent.
+
+## Working tree is dirty
+
+Multiple agents and humans work in concert here, where concert <-> cacophany. Don't chase working tree diffs.

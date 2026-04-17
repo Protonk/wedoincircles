@@ -441,6 +441,8 @@ In the three papers this appears respectively as:
 
 This is the cleanest synthesis the three-source read supports.
 
+For a nearby but nonidentical procedural problem on the outside-out annulus, see [n-gons/counting/COUNTING-AND-3DT.md](n-gons/counting/COUNTING-AND-3DT.md): the counting word `M_N` also wants a compressed update rule, but it is built from a growing union of rational levels rather than from a fixed rotation orbit.
+
 ## Program-Facing Consequences
 
 ### 1. CREATI C3 gets a real circle-side reflection identity

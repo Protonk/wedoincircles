@@ -4,7 +4,7 @@ A sibling to *Landfall* on the circle side, pursued as a research problem in its
 
 ---
 
-**Status.** This is program material, not a source digest. It was promoted out of `memos/` once the structural parallel to *Landfall* became sharp enough to attack directly. The triad layer (`triad/TRIAD-ABSTRACT-PATTERN.md`, `triad/plus_ultra/`) still governs whether a functor F transports *Landfall* into this sibling; the working expectation is that F does not exist and the interesting result is the shape of the obstruction — which reads back into Inscription as "siblings with shared parent structure, not translations." Inscription's existence as a target structure does not depend on F existing.
+**Status.** This is program material, not a source digest. It was promoted out of `memos/` once the structural parallel to *Landfall* became sharp enough to attack directly. The triad layer (`../BNHA/triad/TRIAD-ABSTRACT-PATTERN.md`, `../BNHA/triad`) still governs whether a functor F transports *Landfall* into this sibling; the working expectation is that F does not exist and the interesting result is the shape of the obstruction — which reads back into Inscription as "siblings with shared parent structure, not translations." Inscription's existence as a target structure does not depend on F existing.
 
 ---
 
