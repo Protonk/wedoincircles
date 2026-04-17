@@ -1,5 +1,5 @@
 """
-Stern-Brocot / Thomae reproduction for NGON-WHOLENESS §7.
+Stern-Brocot / Thomae reproduction for `n-gons/N-GON-WHOLENESS.md` §7.
 
 Every n-gon deposits tangency positions at k/n on the unit circle (mapped to
 [0,1]). Collecting positions across n = 1..N and reducing k/n to lowest terms

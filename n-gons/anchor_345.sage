@@ -1,5 +1,5 @@
 """
-Close-up of the shared-anchor 3-4-5 n-gon construction (NGON-WHOLENESS §1).
+Close-up of the shared-anchor 3-4-5 n-gon construction (see `n-gons/N-GON-WHOLENESS.md` §1).
 
 Circle of radius 1 (incircle). Each regular n-gon has apothem 1, so the circle
 is inscribed in all of them. All n-gons share one edge tangent at the anchor

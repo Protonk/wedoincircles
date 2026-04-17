@@ -11,8 +11,8 @@ The working hypothesis is that no such `F` exists, and that the interesting resu
 This section records only the top-level roles, so it stays useful even as the deeper file tree shifts.
 
 - `corners/`, `n-gons/`: the circle-side constructions, variants, and bridge notes.
-- `BNHA/`: the program architecture — the three working disciplines (BIND / CREATI / PERMEATE) under `BNHA/triad/`, plus satellite characters as peers (e.g. `BNHA/sir_nighteye/`).
+- `BNHA/`: the program architecture — the three working disciplines (BIND / CREATI / PERMEATE) under `BNHA/triad/`, plus satellite characters as peers (e.g. `BNHA/SirNighteye/`).
 - `memos/`: promoted internal references, crosswalks, and speculative future-facing notes.
 - `sources/`: source-facing reads, PDFs, and extraction material.
-- `figures/`, `sage/`: generated figures and the scripts that produce or support them.
+- `figures/`: generated figures. The scripts that produce them live alongside the doc they illustrate (e.g. `corners/pseudo_chebyshev_continuity.sage`, `n-gons/subpolygon_gallery.sage`).
 - `README.md`, `AGENTS.md`: top-level orientation and repo-local working rules.
