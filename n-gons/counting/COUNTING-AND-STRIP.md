@@ -4,8 +4,7 @@ How the outside-out counting word `M_N` sits on the same Archimedean strip as th
 
 Primary references:
 
-- [n-gons/counting/COUNTING.md](n-gons/counting/COUNTING.md)
-- [n-gons/STRIP-AND-SUBPOLYGON.md](n-gons/STRIP-AND-SUBPOLYGON.md)
+- [COUNTING.md](n-gons/counting/COUNTING.md)
 - [n-gons/ARCHIMEDEAN-STRIP-FLIP.md](n-gons/ARCHIMEDEAN-STRIP-FLIP.md)
 
 ## One strip, two readouts
@@ -54,7 +53,7 @@ So `M_N` is a corner-incidence word for the level sets of `X`, not a floor-latti
 
 ![Strip linkage figure](../../figures/counting_strip_observables.png)
 
-[counting_strip_observables.png](../../figures/counting_strip_observables.png) puts the two readouts on one picture.
+[counting_strip_observables.png](figures/counting_strip_observables.png) puts the two readouts on one picture.
 
 - The hatched band at the bottom is the floor zone where the subpolygon observable lives.
 - The vertical marks in that band are a sample `DH`-grid.

@@ -71,7 +71,7 @@ This is a subgroup of `\mathbb Z/n` with `g` elements. In a cyclic group there i
 
 ## Strip Reading
 
-On the Archimedean strip (`n-gons/ARCHIMEDEAN-STRIP-FLIP.md`), the n-gon tangency points sit on the floor `y = 0` at `x = k/n`, and a `DH`-grid is the set of vertical lines at `x = m/DH`. The whole-position test `n | k · DH` is exactly "tangency point lies on a `DH`-gridline," so the subpolygon construction is the lattice intersection `(1/n)ℤ ∩ (1/DH)ℤ` on `ℝ/ℤ`, equal to `(1/gcd(n,DH))ℤ / ℤ`. See `n-gons/STRIP-AND-SUBPOLYGON.md`.
+On the Archimedean strip (`n-gons/ARCHIMEDEAN-STRIP-FLIP.md`), the n-gon tangency points sit on the floor `y = 0` at `x = k/n`, and a `DH`-grid is the set of vertical lines at `x = m/DH`. The whole-position test `n | k · DH` is exactly "tangency point lies on a `DH`-gridline," so the subpolygon construction is the lattice intersection `(1/n)ℤ ∩ (1/DH)ℤ` on `ℝ/ℤ`, equal to `(1/gcd(n,DH))ℤ / ℤ`.
 
 ## Geometric Corollary
 
@@ -99,7 +99,7 @@ Geometric regimes:
 - `g_n(DH)=2`: the anchor and antipode survive, so the whole set is a diameter.
 - `g_n(DH)=n`: every tangency point is whole, so the ambient `n`-gon survives completely.
 
-See `tangencies/subpolygon_gallery.sage` and `figures/subpolygon_gallery.png`.
+See `n-gons/subpolygon_gallery.sage` and `figures/subpolygon_gallery.png`.
 
 ![Subpolygon gallery](../figures/subpolygon_gallery.png)
 
@@ -205,7 +205,7 @@ Each entry is written as `g (q)`.
 
 This is the graded picture that the binary test hides. The `2`-budget opens up as `E` increases (`16` moves from `4` to `8` to `16`), the `5`-budget opens up in the same way (`25` moves from `1` to `5` to `25`), and primes outside `{2,3,5}` never appear at all (`7` and `11` stay at `1` throughout).
 
-See `tangencies/subpolygon_g_signal.sage` and `figures/subpolygon_g_signal.png`.
+See `n-gons/subpolygon_g_signal.sage` and `figures/subpolygon_g_signal.png`.
 
 ![Subpolygon signal](../figures/subpolygon_g_signal.png)
 

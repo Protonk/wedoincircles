@@ -1,26 +1,26 @@
 # COUNTING
 
-Two first exploratory probes of the counting-exhaustion word `M_N`, using the outside-out corner sweep from [outside_out.py](../outside_out.py). For background on the underlying annulus construction, see [ARCHIMEDEAN-STRIP-FLIP.md](../ARCHIMEDEAN-STRIP-FLIP.md).
+Two first exploratory probes of the counting-exhaustion word `M_N`, using the outside-out corner sweep from [n-gons/outside_out.py](n-gons/outside_out.py). For background on the underlying annulus construction, see [n-gons/ARCHIMEDEAN-STRIP-FLIP.md](n-gons/ARCHIMEDEAN-STRIP-FLIP.md).
 
 Files in this directory:
 
-- [counting_utils.py](counting_utils.py): computation of `M_N`, decimal encodings, and the non-2 table.
-- [build_counting.py](build_counting.py): generates the two exploratory figures and the extracted non-2 data.
-- [build_x_multiplicity_raster.py](build_x_multiplicity_raster.py): plots multiplicity by actual `x` rather than by word index.
-- [build_near_half_gaps.py](build_near_half_gaps.py): tracks nearest approach to the tested-empty guides `x = \pm 1/2`.
-- [build_strip_observables.py](build_strip_observables.py): renders the strip bridge figure for counting vs subpolygon.
-- [build_psi_table.py](build_psi_table.py): writes the `\psi`-aligned counting saturation table.
-- [non2_entries.tsv](non2_entries.tsv): tabular output of the second probe.
-- [psi_counting_table.tsv](psi_counting_table.tsv): `n`, `\psi(n)`, six-field increments, and exact contour hits on `X \in \{\pm1,\pm1/2,0\}`.
+- [counting_utils.py](n-gons/counting/counting_utils.py): computation of `M_N`, decimal encodings, and the non-2 table.
+- [build_counting.py](n-gons/counting/build_counting.py): generates the two exploratory figures and the extracted non-2 data.
+- [build_x_multiplicity_raster.py](n-gons/counting/build_x_multiplicity_raster.py): plots multiplicity by actual `x` rather than by word index.
+- [build_near_half_gaps.py](n-gons/counting/build_near_half_gaps.py): tracks nearest approach to the tested-empty guides `x = \pm 1/2`.
+- [build_strip_observables.py](n-gons/counting/build_strip_observables.py): renders the strip bridge figure for counting vs subpolygon.
+- [build_psi_table.py](n-gons/counting/build_psi_table.py): writes the `\psi`-aligned counting saturation table.
+- [non2_entries.tsv](n-gons/counting/non2_entries.tsv): tabular output of the second probe.
+- [psi_counting_table.tsv](n-gons/counting/psi_counting_table.tsv): `n`, `\psi(n)`, six-field increments, and exact contour hits on `X \in \{\pm1,\pm1/2,0\}`.
 
 Generated figures:
 
-- [counting_non2_entries.png](../../figures/counting_non2_entries.png)
-- [counting_x_multiplicity_raster.png](../../figures/counting_x_multiplicity_raster.png) — multiplicity mass plotted in actual `x`-space.
-- [counting_near_half_gaps.png](../../figures/counting_near_half_gaps.png) — nearest approach to `x = \pm 1/2` through `n = 400`.
-- [counting_strip_observables.png](../../figures/counting_strip_observables.png) — same strip, floor-grid vs corner-contour readout (see [n-gons/counting/COUNTING-AND-STRIP.md](n-gons/counting/COUNTING-AND-STRIP.md)).
-- [counting_dual_convergence.png](../../figures/counting_dual_convergence.png) — decimal vs CF convergence rates (see [DECIMAL-CF-COMPLEMENTARITY.md](DECIMAL-CF-COMPLEMENTARITY.md)).
-- [counting_increment_map.png](../../figures/counting_increment_map.png) — the `M_{N−1} → M_N` update, per-cell (see [COUNTING-AND-3DT.md](COUNTING-AND-3DT.md)).
+- [counting_non2_entries.png](figures/counting_non2_entries.png)
+- [counting_x_multiplicity_raster.png](figures/counting_x_multiplicity_raster.png) — multiplicity mass plotted in actual `x`-space.
+- [counting_near_half_gaps.png](figures/counting_near_half_gaps.png) — nearest approach to `x = \pm 1/2` through `n = 400`.
+- [counting_strip_observables.png](figures/counting_strip_observables.png) — same strip, floor-grid vs corner-contour readout (see [n-gons/counting/COUNTING-AND-STRIP.md](n-gons/counting/COUNTING-AND-STRIP.md)).
+- [counting_dual_convergence.png](figures/counting_dual_convergence.png) — decimal vs CF convergence rates (see [DECIMAL-CF-COMPLEMENTARITY.md](n-gons/counting/DECIMAL-CF-COMPLEMENTARITY.md)).
+- [counting_increment_map.png](figures/counting_increment_map.png) — the `M_{N−1} → M_N` update, per-cell (see [COUNTING-AND-3DT.md](n-gons/counting/COUNTING-AND-3DT.md)).
 
 ## Construction
 
@@ -130,4 +130,4 @@ sage -python n-gons/counting/build_strip_observables.py
 sage -python n-gons/counting/build_psi_table.py
 ```
 
-The scripts write their figures to `figures/`; `build_counting.py` also writes its tabular extraction to this directory.
+The scripts write their figures to `figures/`; `n-gons/counting/build_counting.py` also writes its tabular extraction to this directory.

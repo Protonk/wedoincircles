@@ -1,7 +1,7 @@
 """
 Leash Plot A: the monotonicity leash condition.
 
-Companion to `corners/LEASH.md`.
+Companion to `corners/CIRCLE-TRANSFORMATIONS.md` §4.
 
 Shows the monotonicity leash condition in a single panel,
 Marklof–Strömbergsson Figure 3 style:

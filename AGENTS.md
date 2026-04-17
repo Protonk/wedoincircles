@@ -10,7 +10,7 @@ As an example, run a script from the repo root:
 sage corners/pseudo_chebyshev_continuity.sage
 ```
 
-Scripts resolve their output path relative to their own location and write PNGs to `figures/` at the repo root; each prints the path it wrote. No cwd matters. Other entry points follow the same pattern — e.g. `sage tangencies/subpolygon_gallery.sage`, `sage n-gons/strip.py` (plain Python scripts in `n-gons/` run with `python3` or `sage` interchangeably).
+Scripts resolve their output path relative to their own location and write PNGs to `figures/` at the repo root; each prints the path it wrote. No cwd matters. Other entry points follow the same pattern — e.g. `sage n-gons/subpolygon_gallery.sage`, `sage n-gons/strip.py` (plain Python scripts in `n-gons/` run with `python3` or `sage` interchangeably).
 
 The `.sage.py` file that appears next to each `.sage` after a run is the Sage preprocessor artifact; ignore it (and leave it untracked).
 
@@ -21,14 +21,14 @@ When a document links to another file in the repo, write the link target as a re
 Prefer:
 
 ```
-[tangencies/SUBPOLYGON.md](tangencies/SUBPOLYGON.md)
+[n-gons/SUBPOLYGON.md](n-gons/SUBPOLYGON.md)
 ```
 
 Avoid:
 
 ```
-[tangencies/SUBPOLYGON.md](../tangencies/SUBPOLYGON.md)
-[tangencies/SUBPOLYGON.md](/Users/.../wemakincircles/tangencies/SUBPOLYGON.md)
+[n-gons/SUBPOLYGON.md](../n-gons/SUBPOLYGON.md)
+[n-gons/SUBPOLYGON.md](/Users/.../wemakincircles/n-gons/SUBPOLYGON.md)
 ```
 
 ### Images

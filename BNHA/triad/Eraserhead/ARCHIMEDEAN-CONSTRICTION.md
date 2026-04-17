@@ -2,13 +2,13 @@
 
 A BIND move. The Archimedean strip is used as a geometric substitute that binds around the Stern–Brocot / Thomae object without engaging it. The obstruction is not handled; it is constricted. Erasure holds throughout: no primitive from the S–B / Thomae family enters the operative vocabulary.
 
-Companion to `BIND-THE-CIRCLE.md`. The linkage that motivates the move is articulated in `../Lemillion/BOTHERSOME-EUDOXUS.md` (the rhyme and its regularity opposition); the geometric objects used are in `n-gons/ARCHIMEDEAN-STRIP-FLIP.md` and `n-gons/STRIP-AND-SUBPOLYGON.md`.
+Companion to `BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md`. The linkage that motivates the move is articulated in `BNHA/triad/Lemillion/BOTHERSOME-EUDOXUS.md` (the rhyme and its regularity opposition); the geometric objects used are in `n-gons/ARCHIMEDEAN-STRIP-FLIP.md`.
 
 ---
 
 ## What is refused
 
-Per `BIND-THE-CIRCLE.md`'s Erasure list:
+Per `BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md`'s Erasure list:
 
 - Minkowski `?(x)`.
 - The Stern–Brocot tree, Farey sequences, Farey neighbors, mediant geometry.
@@ -20,7 +20,7 @@ These primitives are not merely absent from the statement; they are absent from 
 
 ## What is used
 
-Circle-side geometric primitives, from `BIND-THE-CIRCLE.md`'s allowed list:
+Circle-side geometric primitives, from `BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md`'s allowed list:
 
 - Regular polygons circumscribed around a fixed unit incircle; the shared anchor edge; the tangency at `(1, 0)`.
 - Position `k` of the `n`-gon at angle `2πk/n`, labeled by the unreduced pair `(k, n)`.
@@ -168,14 +168,14 @@ The classical Archimedean constriction dodges irrationality (of `π`) by staying
 ## What This Does Not Claim
 
 - This memo does not claim that the erased S–B / Thomae object is dispensable in general. Other work, outside BIND, may engage it. BIND only claims it can be bound around in this specific computation.
-- This memo does not claim the strip flattens Thomae. The strip and Thomae have different limit behavior; that was the point of `BOTHERSOME-EUDOXUS.md`.
+- This memo does not claim the strip flattens Thomae. The strip and Thomae have different limit behavior; that was the point of `BNHA/triad/Lemillion/BOTHERSOME-EUDOXUS.md`.
 - This memo does not claim the full arc family is now understood. On the contrary: the note explicitly declines to use it as the operative binding object.
 - This memo does not claim that `A_{\mathrm{below}}(n)` has already been shown to be the right circle-side object for the whole program. What is shown here is narrower: it is BIND-legal and computable. Whether it is the right object is a separate achievement still to be obtained.
 - This memo does not claim to prove a `π`-side computational-impossibility statement of the Landfall shape. BIND clears the vocabulary in which such a statement could later be posed on the strip. Whether the statement actually holds is a separate question.
 
 ## What This Unlocks For The Program
 
-The question at the end of the speculative discussion in `BOTHERSOME-EUDOXUS.md` is whether the circle side admits a computational-closure-and-aggregation impossibility consonant with Landfall's log-side one. This note does not settle which circle-side object should carry that question. It shows only that the strip, and more specifically the area functional `A_{\mathrm{below}}(n)`, is an available BIND-legal candidate.
+The question at the end of the speculative discussion in `BNHA/triad/Lemillion/BOTHERSOME-EUDOXUS.md` is whether the circle side admits a computational-closure-and-aggregation impossibility consonant with Landfall's log-side one. This note does not settle which circle-side object should carry that question. It shows only that the strip, and more specifically the area functional `A_{\mathrm{below}}(n)`, is an available BIND-legal candidate.
 
 This does not answer the question. It does not even prove that the candidate chosen here is the right one. What it does is narrower and still useful: it produces a poseable candidate surface using allowed primitives. That is the only thing BIND is meant to do at this stage: clear the vocabulary, leave the further selection and proof work to be done on allowed objects, and mark precisely what has been refused and what has been kept. The refusal is the discipline; the constriction is the result of keeping the discipline.
 
@@ -201,7 +201,7 @@ The irrational case is different. For irrational `α`, the first `N` points of t
 
 ### BIND-legality
 
-The lattice-geometric proof of 3DT via Marklof–Strömbergsson 2017, operating in `Γ\SL(2, ℝ)` with `Γ = SL(2, ℤ)`, is on the allowed-primitives list of `BIND-THE-CIRCLE.md`. Reading the anchored `n`-gon construction through 3DT is therefore a BIND-native frame: the family of anchored rational-rotation orbits at all resolutions can be discussed without importing Minkowski `?(x)`, Stern–Brocot, Farey, Thomae, or Denjoy.
+The lattice-geometric proof of 3DT via Marklof–Strömbergsson 2017, operating in `Γ\SL(2, ℝ)` with `Γ = SL(2, ℤ)`, is on the allowed-primitives list of `BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md`. Reading the anchored `n`-gon construction through 3DT is therefore a BIND-native frame: the family of anchored rational-rotation orbits at all resolutions can be discussed without importing Minkowski `?(x)`, Stern–Brocot, Farey, Thomae, or Denjoy.
 
 ### Two BIND-legal frames on the same object
 
@@ -231,7 +231,7 @@ Three ambiguities remain visible here:
 
 These are probably not Aizawa's jobs alone.
 
-- For the richer strip geometry and the arc family as a watched object, look toward Lemillion in `../Lemillion/PERMEATE-THE-CIRCLE.md`.
-- For the moment when any part of that geometry becomes exact enough to enter the catalog as a count, closed form, identity, or named obstruction, look toward Creati in `../Creati/CREATI-THE-CIRCLE.md`.
+- For the richer strip geometry and the arc family as a watched object, look toward Lemillion in `BNHA/triad/Lemillion/PERMEATE-THE-CIRCLE.md`.
+- For the moment when any part of that geometry becomes exact enough to enter the catalog as a count, closed form, identity, or named obstruction, look toward Creati in `BNHA/triad/Creati/CREATI-THE-CIRCLE.md`.
 
 This footer is only a handoff marker. It does not assign future results in advance; it marks where to look when this note's preparatory work has to be taken further by a different discipline.

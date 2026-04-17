@@ -10,7 +10,7 @@ The working hypothesis is that no such `F` exists, and that the interesting resu
 
 This section records only the top-level roles, so it stays useful even as the deeper file tree shifts.
 
-- `tangencies/`, `corners/`, `n-gons/`: the circle-side constructions, variants, and bridge notes.
+- `corners/`, `n-gons/`: the circle-side constructions, variants, and bridge notes.
 - `BNHA/`: the program architecture — the three working disciplines (BIND / CREATI / PERMEATE) under `BNHA/triad/`, plus satellite characters as peers (e.g. `BNHA/sir_nighteye/`).
 - `memos/`: promoted internal references, crosswalks, and speculative future-facing notes.
 - `sources/`: source-facing reads, PDFs, and extraction material.

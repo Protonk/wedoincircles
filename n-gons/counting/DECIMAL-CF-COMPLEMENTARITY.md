@@ -2,7 +2,7 @@
 
 Two encodings of a finite integer sequence `[a_0; a_1, a_2, …, a_m]`:
 
-- **Decimal concatenation** `D`. Write `a_0` as integer part; concatenate the base-10 digits of `a_1, a_2, …, a_m` in order as mantissa. For `M_N` this is the pseudo-Champernowne number `C_N` (see [PSEUDO-CHAMPERNOWNE.md](PSEUDO-CHAMPERNOWNE.md)).
+- **Decimal concatenation** `D`. Write `a_0` as integer part; concatenate the base-10 digits of `a_1, a_2, …, a_m` in order as mantissa. For `M_N` this is the pseudo-Champernowne number `C_N` (see [PSEUDO-CHAMPERNOWNE.md](n-gons/counting/PSEUDO-CHAMPERNOWNE.md)).
 - **Continued fraction** `F`. Read the entries as partial quotients:
 
 ```
@@ -63,7 +63,7 @@ This is the underlying reason the two readings of `M_N` can't be reconstructed f
 1×a   [count at x=−1]×1   2×b   [count at x=0]×1   2×c   [count at x=+1]×1
 ```
 
-from [COUNTING.md](COUNTING.md). Apply the two encodings:
+from [COUNTING.md](n-gons/counting/COUNTING.md). Apply the two encodings:
 
 - **Decimal.** `C_N → 10/9` because the `1×a` prefix (with `a ≈ N/2`) dominates the early, high-weight decimal positions; everything else — the three exceptional singletons, the long `2` fields, the terminal `2(N − 2)` — sits at decimal positions of order `a + 1` or later, contributing at most `O(10⁻ᴺ/²)` each. `D` averages the whole sequence against a geometrically-decaying weight and collapses the structural information into a tiny correction away from `10/9`.
 - **Continued fraction.** A hypothetical `F(M_N)` reads the same entries as partial quotients. The `1×a` prefix is a stretch of all-`1`s, whose convergents approach the golden ratio `φ`. Then the count at `x = −1` is a large partial quotient at depth `a + 1`; it truncates the tail, pinning `F(M_N)` close to the `a`-th golden-ratio convergent. The count at `x = 0` (when present) adds a sign-alternating correction; the `2×b` and `2×c` fields contribute smaller adjustments; the terminal `2(N − 2)` adds a final small correction.
@@ -72,4 +72,4 @@ So `D` sees the bulk of the prefix and averages everything else away to `10/9`, 
 
 ## Numerical check
 
-Figure [counting_dual_convergence.png](../../figures/counting_dual_convergence.png) plots `log₁₀` of `|C_N − 10/9|`, `|F(M_N) − φ|`, and `|F(M_N) − p_a/q_a|` (the golden-ratio convergent at depth `a − 1`) for `N = 5 … 50`, against the closed-form predictions `−a` and `−(2a+1) log₁₀ φ`. Both empirical rates match their predictions. The decimal distance decays at roughly 2.4× the CF rate in log-scale — `log₁₀ |C_N − 10/9| ≈ −24` versus `log₁₀ |F(M_N) − φ| ≈ −10` at `N = 50` — and `F(M_N)` sits close to (slightly below) the pure golden-ratio convergent, confirming that the large count-at-`x=−1` at depth `a + 1` does act as a truncation event. Same sequence, two different limits, two different rates, both closed-form.
+Figure [counting_dual_convergence.png](figures/counting_dual_convergence.png) plots `log₁₀` of `|C_N − 10/9|`, `|F(M_N) − φ|`, and `|F(M_N) − p_a/q_a|` (the golden-ratio convergent at depth `a − 1`) for `N = 5 … 50`, against the closed-form predictions `−a` and `−(2a+1) log₁₀ φ`. Both empirical rates match their predictions. The decimal distance decays at roughly 2.4× the CF rate in log-scale — `log₁₀ |C_N − 10/9| ≈ −24` versus `log₁₀ |F(M_N) − φ| ≈ −10` at `N = 50` — and `F(M_N)` sits close to (slightly below) the pure golden-ratio convergent, confirming that the large count-at-`x=−1` at depth `a + 1` does act as a truncation event. Same sequence, two different limits, two different rates, both closed-form.

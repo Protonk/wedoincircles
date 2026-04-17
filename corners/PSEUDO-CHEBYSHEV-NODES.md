@@ -1,6 +1,6 @@
 # PSEUDO-CHEBYSHEV-NODES
 
-A node-generating procedure built from the shared-anchor n-gon construction, producing one distinguished value per n.
+A node-generating procedure built from the shared-anchor n-gon construction, producing one distinguished value per n, together with its real-t continuation.
 
 ## Construction
 
@@ -63,8 +63,36 @@ node(n) is constructible by compass and straightedge iff the regular 2n-gon is, 
 
 The first non-constructible node is node(7). The first cubic appears at the same n.
 
+## Real-t continuation
+
+Replace n with real t ∈ [2, ∞). The corner (1, tan(π/t)) sweeps continuously down the vertical line x = 1 as t grows. The crossing point (cos(π/t), sin(π/t)) sweeps along the upper-right quarter of the unit circle, from (0, 1) at t = 2 to (1, 0) in the limit t → ∞.
+
+In node-sequence coordinates (horizontal = node value x, vertical = n):
+
+    n(x) = π / arccos(x)    equivalently    x(n) = cos(π/n),  n ∈ [2, ∞)
+
+Shape. Starts at (0, 2). Passes through (1/2, 3), (√2/2, 4), ((1+√5)/4, 5), (√3/2, 6), (cos(π/7), 7), … As a graph of n(x), it is monotone increasing and convex, with vertical asymptote x = 1 as n → ∞. Near x = 1 it rises like n ~ π/√(2(1−x)).
+
+## Arithmetic density along the curve
+
+Integer t = n gives an algebraic node of degree φ(2n)/2, as cataloged above. More generally, rational t = p/q ≥ 2 in lowest terms gives
+
+    node(t) = cos(πq/p),
+
+an algebraic value whose degree is φ(m)/2, where m = 2p / gcd(q, 2) is the order of e^{iπq/p}. So rational parameters give a dense countable set of algebraic node values.
+
+On the other hand, x = cos(π/t) is strictly increasing on t ∈ [2, ∞), so each node value x ∈ [0, 1) comes from exactly one parameter t = π / arccos(x). Since the algebraic numbers form a countable set, only countably many parameters can produce algebraic node values at all. Every other parameter produces a transcendental node value. By Niven's theorem, the *only* rational node values on t ∈ [2, ∞) are node(2) = 0 and node(3) = 1/2.
+
+So the pseudo-Chebyshev continuation is a smooth analytic curve carrying a dense countable set of algebraic node values, a dense co-countable set of transcendental node values, and exactly two rational node values.
+
 ## Role
 
 The procedure produces a single node per n rather than n nodes per n. This makes it unsuitable as a drop-in replacement for Chebyshev interpolation, which needs a full node set. It is a candidate object for the Creati program: explicit, closed-form, integer-indexed, with algebraic degree tied to the crystallographic ψ-function. It gives a constructible circle-side analog of one mantissa value per representation resolution — a scalar at each n where the log-side has a scalar at each m.
 
 The difference between node(n) and its nearest rational or its nearest quadratic surd is a closed-form real number and is a candidate for comparison against ε(m) on the log side.
+
+Integer-indexed and real-t views together make this object a worked example of the integer/real continuation split. The reading-frame-level discussion lives in `n-gons/README.md` §"The Continuity Frame".
+
+## Demonstration
+
+The real-continuation of the pseudo-Chebyshev construction is plotted by `corners/pseudo_chebyshev_continuity.sage`; output lands at `figures/pseudo_chebyshev_continuity.png`. The figure shows the smooth curve with integer samples overlaid, in both the unit-circle geometric pane and the node-sequence pane.

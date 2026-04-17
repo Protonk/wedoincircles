@@ -398,7 +398,7 @@ Landfall’s use of Bowen is precise:
 - local information may exist,
 - but there is no invariant-measure-based way to aggregate it equivariantly across the binary tiling space.
 
-This is the source-level reason INSCRIPTION’s measure-based obstruction exists. See `../BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md` §"The §6 mechanism".
+This is the source-level reason INSCRIPTION’s measure-based obstruction exists. See `BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md` §"The §6 mechanism".
 
 ### 4. The Local-Corona Failure
 

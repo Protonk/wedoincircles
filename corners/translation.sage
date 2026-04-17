@@ -1,7 +1,7 @@
 """
 Translation deformation for the pseudo-Chebyshev construction.
 
-Companion to `corners/TRANSLATION.md`. Also complements
+Companion to `corners/CIRCLE-TRANSFORMATIONS.md` §3. Also complements
 `corners/pseudo_chebyshev_continuity.sage` (the c = 0 baseline) and
 `corners/uniform_scaling.sage` (the similarity-transformation foil).
 

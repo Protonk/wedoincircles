@@ -1,7 +1,7 @@
 """
 Signal plot for the subpolygon order g_n(DH) = gcd(n, DH).
 
-Companion to `tangencies/SUBPOLYGON.md`.
+Companion to `n-gons/SUBPOLYGON.md`.
 
 Three stacked panels for DH = 36, 360, 3600, showing the integer-valued
 function n -> g_n(DH) on 1 <= n <= 30. Green means full survival (g = n),

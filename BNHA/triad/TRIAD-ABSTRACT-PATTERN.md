@@ -30,19 +30,19 @@ The disciplines are complementary, not competing. A leg may borrow from another 
 
 Question: does the circle side's native closed-form identity structure have a genuine log-side cousin, or is the mismatch itself the obstruction?
 
-This is the CREATI leg. The exact formulas belong in `Creati/CREATI-THE-CIRCLE.md`. At the abstract level, Leg 1 tests whether circle-side algebraic closure transports at all. If it fails, the interesting result is not merely "no formula was found"; it is "the two sides support different kinds of rigid identity."
+This is the CREATI leg. The exact formulas belong in `BNHA/triad/Creati/CREATI-THE-CIRCLE.md`. At the abstract level, Leg 1 tests whether circle-side algebraic closure transports at all. If it fails, the interesting result is not merely "no formula was found"; it is "the two sides support different kinds of rigid identity."
 
 ### Leg 2: arithmetic matching
 
 Question: can arithmetic invariants on the circle side and log side be matched naturally enough to support a cross-domain rule, at least on a visible finite regime?
 
-This is the PERMEATE leg. The exact arithmetic objects belong in `Lemillion/PERMEATE-THE-CIRCLE.md` and the crystallographic source brief. At the abstract level, Leg 2 tests whether a matching rule survives saturation, where the decisive datum is often the first witness at which the pattern breaks.
+This is the PERMEATE leg. The exact arithmetic objects belong in `BNHA/triad/Lemillion/PERMEATE-THE-CIRCLE.md` and the crystallographic source brief. At the abstract level, Leg 2 tests whether a matching rule survives saturation, where the decisive datum is often the first witness at which the pattern breaks.
 
 ### Leg 3: residue / spectral rhyme
 
 Question: if pointwise transport is too strict, do the two sides at least share invariant-level structure such as decay, symmetry, or other residue behavior?
 
-This is the BIND leg. The actual objects and obstructions belong in `Eraserhead/BIND-THE-CIRCLE.md`. At the abstract level, Leg 3 tests whether any correspondence remains once the shared vocabulary is withheld and only native primitives are allowed.
+This is the BIND leg. The actual objects and obstructions belong in `BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md`. At the abstract level, Leg 3 tests whether any correspondence remains once the shared vocabulary is withheld and only native primitives are allowed.
 
 ## A shared arithmetic axis
 
@@ -85,10 +85,10 @@ The triad-level companion sits above the leg docs, not in competition with them.
 | Role | Doc |
 |---|---|
 | Concrete worked test | `memos/NIVEN-THREE-WAYS.md` |
-| Abstract pattern / reading frame | `TRIAD-ABSTRACT-PATTERN.md` |
-| Leg 1 home | `Creati/CREATI-THE-CIRCLE.md` |
-| Leg 2 home | `Lemillion/PERMEATE-THE-CIRCLE.md` |
-| Leg 3 home | `Eraserhead/BIND-THE-CIRCLE.md` |
+| Abstract pattern / reading frame | `BNHA/triad/TRIAD-ABSTRACT-PATTERN.md` |
+| Leg 1 home | `BNHA/triad/Creati/CREATI-THE-CIRCLE.md` |
+| Leg 2 home | `BNHA/triad/Lemillion/PERMEATE-THE-CIRCLE.md` |
+| Leg 3 home | `BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md` |
 
 ## Scope note
 

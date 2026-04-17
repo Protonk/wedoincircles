@@ -1,7 +1,7 @@
 """
 Uniform-scaling deformation for the pseudo-Chebyshev construction.
 
-Companion to `corners/DEFORMATION.md` (Deformation 2) and to the
+Companion to `corners/CIRCLE-TRANSFORMATIONS.md` §1 and to the
 arc-flattening script `corners/pseudo_chebyshev_continuity.sage`
 (the r = 1, d = 0 baseline).
 

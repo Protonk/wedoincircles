@@ -1,10 +1,10 @@
 # Pseudo-Champernowne Encoding of `M_N`
 
-The decimal encoding `C_N` of the counting-exhaustion word `M_N` (defined in [COUNTING.md](COUNTING.md)), and its behavior as `N` grows.
+The decimal encoding `C_N` of the counting-exhaustion word `M_N` (defined in [COUNTING.md](n-gons/counting/COUNTING.md)), and its behavior as `N` grows.
 
 ## Decimal Encoding
 
-Concatenating the entries of `M_N` as decimal digits gives `C_N`: the first entry is the integer part, the rest the mantissa. For `N = 8`, `C_8 = 1.11622222212`. `C_N` is terminating and therefore rational — Champernowne-like in method, but not irrational. Reading the entries instead as partial quotients of a continued fraction is a natural alternative encoding; see [DECIMAL-CF-COMPLEMENTARITY.md](DECIMAL-CF-COMPLEMENTARITY.md) for how the two encodings compare.
+Concatenating the entries of `M_N` as decimal digits gives `C_N`: the first entry is the integer part, the rest the mantissa. For `N = 8`, `C_8 = 1.11622222212`. `C_N` is terminating and therefore rational — Champernowne-like in method, but not irrational. Reading the entries instead as partial quotients of a continued fraction is a natural alternative encoding; see [DECIMAL-CF-COMPLEMENTARITY.md](n-gons/counting/DECIMAL-CF-COMPLEMENTARITY.md) for how the two encodings compare.
 
 ## Initial values
 

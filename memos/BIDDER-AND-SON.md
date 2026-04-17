@@ -64,7 +64,7 @@ step — one quantity to register, refined downward as more digits
 enter. Right-to-left would force registration of partial column-sums
 whose meaning isn't fixed until the final addition. So left-to-right is
 registration-driven, not stylistic. Structurally this is the coarse-first /
-refine-later split (see `LANDFALL-EXPORT.md` on Day's
+refine-later split (see `memos/LANDFALL-EXPORT.md` on Day's
 decoupling): fix the magnitude first, refine downward. Bidder
 arrived at this discipline a century before Mitchell's pseudo-log
 observation made the same shape a hardware concern.
@@ -420,7 +420,7 @@ The two methods are historical instances of two of this program's three discipli
 
 **The implicit BIND question.** Neither Bidder asks: what reals are *exactly* reachable as ℤ-linear combinations of the son's nine memorized log-constants? The set is dense in ℝ but measure-zero; the structure of the reachable subset is a closure question with depth (touching Baker's theorem on linear forms in logarithms of algebraic numbers). The son's method computes approximations, not exact values; the closure question is where a BIND-flavored discipline would enter, and is not pursued by either historical actor here.
 
-**Day-decoupling, by hand.** The son's "small factorable core × (1.001)^a × (1.0001)^b × (1.00001)^c" decomposition is mental-arithmetic Day-decoupling: a coarse stage (log of the core) plus a multi-scale correction stage where each scale contributes one decimal of resolution. The correction constants log(1+m) for m ∈ {0.001, 0.0001, 0.00001} are evaluated values of log₁₀(1+m) — Landfall's ε territory at small m. The son arrived at this structurally decoupled mental algorithm two generations before floating-point hardware made the same decoupling a hardware concern. See `LANDFALL-EXPORT.md` for the program's reading of Day's decoupling theorem.
+**Day-decoupling, by hand.** The son's "small factorable core × (1.001)^a × (1.0001)^b × (1.00001)^c" decomposition is mental-arithmetic Day-decoupling: a coarse stage (log of the core) plus a multi-scale correction stage where each scale contributes one decimal of resolution. The correction constants log(1+m) for m ∈ {0.001, 0.0001, 0.00001} are evaluated values of log₁₀(1+m) — Landfall's ε territory at small m. The son arrived at this structurally decoupled mental algorithm two generations before floating-point hardware made the same decoupling a hardware concern. See `memos/LANDFALL-EXPORT.md` for the program's reading of Day's decoupling theorem.
 
 **Lattice ↔ multiplicative interface, with a visible seam.** The father lives in the multiplicative structure (factor catalog, navigation by prime decomposition). The son lives in a lattice structure (the multi-scale grid is a ℤ-lattice in log space). Both methods compute the same log values when the target permits; they differ in which structure they prefer. Where one method becomes hard — father: targets in sparse multiplicative regions, requiring helper-multiplier tricks; son: targets that don't decompose cleanly across scales — the other often remains easy. The two methods together delineate the seam between the two structures, which is exactly the seam this program is tracking.
 

@@ -3,7 +3,7 @@ Continuity demonstration for the pseudo-Chebyshev construction.
 
 The pseudo-Chebyshev nodes (see `corners/PSEUDO-CHEBYSHEV-NODES.md`) are
 generated at integer n by the construction documented in
-`tangencies/WHOLENESS.md`: a regular n-gon circumscribing the unit
+`n-gons/N-GON-WHOLENESS.md`: a regular n-gon circumscribing the unit
 circle with one edge tangent at the anchor (1, 0); the corner of
 that edge above the anchor sits at (1, tan(π/n)); the segment from
 the origin to that corner crosses the unit circle at
@@ -21,7 +21,7 @@ geometric construction with integer-n segments overlaid on the
 continuous circle arc. The right pane shows the node-sequence curve
 with integer-n samples as stems.
 
-See `corners/CONTINUITY.md` for the accompanying seed note.
+See `corners/PSEUDO-CHEBYSHEV-NODES.md` §§"Real-t continuation" and "Arithmetic density along the curve" for the accompanying note.
 """
 
 import os

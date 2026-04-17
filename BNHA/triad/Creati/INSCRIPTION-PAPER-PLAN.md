@@ -1,12 +1,12 @@
 # INSCRIPTION-PAPER-PLAN
 
-Creati's advance planning for *Inscription*, the circle-side sibling paper to *Landfall*. Not the paper itself — the plan of attack, drafted while the catalog matter (`CREATI-THE-CIRCLE.md`) is still accreting.
+Creati's advance planning for *Inscription*, the circle-side sibling paper to *Landfall*. Not the paper itself — the plan of attack, drafted while the catalog matter (`BNHA/triad/Creati/CREATI-THE-CIRCLE.md`) is still accreting.
 
 **Audience of the eventual paper.** Assumed to have read *Landfall* and to know its six walls. The paper will state what differs and where the original work has to happen.
 
-**Scope.** 2D throughout. The ψ-function (`CREATI-THE-CIRCLE.md` item 8) extends the ambient story to higher dimensions; this paper does not.
+**Scope.** 2D throughout. The ψ-function (`BNHA/triad/Creati/CREATI-THE-CIRCLE.md` item 8) extends the ambient story to higher dimensions; this paper does not.
 
-**Residue object.** τ(n) = 2cos(2π/n) − round(2cos(2π/n)) — defined and cataloged at `CREATI-THE-CIRCLE.md` §C1. The paper plan assumes that definition and its listed properties.
+**Residue object.** τ(n) = 2cos(2π/n) − round(2cos(2π/n)) — defined and cataloged at `BNHA/triad/Creati/CREATI-THE-CIRCLE.md` §C1. The paper plan assumes that definition and its listed properties.
 
 ---
 

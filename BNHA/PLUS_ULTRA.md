@@ -4,7 +4,7 @@ A reference doc stating the three disciplines of our program, one per character.
 
 The character framing is whimsical — very Lewis Carroll if you hold it up to the light. The mathematical content is not. Where a character's quirk maps cleanly to a research discipline, we use the mapping. Where the analogy strains, we drop it and keep the constraint.
 
-Each discipline has its own doc one folder down in `triad/`: `triad/Eraserhead/BIND-THE-CIRCLE.md`, `triad/Creati/CREATI-THE-CIRCLE.md`, `triad/Lemillion/PERMEATE-THE-CIRCLE.md`. This file is the one-page map that says who does what.
+Each discipline has its own doc in `BNHA/triad/`: `BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md`, `BNHA/triad/Creati/CREATI-THE-CIRCLE.md`, `BNHA/triad/Lemillion/PERMEATE-THE-CIRCLE.md`. This file is the one-page map that says who does what.
 
 ## The three disciplines
 

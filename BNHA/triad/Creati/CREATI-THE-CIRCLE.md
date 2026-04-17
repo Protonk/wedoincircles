@@ -4,7 +4,7 @@ A research program conducted by the principle of construction. Every object in s
 
 ---
 
-**Pointer.** CREATI pursues one leg of a three-candidate approach to the functor F. The abstract triad pattern — identity / polynomial closure (this doc), arithmetic matching (PERMEATE), and residue / spectral rhyme (BIND) — is described in `../TRIAD-ABSTRACT-PATTERN.md`. CREATI is the home of Leg 1 only; the other legs are not pursued from inside this discipline.
+**Pointer.** CREATI pursues one leg of a three-candidate approach to the functor F. The abstract triad pattern — identity / polynomial closure (this doc), arithmetic matching (PERMEATE), and residue / spectral rhyme (BIND) — is described in `BNHA/triad/TRIAD-ABSTRACT-PATTERN.md`. CREATI is the home of Leg 1 only; the other legs are not pursued from inside this discipline.
 
 **Complementarity note.** CREATI, BIND, and PERMEATE are complementary disciplines by design, not by convergence. Each imposes a different productive constraint: CREATI's is **form** (every object a count, closed form, or identity), BIND's is **vocabulary** (Erasure: no ?(x), Farey, SB, Thomae, Denjoy), PERMEATE's is **preparation** (no cross-domain move without the saturation table behind it). Future lemmas will need to state what each reaches that the others cannot. This doc tolerates those gaps rather than papering them over.
 
@@ -54,7 +54,7 @@ Define τ(n) = 2cos(2π/n) − round(2cos(2π/n)). Closed form. Real-valued. Zer
 
 τ is constructible, countable at every integer n, and has closed-form properties: not periodic in n (a sequence on ℤ_{≥1} with τ(n) → 0 as n → ∞, since 2cos(2π/n) → 2 and round picks up 2 once n is large enough), boundedness in [−1/2, 1/2], and algebraic structure — τ(n) is algebraic of degree φ(n)/2 for n ≥ 5 outside {6}, inherited from 2cos(2π/n) minus an integer.
 
-The zero set {1, 2, 3, 4, 6} is the 2D crystallographic restriction (cf. item 8 on ψ): a 2D rotation matrix R_n in a lattice basis has integer trace exactly for n in this set. The rounding step that defines τ is free — lattice arithmetic — and τ is exactly what that rounding leaves behind. Higher-dimensional lattices enlarge the zero set via ψ; the sibling-paper draft `INSCRIPTION-PAPER-PLAN.md` works 2D throughout.
+The zero set {1, 2, 3, 4, 6} is the 2D crystallographic restriction (cf. item 8 on ψ): a 2D rotation matrix R_n in a lattice basis has integer trace exactly for n in this set. The rounding step that defines τ is free — lattice arithmetic — and τ is exactly what that rounding leaves behind. Higher-dimensional lattices enlarge the zero set via ψ; the sibling-paper draft `BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md` works 2D throughout.
 
 ### C2. The paired complexity table.
 
@@ -81,7 +81,7 @@ The highly composite numbers with prime support in {2, 3, 5} form an explicit li
 
 ### C5. The Chebyshev functor candidate (Leg 1 of the triad).
 
-CREATI pursues the Chebyshev-polynomial leg of F. The other two legs (crystallographic ↔ p-adic, τ_c / ε spectral rhyme) are not pursued from inside this discipline; see `../TRIAD-ABSTRACT-PATTERN.md`.
+CREATI pursues the Chebyshev-polynomial leg of F. The other two legs (crystallographic ↔ p-adic, τ_c / ε spectral rhyme) are not pursued from inside this discipline; see `BNHA/triad/TRIAD-ABSTRACT-PATTERN.md`.
 
 Define F on identities: the circle-side identity trace(R_n^m) = 2·T_m(cos(2π/n)) is a closed-form polynomial identity tying rotations at different n's. F, if it exists, must send this to a log-side closed-form identity tying ε at different m's. The question is whether such a log-side identity exists.
 
@@ -125,7 +125,7 @@ Four forms are admissible — three with known shape, one reserved for shape we 
 
 **An open-form result (reserved slot).** The Chebyshev leg may produce a result whose shape cannot be stated in advance — a structural claim that is neither a count nor a closed form nor a pre-existing identity, but instead names a new constructible object whose own closed form is the deliverable. This is the one place CREATI allows itself to be loose: loose about result-shape for a result we cannot yet name, tight about everything feeding into it. If the work produces an open-form result, that result retroactively extends the admissible catalog.
 
-**Historical instance.** The father's method in `../../../memos/BIDDER-AND-SON.md` is a 19th-century mental-arithmetic enactment of CREATI applied to log₁₀ computation: a memorized catalog of prime logarithms, plus perception of factor structure to decompose any target into catalog elements. Every result is downstream of the catalog; the difficulty is strategic catalog-traversal. Useful as a worked example of what a CREATI result looks like in a problem domain other than the n-gon construction.
+**Historical instance.** The father's method in `memos/BIDDER-AND-SON.md` is a 19th-century mental-arithmetic enactment of CREATI applied to log₁₀ computation: a memorized catalog of prime logarithms, plus perception of factor structure to decompose any target into catalog elements. Every result is downstream of the catalog; the difficulty is strategic catalog-traversal. Useful as a worked example of what a CREATI result looks like in a problem domain other than the n-gon construction.
 
 ## What is not built here
 

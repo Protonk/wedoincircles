@@ -1,10 +1,6 @@
 # n-gons
 
-The bridge directory for the regular-anchored-n-gon material. Two sibling directories hold the sides; this one holds the constructions that join them.
-
-- `tangencies/` — what the n-gon does at its edge midpoints on the incircle. Home of the wholeness apparatus and its gcd refinement.
-- `corners/` — what the n-gon does at its vertices. Home of the pseudo-Chebyshev nodes and the continuity / deformation / leash material that reads the node sequence as a smooth curve.
-- `n-gons/` (this directory) — the bridge: the strip and flip constructions, and the explicit statement that tangency data and corner data are two fixed-and-inverted faces of the same anchored n-gon.
+Home of the regular-anchored-n-gon material. Sibling `corners/` holds the vertex side (pseudo-Chebyshev nodes and `corners/CIRCLE-TRANSFORMATIONS.md`). This directory holds the edge-midpoint / tangency side (wholeness apparatus, gcd refinement, subpolygons) together with the bridge constructions (strip, flip) that make tangency and corner data visible as two fixed-and-inverted faces of the same anchored n-gon.
 
 Each construct below is a narrative bestiary entry with three movements: *what it is*, *what it does*, *what it wants*. Full mathematical content lives in the linked file.
 
@@ -20,7 +16,7 @@ What it wants. Two complementary parametrizations of DH. The positional axis (DH
 
 What it produces in the limit. Union all positions over all n up to N and you get a histogram h_N(p/q) = ⌊N/q⌋ on the rationals of [0, 1) — a finite-window scaling of Thomae's popcorn function. The Stern–Brocot tree governs how high each rational stands in this histogram.
 
-→ `tangencies/WHOLENESS.md`
+→ `n-gons/N-GON-WHOLENESS.md`
 
 ---
 
@@ -34,7 +30,7 @@ which records how many of the n-gon's tangency points land on the DH-grid around
 
 What it wants. A graded reading of survival in place of pass/fail, a prime-valuation form `g_n(DH) = ∏_p p^{min(v_p(n), v_p(DH))}`, and explicit worked examples along the `3.6 · 10^E` axis that make the Babylonian `v_3 ≤ 2` cap visible as a capped subpolygon-order exponent at prime 3.
 
-→ `tangencies/SUBPOLYGON.md`
+→ `n-gons/SUBPOLYGON.md`
 
 ---
 
@@ -70,23 +66,23 @@ The strip floor carries the n-gon tangency points at `x = k/n`. Drawing a DH-gri
 
 What it does. It removes the sense that subpolygons and pseudo-Chebyshev nodes are two unrelated constructions on the n-gon; they are the two natural things one can do with the n-gon, split by which radial location one reads.
 
-→ `n-gons/STRIP-AND-SUBPOLYGON.md`
+→ `n-gons/ARCHIMEDEAN-STRIP-FLIP.md` §§4–6
 
 ---
 
 ## The Continuity Frame
 
-Integer-indexed n-gon constructions admit real-valued continuations: replace `n ∈ ℤ` with real `t` and see what changes, what stays, and how the integer samples relate to the continuous object. The pseudo-Chebyshev nodes extend to the curve `x = cos(π/t)` on `t ∈ [2, ∞)`; deformations of the underlying arc (convex-preserving flattening, uniform scaling, translation) give a small family of continuations whose shape-preservation / shape-breaking pattern stratifies by a "leash" — a constraint on which properties survive which deformation.
+Integer-indexed n-gon constructions often admit real-valued continuations: replace `n ∈ ℤ` with real `t` and see what changes, what stays, and how the integer samples relate to the continuous object. The samples sit as discrete points on a smooth curve that is often analytically well-behaved; they carry arithmetic content — algebraic degree, factorization structure — that the curve itself does not. When a program move crosses from smooth analysis into arithmetic claims or vice versa, the continuation is where the crossing happens. The pseudo-Chebyshev nodes are the worked case: they extend to the curve `x = cos(π/t)` on `t ∈ [2, ∞)`, with integer `t` giving algebraic node values of degree φ(2n)/2, rational `t` giving a dense algebraic sampling, and by Niven exactly two rational node values (at `t = 2, 3`). Deformations of the underlying arc (convex-preserving flattening, uniform scaling, translation) give a small family of continuations whose shape-preservation / shape-breaking pattern stratifies by a "leash" — a constraint on which properties survive which deformation.
 
-What it wants. To be treated as the reading frame that holds smooth and arithmetic content side by side. CREATI closed-forms, PERMEATE saturation tables, and BIND domain-internal restatements each see a different slice.
+What it wants. To be treated as the reading frame — not a discipline — that holds smooth and arithmetic content side by side. CREATI closed-forms, PERMEATE saturation tables, and BIND Erasure-legal crossings each see a different slice.
 
-→ `corners/CONTINUITY.md`, `corners/DEFORMATION.md`, `corners/TRANSLATION.md`, `corners/LEASH.md`
+→ `corners/PSEUDO-CHEBYSHEV-NODES.md`, `corners/CIRCLE-TRANSFORMATIONS.md`
 
 ---
 
 ## The Stern–Brocot Layer (forthcoming)
 
-Inside `tangencies/WHOLENESS.md` §7, a sub-construct waits to be broken out. The position set `P_N = {k · 360°/n : 1 ≤ n ≤ N, 1 ≤ k < n}`, after dividing by 360°, lives on `[0, 1)` as a multiset of rationals. Each rational `k/n` has a specific depth in the Stern–Brocot tree (its level when the tree is rooted at `1/2` and grown by mediants), and the histogram `h_N(p/q) = ⌊N/q⌋` is exactly the Stern–Brocot depth function read over a finite window.
+Inside `n-gons/N-GON-WHOLENESS.md` §7, a sub-construct waits to be broken out. The position set `P_N = {k · 360°/n : 1 ≤ n ≤ N, 1 ≤ k < n}`, after dividing by 360°, lives on `[0, 1)` as a multiset of rationals. Each rational `k/n` has a specific depth in the Stern–Brocot tree (its level when the tree is rooted at `1/2` and grown by mediants), and the histogram `h_N(p/q) = ⌊N/q⌋` is exactly the Stern–Brocot depth function read over a finite window.
 
 What it will do, once extracted. Make explicit the binary-tree organization of the rationals the wholeness apparatus deposits.
 
@@ -100,7 +96,7 @@ A construct earns an entry here when it is (a) load-bearing across multiple prog
 
 Each new entry gets:
 
-- A self-contained definition file in `tangencies/`, `corners/`, or `n-gons/` (depending on which side of the apparatus it lives on).
+- A self-contained definition file in `corners/` or `n-gons/` (depending on which side of the apparatus it lives on).
 - A bestiary entry here with three movements: *what it is*, *what it does*, *what it wants* (this last one is permitted to be slightly anthropomorphic; the constructs are creatures, after all).
 
-If a construct is an adaptation of an external object — Niven's theorem, the 3DT, the crystallographic restriction — it belongs in `memos/`. If it is a discipline or program move — BIND, CREATI, PERMEATE, the F-question triad — it belongs in `../BNHA/triad/`. The n-gon constructs are the objects themselves, full stop.
+If a construct is an adaptation of an external object — Niven's theorem, the 3DT, the crystallographic restriction — it belongs in `memos/`. If it is a discipline or program move — BIND, CREATI, PERMEATE, the F-question triad — it belongs in `BNHA/triad/`. The n-gon constructs are the objects themselves, full stop.

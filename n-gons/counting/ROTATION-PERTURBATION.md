@@ -1,6 +1,6 @@
 # Rotation Perturbation of the Outside-Out Sweep
 
-The tangent-aligned construction described in [COUNTING.md](COUNTING.md) — the outside-out corner sweep that produces the counting-exhaustion word `M_N` and its Champernowne decimal `C_N` — is one point in an `(N−1)`-dimensional space of independent polygon rotations. Nothing in the method of exhaustion requires that alignment; this memo records what happens when the polygons are rotated off of it.
+The tangent-aligned construction described in [COUNTING.md](n-gons/counting/COUNTING.md) — the outside-out corner sweep that produces the counting-exhaustion word `M_N` and its Champernowne decimal `C_N` — is one point in an `(N−1)`-dimensional space of independent polygon rotations. Nothing in the method of exhaustion requires that alignment; this memo records what happens when the polygons are rotated off of it.
 
 ## Two-polygon toy
 

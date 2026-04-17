@@ -1,7 +1,7 @@
 """
 Subpolygon gallery for the designated-wholeness refinement.
 
-Companion to `tangencies/SUBPOLYGON.md`.
+Companion to `n-gons/SUBPOLYGON.md`.
 
 Show eight anchored n-gons through their tangency-point sets on the shared
 incircle. All ambient tangency points are drawn as open circles. Whole
