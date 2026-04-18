@@ -61,4 +61,4 @@ For our program this means: **we have four independent reasons to treat the cont
 - For the Gosper / computational perspective: `memos/LANDFALL-EXPORT.md`, especially §7 and Program-Facing Export 5.
 - For the discipline rule on admitting CF computation while forbidding the Stern-Brocot tree as organizing frame: `BNHA/PLUS_ULTRA.md`.
 - For the saturation-side use of convergents: `BNHA/triad/Lemillion/PERMEATE-THE-CIRCLE.md`.
-- For the program-level triad absorption and the cross-leg Liouville/Diophantine axis: `memos/NIVEN-THREE-WAYS.md`, `BNHA/triad/TRIAD-ABSTRACT-PATTERN.md`.
+- For the program-level triad absorption and the cross-leg Liouville/Diophantine axis: `BNHA/triad/NIVEN-THREE-WAYS.md`, `BNHA/triad/TRIAD-ABSTRACT-PATTERN.md`.

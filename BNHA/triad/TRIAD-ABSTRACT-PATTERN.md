@@ -1,6 +1,6 @@
 # TRIAD-ABSTRACT-PATTERN
 
-The abstract companion to `memos/NIVEN-THREE-WAYS.md`. Niven is the concrete test case: one solved theorem, three routes, one visible handoff. This note states the pattern that test is probing.
+The abstract companion to `BNHA/triad/NIVEN-THREE-WAYS.md`. Niven is the concrete test case: one solved theorem, three routes, one visible handoff. This note states the pattern that test is probing.
 
 The core claim is modest. We are not assuming a single functor `F` already exists between the log-side and circle-side obstructions. We are testing three distinct *attack shapes* for such an `F`, each with its own primitives, its own discipline of best fit, and its own characteristic way of failing.
 
@@ -16,13 +16,13 @@ This is the only load-bearing claim at the triad level. Everything else is leg-s
 
 ## The three disciplines
 
-Each leg lives where its natural primitives already exist.
+Each leg lives where its natural primitives already exist. The split is at the level of **elementary posture toward mathematics**: each discipline names a distinct kind of mathematical work, and the characters are load-bearing nicknames for the postures.
 
-- **CREATI** supplies **form**. Every object must be a count, a closed form, or an identity. This is the right home when the question is whether one side's rigid identities or algebraic closure have a counterpart on the other.
-- **PERMEATE** supplies **preparation**. No cross-domain move is admitted without the small-case table that would let a reader anticipate it. This is the right home when the question is whether arithmetic matching survives saturation.
-- **BIND** supplies **vocabulary hygiene**. The shared vocabulary is erased so each side has to speak in its own primitives. This is the right home when the question is whether residue-level or spectral structure survives after the easy analogies are removed.
+- **CREATI** supplies **form**; the posture is **constructive**. Every object must be a count, a closed form, or an identity. This is the right home when the question is whether one side's rigid identities or algebraic closure have a counterpart on the other.
+- **PERMEATE** supplies **preparation**; the posture is **translational**. No cross-domain move is admitted without the small-case table that would let a reader anticipate it. This is the right home when the question is whether arithmetic matching survives saturation.
+- **BIND** supplies **vocabulary hygiene**; the posture is **constrictive**. The shared vocabulary is erased so each side has to speak in its own primitives. This is the right home when the question is whether residue-level or spectral structure survives after the easy analogies are removed.
 
-The disciplines are complementary, not competing. A leg may borrow from another discipline, but when it does, the borrowing should be explicit.
+The postures are complementary, not competing — and complete: build, translate, constrict are the three natural things one can elementarily do to attack an unknown functor F, and the triad has exactly one canonical home for each. A leg may borrow from another, but when it does, the borrowing should be explicit.
 
 ## The three legs
 
@@ -67,7 +67,7 @@ So the outcome taxonomy is:
 
 ## How this pairs with Niven
 
-`memos/NIVEN-THREE-WAYS.md` is the concrete base case.
+`BNHA/triad/NIVEN-THREE-WAYS.md` is the concrete base case.
 
 - It shows what a triad run looks like on a theorem whose answer is already known.
 - It shows that the disciplines are not just stylistic labels; they sort real proof behavior.
@@ -84,7 +84,7 @@ The triad-level companion sits above the leg docs, not in competition with them.
 
 | Role | Doc |
 |---|---|
-| Concrete worked test | `memos/NIVEN-THREE-WAYS.md` |
+| Concrete worked test | `BNHA/triad/NIVEN-THREE-WAYS.md` |
 | Abstract pattern / reading frame | `BNHA/triad/TRIAD-ABSTRACT-PATTERN.md` |
 | Leg 1 home | `BNHA/triad/Creati/CREATI-THE-CIRCLE.md` |
 | Leg 2 home | `BNHA/triad/Lemillion/PERMEATE-THE-CIRCLE.md` |

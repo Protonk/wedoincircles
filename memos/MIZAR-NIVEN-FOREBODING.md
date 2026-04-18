@@ -2,7 +2,7 @@
 
 A future-facing memo on Korniłowicz & Naumowicz, *Niven's Theorem*, Formalized Mathematics 24(4), 2016, pp. 301–308.
 
-This is not here because the program needs Mizar today. It is here because this is the sort of paper future-us may suddenly care about: a formally verified version of exactly the Chebyshev / monic-ℤ / rational-root chain that keeps showing up around Niven, the crystallographic set, and the circle-side closure story. Accompanying memo: `memos/NIVEN-THREE-WAYS.md`.
+This is not here because the program needs Mizar today. It is here because this is the sort of paper future-us may suddenly care about: a formally verified version of exactly the Chebyshev / monic-ℤ / rational-root chain that keeps showing up around Niven, the crystallographic set, and the circle-side closure story. Accompanying memo: `BNHA/triad/NIVEN-THREE-WAYS.md`.
 
 ## Why keep this around
 
