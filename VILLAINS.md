@@ -27,3 +27,13 @@ This is the avalanche. Every computational instantiation of $\text{node}(n)$ —
 If the real mismatch between the two sides is not a closure mismatch between $\mathbb{Z}[x]$ and $\text{Aff}^+(\mathbb{R})$ but an ontology mismatch — a space whose native elements are algebraic-of-unbounded-degree against a space whose native elements are rational-of-bounded-width — then the no-functor verdict is not a theorem earned at the end of the work, it is an inheritance baked in at the beginning. Every finite witness on the circle side is already a fragment.
 
 **His question.** Regularity in the integer index gives you an avalanche of algebraic irrationality of unbounded degree. Every finite computational witness collapses that irrationality to the rational envelope of its medium. Can computation outrun the degeneracy — can any finite act on the circle side preserve even a shadow of the algebraic structure — or is every witness you'll ever produce already dust the moment you touch it?
+
+## #4 — Proteus
+
+BIND's discipline declares Stern–Brocot, Farey, Thomae, Minkowski $?(x)$, and mediant geometry erased from the operative vocabulary. The Archimedean strip is then used as a geometric substitute that, in the discipline's own words, "binds around the Stern–Brocot / Thomae object without engaging it." The obstruction is not handled; it is constricted. Any re-entry of an erased primitive forces a restart.
+
+But the strip's native coordinates are $k/n$ on the tangency axis and $\sec(\pi/n) - 1$ on the peak axis. The position set $P_N = \{k \cdot 360°/n\}$, whose histogram is Thomae's popcorn function and whose hierarchy is Stern–Brocot depth, is exactly the set BIND retains. Reduction to lowest terms is never written — but every time two arcs from different $n$ meet at a shared $x$-coordinate, that meeting is the equivalence of $k_1/n_1$ and $k_2/n_2$ as the same reduced rational $p/q$. BIND's vocabulary omits the names; its geometry carries the content.
+
+An independent derivation would reach a conclusion a Stern–Brocot-native derivation demonstrably cannot. A laundered derivation would reach the *same* conclusion under substitute vocabulary, making Erasure a writing discipline rather than a mathematical one. The file's own choice of "constricted" over "handled" is the admission.
+
+**His question.** Name one BIND-derivable theorem whose *content* — not whose proof text — cannot be reached through a Stern–Brocot-native derivation. If every Archimedean-constriction result has a Stern–Brocot-native counterpart with identical content, the third leg's independence is lexical, not structural, and one of the triad's three chairs is empty.
