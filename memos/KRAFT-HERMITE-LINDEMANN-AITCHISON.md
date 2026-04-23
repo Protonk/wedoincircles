@@ -1,0 +1,244 @@
+# KRAFT-HERMITE-LINDEMANN-AITCHISON
+
+A search memo on whether effective Hermite–Lindemann at $n=1$ — transcendence of $\pi$ with an effective irrationality measure — can be reproduced as a pure Kraft argument on the circle. The ambition is to replace Hermite's 1873 integral-auxiliary construction with a Kraft–Parseval budget assembled from three pieces already on the program's desk: (i) Aitchison's 1959 density-side Fourier expansion on $\mathbb{T}$ via Poisson summation (`sources/A Statistical Theory of Remnants.pdf`), (ii) the Erdős–Turán–Koksma discrepancy-sum inequality in its multi-dimensional harmonic-weighted form (`sources/K-N-Chapter2.pdf`, §2 and p. 116), and (iii) the Kraft-arithmetic machinery already in use on the log side at `memos/LANDFALL-EXPORT.md` §5.
+
+The non-obvious hook — the part the memo proposes but does not yet prove — is that **Dido**'s isoperimetric extremum, expressed in Hurwitz's 1902 Fourier-analytic form, gives $\pi$ a variational certificate whose Fourier-support condition is native to the Kraft–Parseval budget. That removes the need to route through the exp-map the way classical Hermite–Lindemann does, and pairs the transcendence statement to the geometry of approximating the circle by polygons rather than to algebraic relations among $e^\alpha$ for algebraic $\alpha$. This is what the program's opening commitment to "approximating the circle" reaches for. If the memo closes, the deliverable is not a new theorem but a new **proof structure** with an explicit effective constant extractable from the budget — and, if the lineage check passes, a strictly pre-L–W provenance.
+
+This is a **search doc**, not a result doc. It lays out four prerequisites — (A) the Kraft–Parseval budget itself, (B) the Hurwitz–Dido extremum as $\pi$'s native variational certificate, (C) the auxiliary-free Hermite replacement, (D) the effective rate and L–W-safety audit — tracks what's known and unknown for each, and notes which existing repo material feeds in. Progress gets appended here until the pieces are sharp enough to state a theorem; at that point the result-shaped material promotes out.
+
+---
+
+## The target
+
+Single sentence, honest about uncertainty:
+
+> Reprove transcendence of $\pi$ (Hermite–Lindemann at $n=1$) as the saturation of a Kraft–Parseval budget (Aitchison $\times$ Erdős–Turán–Koksma) against the Hurwitz–Dido isoperimetric extremum, with an effective $|q\pi - p| \gg q^{-C}$ constant extractable from the same argument and strictly pre-L–W provenance verified.
+
+Landfall template, compressed. `memos/LANDFALL-EXPORT.md` §5 already reads prefix-free halting domains through Kraft's inequality and concludes "composition redistributes the available Kraft budget; it does not create the missing correction." On the log side, the uncorrected-by-finite-composition object is $\varepsilon(m) = \log_2(1+m) - m$; the pointwise transcendence statement (Landfall §4) is $\varepsilon(k/2^p)$ transcendental at every interior machine dyadic, via Gelfond–Schneider. On the circle side, the uncorrected-by-finite-composition object is $\pi$ itself, and the pointwise transcendence statement the program would like is H–L at $n=1$. The two statements sit at the same altitude on their respective sides — they're the clean arithmetic-depth fact each program leg wants to land.
+
+Desired shape, paralleling `memos/COUNTING-APPARATUS.md`'s "equivariant surrogate / residue / compute-cost" triptych:
+
+- **Equivariant surrogate**: inscribed (or circumscribed) regular $n$-gon. Free in cyclotomic arithmetic: vertex coordinates are $(\cos(2\pi k/n), \sin(2\pi k/n))$, algebraic of degree $\varphi(2n)/2$. See the catalog at `corners/PSEUDO-CHEBYSHEV-NODES.md`.
+- **Residue**: the isoperimetric deficit $L^2 - 4\pi A$, Hurwitz form $4\pi^2 \sum_{|n|\ne 1} n(n-1)\,|c_n|^2$. Zero iff the curve is a circle. Archimedean rate: $(L_n^{\text{insc}})^2 - 4\pi A_n^{\text{insc}} = \Theta(1/n^2)$ for regular $n$-gons.
+- **Kraft–Parseval budget**: Erdős–Turán–Koksma, $D_N \lesssim 1/m + \sum_{0 < \|\mathbf{h}\|_\infty \le m} r(\mathbf{h})^{-1}\, |S_N(\mathbf{h})|$ with $r(\mathbf{h}) = \prod_j \max(|h_j|, 1)$ (K-N p. 116), paired with Aitchison's density-side $d(g, u) \le \sum_{r \ne 0} |C_X(2\pi r)|$ (Aitchison 2.3, with $k$-dim twin at 6.8). The pairing is: E-T-K supplies the *a priori* dual-lattice weight, Aitchison supplies the *a posteriori* per-frequency density mass.
+- **Effective rate**: $|q\pi - p| \ge c\, q^{-C}$ with $C$ extractable from (Archimedean exponent) $\times$ (cyclotomic height growth) $\times$ (Kraft–Parseval harmonic constant). Compare against Salikhov's 7.6 (current best) and Mahler's 42 (1953).
+
+---
+
+## Methodological precedent
+
+Fortnow 2000 §2 reproves the **infinitude of primes** via Kolmogorov incompressibility: take Kolmogorov-random $m$ of length $n$, suppose the prime list $p_1, \ldots, p_k$ is finite, write $m = p_1^{e_1} \cdots p_k^{e_k}$, note that $|\langle e_1, \ldots, e_k\rangle| \le 2k \log\log m$, conclude $C(m) \le 2k \log(n+1) + c$, contradicting $C(m) \ge n$ for large $n$. The same technique yields the effective $p_i \le i (\log i)^2$ bound — close to the Prime Number Theorem, derived from the complexity side. Fortnow §3 extends the same **cut-and-paste** template to runs in random strings: if $x$ contains a run of zeros longer than a specific length, then $x$ admits a short description, contradicting randomness.
+
+These are the direct structural precedent for this memo's ambition: a classical theorem reproved through a Kraft-accounted incompressibility argument, with an effective rate extractable as a side effect of the argument. Euclid → incompressibility (Fortnow §2) is the miniature of effective H–L at $n = 1$ → Kraft budget (this memo). The memo should keep that template in view when writing §(C) below. See `memos/FORTNOW-KOLMOGOROV-BRIEF.md` §§2–3.
+
+---
+
+## (A) The Kraft–Parseval budget
+
+**What it is.** A joint Fourier-side accounting of how discrepancy of the sequence $(n\pi) \bmod 1$ (or multi-dim generalizations on $\mathbb{T}^k$) decays with $N$, with a weight structure that is literally Kraft-shaped on the dual lattice.
+
+**What the two sources contribute.**
+
+Erdős–Turán (K-N Thm 2.5):
+
+$$D_N \le \frac{6}{m+1} + \frac{4}{\pi}\sum_{h=1}^m \left(\frac{1}{h} - \frac{1}{m+1}\right)\left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i h x_n}\right|.$$
+
+Multi-dim Erdős–Turán–Koksma (K-N p. 116):
+
+$$D_N \le C_k\!\left(\frac{1}{m} + \sum_{0 < \|\mathbf{h}\|_\infty \le m} \frac{1}{r(\mathbf{h})}\,\bigl|S_N(\mathbf{h})\bigr|\right),\qquad r(\mathbf{h}) = \prod_{j=1}^k \max(|h_j|, 1).$$
+
+The sum $\sum_{\|\mathbf{h}\|_\infty \le m} 1/r(\mathbf{h}) \asymp (\log m)^k$: one log-factor per independent frequency band. That is a proper Kraft budget on the dual lattice — harmonic-Kraft, one dyadic band's worth of description mass per dimension.
+
+Aitchison 1959, density-side twin. For $X$ a random variable with density $f$ on $\mathbb{R}$, the fractional-part density $g(y) = \sum_r f(y+r)$ equals $1 + \sum_{r \ne 0} C_X(2\pi r) e^{-i2\pi r y}$ (his 2.2), and
+
+$$d(g, u) := \sup_y |g(y) - 1| \le \sum_{r \ne 0} |C_X(2\pi r)|$$
+
+(his 2.3). The $k$-dim analog (his 6.3, 6.8) uses the multi-dim Poisson summation with the same Parseval-flavored weighting through the joint characteristic function $C_{\mathbf{X}}(2\pi \mathbf{r})$. For Gaussian $\mathbf{X}$, the decay is exponential in $|\mathbf{r}|^2$; for sharper densities, power-law.
+
+**How they pair.** Aitchison gives the *density-side a posteriori* weight through $C_X(2\pi r)$; E-T-K gives the *empirical-side a priori* weight through $1/r(\mathbf{h})$. If the empirical sequence $(x_n)$ is drawn from a density with characteristic function $C_X$, the expected Weyl sum $|S_N(\mathbf{h})|$ is bounded by $|C_X(2\pi \mathbf{h})|$ plus sampling noise of order $N^{-1/2}$, and the joint budget becomes
+
+$$D_N \lesssim \frac{1}{m} + \sum_{\|\mathbf{h}\|_\infty \le m} \frac{1}{r(\mathbf{h})}\bigl(|C_X(2\pi \mathbf{h})| + N^{-1/2}\bigr).$$
+
+This is the single Kraft–Parseval budget the memo is proposing to run. It interpolates between the "smooth density" and "empirical orbit" regimes, each of which has a classical Fourier bound; their pairing is the content.
+
+**What's partially closed (Fortnow §6).**
+
+- The universal semicomputable measure $\mu(x) = 2^{-K(x)}$ together with **Fortnow's Fact 6.2** (universal dominance: any semicomputable $\tau$ with $\sum_x \tau(x) \le 1$ satisfies $\tau(x) \le c\, \mu(x)$) supplies the canonical prefactor this memo was asking for. It is Chaitin's $c$ in Fact 6.2 — the right model-facing constant to sit in front of the budget. The sequence-facing constants (K-N's $2^{3k+1}$ multi-dim constant from Koksma–Szüsz; Aitchison's $\frac{1}{2}$ from eq 2.3) are absorbed into $c$ once the sequence is recast as a semicomputable sub-probability distribution on the dual lattice. See `memos/FORTNOW-KOLMOGOROV-BRIEF.md` §6. Book-keeping task remaining: write out the explicit combination for our sequences of interest.
+- **Fortnow's Theorem 6.3** (`T_worst(n) = O(T_average(n))` under $\mu$) is a candidate *second line of argument*: any worst-case rate lower bound on approximating $\pi$ by rationals at denominator $q$ converts, under $\mu$, to an average-case statement over universally-weighted rationals near $\pi$, with matching-order worst-case falling out of universal dominance. Flag as exploratory; feeds step 2a of §"Proposed order of work" if the memo reaches that step.
+
+**What remains open.**
+
+- Thue–Siegel–Roth (K-N Example 3.1) says algebraic irrationals are of type 1, hence $ND_N = O(N^\varepsilon)$. This is an **input** to the budget for algebraic sequences; it does not fall out of the budget. So the budget discriminates algebraic from transcendental $\alpha$ only *through* the type, which is an exogenous input. This asymmetry has to be lived with: the budget does not prove transcendence by itself; it provides the comparison quantity against which transcendence is detected.
+
+---
+
+## (B) The Hurwitz–Dido extremum
+
+**What it is.** Dido's classical problem: given a fixed perimeter $L$, maximize the enclosed area $A$. Answer: circle, with $L^2 = 4\pi A$. Hurwitz 1902's Fourier-analytic proof: for a smooth simple closed curve parametrized by arc-length, expand the parametrization in Fourier series; Parseval gives $\sum n^2 |c_n|^2 = (L/2\pi)^2$ and a matching Parseval identity for the area integral, yielding the sharp inequality
+
+$$L^2 - 4\pi A = 4\pi^2 \sum_{n \ne 0} n(n-1)\,|c_n|^2 \ge 0,$$
+
+with equality iff $c_n = 0$ for every $|n| \ne 1$. The extremum is a **Fourier-support condition**: circles are the unique curves whose arc-length parametrization has Fourier mass on frequencies $\pm 1$ only.
+
+**Why this is the right certificate for $\pi$.** $\pi$ appears as the coefficient of $A$ in the Parseval quadratic form, in a way that is immediately sensitive to Fourier support. There is no exp-map in sight. Historically, the Parseval constant $\pi$ is pre-L–W (Fourier 1822, Parseval 1799), pre-Hermite (1873), and well pre-Lindemann (1882). Hurwitz's 1902 proof is chronologically post-Lindemann but uses no transcendence input — it is a direct Fourier/Parseval identity on an arc-length parametrization.
+
+The Fourier-support condition ($c_n = 0$ for $|n| \ne 1$) is **combinatorially** encodable in principle: two nonzero modes, everything else vanishing. That is the part the memo bets can be fed into the Kraft budget as a prefix-free certificate.
+
+**What's open.**
+
+- Explicit Fourier coefficients of the regular $n$-gon's arc-length parametrization. Because the parametrization is piecewise linear with $n$ corners, its Fourier coefficients fall off like $1/k^2$ at frequencies $k \not\equiv 0 \pmod n$ and have a specific peak structure at $k \equiv \pm 1 \pmod n$. A closed-form calculation should be direct from geometry; the result has not been written out in this repo.
+- Verify Hurwitz's identity closes on those explicit coefficients: $(L_n^{\text{insc}})^2 - 4\pi A_n^{\text{insc}}$ should equal $4\pi^2 \sum_{k \ne 0} k(k-1)|c_k^{(n)}|^2$, with the sum computable in closed form. Expect $\Theta(1/n^2)$ — matching Archimedes.
+- Whether the support condition $\{|n|=1\}$ is Kraft-encodable without secretly already using the transcendence of $\pi$. The condition is linear on an infinite-dimensional space; the encoding question is whether it can be written as a finite prefix-free description. A natural target: code the polygon-vs-circle *gap* as a prefix-free string whose length is bounded by the polygon's algebraic-depth $\varphi(2n)/2$. Whether this works is the first concrete check (B) asks to run.
+
+---
+
+## (C) The auxiliary-free Hermite replacement
+
+**What classical Hermite–Lindemann does.** Construct an auxiliary polynomial $f$ of bounded degree, define the integral
+
+$$I(t) = \int_0^t e^{-x} f(x)\,dx,$$
+
+derive two inequalities on $I(1)$: one bounding it above (small, because $f$ is small and the integral is short) and one bounding it below (nonzero algebraic integer if $e$ or $\pi$ were algebraic, hence $\ge 1$ in absolute value over its Galois orbit). Contradiction. The $e^{-x}$ is what forces the exp-map detour.
+
+**Dido route proposal.** Replace the exp-kernel integral with a Fourier–Parseval integral of the polygon-versus-circle gap. The "auxiliary" becomes the polygon's own parametrization, whose Fourier coefficients are already algebraic in cyclotomic data. The Hurwitz gap $(L_n^{\text{insc}})^2 - 4\pi A_n^{\text{insc}}$, evaluated at the $n$-gon, is an elementary expression in $\cos(2\pi/n), \sin(2\pi/n)$, and $\pi$. That is the candidate "small quantity."
+
+**Speculative proof-shape — cut-and-paste (Fortnow §3).** *We speculate here on a possible proof shape, with this as a candidate and nothing more — the translation it requires has not been done in this repo and is not yet known to go through.* The polygon-vs-circle gap at level $n$ is a form of *run* in the approximation of $\pi$: a region where the polygon's algebraic data agree with $\pi$ to Archimedean accuracy $\Theta(1/n^2)$. Fortnow §3's cut-and-paste template says that runs longer than a threshold (there: $2 \log n$ zeros in a random string) force a description shorter than the complexity floor, contradicting randomness. The candidate transposition: an agreement between the $n$-gon algebraic approximant and $\pi$ past a specific Archimedean-rate threshold would, under the algebraic-$\pi$ hypothesis, force $K(\pi)$ below the cyclotomic height at that level, contradicting the hypothesis. Needs the `K`-to-algebraic-height translation made rigorous before the argument carries weight; flagged here so §(C) has a candidate shape in view when directed attempts start. See `memos/FORTNOW-KOLMOGOROV-BRIEF.md` §3 for Fortnow's template in its native string-complexity register.
+
+**The load-bearing inequality.** If $\pi$ were algebraic of degree $d$, the gap would be algebraic of joint degree $\le d \cdot \varphi(2n)/2$, with height controllable in the joint cyclotomic $\times \mathbb{Q}(\pi)$ field. Its absolute value is $\Theta(1/n^2)$ by Archimedes. The classical "nonzero algebraic integer is $\ge$ one-over-denominator" lower bound (Liouville 1844) forces contradiction when the height grows slower than $n^2$.
+
+**What's open.**
+
+- Computing polygon-vs-circle Fourier coefficients in closed form. (Overlaps with (B).)
+- Controlling the height of $(L_n^{\text{insc}})^2 - 4\pi A_n^{\text{insc}}$ in the joint field under the algebraic-$\pi$ hypothesis. The polygon contribution has height $\exp(O(\varphi(2n))) \le \exp(O(n))$; the $4\pi A_n$ contribution's height under the hypothesis is bounded by $n$-independent constants times a $d$-depending height. The joint height should grow as $\exp(O(n))$, which competes with $1/n^2$: the right inequality runs if the **height–area gap ratio** falls inside a specific band.
+- Verifying that the Liouville-height step stays elementary. Liouville 1844 is pre-Hermite; it predates every classical transcendence result. Using it on a joint cyclotomic $\times \mathbb{Q}(\pi)$ field should still be pre-L–W, but requires careful height-book-keeping. The natural sharpening — Baker 1966 effective linear forms in logarithms — is **post**-L–W and would be a circularity signal; see (D).
+
+---
+
+## (D) Effective rate and L–W-safety
+
+**What falls out if (A), (B), (C) close.** A bound of form $|q\pi - p| \ge c\, q^{-C}$ with $C$ extractable from three ingredients:
+
+- **Archimedean exponent**: 2, from $\Theta(1/n^2)$ polygon-vs-circle gap. Pre-L–W (Archimedes).
+- **Cyclotomic degree growth**: $\varphi(2n)/2$, averaging $\sim n/\log\log n$ per Erdős–Kac. Pre-L–W (Gauss).
+- **Kraft–Parseval harmonic constant**: $O(\log m)$ or $O(\log^2 m)$ from the E-T-K weight, possibly with an $m$-dependence that tightens after matching to Aitchison's density-side decay. Pre-L–W methodologically.
+
+Expected ballpark: $C$ in the range 2 to about 10, under Archimedean-squeeze + cyclotomic-height matching. Compare Salikhov 7.6 (2008, current best), Mahler 42 (1953). A $C$ in that range would be competitive with the transcendence-theoretic literature; a $C$ in the 20s would be historically interesting only as a pre-L–W argument.
+
+**L–W-safety tags** (per `memos/LINDEMANN-BRIEF.md` §"Exit criteria"):
+
+| Ingredient | Source | Tag |
+|---|---|---|
+| Archimedean squeeze | Archimedes, ~250 BCE | Pre-L–W |
+| Cyclotomic degree $\varphi(2n)/2$ | Gauss, cyclotomic theory | Pre-L–W |
+| Hurwitz Fourier-isoperimetric identity | Hurwitz 1902 | Pre-L–W methodologically (no transcendence input) |
+| Liouville lower bound on algebraic-integer heights | Liouville 1844 | Pre-L–W (predates Hermite 1873 by 29 years) |
+| Aitchison Poisson-summation density bound | Aitchison 1959 | Post-L–W chronologically, pure Fourier/Parseval methodologically |
+| Erdős–Turán / Koksma discrepancy-sum | E-T 1948, Koksma 1950s | Post-L–W chronologically, pure Fourier/Weyl methodologically |
+
+**If** every step stays inside these tools, the argument is strictly pre-L–W in lineage. That is the novelty claim, not any numerical tightness. A pre-L–W proof of transcendence of $\pi$ with any effective rate would be a rewriting result; if the rate is competitive with Salikhov, it is also a transcendence-theory result.
+
+**What's open.**
+
+- Whether the Liouville-height step generalizes to the joint cyclotomic $\times \mathbb{Q}(\pi)$ field without silent upgrade to Baker / Gelfond–Schneider. This is the place to audit carefully.
+- Whether a tight **heightwise** version of Liouville exists at the joint field — or whether the honest next step is Feldman's 1960 effective Liouville (which uses Padé approximants; see Landfall §4's "Padé Ghost" for a related flavor) or something similar pre-Baker.
+- Whether the full rate is vacuous ($C = \infty$) because the Archimedean gap $1/n^2$ and the cyclotomic height $\exp(O(n))$ misalign. If so, the memo ends in (3) below: a circularity-free negative result, which is still informative as a lineage check.
+
+---
+
+## Adjacent anchors
+
+- [memos/LANDFALL-EXPORT.md](memos/LANDFALL-EXPORT.md) — §5 Kraft machinery is the log-side template this memo transposes; §4 is the log-side pointwise transcendence statement ($\varepsilon(k/2^p)$ transcendental, via Gelfond–Schneider — noting the asymmetry: the log side uses post-L–W machinery for its pointwise statement, while this memo hopes to avoid it on the circle side).
+- [memos/LINDEMANN-BRIEF.md](memos/LINDEMANN-BRIEF.md) — the circularity map. Every step of this memo's argument has to be tagged per that brief's §"Exit criteria" classification (pre-L–W / background / essential / circular).
+- [memos/3DT-BRIEF.md](memos/3DT-BRIEF.md) — Lefèvre–Muller 1998 use 3DT for table-maker's-dilemma worst-case filtering; that is the log-side precedent for "Kraft + Diophantine arguments on a rotation orbit." Structurally parallel to what this memo wants on the circle side.
+- [memos/CONTINUED-FRACTIONS-CROSSWALK.md](memos/CONTINUED-FRACTIONS-CROSSWALK.md) — the continued-fraction convergents of $\pi$ are the arithmetic substrate under the Archimedean polygon approximation; the crosswalk supplies four independent lenses on this substrate.
+- [memos/LOWER-BOUND-COUNTRY.md](memos/LOWER-BOUND-COUNTRY.md) — the symmetric partner to `memos/RAMANUJANS-COMPLIMENT.md`; the complexity-theoretic reading queue. If this memo's argument lands as a compute-cost lower bound rather than a transcendence measure, promotion target is there.
+- [corners/PSEUDO-CHEBYSHEV-NODES.md](corners/PSEUDO-CHEBYSHEV-NODES.md) — circle-side algebraic-depth catalog: $\cos(\pi/n)$ of degree $\varphi(2n)/2$, first non-constructible at $n=7$. These are the polygon vertices in (C).
+- [corners/CIRCLE-TRANSFORMATIONS.md](corners/CIRCLE-TRANSFORMATIONS.md) §4 Leash framework — the tightness–informativeness tradeoff is the framework for what Hurwitz's extremum condition is buying: the Fourier-support condition is the tightest possible leash on a planar simple closed curve.
+- [BNHA/SirNighteye/DONT-BELIEVE-ME-JUST-WATCH.md](BNHA/SirNighteye/DONT-BELIEVE-ME-JUST-WATCH.md) — disanalogies D1 (algebraic vs transcendental characters) and D4 (finite vs infinite character group) are what distinguish the unit-circle Fourier side (where Hurwitz's identity is exact) from the log-binade-circle Fourier side (where the Fourier tail at $O(1/n^2)$ never terminates). This memo lives entirely on the unit-circle side, and the disanalogies are what make the circle side available to the argument while the log side is not.
+- `sources/A Statistical Theory of Remnants.pdf` — Aitchison 1959, JRSS B 21(1). Equations (2.2), (2.3), and the $k$-dim (6.3), (6.8) are the density-side Fourier bounds.
+- `sources/K-N-Chapter2.pdf` — Kuipers–Niederreiter 1974, *Uniform Distribution of Sequences*, Ch. 2. Theorems 2.5 (Erdős–Turán), 3.2 / 3.4 (type-based bounds on $(n\alpha) \bmod 1$), Example 3.1 (Thue–Siegel–Roth as type 1 for algebraic irrationals), and the multi-dim Erdős–Turán–Koksma on p. 116.
+- `sources/the table maker's dilemma.pdf` — Lefèvre–Muller–Tisserand 1998. §2.2.1 is the 3DT-based filter already extracted into `memos/3DT-BRIEF.md`; the implicit Kraft accounting on worst-case bits is the log-side template.
+
+**Anchors yet to be written:**
+
+- Possibly `memos/HURWITZ-ISOPERIMETRIC-BRIEF.md` — a focused source extraction of Hurwitz 1902, "Sur le problème des isopérimètres" (*Comptes Rendus*) and/or the later expository version in Hurwitz–Courant, for the Fourier-support-condition-at-extremum statement. For now, the necessary content lives inside this memo's §(B).
+- Possibly `memos/LIOUVILLE-1844-BRIEF.md` — Liouville's original transcendence-from-height theorem. Would be the canonical pre-Hermite reference and clarify exactly which statements about algebraic-integer heights are available without invoking post-L–W machinery.
+
+---
+
+## Pairing
+
+Five neighboring literatures converge here, and none is the center:
+
+- **Classical transcendence theory** (Liouville 1844, Hermite 1873, Lindemann 1882, Weierstrass 1885, Mahler 1953, Baker 1966, Feldman, Waldschmidt, Nesterenko, Salikhov 2008). Landscape this memo is trying to re-derive a single piece of, pre-L–W.
+- **Uniform distribution / discrepancy theory** (Weyl 1916, van der Corput, Koksma, Erdős–Turán 1948, Kuipers–Niederreiter 1974). The Fourier-budget side.
+- **Information theory / Kraft accounting** (Kraft 1949, Shannon 1948, Chaitin 1966–75). The Kraft vocabulary; already in use at `memos/LANDFALL-EXPORT.md` §5.
+- **Fourier-analytic isoperimetry** (Hurwitz 1902, Polya–Szegő 1951, Osserman 1978). The Dido extremum in Parseval form.
+- **Table-maker's dilemma** (Muller 1997, Lefèvre–Muller 1998, Brent–Zimmermann 2010). The log-side Kraft-+-Diophantine template; see `memos/3DT-BRIEF.md`.
+
+The memo's discipline: the argument must be constructible from pieces in at least three of these five, with the fourth and fifth entering as background at most. If the argument ends up living entirely inside classical transcendence theory, the program has not done anything new. If it ends up living entirely inside Fourier analysis, the effective rate is probably vacuous. The sweet spot is what the memo is betting on.
+
+---
+
+## Hazards
+
+Four failure modes worth naming in advance so a directed attempt can detect them:
+
+1. **Dido route is classical Hermite–Lindemann in disguise.** Hermite's auxiliary $f(x) e^{-x}$ is a specific Schwartz test function on the line; the polygon-vs-circle gap is a specific Schwartz-adjacent test "function" on the torus (really a Parseval identity). Both are "smooth approximators to a delta at the algebraic point of interest." If the Hurwitz-extremum auxiliary reduces to Hermite's after a Poisson-summation change of variable, the memo has produced a pedagogical reframing — still useful but not the program's target. Check: is the polygon's Fourier tail at $\{k \equiv \pm 1 \pmod n\}$ the Poisson dual of Hermite's $f(x) e^{-x}$ for some choice of $f$? If yes, promote to a different kind of memo.
+
+2. **Liouville-height step routes through L–W.** When extending Liouville's 1844 bound to the joint cyclotomic $\times \mathbb{Q}(\pi)$ field, the natural sharpening invokes Baker 1966 (linear forms in logs) or Gelfond–Schneider 1934. Any such invocation is a **circularity signal** (see `memos/LINDEMANN-BRIEF.md` §"When invoking L–W is strictly circular"); if the argument needs it essentially, the memo documents a negative lineage result and closes.
+
+3. **Effective rate is vacuous.** If the Kraft–Parseval budget yields $|q\pi - p| \ge c\, q^{-C}$ with $C = \infty$ or $c = 0$, the argument has produced a qualitative statement, not an effective one. Salikhov 7.6 is the benchmark; any finite $C$ with explicit $c$ is a valid effective statement; but a pre-L–W argument with $C = \infty$ is just transcendence of $\pi$ reproved in new language, and may or may not be interesting depending on how short the proof is.
+
+4. **Fourier-support condition isn't Kraft-compatible.** The Hurwitz extremum $c_n = 0$ for $|n| \ne 1$ is a linear condition on an infinite-dimensional space. Encoding it as a prefix-free Kraft description may not be possible without already knowing something strong about $\pi$ (implicit circularity). Watch for this at the (B) → (C) handoff: the prefix-free encoding of the support condition must not smuggle in a transcendence input.
+
+A directed attempt on any of (A)–(D) should close with a sentence of form
+
+> *"Under assumption X, the Kraft–Parseval budget yields $C \le Y$, with L–W-safety tag Z."*
+
+All three named. Analog of the Ramanujan-memo and lower-bound-country memo discipline.
+
+---
+
+## What this is not
+
+- **Not a proof.** The Kraft–Parseval budget is known; the Hurwitz extremum is known; Aitchison and E-T-K are known. The memo scopes whether they combine into a pre-L–W transcendence proof — the combination is the open question.
+- **Not a commitment to outperforming classical Hermite–Lindemann.** A pre-L–W Kraft-accounted proof with effective rate weaker than Salikhov is still a useful deliverable if the lineage is clean. The rewrite value is in the proof structure, not the numeric.
+- **Not a replacement for the full Lindemann–Weierstrass at $n \ge 2$.** `memos/LINDEMANN-BRIEF.md` and the user's framing in the KRAFT discussion both flag that the subspace theorem is the genuine gate for $n \ge 2$. This memo handles only the $n=1$ case; the $n \ge 2$ case is a separate search.
+- **Not a compute-cost lower bound in the sense of `memos/COUNTING-APPARATUS.md`.** The bind there is about primitive-op floors in a fixed compute model. This memo is about Diophantine rates with effective constants. The two overlap in vocabulary (Kraft, Parseval, dual lattice) but not in target. If the argument here lands, it feeds (A) and (C) of that search rather than subsuming them.
+- **Not a treatment of transcendence of $e$.** The $n=1$ case of H–L covers both $e$ and $\pi$, but the Dido hook is specific to $\pi$ (it's a statement about the circle). The analogous hook for $e$ would probably want a different extremum characterization — perhaps $e$ as the unique $a$ for which $\frac{d}{dx} a^x = a^x$, i.e., a differential-equation extremum rather than an isoperimetric one. Out of scope here.
+
+---
+
+## Proposed order of work
+
+Ranked from least load-bearing / fastest to check toward the real research bottleneck, following the pattern of `memos/COUNTING-APPARATUS.md` §"Proposed order of work":
+
+1. **(B), explicit Fourier coefficients of the regular $n$-gon.** Closed-form computation of $c_k^{(n)}$ for the arc-length parametrization of the inscribed regular $n$-gon in the unit circle. Cheap, directly testable, and either closes or kills (B) immediately.
+2. **(B), Hurwitz identity closure check.** Using the explicit $c_k^{(n)}$ from step 1, verify that $\sum_{k \ne 0} k(k-1)|c_k^{(n)}|^2 = (L_n^2 - 4\pi A_n)/(4\pi^2)$ matches $\Theta(1/n^2)$ elementary-geometry computation. If it doesn't, item (B) is wrong as stated.
+3. **(D), L–W-safety audit on a drafted argument.** Before committing to (A)+(B)+(C) in earnest, sketch the argument at the level of a paragraph — "assume $\pi$ algebraic, then Hurwitz says ..., then the Kraft budget forces ..., contradiction" — and run the `memos/LINDEMANN-BRIEF.md` §"Exit criteria" tagging on every step. If the tag fails at any step, the memo has to either swap tools or close as a circularity-detection result.
+4. **(A), Kraft-constant consolidation.** Derive a joint constant for the Aitchison $\times$ E-T-K budget; express in one formula with $N$, $m$, $k=1$ specialized.
+5. **(C), the auxiliary-free replacement.** Write out the contradiction in full, using the Archimedean-exponent-2 + cyclotomic-height-$\exp(O(n))$ + Kraft-harmonic-$\log^2 N$ matching to read off $C$. Attempt the Liouville extension to the joint cyclotomic $\times \mathbb{Q}(\pi)$ field; flag any post-1844 tool invoked.
+6. **(D), effective-rate extraction.** Read off $c, C$; compare against Salikhov 7.6.
+
+Promotion out of this doc: when (A), (B), (C), (D) combine to produce an effective statement with a clean L–W-safety tagging, the combined result promotes to a standalone writeup — possibly paired with `BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md` as the circle-side transcendence statement the Inscription was looking for. Alternatively, if step 3 or 5 fails, the memo freezes as a lineage-check record and the finding migrates into `memos/LINDEMANN-BRIEF.md` §"Post-Lindemann tools."
+
+---
+
+## Exit criteria
+
+The memo freezes and promotes when any one of the following triggers:
+
+1. **Effective rate derived with L–W-safety tag.** Item (D) produces $|q\pi - p| \ge c\, q^{-C}$ with explicit $c, C$ and all steps tagged per `memos/LINDEMANN-BRIEF.md` §"Exit criteria." Promote the argument to a standalone writeup; consider paper-plan companion at `BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md`.
+
+2. **Dido route collapses to Hermite's auxiliary.** Item (C) shows the polygon-vs-circle gap is Hermite's $\int_0^t e^{-x} f(x) dx$ under Poisson-summation change of variable. The memo becomes a pedagogical note; promote to `memos/HERMITE-AS-DIDO-BRIEF.md` and close the search.
+
+3. **Liouville-height step fails pre-L–W.** Item (C) or (D) confirms that extending Liouville 1844 to the joint cyclotomic $\times \mathbb{Q}(\pi)$ field requires Baker or Gelfond–Schneider essentially. The memo becomes a circularity-detection record; promote finding to `memos/LINDEMANN-BRIEF.md` §"Post-Lindemann tools" and close.
+
+4. **Two directed attempts at steps 1–6 of §"Proposed order of work" close without a tagged sentence.** Same discipline as `memos/RAMANUJANS-COMPLIMENT.md` §"When to leave" and `memos/LOWER-BOUND-COUNTRY.md` §"Exit criteria." Demote to low-priority; note findings.
+
+---
+
+## Status
+
+Open search memo. Just spun up. The two just-read sources (`sources/A Statistical Theory of Remnants.pdf`, `sources/K-N-Chapter2.pdf`) are the budget-side tools; Hurwitz 1902 has not yet been sourced into the repo. Next directed attempt: step 1 of §"Proposed order of work" — closed-form Fourier coefficients of the regular $n$-gon's arc-length parametrization. That is the fastest cheap test of whether (B) → (C) connects at all, and a negative result there kills the Dido hook early.

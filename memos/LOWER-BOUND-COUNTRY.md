@@ -41,6 +41,14 @@ Each tied to a named item in `memos/COUNTING-APPARATUS.md`.
 
 - Asymptotic lower bounds do not specialize to single points. A small-case walkthrough at `n = 7` is illustrative only; the memo should not expect it to produce a numerical `Ω`-bound. What it *can* produce: an instance where the three cost measures (ruler-and-compass ∞, algebraic-arithmetic poly(3)·log(1/ε), Bresenham-midpoint `O(N)` ints) separate cleanly, visible in a plot. Is there a known lower-bound technique that explains the separation, at `n = 7` specifically, via cubic-extension degree?
 
+### On item (E) — Kolmogorov-complexity-based lower bounds
+
+An orthogonal thread to the algebraic-complexity core. Algebraic complexity measures arithmetic operations in a fixed compute model; Kolmogorov complexity measures description length relative to a universal machine. Recent work (Buhrman, Fortnow, Laplante and collaborators) develops time-bounded versions `C^t` and `CD^t` that bring the description-length perspective inside polynomial-time bounds. See extraction in `memos/FORTNOW-KOLMOGOROV-BRIEF.md`.
+
+- Recast T2 vs. T3 of `memos/COUNTING-APPARATUS.md` in Fortnow's generate-vs-distinguish vocabulary: T2 (emit `M_N`) is a `C^t`-generating task; T3 (produce a witness at every mismatched pair) is a `CD^t`-distinguishing task. Fortnow's Theorem 7.2 says unconditional polynomial `C^q ≤ CD^p + c log|x|` is equivalent to a unique-SAT poly-time algorithm — "only slightly weaker than P = NP." That is both a hazard (a direct T2 → T3 reduction at polynomial cost may require P ≠ NP to argue) and an opportunity (if the circle-side bind lives on the CD side natively, it sidesteps the reduction).
+- Fortnow §6 supplies the universal semicomputable measure `μ(x) = 2^{-K(x)}` and Theorem 6.3: `T_worst(n) = O(T_average(n))` under `μ`. If a circle-side worst-case lower bound turns out to be hard to prove directly, can it be restated as an average-case bound under `μ`, with matching-order worst-case following? The conversion is free of charge per Fortnow 6.3.
+- Fortnow §8 (Theorem 8.1) gives `CD^p(x) ≤ 2 log|A ∩ Σ^n| + c log n` for any `A ∈ P`. If T3's set of "mismatched pairs at resolution `N`" is in `P` with size `|M_N|`, Theorem 8.1 gives an upper bound of shape `2 log|M_N| + c log N` on the distinguishing complexity of elements of that set. Matching against an algebraic-complexity lower bound of the same `|M_N|`-scale is the kind of cross-register comparison this thread would produce.
+
 ---
 
 ## What specifically to read
@@ -70,6 +78,17 @@ In rough priority for this search. Each entry is a full citation so the reader c
 
 11. **von zur Gathen 1988.** "Algebraic complexity theory," *Annual Review of Computer Science* **3**, 317–348. Older than Bürgisser–Clausen–Shokrollahi but more compact; useful first-orientation read.
 12. **Lokam 2009.** "Complexity Lower Bounds using Linear Algebra," *Foundations and Trends in Theoretical Computer Science* **4**(1–2). Linear-algebraic techniques for lower bounds. Complementary to the algebraic-geometric techniques.
+
+### Kolmogorov-complexity thread
+
+Orthogonal to the algebraic-complexity queue above; feeds item (E) of §"Specific questions we bring." Extraction of Fortnow's Kaikoura tutorial already lives in `memos/FORTNOW-KOLMOGOROV-BRIEF.md`; the rest of the thread is the external-reference backstop.
+
+13. **Li & Vitányi 1997.** *An Introduction to Kolmogorov Complexity and Its Applications*, Graduate Texts in Computer Science, Springer, 2nd edition. The canonical textbook. Required K-complexity reference; read it before or alongside Fortnow.
+14. **Fortnow 2000.** "Kolmogorov Complexity" (Kaikoura workshop lecture notes, 14 pp.). Already extracted at `memos/FORTNOW-KOLMOGOROV-BRIEF.md`. §§6, 7, 8 are the load-bearing sections for item (E).
+15. **Sipser 1983.** "A complexity theoretic approach to randomness," *Proceedings of the 15th ACM Symposium on the Theory of Computing* (STOC '83), 330–335. The hashing-based distinguishing-complexity result that Fortnow labels Theorem 8.3. Short; provides an information-theoretic rather than topological route to lower bounds, complementary to Ben-Or.
+16. **Buhrman, Fortnow, Laplante 2001.** "Resource-bounded Kolmogorov complexity revisited," *SIAM Journal on Computing*. The modern treatment of `C^t` and `CD^t`, the generate/distinguish separation, and the equivalence to unique-SAT that Fortnow states as Theorem 7.2. Directly relevant to item (E)'s T2/T3 recast.
+17. **Buhrman, Laplante, Miltersen 2000.** "New bounds for the language compression problem," *Proceedings of the 15th IEEE Conference on Computational Complexity*, pages 126–130. Language-compression bounds; relevant if the circle-side task turns out to have a compression-flavored decision shape.
+18. **Chaitin 1966, 1975.** "On the length of programs for computing finite binary sequences," *J. ACM* **13**, 547–569; "A theory of program size formally identical to information theory," *J. ACM* **22**(3), 329–340. The original prefix-free machines and Ω-style self-delimiting programs. Background only — needed as citation when prefix-free / Kraft vocabulary appears in the program's own prose, not as active reading.
 
 **Not yet read, flagged for completeness:**
 

@@ -39,6 +39,24 @@ Image embeds stay as they are (`![…](figures/foo.png)` or the equivalent `..`-
 
 This is a math-research writing repo. Most work is reading papers, promoting notes into reusable internal references, tightening theorem statements, and keeping the document graph coherent.
 
+## Transcendence-tool provenance
+
+Drafts aimed at the program's compute-cost reformulation of transcendence prefer **pre-Lindemann–Weierstrass** tools (Liouville 1844, Gauss–Wantzel, Hurwitz Fourier-isoperimetric, Lambert/Euler irrationality, classical cyclotomic theory) over **post-L–W** machinery (Baker 1966, Gelfond–Schneider 1934, Nesterenko 1996) when the latter would be load-bearing. Drafts that only *use* transcendence as background or as a weaker lemma are free to cite post-L–W results — Landfall's §4 pointwise-transcendence-at-dyadics statement uses Gelfond–Schneider and is fine. The rule bites only when a draft is aiming at the program's own target (compute-cost reformulation of L–W or one of its pieces), where invoking post-L–W machinery risks circularity.
+
+See `memos/LINDEMANN-BRIEF.md` for the full circularity map (safe / background / essential / circular classification).
+
+## Shared-vocabulary hygiene
+
+The program tests a structural distinction between the log side (`ε(m) = log₂(1+m) − m`) and the circle side (`τ(n) = 2cos(2π/n) − round(2cos(2π/n))`). Vocabulary that glosses that distinction — Minkowski's question-mark function `?(x)`, Stern–Brocot tree, Farey sequence, Thomae / popcorn function, Denjoy construction, dyadic expansions reinterpreted as continued fractions — is excluded from working notes, even as shorthand. Continued-fraction convergents as computational outputs are admitted (PERMEATE needs them; CREATI admits them as explicit arithmetic data); the tree as organizing frame is not.
+
+See `BNHA/PLUS_ULTRA.md §Aizawa (BIND)` for the list and the triad-level articulation, and `BNHA/PLUS_ULTRA.md §"Continued-fraction rule"` for the CF boundary.
+
+## Lower-bound target, upper-bound companions
+
+The program's target is a compute-cost lower bound (or impossibility theorem) — `memos/COUNTING-APPARATUS.md` is the parent search; `memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md` is one active specialization. Upper-bound results — explicit constructions (Chudnovsky, Ramanujan, Borwein), fast algorithms (Bresenham-midpoint, AGM, binary splitting), convergence rates — are admitted as allusive companions and sanity checks; they are not load-bearing. Nevertheless, time spent in upper-bound territory may teach us things about the problem, provided we don't get lost in beautiful analyticity. 
+
+See `memos/LOWER-BOUND-COUNTRY.md` (the complexity-theoretic reading queue) and `memos/RAMANUJANS-COMPLIMENT.md §"When to leave"` (the discipline against staying in upper-bound territory) for the detailed articulation.
+
 ## Working tree is dirty
 
 Multiple agents and humans work in concert here, where concert <-> cacophany. Don't chase working tree diffs.

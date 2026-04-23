@@ -62,9 +62,13 @@ The outside-out counting word `M_N` is already an output of a specific computati
 
 T2 is simplest but risks being tautological ("|M_N| is the cost of computing M_N"). T1 and T3 are substantive but need a lower-bound argument that ties them to M_N.
 
+**Generate-vs-distinguish framing (Fortnow).** T1 and T2 are *generating* tasks — produce `x` given input, in the sense of Fortnow's time-bounded `C^t`. T3 is a *distinguishing* task — label a candidate `z` as `=x` or not in time `t`, in the sense of `CD^t`. See `memos/FORTNOW-KOLMOGOROV-BRIEF.md` §7. Without a time bound, `C ≤ CD + O(1)` by brute-force search, but in polynomial time Fortnow's Theorem 7.2 says unconditional `C^q ≤ CD^p + c log|x|` is equivalent to a poly-time function emitting the unique satisfying assignment of any formula with exactly one satisfying assignment — "only slightly weaker than `P = NP`." A direct poly-time T3 → T2 reduction would therefore sit near `P = NP` and should be treated as presumptively unavailable.
+
+The consequence for this search: the right direction is to land on T3 directly, with `|M_N|` as the natural ledger, and *not* reduce it to T2. Fortnow's Theorem 8.1 gives a matching upper bound `CD^p(x) ≤ 2 log|A ∩ Σ^n| + c log n` for any `A ∈ P`, which a T3 lower bound has to beat to be non-trivial. See `memos/LOWER-BOUND-COUNTRY.md` §(E) for the Kolmogorov-complexity reading thread that makes this concrete.
+
 **Target claim:** the cost of T1 (or T3) is Θ(|M_N|) in the chosen compute model. The easy direction (|M_N| as an upper bound, via the outside-out sweep) is constructive. The hard direction (|M_N| as a lower bound) is the real research question.
 
-**Open:** is there a direct reduction from beating-round-trace to corner-enumeration? If yes, T3 is the right task and |M_N| is the right cost. If no, the bind needs a different task — or a different cost measure than |M_N|.
+**Open:** given the Fortnow framing above, the earlier question — is there a direct reduction from beating-round-trace (T3) to corner-enumeration (T2)? — is presumptively closed in the polynomial-time direction: a yes-answer would imply a result near `P = NP`. The live question becomes whether T3 can be attacked directly, with `|M_N|` as the natural ledger, without any reduction to T2. If yes, the bind stands on T3's own terms. If no, the bind needs a different T3-shaped task or a different cost measure than `|M_N|`.
 
 ---
 

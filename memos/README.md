@@ -62,6 +62,12 @@ Classical transcendence of π (Lindemann 1882) and its Weierstrass-1885 generali
 
 → `memos/LINDEMANN-BRIEF.md`
 
+### FORTNOW-KOLMOGOROV-BRIEF
+
+Lance Fortnow's 14-page Kaikoura tutorial on Kolmogorov complexity. Plain `C` and prefix-free `K`; pairing bounds and symmetry of information; Kraft's inequality and the universal semicomputable measure `μ(x) = 2^{-K(x)}` with its dominance fact and worst-case-equals-average-case theorem; time-bounded `C^t` and the distinguishing variant `CD^t` (with the unique-SAT / P-vs-NP-flavored equivalence); size-of-set bounds via hashing including Sipser's theorem and Valiant–Vazirani.
+
+→ `memos/FORTNOW-KOLMOGOROV-BRIEF.md`
+
 ---
 
 ## Active search memos
@@ -79,6 +85,12 @@ The program's most uncertain ambition: binding the counting apparatus (`n-gons/c
 What Ramanujan's corpus contributes to the compute-cost search — pre-theoretical faith, method-sibling validation, upper-bound benchmarks (Ramanujan–Chudnovsky–Borwein), algebraic-depth terrain — and, the harder half, when to leave his realm for the lower-bound literature. Paired with Gauss (compute-model theorist) and Archimedes (the squeeze).
 
 → `memos/RAMANUJANS-COMPLIMENT.md`
+
+### KRAFT-HERMITE-LINDEMANN-AITCHISON
+
+A search on whether effective Hermite–Lindemann at `n = 1` — transcendence of π with an effective irrationality measure — can be reproduced as a pure Kraft argument on the circle, using Aitchison 1959's density-side Fourier bound and the Erdős–Turán–Koksma discrepancy-sum inequality as a joint Kraft–Parseval budget, and Hurwitz 1902's Fourier-analytic isoperimetric identity as Dido's native variational certificate for π. Target deliverable is a pre-L–W proof structure with an effective `|qπ − p| ≫ q^{-C}` constant extractable from the budget. Four items under search (A Kraft–Parseval budget / B Hurwitz–Dido extremum / C auxiliary-free Hermite replacement / D effective rate + L–W-safety audit), with explicit hazards around circularity and pedagogical-collapse cases.
+
+→ `memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md`
 
 ---
 
