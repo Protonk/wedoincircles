@@ -1,0 +1,319 @@
+# STRIP-TISSUE-FOURIER
+
+The BIND strip has its own Fourier substrate. It is not the Hurwitz
+arc-length coefficient lattice, and it should not be folded into that
+object. The strip tissue lives on the frequency lattice `n Z`, has
+`1/n^2` nonzero modes, and produces theorem-level observables of its own.
+
+This note promotes the strip-Fourier part of
+[memos/ARCHIMEDEAN-SIGNATURE.md](memos/ARCHIMEDEAN-SIGNATURE.md) from
+"`A_below` is a DC coefficient" to a small toolkit:
+
+- `A_below(n)` is the zeroth mode of the strip tissue.
+- The nonzero modes satisfy `d_k = (-1)^k/(k^2 n^2) + O(n^-4)`.
+- The nonzero-mode `L^2` energy is a `1/n^4` observable with first-pair
+  concentration ratio `90/pi^4`.
+- The strip `H^1` seminorm is a `1/n^2` observable with leading constant
+  `4pi^4/3`, matching Hurwitz's isoperimetric gap at leading order.
+
+No Stern-Brocot / Farey / Thomae primitive enters. This is BIND-native strip
+geometry: secant arcs, integration, and Fourier modes on `[0, 1]`.
+
+![Strip tissue Fourier object](../figures/strip_tissue_fourier.png)
+
+The figure is built by
+[n-gons/build_strip_tissue_fourier.py](n-gons/build_strip_tissue_fourier.py).
+It shows the `n = 10` strip tissue, the signed scaled coefficients
+`10^2 d_k`, and the first-pair concentration of nonzero `L^2` energy.
+
+---
+
+## Strip Tissue
+
+For each `n >= 3`, define the strip tissue `y_n : [0, 1] -> R` by piecing
+together the circumscribed secant arcs:
+
+```text
+y_n(x) = sec(2 pi (x - k/n)) - 1
+```
+
+on the interval
+
+```text
+[(2k - 1)/(2n), (2k + 1)/(2n)] mod 1.
+```
+
+The function has period `1/n`, so its Fourier series on `[0, 1]` has
+support on `n Z`:
+
+```text
+y_n(x) = sum_{k in Z} d_k(n) exp(2 pi i k n x).
+```
+
+The coefficients are
+
+```text
+d_k(n) = n integral_{-1/(2n)}^{1/(2n)}
+             (sec(2 pi x) - 1) exp(-2 pi i k n x) dx.
+```
+
+By construction,
+
+```text
+d_0(n)
+= n integral_{-1/(2n)}^{1/(2n)} (sec(2 pi x) - 1) dx
+= (n/pi) log(sec(pi/n) + tan(pi/n)) - 1
+= A_below(n).
+```
+
+So the BIND area functional is the DC component of the strip tissue.
+
+## Nonzero Modes
+
+For `k != 0`, the constant `-1` term integrates to zero, and with
+`t = 2 pi x` symmetry gives
+
+```text
+d_k(n) = (n/pi) integral_0^(pi/n) sec(t) cos(k n t) dt.
+```
+
+Expanding `sec(t) = 1 + t^2/2 + O(t^4)`, the constant term vanishes because
+
+```text
+integral_0^(pi/n) cos(k n t) dt = sin(k pi) / (k n) = 0.
+```
+
+The `t^2/2` term gives
+
+```text
+d_k(n) = (-1)^k / (k^2 n^2) + O(n^-4)
+```
+
+for fixed nonzero `k`.
+
+One way to see the coefficient is:
+
+```text
+integral_0^a t^2 cos(lambda t) dt
+= 2a cos(lambda a) / lambda^2
+```
+
+when `a = pi/n`, `lambda = k n`, because the sine boundary terms vanish.
+Thus the contribution of `t^2/2` is
+
+```text
+(n/pi) * (1/2) * 2(pi/n)(-1)^k / (k^2 n^2)
+= (-1)^k / (k^2 n^2).
+```
+
+The higher terms contribute `O(n^-4)` for fixed `k`.
+
+## Strip `L^2` Energy
+
+Parseval on `[0, 1]` gives
+
+```text
+||y_n||_L2^2 = sum_k |d_k(n)|^2.
+```
+
+The total `L^2` norm has an exact integral form:
+
+```text
+||y_n||_L2^2
+= n integral_{-1/(2n)}^{1/(2n)} (sec(2 pi x) - 1)^2 dx
+= (n/pi) [tan(pi/n) - 2 log(sec(pi/n) + tan(pi/n)) + pi/n].
+```
+
+Hence
+
+```text
+||y_n||_L2^2 = pi^4 / (20 n^4) + O(n^-6).
+```
+
+The DC energy alone is
+
+```text
+|d_0(n)|^2 = A_below(n)^2
+           = pi^4 / (36 n^4) + O(n^-6).
+```
+
+Therefore the nonzero-mode energy is
+
+```text
+sum_{k != 0} |d_k(n)|^2
+= pi^4 / (45 n^4) + O(n^-6).
+```
+
+The same value follows from the coefficient asymptotic:
+
+```text
+sum_{k != 0} |d_k(n)|^2
+~ 2 n^-4 sum_{k >= 1} 1/k^4
+= 2 zeta(4) / n^4
+= pi^4 / (45 n^4).
+```
+
+### First-Pair Concentration
+
+The first nonzero pair contributes
+
+```text
+|d_1(n)|^2 + |d_-1(n)|^2
+= 2 / n^4 + O(n^-6).
+```
+
+Thus the asymptotic first-pair concentration is
+
+```text
+(|d_1|^2 + |d_-1|^2) / sum_{k != 0} |d_k|^2
+-> 1 / zeta(4)
+= 90 / pi^4
+= 0.9239...
+```
+
+This is much tighter than Hurwitz's first-band proportion `6/pi^2`. The
+reason is simple: strip nonzero modes decay like `1/k^2`, so their squared
+energy decays like `1/k^4`.
+
+### Dyadic Shells
+
+At leading order, the shell `2^r <= k < 2^(r+1)` has mass bounded by
+
+```text
+2 * sum_{2^r <= k < 2^(r+1)} 1/(k^4 n^4)
+<= 2 * 2^r / (2^(4r) n^4)
+= 2 * 2^(-3r) / n^4.
+```
+
+So the strip `L^2` shell hierarchy has geometric ratio `1/8` per dyadic
+step at leading order. This is the strip analog of the Hurwitz dyadic-shell
+estimate, but one level deeper in rate: `1/n^4` rather than `1/n^2`.
+
+Finite-`n` sharp inequalities are not claimed here. The theorem-level
+payload is the asymptotic concentration and the exact integral formulas
+above.
+
+## Strip `H^1` Seminorm
+
+The derivative is
+
+```text
+y_n'(x) = 2 pi sec(2 pi (x - k/n)) tan(2 pi (x - k/n))
+```
+
+on each arc. Therefore
+
+```text
+||y_n'||_L2^2
+= n integral_{-1/(2n)}^{1/(2n)}
+      (2 pi)^2 sec^2(2 pi x) tan^2(2 pi x) dx.
+```
+
+With `u = 2 pi x`,
+
+```text
+||y_n'||_L2^2
+= 2 pi n integral_{-pi/n}^{pi/n} sec^2(u) tan^2(u) du
+= (4 pi n / 3) tan^3(pi/n).
+```
+
+Taylor expansion gives
+
+```text
+tan^3(pi/n) = pi^3/n^3 + pi^5/n^5 + (11/15) pi^7/n^7 + O(n^-9),
+```
+
+(obtained from `tan(theta) = theta + theta^3/3 + 2 theta^5/15 + O(theta^7)`
+cubed), so
+
+```text
+||y_n'||_L2^2
+= (4 pi n / 3) tan^3(pi/n)
+= 4 pi^4 / (3 n^2) + 4 pi^6 / (3 n^4) + O(n^-6).
+```
+
+Fourier-side Parseval gives the same object as
+
+```text
+||y_n'||_L2^2 = 4 pi^2 n^2 sum_k k^2 |d_k(n)|^2.
+```
+
+Using `d_k(n) ~ (-1)^k/(k^2 n^2)`,
+
+```text
+4 pi^2 n^2 sum_{k != 0} k^2 |d_k(n)|^2
+~ 4 pi^2 n^2 * 2 n^-4 sum_{k >= 1} 1/k^2
+= 4 pi^4 / (3 n^2).
+```
+
+This leading constant matches Hurwitz's isoperimetric gap:
+
+```text
+Delta_n = 4 pi^4 / (3 n^2) + O(n^-4).
+```
+
+The observables are not equal. The next terms already differ:
+
+```text
+||y_n'||_L2^2 = 4 pi^4/(3n^2) + 4 pi^6/(3n^4) + O(n^-6),
+Delta_n       = 4 pi^4/(3n^2) - 16 pi^6/(45n^4) + O(n^-6).
+```
+
+The next-order difference is
+
+```text
+||y_n'||_L2^2 - Delta_n
+= (4/3 + 16/45) pi^6 / n^4 + O(n^-6)
+= 76 pi^6 / (45 n^4) + O(n^-6).
+```
+
+So the shared constant is a genuine Archimedean match, not an identity in
+disguise.
+
+## Rate Hierarchy
+
+The strip tissue supports a small Sobolev hierarchy:
+
+```text
+sum_k k^(2s) |d_k(n)|^2.
+```
+
+Using `d_k ~ 1/(k^2 n^2)`:
+
+- `s = 0`: `L^2` energy, rate `1/n^4`.
+- `s = 1`: `H^1` seminorm, rate `1/n^2`.
+- `s = 2`: borderline/high-frequency-sensitive; the leading `k^0` tail is
+  not summable without using the full finite-`n` coefficients rather than
+  the fixed-`k` asymptotic.
+
+A separate non-Sobolev scalar is total variation:
+
+```text
+TV(y_n) = 2n (sec(pi/n) - 1) = pi^2/n + O(n^-3).
+```
+
+This is a `1/n` observable, not part of the `1/n^2` Archimedean signature,
+but it may be useful as a BIND-local roughness measure.
+
+## Program Use
+
+The strip tissue gives BIND a Fourier toolkit independent of Hurwitz:
+
+| Substrate | Function | Frequency lattice | Natural observables |
+|---|---|---|---|
+| Arc-length polygon | complex curve `gamma_n(s)` | `1 + n Z` | Hurwitz gap `Delta_n ~ 1/n^2` |
+| Strip tissue | real function `y_n(x)` | `n Z` | `A_below = d_0`, `||y_n||_L2^2 ~ 1/n^4`, `||y_n'||_L2^2 ~ 1/n^2` |
+
+The key point is not that BIND recreates Hurwitz. It does not. The key point
+is that the strip has its own native Fourier object whose `H^1` seminorm
+recovers the same leading `4pi^4/(3n^2)` constant as Hurwitz while staying in
+strip primitives.
+
+Open question:
+
+> Are `Delta_n` and `||y_n'||_L2^2` evaluations of one bilinear form in two
+> coordinate systems, or do they merely share the same second-order
+> Archimedean jet?
+
+Until that is answered, treat them as distinct observables with matching
+leading content.
