@@ -35,25 +35,31 @@ The closure-mismatch theorem is an algebraic constructive claim. It
 retracts on the appearance of any of the following — facts surfaceable
 by any mathematician working independently, not internal to the program:
 
-1. **An explicit functor `F` satisfying A1–A4**
-   (from [memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md))
-   carrying `Aff^+(R)` generators into the `{K_n}` ladder while
-   preserving closure-generator depth. The theorem's whole content is
-   that no such `F` exists; one exhibited in the literature ends it.
-2. **A natural alternative axiomatization of "native functor" that
-   admits `F`.** A1–A4 are the program's choice of minimal axioms. If a
-   competing axiom set is shown to capture the same intuitive content but
-   admit a candidate `F`, the no-go becomes axiom-contingent rather than
-   structural. This is the live prediction Procrustes most plausibly gets:
-   axiomatization choices are rarely settled forever, and a competing
-   formulation that wins out in the literature would force retraction
-   automatically.
-3. **A categorical equivalence between `Aff^+(R)` and a non-trivial
+1. **A natural alternative axiomatization of "native functor" that
+   admits `F`.** A1–A4 (from
+   [memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md))
+   are the program's choice of minimal axioms. If a competing axiom set
+   is shown to capture the same intuitive content but admit a candidate
+   `F`, the no-go becomes axiom-contingent rather than structural. This
+   is the live prediction Procrustes most plausibly gets: axiomatization
+   choices are rarely settled forever, and a competing formulation that
+   wins out in the literature would force retraction automatically. It
+   is also the falsifier shape least under the program's control —
+   exactly the kind of *external wild fact* Procrustes asked for.
+2. **A categorical equivalence between `Aff^+(R)` and a non-trivial
    sub-structure of `{K_n}`-with-embeddings.** If an unexpected algebraic
    equivalence is exhibited that the closure-depth axioms happen not to
    capture — something morally functorial in a way A1–A4 don't recognize
    — the separation claim weakens to "no functor of this specific form,"
    which is much less interesting than "no functor at all."
+3. **An explicit functor `F` satisfying A1–A4** carrying `Aff^+(R)`
+   generators into the `{K_n}` ladder while preserving closure-generator
+   depth. Direct falsifier; ends the theorem on contact. Listed last
+   because it is the least *live* of the three: exhibiting `F` under
+   the existing axiomatization amounts to disproving the theorem
+   internally, whereas the first two could surface as adjacent results
+   by independent authors without the theorem's proof needing to be
+   wrong.
 
 Procrustes gets his prediction. The theorem survives until one of the
 three appears.
