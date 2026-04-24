@@ -240,25 +240,6 @@ Rate and asymmetry do not strengthen that proof at the same level:
 So the three-invariant theorem collapses, for the decisive pairing, to the
 single-invariant closure-depth theorem.
 
----
-
-## Verdict
-
-**Partial.** The observable-category sketch is useful as a typing discipline:
-it prevents `tau`, `Delta_n`, `A_below`, and near-half gaps from being treated
-as interchangeable merely because they all show `1/n^2`. It also gives the
-near-half asymmetry a clean role as an observable-selection invariant.
-
-But as a proof of the F-obstruction, the category reframe is mostly dressed
-up closure depth. The main theorem should still lead with the concrete
-statement:
-
-```text
-circle-side native closure has an unbounded Chebyshev/cyclotomic ladder;
-log-side native closure inside Aff^+(R) is flat;
-no native F preserving closure can carry one to the other.
-```
-
-Use this memo as a lineage-check and table of invariants. Do not promote it
-as the primary theorem language unless a future pairing makes `r` or `a`
-load-bearing in a way they are not here.
+Use this memo as a lineage-check and table of invariants; the promoted
+theorem statement lives in
+[memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md).

@@ -20,13 +20,9 @@ This memo consolidates the scattered `1/n^2` appearances in:
 - [corners/HURWITZ-FIRST-BAND-CONCENTRATION.md](corners/HURWITZ-FIRST-BAND-CONCENTRATION.md)
 - [BNHA/triad/Eraserhead/ARCHIMEDEAN-CONSTRICTION.md](BNHA/triad/Eraserhead/ARCHIMEDEAN-CONSTRICTION.md)
 - [n-gons/counting/NEAR-HALF-GAPS.md](n-gons/counting/NEAR-HALF-GAPS.md)
-- [memos/ARCHIMEDEAN-DUAL-LANGUAGE-AUDIT.md](memos/ARCHIMEDEAN-DUAL-LANGUAGE-AUDIT.md)
 - [memos/STRIP-TISSUE-FOURIER.md](memos/STRIP-TISSUE-FOURIER.md)
 
-It is intentionally narrower than a compute-cost lower bound. If
-[memos/COUNTING-APPARATUS.md](memos/COUNTING-APPARATUS.md) never hardens
-into a primitive-operation floor, the Archimedean signature remains the
-circle side's quantitative companion to the qualitative closure mismatch.
+Scope and exclusions: see [§"What This Does Not Claim"](#what-this-does-not-claim).
 
 ---
 
@@ -58,15 +54,17 @@ orders, so the first visible term is quadratic in the half-angle.
 
 ## Five Observables
 
-| Observable | Function of `theta` | `F''(0)` | Leading term | Home |
-|---|---:|---:|---:|---|
-| Tail `tau` | `2cos(2theta) - 2` | `-8` | `-4 pi^2 / n^2` | `corners/TAU-PORTRAIT.md` |
-| Hurwitz gap `Delta_n` | `4pi^2(sinc^2 theta - sinc(2theta))` | `8pi^2/3` | `4pi^4 / (3n^2)` | `corners/HURWITZ-GAP.md` |
-| Strip area `A_below` | `log(sec theta + tan theta)/theta - 1` | `1/3` | `pi^2 / (6n^2)` | `BNHA/triad/Eraserhead/ARCHIMEDEAN-CONSTRICTION.md` |
-| Peak height `h_n` | `sec theta - 1` | `1` | `pi^2 / (2n^2)` | `BNHA/triad/Eraserhead/ARCHIMEDEAN-CONSTRICTION.md` |
-| Near-half floor `G_half` | `(sec theta - 1)/2` | `1/2` | `pi^2 / (4n^2)` | `n-gons/counting/NEAR-HALF-GAPS.md` |
+| Observable | `F(theta)` | `F''(0)` | Leading term | Fourier status | Home |
+|---|---:|---:|---:|---|---|
+| Tail `tau` | `2cos(2theta) - 2` | `-8` | `-4 pi^2 / n^2` | On-support energy | `corners/TAU-PORTRAIT.md` |
+| Hurwitz gap `Delta_n` | `4pi^2(sinc^2 theta - sinc(2theta))` | `8pi^2/3` | `4pi^4 / (3n^2)` | Off-support Parseval (first band) | `corners/HURWITZ-GAP.md` |
+| Strip area `A_below` | `log(sec theta + tan theta)/theta - 1` | `1/3` | `pi^2 / (6n^2)` | Linear strip mode (DC) | `BNHA/triad/Eraserhead/ARCHIMEDEAN-CONSTRICTION.md` |
+| Peak height `h_n` | `sec theta - 1` | `1` | `pi^2 / (2n^2)` | Pointwise / not Fourier | `BNHA/triad/Eraserhead/ARCHIMEDEAN-CONSTRICTION.md` |
+| Near-half floor `G_half` | `(sec theta - 1)/2` | `1/2` | `pi^2 / (4n^2)` | Arithmetic selection / not Fourier | `n-gons/counting/NEAR-HALF-GAPS.md` |
 
-Here `sinc(theta) = sin(theta) / theta`. The tail `tau` row is the large-`n`
+Here `sinc(theta) = sin(theta) / theta`. The "Fourier status" column is
+explained in [§"Fourier Taxonomy"](#fourier-taxonomy) below. The tail `tau`
+row is the large-`n`
 regime where `round(2cos(2pi/n)) = 2`, so
 
 ```text
@@ -117,21 +115,10 @@ c_(1 + j n)^(n) = L_n^2 / (4 pi^2 (1 + j n)^2),         j in Z,
 L_n = 2 n sin(pi / n).
 ```
 
-The strip tissue has a different BIND-native Fourier substrate. Define
-
-```text
-y_n(x) = sec(2 pi (x - k/n)) - 1
-         for x in [(2k-1)/(2n), (2k+1)/(2n)] mod 1.
-```
-
-Then `y_n` has period `1/n`, so its Fourier series on `[0, 1]` lives on
-`n Z`:
-
-```text
-y_n(x) = sum_{k in Z} d_k exp(2 pi i k n x),
-d_k = n integral_{-1/(2n)}^{1/(2n)}
-          (sec(2 pi x) - 1) exp(-2 pi i k n x) dx.
-```
+The strip tissue `y_n(x) = sec(2 pi (x - k/n)) - 1` has a different
+BIND-native Fourier substrate, living on the lattice `n Z`; the
+construction and all `d_k` identities are in
+[memos/STRIP-TISSUE-FOURIER.md](memos/STRIP-TISSUE-FOURIER.md).
 
 These two coefficient systems support four distinct outcomes.
 
@@ -187,28 +174,11 @@ Hurwitz gap.
 ### Clean Linear Strip Mode
 
 The strip area is the zeroth Fourier coefficient of the strip tissue:
-
-```text
-d_0
-= n integral_{-1/(2n)}^{1/(2n)} (sec(2 pi x) - 1) dx
-= A_below(n).
-```
-
-For `k != 0`, the constant term integrates to zero and symmetry gives
-
-```text
-d_k = (n / pi) integral_0^(pi/n) sec(t) cos(k n t) dt.
-```
-
-After the constant term vanishes, `sec(t) - 1 = t^2/2 + O(t^4)` yields
-
-```text
-d_k = (-1)^k / (k^2 n^2) + O(n^-4).
-```
-
-So `A_below` has an honest Fourier reading, but it is a linear DC-mode
-reading on the strip lattice `n Z`, not a quadratic Parseval reading on the
-arc-length lattice `1 + n Z`.
+`d_0 = A_below(n)`, with nonzero modes
+`d_k = (-1)^k / (k^2 n^2) + O(n^-4)`. This is a linear DC-mode reading on
+the strip lattice `n Z`, not a quadratic Parseval reading on the
+arc-length lattice `1 + n Z`. Full derivation in
+[memos/STRIP-TISSUE-FOURIER.md](memos/STRIP-TISSUE-FOURIER.md).
 
 ### Pointwise / Arithmetic Selection
 
@@ -223,16 +193,6 @@ Fourier functional. A point-evaluation operator could be written against the
 strip tissue, but that would be a different, less stable object than either
 a DC coefficient or a Parseval norm.
 
-## Classification Table
-
-| Observable | Taylor status | Fourier status | Boundary statement |
-|---|---|---|---|
-| Tail `tau` | Clean second jet | Clean on-support energy | Exact Parseval identity, but not first-band departure |
-| `Delta_n` | Clean second jet | Clean off-support Parseval | The genuine first-band Fourier observable |
-| `A_below` | Clean second jet | Clean linear strip mode | Exact DC coefficient of strip tissue on `n Z` |
-| `h_n` | Clean second jet | Pointwise / not Fourier | Pointwise strip maximum |
-| `G_half` | Clean second jet plus congruence | Arithmetic selection / not Fourier | Rational-guide distance selected by arithmetic subsequence |
-
 ## Program Use
 
 This memo gives the circle side a stable quantitative sentence:
@@ -240,10 +200,10 @@ This memo gives the circle side a stable quantitative sentence:
 > Across several independent observables, regular `n`-gon exhaustion of the
 > circle first appears at order `1/n^2`; this is the Archimedean signature.
 
-For the closure-mismatch program, this is a companion metric, not the
-load-bearing no-go mechanism. The no-go mechanism is still closure depth:
-circle-side `phi(n)/2` grows through Chebyshev/cyclotomic closure, while the
-log side's native `Aff^+(R)` closure is flat.
+For the closure-mismatch program, this is a companion metric; the
+load-bearing no-go (closure depth: circle-side `phi(n)/2` unbounded
+vs. log-side `Aff^+(R)` flat) is stated in
+[memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md).
 
 For the Kraft/Hermite-Lindemann side, the Hurwitz row is the important one:
 the Fourier support condition and first-band concentration are theorem-level

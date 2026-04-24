@@ -83,30 +83,16 @@ Expanding `sec(t) = 1 + t^2/2 + O(t^4)`, the constant term vanishes because
 integral_0^(pi/n) cos(k n t) dt = sin(k pi) / (k n) = 0.
 ```
 
-The `t^2/2` term gives
+The `t^2/2` term contributes `(-1)^k / (k^2 n^2)` (via
+`integral_0^(pi/n) t^2 cos(k n t) dt = 2 (pi/n) (-1)^k / (k n)^2`, with the
+sine boundary terms vanishing), and higher terms contribute `O(n^-4)` for
+fixed `k`, so
 
 ```text
 d_k(n) = (-1)^k / (k^2 n^2) + O(n^-4)
 ```
 
 for fixed nonzero `k`.
-
-One way to see the coefficient is:
-
-```text
-integral_0^a t^2 cos(lambda t) dt
-= 2a cos(lambda a) / lambda^2
-```
-
-when `a = pi/n`, `lambda = k n`, because the sine boundary terms vanish.
-Thus the contribution of `t^2/2` is
-
-```text
-(n/pi) * (1/2) * 2(pi/n)(-1)^k / (k^2 n^2)
-= (-1)^k / (k^2 n^2).
-```
-
-The higher terms contribute `O(n^-4)` for fixed `k`.
 
 ## Strip `L^2` Energy
 

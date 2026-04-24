@@ -12,6 +12,13 @@ This memo promotes the "partial, not primary" verdict of
 [memos/OBSERVABLE-CATEGORY-SKETCH.md](memos/OBSERVABLE-CATEGORY-SKETCH.md)
 into a terse definition.
 
+![Native-F closure mismatch](../figures/native_f_closure_mismatch.png)
+
+The figure is built by
+[memos/build_native_f_closure_mismatch.py](memos/build_native_f_closure_mismatch.py).
+It is the theorem-facing picture: affine closure stays flat, while the
+circle-side trace fields form an unbounded `phi(n)/2` ladder.
+
 ---
 
 ## Small Categories
@@ -188,26 +195,6 @@ observable type, or a named Fourier coefficient system. Those axioms are
 not needed for the closure-generator theorem.
 
 ---
-
-## What Becomes Theorem Language
-
-Use the following as the theorem-facing definition:
-
-| Theorem axiom | Justification |
-|---|---|
-| A1 basic functoriality | Required for any functorial claim |
-| A2 closure-generator preservation | Forces the candidate to touch the actual witness ladder |
-| A3 native-operation preservation | Makes "native" mean operation-native, not arbitrary matching |
-| A4 parameter-family correspondence | Prevents finite cherry-picking and forces unbounded `n` |
-
-Keep the following as diagnostic language:
-
-| Diagnostic property | Use |
-|---|---|
-| Rate class | Quantitative companion; Archimedean signature |
-| Observable type | Typing hygiene across residues, gaps, rows, and strip tissues |
-| Arithmetic asymmetry | Observable-selection/falsifier for row-level maps |
-| Rate constants | Identification of exact observables, not closure no-go |
 
 ## Promotion Criterion
 
