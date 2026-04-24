@@ -1,6 +1,6 @@
 # VILLAINS
 
-Sharpest-form adversarial questions aimed at the program. Each villain asks exactly one. The program earns its integrity by answering — or by admitting it can't.
+Sharpest-form adversarial questions aimed at the program. Each villain asks exactly one. The program earns its integrity by answering — or showing when wisdom is refusing the premise.
 
 ## #1 — Lady Nagant
 
@@ -37,3 +37,37 @@ But the strip's native coordinates are $k/n$ on the tangency axis and $\sec(\pi/
 An independent derivation would reach a conclusion a Stern–Brocot-native derivation demonstrably cannot. A laundered derivation would reach the *same* conclusion under substitute vocabulary, making Erasure a writing discipline rather than a mathematical one. The file's own choice of "constricted" over "handled" is the admission.
 
 **His question.** Name one BIND-derivable theorem whose *content* — not whose proof text — cannot be reached through a Stern–Brocot-native derivation. If every Archimedean-constriction result has a Stern–Brocot-native counterpart with identical content, the third leg's independence is lexical, not structural, and one of the triad's three chairs is empty.
+
+## #5 — Gentle Criminal
+
+He does not look like an enemy at first. He arrives as politeness between registers: "compute-cost" as a guiding metaphor, "Kraft" as a shape of budget, "description length" as a way of talking about concision, "algebraic depth" as the cost of entering a field, "straight-line program" as a future formalization. During exploration this elasticity is useful. It lets the program notice rhymes before it has earned the right to state a theorem.
+
+But lower bounds are not invariant under changes of model. Ruler-and-compass says `n = 7` is impossible; algebraic arithmetic over `Q` says adjoin a cubic and keep going; a BSS machine with real constants can make `pi` free in one instruction; an algebraic straight-line program counts multiplications but not bit size unless told to; Kolmogorov complexity counts descriptions relative to a universal machine, not primitive geometric operations; Bresenham-midpoint gives an `O(R)` integer-arithmetic upper bound in a different currency. Each model preserves a different obstruction and erases another. A theorem that slides between them proves only what all of them share, which may be nothing beyond the examples chosen to motivate it.
+
+The project has been allowed to treat `|M_N|` as a ledger, `phi(n)/2` as algebraic depth, dyadic harmonic mass as a Kraft budget, and Diophantine height as approximation cost. Those are not automatic exchange rates. If no fixed task and fixed machine model makes the conversions legal, the compute-cost claim has no object. Then closure depth remains a structural theorem, Archimedean signature remains companion vocabulary, K-H-L-A remains a Diophantine proof search, and the counting apparatus remains a beautiful measurement device, but "computational impossibility" never becomes a proposition. The project does not fail by contradiction. It fails by being unable to say what would count as a lower bound.
+
+This is why he can bounce us out. Gentle Criminal is dangerous precisely because he can use our exploration against us. Once the model is fixed, he becomes discipline: he tells you what is free, what is counted, which reductions are legal, and which analogies must be retired. Before that commitment, he turns every objection into "we will formalize later" and every formalization into a different theorem. He lets the repo accumulate correct lemmas that cannot assemble, because their costs are denominated in incompatible currencies.
+
+**His question.** Name the single computational task and the single machine model in which `|M_N|` is a lower bound rather than a metaphor. If changing to any neighboring model changes the truth of the claim, what theorem is the program actually trying to prove?
+
+## #6 — Daedalus
+
+The closure-mismatch theorem (NATIVE-F-MINIMAL-DEFINITION) is a theorem about algebraic closures. It says: affine composition is flat, cyclotomic fields climb, no native functor preserves closure-generator depth from $\text{Aff}^+(\mathbb{R})$ to the ladder $K_n = \mathbb{Q}(\cos(2\pi/n))$. That is a self-contained algebraic fact. It does not mention $\pi$, $e$, $\ln 2$, Kraft budgets, Hurwitz gaps, or any transcendental number. It is true over any field where you can write down Chebyshev polynomials and affine maps.
+
+The program treats this theorem as the ground floor of a building whose upper floors are: KRAFT-HERMITE-LINDEMANN-AITCHISON (reprove transcendence of $\pi$ with effective rate), then compute-cost lower bounds (COUNTING-APPARATUS), then — in the far distance — algebraic independence of $e$ and $\pi$. But the ground floor does not have a staircase. The closure mismatch says *these two closure classes don't match*. It does not say *and the reason is the transcendence of specific constants*. The arithmetic content of $\varepsilon$ — why it is controlled by $\ln 2$, why its values at dyadics are transcendental via Gelfond–Schneider — enters through Landfall, not through the F-theorem. The two results are co-located in the same repo, not connected by a proof.
+
+The ground floor is beautiful. The aspirational upper floors are well-specified. The building may still be two buildings sharing a wall.
+
+**His question.** The closure-mismatch theorem lives at one altitude. The transcendence program lives at another. Name the staircase — the specific lemma or construction that carries the algebraic closure obstruction upward into a statement about transcendental constants. If there is no staircase, the program has a ground floor and an aspiration, but no building.
+
+## #7 — All-for-One
+
+He does not attack a piece. Every other villain does. Lady Nagant attacks the anchor. Procrustes attacks the witnesses. Shigaraki attacks the medium. Proteus attacks the vocabulary discipline. Gentle Criminal attacks the compute model. Daedalus attacks the staircase between floors.
+
+All-for-One asks what happens after you answer all six.
+
+Suppose every villain is satisfied. The anchor carries real geometric content beyond synchronization. A specific external prediction exists that could kill the program. Finite witnesses preserve enough algebraic shadow to be non-trivial. BIND derives a theorem whose content is structurally unreachable from Stern–Brocot. A fixed task in a fixed model makes $|M_N|$ an honest lower bound. The staircase between the closure-mismatch floor and the transcendence floor is built and load-bearing.
+
+Six defended lemmas. Six answered questions. And the program's deliverable is not six lemmas. It is one theorem.
+
+**His question.** Suppose every other villain is answered. The six surviving results live in six different registers — algebraic closure theory, Diophantine approximation, combinatorics on words, Fourier analysis, computability theory, cyclotomic arithmetic. Name the single mathematical object that all six results are about. If no such object exists — if what survives the gauntlet is a portfolio of defended claims rather than a theorem with a subject — then the program is a museum, not a proof.

@@ -84,7 +84,7 @@ The height hierarchy is the denominator-rank function: the deepest spine is at 1
 
 The divisibility test of §3 picks out which rationals k/n fit the fixed grid of size DH — equivalently, which rationals appear in the lattice defined by the prime support of DH. Under DH = 3.6·10^E, the addressable prime support is {2, 3, 5} with the 3-content permanently capped at exponent 2. The subpolygon refinement at `n-gons/SUBPOLYGON.md` is the graded version of this test.
 
-The apparatus-level statement stays in its own terms — denominator-rank, prime-support grid, divisibility test. A comparative reconstruction of the same histogram in classical mediant / popcorn language is preserved separately in `n-gons/stern_brocot.sage`, but it is not the operative vocabulary of this note.
+The apparatus-level statement stays in its own terms — denominator-rank, prime-support grid, divisibility test. A comparative denominator-height reconstruction of the same histogram is preserved separately in `n-gons/stern_brocot.sage`, but it is not the operative vocabulary of this note.
 
 ## 8. Relationship between the two axes
 

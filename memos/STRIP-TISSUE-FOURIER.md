@@ -14,7 +14,8 @@ This note promotes the strip-Fourier part of
 - The nonzero-mode `L^2` energy is a `1/n^4` observable with first-pair
   concentration ratio `90/pi^4`.
 - The strip `H^1` seminorm is a `1/n^2` observable with leading constant
-  `4pi^4/3`, matching Hurwitz's isoperimetric gap at leading order.
+  `4pi^4/3`, matching the Hurwitz gap of the radial-graph lift at leading
+  order up to an explicit `O(n^-4)` correction.
 
 No Stern-Brocot / Farey / Thomae primitive enters. This is BIND-native strip
 geometry: secant arcs, integration, and Fourier modes on `[0, 1]`.
@@ -256,6 +257,36 @@ The next-order difference is
 So the shared constant is a genuine Archimedean match, not an identity in
 disguise.
 
+The stronger comparison is now closed in
+[memos/STRIP-H1-HURWITZ-CLOSURE.md](memos/STRIP-H1-HURWITZ-CLOSURE.md).
+Let
+
+```text
+gamma_tilde_n(theta) = (1 + y_n(theta/(2 pi))) e^(i theta).
+```
+
+Geometrically, `gamma_tilde_n` is exactly the circumscribed regular
+`n`-gon. Its Hurwitz gap satisfies
+
+```text
+||y_n'||_L2([0,1])^2 = Delta(gamma_tilde_n) + R_n,
+R_n = (16/45) pi^6 / n^4 + (128/315) pi^8 / n^6 + O(n^-8),
+R_n > 0.
+```
+
+Thus the bridge object is not the inscribed `Delta_n` directly, but the
+circumscribed Hurwitz gap of the radial lift. The remaining order-`n^-4`
+difference decomposes into the classical circumscribed-vs-inscribed
+squeeze plus the explicit residual `R_n`.
+
+![Hurwitz gap and strip H1 comparison](../figures/hurwitz_strip_h1_match.png)
+
+The figure is built by
+[memos/build_hurwitz_strip_h1_match.py](memos/build_hurwitz_strip_h1_match.py).
+It plots `Delta_n` and `||y_n'||_L2^2` against their shared leading term,
+then shows that the next term separates them:
+`n^4 (||y_n'||_L2^2 - Delta_n) -> 76 pi^6 / 45`.
+
 ## Rate Hierarchy
 
 The strip tissue supports a small Sobolev hierarchy:
@@ -290,16 +321,21 @@ The strip tissue gives BIND a Fourier toolkit independent of Hurwitz:
 | Arc-length polygon | complex curve `gamma_n(s)` | `1 + n Z` | Hurwitz gap `Delta_n ~ 1/n^2` |
 | Strip tissue | real function `y_n(x)` | `n Z` | `A_below = d_0`, `||y_n||_L2^2 ~ 1/n^4`, `||y_n'||_L2^2 ~ 1/n^2` |
 
-The key point is not that BIND recreates Hurwitz. It does not. The key point
-is that the strip has its own native Fourier object whose `H^1` seminorm
-recovers the same leading `4pi^4/(3n^2)` constant as Hurwitz while staying in
-strip primitives.
+The key point is not that BIND recreates the inscribed Hurwitz gap. It does
+not. The strip has its own native Fourier object on `n Z`; its `H^1`
+seminorm reaches the Hurwitz register only after the radial-graph lift
+`gamma_tilde_n`, which is the circumscribed regular `n`-gon. The closure
+memo
+[memos/STRIP-H1-HURWITZ-CLOSURE.md](memos/STRIP-H1-HURWITZ-CLOSURE.md)
+settles the former open question affirmatively in this two-step form:
 
-Open question:
+```text
+||y_n'||_L2([0,1])^2 = Delta(gamma_tilde_n) + R_n,
+R_n = (16/45) pi^6 / n^4 + O(n^-6).
+```
 
-> Are `Delta_n` and `||y_n'||_L2^2` evaluations of one bilinear form in two
-> coordinate systems, or do they merely share the same second-order
-> Archimedean jet?
-
-Until that is answered, treat them as distinct observables with matching
-leading content.
+So `||y_n'||_L2^2` and the circumscribed Hurwitz gap share the same
+isoperimetric Hessian at leading order, with an explicit lower-order
+geometric correction. The direct comparison to the inscribed `Delta_n`
+remains a secondary Archimedean squeeze, not the primary bilinear-form
+identification.

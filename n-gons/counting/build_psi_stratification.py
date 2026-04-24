@@ -77,6 +77,21 @@ def min_distance_to_halves(n_max):
     return best_dist, best_n
 
 
+def min_distance_to_guide(n_max, guide):
+    """Minimum distance from any outside-out vertex x-coordinate to one guide."""
+    best_dist = float("inf")
+    best_n = None
+    for n in range(3, n_max + 1):
+        sec_val = 1.0 / np.cos(np.pi / n)
+        angles = (2 * np.arange(n) + 1) * np.pi / n
+        xs = sec_val * np.cos(angles)
+        local_min = float(np.min(np.abs(xs - guide)))
+        if local_min < best_dist:
+            best_dist = local_min
+            best_n = n
+    return best_dist, best_n
+
+
 def main():
     here = os.path.dirname(os.path.abspath(__file__))
     figdir = os.path.normpath(os.path.join(here, "..", "..", "figures"))
@@ -121,9 +136,18 @@ def main():
     EMPTY_GUIDE_COLOR = "#e87722"  # orange — Niven-rational, empty
 
     verify_dist, verify_n = min_distance_to_halves(VERIFY_N_MAX)
+    pos_dist, pos_n = min_distance_to_guide(VERIFY_N_MAX, 0.5)
+    neg_dist, neg_n = min_distance_to_guide(VERIFY_N_MAX, -0.5)
     print(f"[verify] min |x ± 1/2| over n ≤ {VERIFY_N_MAX}: {verify_dist:.3e} (achieved at n = {verify_n})")
+    print(f"[verify] min |x - 1/2| over n ≤ {VERIFY_N_MAX}: {pos_dist:.3e} (achieved at n = {pos_n})")
+    print(f"[verify] min |x + 1/2| over n ≤ {VERIFY_N_MAX}: {neg_dist:.3e} (achieved at n = {neg_n})")
 
-    fig, ax = plt.subplots(figsize=(13, 10))
+    fig, ax = plt.subplots(figsize=(14.2, 9.7))
+
+    # --- theorem-witness row ---------------------------------------------
+    ax.axhspan(6.55, 7.45, color=CLASS_COLORS[6], alpha=0.12, zorder=-2)
+    ax.text(-2.17, 7.0, r"$n=7$ witness", color="#8a5a08",
+            fontsize=9.5, va="center", ha="left", fontweight="bold")
 
     # --- guide lines -----------------------------------------------------
     backbone_guides = [-2, -1, 0, 1]
@@ -167,6 +191,23 @@ def main():
         tick_label.set_color(color)
         tick_label.set_fontweight("bold")
 
+    # Only label the empty guides above the plot; the backbone guide names
+    # are already carried by the colored x-ticks.
+    ax.text(0.5, N_MAX + 0.45, r"empty guide", color=EMPTY_GUIDE_COLOR,
+            fontsize=9.5, ha="center", va="bottom")
+    ax.text(-0.5, N_MAX + 0.45, r"empty guide", color=EMPTY_GUIDE_COLOR,
+            fontsize=9.5, ha="center", va="bottom")
+
+    ax.annotate(
+        r"first cubic row",
+        xy=(-0.90, 7.0),
+        xytext=(-1.43, 11.5),
+        arrowprops=dict(arrowstyle="->", color="#8a5a08", lw=0.9),
+        fontsize=9.5,
+        color="#8a5a08",
+        ha="left",
+    )
+
     # --- legend (vertical, upper-left negative space) ---------------------
     legend_patches = [
         Patch(facecolor=CLASS_COLORS[2],      label=r"$\psi = 2$"),
@@ -178,7 +219,7 @@ def main():
     ax.legend(handles=legend_patches,
               loc="upper left", bbox_to_anchor=(0.01, 0.985),
               ncol=1, frameon=True, framealpha=0.92,
-              edgecolor="0.8", fontsize=10.5,
+              edgecolor="0.8", fontsize=9.7,
               title=r"$\psi(n)$ class", title_fontsize=11)
 
     # --- suptitle + caption -----------------------------------------------
@@ -187,15 +228,21 @@ def main():
         fontsize=14.5, fontweight="bold", y=0.995,
     )
     fig.text(
+        0.5, 0.957,
+        r"Focus: the $n=7$ first-cubic row and the tested-empty rational guides at $x=\pm1/2$.",
+        ha="center", fontsize=10.1, color="0.32",
+    )
+    fig.text(
         0.5, 0.015,
         r"$n \in [" + str(N_MIN) + r", " + str(N_MAX) + r"]$    "
-        r"red / blue / gray ticks: planar backbone;    "
-        r"orange ticks: tested-empty guides at $x = \pm 1/2$    "
-        f"(verified through $n \\leq {VERIFY_N_MAX}$, min $|x \\pm 1/2| = {verify_dist:.1e}$)",
+        r"points: $x_{n,k}=\sec(\pi/n)\cos((2k+1)\pi/n)$;    "
+        f"$x=\\pm1/2$ verified empty through $n \\leq {VERIFY_N_MAX}$: "
+        f"best $+1/2$ gap ${pos_dist:.1e}$ at $n={pos_n}$, "
+        f"best $-1/2$ gap ${neg_dist:.1e}$ at $n={neg_n}$",
         ha="center", fontsize=9.5, color="0.35", style="italic",
     )
 
-    plt.tight_layout(rect=[0.0, 0.04, 1.0, 0.965])
+    plt.tight_layout(rect=[0.0, 0.04, 1.0, 0.94])
     outpath = os.path.join(figdir, "counting_psi_stratification.png")
     plt.savefig(outpath, dpi=170, bbox_inches="tight")
     plt.close(fig)

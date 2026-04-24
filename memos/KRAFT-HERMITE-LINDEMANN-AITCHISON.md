@@ -114,25 +114,54 @@ derive two inequalities on $I(1)$: one bounding it above (small, because $f$ is 
 
 **Speculative proof-shape — cut-and-paste (Fortnow §3).** *We speculate here on a possible proof shape, with this as a candidate and nothing more — the translation it requires has not been done in this repo and is not yet known to go through.* The polygon-vs-circle gap at level $n$ is a form of *run* in the approximation of $\pi$: a region where the polygon's algebraic data agree with $\pi$ to Archimedean accuracy $\Theta(1/n^2)$. Fortnow §3's cut-and-paste template says that runs longer than a threshold (there: $2 \log n$ zeros in a random string) force a description shorter than the complexity floor, contradicting randomness. The candidate transposition: an agreement between the $n$-gon algebraic approximant and $\pi$ past a specific Archimedean-rate threshold would, under the algebraic-$\pi$ hypothesis, force $K(\pi)$ below the cyclotomic height at that level, contradicting the hypothesis. Needs the `K`-to-algebraic-height translation made rigorous before the argument carries weight; flagged here so §(C) has a candidate shape in view when directed attempts start. See `memos/FORTNOW-KOLMOGOROV-BRIEF.md` §3 for Fortnow's template in its native string-complexity register.
 
-**The load-bearing inequality.** If $\pi$ were algebraic of degree $d$, the gap would be algebraic of joint degree $\le d \cdot \varphi(2n)/2$, with height controllable in the joint cyclotomic $\times \mathbb{Q}(\pi)$ field. Its absolute value is $\Theta(1/n^2)$ by Archimedes. The classical "nonzero algebraic integer is $\ge$ one-over-denominator" lower bound (Liouville 1844) forces contradiction when the height grows slower than $n^2$.
+**The hoped-for load-bearing inequality.** If $\pi$ were algebraic of
+degree $d$, the original plan was to treat the gap as an algebraic element
+of a joint cyclotomic $\times \mathbb{Q}(\pi)$ field, control its height,
+and compare the Liouville lower bound with the Archimedean
+`Theta(1/n^2)` upper bound. The classical "nonzero algebraic integer is
+`>=` one-over-denominator" lower bound (Liouville 1844) would force a
+contradiction only if the relevant height grew slowly enough.
+
+**Status after scale test.** The natural version of this inequality is now
+closed negative. [memos/LIOUVILLE-SCALE-TEST.md](memos/LIOUVILLE-SCALE-TEST.md)
+shows that the inscribed gap, the circumscribed/radial-lift gap, and the
+strip `H^1` seminorm all reduce to geometric weights on
+`alpha_n - pi`, where `alpha_n = n tan(pi/n)`. Along odd primes,
+`alpha_n` has degree `phi(2n)` and Mahler measure
+`log M(alpha_n) ~ phi(2n) log n`, so Liouville gives a lower bound far
+below the Archimedean `1/n^2` upper bound. The naive Liouville endgame on
+the polygon-gap approximant is dead on scale. A Liouville route would now
+need a different small algebraic quantity, not a reweighting of these
+gaps.
 
 **What's open.**
 
-- Computing polygon-vs-circle Fourier coefficients in closed form. (Overlaps with (B).)
-- Controlling the height of $(L_n^{\text{insc}})^2 - 4\pi A_n^{\text{insc}}$ in the joint field under the algebraic-$\pi$ hypothesis. The polygon contribution has height $\exp(O(\varphi(2n))) \le \exp(O(n))$; the $4\pi A_n$ contribution's height under the hypothesis is bounded by $n$-independent constants times a $d$-depending height. The joint height should grow as $\exp(O(n))$, which competes with $1/n^2$: the right inequality runs if the **height–area gap ratio** falls inside a specific band.
-- Verifying that the Liouville-height step stays elementary. Liouville 1844 is pre-Hermite; it predates every classical transcendence result. Using it on a joint cyclotomic $\times \mathbb{Q}(\pi)$ field should still be pre-L–W, but requires careful height-book-keeping. The natural sharpening — Baker 1966 effective linear forms in logarithms — is **post**-L–W and would be a circularity signal; see (D).
+- Finding a different small algebraic quantity with polynomial cyclotomic
+  height, if the Liouville branch is to survive at all.
+- Auditing the discrepancy / averaging route over a range of `n`, which
+  does not go through `alpha_n` pointwise. The empirical-to-density proxy
+  in [memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md](memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md)
+  Step 5 is the remaining live bottleneck for that branch.
+- Verifying any replacement Diophantine step stays elementary. The natural
+  sharpenings — Thue, Siegel, Roth, Baker — are post-L-W and are not
+  acceptable for the pre-L-W provenance claim.
 
 ---
 
 ## (D) Effective rate and L–W-safety
 
-**What falls out if (A), (B), (C) close.** A bound of form $|q\pi - p| \ge c\, q^{-C}$ with $C$ extractable from three ingredients:
+**What would fall out if a replacement (A), (B), (C) close.** A bound of form $|q\pi - p| \ge c\, q^{-C}$ with $C$ extractable from three ingredients:
 
 - **Archimedean exponent**: 2, from $\Theta(1/n^2)$ polygon-vs-circle gap. Pre-L–W (Archimedes).
 - **Cyclotomic degree growth**: $\varphi(2n)/2$, averaging $\sim n/\log\log n$ per Erdős–Kac. Pre-L–W (Gauss).
 - **Kraft–Parseval harmonic constant**: $O(\log m)$ or $O(\log^2 m)$ from the E-T-K weight, possibly with an $m$-dependence that tightens after matching to Aitchison's density-side decay. Pre-L–W methodologically.
 
-Expected ballpark: $C$ in the range 2 to about 10, under Archimedean-squeeze + cyclotomic-height matching. Compare Salikhov 7.6 (2008, current best), Mahler 42 (1953). A $C$ in that range would be competitive with the transcendence-theoretic literature; a $C$ in the 20s would be historically interesting only as a pre-L–W argument.
+Expected ballpark, now conditional on finding a replacement small
+quantity or discrepancy endgame: $C$ in the range 2 to about 10, under
+Archimedean-squeeze + cyclotomic-height matching. Compare Salikhov 7.6
+(2008, current best), Mahler 42 (1953). A $C$ in that range would be
+competitive with the transcendence-theoretic literature; a $C$ in the 20s
+would be historically interesting only as a pre-L–W argument.
 
 **L–W-safety tags** (per `memos/LINDEMANN-BRIEF.md` §"Exit criteria"):
 
@@ -229,7 +258,8 @@ Ranked from least load-bearing / fastest to check toward the real research bottl
 3. **~~(A/B), first-band concentration theorem.~~** ✅ **Closed.** [corners/HURWITZ-FIRST-BAND-CONCENTRATION.md](corners/HURWITZ-FIRST-BAND-CONCENTRATION.md) derives the paired-band closed form $B_j(n)$, proves $B_j(n) \le B_1(n)/j^2$, concludes the sharp uniform bound $B_1(n) \ge (6/\pi^2)\Delta_n$, and adds the dyadic-shell estimate $\sum_{2^r \le j < 2^{r+1}} B_j(n) \le 2^{-r} B_1(n)$.
 4. **~~(A), Kraft-constant consolidation.~~** ✅ **Closed.** [memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md](memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md) now contains the exact weighted one-dimensional lemma, its dyadic-shell corollary, and the Fortnow-consolidated corollary at cutoff `m = 2^R - 1`, all under the explicitly stated empirical-to-density proxy. The honest Aitchison-facing shell is the paired shell `L_r^(pair)(n)`, and every front constant is sourced.
 5. **(D), L–W-safety audit on a drafted argument.** Before committing to (A)+(B)+(C) in earnest, sketch the argument at the level of a paragraph — "assume $\pi$ algebraic, then Hurwitz says ..., then the Kraft budget forces ..., contradiction" — and run the `memos/LINDEMANN-BRIEF.md` §"Exit criteria" tagging on every step. If the tag fails at any step, the memo has to either swap tools or close as a circularity-detection result.
-6. **(C), the auxiliary-free replacement.** Write out the contradiction in full, using the Archimedean-exponent-2 + cyclotomic-height-$\exp(O(n))$ + Kraft-harmonic-$\log^2 N$ matching to read off $C$. Attempt the Liouville extension to the joint cyclotomic $\times \mathbb{Q}(\pi)$ field; flag any post-1844 tool invoked.
+6. **~~(C), naive Liouville auxiliary-free replacement on the polygon gap.~~** ❌ **Closed negative.** [memos/LIOUVILLE-SCALE-TEST.md](memos/LIOUVILLE-SCALE-TEST.md) reduces the inscribed gap, circumscribed/radial-lift gap, and strip `H^1` seminorm to `alpha_n - pi` with `alpha_n = n tan(pi/n)`, then shows `alpha_n` has exponential cyclotomic height. Liouville cannot collide with the `1/n^2` Archimedean upper bound.
+6b. **(C/D), replacement endgame.** Either find a different small algebraic quantity with polynomial cyclotomic height, or shift the proof attempt to the discrepancy/Aitchison branch over a range of `n`.
 7. **(D), effective-rate extraction.** Read off $c, C$; compare against Salikhov 7.6.
 
 Optional follow-on to steps 1–2: **circumscribed counterpart**. `corners/hurwitz_gap_circumscribed.sage` would do the same for the circumscribed regular $n$-gon ($L_n^{\text{circ}} = 2n \tan(\pi/n)$, $A_n^{\text{circ}} = n \tan(\pi/n)$). The Archimedean squeeze uses both sides, and the E-T-K $\times$ Aitchison Kraft budget wants the inscribed $+$ circumscribed sum. Not yet built.
@@ -246,7 +276,12 @@ The memo freezes and promotes when any one of the following triggers:
 
 2. **Dido route collapses to Hermite's auxiliary.** Item (C) shows the polygon-vs-circle gap is Hermite's $\int_0^t e^{-x} f(x) dx$ under Poisson-summation change of variable. The memo becomes a pedagogical note; promote to `memos/HERMITE-AS-DIDO-BRIEF.md` and close the search.
 
-3. **Liouville-height step fails pre-L–W.** Item (C) or (D) confirms that extending Liouville 1844 to the joint cyclotomic $\times \mathbb{Q}(\pi)$ field requires Baker or Gelfond–Schneider essentially. The memo becomes a circularity-detection record; promote finding to `memos/LINDEMANN-BRIEF.md` §"Post-Lindemann tools" and close.
+3. **Liouville-height step fails on scale or provenance.** The natural
+   polygon-gap version has already failed on scale at
+   [memos/LIOUVILLE-SCALE-TEST.md](memos/LIOUVILLE-SCALE-TEST.md). If every
+   replacement endgame either repeats that scale failure or requires
+   Baker / Gelfond-Schneider essentially, the memo becomes a negative
+   lineage record and closes.
 
 4. **Two directed attempts at steps 1–6 of §"Proposed order of work" close without a tagged sentence.** Same discipline as `memos/RAMANUJANS-COMPLIMENT.md` §"When to leave" and `memos/LOWER-BOUND-COUNTRY.md` §"Exit criteria." Demote to low-priority; note findings.
 
@@ -254,4 +289,4 @@ The memo freezes and promotes when any one of the following triggers:
 
 ## Status
 
-Open search memo. The one-dimensional program through Step 4 is now on the page: the regular $n$-gon's arc-length Fourier coefficients have the clean closed form $c_m^{(n)} = L_n^2/(4\pi^2 m^2) \cdot \mathbb{1}[m \equiv 1 \pmod n]$, Hurwitz's identity matches elementary geometry to machine precision, the Archimedean $\Delta_n \sim 4\pi^4/(3n^2)$ asymptote is verified through $n = 100$, the first admissible band carries a sharp uniform proportion $6/\pi^2$ of the whole gap, the higher bands satisfy a dyadic-shell estimate of genuine Kraft shape, the honest Aitchison-facing shell has been identified exactly, Fortnow has been pulled back to the exact paired-shell semimeasure, and the final one-dimensional bookkeeping lemma is now written down with all constants sourced and the empirical-to-density proxy stated explicitly. The Dido hook survives its first nontrivial theorem-sized test. Next live step: item (5) of §"Proposed order of work" — the L-W-safety audit on a drafted argument. Hurwitz 1902 has still not been sourced into the repo; `memos/HURWITZ-ISOPERIMETRIC-BRIEF.md` remains a candidate anchor-to-be-written.
+Open search memo with one negative branch now recorded. The one-dimensional program through Step 4 is on the page: the regular $n$-gon's arc-length Fourier coefficients have the clean closed form $c_m^{(n)} = L_n^2/(4\pi^2 m^2) \cdot \mathbb{1}[m \equiv 1 \pmod n]$, Hurwitz's identity matches elementary geometry, the first admissible band carries a sharp uniform proportion $6/\pi^2$ of the whole gap, the honest Aitchison-facing shell has been identified exactly, Fortnow has been pulled back to the exact paired-shell semimeasure, and the final one-dimensional bookkeeping lemma is written down under the empirical-to-density proxy. The naive Liouville endgame on the polygon gap is closed negative by [memos/LIOUVILLE-SCALE-TEST.md](memos/LIOUVILLE-SCALE-TEST.md). Next live step: either a replacement small algebraic quantity or the discrepancy/Aitchison audit, especially the empirical-to-density proxy. Hurwitz 1902 has still not been sourced into the repo; `memos/HURWITZ-ISOPERIMETRIC-BRIEF.md` remains a candidate anchor-to-be-written.

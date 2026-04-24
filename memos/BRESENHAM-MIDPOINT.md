@@ -76,7 +76,7 @@ None of these four is a decided link to the main argument. They are the reasons 
 **What's unknown**:
 
 - Whether anyone has explicitly factored a Bresenham-midpoint circle word into Christoffel segments keyed to rational tangent slopes along the octant.
-- Whether such a factorization, if it exists, aligns with the Stern–Brocot structure the repo already uses in `n-gons/stern_brocot.sage` and `memos/CONTINUED-FRACTIONS-CROSSWALK.md`.
+- Whether such a factorization, if it exists, aligns with the continued-fraction structure tracked in `memos/CONTINUED-FRACTIONS-CROSSWALK.md`.
 - Whether the word's length, as a function of `R`, admits a *combinatorial* cost measure (e.g., sum of continued-fraction partial quotients of some associated real) that differs meaningfully from the raw pixel count.
 
 **Search moves:**
@@ -129,7 +129,7 @@ Existing material this memo draws on:
 - `memos/RAMANUJANS-COMPLIMENT.md` — the sister memo on upper-bound benchmarks; Bresenham-midpoint is the lattice-resolution counterpart to Chudnovsky's full-precision rate.
 - `corners/PSEUDO-CHEBYSHEV-NODES.md` — algebraic-degree catalog; the `round(2cos(2π/n))` surrogate. Bresenham-midpoint is a compute-model instance of exactly the same round-to-integer operation, applied to the whole circle rather than a single node.
 - `memos/CRYSTALLOGRAPHIC-RESTRICTION-BRIEF.md`, `BNHA/triad/NIVEN-THREE-WAYS.md`, `memos/MIZAR-NIVEN-FOREBODING.md` — the crystallographic-restriction side; relevant to item (C).
-- `memos/CONTINUED-FRACTIONS-CROSSWALK.md`, `n-gons/stern_brocot.sage` — the CF / Stern–Brocot machinery that the Christoffel-word angle in item (B) plugs into.
+- `memos/CONTINUED-FRACTIONS-CROSSWALK.md` — the continued-fraction machinery that the Christoffel-word angle in item (B) plugs into.
 - `n-gons/counting/COUNTING.md` and the full `n-gons/counting/` directory — the comparison target for item (D).
 - `n-gons/ARCHIMEDEAN-STRIP-FLIP.md`, `BNHA/triad/Eraserhead/ARCHIMEDEAN-CONSTRICTION.md` — the exhaustion tradition; Bresenham-midpoint is an integer-lattice descendant of Archimedean exhaustion.
 - `memos/LANDFALL-EXPORT.md` — the log-side template; Bresenham-midpoint is the circle-side answer to "what plays the role of Mitchell's `L(x) = E + m`?" for lattice resolution rather than mantissa precision.
