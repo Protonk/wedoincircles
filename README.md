@@ -2,17 +2,18 @@
 
 ![A hand-drawn sketch in MS Paint style: a stick figure wearing a hardhat stands beside a small industrial building with a smokestack. On the ground in front of the figure, three red triangles sit alongside one blue circle. Handwritten text floats in the sky reading "i guess we doin circles now".](figures/doincircles.png)
 
-A research program testing whether a structural correspondence — a candidate functor `F` — exists between two arithmetic objects: on the log side, the floating-point residue `ε(m) = log₂(1+m) − m` studied in *Landfall*; on the circle side, the regular `n`-gon wholeness construction and the arithmetic objects it generates. Most of the repository develops that circle side, then asks whether its structure can be matched, translated, or obstructed against the log side.
+The program tests whether a candidate functor `F` relates two arithmetic objects: on the log side, the floating-point residue `ε(m) = log₂(1+m) − m` from *Landfall*; on the circle side, the regular `n`-gon wholeness construction and the Chebyshev / cyclotomic apparatus it generates. The working expectation is that no such `F` exists, and that the shape of the no is the content worth recording.
 
-The working hypothesis is that no such `F` exists, and that the interesting result is the shape of the obstruction. Three independent legs probe this — Chebyshev polynomial structure (CREATI), crystallographic ↔ p-adic matching (PERMEATE), and `τ_c / ε` spectral rhyme (BIND) — each conducted under its own productive constraint (form / preparation / vocabulary). The expected outcome is not just a no-go verdict but an explicit closure mismatch with computable witnesses: the circle side carries `ℤ[x]` as its operational closure via Chebyshev, the log side appears capped at `Aff⁺(ℝ)` via the machine's native operations, and arithmetic witnesses such as the break at `n = 7` localize the mismatch. Where any leg succeeds locally, that success is informative too. The deliverable shape is a closure-mismatch theorem articulated cooperatively across the three disciplines.
+The shape of the no is a closure-depth mismatch. On the log side, the native closure object `Aff⁺(ℝ)` — affine composition of the machine's primitive operations — is flat: iterating composition never leaves the two-parameter affine form. On the circle side, the trace-field ladder `K_n = ℚ(cos(2π/n))` has `[K_n : ℚ] = φ(n)/2`, which is unbounded as `n` varies. No native functor preserving closure-generator depth can carry a flat object to an unbounded ladder. The no-go is self-contained algebra: it names no transcendental constants, and it holds over any field admitting Chebyshev polynomials and affine maps.
 
-## Project Layout
+Current state, per branch:
 
-This section records only the top-level roles, so it stays useful even as the deeper file tree shifts.
+- **Closure-depth no-go.** Proven under named functorial axioms. Self-contained algebra; names no transcendental constants.
+- **Strip-H¹ / circumscribed-Hurwitz identification.** Proven: the strip-tissue `H¹` seminorm equals the circumscribed regular `n`-gon's Hurwitz gap up to `R_n = 16π⁶/(45n⁴) + 128π⁸/(315n⁶) + O(n⁻⁸)`. The radial-graph lift *is* the circumscribed polygon.
+- **Naive Liouville endgame for transcendence of `π`.** Closed negative. All circle-side Archimedean observables factor through a single approximant `α_n = n tan(π/n)`, whose cyclotomic height is exponential in `φ(n) log n`. The Liouville lower bound fails to meet the `1/n²` Archimedean upper bound for every `n ≥ 3`.
+- **Kraft–Parseval discrepancy route for effective transcendence of `π`.** Open search. The empirical-to-density bridge is the one remaining hypothesis.
+- **Compute-cost lower bound on counting primitives.** Open search. No committed task-plus-machine-model pair yet makes `|M_N|` a bound rather than a companion metric.
 
-- `corners/`, `n-gons/`: the circle-side constructions, variants, and bridge notes.
-- `BNHA/`: the program architecture — the three working disciplines (BIND / CREATI / PERMEATE) under `BNHA/triad/`, plus satellite characters as peers (e.g. `BNHA/SirNighteye/`).
-- `memos/`: promoted internal references, crosswalks, and speculative future-facing notes.
-- `sources/`: source-facing reads, PDFs, and extraction material.
-- `figures/`: generated figures. The scripts that produce them live alongside the doc they illustrate (e.g. `corners/pseudo_chebyshev_continuity.sage`, `n-gons/subpolygon_gallery.sage`).
-- `README.md`, `AGENTS.md`: top-level orientation and repo-local working rules.
+The closure-depth theorem does not depend on any of the other branches; the strip-H¹ identification does not use Liouville; the negative closure of the Liouville endgame is a disciplined output in its own right, recording plainly that the circle side's Archimedean observables factor through an approximant whose height rules out the contradiction the endgame wanted. Two buildings, shared wall.
+
+The program also keeps itself under [a set of sharp questions](VILLAINS.md) about its own design; six are answered, one is refused on the grounds that the question's premise would corrupt the primary theorem if admitted.
