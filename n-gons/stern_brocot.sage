@@ -1,16 +1,17 @@
 """
-Stern-Brocot / Thomae reproduction for `n-gons/N-GON-WHOLENESS.md` §7.
+Comparative Stern-Brocot / Thomae reconstruction for the denominator-rank
+histogram behind `n-gons/N-GON-WHOLENESS.md` §7.
 
-Every n-gon deposits tangency positions at k/n on the unit circle (mapped to
-[0,1]). Collecting positions across n = 1..N and reducing k/n to lowest terms
-p/q yields the Farey set F_N with multiplicity floor(N/q). Height 1/q at each
-rational p/q recovers Thomae's popcorn function, whose level hierarchy is the
-Stern-Brocot tree depth.
+The designated-wholeness apparatus is stated in denominator-rank language.
+This script preserves the classical mediant / popcorn reconstruction of the
+same histogram as comparative material: every n-gon deposits tangency positions
+at k/n on the unit circle, and reducing k/n to lowest terms p/q yields a
+height profile indexed by q.
 
 This script:
-  1. Builds the Stern-Brocot tree by mediant recursion to depth D.
-  2. Plots the tree as a dyadic binary layout (classical Stern-Brocot diagram).
-  3. Plots the Thomae/popcorn stems for F_N, colored by depth.
+  1. Builds the mediant tree on (0,1) by recursion to depth D.
+  2. Plots that tree in the classical dyadic layout.
+  3. Plots the corresponding denominator-rank stems for F_N.
 """
 
 import os
@@ -97,7 +98,7 @@ def plot_tree(max_depth, outpath):
         ax.text(x, y - 0.25, f"{frac.numerator()}/{frac.denominator()}",
                 ha="center", va="top", fontsize=8)
 
-    ax.set_title(f"Stern-Brocot tree in (0,1), depth ≤ {max_depth}")
+    ax.set_title(f"Comparative mediant tree in (0,1), depth ≤ {max_depth}")
     ax.set_xlim(-0.02, 1.02)
     ax.set_ylim(-max_depth - 1, 0)
     ax.set_xlabel("tree position (dyadic layout)")
@@ -132,8 +133,8 @@ def plot_thomae(N, outpath):
         ax.plot([x], [y], marker="o", ms=3, color=cmap(norm(q)))
 
     ax.set_title(
-        f"Thomae popcorn stems on F_{N}: height 1/q at each p/q ∈ (0,1)\n"
-        f"(n-gon tangency histogram, Stern-Brocot depth = denominator rank)"
+        f"Comparative denominator-rank stems on F_{N}: height 1/q at each p/q ∈ (0,1)\n"
+        f"(same histogram as the n-gon tangency plot, in classical popcorn language)"
     )
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 0.55)

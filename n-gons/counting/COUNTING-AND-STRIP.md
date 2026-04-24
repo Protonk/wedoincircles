@@ -72,7 +72,7 @@ Same strip, different readout.
 
 The strip picture does not prove anything by itself. Its value is organizational.
 
-First, it says where the exceptional counting columns come from geometrically. The large terminal column, the `x=-1` column, and the intermittent `x=0` column are not arbitrary artifacts of a word encoding; they are the first rigid equal-`X` contour families visible on the strip.
+First, it says where the exceptional counting columns come from geometrically. The large terminal column, the `x=-1` column, and the intermittent `x=0` column are not arbitrary artifacts of a word encoding; they are the rigid equal-`X` contour families visible on the strip. The current six-field picture predicts that these backbone families are the **only** repeated-incidence families: outside them, corner incidences should be generic and unique.
 
 The `X=\pm 1/2` contours are included for the same reason: they belong to the planar Niven/crystallographic value set. In the initial `\psi`-aligned table through `n=30`, they host no exact corner hits, and a wider numerical search through `n=400` also finds none. So at present the visible counting backbone on the strip remains `X \in \{+1,0,-1\}`, with `X=\pm 1/2` acting as a tested but empty comparison family.
 
@@ -84,15 +84,16 @@ Second, it gives the right kind of bridge to the subpolygon material. The subpol
 
 Third, it sharpens what "bring in 3DT" can mean here. The useful lesson from the Three Distance Theorem is not that counting secretly is a fixed-rotation orbit problem. It is that once a procedural observable is compressed into the right strip-side language, real structure may emerge.
 
-## What to look for next
+## The current theorem target
 
-The immediate question suggested by the strip is:
+The strip now suggests a sharper target than "look for hidden collision structure":
 
-> which equal-`X` contour families can host repeated corner incidences, and how do those incidences change when the `(N+1)`-st rational level is added?
+> classify all repeated corner incidences of the equal-`X` contours of
+> $X(u,y)=(1+y)\cos(2\pi u)$.
 
-That is the corner-side analog of the floor-side gcd question.
+Current best guess: the only repeated-incidence families are the backbone values `X ∈ {−2, −1, 0, +1}`, together with the within-polygon symmetry `k ↔ n−1−k` that already accounts for the generic multiplicity `2` in the word. In that formulation, the theorem to prove is a collision-classification statement: if `x_{n_1,k_1} = x_{n_2,k_2}`, then either the two points are the same polygon-symmetry pair, or the common value lies on the backbone.
 
-For the moment, the figure should be read as a bridge image rather than a theorem statement. It tells us where counting lives and what kind of structure is worth trying to extract from it.
+That is the corner-side analog of the floor-side gcd question, and it is exactly the statement that would make the six-field decomposition complete rather than empirical. The figure should therefore be read as a bridge image plus a theorem target: it tells us where counting lives and which contour families are the only plausible places repeated incidences can survive.
 
 ## File
 

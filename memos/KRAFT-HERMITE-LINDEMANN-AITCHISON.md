@@ -61,6 +61,8 @@ $$D_N \lesssim \frac{1}{m} + \sum_{\|\mathbf{h}\|_\infty \le m} \frac{1}{r(\math
 
 This is the single Kraft–Parseval budget the memo is proposing to run. It interpolates between the "smooth density" and "empirical orbit" regimes, each of which has a classical Fourier bound; their pairing is the content.
 
+For the one-dimensional bookkeeping at the dyadic cutoff `m = 2^R - 1`, the shellized version of Erdős–Turán and the exact per-shell harmonic cost are now written out at [memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md](memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md). That note closes only the shell decomposition and constant accounting; it does not yet identify the correct linear Fourier shell quantity.
+
 **What's partially closed (Fortnow §6).**
 
 - The universal semicomputable measure $\mu(x) = 2^{-K(x)}$ together with **Fortnow's Fact 6.2** (universal dominance: any semicomputable $\tau$ with $\sum_x \tau(x) \le 1$ satisfies $\tau(x) \le c\, \mu(x)$) supplies the canonical prefactor this memo was asking for. It is Chaitin's $c$ in Fact 6.2 — the right model-facing constant to sit in front of the budget. The sequence-facing constants (K-N's $2^{3k+1}$ multi-dim constant from Koksma–Szüsz; Aitchison's $\frac{1}{2}$ from eq 2.3) are absorbed into $c$ once the sequence is recast as a semicomputable sub-probability distribution on the dual lattice. See `memos/FORTNOW-KOLMOGOROV-BRIEF.md` §6. Book-keeping task remaining: write out the explicit combination for our sequences of interest.
@@ -84,11 +86,19 @@ with equality iff $c_n = 0$ for every $|n| \ne 1$. The extremum is a **Fourier-s
 
 The Fourier-support condition ($c_n = 0$ for $|n| \ne 1$) is **combinatorially** encodable in principle: two nonzero modes, everything else vanishing. That is the part the memo bets can be fed into the Kraft budget as a prefix-free certificate.
 
-**What's open.**
+**What's closed (via `corners/hurwitz_gap.sage`).**
 
-- Explicit Fourier coefficients of the regular $n$-gon's arc-length parametrization. Because the parametrization is piecewise linear with $n$ corners, its Fourier coefficients fall off like $1/k^2$ at frequencies $k \not\equiv 0 \pmod n$ and have a specific peak structure at $k \equiv \pm 1 \pmod n$. A closed-form calculation should be direct from geometry; the result has not been written out in this repo.
-- Verify Hurwitz's identity closes on those explicit coefficients: $(L_n^{\text{insc}})^2 - 4\pi A_n^{\text{insc}}$ should equal $4\pi^2 \sum_{k \ne 0} k(k-1)|c_k^{(n)}|^2$, with the sum computable in closed form. Expect $\Theta(1/n^2)$ — matching Archimedes.
-- Whether the support condition $\{|n|=1\}$ is Kraft-encodable without secretly already using the transcendence of $\pi$. The condition is linear on an infinite-dimensional space; the encoding question is whether it can be written as a finite prefix-free description. A natural target: code the polygon-vs-circle *gap* as a prefix-free string whose length is bounded by the polygon's algebraic-depth $\varphi(2n)/2$. Whether this works is the first concrete check (B) asks to run.
+- *Explicit Fourier coefficients.* A short geometric-sum calculation on the tangent field $T_k = \omega^k \cdot i e^{\pi i/n}$ (edge $k$, $\omega = e^{2\pi i/n}$) gives the closed form
+  $$c_m^{(n)} = \begin{cases} L_n^2 / (4\pi^2 m^2) & \text{if } m \equiv 1 \pmod{n}, \\ 0 & \text{otherwise,} \end{cases}$$
+  with $L_n = 2n \sin(\pi/n)$. The admissible lattice is $1 + n\mathbb{Z}$, not $\pm 1 \pmod n$ as first guessed — the polygon's rotation-by-$2\pi/n$ symmetry kills every frequency except those congruent to $+1$ mod $n$.
+- *Hurwitz identity closure.* The closed-form Parseval identity reads
+  $$\Delta_n = L_n^2 - 4\pi A_n = L_n^2 \left[1 - \tfrac{\pi}{n}\cot\tfrac{\pi}{n}\right],$$
+  with asymptote $\Delta_n = 4\pi^4/(3n^2) + O(1/n^4)$. Elementary geometry and the closed-form Parseval sum agree to machine precision across $n = 3, 5, 7, 10, 30, 100$; the Parseval sum truncated at $|j| \le 400$ agrees to a relative $1.5 \times 10^{-3}$ uniformly in $n$ (the tail is $\sim 6/(\pi^2 j_{\max})$, independent of $n$). Rate-comparison figure: `figures/hurwitz_gap_rate.png`.
+- *First-band concentration theorem and dyadic-shell corollary.* The companion note [corners/HURWITZ-FIRST-BAND-CONCENTRATION.md](corners/HURWITZ-FIRST-BAND-CONCENTRATION.md) promotes the frequency plot to a theorem: if $B_j(n)$ is the paired contribution of $m = 1 \pm j n$ to $\Delta_n$, then $B_j(n) \le B_1(n)/j^2$ for every $j \ge 1$, hence $B_1(n) \ge (6/\pi^2)\Delta_n$ uniformly in $n$, and more generally $\sum_{2^r \le j < 2^{r+1}} B_j(n) \le 2^{-r} B_1(n)$. The constant is sharp: $B_1(n)/\Delta_n \to 6/\pi^2$ from above. What remains for the Kraft reading is global Aitchison $\times$ E-T-K constant consolidation, not the local shell estimate.
+
+**What remains open.**
+
+- Whether the support condition $\{m \equiv 1 \pmod n\}$ is Kraft-encodable without secretly already using the transcendence of $\pi$. The condition is linear on an infinite-dimensional space; the encoding question is whether it can be written as a finite prefix-free description. A natural target: code the polygon-vs-circle *gap* as a prefix-free string whose length is bounded by the polygon's algebraic-depth $\varphi(2n)/2$. Whether this works is the first concrete check (B) still asks to run.
 
 ---
 
@@ -214,12 +224,15 @@ All three named. Analog of the Ramanujan-memo and lower-bound-country memo disci
 
 Ranked from least load-bearing / fastest to check toward the real research bottleneck, following the pattern of `memos/COUNTING-APPARATUS.md` §"Proposed order of work":
 
-1. **(B), explicit Fourier coefficients of the regular $n$-gon.** Closed-form computation of $c_k^{(n)}$ for the arc-length parametrization of the inscribed regular $n$-gon in the unit circle. Cheap, directly testable, and either closes or kills (B) immediately.
-2. **(B), Hurwitz identity closure check.** Using the explicit $c_k^{(n)}$ from step 1, verify that $\sum_{k \ne 0} k(k-1)|c_k^{(n)}|^2 = (L_n^2 - 4\pi A_n)/(4\pi^2)$ matches $\Theta(1/n^2)$ elementary-geometry computation. If it doesn't, item (B) is wrong as stated.
-3. **(D), L–W-safety audit on a drafted argument.** Before committing to (A)+(B)+(C) in earnest, sketch the argument at the level of a paragraph — "assume $\pi$ algebraic, then Hurwitz says ..., then the Kraft budget forces ..., contradiction" — and run the `memos/LINDEMANN-BRIEF.md` §"Exit criteria" tagging on every step. If the tag fails at any step, the memo has to either swap tools or close as a circularity-detection result.
-4. **(A), Kraft-constant consolidation.** Derive a joint constant for the Aitchison $\times$ E-T-K budget; express in one formula with $N$, $m$, $k=1$ specialized.
-5. **(C), the auxiliary-free replacement.** Write out the contradiction in full, using the Archimedean-exponent-2 + cyclotomic-height-$\exp(O(n))$ + Kraft-harmonic-$\log^2 N$ matching to read off $C$. Attempt the Liouville extension to the joint cyclotomic $\times \mathbb{Q}(\pi)$ field; flag any post-1844 tool invoked.
-6. **(D), effective-rate extraction.** Read off $c, C$; compare against Salikhov 7.6.
+1. **~~(B), explicit Fourier coefficients of the regular $n$-gon.~~** ✅ **Closed.** `corners/hurwitz_gap.sage` derives $c_m^{(n)} = L_n^2/(4\pi^2 m^2) \cdot \mathbb{1}[m \equiv 1 \pmod n]$ from the tangent-field geometric sum and plots the decay (`figures/hurwitz_gap_coefficients.png`).
+2. **~~(B), Hurwitz identity closure check.~~** ✅ **Closed.** The same script verifies $\Delta_n = L_n^2 - 4\pi A_n = L_n^2(1 - (\pi/n)\cot(\pi/n))$ against the Parseval sum, matching to machine precision for the closed-form identity and to $1.5 \times 10^{-3}$ relative for the $|j| \le 400$ truncation (uniformly in $n$). Archimedean asymptote $\Delta_n = 4\pi^4/(3n^2)$ verified (`figures/hurwitz_gap_rate.png`); frequency-band concentration visible (`figures/hurwitz_gap_frequency_decomposition.png`).
+3. **~~(A/B), first-band concentration theorem.~~** ✅ **Closed.** [corners/HURWITZ-FIRST-BAND-CONCENTRATION.md](corners/HURWITZ-FIRST-BAND-CONCENTRATION.md) derives the paired-band closed form $B_j(n)$, proves $B_j(n) \le B_1(n)/j^2$, concludes the sharp uniform bound $B_1(n) \ge (6/\pi^2)\Delta_n$, and adds the dyadic-shell estimate $\sum_{2^r \le j < 2^{r+1}} B_j(n) \le 2^{-r} B_1(n)$.
+4. **(A), Kraft-constant consolidation.** Derive a joint constant for the Aitchison $\times$ E-T-K budget; express in one formula with $N$, $m$, $k=1$ specialized. Fortnow §6 Fact 6.2 supplies the universal-dominance prefactor; combine with K-N's $C_k = 2^{3k+1}$ and Aitchison's $\frac{1}{2}$ at $k = 1$. The local Fourier input is now explicit: first-band concentration plus the dyadic-shell estimate. What remains is the global bookkeeping constant.
+5. **(D), L–W-safety audit on a drafted argument.** Before committing to (A)+(B)+(C) in earnest, sketch the argument at the level of a paragraph — "assume $\pi$ algebraic, then Hurwitz says ..., then the Kraft budget forces ..., contradiction" — and run the `memos/LINDEMANN-BRIEF.md` §"Exit criteria" tagging on every step. If the tag fails at any step, the memo has to either swap tools or close as a circularity-detection result.
+6. **(C), the auxiliary-free replacement.** Write out the contradiction in full, using the Archimedean-exponent-2 + cyclotomic-height-$\exp(O(n))$ + Kraft-harmonic-$\log^2 N$ matching to read off $C$. Attempt the Liouville extension to the joint cyclotomic $\times \mathbb{Q}(\pi)$ field; flag any post-1844 tool invoked.
+7. **(D), effective-rate extraction.** Read off $c, C$; compare against Salikhov 7.6.
+
+Optional follow-on to steps 1–2: **circumscribed counterpart**. `corners/hurwitz_gap_circumscribed.sage` would do the same for the circumscribed regular $n$-gon ($L_n^{\text{circ}} = 2n \tan(\pi/n)$, $A_n^{\text{circ}} = n \tan(\pi/n)$). The Archimedean squeeze uses both sides, and the E-T-K $\times$ Aitchison Kraft budget wants the inscribed $+$ circumscribed sum. Not yet built.
 
 Promotion out of this doc: when (A), (B), (C), (D) combine to produce an effective statement with a clean L–W-safety tagging, the combined result promotes to a standalone writeup — possibly paired with `BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md` as the circle-side transcendence statement the Inscription was looking for. Alternatively, if step 3 or 5 fails, the memo freezes as a lineage-check record and the finding migrates into `memos/LINDEMANN-BRIEF.md` §"Post-Lindemann tools."
 
@@ -241,4 +254,4 @@ The memo freezes and promotes when any one of the following triggers:
 
 ## Status
 
-Open search memo. Just spun up. The two just-read sources (`sources/A Statistical Theory of Remnants.pdf`, `sources/K-N-Chapter2.pdf`) are the budget-side tools; Hurwitz 1902 has not yet been sourced into the repo. Next directed attempt: step 1 of §"Proposed order of work" — closed-form Fourier coefficients of the regular $n$-gon's arc-length parametrization. That is the fastest cheap test of whether (B) → (C) connects at all, and a negative result there kills the Dido hook early.
+Open search memo. Steps 1–3 of §"Proposed order of work" are now closed on the Fourier side: the regular $n$-gon's arc-length Fourier coefficients have the clean closed form $c_m^{(n)} = L_n^2/(4\pi^2 m^2) \cdot \mathbb{1}[m \equiv 1 \pmod n]$, Hurwitz's identity matches elementary geometry to machine precision, the Archimedean $\Delta_n \sim 4\pi^4/(3n^2)$ asymptote is verified through $n = 100$, the first admissible band carries a sharp uniform proportion $6/\pi^2$ of the whole gap, and the higher bands satisfy a dyadic-shell estimate of genuine Kraft shape. The Dido hook survives its first nontrivial theorem-sized test. Next live step: (4) of §"Proposed order of work" — Kraft-constant consolidation for the Aitchison $\times$ E-T-K budget. Hurwitz 1902 has still not been sourced into the repo; `memos/HURWITZ-ISOPERIMETRIC-BRIEF.md` remains a candidate anchor-to-be-written.

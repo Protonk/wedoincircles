@@ -87,20 +87,33 @@ The consequence for this search: the right direction is to land on T3 directly, 
 - **Cyclotomic closure**: ⋃_n ℚ(τ(n)) has no finite-degree subfield containing all τ(n); any attempt to fit the sequence in a fixed cyclotomic extension breaks at some finite n.
 - **No obvious Fourier content**: τ is defined on ℤ, not on a continuous seam. A Dirichlet-style or lattice-Fourier picture may still be worth working out.
 
-**What's missing for the portrait:**
+**Artifact (built):** `corners/tau_portrait.py` produces `figures/tau_portrait.png` — two panels, stem plot of τ(n) on linear y over n ∈ [3, 60] colored by algebraic degree **φ(n)/2** (the correct degree for 2cos(2π/n); an earlier revision of this bullet said φ(2n)/2, which is the degree of cos(π/n) — a different object at `corners/PSEUDO-CHEBYSHEV-NODES.md`), Niven zeros at {1, 2, 3, 4, 6} marked with green stars, and a log-log companion of |τ(n)| against the 4π²/n² Taylor-tail asymptote.
 
-- A single prose statement that collects the above into "here is why no finite algebraic structure reaches τ."
-- A decay-rate or average-rate statement (τ(n) = O(1/n²) at large n? something sharper? density at bounded-depth cyclotomic levels?).
-- A Stern–Brocot / Farey / counting relation on the same ℤ-domain.
+![τ(n) portrait](../figures/tau_portrait.png)
+
+**What the portrait makes visible:**
+
+- **Niven zeros** at n ∈ {3, 4, 6} (and degenerate {1, 2}): green stars at y = 0. The only rational values τ takes on ℤ.
+- **First cubic at n = 7** (orange-red stem, τ(7) ≈ +0.247), coinciding with the first Gauss–Wantzel non-constructible n. The algebraic-depth discontinuity and the rounding-direction bulge meet at the same n.
+- **Positive bulge** at n ∈ {7, 8}: the only non-Niven n at which τ > 0. `2cos(2π/n)` crosses 3/2 between n = 8 (value 1.414) and n = 9 (value 1.532), so rounding direction flips; τ(n) < 0 for all non-Niven n ≥ 9.
+- **1/n² decay**: the log-log panel shows |τ(n)| approaching `4π²/n²` from below; convergence is visible by n ≈ 15. Same Taylor-tail rate as the Hurwitz isoperimetric gap at `corners/hurwitz_gap.sage` — not coincidence: both come from the Taylor expansion of cos at 0.
+
+**What's still missing for the portrait:**
+
+- A single prose statement that collects the above into "here is why no finite algebraic structure reaches τ." (The portrait supplies the belief-forming visual; the paragraph is a follow-on write-up that reads it.)
+- A rigorous decay-rate statement with explicit error term (τ(n) = −4π²/n² + O(1/n⁴) for n ≥ 9, as elementary Taylor gives). Visible in the log-log panel; not yet written as a lemma.
+- A denominator-rank / counting relation on the same ℤ-domain (compatible with the vocabulary-hygiene rule at `AGENTS.md §"Shared-vocabulary hygiene"`).
 - A spectral or analytic observation analogous to ε's O(1/n²) Fourier tail on the log side.
 
-**Outcome target:** a paragraph that reads, for τ, the way Landfall's §4 reads for ε — compact, load-bearing, a belief pillar.
+Allied extant reading: `figures/counting_psi_stratification.png` plots ψ(n)-classed x-support of the outside-out sweep, which reads the same algebraic-depth structure through a different observable (sweep x-coordinates rather than τ residues). Complementary to `tau_portrait.png`. See `n-gons/counting/PSI-STRATIFICATION.md` for the figure's companion memo.
+
+**Outcome target:** a paragraph that reads, for τ, the way Landfall's §4 reads for ε — compact, load-bearing, a belief pillar. The portrait unlocks writing that paragraph.
 
 ---
 
 ## (D) Small-case walkthrough
 
-Pick **n = 7**. First non-constructible node; first cubic in the pseudo-Chebyshev family; first break from the Chebyshev-reachable regime.
+Pick **n = 7**. First non-constructible node; first cubic on the trace side; first break from the Chebyshev-reachable regime.
 
 **Three cost measures to compute at n = 7:**
 
@@ -108,9 +121,31 @@ Pick **n = 7**. First non-constructible node; first cubic in the pseudo-Chebyshe
 2. **Algebraic-arithmetic cost** (compute model (A3) or (A4)): working in the degree-3 extension ℚ(cos(2π/7)) over ℚ. Computing τ(7) to precision ε requires a field extension of degree 3, arithmetic at that degree, and log(1/ε) digits of precision. Cost: O(poly(3) · log(1/ε)).
 3. **Counting-apparatus observable**: `M_7` (the counting word truncated at N = 7). Length, update cost from M_6 → M_7, multiplicity at the new n = 7 corner positions. Already computable via `n-gons/counting/outside_out.py`.
 
-**Target:** the three cost measures track each other (up to constants) across n = 5–11 in a way where the algebraic-degree structure visibly determines the counting-apparatus growth. If it does, that's the belief-forming observation — analogous to plotting ε(m) at a few algebraic m and seeing it doesn't close.
+**Target:** the three measures make the n = 7 break legible without pretending they are the same invariant. The node-side obstruction and the trace-side degree ladder both break there; the current counting-length ledger does not. That honest separation is the belief-forming observation.
 
-**Candidate artifact:** a script in `n-gons/counting/` producing a figure that shows the three cost measures at n ∈ [5, 11] on one plot with the closure-failure at n = 7 marked.
+**Artifact (built):** `n-gons/counting/case_seven.py` produces `figures/case_seven_three_costs.png` — three stacked panels, shared x-axis n ∈ [5, 9], with the Gauss–Wantzel non-constructible set `{7, 9}` shaded pink and marked with red bold x-ticks. Panel 1 is node-side (`\varphi(2n)/2`, constructibility); panel 2 is trace-side (`\varphi(n)/2`, the degree of `2cos(2π/n)` and of the outside-out row field); panel 3 is the counting-length ledger.
+
+![Case seven three costs](../figures/case_seven_three_costs.png)
+
+**The data** (figure range, with n = 10, 11 appended to make the n mod 4 pattern of the counting-ledger step unambiguous):
+
+| n | 2n | φ(2n) | φ(n) | trace degree φ(n)/2 | constructible? | tower depth | \|M_n\| | Δ\|M_n\| |
+|---:|---:|---:|---:|---:|:---:|---:|---:|---:|
+| 5 | 10 | 4 | 4 | 2 | yes | 1 | 5 | +2 |
+| 6 | 12 | 4 | 2 | 1 | yes | 1 | 6 | +1 |
+| **7** | **14** | **6** | **6** | **3** | **NO** | **∞** | **9** | **+3** |
+| 8 | 16 | 8 | 4 | 2 | yes | 2 | 11 | +2 |
+| 9 | 18 | 6 | 6 | 3 | NO | ∞ | 15 | +4 |
+| 10 | 20 | 8 | 4 | 2 | yes | 2 | 17 | +2 |
+| 11 | 22 | 10 | 10 | 5 | NO | ∞ | 22 | +5 |
+
+Three observations the figure makes precise:
+
+1. **Node-side constructibility and trace degree share the n = 7 discontinuity cleanly, even though they are different invariants.** n = 7 is simultaneously the first n at which `cos(π/n)` is not Gauss–Wantzel constructible, and the first n at which the trace field `ℚ(cos(2π/n))` becomes cubic. `n = 6` is the instructive separation: the node-side half-angle degree stays at `φ(2n)/2 = 2`, while the trace degree drops to `φ(n)/2 = 1`. The comparison is therefore honest: panel 1 measures the half-angle / node side, panel 2 measures the trace side, and they still first break together at `n = 7`.
+
+2. **The counting ledger step does not share this discontinuity.** Step increments Δ\|M_n\| across n = 5…11 are `+2, +1, +3, +2, +4, +2, +5` — a pattern governed by n mod 4 (odd n give larger steps: +2, +3, +4, +5 at n = 5, 7, 9, 11; even n stay small: +1, +2, +2 at n = 6, 8, 10) rather than by algebraic depth. The +3 at n = 7 fits the odd-n trend; it is *not* anomalous against its neighbors. This is an honest negative finding: the counting-apparatus *length* observable does not localize the Gauss–Wantzel failure directly, and the "three cost measures tracking each other" framing in the original version of this section was too strong.
+
+3. **Implication for the search.** If the compute-cost bind the program is after requires the ledger to witness algebraic-depth discontinuities at specific n, then the ledger in its current form (length or step increment of the outside-out word) is the wrong observable. A different corner-side observable — perhaps the *value* structure of the M_N entries (Euler-phi content via the terminal singleton `2(N−2)` and the interior singletons) rather than their *length* — may be where the algebraic-depth signature lives. Allied extant reading: `figures/counting_psi_stratification.png` shows the ψ(n)-stratified sweep-x-support through n = 40, which *does* localize the algebraic-depth discontinuity at n = 7 through the ψ classes. That figure is a stronger candidate for belief-forming than the length-based ledger shown here. See `n-gons/counting/PSI-STRATIFICATION.md` for the figure's companion memo.
 
 ---
 

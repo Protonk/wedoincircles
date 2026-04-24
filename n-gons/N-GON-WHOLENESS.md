@@ -66,7 +66,7 @@ The construction naturally extends to n = 1 and n = 2 by the same formula θ_{n,
 
 Under the divisibility test, b_1 = 1 trivially for every DH, and b_2 = 1 iff DH is even — which holds for all DH = 360·10^(E−1).
 
-## 7. Position distribution and the Stern-Brocot structure
+## 7. Position distribution and the denominator-rank hierarchy
 
 Collect all positions from all n-gons up to some cap N:
 
@@ -76,15 +76,15 @@ Mapping angles to [0,1] by dividing by 360°, every element of P_N is a rational
 
 $$h_N(p/q) = \lfloor N / q \rfloor,$$
 
-the number of multiples of q in [1, N]. This is the Farey sequence F_N with multiplicity, equivalently a finite-window scaling of **Thomae's (popcorn) function**, which assigns height 1/q at each rational p/q.
+the number of multiples of q in [1, N]. Equivalently: the set of rationals p/q in lowest terms with q ≤ N, each carrying a height equal to its number of integer-multiple representatives inside that range.
 
-The height hierarchy is the Stern-Brocot tree depth function: the deepest spine is at 1/2 (q=2), next tier at 1/3 and 2/3 (q=3), then 1/4 and 3/4 (q=4), and so on. The rational k/n at position k of the n-gon is literally the Farey fraction; sweeping n from 1 upward walks the Stern-Brocot tree level by level.
+The height hierarchy is the denominator-rank function: the deepest spine is at 1/2 (q=2), next tier at 1/3 and 2/3 (q=3), then 1/4 and 3/4 (q=4), and so on. The rational k/n at position k of the n-gon is a rational-in-lowest-terms of denominator n/gcd(k,n); sweeping n from 1 upward introduces each new denominator level in turn.
 
-### Connection to ?(x)
+### Connection to the prime support of DH
 
-Minkowski's question-mark function ?(x) maps rationals p/q (ranked by Stern-Brocot depth) to dyadic rationals (ranked by binary expansion length). Because the n-gon construction deposits rationals on the circle in exactly the Stern-Brocot order, the position-distribution histogram above is a finite-window discretization of the object ?(x) linearizes.
+The divisibility test of §3 picks out which rationals k/n fit the fixed grid of size DH — equivalently, which rationals appear in the lattice defined by the prime support of DH. Under DH = 3.6·10^E, the addressable prime support is {2, 3, 5} with the 3-content permanently capped at exponent 2. The subpolygon refinement at `n-gons/SUBPOLYGON.md` is the graded version of this test.
 
-The divisibility test of §3 picks out which rationals k/n fit the fixed grid of size DH — equivalently, which rationals appear in the dyadic-like lattice defined by the prime support of DH. Under DH = 3.6·10^E, the addressable prime support is {2, 3, 5} with the 3-content permanently capped at exponent 2.
+The apparatus-level statement stays in its own terms — denominator-rank, prime-support grid, divisibility test. A comparative reconstruction of the same histogram in classical mediant / popcorn language is preserved separately in `n-gons/stern_brocot.sage`, but it is not the operative vocabulary of this note.
 
 ## 8. Relationship between the two axes
 

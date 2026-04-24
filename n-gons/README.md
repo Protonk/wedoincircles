@@ -14,7 +14,7 @@ What it does. It asks whether the angles k · 360°/n are *whole* — integer mu
 
 What it wants. Two complementary parametrizations of DH. The positional axis (DH ∈ ℤ_{≥1}) is faithful but combinatorial. The logarithmic axis DH = 3.6 · 10^E (E ∈ ℝ) samples the positional axis sparsely at integer E and continues as a real parameter off those points. The logarithmic axis carries a permanent fingerprint — v_3(DH) ≤ 2 always — which the apparatus cannot shed. This is the *Babylonian fossil*: a coordinate artifact from the choice of B = 3.6 that survives every integer value of E.
 
-What it produces in the limit. Union all positions over all n up to N and you get a histogram h_N(p/q) = ⌊N/q⌋ on the rationals of [0, 1) — a finite-window scaling of Thomae's popcorn function. The Stern–Brocot tree governs how high each rational stands in this histogram.
+What it produces in the limit. Union all positions over all n up to N and you get a histogram h_N(p/q) = ⌊N/q⌋ on the rationals of [0, 1), with height at each p/q in lowest terms determined by its denominator rank. The prime support of DH controls which rationals survive the divisibility test.
 
 → `n-gons/N-GON-WHOLENESS.md`
 
@@ -77,16 +77,6 @@ Integer-indexed n-gon constructions often admit real-valued continuations: repla
 What it wants. To be treated as the reading frame — not a discipline — that holds smooth and arithmetic content side by side. CREATI closed-forms, PERMEATE saturation tables, and BIND Erasure-legal crossings each see a different slice.
 
 → `corners/PSEUDO-CHEBYSHEV-NODES.md`, `corners/CIRCLE-TRANSFORMATIONS.md`
-
----
-
-## The Stern–Brocot Layer (forthcoming)
-
-Inside `n-gons/N-GON-WHOLENESS.md` §7, a sub-construct waits to be broken out. The position set `P_N = {k · 360°/n : 1 ≤ n ≤ N, 1 ≤ k < n}`, after dividing by 360°, lives on `[0, 1)` as a multiset of rationals. Each rational `k/n` has a specific depth in the Stern–Brocot tree (its level when the tree is rooted at `1/2` and grown by mediants), and the histogram `h_N(p/q) = ⌊N/q⌋` is exactly the Stern–Brocot depth function read over a finite window.
-
-What it will do, once extracted. Make explicit the binary-tree organization of the rationals the wholeness apparatus deposits.
-
-→ to be created.
 
 ---
 

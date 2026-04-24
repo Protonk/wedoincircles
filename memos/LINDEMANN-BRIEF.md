@@ -96,11 +96,11 @@ None of the above settle algebraic independence of e and π. That's still Schanu
 
 ## What the program can state without invoking Lindemann
 
-The sharpest pre-L–W statement the program can aim for, based on current material:
+The sharpest pre-L–W statement the program can currently aim for, based on current material:
 
-> In a fixed compute model (e.g., algebraic-arithmetic over ℚ or an algebraic straight-line program model), computing 2cos(2π/n) to algebraic-depth φ(n)/2 requires Ω(g(n)) primitive operations, for an explicit g(n) tied to the counting apparatus's |M_N| growth at resolution N.
+> In a fixed compute model (e.g., algebraic-arithmetic over ℚ or an algebraic straight-line program model), the circle side exhibits an unbounded algebraic-depth ladder `φ(n)/2`, while the log side's native `Aff⁺(ℝ)` closure stays flat. That closure mismatch is a pre-L–W structural theorem candidate. If the counting apparatus eventually binds cleanly to a compute model, it may sharpen into an explicit lower bound `Ω(g(n))`; at present the `|M_N|` ledger is evidence, not yet the engine.
 
-This is a compute-cost lower bound over the algebraic regime. It does not invoke transcendence of π or of any e^α. It provides the Inscription §§1/4 hardening that `BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md` currently softens.
+This does not invoke transcendence of π or of any `e^α`. It preserves the program's current strongest safe claim: the structural closure mismatch can land without the counting bind, while any explicit lower bound routed through `|M_N|` remains contingent on that bind actually closing.
 
 Extending that statement to π itself — "computing π to precision ε requires Ω(h(ε)) operations" — probably requires a transcendence-or-adjacent input somewhere. That extension is the place where L–W-safety needs to be checked line by line, and the extension should state the dependency explicitly rather than silently invoking L–W.
 

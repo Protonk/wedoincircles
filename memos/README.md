@@ -76,7 +76,7 @@ Scaffolding for uncertain program ambitions that aren't yet theorem-shaped. Each
 
 ### COUNTING-APPARATUS
 
-The program's most uncertain ambition: binding the counting apparatus (`n-gons/counting/`) to the circle-side equivariant surrogate, so that `M_N` becomes a compute-cost ledger paralleling *Landfall*'s log-side result. Four prerequisites laid out: (A) compute model, (B) task that makes counting the natural ledger, (C) portrait of τ, (D) small-case walkthrough at n = 7.
+The program's most uncertain ambition: binding the counting apparatus (`n-gons/counting/`) to the circle-side equivariant surrogate. If that bind closes, `M_N` becomes a compute-cost ledger paralleling *Landfall*'s log-side result; if it does not, the branch remains a descriptive counting portrait of circle-side structure. Four prerequisites laid out: (A) compute model, (B) task that makes counting the natural ledger, (C) portrait of τ, (D) small-case walkthrough at n = 7.
 
 → `memos/COUNTING-APPARATUS.md`
 

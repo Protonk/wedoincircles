@@ -1,3 +1,14 @@
+"""
+ψ-colored support plot for the outside-out corner sweep.
+
+The row at fixed n lives in the trace field ℚ(cos(2π/n)), whose native
+circle-side degree is φ(n)/2. This script nevertheless colors by ψ(n), not by
+φ(n)/2, because ψ is the additive prime-power invariant used by PERMEATE's
+cross-domain matching: it is structurally comparable to the log side's v_p
+bookkeeping, whereas φ(n)/2 is the native closure depth of the circle side
+alone.
+"""
+
 import os
 
 import matplotlib
@@ -114,70 +125,77 @@ def main():
 
     fig, ax = plt.subplots(figsize=(13, 10))
 
+    # --- guide lines -----------------------------------------------------
     backbone_guides = [-2, -1, 0, 1]
     for px in backbone_guides:
         ax.axvline(px, color=BACKBONE_COLORS[px], linestyle=":",
-                   linewidth=1.0, alpha=0.6, zorder=0)
+                   linewidth=1.0, alpha=0.55, zorder=0)
     for px in EMPTY_GUIDES:
         ax.axvline(px, color=EMPTY_GUIDE_COLOR, linestyle="--",
-                   linewidth=1.0, alpha=0.6, zorder=0)
+                   linewidth=1.0, alpha=0.55, zorder=0)
 
-    for px in backbone_guides:
-        label = f"x = {px:+d}" if px != 0 else "x = 0"
-        ax.text(px, N_MIN - 1.6, label, ha="center", va="top",
-                fontsize=11, color=BACKBONE_COLORS[px])
-    for px in EMPTY_GUIDES:
-        label = f"x = {px:+.1f}\nempty"
-        ax.text(px, N_MIN - 1.6, label, ha="center", va="top",
-                fontsize=9.5, color=EMPTY_GUIDE_COLOR)
-
+    # --- scatter (shrunk markers relative to v1 so the tail doesn't crush) --
     for n in ns:
         verts = polygon_vertices(n)
         xs = verts[:, 0]
         color = color_for(n)
-        size = 60 if psi_vals[n] == 2 else (40 if psi_vals[n] <= 6 else 28)
+        size = 45 if psi_vals[n] == 2 else (32 if psi_vals[n] <= 6 else 24)
         ax.scatter(xs, [n] * len(xs), color=color, s=size,
                    edgecolor="0.15", linewidth=0.3, alpha=alpha_for(n),
                    zorder=5 if psi_vals[n] == 2 else 3)
 
-    ax.set_xlabel("x (vertex x-coordinate)", fontsize=12)
-    ax.set_ylabel("polygon $n$", fontsize=12)
-    ax.set_title(
-        r"$\psi$-stratified x-support of the outside-out corner sweep,"
-        f"  $n = {N_MIN}..{N_MAX}$",
-        fontsize=14,
-    )
+    # --- axes -------------------------------------------------------------
+    ax.set_xlabel(r"vertex $x$-coordinate", fontsize=12)
+    ax.set_ylabel(r"polygon order  $n$", fontsize=12)
     ax.set_yticks(list(range(5, N_MAX + 1, 5)))
-    ax.set_ylim(N_MIN - 2.7, N_MAX + 1)
+    ax.set_ylim(N_MIN - 1.0, N_MAX + 1)
     ax.set_xlim(-2.2, 1.2)
     ax.grid(True, color="0.96", lw=0.4, axis="y")
 
-    legend_patches = [
-        Patch(facecolor=CLASS_COLORS[2],      label=r"$\psi = 2$:  $n \in \{3, 4, 6\}$"),
-        Patch(facecolor=CLASS_COLORS[4],      label=r"$\psi = 4$:  $n \in \{5, 8, 10, 12\}$"),
-        Patch(facecolor=CLASS_COLORS[6],      label=r"$\psi = 6$:  $n \in \{7, 9, 14, 15, 18, 20, 24, 30\}$"),
-        Patch(facecolor=CLASS_COLORS["8-12"], label=r"$\psi \in \{8, 10, 12\}$:  $n \in \{11, 13, 16, 21, 22, 26, 28, 33, 35, 36, 40\}$"),
-        Patch(facecolor=CLASS_COLORS[">=14"], label=r"$\psi \geq 14$:  remaining rows"),
+    # colored x-ticks at guide positions carrying guide identity
+    tick_spec = [
+        (-2.0,  r"$-2$",    BACKBONE_COLORS[-2]),
+        (-1.0,  r"$-1$",    BACKBONE_COLORS[-1]),
+        (-0.5,  r"$-1/2$",  EMPTY_GUIDE_COLOR),
+        ( 0.0,  r"$0$",     BACKBONE_COLORS[0]),
+        ( 0.5,  r"$+1/2$",  EMPTY_GUIDE_COLOR),
+        ( 1.0,  r"$+1$",    BACKBONE_COLORS[1]),
     ]
-    ax.legend(handles=legend_patches, loc="upper left", fontsize=10,
-              framealpha=0.95, title=r"$\psi(n)$ class", title_fontsize=11)
+    ax.set_xticks([p for p, _, _ in tick_spec])
+    ax.set_xticklabels([lbl for _, lbl, _ in tick_spec])
+    for tick_label, (_, _, color) in zip(ax.get_xticklabels(), tick_spec):
+        tick_label.set_color(color)
+        tick_label.set_fontweight("bold")
 
-    caption = (
-        r"Companion view of $\mathtt{counting\_strip\_observables.png}$ (polygon-indexed rather than strip-indexed)."
-        "\n"
-        r"This is a support plot, not a multiplicity plot: each dot marks a vertex x-position, colored by $\psi(n)$."
-        "\n"
-        r"The persistent exceptional columns of $M_N$ lie on the planar backbone $x \in \{-1, 0, +1\}$ (red/blue); "
-        r"the point at $x=-2$ is triangle-only."
-        "\n"
-        r"The comparison guides $x = \pm 1/2$ (orange, dashed) are exact-empty over the tested range: "
-        f"minimum $|x \\pm 1/2|$ for $n \\leq {VERIFY_N_MAX}$ is ${verify_dist:.2e}$ (at $n = {verify_n}$), "
-        r"and $\to 0$ as $n \to \infty$ at rate $O(1/n^2)$ along odd multiples of $3$."
+    # --- legend (vertical, upper-left negative space) ---------------------
+    legend_patches = [
+        Patch(facecolor=CLASS_COLORS[2],      label=r"$\psi = 2$"),
+        Patch(facecolor=CLASS_COLORS[4],      label=r"$\psi = 4$"),
+        Patch(facecolor=CLASS_COLORS[6],      label=r"$\psi = 6$  (first cubic, $n = 7$)"),
+        Patch(facecolor=CLASS_COLORS["8-12"], label=r"$\psi \in \{8, 10, 12\}$"),
+        Patch(facecolor=CLASS_COLORS[">=14"], label=r"$\psi \geq 14$"),
+    ]
+    ax.legend(handles=legend_patches,
+              loc="upper left", bbox_to_anchor=(0.01, 0.985),
+              ncol=1, frameon=True, framealpha=0.92,
+              edgecolor="0.8", fontsize=10.5,
+              title=r"$\psi(n)$ class", title_fontsize=11)
+
+    # --- suptitle + caption -----------------------------------------------
+    fig.suptitle(
+        r"$\psi$-stratified $x$-support of the outside-out corner sweep",
+        fontsize=14.5, fontweight="bold", y=0.995,
     )
-    fig.text(0.5, 0.015, caption, ha="center", va="bottom", fontsize=10,
-             color="0.2")
+    fig.text(
+        0.5, 0.015,
+        r"$n \in [" + str(N_MIN) + r", " + str(N_MAX) + r"]$    "
+        r"red / blue / gray ticks: planar backbone;    "
+        r"orange ticks: tested-empty guides at $x = \pm 1/2$    "
+        f"(verified through $n \\leq {VERIFY_N_MAX}$, min $|x \\pm 1/2| = {verify_dist:.1e}$)",
+        ha="center", fontsize=9.5, color="0.35", style="italic",
+    )
 
-    plt.tight_layout(rect=[0, 0.09, 1, 1])
+    plt.tight_layout(rect=[0.0, 0.04, 1.0, 0.965])
     outpath = os.path.join(figdir, "counting_psi_stratification.png")
     plt.savefig(outpath, dpi=170, bbox_inches="tight")
     plt.close(fig)

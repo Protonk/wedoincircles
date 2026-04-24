@@ -53,10 +53,10 @@ Figure [counting_increment_map.png](figures/counting_increment_map.png) visualiz
 
 ## What to look for next
 
-The likely productive bridge is therefore not "force the outside-out annulus into a fixed-rotation theorem." It is:
+The likely productive bridge is therefore not "force the outside-out annulus into a fixed-rotation theorem." The six-field decomposition has already done the first compression. The live theorem target is now narrower:
 
-1. make the update law for `M_N` explicit enough to read as a small-state insertion system,
-2. track how the exceptional columns split, shift, and grow when a new rational level is added,
-3. and only then ask what trigonometric or lattice constraints are native to that procedure.
+1. prove that the compressed update law is complete, i.e. that no non-backbone collisions ever appear,
+2. formulate that as a collision-classification theorem for the outside-out x-coordinates,
+3. and only then ask what trigonometric or lattice constraints close the proof.
 
-In that sense the gap to 3DT is still bridgeable, but the bridge is methodological rather than literal. The lesson from 3DT is not that the two constructions are the same object. The lesson is that a good theorem can emerge once the local procedural relationships are compressed into a visible rule.
+In that sense the gap to 3DT is still bridgeable, but the bridge is methodological rather than literal. The lesson from 3DT is not that the two constructions are the same object. The lesson is that a good theorem can emerge once the local procedural relationships are compressed into a visible rule — here, the rule is already visible, and the missing step is the global collision-classification proof that would certify the rule as complete.

@@ -89,7 +89,7 @@ This section has a specific job: to argue, with enough force to hold up against 
 
 1. **τ portrait carries belief.** Item (C) of `memos/COUNTING-APPARATUS.md` is complete enough that "here is why no finite algebraic structure reaches τ" reads as a load-bearing paragraph, not a scattered list. Ramanujan's contribution: sharpening the algebraic-depth picture via singular moduli. When that contribution is in, stop.
 2. **Compute model chosen.** Item (A) is committed — probably algebraic-arithmetic over ℚ or an ASLP model. Ramanujan-Chudnovsky benchmarks fix the upper-bound lane. When the model is committed, stop.
-3. **Small-case walkthrough runs.** Item (D) at n = 7 shows the three cost measures tracking. Ramanujan's contribution: specific upper-bound rates for cos(π/7) and similar. When the walkthrough is up, stop.
+3. **Small-case walkthrough runs.** Item (D) at n = 7 is honest enough to show what tracks and what does not: the Gauss-Wantzel / algebraic-depth break is visible, and the current counting-length ledger does not localize it. Ramanujan's contribution: specific upper-bound rates for cos(π/7) and similar. Once the walkthrough names that gap clearly, stop.
 4. **A hypothesized lower bound has a shape.** Even conjecturally. This is the real exit. The moment a compute-cost lower bound has enough shape to state as a conjecture, stop reading Ramanujan outright.
 
 **One practical heuristic.** Each Ramanujan-direction read should close with a sentence starting *"This bounds the compute cost of τ at …"* or *"This constrains a lower bound by ruling out …"*. If the read cannot produce such a sentence, the read did not serve the program, regardless of how intrinsically interesting the material was. Flag it, note it in this doc, move on.
