@@ -1,6 +1,6 @@
 # VILLAINS-ANSWERED
 
-Responses to the seven adversarial questions in [VILLAINS.md](VILLAINS.md). Six are answered. One is refused.
+Responses to the seven adversarial questions in [VILLAINS.md](VILLAINS.md). Five answered, one quarantined as open search, one refused.
 
 ---
 
@@ -29,36 +29,41 @@ within-`n` invariants and from `n`-indexed sequences of scalars.
 
 ---
 
-## #2 — Procrustes (answered: three concrete falsification targets)
+## #2 — Procrustes (answered: three live falsifier shapes)
 
 The closure-mismatch theorem is an algebraic constructive claim. It
-retracts on exhibition of either:
+retracts on the appearance of any of the following — facts surfaceable
+by any mathematician working independently, not internal to the program:
 
 1. **An explicit functor `F` satisfying A1–A4**
    (from [memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md))
-   that carries `Aff^+(R)` generators into the `{K_n}` ladder while
-   preserving closure-generator depth. The theorem's whole content is the
-   claim that no such functor exists; one exists would end it.
-2. **A proof that `{K_n : n >= 3}` has bounded closure depth.** The
-   theorem relies on `[K_n : Q] = phi(n)/2` being unbounded. If a Galois-
-   theoretic argument (from any author, anywhere) established that the
-   trace-field ladder terminates or is secretly bounded, the premise
-   collapses.
+   carrying `Aff^+(R)` generators into the `{K_n}` ladder while
+   preserving closure-generator depth. The theorem's whole content is
+   that no such `F` exists; one exhibited in the literature ends it.
+2. **A natural alternative axiomatization of "native functor" that
+   admits `F`.** A1–A4 are the program's choice of minimal axioms. If a
+   competing axiom set is shown to capture the same intuitive content but
+   admit a candidate `F`, the no-go becomes axiom-contingent rather than
+   structural. This is the live prediction Procrustes most plausibly gets:
+   axiomatization choices are rarely settled forever, and a competing
+   formulation that wins out in the literature would force retraction
+   automatically.
+3. **A categorical equivalence between `Aff^+(R)` and a non-trivial
+   sub-structure of `{K_n}`-with-embeddings.** If an unexpected algebraic
+   equivalence is exhibited that the closure-depth axioms happen not to
+   capture — something morally functorial in a way A1–A4 don't recognize
+   — the separation claim weakens to "no functor of this specific form,"
+   which is much less interesting than "no functor at all."
 
-The Archimedean / strip-Fourier results are numerical: each coefficient
-in [memos/STRIP-H1-HURWITZ-CLOSURE.md](memos/STRIP-H1-HURWITZ-CLOSURE.md) and [memos/LIOUVILLE-SCALE-TEST.md](memos/LIOUVILLE-SCALE-TEST.md) can be checked by anyone with Sage. The third falsifier is:
+Procrustes gets his prediction. The theorem survives until one of the
+three appears.
 
-3. **Any third-party recomputation disagreeing with the reported
-   coefficients.** `R_n = 16 pi^6 / (45 n^4) + 128 pi^8 / (315 n^6) + O(n^-8)`
-   is checkable. If a second implementation reports different leading
-   coefficients, at least one of the two is wrong.
-
-Procrustes gets his prediction; the theorem survives until one of the three arrives.
-
-What Procrustes *does* land: several of the program's *witnesses* — the
-`n = 7` break, the `tau_c / epsilon` rhyme, `Z[x]` vs `Aff^+(R)` — were
+What Procrustes *does* land: several of the program's witnesses —
+`n = 7`, the `tau_c / epsilon` rhyme, `Z[x]` vs `Aff^+(R)` — were
 selected for coherence with the named verdict. The program acknowledges
-this and does not rest on the witnesses.
+this and does not rest on the witnesses; the load-bearing argument is the
+axiomatization plus cyclotomic-ladder unboundedness, both of which the
+three falsifiers above attack directly.
 
 ---
 
@@ -105,18 +110,32 @@ satisfy `B_1(n) / Delta_n -> 6 / pi^2` as `n -> infinity`, with the
 pairwise-shell ordering `B_j(n) <= B_1(n) / j^2`. See
 [corners/HURWITZ-FIRST-BAND-CONCENTRATION.md](corners/HURWITZ-FIRST-BAND-CONCENTRATION.md).
 
-**Why the content is Stern-Brocot-unreachable.** The statement is a
-Parseval-identity concentration result on a specific Hilbert space: the
-`L^2`-closure of arclength parametrizations of rectifiable plane closed
-curves. The "first band" referenced is the `j = 1` pair in the Fourier
-support `1 + n Z` of the `n`-gon's arclength parametrization. A
-Stern-Brocot-native derivation would have to produce this Fourier
-decomposition without importing Fourier machinery — because importing
-Fourier is precisely not Stern-Brocot. Stern-Brocot organizes rationals
-by mediant depth; it does not parametrize plane curves by arclength and
-does not carry a Hilbert-space structure whose orthonormal basis is
-frequencies on `[0, L_n]`. The content — a Parseval concentration — is
-not reachable from mediants.
+**Why the content is Stern-Brocot-unreachable (content, not register).**
+The theorem's content — `B_1(n) / Delta_n -> 6/pi^2` with the shell
+ordering `B_j(n) <= B_1(n)/j^2` — refers to the quantities `B_j(n)` and
+`Delta_n`. These are not raw numerical values; they are specific Parseval
+masses of an arclength-parametrized plane curve, defined via the Hurwitz
+identity in the Hilbert space `L^2([0, L_n])`. Without that Hilbert
+space, `B_j(n)` is not even *defined* as a quantity, and the assertion
+`B_1(n) / Delta_n -> 6/pi^2` has no referent.
+
+A Stern-Brocot-native framework organizes rationals by mediants. It does
+not construct `L^2([0, L_n])`, does not parametrize plane curves by
+arclength, and does not define Parseval projections onto Fourier modes.
+So the question Proteus's first-band statement asks — *what fraction of
+the isoperimetric deficit lives in mode `j = 1`?* — has no formulation
+in Stern-Brocot terms. There is no laundering issue because there is
+nothing to launder: the theorem's *referents* exist outside Stern-Brocot's
+expressive domain.
+
+The numerical value `6/pi^2` does appear in Stern-Brocot territory — as
+the asymptotic density of coprime integer pairs, reachable by Farey /
+mediant analysis. But that is a *different theorem* with a different
+content; the shared limiting value is a zeta-function coincidence, not
+the same proposition. Stern-Brocot can reach the number `6/pi^2` in its
+own register; it cannot reach the Hurwitz-Parseval first-band proposition,
+because the proposition's quantities are not constructible in its
+language.
 
 Proteus's adjacent point — that BIND uses Stern-Brocot-indexed quantities
 without naming them — is partially fair for the strip's tangency set
@@ -124,21 +143,24 @@ without naming them — is partially fair for the strip's tangency set
 [BNHA/triad/Eraserhead/ARCHIMEDEAN-CONSTRICTION.md](BNHA/triad/Eraserhead/ARCHIMEDEAN-CONSTRICTION.md)
 (BIND's discipline note): *constricted, not handled*. Where the
 Stern-Brocot content enters under a different name, BIND admits it.
-Where a theorem's content is genuinely Fourier-Parseval on an arclength
-Hilbert space — as first-band concentration is — Stern-Brocot never
-carried that content, so there is nothing to launder. The first-band
-theorem is BIND-derivable and is structurally, not just lexically,
-outside Stern-Brocot's register.
+The first-band theorem is not one of those cases. Its referents live in
+a Hilbert space Stern-Brocot does not build; that puts its content
+outside Stern-Brocot's reach at the level of formulation, not just at
+the level of vocabulary.
 
 ---
 
-## #5 — Gentle Criminal (answered: we confess the gap, and route around it)
+## #5 — Gentle Criminal (quarantined: unmet, sealed off as open search)
 
-The program has **not** fixed a task-plus-model pair in which `|M_N|` is
-a lower bound. [memos/COUNTING-APPARATUS.md](memos/COUNTING-APPARATUS.md)
-is the active search memo that exists precisely to pursue this, and it
-declines to commit. Gentle Criminal's demand is legitimate; the program
-has not yet met it.
+**Status: not answered.** The program has **not** fixed a task-plus-model
+pair in which `|M_N|` is a lower bound.
+[memos/COUNTING-APPARATUS.md](memos/COUNTING-APPARATUS.md) is the active
+search memo that exists precisely to pursue this, and it declines to
+commit. Gentle Criminal's demand is legitimate and stands open; the
+program has not met it. What the program has done is *quarantine* the
+question — sealed the compute-cost branch off as a search so that no
+load-bearing result depends on its closure, while marking the question
+as the program's central open bet rather than a defended position.
 
 What the program does *instead*, and why the absence is not fatal:
 
@@ -164,7 +186,18 @@ Gentle Criminal's real teaching: exchange-rate hygiene. `|M_N|` as
 program accepts this and treats compute-cost as search, not claim. If
 the search exits without committing, compute-cost never becomes a
 proposition, and the F-theorem plus the Archimedean signature plus the
-K-H-L-A search all survive that exit. 
+K-H-L-A search all survive that exit.
+
+**The bet inside the quarantine.** Gentle Criminal is the villain who
+bounces the program out at the 1% margin if the question is left
+unanswered indefinitely. The program's open bet — the work the search
+exists to do — is to marry Kraft arithmetic to cyclotomic complexity in
+a way that does not depend circularly on the circle. Cyclotomic depth
+`phi(2n)/2` has an algebraic, Galois-theoretic definition; Kraft budgets
+have a coding-theoretic definition; the marriage would put a
+prefix-free-encoding floor on objects of cyclotomic depth, denominated
+in bits, in a model whose primitives don't smuggle the circle in as a
+free constant. We do not have this. The bet is that it exists.
 
 ---
 
@@ -197,12 +230,20 @@ shared discipline; it is not a mathematical object that either leg is
 
 ---
 
-## #7 — All-for-One (refused: the premise)
+## #7 — All-for-One (refused: the premise — and the setup is already counterfactual)
 
-All-for-One asks what single mathematical object unifies all six defended
-results. We refuse the premise.
+All-for-One's setup imagines all six defended results as forming a
+coherent piece of architecture, with the staircase between
+closure-mismatch and transcendence floors *"built and load-bearing."*
+But #6 has already refused the staircase: it does not exist, and the
+program is not a building. So All-for-One is asking after a version of
+the program that #6 has declined to be — six results forming one
+structure with one subject. Even granting his counterfactual, the
+question's deeper premise must be refused.
 
-The premise is that a program's deliverable must be *one theorem about one subject*, and anything less is a museum. The program fundamentally rejects this hierarchialization of theory. 
+That deeper premise is that a program's deliverable must be *one theorem
+about one subject*, and anything less is a museum. The program
+fundamentally rejects this hierarchy.
 
 The closure-depth no-go ([memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md))
 is a theorem that *no functor unifies* the log-side and circle-side
