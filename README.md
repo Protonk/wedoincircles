@@ -28,4 +28,4 @@ We stand behind the discipline described in [CONTRIBUTING.md](CONTRIBUTING.md). 
 
 ## Growth
 
-We work under [a set of sharp questions](VILLAINS.md) about ourselves; five are answered, one is quarantined as open search, one is refused on the grounds that inversion of the premise is enlightenment.
+We work under [a set of sharp questions](BNHA/VILLAINS.md) about ourselves; five are answered, one is quarantined as open search, one is refused on the grounds that inversion of the premise is enlightenment.

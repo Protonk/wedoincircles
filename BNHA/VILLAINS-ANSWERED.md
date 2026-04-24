@@ -1,6 +1,6 @@
 # VILLAINS-ANSWERED
 
-Responses to the seven adversarial questions in [VILLAINS.md](VILLAINS.md). Five answered, one quarantined as open search, one refused.
+Responses to the seven adversarial questions in [BNHA/VILLAINS.md](BNHA/VILLAINS.md). Five answered, one quarantined as open search, one refused.
 
 ---
 
