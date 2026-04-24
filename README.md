@@ -4,7 +4,11 @@
 
 The program tests whether a candidate functor `F` relates the native closure structures of two arithmetic objects: the log-side affine apparatus `Aff⁺(ℝ)` (motivated by the floating-point residue `ε(m) = log₂(1+m) − m` from *Landfall*) and the circle-side cyclotomic apparatus `{K_n = ℚ(cos(2π/n))}` (motivated by the regular `n`-gon wholeness construction). The working expectation is that no such `F` exists, and that the shape of the no is the content worth recording.
 
-The shape of the no is a closure-depth mismatch. On the log side, the native closure object `Aff⁺(ℝ)` — affine composition of the machine's primitive operations — is flat: iterating composition never leaves the two-parameter affine form. On the circle side, the trace-field ladder `K_n = ℚ(cos(2π/n))` has `[K_n : ℚ] = φ(n)/2`, which is unbounded as `n` varies. No native functor preserving closure-generator depth can carry a flat object to an unbounded ladder. The no-go is self-contained algebra: it names no transcendental constants, and it holds over any field admitting Chebyshev polynomials and affine maps.
+## Shape
+
+The shape of the no is a closure-depth mismatch. On the log side, the native closure object `Aff⁺(ℝ)` — affine composition of the machine's primitive operations — is flat: iterating composition never leaves the two-parameter affine form. On the circle side, the trace-field ladder `K_n = ℚ(cos(2π/n))` has `[K_n : ℚ] = φ(n)/2`, which is unbounded as `n` varies. No native functor preserving closure-generator depth can carry a flat object to an unbounded ladder. The no-go holds over any field admitting Chebyshev polynomials and affine maps.
+
+## State
 
 Current state, per branch:
 
@@ -14,6 +18,14 @@ Current state, per branch:
 - **Kraft–Parseval discrepancy route for effective transcendence of `π`.** Open search. The empirical-to-density bridge is the one remaining hypothesis.
 - **Compute-cost lower bound on counting primitives.** Open search. No committed task-plus-machine-model pair yet makes `|M_N|` a bound rather than a companion metric.
 
-The closure-depth theorem does not depend on any of the other branches; the strip-H¹ identification does not use Liouville; the negative closure of the Liouville endgame is a disciplined output in its own right, recording plainly that the circle side's Archimedean observables factor through an approximant whose height rules out the contradiction the endgame wanted. Two buildings, shared wall. The program's central open bet sits in the compute-cost branch: marry Kraft arithmetic to cyclotomic complexity without circular dependence on the circle. Until that lands, `|M_N|` is companion metric and the program's headline result is the closure-depth theorem alone.
+The closure-depth theorem does not depend on any of the other branches; the strip-H¹ identification does not use Liouville; the negative closure of the Liouville endgame is a disciplined output in its own right, recording plainly that the circle side's Archimedean observables factor through an approximant whose height rules out the contradiction the endgame wanted. 
 
-The program also keeps itself under [a set of sharp questions](VILLAINS.md) about its own design; five are answered, one is quarantined as open search, one is refused on the grounds that the question's premise would corrupt the primary theorem if admitted.
+The program's central open bet sits in the compute-cost branch: marry Kraft arithmetic to cyclotomic complexity without circular dependence on the circle.
+
+## Stance
+
+We stand behind the discipline described in [CONTRIBUTING.md](CONTRIBUTING.md). In order to do this our claims must know whether they are load-bearing or exploratory. This means you must know as well.
+
+## Growth
+
+We work under [a set of sharp questions](VILLAINS.md) about ourselves; five are answered, one is quarantined as open search, one is refused on the grounds that inversion of the premise is enlightenment.
