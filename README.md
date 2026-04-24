@@ -16,4 +16,4 @@ Current state, per branch:
 
 The closure-depth theorem does not depend on any of the other branches; the strip-H¹ identification does not use Liouville; the negative closure of the Liouville endgame is a disciplined output in its own right, recording plainly that the circle side's Archimedean observables factor through an approximant whose height rules out the contradiction the endgame wanted. Two buildings, shared wall. The program's central open bet sits in the compute-cost branch: marry Kraft arithmetic to cyclotomic complexity without circular dependence on the circle. Until that lands, `|M_N|` is companion metric and the program's headline result is the closure-depth theorem alone.
 
-The program also keeps itself under [a set of sharp questions](VILLAINS.md) about its own design; six are answered, one is refused on the grounds that the question's premise would corrupt the primary theorem if admitted.
+The program also keeps itself under [a set of sharp questions](VILLAINS.md) about its own design; five are answered, one is quarantined as open search, one is refused on the grounds that the question's premise would corrupt the primary theorem if admitted.
