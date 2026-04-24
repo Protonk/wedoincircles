@@ -39,7 +39,9 @@ Image embeds stay as they are (`![…](figures/foo.png)` or the equivalent `..`-
 
 ## Old-time religion
 
-The pre-L-W provenance discipline matters. When the program leans on machinery post-Lindemann 1882 (Fortnow, Aitchison, Erdős-Turán, Baker, Gelfond-Schneider, Thue-Siegel-Roth), that machinery must either be methodologically re-certified as pre-L-W in its use or be replaced by a pre-1882 anchor. Circularity enters most easily through silent upgrade — invoking a modern sharpening of a classical tool without checking whether the sharpening itself already uses what the program is trying to prove. See [memos/LINDEMANN-BRIEF.md](memos/LINDEMANN-BRIEF.md) for the circularity map and the safe/weak/circular tagging; live audits of which tools anchor where and which rebuilds are worth pursuing live in [memos/OLD-TIME-RELIGION.md](memos/OLD-TIME-RELIGION.md). Do not smuggle.
+When the program leans on machinery post-Lindemann 1882 (Fortnow, Aitchison, Erdős-Turán, Baker, Gelfond-Schneider, Thue-Siegel-Roth), that machinery must either be methodologically re-certified as pre-L-W in its use or be replaced by a pre-1882 anchor. Do not smuggle in number-theoretic ease, as this carries with it pi transcendental.
+
+Circularity enters most easily through silent upgrade — invoking a modern sharpening of a classical tool without checking whether the sharpening itself already uses what the program is trying to prove. See [memos/LINDEMANN-BRIEF.md](memos/LINDEMANN-BRIEF.md) for the circularity map and the safe/weak/circular tagging; live audits of which tools anchor where and which rebuilds are worth pursuing live in [memos/OLD-TIME-RELIGION.md](memos/OLD-TIME-RELIGION.md). 
 
 ## Working tree is dirty
 
