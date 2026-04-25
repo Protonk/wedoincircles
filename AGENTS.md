@@ -4,6 +4,8 @@ This is a math-research writing repo. Most work is reading papers, promoting not
 
 ## Sage has tools
 
+>use sage to invoke python
+
 Use sage for `numpy`, `scipy`, and `matplotlib`. Do not attempt to install these or use the system version.
 
 As an example, run a script from the repo root:
@@ -18,7 +20,9 @@ The `.sage.py` file that appears next to each `.sage` after a run is the Sage pr
 
 ## Pathing
 
-When a document links to another file in the repo, write the link target as a repo-root-relative path — not as a relative path with `..` segments and not as an absolute filesystem path. Repo-root-relative targets stay correct when the linking document moves inside the tree.
+>prefer repo-relative paths in docs
+
+When a document links to another file in the repo, write the link target as a repo-root-relative path — not as a relative path with `..` segments and not as an absolute filesystem path.
 
 Prefer:
 
@@ -36,6 +40,12 @@ Avoid:
 ### Images
 
 Image embeds stay as they are (`![…](figures/foo.png)` or the equivalent `..`-relative form when a sage script needs it) — those are loaded by viewers/renderers that resolve paths from the document's own directory, not by the repo-root convention above.
+
+## Image alt-text
+
+>alt-text is mandatory
+
+Use literally descriptive alt-text (`< 1000` characters) for embeds of all figures. alt-text is not captioning of figures in text, it is replacement for the visual mapping of the figure itself.
 
 ## Old-time religion
 
