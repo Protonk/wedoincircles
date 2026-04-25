@@ -316,6 +316,14 @@ Existing material this memo draws on:
 - [memos/LINDEMANN-BRIEF.md](memos/LINDEMANN-BRIEF.md) — the L-W-safety
   audit. None of the five papers here use Lindemann–Weierstrass, so the
   provenance tagging is straightforward; it should still be done explicitly.
+- **Auslander–Winograd 1980** (L. Auslander and S. Winograd, "The
+  multiplicative complexity of certain semilinear systems defined by
+  polynomials," *Adv. in Appl. Math.* 1 (1980), 251–299) — the actual
+  source of AFW 1984's rational-equivalence theorem; cited by AFW as
+  the semisimple-system complexity theorem and rational-equivalence
+  invariance. Not in local `sources/`. A future acquisition if the
+  program wants full coverage of the rational-equivalence framework's
+  origin; not currently load-bearing for the bridge plan.
 
 Anchors that would be written if the memo closes:
 
@@ -425,6 +433,24 @@ Three failure modes worth naming so a directed read can detect them:
    survives rational equivalence and which is allowed to be forgotten —
    or else the imported bound applies only modulo a positional quotient
    the program has to reverse on its own side.
+
+   *Compounding hazard, surfaced across the Morgenstern and Winograd
+   1978 briefs ([memos/MORGENSTERN-1973-BRIEF.md](memos/MORGENSTERN-1973-BRIEF.md),
+   [memos/WINOGRAD-1978-BRIEF.md](memos/WINOGRAD-1978-BRIEF.md)):* the
+   literature has at least *three* non-composable frameworks, not two.
+   Morgenstern (coordinate-sensitive bounded-linear additions),
+   Winograd 1978 (bilinear multiplicative complexity with field
+   constants cheap/free), and AFW (rational-equivalence-stable
+   semisimple algebra, importing rational equivalence from
+   Auslander-Winograd 1980, not from Winograd 1978) each protect
+   different invariants. None composes naively with the others:
+   rational basis changes break Morgenstern's determinants, field
+   enlargement breaks Winograd's multiplication count, and
+   coordinate-sensitivity breaks AFW's rational equivalence. A "use
+   one paper's framework, plug in another's lower bound" import does
+   not go through; the program must use one framework with its own
+   lower-bound technique, or re-derive a bound stable across the
+   relevant transformations.
 
 A directed read that does not address (1), (2), (3), (4), and (5)
 explicitly is incomplete for the program's purposes.
