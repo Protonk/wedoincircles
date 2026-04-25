@@ -118,4 +118,53 @@ Read Winograd 1978 (`sources/Winograd-ComputingDiscreteFourier-1978.pdf`) as a s
 
 Brief lands at `memos/WINOGRAD-1978-BRIEF.md`, source-extraction register per `CONTRIBUTING.md`, naming convention per `memos/FFT-CYCLOTOMIC-COMPLEXITY.md §"Order of work"`.
 
+## 18
+
+Construct an axiom-by-axiom comparison of the four FFT-complexity papers brief'd by the program, using the certification-preserving open axioms from `memos/LEDGER-PIVOT-SEARCH.md §"Certification-preserving model: open axioms"`. The four briefs:
+
+- `memos/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md`
+- `memos/MORGENSTERN-1973-BRIEF.md`
+- `memos/WINOGRAD-1978-BRIEF.md`
+- `memos/SCHOENHAGE-STRASSEN-1971-BRIEF.md`
+
+For each of the seven axioms (1 algebraic constants as advice; 2 coefficient height-bounded; 3 binary additions vs arbitrary linear combinations; 4 precomputed DFT-like matrix free or paid; 5 field adjunctions paid by degree, height, or both; 6 root isolation paid by precision or certification depth; 7 uniform in N or non-uniform), report what each paper's framework commits to: settled / permitted / forbidden, in which form, by what proof technique. Output a comparison table. The non-composability finding (the literature has at least four frameworks that don't naively compose) should fall out of the table cleanly or be adjusted by it.
+
+## 19
+
+Compose a cross-source synthesis brief (third register per `CONTRIBUTING.md` — load-bearing, expected to hold up under scrutiny) drawing on the four FFT-complexity briefs (`memos/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md`, `memos/MORGENSTERN-1973-BRIEF.md`, `memos/WINOGRAD-1978-BRIEF.md`, `memos/SCHOENHAGE-STRASSEN-1971-BRIEF.md`) and the axiom-by-axiom comparison table from §18.
+
+Load-bearing claims the synthesis should establish:
+
+1. The literature comprises four distinct frameworks at four distinct axiom-coordinates in the seven-axiom space of `memos/LEDGER-PIVOT-SEARCH.md §"Certification-preserving model: open axioms"`. State each coordinate explicitly.
+
+2. The program's certification-preserving regime is a *fifth* axiom-coordinate, distinct from all four. Articulate it: closest to Schönhage-Strassen 1971's operational/uniform stance, but augmented with paid algebraic-height in axiom 2, paid adjunctions by degree in axiom 5, and paid root isolation by precision-and-certification-depth in axiom 6.
+
+3. The non-composability of frameworks is structural at specific axiom-splits, not accidental. Identify which axiom-by-axiom splits prevent composition between which framework pairs, and characterize each split as "incompatible" or "translatable with cost."
+
+4. The program's bridge work is *construction*, not *import*. No existing framework occupies the program's axiom-coordinate; the bridge plan in `memos/FFT-CYCLOTOMIC-COMPLEXITY.md` must construct the program's framework rather than transport an existing one. Articulate what construction is needed and which existing pieces feed it.
+
+Output: `memos/FFT-COMPLEXITY-FOUR-FRAMEWORK-SYNTHESIS.md` (or similar name; pick what reads cleanly). Cross-source synthesis register: load-bearing, with explicit witnesses (citations to specific theorem statements in each paper that establish each cell of the comparison table).
+
+---
+
+## — Sedimentary boundary —
+
+*Questions above this line went to a context steeped in the lattice apparatus, the FFT-complexity literature (AFW, Morgenstern, Winograd 1978, Schönhage–Strassen), and the four-framework synthesis. Questions below this line go to a new agent spawned with `BNHA/`-directory context — story-shape, character framing, narrative discipline. Different context; different leverage; questions reshape accordingly.*
+
+---
+
+## 20
+
+Write a source-extraction brief on `sources/gauss-fft-history.pdf` (Heideman, Johnson, Burrus, "Gauss and the History of the Fast Fourier Transform," 1985). This is INHERIT-discipline material per `BNHA/ONE-FOR-ALL.md`: provenance backward audit of the FFT lineage from Cooley–Tukey 1965 back to Gauss's 1805 unpublished manuscript. The paper is not technical input to the compute-cost branch; it is the audit record for the inheritance chain that our four FFT-complexity briefs (AFW, Morgenstern, Winograd 1978, Schönhage–Strassen) sit at the modern end of.
+
+The brief should answer:
+
+1. What does Gauss's 1805 unpublished manuscript contain, and how equivalent is it to modern Cooley–Tukey? (Heideman-Johnson-Burrus give an explicit comparison; quote it.)
+2. Tabulate the provenance chain with attribution and dates from Gauss forward to Cooley–Tukey 1965. Note where the chain has known gaps, independent rediscoveries, or transmission failures (e.g., Gauss → Hansen, where Hansen knew Gauss but didn't cite him).
+3. The paper's authors are Heideman-Johnson-Burrus; Heideman and Burrus are the same pair as the 1986 binary-DFT exact-count paper (queue item 2 in `memos/FFT-CYCLOTOMIC-COMPLEXITY.md` §"Order of work"). Same hands wrote both. Record this in the provenance — the historiographers and the technical contributors overlap.
+4. Which named contributions in the chain are upstream of which of our four framework briefs (AFW, Morgenstern, Winograd 1978, Schönhage–Strassen)? Map the inheritance forward.
+5. **The sine question.** Both Gauss and Laplace attacked this problem family via sines specifically (per outside knowledge). Within this paper: Lagrange and Euler had sine-only DFT formulas before Gauss extended to general cosine+sine series in 1805; the paper notes "LAGRANGE's DFT (sine only)" explicitly. What does the paper say about *why* the early attack went through sines, and what — if anything — does it record about Laplace's contribution? Is the sine-first orientation an artifact of the problem class (orbital mechanics, vibrating strings, perturbation theory) or does it reflect something more structural about which trigonometric basis is natural for the early algorithms? The program's circle side has been cosine-only (`K_n = ℚ(cos(2π/n))`); whether sine-complementary work would surface different obstructions is an open program question this brief can flag without resolving. Flag explicitly what the paper covers about Laplace and what's known to fall outside it.
+
+Output: `memos/HEIDEMAN-JOHNSON-BURRUS-1985-BRIEF.md`, source-extraction register per `CONTRIBUTING.md` (distinguishing what the paper establishes from sources, what it states without your independently checking, and what you infer for the program). Trust boundary should be explicit: this brief audits the inheritance chain; it does not supply technical content for the lower-bound work.
+
 ...

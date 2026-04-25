@@ -16,6 +16,20 @@ sense of [CONTRIBUTING.md](CONTRIBUTING.md). Sources are gitignored under
 `-BRIEF` extractions per [memos/AGENTS.md](memos/AGENTS.md) when each
 directed read closes.
 
+**Load-bearing synthesis.** Four of the five directed reads (AFW,
+Morgenstern, Winograd 1978, Schönhage–Strassen) have been completed and
+synthesized at
+[memos/FFT-COMPLEXITY-FOUR-FRAMEWORK-SYNTHESIS.md](memos/FFT-COMPLEXITY-FOUR-FRAMEWORK-SYNTHESIS.md),
+which records the four frameworks as four distinct axiom-coordinates
+in the seven-axiom space of
+[memos/LEDGER-PIVOT-SEARCH.md](memos/LEDGER-PIVOT-SEARCH.md)
+§"Certification-preserving model: open axioms," and the program's
+certification-preserving regime as a fifth coordinate that no existing
+framework occupies. The synthesis is the load-bearing third-register
+artifact downstream of this search memo; the present memo continues to
+track open search material (item B Heideman–Burrus is still on the
+queue if the binade-tower exact constants become needed).
+
 ---
 
 ## Why this memo exists

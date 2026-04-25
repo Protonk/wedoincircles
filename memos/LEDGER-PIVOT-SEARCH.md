@@ -584,6 +584,15 @@ program needs algebraic-height boundedness rather than modulus
 boundedness, and needs paid algebraic-constant construction rather
 than free bounded advice.
 
+**Synthesis location.** The program's coordinate in this seven-axiom
+space, plus its place in the four-framework FFT-complexity literature
+(AFW, Morgenstern, Winograd 1978, Schönhage–Strassen), is recorded as
+load-bearing at
+[memos/FFT-COMPLEXITY-FOUR-FRAMEWORK-SYNTHESIS.md](memos/FFT-COMPLEXITY-FOUR-FRAMEWORK-SYNTHESIS.md).
+That memo establishes the program's regime as a fifth axiom-coordinate
+distinct from all four briefed frameworks, and articulates the bridge
+work as construction (not import) of that fifth coordinate.
+
 ## Task-ledger admissibility
 
 With the lattice in hand, each candidate task statement in
