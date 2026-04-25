@@ -5,15 +5,20 @@ Source-extraction memo on M. T. Heideman, D. H. Johnson, & C. S. Burrus,
 of Exact Sciences* 34 (1985), pp. 265–277, communicated by C. Truesdell,
 received Feb. 28, 1985 ([sources/gauss-fft-history.pdf](sources/gauss-fft-history.pdf)).
 
-**Why this brief exists.** This is INHERIT-discipline material per
-[BNHA/ONE-FOR-ALL.md](BNHA/ONE-FOR-ALL.md): a provenance-backward audit of
-the FFT lineage from Cooley–Tukey 1965 back to Gauss's 1805 unpublished
-manuscript. The four FFT-complexity briefs already in the repo
+**Why this brief exists.** The L-W-safety audit
+([memos/OLD-TIME-RELIGION.md](memos/OLD-TIME-RELIGION.md)) applied
+backward through the FFT lineage. Gauss's *Theoria Interpolationis*
+was written in 1805 — 77 years before Lindemann–Weierstrass — so its
+content is **certifiably pre-1882** and the FFT chain has a clean
+upstream endpoint inside the L-W-safety window. The audit traces that
+endpoint forward through documented gaps (Hansen's 1835 non-citation,
+Burkhardt's 1904 unnoticed-noticing, the 1866–1965 quiet century) to
+the four modern complexity briefs
 ([memos/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md](memos/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md),
 [memos/MORGENSTERN-1973-BRIEF.md](memos/MORGENSTERN-1973-BRIEF.md),
 [memos/WINOGRAD-1978-BRIEF.md](memos/WINOGRAD-1978-BRIEF.md),
 [memos/SCHOENHAGE-STRASSEN-1971-BRIEF.md](memos/SCHOENHAGE-STRASSEN-1971-BRIEF.md))
-sit at the modern end of a chain whose origin point this paper documents.
+the program inherits at the modern end.
 
 **What was read.** The full 13-page PDF, including the dating-of-the-work
 appendix and reference list. Read with the lens: *trace the inheritance
@@ -194,13 +199,8 @@ The paper documents several:
    influence on the work by the British. HANSEN was heavily influenced
    by GAUSS in his astronomical work, but does not mention GAUSS in the
    development of his algorithms for harmonic analysis for reasons which
-   shall be made clear later." The "reasons later" are not made entirely
-   explicit in the paper but tie to the fact that Gauss's manuscript
-   was unpublished at the time of Hansen's 1835 work — so Hansen could
-   only have known of the technique through personal communication or
-   through Gauss's diary, neither of which would constitute a citable
-   source under 19th-century conventions. *The paper records the
-   non-citation; it does not fully explain it.*
+   shall be made clear later." *The paper records the non-citation; it
+   does not fully explain it.*
 
 2. **Gauss → Burkhardt (1904).** Burkhardt wrote the *Encyklopädie der
    Mathematischen Wissenschaften* article (ref. [11], 1899–1916) that is
@@ -284,27 +284,19 @@ of Cooley–Tukey 1965. The paper places them on the chain as follows
 (some of the mapping is the paper's, some is inferred for the program;
 inference noted explicitly).
 
-### Cooley–Tukey 1965 → Schönhage–Strassen 1971
+### Schönhage–Strassen 1971
 
-*Inferred for the program.* The paper does not discuss
-Schönhage–Strassen. The standard structural fact (verifiable from the
-Schönhage–Strassen brief itself,
-[memos/SCHOENHAGE-STRASSEN-1971-BRIEF.md](memos/SCHOENHAGE-STRASSEN-1971-BRIEF.md)):
-the Schönhage–Strassen integer-multiplication algorithm uses the FFT
-over a finite ring as its inner kernel. The provenance chain therefore
-runs Gauss 1805 → ... → Cooley–Tukey 1965 → Schönhage–Strassen 1971,
-with the Cooley–Tukey link being the algorithmic ancestor of the FFT
-kernel inside Schönhage–Strassen.
+Outside the paper's coverage. The FFT-kernel inheritance from
+Cooley–Tukey is internal to
+[memos/SCHOENHAGE-STRASSEN-1971-BRIEF.md](memos/SCHOENHAGE-STRASSEN-1971-BRIEF.md).
+*That step is not audited here.*
 
-### Cooley–Tukey 1965 → Morgenstern 1973
+### Morgenstern 1973
 
-*Inferred for the program.* The paper does not discuss Morgenstern.
-Structural fact (verifiable from
-[memos/MORGENSTERN-1973-BRIEF.md](memos/MORGENSTERN-1973-BRIEF.md)):
-Morgenstern's `Ω((n/2) log_2 n` lower bound for the bounded-coefficient
-linear DFT explicitly takes the Cooley–Tukey FFT as the upper-bound
-target it almost meets. So Morgenstern's lower bound is downstream of
-the existence of Cooley–Tukey as an artifact to be lower-bounded.
+Outside the paper's coverage. Morgenstern's lower bound takes the
+Cooley–Tukey FFT as its upper-bound target; the inheritance step is
+internal to [memos/MORGENSTERN-1973-BRIEF.md](memos/MORGENSTERN-1973-BRIEF.md).
+*That step is not audited here.*
 
 ### Good 1958 → Cooley–Tukey 1965 → Winograd 1976/78
 
@@ -445,37 +437,19 @@ FFT techniques"). So the trigonometric vs. exponential split is a
 *notation* obstacle in the paper's account, distinct from the
 sine-vs-cosine basis question.
 
-### What the paper says about Laplace
+### Note on the Gauss–Euler pair
 
-**Nothing.** Laplace is not in the paper's text and not in its
-reference list [1]–[50]. He is absent from the principal table on
-p. 272. He is absent from the dating appendix on pp. 273–274.
+The structurally relevant pair attacking via sines is **Gauss and
+Euler**, both covered in the paper. Euler's sine-only DFT for sound
+propagation in an elastic medium ([34], pre-1750) is the early
+sine-substrate move; Gauss 1805 is the unification to general
+`cos + sin`. Laplace is absent from this paper (text, reference list
+[1]–[50], principal table p. 272, and dating appendix pp. 273–274);
+his harmonic-analysis work is not part of the inheritance chain this
+paper documents. The sine-question is fully readable from Gauss and
+Euler alone.
 
-Per the user's outside-knowledge cue — that both Gauss and Laplace
-attacked this problem family via sines — the paper's silence on
-Laplace is a notable omission. Possible reasons (none stated in the
-paper):
-
-- The paper deliberately scopes itself to *efficient* (i.e., fewer
-  than `O(N^2)` operation) DFT-class algorithms, and Laplace's
-  contributions, whatever their substantive content on harmonic
-  analysis or perturbation theory, may not include a `O(N log N)`-style
-  decomposition.
-- Laplace's relevant work may be embedded in larger treatises (e.g.,
-  *Mécanique céleste*, *Théorie analytique des probabilités*) where
-  the trigonometric-coefficient computation is incidental rather than
-  the named result, and so does not surface in the algorithmic-DFT
-  bibliography the paper draws on.
-- The paper's PFA branch (Thomas, Good, Winograd) is explicitly
-  scoped out (p. 266: "Another class of efficient DFT algorithms,
-  called prime factor algorithms... is not included in this
-  investigation"), and a similar editorial decision may apply to
-  Laplace's contributions.
-
-**This brief flags Laplace as a known omission. Its resolution is
-outside the paper's scope and outside this brief's audit.**
-
-### Inferred for the program (open question, not resolved)
+### Inferred for the program
 
 The program's circle side is currently cosine-only:
 
@@ -485,30 +459,141 @@ K_n = Q(cos(2 pi / n)),    [K_n : Q] = phi(n) / 2.
 
 This is the load-bearing closure-generator family in
 [memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md).
-The cosine choice tracks the *real subfield* of `Q(zeta_n)`. A
-sine-complementary construction would route through `Q(sin(2 pi / n))`
-or through `Q(zeta_n)` directly (the full cyclotomic field, not its
-real subfield), with degree `phi(n)` rather than `phi(n)/2`.
+The cosine choice tracks the *real subfield* of `Q(zeta_n)`. The full
+cyclotomic field `Q(zeta_n)` has degree `phi(n)` — twice the degree
+of `K_n`.
 
-Whether sine-side or full-cyclotomic-side machinery would surface
-*different obstructions* than the program's current cosine-only
-analysis is an **open program question**. The Heideman–Johnson–Burrus
-historiography does not answer it: the early sine-only DFTs are
-basis-restricted by physical problem class, not by algebraic
-selection, and the unification at Gauss 1805 is to general cos+sin
-(equivalently, the full complex DFT). So the inheritance chain does
-not pre-suggest a structural reason to expect cosine-only and
-sine-only to differ in algebraic obstruction. *That is not the same as
-showing they don't differ.* The program may still find that a
-sine-complementary or full-cyclotomic recasting changes which
-F-theorem axioms bite.
+Working in `K_n` is not just "avoiding `C`"; it is choosing the
+even-symmetric eigenspace under the geometric reflection
+`theta -> -theta`, i.e., the `(+1)`-eigenspace of the Galois
+involution `sigma_{-1}: zeta_n -> zeta_n^{-1}` on `Q(zeta_n)`. The
+next subsection proves this identification.
 
-This is flagged here per the user's cue. It is not pursued. A
-resolution would require either (a) a separate Laplace source
-extraction from a paper that does cover his harmonic work, or (b) an
-internal computation in the program comparing closure-depth
-obstructions over `Q(cos)` versus `Q(sin)` versus `Q(zeta)`. Neither
-is in scope for this brief.
+Whether the program's analysis of the F-question surfaces structurally
+different obstructions in the `(+1)`-eigenspace `K_n` versus the
+`(-1)`-eigenspace versus the full `Q(zeta_n)` is an **open program
+question**. The historiography does not answer it; the inheritance
+chain does not pre-suggest a structural reason to expect them to
+differ; that is not the same as showing they don't differ. A
+resolution would require an internal computation in the program
+comparing closure-depth obstructions across the eigenspaces.
+
+### Proof: `K_n` is the `(+1)`-eigenspace of the reflection involution
+
+**Setup.** Fix `n >= 3`. Let `zeta_n = e^(2 pi i / n)`, a primitive
+`n`-th root of unity. The cyclotomic field `Q(zeta_n)` has degree
+`phi(n)` over `Q`. Let `K_n = Q(cos(2 pi / n))`.
+
+**Step 1: The involution `theta -> -theta` is the Galois automorphism
+`sigma_{-1}` of `Q(zeta_n)`.**
+
+The Galois group `G = Gal(Q(zeta_n) / Q)` is canonically `(Z / nZ)*`,
+acting on the generator by `sigma_a(zeta_n) = zeta_n^a` for
+`a in (Z / nZ)*`. Complex conjugation on `C` restricts to `Q(zeta_n)`
+as the automorphism `sigma_{-1}: zeta_n -> zeta_n^{-1}`.
+Geometrically, viewing `zeta_n` as the point on the unit circle at
+angle `2 pi / n`, this is reflection `theta -> -theta`.
+
+**Step 2: `K_n = Fix(sigma_{-1})`.**
+
+The element `zeta_n + zeta_n^{-1} = 2 cos(2 pi / n)` is fixed by
+`sigma_{-1}` (since `sigma_{-1}(zeta_n + zeta_n^{-1}) = zeta_n^{-1} +
+zeta_n`). So `K_n ⊆ Fix(sigma_{-1})`. For the reverse: `sigma_{-1}`
+has order 2 in `G` (assuming `n > 2`, since then `zeta_n != zeta_n^{-1}`),
+so by Galois correspondence
+`[Q(zeta_n) : Fix(sigma_{-1})] = 2`. The minimal polynomial of
+`zeta_n` over `K_n` is `x^2 - 2 cos(2 pi / n) x + 1`, of degree 2,
+so `[Q(zeta_n) : K_n] = 2`. Together with
+`K_n ⊆ Fix(sigma_{-1}) ⊆ Q(zeta_n)`, this forces
+`K_n = Fix(sigma_{-1})`.
+
+**Step 3: Eigenspace decomposition under `sigma_{-1}`.**
+
+`Q(zeta_n)` is a 2-dimensional `K_n`-vector space. The automorphism
+`sigma_{-1}` is `K_n`-linear (since `K_n` is fixed pointwise) and has
+order 2, so its minimal polynomial divides `x^2 - 1 = (x - 1)(x + 1)`.
+Hence `Q(zeta_n)` decomposes as a direct sum of `K_n`-eigenspaces:
+
+```
+Q(zeta_n) = E_{+1} ⊕ E_{-1}
+```
+
+The `(+1)`-eigenspace is `Fix(sigma_{-1}) = K_n` by Step 2. For the
+`(-1)`-eigenspace: the element `zeta_n - zeta_n^{-1} = 2 i sin(2 pi / n)`
+satisfies
+
+```
+sigma_{-1}(zeta_n - zeta_n^{-1}) = zeta_n^{-1} - zeta_n = -(zeta_n - zeta_n^{-1}),
+```
+
+so it lies in `E_{-1}`. Since `E_{-1}` is 1-dimensional over `K_n`
+(the eigenspaces of an order-2 automorphism on a 2-dimensional space,
+when both eigenvalues appear, are each 1-dimensional) and
+`zeta_n - zeta_n^{-1} != 0`, we have
+
+```
+E_{-1} = K_n · (zeta_n - zeta_n^{-1}) = K_n · 2 i sin(2 pi / n).
+```
+
+**Step 4: The eigenspace decomposition matches even/odd symmetry under
+`theta -> -theta`.**
+
+The involution `theta -> -theta` acts on real-valued functions of
+`theta` by `f(theta) -> f(-theta)`. The classical eigenfunctions are:
+
+- `cos(2 pi k / n)`: `cos(-2 pi k / n) = cos(2 pi k / n)` —
+  `(+1)`-eigenfunction.
+- `sin(2 pi k / n)`: `sin(-2 pi k / n) = -sin(2 pi k / n)` —
+  `(-1)`-eigenfunction.
+
+So in the function-space sense, the `(+1)`-eigenspace under
+`theta -> -theta` is spanned by cosines and the `(-1)`-eigenspace is
+spanned by sines.
+
+Matching this to the algebraic decomposition: `K_n` is generated over
+`Q` by `cos(2 pi / n)`, the lowest-frequency `(+1)`-eigenfunction.
+The `(-1)`-eigenspace `K_n · 2 i sin(2 pi / n)` is generated over
+`K_n` by `sin(2 pi / n)` with an `i` factor. The `i` carries the
+odd-eigenvalue through the algebraic embedding: the Galois action
+`sigma_{-1}` acts on the algebraic representation
+`(zeta_n - zeta_n^{-1}) / (2 i)` rather than on the real-number
+value `sin(2 pi / n)` directly.
+
+**Conclusion.** Working in `K_n = Q(cos(2 pi / n))` is choosing the
+`(+1)`-eigenspace of the Galois involution `sigma_{-1}`, which
+corresponds geometrically to reflection `theta -> -theta` on the unit
+circle and analytically to the even-symmetric function-space
+component. The full structure `Q(zeta_n)` decomposes as
+`K_n ⊕ K_n · 2 i sin(2 pi / n)` under this involution; restricting
+to `K_n` lives in the `(+1)`-eigenspace and ignores the
+`(-1)`-component. The identification "even-symmetric eigenspace under
+`theta -> -theta`" is exact. ∎
+
+### Connection to the paper's algorithmic verdict
+
+The paper's equivalence statement on p. 271 (quoted in §1) ends with
+the phrase "decimation-in-frequency adapted to a *real data sequence*."
+The qualifier *real data sequence* means the input `X(n)` is in `R`,
+the fixed field of complex conjugation on `C`. The proof above
+identifies `K_n` as the fixed field of the same involution restricted
+to `Q(zeta_n)`. So Gauss's algorithmic choice (real input) and the
+program's algebraic choice (`K_n` rather than `Q(zeta_n)`) are the
+`(+1)`-eigenspace under a single involution — complex conjugation —
+applied at different layers: the input space on Gauss's side, the
+cyclotomic field on the program's side.
+
+Two facts the paper attests independently:
+
+1. (p. 271) Gauss's 1805 algorithm is the real-input case.
+2. (p. 270, 271) The trigonometric formulation that goes with that
+   choice made the algorithm unrecognizable as an FFT for 160 years.
+
+Combined with the §5 proof: the program's `K_n = Q(cos(2 pi / n))` is
+the same eigenspace choice Gauss made in 1805 — same involution, same
+fixed-field restriction, applied at different layers. The paper itself
+documents the recognition cost of that choice: content-preserving,
+presentation-restricting. The cosine-substrate decision is traceable
+to a documented predecessor whose recognition lag is also documented.
 
 ---
 
@@ -529,7 +614,14 @@ is in scope for this brief.
   exact-count paper;
 - the chain-of-custody framing for the four FFT-complexity briefs as
   modern descendants of a 1805 origin point;
-- the absence of Laplace from the paper's text and reference list.
+- the identification of `K_n = Q(cos(2 pi / n))` as the
+  `(+1)`-eigenspace of the Galois involution `sigma_{-1}` on
+  `Q(zeta_n)` (proven internally to the brief, §5);
+- the alignment between the program's `K_n` choice and Gauss's 1805
+  real-input algorithmic choice — both are `(+1)`-eigenspaces under
+  complex conjugation, applied at different layers (§5 connection
+  subsection, anchored on the paper's "real data sequence" phrase,
+  p. 271).
 
 ### This brief should NOT be cited for
 
@@ -539,7 +631,9 @@ is in scope for this brief.
   this register);
 - any lower-bound material;
 - a final answer to the sine vs. cosine question (the paper does not
-  give one, and Laplace is absent from its scope);
+  give one; the eigenspace proof in §5 is the structural answer for
+  the program's circle side, but whether the `(-1)`-eigenspace
+  surfaces different obstructions remains an open program question);
 - a claim that the inheritance chain is *complete* (the paper itself
   notes "almost one hundred years passed" with the chain partially
   broken; the brief inherits that limitation);
@@ -574,8 +668,11 @@ Heideman–Burrus technical contribution). It supplies the pre-1965
 context the four FFT-complexity briefs sit at the modern end of and
 confirms a clean upstream endpoint at 1805 with provenance certified
 through *Werke* Vol. III. It does not supply technical content for the
-compute-cost branch and does not resolve the sine vs. cosine question
-(Laplace's absence flagged but not investigated). Per
+compute-cost branch. The sine vs. cosine question receives a
+structural answer in §5 (working in `K_n` is choosing the
+`(+1)`-eigenspace of the reflection involution `sigma_{-1}` on
+`Q(zeta_n)`); whether the `(-1)`-eigenspace surfaces different
+closure-depth obstructions remains an open program question. Per
 [BNHA/ONE-FOR-ALL.md](BNHA/ONE-FOR-ALL.md), this brief is the
 program's provenance-backward audit record for the inheritance the
 four modern briefs depend on.

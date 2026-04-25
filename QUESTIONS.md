@@ -167,4 +167,20 @@ The brief should answer:
 
 Output: `memos/HEIDEMAN-JOHNSON-BURRUS-1985-BRIEF.md`, source-extraction register per `CONTRIBUTING.md` (distinguishing what the paper establishes from sources, what it states without your independently checking, and what you infer for the program). Trust boundary should be explicit: this brief audits the inheritance chain; it does not supply technical content for the lower-bound work.
 
+## 21
+
+Stress-test the §5 "Connection to the paper's algorithmic verdict" subsection of `memos/HEIDEMAN-JOHNSON-BURRUS-1985-BRIEF.md`. The subsection makes two claims and presents them with the same epistemic weight; they don't have it.
+
+**Claim A (structural).** The program's `K_n` choice and Gauss's real-input choice are *the same* `(+1)`-eigenspace under complex conjugation, applied at different layers — input-space on Gauss's side (`R ⊂ C`), cyclotomic field on the program's side (`K_n ⊂ Q(ζ_n)`).
+
+**Claim B (rhetorical extrapolation).** The paper's documented 160-year recognition lag for Gauss's algorithm being recognized as an FFT is a *prior* on the cost of the program's analogous `K_n` choice.
+
+Disconfirmation-first on each, separately:
+
+1. **Construct a counter-example to Claim A.** The two involutions agree as functions on `Q(ζ_n) ⊂ C`. The framing claim is stronger: that they play the *same role* — restricting to a subset closed under whatever operation matters. On Gauss's side the restriction is on inputs (data closed under the algorithm); on the program's side the restriction is on the algebraic structure the closure-depth ladder is built over. Find a structural property visible at one layer but not the other that breaks the role-correspondence. If you cannot, name what is doing the work that makes the role the same — what is the abstract operation that "complex conjugation as restricting involution" is, of which Gauss's input restriction and the program's field restriction are both instances?
+
+2. **Test Claim B's validity.** The paper documents 160 years of recognition lag. The brief reframes that as a prior on the cost of the program's analogous choice. Distinguish "cost of the choice" from "cost of the era." Is the 160-year gap explained by era-specific factors (no complex-exponential notation until Euler/Gauss made it routine, no asymptotic notation until the 20th century, posthumous unpublished manuscript, no formal compute model until Turing) that don't transfer to our setting? Or is some non-trivial fraction of the gap attributable to the eigenspace-restriction choice itself — an obstruction to recognition that any era making that choice would face? Be specific about which factors are era and which are choice.
+
+If A holds and B doesn't, the eigenspace identification is real but the recognition-lag reframing is rhetorical and should come out of the brief. If both hold, the connection subsection is load-bearing as written. If A breaks, the whole subsection comes out and §5 reverts to the eigenspace proof alone. Report which.
+
 ...
