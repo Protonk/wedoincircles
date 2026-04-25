@@ -36,7 +36,7 @@ Specific consequences of the scaling being similar:
 
 **Demonstration.** See `corners/uniform_scaling.sage` and `figures/pseudo_chebyshev_uniform_scaling.png`. The figure is a 3×2 grid showing the geometric construction (left column) and the node-sequence curve (right column) at r = 1, r = 0.5, and r = 0.25. The shape of the right-pane curve is identical across rows; only the horizontal extent changes.
 
-![Pseudo-Chebyshev uniform scaling](../figures/pseudo_chebyshev_uniform_scaling.png)
+![A 3×2 grid of subplots, titled "Uniform-scaling deformation: pseudo-Chebyshev at r = 1, 0.5, 0.25". Each row shares a layout: the left subplot is a "Geometric construction" with a black quarter-arc and a fan of colored rays piercing the arc at colored disks, with a black arrow pointing toward an anchor; the right subplot is "Node-sequence space" — a black curve rising from low n through colored integer-sample disks toward a vertical asymptote, with horizontal axis labeled "node value = r·cos(π/n)". Across the three rows the asymptote location moves from x=1 (top) to x=0.5 (middle) to x=0.25 (bottom); the curve shapes are identical and only the horizontal extent shrinks.](../figures/pseudo_chebyshev_uniform_scaling.png)
 
 ---
 
@@ -271,7 +271,7 @@ So c = 1 is a nondegenerate limit (produces the sin(2π/n) sequence, related to 
 
 **Demonstration.** See `corners/translation.sage` and `figures/pseudo_chebyshev_translation.png`. Three rows at c = 0.5, c = 0, c = −0.5. Left column: translated circle with the fixed chords and crossing markers. Right column: node-sequence curve with integer stems, and asymptote √(1 − c²) annotated. The overshoot at c = 0.5 is visible above the dashed asymptote; the monotone behavior at c = −0.5 is visible below it.
 
-![Pseudo-Chebyshev translation](../figures/pseudo_chebyshev_translation.png)
+![A 3×2 grid of subplots, titled "Translation deformation: pseudo-Chebyshev with circle at (0, c) for c = +0.5, 0, -0.5". Each row pairs a "Geometric construction" on the left with a "Node-sequence space" on the right. The left subplots show a black circle whose center moves from (0, +0.5) at the top down to (0, 0) and (0, -0.5) at the bottom, each crossed by a fan of colored chords emanating from a black star at the origin, with a dashed vertical guide at x=1. The right subplots show a smooth black curve through colored integer-sample disks rising toward a vertical asymptote whose location moves with c — at x = √(1−c²) ≈ 0.866 in the top and bottom rows and x = 1 in the middle row.](../figures/pseudo_chebyshev_translation.png)
 
 ---
 
@@ -323,7 +323,7 @@ throughout 0 < θ < π/2.
 
 For translation, the threshold is c = 0. Any c > 0 makes the point (1, c) reachable by a positive-slope chord, and that chord forces the interior maximum x = 1.
 
-![Monotonicity leash condition](../figures/leash_plot_a.png)
+![A planar geometric plot bounded by axes from -1 to 1 in x and -1 to 1 in y. A solid black unit circle is centered at the origin; a dashed red circle bows from the left through the origin, and a dashed green circle mirrors it on the right. The lower half-plane below y=0 is shaded pale green and labeled "admissible region (target rightmost at y ≤ 0)". Thin gray rays radiate from the origin under the label "chord family (positive-slope rays from origin)". Dotted vertical guides through x=1 mark three points at (1, +0.5), (1, 0.0), and (1, -0.5), with side labels "lead" and small "(c = …)" tags. A small star marks the origin.](../figures/leash_plot_a.png)
 
 ### Hierarchy of properties by fragility
 

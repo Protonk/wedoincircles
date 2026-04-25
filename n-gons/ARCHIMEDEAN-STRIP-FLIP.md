@@ -2,7 +2,7 @@
 
 The strip and flip constructions for the anchored-n-gon family, followed by the two organizational splits they make visible: the tangency-side subpolygon link on the strip floor, and the corner-side pseudo-Chebyshev / counting observable under inversion.
 
-![Three views of the Archimedean strip](../figures/archimedean_triptych.png)
+![A three-panel figure under a shared title. Top row, two side-by-side polar plots: panel (a) labeled "Inside-out" shows a black unit circle with red and purple curves looping inward and outward in a six-petal flower pattern, a shaded sector, and an arrow noting "r ↔ 1/r"; panel (b) labeled "Outside-out" shows the same circle ringed by a red equilateral triangle outside and a darker heptagonal shape outside that, with another shaded sector. Bottom row, panel (c) labeled "Strip (cut at 0° and unrolled)" is a wide horizontal plot from angle 0 to 1 showing repeating red tent-shaped peaks at height 1 paired with shorter purple tents, a single shaded period labeled "one period area", and tick marks at 1/4, 1/2, 3/4.](../figures/archimedean_triptych.png)
 
 ## 1. Setup
 
@@ -36,7 +36,7 @@ over $x \in \bigl[(2k-1)/(2n),\,(2k+1)/(2n)\bigr]$ modulo `1`.
 
 Each arc touches $y = 0$ at its midpoint (tangency with the incircle) and rises to $y_n$ at both endpoints (the corners of the n-gon). The strip is produced by `n-gons/strip.py`, which writes `figures/archimedean_strip.png`.
 
-![Archimedean strip](../figures/archimedean_strip.png)
+![A wide, short plot showing six superimposed sawtooth-like curves over a horizontal axis ticked at 1/4, 1/2, and 3/4. Each curve consists of repeating tent-shaped arcs that touch zero at their midpoints and rise to a peak at each end; the curves are stacked by amplitude — a tall red tent reaching to one, then progressively shorter green, blue, magenta, gold, and lavender tents — with a horizontal dashed reference line at each tent's peak height and a colored side-label at the right margin naming each series.](../figures/archimedean_strip.png)
 
 ---
 
@@ -60,7 +60,7 @@ $$\cos(\pi/n) = \mathrm{node}(n),$$
 
 the pseudo-Chebyshev node sequence from `corners/PSEUDO-CHEBYSHEV-NODES.md`. The nodes now appear as radii rather than x-coordinates. The flipped annulus is produced by `n-gons/inside_out.py`, which writes `figures/archimedean_inside_out.png`.
 
-![Inside-out annulus](../figures/archimedean_inside_out.png)
+![A polar plot inside a square frame, titled "Inside-out annulus n = 3 … 8". A solid black unit circle bounds the figure, with eight radial spokes labeled 0°, 45°, 90°, 135°, 180°, 225°, 270°, 315°. Inside the disk, six superimposed rosettes drawn in red, blue, green, magenta, gold, and lavender interlace into a flower-petal pattern, each color forming its own n-fold loop family that touches the outer circle in regularly spaced cusps.](../figures/archimedean_inside_out.png)
 
 ---
 

@@ -1,6 +1,6 @@
 # HURWITZ-GAP
 
-![Hurwitz gap rate](../figures/hurwitz_gap_rate.png)
+![A log-log plot whose three series — a black dashed line, a column of blue dots, and a column of red plus markers — overlap so closely that they trace a single straight diagonal descending from the upper left to the lower right across roughly seven decades on the horizontal axis and six decades on the vertical. A narrower inset panel sits below sharing the horizontal axis: a magenta curve rises on linear-y from near zero to a flat asymptote, with a small annotation pointing at the plateau.](../figures/hurwitz_gap_rate.png)
 
 The Hurwitz-gap rate figure at `figures/hurwitz_gap_rate.png` (built by `corners/hurwitz_gap.sage`) plots the isoperimetric gap
 

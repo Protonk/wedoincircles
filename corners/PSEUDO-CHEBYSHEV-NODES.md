@@ -14,7 +14,7 @@ $$\mathrm{node}(n) = \cos(\pi/n).$$
 
 For n = 2 the convention sets node(2) = 0, matching cos(π/2). For n ≥ 3 the construction is direct.
 
-![Shared-anchor 3-4-5 construction](../figures/anchor_345.png)
+![A first-quadrant geometric diagram with horizontal axis from 0 to 1 and vertical axis from 0 to about 1.75. A black quarter-circle arc bows from (0, 1) down to (1, 0). Three colored line pairs share an anchor point at (1, 0) and fan up and to the left: a thick red triangle pair reaching the top right at height about 1.732, a thin blue square pair at height 1, and a green pentagon pair at height about 0.727. Dashed counterparts mirror each solid leg. Arrow callouts label "triangle bump", "square bump", "pentagon bump", and several "corner" coordinates at the right edge, with a black star marking the shared anchor at (1, 0).](../figures/anchor_345.png)
 
 ## Node values
 
@@ -65,7 +65,7 @@ node(n) is constructible by compass and straightedge iff the regular 2n-gon is, 
 
 The first non-constructible node is node(7). The first cubic appears at the same n.
 
-![Pseudo-Chebyshev arithmetic ladder](../figures/pseudo_chebyshev_arithmetic_ladder.png)
+![A stem-and-marker chart with horizontal axis n from 2 to 40 and vertical axis "degree of cos(π/n) over Q". Each integer n carries a vertical stem capped by a marker — filled teal disks for constructible nodes, open red circles for nonconstructible. Stem heights climb irregularly upward to the right, ranging from 1 at n=2,3 up to 18 at n=37,38. Right-edge labels mark the heights "rational", "quadratic", "cubic", "quartic", "quintic", "sextic", "degree 8", "degree 10", "degree 12". A pink vertical band highlights n=7 with an arrow callout reading "n = 7: first cubic and first nonconstructible node".](../figures/pseudo_chebyshev_arithmetic_ladder.png)
 
 ## Real-t continuation
 
@@ -77,7 +77,7 @@ In node-sequence coordinates (horizontal = node value x, vertical = n):
 
 Shape. Starts at (0, 2). Passes through (1/2, 3), (√2/2, 4), ((1+√5)/4, 5), (√3/2, 6), (cos(π/7), 7), … As a graph of n(x), it is monotone increasing and convex, with vertical asymptote x = 1 as n → ∞. Near x = 1 it rises like n ~ π/√(2(1−x)).
 
-![Pseudo-Chebyshev continuity](../figures/pseudo_chebyshev_continuity.png)
+![A two-panel figure under the title "Continuity: pseudo-Chebyshev nodes as integer samples on a smooth curve". Left panel "Geometric construction": a first-quadrant plot from x=0 to 1.2 and y=0 to 1.2 with a black quarter-circle arc from (0, 1) down to (1, 0); several colored rays fan upward from the origin, each piercing the arc at a colored disk labeled n=3, n=4, n=5, and so on through about n=30. A black star marks the anchor at (1, 0). Right panel "Node-sequence space": a black analytic curve rising from (0, 2) and bending steeply up toward a vertical asymptote at x=1, with colored disks at integer n values ranged from below 5 up to 30 and a label "x = 1 (asymptote, n → ∞)".](../figures/pseudo_chebyshev_continuity.png)
 
 ## Arithmetic density along the curve
 

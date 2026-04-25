@@ -284,9 +284,12 @@ arbitrary tiebreaks that the lattice dissolves.
   bounds. Under *certification-preserving* models — algebraic-
   arithmetic over `ℚ` with paid adjunctions and bounded constants,
   ASLP with charged field extensions, bounded-coefficient linear
-  circuits — the projection from semantic to cost is near identity,
-  and `(P, A)` coordinates carry their cost meaning intact. Under
-  *unbounded-linear* models — where free unbounded linear
+  circuits — the projection from semantic to cost is *intended* to be
+  near identity (this is the hypothesis class the program is
+  committing to, pending the primitive-op cost theorem named in
+  §"Lower bounds, domination, and matching"), and under that
+  hypothesis the `(P, A)` coordinates carry their cost meaning intact.
+  Under *unbounded-linear* models — where free unbounded linear
   combinations are admitted — the projection collapses much of the
   A-axis, because algebraic depth can be moved into coefficients,
   basis changes, or precomputed linear maps (the FFT mult-to-add
@@ -295,9 +298,10 @@ arbitrary tiebreaks that the lattice dissolves.
 
 The lattice described below is the semantic lattice. When the memo
 speaks of "matching" and "cost," it is implicitly fixing a
-certification-preserving model under which the projection holds.
-Outside that regime, the matching language demotes; see §"Matching is
-model-indexed" further down.
+certification-preserving model under which the projection is
+hypothesized to hold; the projection is itself the open theorem the
+bridge wants. Outside that regime the matching language demotes; see
+§"Matching is model-indexed" further down.
 
 **P-axis (positional / incidence granularity).**
 
@@ -358,6 +362,24 @@ priori" is the special case where any non-trivial cyclotomic-content
 task demands strictly more than `(P0, A0)`, so any `(P0, A0)` ledger
 fails by construction. The lattice gives the full version:
 non-domination on either axis is sufficient for failure.
+
+**Task-literal output vs model-induced internal demand.** When the
+lattice writes "task `T` demands `(P_t, A_t)`," that is a derived
+statement, not a primitive. The task itself has *output semantics*:
+T1 asks for ordered real positions to precision `10⁻ᵏ`; T3 asks for
+distinction at precision `ε`. Neither literally asks for min-poly,
+height, or isolating interval. The lattice coordinate `(P_t, A_t)` is
+what a *model* forces a process completing T to internalize: under
+certification-preserving algebraic-arithmetic, computing real
+positions to precision flows through min-poly / height /
+isolating-interval data, so the model induces an A2 internal demand.
+Under unbounded-linear, precomputed tables can give the same output
+without those certificates; the model induces no A demand. The
+"matching" judgement is therefore a model-relative theorem about what
+the model forces on a process completing T, not a task-literal
+property. The next theorem to prove is not "`V_cert` matches T1/T3"
+but "in a precisely axiomatized certification-preserving model,
+T1/T3 force `V_cert`-level internal work."
 
 **Lower bounds, domination, and matching.** A ledger gives a
 non-vacuous lower bound on a task when its accounting reflects
@@ -460,10 +482,14 @@ under unbounded-linear readings of algebraic-arithmetic the Path 2
 matching collapses per §"Matching is model-indexed" above. `F2` sits
 on a Path-1-flavored task track of its own — typed-incidence-
 production demands `(P2, A0)`, which `F2` dominates, and that demand
-is robust under unbounded-linear models because `F2`'s content is
-positional rather than algebraic. The same ledger can pass under one
-task and fail under another depending on which lattice point the task
-demands and which model regime it operates in.
+is robust under unbounded-linear models because the *task's output
+semantics* require explicit typed-incidence production, not because
+the lattice protects positional content intrinsically. (Unbounded-
+linear models do not naturally compute discrete incidence objects;
+the robustness is from the task spec, not from the model regime.) The
+same ledger can pass under one task and fail under another depending
+on which lattice point the task demands and which model regime it
+operates in.
 
 **Item #6 (Champernowne height) location.** Not yet placed; a strong
 candidate for `(P0, A0)`, in which case it inherits the impossibility
@@ -514,6 +540,50 @@ to Path 2 (V_cert + algebraic-arithmetic), but they are not the same ledger.
 Earlier text that tagged `O_cert` as "Path 1" should be read as "Path-1-
 flavored sibling track."
 
+**Certification-preserving model: open axioms.** The qualifier
+"certification-preserving algebraic-arithmetic over `ℚ`" used in the
+Path 2 commitment, and propagated to `memos/COUNTING-APPARATUS.md`
+§(A) and `README.md`, is currently informal. To make it precise the
+following must be committed (each is a free parameter of the model):
+
+1. Are arbitrary algebraic constants permitted as advice, or must
+   they be constructed by paid adjunctions?
+2. Are coefficients height-bounded, and if so, by what bound?
+3. Are additions primitive and binary, or are arbitrary linear
+   combinations also primitive?
+4. Is a precomputed DFT-like matrix (or any precomputed linear
+   transform) free or paid?
+5. Are field adjunctions paid by degree, height, or both?
+6. Is root isolation paid by precision, by certification depth, or
+   both?
+7. Is the model uniform in `N` (a single machine handles all inputs),
+   or non-uniform (advice scales with `N`)?
+
+Without commitments on all seven, "certification-preserving" is a
+label for the desired conclusion rather than a model-theoretic regime.
+The committable triple's matching claim depends on this axiomatization
+being settled in the direction that preserves the A-axis as a cost
+axis. The natural commitments inferred from program tradition (paid
+adjunctions, bounded constants, binary additions, paid precomputed
+linear transforms, paid adjunctions by degree, paid root isolation by
+precision, uniform in `N`) are the working defaults; explicit
+commitment is pending and is itself part of the bridge work.
+
+**Partial settlement from Morgenstern 1973**
+([memos/MORGENSTERN-1973-BRIEF.md](memos/MORGENSTERN-1973-BRIEF.md)):
+the existing FFT-complexity literature's bounded-coefficient lower
+bound settles axiom 2 in a *modulus-bounded* variant (rather than
+algebraic-height-bounded), axiom 3 in *binary fan-in* form, and
+answers axiom 1 in a too-permissive direction (arbitrary complex
+coefficients of bounded modulus are free as advice, without paid
+construction by adjunction). Axioms 4–7 remain open in Morgenstern's
+setup. The literature's partial overlap with the program's
+certification-preserving regime is therefore real but partial:
+bounded-coefficient is the right *shape* of constraint, but the
+program needs algebraic-height boundedness rather than modulus
+boundedness, and needs paid algebraic-constant construction rather
+than free bounded advice.
+
 ## Task-ledger admissibility
 
 With the lattice in hand, each candidate task statement in
@@ -552,11 +622,16 @@ unbounded-linear models, the matching of `V_cert` for T1/T3 demotes
 to "above-task" per §"Matching is model-indexed" — V_cert becomes a
 lower bound on a *strengthened* task that demands certificates, not
 on the original T1/T3. `F2`'s matching for T2 is preserved across
-regimes because its content is positional rather than algebraic; the
-mult-to-add quotient does not act on positional structure. row-deg's
-coarse bound at footnote ⁴ likewise survives under unbounded-linear,
-since the row-entry argument depends only on entering the row field,
-not on charging operations within it.
+regimes only when the task's output semantics require explicit
+typed-incidence production: F2's robustness comes from the task spec
+(unbounded-linear models do not naturally compute discrete incidence
+objects), not from any intrinsic protection the lattice gives to
+positional content. row-deg's coarse bound at footnote ⁴ requires the
+same paid-adjunction condition as `V_cert`: "entering the row field"
+is a meaningful cost only when adjunctions are paid. Under
+unbounded-linear with free constants — where field elements can be
+advised as precomputed values — even the row-entry argument flattens,
+and the row-deg bound demotes alongside `V_cert`.
 
 **Viable task-ledger pairings.**
 
@@ -567,7 +642,9 @@ not on charging operations within it.
   distinction at precision. Matching. Landfall-parallel.
 - **T2 + `F2` + word-structure compute model.** Honest combinatorial
   theorem, not the original cyclotomic-depth ambition.
-- **T_orbit (reformulated) + `O_cert` + lattice/rank model.** Path 1.
+- **T_orbit (reformulated) + `O_cert` + lattice/rank model.**
+  Path-1-flavored sibling track (per §"Compute-model / ledger
+  coupling"); not literally Path 1's ψ-rank ledger.
 - **T_capacity + row-field-degree + algebraic-arithmetic.** Row-level
   capacity theorem; coarse / loose.
 - **(Coarse companion.) Row-field-degree on T1 / T3.** Below-matching

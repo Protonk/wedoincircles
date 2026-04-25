@@ -22,7 +22,7 @@ Current state, per branch:
 
 The closure-depth theorem does not depend on any of the other branches; the strip-H¹ identification does not use Liouville; the negative closure of the Liouville endgame is a disciplined output in its own right, recording plainly that the circle side's Archimedean observables factor through an approximant whose height rules out the contradiction the endgame wanted. 
 
-The program's central open bet sits in the compute-cost branch: marry Kraft arithmetic to cyclotomic complexity without circular dependence on the circle.
+The final lower-bound theorem, when it closes, will have a triadic structure: three independent struts speaking different cost-currencies. Each alone gives a partial bound; any two give a stronger one; all three give the full theorem with redundancy under failure of any single strut. The three are the closure-depth no-go (the *structural* fault line, already in hand), the compute-cost lower bound on counting primitives (the *per-instance algebraic-content* fault line, open search), and the Kraft–Parseval discrepancy bound (the *cross-input encoding* fault line, open search). The analogy is to truss bridges, where triangulation combines compression, tension, and shear on different members and the rigidity comes from the three together. Kraft accounting is one strut, not the whole bridge. Other branches of the program may yet prove load-bearing for one or more of the three in ways not yet foreseen.
 
 ## Stance
 

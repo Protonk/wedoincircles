@@ -94,4 +94,28 @@ What does the program's compute-cost apparatus look like now, after the recent m
 
 Open scope: internal consistency across the updates, second-order implications of the semantic/cost two-lattice framing that didn't make it into the edits, places where the certification-preserving qualifier is doing rhetorical work where it should be doing technical work, places where the apparatus's structural purpose has shifted without the surrounding scaffolding following. What do you notice that the editor wouldn't?
 
+## 16
+
+Read Morgenstern 1973 (`sources/FFT-lower-bound.pdf`) as a source-extraction brief, with one specific lens: Morgenstern's bounded-coefficient hypothesis appears structurally to be the constraint that forbids the FFT's defect — the convolution theorem's mult-to-add interconvertibility — exactly the constraint our compute-cost branch is calling "certification-preserving" to keep the A-axis cost-bearing. Verify or refute that reading.
+
+Specifically:
+
+1. What hypothesis does Morgenstern's bound require? Express precisely (coefficient class, addition model, primitive operations, uniformity).
+2. What does the proof technique use that hypothesis for? Where in the determinant / volume-growth argument does the bounded-coefficient assumption bite — and what would happen to the bound if the hypothesis were relaxed?
+3. Does the bound's hypothesis class intersect the certification-preserving open axioms list (`memos/LEDGER-PIVOT-SEARCH.md §"Certification-preserving model: open axioms"`)? Which of the seven axioms does Morgenstern's setup settle, and which remain open?
+4. Could Morgenstern's bound be transported to the program's compute-cost setting (T1/T3 + `V_cert` + certification-preserving algebraic-arithmetic) without circularity? Which hazards from `memos/FFT-CYCLOTOMIC-COMPLEXITY.md` (1 proof-technique-inversion, 2 coefficient-boundedness, 3 nonuniformity / Kraft, 4 real-subfield, 5 rational-equivalence) apply?
+
+Brief lands at `memos/MORGENSTERN-1973-BRIEF.md`, source-extraction register per `CONTRIBUTING.md`, naming convention per `memos/FFT-CYCLOTOMIC-COMPLEXITY.md §"Order of work"`.
+
+## 17
+
+Read Winograd 1978 (`sources/Winograd-ComputingDiscreteFourier-1978.pdf`) as a source-extraction brief. The paper is the foundational reference for AFW 1984 (already brief'd at `memos/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md`), and is item 3 in `memos/FFT-CYCLOTOMIC-COMPLEXITY.md §"Order of work"`. Specifically:
+
+1. State Winograd's main theorem(s) precisely — including hypothesis, conclusion, proof technique, and the distinction between the clean theorem of the paper (the modular-product bound) and any DFT-applied corollary. Be explicit about which theorem statement is the headline DFT bound and which is the underlying modular-product result.
+2. What is Winograd 1978's structural framework: rational-equivalence-preserving (AFW-style), coordinate-sensitive (Morgenstern-style), or something else? The two-camp non-composability finding from the AFW + Morgenstern briefs (`memos/MORGENSTERN-1973-BRIEF.md`) makes this question load-bearing — does Winograd 1978's framework sit cleanly on one side, or does it bridge the two? In particular: does Winograd 1978 originate the rational-equivalence framework AFW uses, or does AFW import it from elsewhere?
+3. How does Winograd 1978's lower-bound technique relate to Morgenstern's determinant-growth argument? Are they independent, related by a common ancestor, or contradictory?
+4. Which hazards from `memos/FFT-CYCLOTOMIC-COMPLEXITY.md` (1 proof-technique-inversion, 2 coefficient-boundedness, 3 nonuniformity / Kraft, 4 real-subfield, 5 rational-equivalence) apply? In particular, does Winograd's hypothesis class match Morgenstern's bounded-coefficient regime, AFW's arbitrary-rational regime, or neither?
+
+Brief lands at `memos/WINOGRAD-1978-BRIEF.md`, source-extraction register per `CONTRIBUTING.md`, naming convention per `memos/FFT-CYCLOTOMIC-COMPLEXITY.md §"Order of work"`.
+
 ...

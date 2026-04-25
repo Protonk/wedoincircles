@@ -6,7 +6,7 @@ The tangent-aligned construction described in [COUNTING.md](n-gons/counting/COUN
 
 Triangle fixed, square rotated by `θ ∈ [0, π/2]`, sweeping the count of distinct x-positions across all 7 vertices. Over 100,001 sampled angles the generic count is `6`; it drops below generic only at three isolated angles: `θ = 0` (count 3), `θ = π/4` (count 5), `θ = π/2` (count 3). Fraction of sampled angles with any coincidence: `3 × 10⁻⁵`.
 
-![Toy chamber count for a fixed triangle and rotated square](../../figures/counting_rotation_toy_angles.png)
+![A wide plot titled "Triangle fixed, square rotated: toy chamber count". Horizontal axis "θ/π" from 0 to 1/2 with ticks at 0, 1/8, 1/4, 3/8, 1/2; vertical axis "distinct x-positions" from 3 to 6. A solid blue horizontal line sits at y = 6 across the whole range, labeled inline "generic chamber: 6 distinct x-positions". Three red filled-circle markers break below the line: one at (0, 3) annotated "θ = 0, count 3", one at (1/4, 5) annotated "θ = π/4, count 5", and one at (1/2, 3) annotated "θ = π/2, count 3". A footnote below the axis reads "Over 100,001 sampled angles, the count is generically 6 and drops only at θ = 0, π/4, π/2."](../../figures/counting_rotation_toy_angles.png)
 
 The picture makes the chamber claim concrete: the toy is almost everywhere constant at `6`, and the sampled coincidence set is reduced to three isolated angles.
 

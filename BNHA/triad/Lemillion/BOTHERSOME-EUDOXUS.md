@@ -102,7 +102,7 @@ Eudoxus gives a ratio. Archimedes gives the value. Between Eudoxus and Archimede
 
 There is a geometric linkage between the Archimedean-strip picture used here and the Thomae / Stern–Brocot histogram used elsewhere in the program. The two constructions are *not* the same — their coordinates, regularity, and underlying spaces differ — but they share an arithmetic substrate, and spotting the shared substrate is part of why Eudoxus remains bothersome even on the Archimedean side.
 
-![Thomae popcorn on F_30](../../../figures/thomae_popcorn.png)
+![A stem plot on a horizontal axis from 0 to 1 and a vertical axis from 0 to 0.5. Vertical stems rise to point markers at heights that decrease as the denominator grows: a single tall dark-purple stem at x=1/2 reaches y=0.5, two stems near 1/3 and 2/3 reach y≈0.33, two near 1/4 and 3/4 reach y=0.25, and a self-similar comb of progressively shorter stems fills in between, fading into a near-baseline carpet of yellow ticks. A color bar at the right runs from dark purple at denominator q=5 to bright yellow at q=30, and stem colors track that scale — the tallest stems are purple and the shortest are yellow.](../../../figures/thomae_popcorn.png)
 
 **Shared base.** Both constructions live over $[0, 1]$ with the *reduced-rational-with-denominator* as the organizing datum. Thomae plots a stem of height $1/q$ at each reduced $p/q$. The strip's floor $y = 0$ deposits a tangency point at every $k/n$ for $0 \le k < n$ and $n = 1, 2, 3, \ldots$; at a reduced rational $p/q$, exactly the $n$-gons with $q \mid n$ put a tangency there, giving multiplicity $\lfloor N/q \rfloor$ over $n \le N$ — which is the Thomae-popcorn height up to the $1/q$ normalization.
 

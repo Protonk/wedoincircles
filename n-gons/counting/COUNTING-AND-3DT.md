@@ -45,7 +45,7 @@ Although the construction is not orbit-based, it still has a genuine procedural 
 
 So the counting problem does have a compressed update rule. It is just arithmetic and merge-based rather than dynamical in the 3DT sense.
 
-![Counting denominator signals](../../figures/counting_denominator_signals.png)
+![A six-panel stem chart sharing a common horizontal n-axis, titled "Counting denominator signals | per-polygon contributions on the n-axis" with subtitle "The six-field decomposition of M_N, read one denominator at a time". Top panel "leading 1" shows black stems of height 1 at every n, annotated "1 if n odd else 0". Second panel "x = −1" has blue stems of height 2 at every even n, annotated "2 if n even else 0". Third panel "L(n)" shows green stems whose heights climb irregularly from 0 at small n to about 6 by the right edge, annotated "left 2-field growth". Fourth panel "x = 0" has purple stems of height 2 spaced every fourth n, annotated "2 if n ≡ 2 mod 4 else 0". Fifth panel "R(n)" shows orange stems that climb from 0 to about 6, annotated "right 2-field growth". Bottom panel "x = +1" shows red stems of height 2 at every n, annotated "2 for every n".](../../figures/counting_denominator_signals.png)
 
 The outside-out update is denominator-indexed rather than orbit-indexed: each new `n` contributes through six arithmetic signal lanes.
 

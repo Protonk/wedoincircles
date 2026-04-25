@@ -51,7 +51,7 @@ So `M_N` is a corner-incidence word for the level sets of `X`, not a floor-latti
 
 ## The bridge figure
 
-![Strip linkage figure](../../figures/counting_strip_observables.png)
+![A wide plot titled "Strip Linkage | floor grid and special corner contours". Horizontal axis "strip angle u = θ/(2π)" from 0 to 1, with vertical dashed reference lines at 1/4, 1/2, and 3/4. Vertical axis "strip height y = r − 1" from 0 up to 1. Five colored contour curves rise from the floor to the top of the strip: red curves labeled X = +1 near the right edge and another red set near the left edge labeled X = −1, orange curves X = +1/2 just inside them and X = −1/2 mirroring on the other side, and a single blue U-shaped curve labeled X = 0 sweeping from the upper left, dipping near 1/2, and rising to the upper right. A scatter of small black dots labeled "corner / tangency point" sits at low strip heights, and a hatched gray "DH-grid band" runs along the floor. A legend at the upper right enumerates the five contour colors and the marker types.](../../figures/counting_strip_observables.png)
 
 [counting_strip_observables.png](figures/counting_strip_observables.png) puts the two readouts on one picture.
 
@@ -76,7 +76,7 @@ First, it says where the exceptional counting columns come from geometrically. T
 
 The `X=\pm 1/2` contours are included for the same reason: they belong to the planar Niven/crystallographic value set. In the initial `\psi`-aligned table through `n=30`, they host no exact corner hits, and a wider numerical search through `n=400` also finds none. So at present the visible counting backbone on the strip remains `X \in \{+1,0,-1\}`, with `X=\pm 1/2` acting as a tested but empty comparison family.
 
-![Nearest approach to x = plus/minus one half](../../figures/counting_near_half_gaps.png)
+![A semi-log-y plot titled "Nearest approach of outside-out vertices to x = ±1/2", with horizontal axis polygon order n running up to about 400 and vertical axis "minimum gap to x = ±1/2" from about 10⁻⁵ to 10⁰. Two main scatter series descend across the plot: orange diamond markers labeled "gap to +1/2" (highlighted as the n ≡ 3 mod 6 exact-cos-aligned subsequence) and blue dots labeled "gap to -1/2". Two dashed envelope curves overlay them, labeled "π²/3·1/(6n)" and "π²/(4n²) — exact-cos 1/n² floor". Two yellow star markers sit near the right edge with inline annotations "best to -1/2: n = 398, gap ≈ 2.26e-03" and "best to +1/2: n = 399, gap ≈ 1.55e-05".](../../figures/counting_near_half_gaps.png)
 
 The crystallographic comparison guides `X = \pm 1/2` stay empty through `n \le 400`, but `+1/2` is approached much more closely than `-1/2`.
 

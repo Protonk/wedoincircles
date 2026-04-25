@@ -12,7 +12,7 @@ This memo promotes the "partial, not primary" verdict of
 [memos/OBSERVABLE-CATEGORY-SKETCH.md](memos/OBSERVABLE-CATEGORY-SKETCH.md)
 into a terse definition.
 
-![Native-F closure mismatch](../figures/native_f_closure_mismatch.png)
+![A two-panel diagram joined by a central broken arrow. Left panel "log side: affine closure is flat" is a nearly empty plot with axes labeled "composition depth k" (0 to 20) and "closure rel. depth" (0 to 6), holding only an algebraic identity in black and a blue caption "finite affine composition never leaves the same two-parameter family". Central red text reads "native F? requires an unbounded closure ladder, but Aff is flat — closure-generator preservation breaks here". Right panel "circle side": a lollipop chart over polygon order n from 7 to 60, stems climbing from below 5 up to about 30, with composite n drawn as small gray dots, prime n as larger gold dots, and a single bold red dot annotated "n = 7: first cubic".](../figures/native_f_closure_mismatch.png)
 
 The figure is built by
 [memos/build_native_f_closure_mismatch.py](memos/build_native_f_closure_mismatch.py).

@@ -20,7 +20,7 @@ This note promotes the strip-Fourier part of
 No Stern-Brocot / Farey / Thomae primitive enters. This is BIND-native strip
 geometry: secant arcs, integration, and Fourier modes on `[0, 1]`.
 
-![Strip tissue Fourier object](../figures/strip_tissue_fourier.png)
+![Three panels under the title "Strip-tissue Fourier object: DC area, signed modes, and first-pair concentration". Top panel (a) "strip tissue y_10(x): area is the DC mode" runs across the full width on a horizontal axis from 0 to 1, showing repeating gray cusped arcs that dip down and back up many times, a dashed orange horizontal reference at the DC level, and a single blue-shaded "one strip period" patch near x=1/2. Bottom-left panel (b) "signed nonzero modes" is a stem chart over integer mode index k from -12 to +12 with three overlaid series (orange dots, green dots, red x-markers) alternating in sign. Bottom-right panel (c) "nonzero L² energy: first pair carries almost all mass" is a green bar chart over mode-pair k from 1 to about 13, descending steeply, with a red limit curve and a callout "90/π⁴ ≈ 0.924".](../figures/strip_tissue_fourier.png)
 
 The figure is built by
 [n-gons/build_strip_tissue_fourier.py](n-gons/build_strip_tissue_fourier.py).
@@ -279,7 +279,7 @@ circumscribed Hurwitz gap of the radial lift. The remaining order-`n^-4`
 difference decomposes into the classical circumscribed-vs-inscribed
 squeeze plus the explicit residual `R_n`.
 
-![Hurwitz gap and strip H1 comparison](../figures/hurwitz_strip_h1_match.png)
+![A three-panel figure titled "Hurwitz gap and strip H1 seminorm: same Archimedean jet, different observables". Top panel (a) "same leading rate, different substrates" is a log-log plot with three nearly coincident series — a dashed gray "shared guide", blue dots "Hurwitz gap Δn", and green dots "strip seminorm |y_n'|²" — descending across the plot from n=10 to n=100. Bottom-left panel (b) "second-order match" is a linear plot with two curves converging to a shared horizontal level near 1.0: a blue "Hurwitz approaches from below" and a green "strip H1 approaches from above". Bottom-right panel (c) "not an identity: next term separates them" plots a single red curve flattening into a horizontal limit annotated "76π⁶/45 ≈ 1623.68".](../figures/hurwitz_strip_h1_match.png)
 
 The figure is built by
 [memos/build_hurwitz_strip_h1_match.py](memos/build_hurwitz_strip_h1_match.py).

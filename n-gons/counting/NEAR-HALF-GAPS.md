@@ -1,6 +1,6 @@
 # NEAR-HALF-GAPS
 
-![Near-half gaps](../../figures/counting_near_half_gaps.png)
+![A semi-log-y plot titled "Nearest approach of outside-out vertices to x = ±1/2", with horizontal axis polygon order n running up to about 400 and vertical axis "minimum gap to x = ±1/2" from about 10⁻⁵ to 10⁰. Two main scatter series descend across the plot: orange diamond markers labeled "gap to +1/2" (highlighted as the n ≡ 3 mod 6 exact-cos-aligned subsequence) and blue dots labeled "gap to -1/2". Two dashed envelope curves overlay them, labeled "π²/3·1/(6n)" and "π²/(4n²) — exact-cos 1/n² floor". Two yellow star markers sit near the right edge with inline annotations "best to -1/2: n = 398, gap ≈ 2.26e-03" and "best to +1/2: n = 399, gap ≈ 1.55e-05".](../../figures/counting_near_half_gaps.png)
 
 The near-half-gaps figure at `figures/counting_near_half_gaps.png` (built by `n-gons/counting/build_near_half_gaps.py`) is the quantitative companion to the "tested-empty guides" claim in `PSI-STRATIFICATION.md`. For each polygon order `n ∈ [3, 400]` it plots the minimum distance from any outside-out vertex x-coordinate `x_{n,k} = sec(π/n)·cos((2k+1)π/n)` to the two candidate rational guides at `x = ±1/2`, on semi-log y. No exact hit is found for any `n ≤ 400`. The two best approaches are flagged inline: to `+1/2`, gap ≈ `1.55 × 10⁻⁵` at `n = 399`; to `−1/2`, gap ≈ `2.27 × 10⁻³` at `n = 398`. The orange series is `gap to +1/2`, the blue series is `gap to −1/2`.
 

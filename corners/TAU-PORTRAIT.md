@@ -1,6 +1,6 @@
 # TAU-PORTRAIT
 
-![τ portrait](../figures/tau_portrait.png)
+![A two-panel scientific plot. Top panel: a lollipop chart of vertical stems rising and falling from a zero baseline across integer values from 3 to 60, with circular markers colored in green, orange, blue, red, purple, gold, and gray bands; green stars sit at the leftmost three positions and arrow callouts label "Niven zeros (crystallographic set)", a "positive bulge", and a "sign flip" near the early integers. Bottom panel: a log-log scatter of colored dots descending along a dashed reference line from upper-left to lower-right, with the same color palette as the top panel.](../figures/tau_portrait.png)
 
 The τ portrait at `figures/tau_portrait.png` (built by `corners/tau_portrait.py`) is a two-panel figure showing the circle-side residue
 

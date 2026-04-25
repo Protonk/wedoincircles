@@ -1,6 +1,6 @@
 # PSI-STRATIFICATION
 
-![ψ-stratified x-support](../../figures/counting_psi_stratification.png)
+![A scatter plot organized into horizontal rows indexed from 3 at the bottom to 40 at the top, with each row populated by small colored dots arrayed across a horizontal axis running from -2 to +1. Dots are colored in five classes — red, orange, blue, teal, and gold — with red concentrated at the far edges of the lower rows and teal dominating the upper rows. A pale gold band highlights the row near n=7 with an arrow annotation, and four vertical dotted/dashed guides cut through the cloud at x = -1, -1/2, +1/2, and +1, with the ±1/2 guides labeled "empty guide".](../../figures/counting_psi_stratification.png)
 
 The ψ-stratification figure at `figures/counting_psi_stratification.png` (built by `n-gons/counting/build_psi_stratification.py`) is a single-panel scatter of the outside-out corner sweep: one row per polygon order `n ∈ [3, 40]`, one marker per vertex at its x-coordinate `x_{n,k} = sec(π/n)·cos((2k+1)π/n)`, colored by the value of the crystallographic restriction function ψ(n). The backbone guides at `x ∈ {−2, −1, 0, +1}` and the tested-empty guides at `x = ±1/2` are drawn as colored vertical dotted / dashed lines, with the corresponding x-ticks bolded in matching colors so that guide identity is carried by the axis itself. The companion script verifies through `n ≤ 400` that the minimum approach `min |x ± 1/2| = 1.55 × 10⁻⁵` is achieved at `n = 399` — the orange guides are empty not just on `[3, 40]` but through the full verified range.
 

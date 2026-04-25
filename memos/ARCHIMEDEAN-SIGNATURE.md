@@ -77,7 +77,7 @@ tau(n) = 2cos(2pi/n) - 2
 for the tail. The near-half row is the `n = 3 mod 6` exact-cosine-alignment
 subsequence, not the whole near-half-gap function.
 
-![Tau portrait](../figures/tau_portrait.png)
+![A two-panel scientific plot. Top panel: a lollipop chart of vertical stems rising and falling from a zero baseline across integer values from 3 to 60, with circular markers colored in green, orange, blue, red, purple, gold, and gray bands; green stars sit at the leftmost three positions and arrow callouts label "Niven zeros (crystallographic set)", a "positive bulge", and a "sign flip" near the early integers. Bottom panel: a log-log scatter of colored dots descending along a dashed reference line from upper-left to lower-right, with the same color palette as the top panel.](../figures/tau_portrait.png)
 
 ## Derivation Sketches
 
@@ -149,7 +149,7 @@ B_1(n) >= (6 / pi^2) Delta_n.
 This is the strong Fourier statement: the `1/n^2` rate is read from the
 first off-support bands and their `1/j^2` tail.
 
-![Hurwitz gap rate](../figures/hurwitz_gap_rate.png)
+![A log-log plot whose three series — a black dashed line, a column of blue dots, and a column of red plus markers — overlap so closely that they trace a single straight diagonal descending from the upper left to the lower right across roughly seven decades on the horizontal axis and six decades on the vertical. A narrower inset panel sits below sharing the horizontal axis: a magenta curve rises on linear-y from near zero to a flat asymptote, with a small annotation pointing at the plateau.](../figures/hurwitz_gap_rate.png)
 
 ### Clean On-Support Energy
 
@@ -187,7 +187,7 @@ the strip lattice `n Z`, not a quadratic Parseval reading on the
 arc-length lattice `1 + n Z`. Full derivation in
 [memos/STRIP-TISSUE-FOURIER.md](memos/STRIP-TISSUE-FOURIER.md).
 
-![Strip tissue Fourier object](../figures/strip_tissue_fourier.png)
+![Three panels under the title "Strip-tissue Fourier object: DC area, signed modes, and first-pair concentration". Top panel (a) "strip tissue y_10(x): area is the DC mode" runs across the full width on a horizontal axis from 0 to 1, showing repeating gray cusped arcs that dip down and back up many times, a dashed orange horizontal reference at the DC level, and a single blue-shaded "one strip period" patch near x=1/2. Bottom-left panel (b) "signed nonzero modes" is a stem chart over integer mode index k from -12 to +12 with three overlaid series (orange dots, green dots, red x-markers) alternating in sign. Bottom-right panel (c) "nonzero L² energy: first pair carries almost all mass" is a green bar chart over mode-pair k from 1 to about 13, descending steeply, with a red limit curve and a callout "90/π⁴ ≈ 0.924".](../figures/strip_tissue_fourier.png)
 
 ### Pointwise / Arithmetic Selection
 
@@ -228,7 +228,7 @@ circumscribed radial lift. The order-`n^-4` residual is explicit and
 geometric; the direct comparison to the inscribed `Delta_n` remains a
 secondary Archimedean squeeze.
 
-![Hurwitz gap and strip H1 comparison](../figures/hurwitz_strip_h1_match.png)
+![A three-panel figure titled "Hurwitz gap and strip H1 seminorm: same Archimedean jet, different observables". Top panel (a) "same leading rate, different substrates" is a log-log plot with three nearly coincident series — a dashed gray "shared guide", blue dots "Hurwitz gap Δn", and green dots "strip seminorm |y_n'|²" — descending across the plot from n=10 to n=100. Bottom-left panel (b) "second-order match" is a linear plot with two curves converging to a shared horizontal level near 1.0: a blue "Hurwitz approaches from below" and a green "strip H1 approaches from above". Bottom-right panel (c) "not an identity: next term separates them" plots a single red curve flattening into a horizontal limit annotated "76π⁶/45 ≈ 1623.68".](../figures/hurwitz_strip_h1_match.png)
 
 ## Program Use
 

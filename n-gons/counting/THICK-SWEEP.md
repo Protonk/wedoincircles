@@ -64,7 +64,7 @@ The pigeonhole bound `L / (P − 1)` is the worst case — perfectly equispaced 
 - `N = 50`:  `P = 1272`, bound `1.2 × 10⁻³`,  empirical min gap `1.4 × 10⁻⁷`
 - `N = 100`: `P = 5047`, bound `3.1 × 10⁻⁴`,  empirical min gap `4.5 × 10⁻⁸`
 
-![Thin-sweep gap decay](../../figures/counting_thick_sweep_gap_decay.png)
+![A log-y plot titled "Thin-sweep gap decay at slope s = 1/√3", with horizontal axis N from 0 to 120 and vertical axis "gap size" from 10⁻⁹ to 10⁻¹. A smooth red curve descends across the plot from upper left ("pigeonhole bound" in the legend), with red dot markers at N=20, 50, 100. Far below it, a blue staircase curve drops in discrete vertical steps from about 10⁻² at small N down toward 10⁻⁹ near N=120, labeled "empirical min consecutive gap" and tagged with blue dots at N=20, 50, 100. A two-line subtitle below the axis records the empirical values 2.9×10⁻⁵, 1.4×10⁻⁷, 4.5×10⁻⁸ at those three N.](../../figures/counting_thick_sweep_gap_decay.png)
 
 The empirical minimum consecutive gap drops far below the averaging bound. The staircase shape is real: the minimum only changes when a new closest pair appears.
 

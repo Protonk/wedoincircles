@@ -103,11 +103,7 @@ Geometric regimes:
 - `g_n(DH)=2`: the anchor and antipode survive, so the whole set is a diameter.
 - `g_n(DH)=n`: every tangency point is whole, so the ambient `n`-gon survives completely.
 
-See `n-gons/subpolygon_gallery.sage` and `figures/subpolygon_gallery.png`.
-
-![Subpolygon gallery](../figures/subpolygon_gallery.png)
-
-The gallery shows the three regimes directly: anchor-only, partial survival, and full survival.
+The three regimes are anchor-only, partial survival, and full survival.
 
 ## Recovery Of The Binary Test
 
@@ -209,11 +205,7 @@ Each entry is written as `g (q)`.
 
 This is the graded picture that the binary test hides. The `2`-budget opens up as `E` increases (`16` moves from `4` to `8` to `16`), the `5`-budget opens up in the same way (`25` moves from `1` to `5` to `25`), and primes outside `{2,3,5}` never appear at all (`7` and `11` stay at `1` throughout).
 
-See `n-gons/subpolygon_g_signal.sage` and `figures/subpolygon_g_signal.png`.
-
-![Subpolygon signal](../figures/subpolygon_g_signal.png)
-
-The stem plots replace the old binary signal with the integer-valued function `n \mapsto g_n(DH)`.
+The integer-valued function `n \mapsto g_n(DH)` replaces the old binary signal.
 
 ## Program Consequences
 
