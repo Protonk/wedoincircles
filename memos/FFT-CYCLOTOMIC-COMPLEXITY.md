@@ -57,9 +57,10 @@ So:
 
 - The objects the program calls "the K_n ladder" are the objects FFT
   complexity calls "cyclotomic factors of `x^N - 1`."
-- Winograd's `2N - d(N)` is a sum over divisors of N where each divisor
-  contributes work proportional to `phi(d)`. That is the same `phi(d)`
-  the closure-depth no-go uses.
+- Winograd's modular-product bound `2n - k` (with `k` the number of
+  distinct irreducible factors), applied to `x^N - 1`, is a sum over
+  divisors of `N` where each divisor contributes work proportional to
+  `phi(d)`. That is the same `phi(d)` the closure-depth no-go uses.
 - Heideman–Burrus is the powers-of-two case where the cyclotomic tower
   aligns with the binade tower from Landfall §0.
 - Morgenstern is the closest existing **lower bound**: bounded-coefficient
@@ -68,6 +69,20 @@ So:
 
 The sentence the program needs from this literature is not a new theorem.
 It is the existing theorems, transported.
+
+The complexity literature distinguishes at least three currencies on the
+FFT side: multiplicative algebraic complexity (Winograd, Auslander–Feig–
+Winograd, Heideman–Burrus), bounded-coefficient linear/additive
+complexity (Morgenstern), and bit-complexity upper bounds (Schönhage–
+Strassen). These are not identified with each other in the literature.
+The Kraft accounting the program wants is a *fourth* currency —
+prefix-free / self-delimiting bookkeeping — distinct from all three.
+The bridge claim is therefore not "connect FFT complexity to Kraft"
+generically; it is "connect one of these three FFT currencies (probably
+Auslander–Feig–Winograd's tensor framework) to a fourth Kraft currency
+the FFT literature does not maintain." The closing condition for the
+bridge is that the chosen FFT currency is shown to be expressible as
+Kraft units with a stated constant.
 
 ## Target
 
@@ -93,17 +108,22 @@ parent memos as load-bearing inputs.
 **S. Winograd, "On computing the discrete Fourier transform," Math. Comp.
 32 (1978), 175–199.** ([sources/Winograd-ComputingDiscreteFourier-1978.pdf](sources/Winograd-ComputingDiscreteFourier-1978.pdf))
 
-The decisive paper for the program's purposes. Winograd proves that the
-multiplicative complexity of the DFT of length `N` over a field containing
-the appropriate roots of unity is
+The decisive paper for the program's purposes. Winograd's clean theorem
+is on polynomial multiplication: multiplication mod a degree-`n`
+polynomial `P` has multiplicative complexity
 
 ```text
-M(DFT_N)  =  2N  -  (number of divisors of N),
+2n - k,
 ```
 
-via a decomposition of the DFT into independent computations on the
-cyclotomic factors `Phi_d(x)` of `x^N - 1`. For each `d | N`, the work on
-the `Phi_d`-factor is paid in operations proportional to `phi(d)`.
+where `k` is the number of distinct irreducible factors of `P`, via CRT
+decomposition into computations on each irreducible factor. Applied to
+`x^N - 1` (whose distinct irreducible factors are exactly the cyclotomic
+polynomials `Phi_d(x)` for `d | N`), this gives a DFT / cyclic-convolution
+decomposition where the work on each `Phi_d`-factor is paid in operations
+proportional to `phi(d) = deg(Phi_d)`. The headline DFT bound
+`M(DFT_N) ≈ 2N - d(N)` follows by cyclic-convolution construction; the
+underlying clean theorem is the modular-product bound.
 
 - **Known.** The closed-form bound, the matching algorithm, and the
   cyclotomic-factorization decomposition are all in the paper. Tightness
@@ -133,8 +153,15 @@ x^(2^n) - 1  =  prod_{k=0}^{n} Phi_(2^k)(x),
 
 a tower indexed by binade depth.
 
-- **Known.** Exact multiplication counts at every `n`. The factorization
-  structure aligns level-by-level with the binary tower.
+- **Known.** Exact multiplication counts at every `n`:
+  `μ(DFT(2^n); ℚ) = 2^(n+2) − 2n² − 2n − 4` for complex inputs (half for
+  real inputs). The factorization structure aligns level-by-level with
+  the binary tower, with one structural wrinkle (per AFW's `p = 2`
+  analysis): the unit group of `ℤ/2^k ℤ` is non-cyclic for `k ≥ 3`, so
+  the `p = 2` case decomposes into two semisimple blocks rather than
+  the single-block recursion of the odd-prime case. The binade
+  alignment is real but not as smooth as the odd-prime reading would
+  suggest.
 - **Unknown for the program.** Whether the per-level complexity in
   Heideman–Burrus is the same combinatorial object as the per-binade
   Kraft accounting in Landfall §5. The strong reading is yes — both count
@@ -149,18 +176,25 @@ a tower indexed by binade depth.
 **L. Auslander, E. Feig, and S. Winograd, "New algorithms for the multi-
 dimensional discrete Fourier transform," IEEE Trans. ASSP 31 (1983),
 388–403; and "The multiplicative complexity of the discrete Fourier
-transform," Adv. in Appl. Math. 5 (1984), 31–55.** ([sources/multiplicative-complexity.pdf](sources/multiplicative-complexity.pdf) — the 1984 paper; the 1983 ASSP paper is not in the local sources directory)
+transform," Adv. in Appl. Math. 5 (1984), 87–109.** ([sources/multiplicative-complexity.pdf](sources/multiplicative-complexity.pdf) — the 1984 paper; the 1983 ASSP paper is not in the local sources directory)
 
 The framework paper. Auslander–Feig–Winograd formalize FFT algorithms as
-tensor decompositions of the DFT matrix, where the tensor structure tracks
-the cyclotomic factorization. This is the bridge paper for translating
-Winograd's bounds into a form usable by the program: it makes the
-decomposition explicit enough to count operations against a Kraft budget
-rather than just a multiplication count.
+direct-sum / Kronecker-tensor decompositions of the DFT matrix into
+semisimple-algebra factors, where the decomposition tracks the cyclotomic
+factorization. The "tensor" here is Kronecker-product / semisimple-algebra
+tensoring, not modern tensor-rank / border-rank complexity (those are
+different invariants and a different bridge project). AFW is the bridge
+paper for translating Winograd's bounds into a form usable by the
+program: it makes the decomposition explicit enough to count operations
+against a Kraft budget rather than just a multiplication count.
 
-- **Known.** The tensor formalism, the connection between
-  CRT-on-`x^N - 1` and tensor decomposition, and the per-factor work
-  accounting.
+- **Known.** The Kronecker / semisimple-algebra decomposition, the
+  connection between CRT-on-`x^N - 1` and the direct-sum factorization,
+  and the per-factor work accounting. AFW shows the multiplicative
+  complexity is *computable*, but does not give a closed formula; per
+  the paper's Remark 3, computing the actual value reduces to a
+  field-summand-count subproblem (number of maximal ideals in tensor
+  products of cyclotomic fields), still a separate computational task.
 - **Unknown for the program.** Whether the tensor-decomposition accounting
   can be re-expressed as a self-delimiting code in the sense of Landfall
   §5. The hope is that the tensor structure at each cyclotomic factor
@@ -245,6 +279,16 @@ If the bridge does not hold, the failure mode is informative on its own
 terms: it locates exactly which of the five papers the program cannot
 use, and why.
 
+A subtler honest reading, surfaced during the AFW directed read: AFW may
+ultimately be most valuable not as a framework that supplies the bridge,
+but as a cartographer of exactly what the bridge must not silently
+quotient — uniform code cost, prefix-freeness, real-subfield descent,
+positional/cell incidence, coefficient height and numerical precision,
+task-specific output semantics. Either the bridge closes (in which case
+AFW is the framework) or the bridge documents specifically which AFW
+quotients have to be restored on the program's side (in which case AFW
+is the negative-space map). Both outcomes are programmatically useful.
+
 ## Adjacent anchors
 
 Existing material this memo draws on:
@@ -317,55 +361,102 @@ Three failure modes worth naming so a directed read can detect them:
    program's, conflicts with it, or is orthogonal. Importing a result as
    if proof techniques transfer freely is a category error.
 
-2. **Field-of-coefficients drift.** Winograd works over arbitrary fields
+2. **Coefficient-boundedness is structurally protective of the
+   A-axis cost meaning.** Winograd works over arbitrary fields
    containing the roots of unity. Morgenstern works under bounded
-   coefficients. The program's `Aff^+(R)` is bounded-coefficient-natural
-   but not closed under root-of-unity adjunction. If a directed read
-   cannot show that the bound's hypothesis class is compatible with
-   `Aff^+(R)` after honest accounting, the import does not go through.
+   coefficients. The program's `Aff^+(R)` is bounded-coefficient-
+   natural but not closed under root-of-unity adjunction. The deeper
+   reason this matters: under *unbounded-linear* compute models —
+   where free unbounded linear combinations are admitted — algebraic
+   depth can be moved into coefficients, basis changes, or precomputed
+   linear maps, and the A-axis of `memos/LEDGER-PIVOT-SEARCH.md`
+   §"Ledger lattice" collapses as a cost-bearing structure. Bounded-
+   coefficient hypotheses (Morgenstern) are precisely what prevent
+   that collapse — they keep determinant/volume growth from being
+   hidden in huge constants. The FFT literature's persistent
+   `Ω(N log N)` wall has a structural reading as exactly this: bounded
+   coefficients buy a cost-bearing A-axis, and removing the bound
+   removes the slope. If a directed read cannot show that the cited
+   bound's hypothesis class is compatible with `Aff^+(R)` after
+   honest accounting — and specifically whether it inherits enough
+   coefficient-boundedness to keep the A-axis intact — the import does
+   not go through.
 
-3. **Tensor decomposition is a Kraft cousin, not a Kraft identity.** The
-   central bridge claim — that Auslander–Feig–Winograd's tensor
-   accounting can be re-expressed as Kraft accounting — is the place
-   where the most wishful thinking can hide. A specific check: does the
-   tensor-decomposition accounting satisfy Kraft's inequality with a
-   provable constant, or does it require additional structure
-   (semicomputability, prefix-freeness, universal dominance) the program
-   would have to import separately? Fortnow's universal-dominance step
+3. **Decomposition accounting is a Kraft cousin, not a Kraft identity.**
+   The central bridge claim — that Auslander–Feig–Winograd's
+   decomposition accounting can be re-expressed as Kraft accounting —
+   is the place where the most wishful thinking can hide. The deeper
+   version of the gap is *nonuniformity*: AFW gives exact multiplicative
+   complexity *after* the system `F(G)X` is fixed and the cyclotomic
+   decomposition is performed, but does not maintain a uniform machine
+   that emits the decomposition with code-length cost charged. Kraft
+   accounting wants a description language *over the family* of inputs
+   `G`, not just a number after the object is fixed. Specific checks:
+   does the AFW decomposition accounting satisfy Kraft's inequality
+   with a provable constant, and does it admit a self-delimiting
+   compiler over the family — semicomputable sub-probability measure,
+   prefix-freeness, universal dominance — or does each of those need to
+   be imported separately? Fortnow's universal-dominance step
    ([memos/FORTNOW-KOLMOGOROV-BRIEF.md](memos/FORTNOW-KOLMOGOROV-BRIEF.md)
    §6) may be needed; if so, that has to be called out and audited per
    [memos/OLD-TIME-RELIGION.md](memos/OLD-TIME-RELIGION.md) §(A5)'s
    shell-calculus / universality split.
 
-A directed read that does not address (1), (2), and (3) explicitly is
-incomplete for the program's purposes.
+4. **Real-subfield passage is not free.** The FFT-complexity literature
+   mostly works over the full cyclotomic field `Q(zeta_n)` of degree
+   `phi(n)`. The program's `K_n` ladder is `Q(cos(2 pi / n))`, the
+   maximal real subfield of degree `phi(n) / 2`. The `phi(n) / 2`
+   identification the memo invokes is available, but it has to be stated
+   explicitly as a real-subfield passage from each cited theorem, not
+   silently imported from full DFT factorization. Each directed read
+   should note whether the cited result requires the full cyclotomic
+   field or descends cleanly to the real subfield, and at what cost.
+
+5. **Rational equivalence quotients positional/cell data the program may
+   need.** AFW's central equivalence relation — nonsingular rational
+   pre/post transformations preserve multiplicative complexity — is
+   exactly what makes its theorem work, and is also broader than what
+   `V_cert`-style ledgers can survive. A rational change of basis can
+   preserve multiplicative complexity while destroying per-cell
+   positional structure that `V_cert` (or any cell-tier ledger from
+   [memos/LEDGER-PIVOT-SEARCH.md](memos/LEDGER-PIVOT-SEARCH.md))
+   depends on for task admissibility. Any reduction from a corner task
+   (T1, T3) to an AFW-style system has to specify which structure
+   survives rational equivalence and which is allowed to be forgotten —
+   or else the imported bound applies only modulo a positional quotient
+   the program has to reverse on its own side.
+
+A directed read that does not address (1), (2), (3), (4), and (5)
+explicitly is incomplete for the program's purposes.
 
 ## Order of work
 
-Ranked from least load-bearing first, ending at the central bridge claim:
+Ranked by structural importance for the bridge plan (revised after
+the first directed-read pass surfaced AFW as the central structure
+paper rather than Winograd):
 
-1. **Winograd 1978** — the cleanest cyclotomic-ladder result. Read first
-   to establish that the K_n ladder appears explicitly in the FFT
-   literature with the same `phi` accounting the program already uses.
+1. **Auslander–Feig–Winograd 1984 (item C)** — the central structure
+   paper. Read first to establish whether the tensor framework supports
+   the bridge to Kraft accounting. This is where hazards (2), (3), and
+   (4) get worked out together. Decisive for the program; promote to
+   its own brief on close.
+2. **Heideman–Burrus 1986 (item B)** — the exact binary case with
+   `μ(DFT(2^n); ℚ) = 2^(n+2) − 2n² − 2n − 4`. Read second to anchor the
+   binade-tower alignment with explicit constants. Brief may be
+   appended to the AFW brief or stand alone.
+3. **Winograd 1978 (item A)** — the cyclic-convolution / CRT engine.
+   Read third for the modular-product bound `2n − k` and its
+   application to DFT decomposition. The headline `2N − d(N)` framing
+   should be checked against the actual paper here, not assumed.
    Promote to `memos/WINOGRAD-1978-BRIEF.md` on close.
-2. **Heideman–Burrus 1986** — the binary case, aligning with the binade
-   tower. Read second to establish that the Landfall-side binary tower
-   has a direct analog on the circle side. Short paper; brief if needed
-   may be appended to the Winograd brief rather than standalone.
-3. **Auslander–Feig–Winograd 1984** — the tensor framework. Read third
-   to establish whether the bridge to Kraft accounting goes through.
-   This is where the hazard items (2) and (3) get worked out. Decisive
-   for the program; promote to its own brief on close.
-4. **Schönhage–Strassen 1971** — the bit/cyclotomic translation
-   template. Read fourth as a template for what the bridge looks like
-   in an existing case. Note where the program runs the template
-   forwards vs. backwards.
-5. **Morgenstern 1973** — the bounded-coefficient lower bound. Read
-   fifth, after the framework is in place, because the value of the bound
-   depends on whether it can be expressed in Kraft units. If the bridge
-   from item (3) goes through, Morgenstern is the lower-bound input the
-   compute-cost branch announces it is looking for. Promote to
-   `memos/MORGENSTERN-1973-BRIEF.md` on close.
+4. **Morgenstern 1973 (item E)** — the only real lower bound in the
+   queue. Read fourth, after the multiplicative-complexity framework is
+   in place, because the bound's value depends on whether it can be
+   expressed in Kraft units. Promote to `memos/MORGENSTERN-1973-BRIEF.md`
+   on close.
+5. **Schönhage–Strassen 1971 (item D)** — background unless a reverse
+   translation is proved. Read last as a model-translation exemplar; not
+   load-bearing for the bridge unless the reverse direction succeeds.
 
 Each directed read closes with a sentence of form:
 

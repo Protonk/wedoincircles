@@ -273,6 +273,32 @@ as B. Where one has more on one axis and less on the other, the two
 are incomparable; an earlier "structural tiers" chain framing forced
 arbitrary tiebreaks that the lattice dissolves.
 
+**The lattice has two coupled readings; keep them distinct.**
+
+- **Semantic lattice.** What information the ledger retains. The
+  `(P, A)` coordinates below describe this lattice: which positional
+  structure and which algebraic certification the ledger preserves.
+  Well-defined per ledger.
+- **Cost lattice under a compute model `M`.** What `M` forces a
+  process to pay for. This is what matters for primitive-op lower
+  bounds. Under *certification-preserving* models — algebraic-
+  arithmetic over `ℚ` with paid adjunctions and bounded constants,
+  ASLP with charged field extensions, bounded-coefficient linear
+  circuits — the projection from semantic to cost is near identity,
+  and `(P, A)` coordinates carry their cost meaning intact. Under
+  *unbounded-linear* models — where free unbounded linear
+  combinations are admitted — the projection collapses much of the
+  A-axis, because algebraic depth can be moved into coefficients,
+  basis changes, or precomputed linear maps (the FFT mult-to-add
+  conversion is the canonical mechanism; see Hazard 2 of
+  [memos/FFT-CYCLOTOMIC-COMPLEXITY.md](memos/FFT-CYCLOTOMIC-COMPLEXITY.md)).
+
+The lattice described below is the semantic lattice. When the memo
+speaks of "matching" and "cost," it is implicitly fixing a
+certification-preserving model under which the projection holds.
+Outside that regime, the matching language demotes; see §"Matching is
+model-indexed" further down.
+
 **P-axis (positional / incidence granularity).**
 
 - `P0` — scalar summary. Count of equivalence classes after a quotient.
@@ -376,14 +402,68 @@ matching language presumes both; neither is yet in hand. "Matching"
 should be read as best-current-candidate-for-matching pending those
 two pieces.
 
+**Matching is also model-indexed.** Beyond (a) and (b), the matching
+claim presumes (c) the cost-lattice projection from the semantic
+lattice is near identity — i.e., the chosen compute model preserves
+A-axis distinctions as cost distinctions. Under certification-
+preserving algebraic-arithmetic over `ℚ` (paid adjunctions, bounded
+constants, no free unbounded linear combinations) this presumption
+holds. Under unbounded-linear models, A-axis distinctions can collapse
+via mult-to-add conversion, and the matching claim demotes from
+"`V_cert` is tight for T1/T3" to "`V_cert` is above-task; the task
+needs strengthening to demand certificates, or the model needs an
+explicit boundedness constraint." The committable triple T1/T3 +
+`V_cert` + algebraic-arithmetic is matching only under the
+certification-preserving reading of algebraic-arithmetic. Under
+unbounded-linear readings the surviving lower-bound currencies are:
+bounded-coefficient additions (Morgenstern-style determinant growth),
+positional/incidence (`F2`), strengthened-task certificate production
+(`V_cert` with the task changed), or Kraft-style uniform encoding.
+
+**The lattice is a negative-space classifier, not a cost-model
+certifier.** Two structural caveats follow. First, the product order
+treats positional and algebraic content as independent axes, which is
+optimistic: rational equivalence (per Hazard 5 of
+[memos/FFT-CYCLOTOMIC-COMPLEXITY.md](memos/FFT-CYCLOTOMIC-COMPLEXITY.md))
+can preserve algebraic certification while destroying per-cell
+positional structure, so "incomparability" rulings between two ledgers
+can reflect axis coupling rather than orthogonality, and should be
+treated as provisional pending content-preservation checks on the
+relevant transformations. Second, the lattice tells us where a
+proposed ledger is probably forgetting too much — which placeholder
+attack defeats it, which axis it sits below — but does not by itself
+certify that a surviving ledger is a cost model. The matching
+paragraph above names the two extra pieces required for that. Read
+the lattice as a filter on failure modes, with positive certification
+deferred to whatever proves the matching.
+
+**Importing existing literature bounds requires structure-preservation
+checks.** A multiplicative-complexity bound from the FFT-complexity
+literature (e.g., Auslander–Feig–Winograd 1984 per
+[memos/FFT-CYCLOTOMIC-COMPLEXITY.md](memos/FFT-CYCLOTOMIC-COMPLEXITY.md))
+lives at a coarser grain than `V_cert` and rests on rational-equivalence
+preservation — exactly the relation that can scramble per-cell
+positional structure. Importing such a bound into `V_cert`-style
+accounting requires either showing the reduction preserves the
+`V_cert` positional content, or accepting that the bound applies only
+modulo a positional quotient — coarse companion bound in the
+below-matching regime, not tight matching. Same logic as the
+row-field-degree case, with an external-import path.
+
 **Coupling to compute-model / task choice.** The Path 1 / Path 2 split
 becomes a choice of demanded lattice coordinate. Path 1
 (crystallographic-realization) demands orbit-positional with an `A3`
-certificate (`O_cert`-shaped). Path 2 (trace-computation) demands
-`(P3, A2)` (`V_cert`-shaped). `F2` sits on a Path-1-flavored task
-track of its own — typed-incidence-production demands `(P2, A0)`,
-which `F2` dominates. The same ledger can pass under one task and
-fail under another depending on which lattice point the task demands.
+certificate (`O_cert`-shaped). Path 2 (trace-computation under
+*certification-preserving* algebraic-arithmetic over `ℚ` — paid
+adjunctions, bounded constants) demands `(P3, A2)` (`V_cert`-shaped);
+under unbounded-linear readings of algebraic-arithmetic the Path 2
+matching collapses per §"Matching is model-indexed" above. `F2` sits
+on a Path-1-flavored task track of its own — typed-incidence-
+production demands `(P2, A0)`, which `F2` dominates, and that demand
+is robust under unbounded-linear models because `F2`'s content is
+positional rather than algebraic. The same ledger can pass under one
+task and fail under another depending on which lattice point the task
+demands and which model regime it operates in.
 
 **Item #6 (Champernowne height) location.** Not yet placed; a strong
 candidate for `(P0, A0)`, in which case it inherits the impossibility
@@ -465,6 +545,18 @@ assumptions that composita and field reuse make model-dependent).
 Below-matching, doesn't reflect per-cell precision or root-isolation
 cost, but valid as a fallback / sanity-check bound alongside
 `V_cert`.
+
+**Regime tag on the matrix.** Each "matching" judgement above is
+conditional on a certification-preserving compute model. Under
+unbounded-linear models, the matching of `V_cert` for T1/T3 demotes
+to "above-task" per §"Matching is model-indexed" — V_cert becomes a
+lower bound on a *strengthened* task that demands certificates, not
+on the original T1/T3. `F2`'s matching for T2 is preserved across
+regimes because its content is positional rather than algebraic; the
+mult-to-add quotient does not act on positional structure. row-deg's
+coarse bound at footnote ⁴ likewise survives under unbounded-linear,
+since the row-entry argument depends only on entering the row field,
+not on charging operations within it.
 
 **Viable task-ledger pairings.**
 

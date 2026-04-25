@@ -73,6 +73,10 @@ This is a subgroup of `\mathbb Z/n` with `g` elements. In a cyclic group there i
 
 On the Archimedean strip (`n-gons/ARCHIMEDEAN-STRIP-FLIP.md`), the n-gon tangency points sit on the floor `y = 0` at `x = k/n`, and a `DH`-grid is the set of vertical lines at `x = m/DH`. The whole-position test `n | k · DH` is exactly "tangency point lies on a `DH`-gridline," so the subpolygon construction is the lattice intersection `(1/n)ℤ ∩ (1/DH)ℤ` on `ℝ/ℤ`, equal to `(1/gcd(n,DH))ℤ / ℤ`.
 
+![Local strip-floor denominator trace near x = 2/5, showing secant arcs above floor hits, floor-hit multiplicities, and normalized denominator heights.](../figures/strip_floor_denominator_trace.png)
+
+The local denominator trace makes the same lattice rule visible: if `k/n = p/q` in lowest terms, then that floor point is hit exactly when `q | n`, giving multiplicity `⌊N/q⌋` through level `N` and normalized height `1/q`.
+
 ## Geometric Corollary
 
 Position `k` of the anchored `n`-gon sits at tangency angle

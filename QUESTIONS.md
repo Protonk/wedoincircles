@@ -62,4 +62,36 @@ Produce a short report: per-issue, identify file and approximate location, the p
 
 What do directed reads of the five papers cited in `memos/FFT-CYCLOTOMIC-COMPLEXITY.md` (linked from `sources/` in the memo's items section) yield, per the memo's §"Order of work" closing template — key theorem statement, hypothesis class, proof technique, and the slot-in sentence specified there? And what structural observations about the literature, if any, bear on the program's bridge plan or on the directed-read agenda itself?
 
+## 11
+
+After re-reading `CONTRIBUTING.md` (specifically its description of source-extraction briefs), what does Auslander–Feig–Winograd 1984 (`sources/multiplicative-complexity.pdf`) — the central structure paper per the revised §"Order of work" in `memos/FFT-CYCLOTOMIC-COMPLEXITY.md` — actually prove, state without proof, and admit by inference, on the following:
+
+1. The multiplicative complexity of DFT on finite abelian groups, and the role of the semisimple cyclotomic decomposition in the proof.
+2. The hypothesis class AFW operates under, and how it relates to model (3) algebraic-arithmetic over ℚ or model (4) ASLP from `memos/COUNTING-APPARATUS.md §(A)`.
+3. Whether the tensor / direct-sum decomposition admits a prefix-free / Kraft re-expression on its own, or requires additional structure (semicomputability, prefix-freeness, universal dominance per `memos/FORTNOW-KOLMOGOROV-BRIEF.md §6`).
+4. Real-subfield passage: whether AFW's results require the full cyclotomic field `ℚ(ζ_n)`, or descend cleanly to the real subfield `K_n = ℚ(cos(2π/n))`, and at what cost.
+5. The proof techniques AFW uses, and what would have to hold for those techniques to combine with closure-depth + Kraft accounting on the program's side.
+
+Answers should be assembled as `memos/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md`, in the source-extraction brief register described in `CONTRIBUTING.md` (distinguishing what the paper proves, what it states without your having checked, and what you have inferred), and per the naming convention in `memos/FFT-CYCLOTOMIC-COMPLEXITY.md §"Order of work"`.
+
+## 12
+
+Append to `memos/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md` a section capturing what you would add after reflection. Open scope: technical content from the paper that didn't fit the original five-question structure, structural implications for the program's bridge plan, methodological observations on the brief itself, or anything else you noticed but couldn't place. What's missing from the directed-read register that you want to put on the record?
+
+## 13
+
+What does the lattice apparatus in `memos/LEDGER-PIVOT-SEARCH.md` §"Ledger lattice" itself silently quotient? Applying the negative-space-cartographer move from your AFW reflection addendum (the lattice was built to organize ledger comparisons — exactly the kind of structural device whose cleanness comes from what it discards): what hidden quotients does the lattice make, and what should a future cross-program importer know to restore on their own side?
+
+## 14
+
+The A-axis of the lattice in `memos/LEDGER-PIVOT-SEARCH.md` §"Ledger lattice" is local. The FFT's mult-to-add conversion is the structural mechanism by which algebraic certification depth — `A2` vs `A0`, `V_cert` vs `F2` — collapses into a count of additions when the compute model permits unbounded linear combinations. The bounds literature's persistent `Ω(N log N)` wall has a structural reading as exactly this collapse: not a barrier waiting to be pushed, but a category-destruction the FFT itself enforces in some regime. The lattice presumes the A-axis is a global ordering.
+
+Is it? Or is matching only valid in a regime where additions are bounded by a constraint that doesn't apply asymptotically — and if the latter, what does the lattice say in the regime where the constraint fails?
+
+## 15
+
+What does the program's compute-cost apparatus look like now, after the recent model-indexing updates? Read the updated state across `memos/LEDGER-PIVOT-SEARCH.md` (especially §"Ledger lattice" with the new two-lattice reframing, §"Matching is model-indexed", §"Task-ledger admissibility" regime tag, and §"Compute-model / ledger coupling" Path 2 sharpening), `memos/COUNTING-APPARATUS.md §(A)`, `README.md` compute-cost bullet, and `memos/FFT-CYCLOTOMIC-COMPLEXITY.md` Hazard 2.
+
+Open scope: internal consistency across the updates, second-order implications of the semantic/cost two-lattice framing that didn't make it into the edits, places where the certification-preserving qualifier is doing rhetorical work where it should be doing technical work, places where the apparatus's structural purpose has shifted without the surrounding scaffolding following. What do you notice that the editor wouldn't?
+
 ...

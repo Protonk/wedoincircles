@@ -1,9 +1,11 @@
 import os
 import math
+from fractions import Fraction
 
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.patches import Circle, Polygon, Rectangle
 
 # The un-inverted annulus {1 <= r <= 2}: bend the Archimedean strip the
 # natural way, so the strip top (3-cir) lands at the outer boundary r = 2
@@ -28,6 +30,8 @@ COLORS = {
     7: "#9b59b6",
     8: "#1abc9c",
 }
+XLIM = (-2.07, 1.10)
+YLIM = (-1.88, 1.88)
 
 
 def linspace(start, stop, count):
@@ -37,49 +41,146 @@ def linspace(start, stop, count):
     return [start + i * step for i in range(count)]
 
 
-def plot(outpath):
-    fig, ax = plt.subplots(figsize=(7, 7), subplot_kw=dict(projection="polar"))
+def visible_upper_corner_rays():
+    rays = {}
+    for n in NS:
+        r_outer = 1.0 / math.cos(math.pi / n)
+        for k in range(n):
+            angle = Fraction(2 * k + 1, n)
+            if angle > 1:
+                continue
+            x = r_outer * math.cos(math.pi * float(angle))
+            y = r_outer * math.sin(math.pi * float(angle))
+            if XLIM[0] <= x <= XLIM[1] and YLIM[0] <= y <= YLIM[1]:
+                rays[angle] = COLORS[n]
+    return sorted(rays.items())
 
-    theta_full = linspace(0.0, 2.0 * math.pi, 600)
-    ax.plot(theta_full, [1.0] * len(theta_full), color="black", lw=2.0, zorder=5)
+
+def semicircle_regions():
+    regions = []
+    prev = Fraction(0, 1)
+    for angle, color in visible_upper_corner_rays():
+        width = angle - prev
+        if width > 0:
+            regions.append((width / 2, color, angle))
+        prev = angle
+    return sorted(regions, key=lambda item: (-item[0], item[2]))
+
+
+def add_semicircle_area_inset(ax):
+    regions = semicircle_regions()
+    bar_height = 0.078
+    x0 = -1.95
+    y0 = -1.78
+    total_height = bar_height * len(regions)
+
+    y = y0 + total_height - bar_height
+    for area, color, _ in regions:
+        width = float(area) / bar_height
+        ax.add_patch(
+            Rectangle(
+                (x0, y),
+                width,
+                bar_height,
+                facecolor=color,
+                edgecolor=color,
+                alpha=0.72,
+                lw=1.0,
+                zorder=30,
+            )
+        )
+        y -= bar_height
+
+    x_right = -1.15
+    y = -y0 - total_height
+    for area, color, _ in regions:
+        width = float(area) / bar_height
+        ax.add_patch(
+            Rectangle(
+                (x_right - width, y),
+                width,
+                bar_height,
+                facecolor=color,
+                edgecolor=color,
+                alpha=0.72,
+                lw=1.0,
+                zorder=30,
+            )
+        )
+        y += bar_height
+
+
+def plot(outpath):
+    fig, ax = plt.subplots(figsize=(7, 7))
+    fig.patch.set_facecolor("#f8f5ef")
+    ax.set_facecolor("#f8f5ef")
 
     for n in NS:
         color = COLORS[n]
         r_outer = 1.0 / math.cos(math.pi / n)  # sec(pi/n)
-        ax.plot(
-            theta_full,
-            [r_outer] * len(theta_full),
-            color=color,
-            lw=1.0,
-            linestyle=":",
-            alpha=0.7,
-            zorder=2,
-        )
-        for k in range(n):
-            alpha = 2 * math.pi * k / n
-            theta_lo = alpha - math.pi / n
-            theta_hi = alpha + math.pi / n
-            theta = linspace(theta_lo, theta_hi, 300)
-            r = [1.0 / math.cos(t - alpha) for t in theta]
-            ax.plot(theta, r, color=color, lw=1.5, alpha=0.85)
-        corner_angles = [(2 * k + 1) * math.pi / n for k in range(n)]
-        ax.plot(
-            corner_angles,
-            [r_outer] * n,
-            "o",
-            color=color,
-            ms=4,
-            markeredgecolor="black",
-            markeredgewidth=0.5,
-            zorder=6,
+        verts = [
+            (
+                r_outer * math.cos((2 * k + 1) * math.pi / n),
+                r_outer * math.sin((2 * k + 1) * math.pi / n),
+            )
+            for k in range(n)
+        ]
+        ax.add_patch(
+            Polygon(
+                verts,
+                closed=True,
+                facecolor=color,
+                edgecolor=color,
+                lw=2.6,
+                alpha=0.72,
+                joinstyle="miter",
+                zorder=n,
+            )
         )
 
-    ax.set_rmin(0)
-    ax.set_rmax(2.1)
-    ax.set_rticks([])
-    ax.set_yticklabels([])
-    ax.set_title("Outside-out annulus\nn = 3 … 8", fontsize=12, pad=15)
-    ax.grid(True, alpha=0.2)
+    ax.add_patch(
+        Circle(
+            (0, 0),
+            1.0,
+            facecolor="#f8f5ef",
+            edgecolor="none",
+            zorder=20,
+        )
+    )
+    for n in NS:
+        color = COLORS[n]
+        r_outer = 1.0 / math.cos(math.pi / n)
+        for k in range(n):
+            angle = (2 * k + 1) * math.pi / n
+            x = r_outer * math.cos(angle)
+            y = r_outer * math.sin(angle)
+            if not (XLIM[0] <= x <= XLIM[1] and YLIM[0] <= y <= YLIM[1]):
+                continue
+            ax.plot(
+                [math.cos(angle), 0.0],
+                [math.sin(angle), 0.0],
+                color=color,
+                lw=1.8,
+                alpha=0.78,
+                solid_capstyle="round",
+                zorder=21,
+            )
+    ax.add_patch(
+        Circle(
+            (0, 0),
+            1.0,
+            facecolor="none",
+            edgecolor=(0.38, 0.38, 0.38, 0.86),
+            lw=2.0,
+            zorder=22,
+        )
+    )
+    add_semicircle_area_inset(ax)
+
+    ax.set_xlim(*XLIM)
+    ax.set_ylim(*YLIM)
+    ax.set_aspect("equal")
+    ax.axis("off")
 
     plt.tight_layout()
     plt.savefig(outpath, dpi=160, bbox_inches="tight")
