@@ -36,6 +36,8 @@ Specific consequences of the scaling being similar:
 
 **Demonstration.** See `corners/uniform_scaling.sage` and `figures/pseudo_chebyshev_uniform_scaling.png`. The figure is a 3×2 grid showing the geometric construction (left column) and the node-sequence curve (right column) at r = 1, r = 0.5, and r = 0.25. The shape of the right-pane curve is identical across rows; only the horizontal extent changes.
 
+![Pseudo-Chebyshev uniform scaling](../figures/pseudo_chebyshev_uniform_scaling.png)
+
 ---
 
 ## §2. Convex-preserving arc-flattening
@@ -269,6 +271,8 @@ So c = 1 is a nondegenerate limit (produces the sin(2π/n) sequence, related to 
 
 **Demonstration.** See `corners/translation.sage` and `figures/pseudo_chebyshev_translation.png`. Three rows at c = 0.5, c = 0, c = −0.5. Left column: translated circle with the fixed chords and crossing markers. Right column: node-sequence curve with integer stems, and asymptote √(1 − c²) annotated. The overshoot at c = 0.5 is visible above the dashed asymptote; the monotone behavior at c = −0.5 is visible below it.
 
+![Pseudo-Chebyshev translation](../figures/pseudo_chebyshev_translation.png)
+
 ---
 
 ## §4. The leash framework
@@ -318,6 +322,8 @@ throughout 0 < θ < π/2.
 | Translation (c) | \|c\| ≤ 1 (studied regime) | c ≤ 0 (reachable branch ends on the x-axis iff c ≤ 0) | yes iff c ≤ 0 |
 
 For translation, the threshold is c = 0. Any c > 0 makes the point (1, c) reachable by a positive-slope chord, and that chord forces the interior maximum x = 1.
+
+![Monotonicity leash condition](../figures/leash_plot_a.png)
 
 ### Hierarchy of properties by fragility
 

@@ -45,9 +45,11 @@ x^N - 1  =  prod_{d | N} Phi_d(x).
 
 The trace fields `K_n` are the maximal real subfields of these cyclotomic
 factors. Multiplicative complexity of DFT is — across sixty years of
-algorithm-design literature — a count of the algebraic operations needed to
-realize that isomorphism. Winograd's `2N - d(N)` bound is exactly a degree
-sum across the cyclotomic factorization. Heideman–Burrus is the same count
+algebraic-complexity literature, with both upper bounds (constructive
+algorithms) and lower bounds (impossibility results) studied as the
+central problem — a count of the algebraic operations needed to realize
+that isomorphism. Winograd's `2N - d(N)` bound is exactly a degree sum
+across the cyclotomic factorization. Heideman–Burrus is the same count
 for `N = 2^n`, where the cyclotomic tower aligns one-to-one with the
 program's binade structure on the log side.
 
@@ -304,12 +306,16 @@ Anchors that would be written if the memo closes:
 
 Three failure modes worth naming so a directed read can detect them:
 
-1. **The construction-face / obstruction-face inversion is not free.**
-   The literature proves *upper bounds* on FFT complexity. The program
-   wants *lower bounds*. Importing a paper's bound as if the direction
-   were preserved is a category error. Each directed read should explicitly
-   tag which direction the cited bound runs in, and how the bridge to
-   the program's lower-bound ambition is supposed to work.
+1. **Proof-technique inversion is not free.** The literature contains
+   both upper bounds (constructive algorithms) and lower bounds
+   (impossibility results) on FFT complexity. The program's compute-cost
+   branch is in the lower-bound business via a different proof strategy
+   (closure-depth on the K_n ladder, Kraft accounting on the bit side).
+   Each directed read should tag which kind of bound the cited result
+   is, what hypothesis class it operates under, what proof technique it
+   uses, and whether that technique combines naturally with the
+   program's, conflicts with it, or is orthogonal. Importing a result as
+   if proof techniques transfer freely is a category error.
 
 2. **Field-of-coefficients drift.** Winograd works over arbitrary fields
    containing the roots of unity. Morgenstern works under bounded
@@ -364,9 +370,9 @@ Ranked from least load-bearing first, ending at the central bridge claim:
 Each directed read closes with a sentence of form:
 
 > *"This contributes [theorem statement] to the K_n-Kraft transport, with
-> hypothesis class [X], provenance tag [pre-1882 / methodologically
-> pre-L-W / post-L-W methodologically essential], and slots into [item of
-> COUNTING-APPARATUS or KRAFT-BUDGET-ONE-DIMENSIONAL]."*
+> hypothesis class [X], proof technique [Y], provenance tag [pre-1882 /
+> methodologically pre-L-W / post-L-W methodologically essential], and
+> slots into [item of COUNTING-APPARATUS or KRAFT-BUDGET-ONE-DIMENSIONAL]."*
 
 If a directed read cannot produce such a sentence, the read did not serve
 the bridge, and the paper either drops out of the load-bearing list or
