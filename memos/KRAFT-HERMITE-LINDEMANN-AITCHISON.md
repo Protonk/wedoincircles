@@ -94,7 +94,12 @@ The Fourier-support condition ($c_n = 0$ for $|n| \ne 1$) is **combinatorially**
 - *Hurwitz identity closure.* The closed-form Parseval identity reads
   $$\Delta_n = L_n^2 - 4\pi A_n = L_n^2 \left[1 - \tfrac{\pi}{n}\cot\tfrac{\pi}{n}\right],$$
   with asymptote $\Delta_n = 4\pi^4/(3n^2) + O(1/n^4)$. Elementary geometry and the closed-form Parseval sum agree to machine precision across $n = 3, 5, 7, 10, 30, 100$; the Parseval sum truncated at $|j| \le 400$ agrees to a relative $1.5 \times 10^{-3}$ uniformly in $n$ (the tail is $\sim 6/(\pi^2 j_{\max})$, independent of $n$). Rate-comparison figure: `figures/hurwitz_gap_rate.png`.
+
+  ![Hurwitz gap rate](../figures/hurwitz_gap_rate.png)
+
 - *First-band concentration theorem and dyadic-shell corollary.* The companion note [corners/HURWITZ-FIRST-BAND-CONCENTRATION.md](corners/HURWITZ-FIRST-BAND-CONCENTRATION.md) promotes the frequency plot to a theorem: if $B_j(n)$ is the paired contribution of $m = 1 \pm j n$ to $\Delta_n$, then $B_j(n) \le B_1(n)/j^2$ for every $j \ge 1$, hence $B_1(n) \ge (6/\pi^2)\Delta_n$ uniformly in $n$, and more generally $\sum_{2^r \le j < 2^{r+1}} B_j(n) \le 2^{-r} B_1(n)$. The constant is sharp: $B_1(n)/\Delta_n \to 6/\pi^2$ from above. What remains for the Kraft reading is global Aitchison $\times$ E-T-K constant consolidation, not the local shell estimate.
+
+  ![Hurwitz gap frequency decomposition](../figures/hurwitz_gap_frequency_decomposition.png)
 
 **What remains open.**
 
@@ -253,7 +258,7 @@ All three named. Analog of the Ramanujan-memo and lower-bound-country memo disci
 
 Ranked from least load-bearing / fastest to check toward the real research bottleneck, following the pattern of `memos/COUNTING-APPARATUS.md` §"Proposed order of work":
 
-1. **~~(B), explicit Fourier coefficients of the regular $n$-gon.~~** ✅ **Closed.** `corners/hurwitz_gap.sage` derives $c_m^{(n)} = L_n^2/(4\pi^2 m^2) \cdot \mathbb{1}[m \equiv 1 \pmod n]$ from the tangent-field geometric sum and plots the decay (`figures/hurwitz_gap_coefficients.png`).
+1. **~~(B), explicit Fourier coefficients of the regular $n$-gon.~~** ✅ **Closed.** `corners/hurwitz_gap.sage` derives $c_m^{(n)} = L_n^2/(4\pi^2 m^2) \cdot \mathbb{1}[m \equiv 1 \pmod n]$ from the tangent-field geometric sum.
 2. **~~(B), Hurwitz identity closure check.~~** ✅ **Closed.** The same script verifies $\Delta_n = L_n^2 - 4\pi A_n = L_n^2(1 - (\pi/n)\cot(\pi/n))$ against the Parseval sum, matching to machine precision for the closed-form identity and to $1.5 \times 10^{-3}$ relative for the $|j| \le 400$ truncation (uniformly in $n$). Archimedean asymptote $\Delta_n = 4\pi^4/(3n^2)$ verified (`figures/hurwitz_gap_rate.png`); frequency-band concentration visible (`figures/hurwitz_gap_frequency_decomposition.png`).
 3. **~~(A/B), first-band concentration theorem.~~** ✅ **Closed.** [corners/HURWITZ-FIRST-BAND-CONCENTRATION.md](corners/HURWITZ-FIRST-BAND-CONCENTRATION.md) derives the paired-band closed form $B_j(n)$, proves $B_j(n) \le B_1(n)/j^2$, concludes the sharp uniform bound $B_1(n) \ge (6/\pi^2)\Delta_n$, and adds the dyadic-shell estimate $\sum_{2^r \le j < 2^{r+1}} B_j(n) \le 2^{-r} B_1(n)$.
 4. **~~(A), Kraft-constant consolidation.~~** ✅ **Closed.** [memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md](memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md) now contains the exact weighted one-dimensional lemma, its dyadic-shell corollary, and the Fortnow-consolidated corollary at cutoff `m = 2^R - 1`, all under the explicitly stated empirical-to-density proxy. The honest Aitchison-facing shell is the paired shell `L_r^(pair)(n)`, and every front constant is sourced.

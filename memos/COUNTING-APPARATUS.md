@@ -44,7 +44,7 @@ The facts exist. The work is to assemble them into a belief-forming portrait and
 
 **Decision gate.** Commit before (B) and (D). Current lean: (3) or (4).
 
-**Open:** whether the chosen model is expressive enough to state the bind without circularity, and restrictive enough that the lower bound isn't vacuous.
+**Open:** whether the chosen model is expressive enough to state the bind without circularity, and restrictive enough that the lower bound isn't vacuous. The compute-model choice is explicitly coupled to the ledger choice. **Update:** `memos/LEDGER-PIVOT-SEARCH.md` §"Task-ledger admissibility" has surfaced a best-current-candidate triple under the original Landfall-parallel ambition: model (3) algebraic-arithmetic over ℚ (or model (4) ASLP), with `V_cert` as the cost ledger, viable for tasks T1 and T3 below. The original "lean (3) or (4)" is now narrowed to that triple, *under the working form of the driving impossibility plus a still-needed cost theorem connecting V_cert components to primitive-op count*. Path 1 (crystallographic rank/lattice with ψ-ledger) and the combinatorial F2 alternative remain available as different-theorem branches but require different compute models; see `LEDGER-PIVOT-SEARCH §"Compute-model / ledger coupling"` and §"Task-ledger admissibility".
 
 ---
 
@@ -68,7 +68,9 @@ The consequence for this search: the right direction is to land on T3 directly, 
 
 **Target claim:** the cost of T1 (or T3) is Θ(|M_N|) in the chosen compute model. The easy direction (|M_N| as an upper bound, via the outside-out sweep) is constructive. The hard direction (|M_N| as a lower bound) is the real research question.
 
-**Open:** given the Fortnow framing above, the earlier question — is there a direct reduction from beating-round-trace (T3) to corner-enumeration (T2)? — is presumptively closed in the polynomial-time direction: a yes-answer would imply a result near `P = NP`. The live question becomes whether T3 can be attacked directly, with `|M_N|` as the natural ledger, without any reduction to T2. If yes, the bind stands on T3's own terms. If no, the bind needs a different T3-shaped task or a different cost measure than `|M_N|`.
+**Open:** given the Fortnow framing above, the earlier question — is there a direct reduction from beating-round-trace (T3) to corner-enumeration (T2)? — is presumptively closed in the polynomial-time direction: a yes-answer would imply a result near `P = NP`. The live question becomes whether T3 can be attacked directly, with `|M_N|` as the natural ledger, without any reduction to T2. If yes, the bind stands on T3's own terms. If no, the bind needs a different T3-shaped task or a different cost measure than `|M_N|`. **(Now resolved — see Update below: the "different cost measure" branch was taken.)**
+
+**Update from `LEDGER-PIVOT-SEARCH §"Task-ledger admissibility"`.** The "different cost measure than `|M_N|`" question is now answered: `V_cert` (per-cell value certificates) is the lattice-matching ledger for both T1 and T3, and `|M_N|` is dropped as a ledger candidate for those tasks. T2 admits no algebraic-content ledger except by reformulation as typed-incidence production, in which case `F2` (the six-field incidence ledger) is the match. The program's branch choice — Landfall-parallel cyclotomic-depth lower bound (T1/T3 + `V_cert`) vs. combinatorial typed-incidence theorem (T2 + `F2`) — is now legible at the compute-cost level.
 
 ---
 

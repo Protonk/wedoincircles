@@ -2,6 +2,8 @@
 
 The strip and flip constructions for the anchored-n-gon family, followed by the two organizational splits they make visible: the tangency-side subpolygon link on the strip floor, and the corner-side pseudo-Chebyshev / counting observable under inversion.
 
+![Three views of the Archimedean strip](../figures/archimedean_triptych.png)
+
 ## 1. Setup
 
 Fix a circle of radius 1 — the **incircle**. Circumscribe a sequence of regular n-gons around it (apothem = 1), each with an anchor side supported by the common tangent line `x = 1` and tangent to the circle at `(1, 0)`. Each n-gon has circumradius
@@ -34,6 +36,8 @@ over $x \in \bigl[(2k-1)/(2n),\,(2k+1)/(2n)\bigr]$ modulo `1`.
 
 Each arc touches $y = 0$ at its midpoint (tangency with the incircle) and rises to $y_n$ at both endpoints (the corners of the n-gon). The strip is produced by `n-gons/strip.py`, which writes `figures/archimedean_strip.png`.
 
+![Archimedean strip](../figures/archimedean_strip.png)
+
 ---
 
 ## 3. The flip
@@ -55,6 +59,8 @@ The n-gon corners, originally at radius $\sec(\pi/n)$, invert to radius
 $$\cos(\pi/n) = \mathrm{node}(n),$$
 
 the pseudo-Chebyshev node sequence from `corners/PSEUDO-CHEBYSHEV-NODES.md`. The nodes now appear as radii rather than x-coordinates. The flipped annulus is produced by `n-gons/inside_out.py`, which writes `figures/archimedean_inside_out.png`.
+
+![Inside-out annulus](../figures/archimedean_inside_out.png)
 
 ---
 
@@ -123,6 +129,7 @@ Nothing mathematically new — the gcd theorem in `n-gons/SUBPOLYGON.md` is unch
 
 | File | Produces |
 |---|---|
+| `n-gons/build_archimedean_triptych.py` | `figures/archimedean_triptych.png` |
 | `n-gons/strip.py` | `figures/archimedean_strip.png` |
 | `n-gons/inside_out.py` | `figures/archimedean_inside_out.png` |
 

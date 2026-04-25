@@ -77,6 +77,8 @@ tau(n) = 2cos(2pi/n) - 2
 for the tail. The near-half row is the `n = 3 mod 6` exact-cosine-alignment
 subsequence, not the whole near-half-gap function.
 
+![Tau portrait](../figures/tau_portrait.png)
+
 ## Derivation Sketches
 
 The constants above come from elementary expansions:
@@ -147,6 +149,8 @@ B_1(n) >= (6 / pi^2) Delta_n.
 This is the strong Fourier statement: the `1/n^2` rate is read from the
 first off-support bands and their `1/j^2` tail.
 
+![Hurwitz gap rate](../figures/hurwitz_gap_rate.png)
+
 ### Clean On-Support Energy
 
 The tail of `tau` has a clean Parseval-energy identity, but it is not an
@@ -182,6 +186,8 @@ The strip area is the zeroth Fourier coefficient of the strip tissue:
 the strip lattice `n Z`, not a quadratic Parseval reading on the
 arc-length lattice `1 + n Z`. Full derivation in
 [memos/STRIP-TISSUE-FOURIER.md](memos/STRIP-TISSUE-FOURIER.md).
+
+![Strip tissue Fourier object](../figures/strip_tissue_fourier.png)
 
 ### Pointwise / Arithmetic Selection
 
@@ -221,6 +227,8 @@ the isoperimetric functional at the circle, applied through the
 circumscribed radial lift. The order-`n^-4` residual is explicit and
 geometric; the direct comparison to the inscribed `Delta_n` remains a
 secondary Archimedean squeeze.
+
+![Hurwitz gap and strip H1 comparison](../figures/hurwitz_strip_h1_match.png)
 
 ## Program Use
 

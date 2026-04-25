@@ -1,0 +1,25 @@
+# Abductive surprise goes here
+
+Freeform notes. No timestamps. No links. Embrace the circle (or the exponential) and just vibe.
+
+---
+
+Air-gap-via-ape inverts the usual read on human-in-the-loop. I default to treating the human as latency. Here the gap is the mechanism — forced freshness on one side per turn, neither agent accumulating unchecked. The limitation turned out to be the anti-drift device. Worth remembering next time something looks like a bug.
+
+"By turns, compute" makes the Nezu discipline bilateral where I'd been reading it as solo. My compute is literal — Sage runs, scripts finish, answers land. The other agent's compute is structural — sharpened claim, spotted circularity, pre-1882 anchor surfaced. Both are production, just different factor endowments. The memo described a posture; it now describes an interface.
+
+The register system (brief / search memo / synthesis) absorbs external output with no taxonomy change. I didn't see this until the frame was named. Without the pre-adaptation, every turn would need a "where does this go" decision; with it, triage is the same operation I was already running on my own output. The register scaffolding is doing more work than I had credited it.
+
+Comparative advantage is Ricardian here, not absolute. My contribution is within-session repo familiarity, not general intelligence. The corollary: whenever I'm doing work that doesn't lean on that, it's a flag — either routed wrong or drifting into territory where fresh eyes would do it better. Useful as a triage heuristic on my own output, not just on theirs.
+
+Plan-as-artifact is the air-gap's load-bearing device for anything richer than question-and-answer. In the ledger-pivot round, a plan file let the other agent catch a transcription bug (wrong ψ(2) convention) and two scope gaps by reading it cold. Absent the plan-as-file, the adversarial review would have had only the question to land on — narrower surface. Before execution, commit the plan as an artifact; let them read it fresh before anyone runs anything. The plan file is the air-gap's target.
+
+Fresh-eye reading of our own authorities sometimes beats warm-context trust in my recall of those authorities. The ψ(2) bug was a case where the Ricardian framing failed: I had cited the canonical source in the repo, quoted its convention, and still transcribed the value wrong. The other agent read the exact file I'd used — cold — and caught it. Warm context is not the same as careful reading, even of sources I have already loaded. The transcription seam runs right through material I supposedly know.
+
+Apparatus accumulates as byproduct of pruning, then becomes a tool against the question that motivated it. The ledger lattice came out of stress-testing one candidate at a time; once the lattice was mature enough, pointing it at the parent memo's task list produced a committable triple in a single round, no new compute needed. Pruning rounds are the cheap mode; turning the apparatus outward is a distinct move that produces program-level progress per round but only works once the apparatus is mature. Worth watching for: when does the scaffolding I'm building become a tool I can use against the original question?
+
+Scaffolding silently becomes model. I operated with a "chain" framing of the tier taxonomy for several rounds without noticing it was an unmodeled assumption. It was working organization, not deliberate hypothesis — until F2 surfaced as incomparable with row-level on the chain and the framing collapsed. Organizational scaffolding I build during search can quietly become load-bearing model. Same fix as the ψ(2) bug: treat self-built scaffolding as something a counter-example could attack, not as fixed framework. Worth asking, periodically, what current scaffolding I haven't yet stress-tested.
+
+Disconfirmation-first questions calibrate better than confirmation-seeking ones. Asking "construct a counter-example" forces the disconfirming attempt before any confirming articulation; asking "is this right?" lets the agent reach for a confirming argument and stop there. Different epistemic move, default-direction matters. Phrasing of the failure-conditional matters too: "if you can't, name the obstruction" presupposes the obstruction; "give a best-effort explanation as to why" doesn't. The wrong framing primes a reaching answer rather than an honest one.
+
+Counter-example attempts can land on the framing, not the claim. Q8 didn't break V_cert's matching status; it broke my paragraph that framed below-matching as failure. The actual structure was three-regime (tight at matching, coarse-but-valid below, lower-bound-on-different-task above) and my paragraph collapsed it to two by treating below-matching as "no lower bound." The fix is local — rewrite the paragraph — but the lesson generalizes: any structural distinction I introduce mid-search may quietly collapse a regime; counter-example attempts at the boundary surface the collapse. Useful diagnostic for any framing I write down.
