@@ -19,7 +19,7 @@ directed read closes.
 **Load-bearing synthesis.** Four of the five directed reads (AFW,
 Morgenstern, Winograd 1978, Schönhage–Strassen) have been completed and
 synthesized at
-[memos/FFT-COMPLEXITY-FOUR-FRAMEWORK-SYNTHESIS.md](memos/FFT-COMPLEXITY-FOUR-FRAMEWORK-SYNTHESIS.md),
+[fft/FOUR-FRAMEWORK-SYNTHESIS.md](fft/FOUR-FRAMEWORK-SYNTHESIS.md),
 which records the four frameworks as four distinct axiom-coordinates
 in the seven-axiom space of
 [memos/LEDGER-PIVOT-SEARCH.md](memos/LEDGER-PIVOT-SEARCH.md)
@@ -81,8 +81,11 @@ So:
   Ω(N log N), in a hypothesis class that is naturally compatible with
   `Aff^+(R)`-style native operations.
 
-The sentence the program needs from this literature is not a new theorem.
-It is the existing theorems, transported.
+The sentence the program needs from this literature is not a theorem
+already present in any one source. It has to be constructed from
+non-composable pieces: rational-equivalence multiplicative structure,
+bounded-coefficient additive lower bounds, operational uniformity, and
+the program's own certification-preserving cost rules.
 
 The complexity literature distinguishes at least three currencies on the
 FFT side: multiplicative algebraic complexity (Winograd, Auslander–Feig–
@@ -341,9 +344,9 @@ Existing material this memo draws on:
 
 Anchors that would be written if the memo closes:
 
-- `memos/WINOGRAD-1978-BRIEF.md` — source-extraction brief on the
+- `fft/WINOGRAD-1978-BRIEF.md` — source-extraction brief on the
   cyclotomic-factorization complexity argument.
-- `memos/MORGENSTERN-1973-BRIEF.md` — source-extraction brief on the
+- `fft/MORGENSTERN-1973-BRIEF.md` — source-extraction brief on the
   bounded-coefficient lower-bound technique.
 - The other three papers may not need full briefs if their use is
   contained.
@@ -449,8 +452,8 @@ Three failure modes worth naming so a directed read can detect them:
    the program has to reverse on its own side.
 
    *Compounding hazard, surfaced across the Morgenstern and Winograd
-   1978 briefs ([memos/MORGENSTERN-1973-BRIEF.md](memos/MORGENSTERN-1973-BRIEF.md),
-   [memos/WINOGRAD-1978-BRIEF.md](memos/WINOGRAD-1978-BRIEF.md)):* the
+   1978 briefs ([fft/MORGENSTERN-1973-BRIEF.md](fft/MORGENSTERN-1973-BRIEF.md),
+   [fft/WINOGRAD-1978-BRIEF.md](fft/WINOGRAD-1978-BRIEF.md)):* the
    literature has at least *three* non-composable frameworks, not two.
    Morgenstern (coordinate-sensitive bounded-linear additions),
    Winograd 1978 (bilinear multiplicative complexity with field
@@ -488,11 +491,11 @@ paper rather than Winograd):
    Read third for the modular-product bound `2n − k` and its
    application to DFT decomposition. The headline `2N − d(N)` framing
    should be checked against the actual paper here, not assumed.
-   Promote to `memos/WINOGRAD-1978-BRIEF.md` on close.
+   Promote to `fft/WINOGRAD-1978-BRIEF.md` on close.
 4. **Morgenstern 1973 (item E)** — the only real lower bound in the
    queue. Read fourth, after the multiplicative-complexity framework is
    in place, because the bound's value depends on whether it can be
-   expressed in Kraft units. Promote to `memos/MORGENSTERN-1973-BRIEF.md`
+   expressed in Kraft units. Promote to `fft/MORGENSTERN-1973-BRIEF.md`
    on close.
 5. **Schönhage–Strassen 1971 (item D)** — background unless a reverse
    translation is proved. Read last as a model-translation exemplar; not

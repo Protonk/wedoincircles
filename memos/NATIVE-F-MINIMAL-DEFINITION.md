@@ -44,6 +44,39 @@ Aff               on the log side,
 
 ---
 
+## Why `K_n` (forced by closure)
+
+The choice to work in `K_n = Q(cos(2 pi / n))` rather than the full
+cyclotomic field `Q(zeta_n)` is **forced by closure**, not aesthetic.
+Under the Galois involution `sigma_{-1}: zeta_n -> zeta_n^{-1}`
+(complex conjugation restricted to `Q(zeta_n)`), the field decomposes
+as a `K_n`-vector-space:
+
+```text
+Q(zeta_n) = K_n  ⊕  K_n · 2 i sin(2 pi / n).
+```
+
+The `(+1)`-eigenspace is `K_n` itself (the fixed field of `sigma_{-1}`).
+The `(-1)`-eigenspace is `E_{-1} = K_n · 2 i sin(2 pi / n)`, which is
+a 1-dimensional `K_n`-module but **not** a subfield: the square
+`(2 i sin(2 pi / n))^2 = -4 sin^2(2 pi / n)` lies in `K_n`, hence
+outside `E_{-1}`. Only the `(+1)`-eigenspace is multiplicatively
+closed.
+
+The program's closure-generator family is therefore `K_n` rather than
+either eigenspace alone or the full cyclotomic field — by structural
+necessity, not by convention. The eigenspace identification and the
+closure-asymmetry observation are proven in
+[fft/HEIDEMAN-JOHNSON-BURRUS-1985-BRIEF.md](fft/HEIDEMAN-JOHNSON-BURRUS-1985-BRIEF.md)
+§5.
+
+Consequence for axiom A2 below: the closure-generator family the
+functor must respect is not chosen by the program; it is the unique
+multiplicatively-closed half of a Galois-canonical decomposition of
+`Q(zeta_n)`. A2 inherits its non-arbitrariness from this fact.
+
+---
+
 ## Native Functor Axioms
 
 A functor `F : C_log -> C_circle` is **native** for the program if it

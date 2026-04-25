@@ -5,7 +5,7 @@ transform," Mathematics of Computation 32.141 (1978), 175-199
 ([sources/Winograd-ComputingDiscreteFourier-1978.pdf](sources/Winograd-ComputingDiscreteFourier-1978.pdf)).
 
 **What was read.** The local Math. Comp. PDF was read as item 3 in
-[memos/FFT-CYCLOTOMIC-COMPLEXITY.md](memos/FFT-CYCLOTOMIC-COMPLEXITY.md)
+[fft/FFT-CYCLOTOMIC-COMPLEXITY.md](fft/FFT-CYCLOTOMIC-COMPLEXITY.md)
 §"Order of work": the cyclic-convolution / CRT engine underneath the later
 FFT multiplicative-complexity literature.
 

@@ -46,6 +46,46 @@ trade; §(B1) explains why.
 
 ---
 
+## Audit criterion: content, not calendar
+
+The audit asks whether a step's *proof* depends on transcendence-
+theoretic results, not whether the *paper* was published before 1882.
+"Pre-1882" is calendar shorthand for the actual criterion, which is
+**transcendence-free in content**.
+
+Most pre-1882 papers are obviously safe (they couldn't depend on a
+theorem that hadn't been proved yet). Some post-1882 papers are also
+safe: a result whose proof uses no Lindemann-Weierstrass-or-later
+machinery is L-W-safe in content even when its publication date sits
+on the wrong side of the calendar cutoff.
+
+The first crisp example surfaced in
+[iso/FUGLEDE-1989-BRIEF.md](iso/FUGLEDE-1989-BRIEF.md): Fuglede
+1989's explicit constants in the `n = 2` Sobolev stability bound are
+post-L-W in publication, but per Fuglede's own footnote 1 the `n = 2`
+content is re-routable through Hurwitz 1902 — itself post-1882 in
+calendar but transcendence-free in content. Fuglede 1989's `n = 2`
+constants are therefore a candidate L-W-safe certification of explicit
+constants in the strip-`H^1` register.
+
+(A4) Dirichlet kernel / Jordan bounded variation already operates
+under this criterion implicitly: Hurwitz 1902 is post-1882 by 20
+years, but the Fourier/Parseval primitives the row terminates at are
+all pre-1882 (Fourier 1822, Parseval 1799, Dirichlet 1829). The
+content-criterion clarification makes that practice explicit, and
+extends it: the audit may admit any post-1882 result whose proof is
+provably transcendence-free, not only those that terminate at
+classical Fourier primitives.
+
+Consequence for the (A) and (B) catalogues. A candidate anchor's
+first-proof date is not the end of the audit. If the proof technique
+routes through transcendence theory (Baker, Gelfond-Schneider, or
+descendants), the anchor fails the audit even if the paper is ancient.
+Conversely, a post-1882 result whose proof is provably
+transcendence-free can serve as a contradiction-step anchor.
+
+---
+
 ## Target
 
 Single sentence, honest about uncertainty:

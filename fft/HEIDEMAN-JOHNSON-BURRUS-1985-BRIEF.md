@@ -14,10 +14,10 @@ upstream endpoint inside the L-W-safety window. The audit traces that
 endpoint forward through documented gaps (Hansen's 1835 non-citation,
 Burkhardt's 1904 unnoticed-noticing, the 1866–1965 quiet century) to
 the four modern complexity briefs
-([memos/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md](memos/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md),
-[memos/MORGENSTERN-1973-BRIEF.md](memos/MORGENSTERN-1973-BRIEF.md),
-[memos/WINOGRAD-1978-BRIEF.md](memos/WINOGRAD-1978-BRIEF.md),
-[memos/SCHOENHAGE-STRASSEN-1971-BRIEF.md](memos/SCHOENHAGE-STRASSEN-1971-BRIEF.md))
+([fft/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md](fft/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md),
+[fft/MORGENSTERN-1973-BRIEF.md](fft/MORGENSTERN-1973-BRIEF.md),
+[fft/WINOGRAD-1978-BRIEF.md](fft/WINOGRAD-1978-BRIEF.md),
+[fft/SCHOENHAGE-STRASSEN-1971-BRIEF.md](fft/SCHOENHAGE-STRASSEN-1971-BRIEF.md))
 the program inherits at the modern end.
 
 **What was read.** The full 13-page PDF, including the dating-of-the-work
@@ -39,7 +39,7 @@ does **not** supply technical content for the lower-bound work. The
 program must not cite "Heideman–Johnson–Burrus 1985" for any complexity
 or cyclotomic-depth claim. The technical Heideman–Burrus paper is the
 1986 binary-DFT exact-count work (queue item 2 in
-[memos/FFT-CYCLOTOMIC-COMPLEXITY.md](memos/FFT-CYCLOTOMIC-COMPLEXITY.md)
+[fft/FFT-CYCLOTOMIC-COMPLEXITY.md](fft/FFT-CYCLOTOMIC-COMPLEXITY.md)
 §"Order of work"), separate from this historiographical paper, by an
 overlapping author set.
 
@@ -248,7 +248,7 @@ The paper's author triple is **M. T. Heideman, D. H. Johnson, C. S.
 Burrus** (Rice University, Department of Electrical & Computer
 Engineering). The technical Heideman–Burrus paper on the exact
 multiplicative complexity of the length-`2^n` DFT is queue item 2 in
-[memos/FFT-CYCLOTOMIC-COMPLEXITY.md](memos/FFT-CYCLOTOMIC-COMPLEXITY.md)
+[fft/FFT-CYCLOTOMIC-COMPLEXITY.md](fft/FFT-CYCLOTOMIC-COMPLEXITY.md)
 §"Order of work":
 
 > Heideman, M. T. & Burrus, C. S. "On the number of multiplications
@@ -288,14 +288,14 @@ inference noted explicitly).
 
 Outside the paper's coverage. The FFT-kernel inheritance from
 Cooley–Tukey is internal to
-[memos/SCHOENHAGE-STRASSEN-1971-BRIEF.md](memos/SCHOENHAGE-STRASSEN-1971-BRIEF.md).
+[fft/SCHOENHAGE-STRASSEN-1971-BRIEF.md](fft/SCHOENHAGE-STRASSEN-1971-BRIEF.md).
 *That step is not audited here.*
 
 ### Morgenstern 1973
 
 Outside the paper's coverage. Morgenstern's lower bound takes the
 Cooley–Tukey FFT as its upper-bound target; the inheritance step is
-internal to [memos/MORGENSTERN-1973-BRIEF.md](memos/MORGENSTERN-1973-BRIEF.md).
+internal to [fft/MORGENSTERN-1973-BRIEF.md](fft/MORGENSTERN-1973-BRIEF.md).
 *That step is not audited here.*
 
 ### Good 1958 → Cooley–Tukey 1965 → Winograd 1976/78
@@ -306,7 +306,7 @@ Cooley–Tukey originally referred only to Good. Winograd's prime-factor
 algorithm work generalizes Good's, and the paper records Winograd's
 contribution as "Use of complexity theory for harmonic analysis" — the
 inflection where the chain becomes complexity-theoretic. The brief
-[memos/WINOGRAD-1978-BRIEF.md](memos/WINOGRAD-1978-BRIEF.md) thus sits
+[fft/WINOGRAD-1978-BRIEF.md](fft/WINOGRAD-1978-BRIEF.md) thus sits
 on the Good → Winograd substrand; through Cooley–Tukey it also touches
 the Gauss substrand at the 1965 confluence.
 
@@ -318,7 +318,7 @@ present paper's submission (received Feb. 28, 1985). The paper does
 not include AFW in the table or text. Inheritance from Winograd's
 prime-factor framework to AFW's tensor-product framework is internal
 to the modern algebraic-complexity literature; see
-[memos/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md](memos/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md)
+[fft/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md](fft/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md)
 for the technical content. *That step is not audited by this paper.*
 
 ### Summary diagram
@@ -463,20 +463,25 @@ The cosine choice tracks the *real subfield* of `Q(zeta_n)`. The full
 cyclotomic field `Q(zeta_n)` has degree `phi(n)` — twice the degree
 of `K_n`.
 
-Working in `K_n` is not just "avoiding `C`"; it is choosing the
-even-symmetric eigenspace under the geometric reflection
-`theta -> -theta`, i.e., the `(+1)`-eigenspace of the Galois
-involution `sigma_{-1}: zeta_n -> zeta_n^{-1}` on `Q(zeta_n)`. The
-next subsection proves this identification.
+Working in `K_n` is not just "avoiding `C`"; it is the unique
+multiplicatively-closed half of the `Q(zeta_n)` decomposition under the
+geometric reflection `theta -> -theta`. Both halves are eigenspaces of
+the Galois involution `sigma_{-1}: zeta_n -> zeta_n^{-1}` on
+`Q(zeta_n)`, but only the `(+1)`-eigenspace `K_n` is a subfield; the
+`(-1)`-eigenspace `E_{-1} = K_n · 2 i sin(2 pi / n)` is a 1-dimensional
+`K_n`-module that is not closed under multiplication
+(`(2 i sin(2 pi / n))^2 = -4 sin^2(2 pi / n) in K_n`, outside
+`E_{-1}`). The choice to work in `K_n` is therefore *forced by
+closure*, not selected from parallel options. The next subsection
+proves the eigenspace identification.
 
-Whether the program's analysis of the F-question surfaces structurally
-different obstructions in the `(+1)`-eigenspace `K_n` versus the
-`(-1)`-eigenspace versus the full `Q(zeta_n)` is an **open program
-question**. The historiography does not answer it; the inheritance
-chain does not pre-suggest a structural reason to expect them to
-differ; that is not the same as showing they don't differ. A
-resolution would require an internal computation in the program
-comparing closure-depth obstructions across the eigenspaces.
+Whether anything analogous to closure-depth lives on the
+`(-1)`-eigenspace — viewed as a `K_n`-module rather than a subfield —
+is an **open program question** the brief does not resolve. The full
+cyclotomic field `Q(zeta_n)` is the natural larger setting; whether
+running closure-depth analysis there surfaces obstructions invisible
+from `K_n` is also open and would require an internal computation in
+the program.
 
 ### Proof: `K_n` is the `(+1)`-eigenspace of the reflection involution
 
@@ -576,24 +581,59 @@ the phrase "decimation-in-frequency adapted to a *real data sequence*."
 The qualifier *real data sequence* means the input `X(n)` is in `R`,
 the fixed field of complex conjugation on `C`. The proof above
 identifies `K_n` as the fixed field of the same involution restricted
-to `Q(zeta_n)`. So Gauss's algorithmic choice (real input) and the
-program's algebraic choice (`K_n` rather than `Q(zeta_n)`) are the
-`(+1)`-eigenspace under a single involution — complex conjugation —
-applied at different layers: the input space on Gauss's side, the
-cyclotomic field on the program's side.
+to `Q(zeta_n)`. Gauss's algorithmic choice (real input) and the
+program's algebraic choice (`K_n` rather than `Q(zeta_n)`) are
+*categorically parallel*: both are `(+1)`-eigenspaces under
+complex-conjugation-extending involutions of order 2. They are not the
+*same* choice, however — they play structurally different roles in
+their respective contexts.
 
-Two facts the paper attests independently:
+**Asymmetry on the program's side that has no parallel on Gauss's side.**
+On Gauss's side, the `(+1)`- and `(-1)`-eigenspaces of complex
+conjugation on `C^N` (real and purely-imaginary input data) are equal-
+status `R`-vector-space restrictions: same dimension, same closure
+properties, the DFT operates on either identically. The choice of
+real input is an *input convention*, not a structural commitment — the
+algorithm doesn't care whether the symmetry is `X = conj(X)` or
+`X = -conj(X)`. On the program's side, the two eigenspaces are
+structurally non-corresponding: `K_n` is a subfield, `E_{-1}` is a
+non-multiplicatively-closed `K_n`-module. The `(+1)`-eigenspace is
+privileged because it is the only multiplicatively-closed half. The
+program's choice to work in `K_n` is *forced by closure*; Gauss's
+choice to work with real input is not.
 
-1. (p. 271) Gauss's 1805 algorithm is the real-input case.
-2. (p. 270, 271) The trigonometric formulation that goes with that
-   choice made the algorithm unrecognizable as an FFT for 160 years.
+So what carries across is the categorical observation: both choices
+are fixed-loci of order-2 involutions that, on the shared substructure
+`Q(zeta_n) ⊂ C`, agree with complex conjugation. The strong reading
+that they are "the same eigenspace choice" overreaches — what is an
+arbitrary input convention on Gauss's side is a structural commitment
+to the unique multiplicatively-closed half on the program's side.
 
-Combined with the §5 proof: the program's `K_n = Q(cos(2 pi / n))` is
-the same eigenspace choice Gauss made in 1805 — same involution, same
-fixed-field restriction, applied at different layers. The paper itself
-documents the recognition cost of that choice: content-preserving,
-presentation-restricting. The cosine-substrate decision is traceable
-to a documented predecessor whose recognition lag is also documented.
+**The paper's recognition-lag attestation.** The paper attests
+qualitatively (p. 270, 271) that the trigonometric formulation hid the
+algorithm's index-mapping structure and made it unrecognizable as an
+FFT. This is *qualitative* friction; the paper does not quantify it.
+The 160-year gap between *Werke* III (1866) and Cooley–Tukey (1965)
+is a sum of era factors and choice-specific factors that the
+historical record does not separate: posthumous publication delay
+(61 years before publication at all), absence of asymptotic-complexity
+language until ~1965, absence of a formal compute model until Turing
+1936, domain isolation across celestial mechanics / British empirical
+physics / signal processing, and pre-database citation conventions.
+Era factors absorb the bulk of the headline window. The choice-
+specific friction the paper attests is bounded above by something on
+the order of "a paper of notational translation" once era factors are
+stripped — small in magnitude, and present only in qualitative form
+in the paper.
+
+The brief therefore should not lean on "160 years" as a magnitude
+prior on the program's `K_n` choice. The honest version: the paper
+attests qualitatively that real-trig presentation is recognition-
+restricting; magnitude unknown; era factors confound the historical
+estimate. The structural identification (§5 proof) does not depend on
+this attestation, and the attestation by itself is too weak to carry
+program-level decisions about how visible the program's lower-bound
+work will be in its own era.
 
 ---
 
@@ -617,11 +657,20 @@ to a documented predecessor whose recognition lag is also documented.
 - the identification of `K_n = Q(cos(2 pi / n))` as the
   `(+1)`-eigenspace of the Galois involution `sigma_{-1}` on
   `Q(zeta_n)` (proven internally to the brief, §5);
-- the alignment between the program's `K_n` choice and Gauss's 1805
-  real-input algorithmic choice — both are `(+1)`-eigenspaces under
-  complex conjugation, applied at different layers (§5 connection
-  subsection, anchored on the paper's "real data sequence" phrase,
-  p. 271).
+- the categorical parallel between the program's `K_n` choice and
+  Gauss's 1805 real-input algorithmic choice — both are
+  `(+1)`-eigenspaces under complex-conjugation-extending order-2
+  involutions, with structurally different roles in their respective
+  contexts (§5 connection subsection, anchored on the paper's "real
+  data sequence" phrase, p. 271). The brief does **not** support the
+  stronger reading that the two are "the same eigenspace choice";
+  closure-asymmetry on the program's side breaks that reading.
+
+- the qualitative attestation (paper p. 270, 271) that real-trig
+  formulation is recognition-restricting. The brief does **not**
+  support a quantitative recognition-lag prior derived from the
+  160-year *Werke*-III-to-Cooley–Tukey gap; era factors confound the
+  historical magnitude.
 
 ### This brief should NOT be cited for
 
@@ -630,10 +679,16 @@ to a documented predecessor whose recognition lag is also documented.
 - any cyclotomic or algebraic-degree content (the paper does not enter
   this register);
 - any lower-bound material;
-- a final answer to the sine vs. cosine question (the paper does not
-  give one; the eigenspace proof in §5 is the structural answer for
-  the program's circle side, but whether the `(-1)`-eigenspace
-  surfaces different obstructions remains an open program question);
+- a final answer to the sine vs. cosine question. The eigenspace proof
+  in §5 plus the closure-asymmetry observation give a partial answer:
+  `K_n` is the unique multiplicatively-closed half, so the program's
+  choice is forced rather than selected, and a closure-depth ladder
+  does not natively run on `E_{-1}` (which is a `K_n`-module, not a
+  field). What remains open: whether anything analogous to closure-
+  depth lives on `E_{-1}` as a `K_n`-module structure, and whether
+  running the program's analysis on the full `Q(zeta_n)` surfaces
+  obstructions invisible from `K_n`. Both require internal program
+  computation, not historiography.
 - a claim that the inheritance chain is *complete* (the paper itself
   notes "almost one hundred years passed" with the chain partially
   broken; the brief inherits that limitation);
@@ -668,11 +723,16 @@ Heideman–Burrus technical contribution). It supplies the pre-1965
 context the four FFT-complexity briefs sit at the modern end of and
 confirms a clean upstream endpoint at 1805 with provenance certified
 through *Werke* Vol. III. It does not supply technical content for the
-compute-cost branch. The sine vs. cosine question receives a
-structural answer in §5 (working in `K_n` is choosing the
-`(+1)`-eigenspace of the reflection involution `sigma_{-1}` on
-`Q(zeta_n)`); whether the `(-1)`-eigenspace surfaces different
-closure-depth obstructions remains an open program question. Per
+compute-cost branch. The sine vs. cosine question receives a partial
+structural answer in §5: the `(+1)`-eigenspace `K_n` is the unique
+multiplicatively-closed half of the involution decomposition, so the
+program's `K_n` choice is forced by closure rather than selected from
+parallel options, and a closure-depth ladder does not natively run on
+the `(-1)`-eigenspace as a field. The categorical parallel to Gauss's
+real-input choice is structurally weaker than the brief originally
+claimed — both are `(+1)`-eigenspaces of order-2
+complex-conjugation-extending involutions, but they play different
+roles (input convention vs. forced subfield choice). Per
 [BNHA/ONE-FOR-ALL.md](BNHA/ONE-FOR-ALL.md), this brief is the
 program's provenance-backward audit record for the inheritance the
 four modern briefs depend on.

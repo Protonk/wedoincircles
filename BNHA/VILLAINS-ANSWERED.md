@@ -88,6 +88,8 @@ closure depth, which is a different relation. To show
 monic cubic `x^3 - x^2 - 2x + 1` in `Z[x]` and show the cubic is
 irreducible over `Q`. The float value of `2 cos(pi/7)` does not need to
 be the algebraic number; the polynomial carries the depth claim.
+Equivalently, in the `x = cos(pi/7)` normalization used by the ledger
+memo, the same datum is the scaled cubic `8x^3 - 4x^2 - 4x + 1`.
 
 Witnesses in this program are *certificates of structural existence*,
 not instantiations. Closure depth is the claim; the Chebyshev monic
@@ -156,54 +158,198 @@ the level of vocabulary.
 
 ---
 
-## #5 — Gentle Criminal (quarantined: unmet, sealed off as open search)
+## #5 — Gentle Criminal (partly answered: triple named, fifth coordinate identified, axioms still open)
 
-**Status: not answered.** The program has **not** fixed a task-plus-model
-pair in which `|M_N|` is a lower bound.
-[memos/COUNTING-APPARATUS.md](memos/COUNTING-APPARATUS.md) is the active
-search memo that exists precisely to pursue this, and it declines to
-commit. Gentle Criminal's demand is legitimate and stands open; the
-program has not met it. What the program has done is *quarantine* the
-question — sealed the compute-cost branch off as a search so that no
-load-bearing result depends on its closure, while marking the question
-as the program's central open bet rather than a defended position.
+The earlier answer treated the compute-cost branch as quarantined
+"search, not claim" and stated that the program had not fixed a
+task-plus-model pair in which `|M_N|` is a lower bound. That was honest
+at the time. It is no longer accurate. The program retired `|M_N|` as
+the candidate ledger, named a (task, model, ledger) triple, and mapped
+the literature's neighboring frameworks at specific axiom-coordinates.
+Gentle Criminal's challenge is now *partly met and specifically open*,
+not unmet.
 
-What the program does *instead*, and why the absence is not fatal:
+**The pivot: `|M_N|` → `V_cert`.** The lattice-pivot search in
+[memos/LEDGER-PIVOT-SEARCH.md](memos/LEDGER-PIVOT-SEARCH.md) retired
+`|M_N|` after a sequence of calibrations:
 
-- The load-bearing result is the closure-depth theorem
-  ([memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md)),
-  which is algebraic and does not depend on any compute-cost model.
-  `phi(n)/2` enters as an algebraic degree, not as a cost. The F-theorem
-  does not need `|M_N|` to be a lower bound.
-- Where `|M_N|` appears in program discourse, it is tagged as
-  "companion metric" or "descriptive counting portrait," not as a
-  theorem-level input. The COUNTING-APPARATUS prerequisites (A)-(D)
-  enumerate what would need to close before the compute-cost claim is
-  admissible.
-- The K-H-L-A endgame that did try to commit to a Diophantine cost model
-  (Liouville-on-`alpha_n`) was just shown to fail on scale
-  ([memos/LIOUVILLE-SCALE-TEST.md](memos/LIOUVILLE-SCALE-TEST.md)). The
-  failure was recorded; the ambition continues on the surviving
-  discrepancy branch, which does not route through `|M_N|`.
+- `|M_N|` factors through a wrong quotient: the `n mod 4` increment
+  pattern is governed by congruence-class structure, not algebraic
+  depth ([memos/COUNTING-APPARATUS.md](memos/COUNTING-APPARATUS.md)
+  §(D)).
+- ψ-stratification factors through `ψ` rather than `phi/2`.
+- Value-structure at distinct x-cells — the cell-tier ledger, where
+  positional and algebraic content are both retained — is the surviving
+  inhabitant.
 
-Gentle Criminal's real teaching: exchange-rate hygiene. `|M_N|` as
-"ledger," `phi(n)/2` as "depth," dyadic harmonic mass as "Kraft budget"
-— these are analogical until a model legalizes the conversions. The
-program accepts this and treats compute-cost as search, not claim. If
-the search exits without committing, compute-cost never becomes a
-proposition, and the F-theorem plus the Archimedean signature plus the
-K-H-L-A search all survive that exit.
+The lattice apparatus places this surviving ledger at coordinate
+`(P3, A2)`, named `V_cert`. P-axis is positional granularity (scalar /
+row / row-positional / cellwise / orbit); A-axis is algebraic
+certification depth (typing / row-level / cellwise / orbit-level).
+`|M_N|` is no longer a theorem-track candidate.
 
-**The bet inside the quarantine.** Gentle Criminal is the villain who
-bounces the program out at the 1% margin if the question is left
-unanswered indefinitely. The program's open bet — the work the search
-exists to do — is to marry Kraft arithmetic to cyclotomic complexity in
-a way that does not depend circularly on the circle. Cyclotomic depth
-`phi(2n)/2` has an algebraic, Galois-theoretic definition; Kraft budgets
-have a coding-theoretic definition; the marriage would put a
-prefix-free-encoding floor on objects of cyclotomic depth, denominated
-in bits, in a model whose primitives don't smuggle the circle in as a
-free constant. We do not have this. The bet is that it exists.
+**The (task, model, ledger) triple.** The program's best-current
+candidate triple is:
+
+- **Task.** T1 (enumerate corner positions to precision `10^-k`) or T3
+  (distinguish pairs `(n, k)` whose round-trace agrees but whose actual
+  trace differs at precision `epsilon`). See
+  [memos/COUNTING-APPARATUS.md](memos/COUNTING-APPARATUS.md) §(B).
+- **Model.** Certification-preserving algebraic-arithmetic over `Q`.
+  Seven open axioms
+  ([memos/LEDGER-PIVOT-SEARCH.md](memos/LEDGER-PIVOT-SEARCH.md)
+  §"Certification-preserving model: open axioms"): (1) algebraic
+  constants as advice versus paid adjunctions; (2) coefficient
+  height-boundedness; (3) binary additions versus arbitrary linear
+  combinations; (4) precomputed DFT-like matrices/linear transforms
+  free versus paid; (5) field adjunctions paid by degree, height, or
+  both; (6) root isolation paid by precision, certification depth, or
+  both; (7) uniformity in `N` versus nonuniform advice.
+- **Ledger.** `V_cert` at `(P3, A2)`. If the driving impossibility is
+  promoted from working form to theorem, and if a primitive-op cost
+  theorem connects `V_cert` components to actual computation in the
+  chosen model, then the matching claim would assert that no strictly
+  lighter ledger serves a tight primitive-op lower bound on T1 or T3.
+
+This is the triple Gentle Criminal asked for as a candidate target.
+Committable in principle; what remains open is whether the matching
+argument survives stress-testing, whether the seven axioms close
+consistently, and whether the needed primitive-op cost theorem exists.
+
+**The neighboring-model question.** Gentle Criminal's second half — "if
+changing to any neighboring model changes the truth, what theorem is
+the program actually trying to prove?" — has a specific answer via
+[fft/FOUR-FRAMEWORK-SYNTHESIS.md](fft/FOUR-FRAMEWORK-SYNTHESIS.md).
+The FFT-complexity literature comprises four distinct frameworks at
+four distinct axiom-coordinates:
+
+- **Auslander–Feig–Winograd 1984** — rational-equivalence-preserving;
+  semisimple cyclotomic decomposition; multiplicative complexity under
+  rational equivalence.
+- **Morgenstern 1973** — coordinate-sensitive; bounded-coefficient
+  determinant-growth lower bound.
+- **Winograd 1978** — bilinear multiplicative complexity; modular-
+  product theorem `mu(T_P) = 2n - k` over a chosen field.
+- **Schönhage–Strassen 1971** — operational uniform bit-complexity /
+  Boolean-circuit; FFT over a representation in which root
+  multiplication is cheap by construction.
+
+Pairwise non-composability is structural at named axiom splits, not
+accidental:
+
+- AFW / Morgenstern: incompatible at axioms 2, 3, 4. AFW's free
+  rational-equivalence destroys the coordinate-sensitive determinant
+  accounting Morgenstern depends on.
+- AFW / Winograd: translatable inside algebraic multiplicative
+  complexity, *not* certification-cost preserving (axiom 4).
+- AFW / Schönhage–Strassen: incompatible at axioms 3, 4, 7.
+- Morgenstern / Winograd: incompatible at axioms 2, 3, 5.
+- Morgenstern / Schönhage–Strassen: translatable with cost (axioms
+  2, 3, 7).
+- Winograd / Schönhage–Strassen: translatable with cost (axioms 1, 2,
+  5, 7).
+
+Three splits matter most: axiom 4 (whether linear change-of-form is
+free), axioms 2/3 jointly (whether large constants or unbounded linear
+combinations can absorb algebraic content — Morgenstern's positive
+lesson), and axiom 7 (whether fixed-size construction carries uncharged
+advice — the Kraft side cannot use a per-size family without paying for
+the family description).
+
+The program's certification-preserving regime is a *fifth* axiom-
+coordinate, distinct from all four:
+
+- closest to Schönhage–Strassen on axioms 3, 4, 7 (binary primitives,
+  paid linear transforms, uniform in `N`);
+- adds paid algebraic constants in axiom 1, paid algebraic height in
+  axiom 2, paid adjunctions by degree in axiom 5, paid root isolation
+  by precision and certification depth in axiom 6;
+- shares Morgenstern's spirit on axiom 2 (cost-bearing coefficient
+  size), but uses algebraic height rather than complex-modulus
+  boundedness.
+
+What theorem is the program trying to prove? *The fifth-coordinate
+primitive-op lower bound on `V_cert` for T1 or T3, not a transport from
+any neighbor.* Bridge work is **construction**, not import. AFW supplies
+cyclotomic decomposition; Morgenstern supplies the boundedness
+mechanism; Winograd supplies modular-product and CRT structure;
+Schönhage–Strassen supplies the uniform operational template. No
+neighbor supplies the theorem.
+
+**The bet, sharpened.** The earlier framing's bet was high-level: marry
+Kraft arithmetic to cyclotomic complexity in a way that does not depend
+circularly on the circle. The synthesis sharpens this to a specific
+construction agenda
+([fft/FOUR-FRAMEWORK-SYNTHESIS.md](fft/FOUR-FRAMEWORK-SYNTHESIS.md)
+§"Construction Required"):
+
+> Construct the fifth-coordinate framework with the axiom commitments
+> above. Operationalize the algebraic ledger so cellwise value data,
+> height witnesses, and isolating intervals are objects the model
+> registers (not erased by rational equivalence). Import boundedness as
+> a theorem in the certification-producing setting, not as a slogan
+> from Morgenstern. Uniformize the cost accounting in the
+> Schönhage–Strassen template, ideally compatible with Kraft. Prove the
+> matching claim for `V_cert` at T1 or T3 in the resulting model.
+
+Closure-depth on `K_n` enters as forced algebraic content: the
+program-side closure-asymmetry observation recorded in
+[fft/HEIDEMAN-JOHNSON-BURRUS-1985-BRIEF.md](fft/HEIDEMAN-JOHNSON-BURRUS-1985-BRIEF.md)
+§5 shows `K_n` is the unique multiplicatively-closed half of the
+involution decomposition of `Q(zeta_n)`, so the algebraic-side
+commitment is forced by closure rather than aesthetic. Kraft–Parseval
+enters as program-internal accounting, not as smuggled circle-content.
+
+The bet's specificity: from "marry two registers" to "construct at one
+specific axiom-coordinate, with named commitments per axiom, and prove
+a matching claim of named shape on a named ledger for a named task in
+a named model."
+
+**What stays open.**
+
+- Whether the seven axioms close consistently — whether the regime as
+  named is internally coherent, or whether some pair of commitments is
+  mutually exclusive.
+- Whether the matching argument survives stress-testing. Q8 calibrated
+  below-matching as coarse-but-valid (not failure); regime structure
+  holds, but the matching-at-coordinate claim has not been argued
+  ironclad.
+- Whether the fifth-coordinate construction can be carried out. The
+  synthesis identifies the coordinate as distinct; the construction
+  itself is not done. Quarantine has narrowed but not lifted.
+- Whether closure-asymmetry's algebraic content translates into the
+  compute-cost setting without re-importing the circle. Forced-by-
+  closure is algebraic; whether it produces a primitive-op cost the
+  model registers is a separate question.
+
+**Bouncing-out probability.**
+
+The probability of being bounced out for *failing to specify* has
+dropped substantially. The triple is named; the neighbors are mapped;
+the bet's shape is articulated. A reader who shares Gentle Criminal's
+discipline can read the program's commitments off the synthesis
+directly rather than guess them.
+
+The probability of being bounced out for *failing to construct* has not
+dropped. The construction is hard precisely because the program's
+coordinate is genuinely fifth — no neighbor supplies the theorem. If
+the construction fails, the program falls from a higher branch: it
+falls having specified the target, which produces a more useful
+structural state (a negative result at a named coordinate, with a
+mapped neighborhood) but no less a fall.
+
+**Exchange-rate hygiene, internalized as a target.** Each currency the
+program wants to use — algebraic height, cyclotomic depth, primitive-op
+count, certification depth — is mapped to a specific axiom in the
+certification-preserving model-to-be with a proposed cost rule. The
+earlier "metaphor until model legalizes" has become "this is the
+candidate model; these are the conversions it must legalize; this is
+which axiom each rides on." Where exchange remains illegal under the
+current axiom commitments, the synthesis records why.
+
+What the program does not yet earn is the proof itself. That is fair,
+and the quarantine on "construction not yet done" stays exactly where
+Gentle Criminal would leave it.
 
 ---
 
@@ -252,13 +398,14 @@ about one subject*, and anything less is a museum. The program
 fundamentally rejects this hierarchy.
 
 The closure-depth no-go ([memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md))
-is a theorem that *no functor unifies* the log-side and circle-side
-closure generators. The program's own load-bearing result says that the
-strongest form of unification — a functorial identification — does not
-exist.
+is a theorem under the native functorial axioms A1-A4: no such native
+functor unifies the log-side and circle-side closure generators while
+preserving the required closure-generator depth. The program's own
+load-bearing result rules out that strongest named form of unification,
+not every imaginable weaker comparison.
 
-Answering All-for-One in his preferred register would
-contradict the program's primary theorem.
+Answering All-for-One in his preferred register would require ignoring
+that A1-A4 no-go.
 
 The unifying content of such a program is the *discipline*, not an
 object. The triad

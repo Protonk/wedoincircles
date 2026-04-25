@@ -2,10 +2,10 @@
 
 Cross-source synthesis on the four FFT-complexity frameworks extracted in:
 
-- [memos/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md](memos/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md)
-- [memos/MORGENSTERN-1973-BRIEF.md](memos/MORGENSTERN-1973-BRIEF.md)
-- [memos/WINOGRAD-1978-BRIEF.md](memos/WINOGRAD-1978-BRIEF.md)
-- [memos/SCHOENHAGE-STRASSEN-1971-BRIEF.md](memos/SCHOENHAGE-STRASSEN-1971-BRIEF.md)
+- [fft/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md](fft/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md)
+- [fft/MORGENSTERN-1973-BRIEF.md](fft/MORGENSTERN-1973-BRIEF.md)
+- [fft/WINOGRAD-1978-BRIEF.md](fft/WINOGRAD-1978-BRIEF.md)
+- [fft/SCHOENHAGE-STRASSEN-1971-BRIEF.md](fft/SCHOENHAGE-STRASSEN-1971-BRIEF.md)
 
 This is a third-register synthesis in the sense of
 [CONTRIBUTING.md](CONTRIBUTING.md): it is intended as load-bearing
@@ -43,7 +43,7 @@ three things that Schoenhage-Strassen does not supply:
   depth in axiom 6.
 
 Therefore the bridge work in
-[memos/FFT-CYCLOTOMIC-COMPLEXITY.md](memos/FFT-CYCLOTOMIC-COMPLEXITY.md)
+[fft/FFT-CYCLOTOMIC-COMPLEXITY.md](fft/FFT-CYCLOTOMIC-COMPLEXITY.md)
 is construction, not import. The existing literature supplies
 ingredients, obstructions, and model templates; no briefed paper already
 lives at the program's coordinate.
@@ -69,14 +69,14 @@ recorded in the corresponding source-extraction brief.
 
 | Tag | Witness | Proof technique / role |
 | --- | --- | --- |
-| AFW-1 | For every finite abelian group `G`, `F(G)` is rationally equivalent to a semisimple cyclotomic linear system, and `p(M)` counts essential nonrational multiplication/division steps. | p-primary decomposition, Vandermonde blocks, CRT, tensor products of semisimple algebras, and the Auslander-Winograd semilinear-system theorem. Establishes the AFW coordinate on A1, A3, A4, A5, and A7. |
-| AFW-2 | AFW does not count additions, rational preprocessing/postprocessing, bit complexity, numerical precision, height of algebraic constants, or construction of cyclotomic constants. | Model definition: multiplicative complexity after rational-equivalence quotient. Establishes the AFW coordinate on A2, A3, A5, and A6. |
+| AFW-1 | For every finite abelian group `G`, `F(G)` is rationally equivalent to a semisimple cyclotomic linear system, and `p(M)` counts essential nonrational multiplication/division steps. | p-primary decomposition, Vandermonde blocks, CRT, tensor products of semisimple algebras, and the Auslander-Winograd semilinear-system theorem. Establishes the AFW coordinate on A1, A3, A4, and A5. |
+| AFW-2 | AFW does not count additions, rational preprocessing/postprocessing, bit complexity, numerical precision, height of algebraic constants, or construction of cyclotomic constants; the AFW brief's addendum also records the fixed-system/nonuniform gap. | Model definition: multiplicative complexity after rational-equivalence quotient, plus fixed finite-system scope. Establishes the AFW coordinate on A2, A3, A5, A6, and A7. |
 | MOR-1 | A bounded-coefficient linear algorithm adjoins `h = lambda f + mu g` with `|lambda|, |mu| <= c`, and satisfies `m+ > log A(F) / log(2c)`. For the DFT and `c = 1`, this gives `m+ > (n/2) log_2 n`. | Determinant / volume-growth argument using multilinearity and the coefficient bound. Establishes Morgenstern's A2/A3 commitments and the lower-bound mechanism. |
 | MOR-2 | The theorem applies to each fixed coefficient matrix `F`; coefficients may be arbitrary complex numbers subject to the modulus bound, with no field-adjunction, root-isolation, bit, or uniform-code accounting. | Fixed-matrix linear-circuit framework. Establishes Morgenstern's A1, A4, A5, A6, and A7 commitments. |
-| WIN-1 | For multiplication modulo a degree-`n` polynomial `P`, the imported modular-product theorem is `mu(T_P) = 2n - k`, where `k` is the number of distinct irreducible factors of `P`; multiplication by fixed field elements is not counted. | Bilinear multiplicative complexity plus CRT factorization. Establishes Winograd's A1, A3, and A5 commitments. |
-| WIN-2 | The DFT algorithms are built from cyclic convolution, Rader/Good decompositions, CRT recombinations, permutations, and sometimes extension fields that split more factors and reduce multiplication count. | Constructive change-of-form algorithmics. Establishes Winograd's A4 and A7 limitations and the non-certification-preserving use of field choice. |
-| SS-1 | Two `N`-digit integers are multiplied in `O(N log N log log N)` on multitape Turing machines and Boolean networks; primitives are head movements or two-input gates. | Recursive FFT construction with explicit operational cost. Establishes Schoenhage-Strassen's A3, A4, and A7 commitments. |
-| SS-2 | In `Z_{F_n}`, the element `2` is a primitive `2^(n+1)`-th root of unity, so twiddle multiplication is cyclic shift; the complex method instead uses fixed-point precision. | Representation engineering: make the algebraic root operation operationally cheap, or pay fixed-point precision. Establishes Schoenhage-Strassen's A1, A2, A4, A5, and A6 commitments. |
+| WIN-1 | For multiplication modulo a degree-`n` polynomial `P`, the imported modular-product theorem is `mu(T_P) = 2n - k`, where `k` is the number of distinct irreducible factors of `P`; multiplication by fixed field elements is not counted. | Bilinear multiplicative complexity plus CRT factorization. Establishes Winograd's A1 and A3 commitments. |
+| WIN-2 | The DFT algorithms are built from cyclic convolution, Rader/Good decompositions, CRT recombinations, permutations, and sometimes extension fields that split more factors and reduce multiplication count. | Constructive change-of-form algorithmics. Establishes Winograd's A4, A5, and A7 limitations and the non-certification-preserving use of field choice. |
+| SS-1 | Two `N`-digit integers are multiplied in `O(N log N log log N)` on multitape Turing machines and Boolean networks; primitives are head movements or two-input gates. | Recursive FFT construction with explicit operational cost. Establishes Schoenhage-Strassen's A3 and A7 commitments, and the operational baseline against which A4 is read. |
+| SS-2 | In `Z_{F_n}`, the element `2` is a primitive `2^(n+1)`-th root of unity, so twiddle multiplication is cyclic shift; the complex method instead uses fixed-point precision. | Representation engineering: make the algebraic root operation operationally cheap, or pay fixed-point precision. Establishes Schoenhage-Strassen's A1, A2, and A4 commitments; A5 and A6 are program-side model inferences from the absence of an abstract adjunction primitive and the split between fixed-point precision and exact finite-ring arithmetic. |
 
 ## The Five Coordinates
 

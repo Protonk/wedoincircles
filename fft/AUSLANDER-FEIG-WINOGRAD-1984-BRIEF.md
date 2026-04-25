@@ -6,7 +6,7 @@ Advances in Applied Mathematics 5 (1984), 87-109
 ([sources/multiplicative-complexity.pdf](sources/multiplicative-complexity.pdf)).
 
 **What was read.** The local PDF was read as the first directed-read item
-from [memos/FFT-CYCLOTOMIC-COMPLEXITY.md](memos/FFT-CYCLOTOMIC-COMPLEXITY.md)
+from [fft/FFT-CYCLOTOMIC-COMPLEXITY.md](fft/FFT-CYCLOTOMIC-COMPLEXITY.md)
 because that search memo now treats AFW 1984 as the central structure
 paper for the cyclotomic-complexity bridge.
 

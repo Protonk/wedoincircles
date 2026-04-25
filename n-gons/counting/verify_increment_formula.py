@@ -3,10 +3,12 @@
 Conjecture:
     odd n:         Δ|M_n| = (n - 1) / 2
     n ≡ 0 mod 4:   Δ|M_n| = (n - 4) / 2
-    n ≡ 2 mod 4:   Δ|M_n| = (n - 6) / 2        (with n = 6 flagged special)
+    n ≡ 2 mod 4:   Δ|M_n| = (n - 6) / 2
 
 Computes |M_n| directly via counting_utils.multiplicity_word for n in
-[3, N_MAX] and reports any mismatch.
+[3, N_MAX] and reports any mismatch. The direct count has boundary
+exceptions at n = 4 and n = 6 before the stable residue-class pattern
+begins.
 """
 
 import os

@@ -6,7 +6,7 @@ the linear complexity of the fast Fourier transform," Journal of the ACM
 ([sources/FFT-lower-bound.pdf](sources/FFT-lower-bound.pdf)).
 
 **What was read.** The local two-page PDF was read with the specific lens
-from [memos/FFT-CYCLOTOMIC-COMPLEXITY.md](memos/FFT-CYCLOTOMIC-COMPLEXITY.md):
+from [fft/FFT-CYCLOTOMIC-COMPLEXITY.md](fft/FFT-CYCLOTOMIC-COMPLEXITY.md):
 does Morgenstern's bounded-coefficient hypothesis supply the structural
 constraint that keeps the A-axis of
 [memos/LEDGER-PIVOT-SEARCH.md](memos/LEDGER-PIVOT-SEARCH.md) cost-bearing,

@@ -300,6 +300,56 @@ pre-1882 in provenance.
 
 ---
 
+## Literature provenance
+
+The strip-H¹ identification stated above is, for the case of a planar
+curve close to the unit circle, structurally identical to a published
+result from the quantitative isoperimetric stability literature.
+**Fuglede 1989** (Theorem 1.2 (I.a)) establishes for nearly-spherical
+domains in `R^n`:
+
+```text
+(1/10)(||u||^2_2 + ||grad u||^2_2)  <=  Delta  <=  (3/5) ||grad u||^2_2,
+```
+
+where `u` is the radial deviation `R(xi) = 1 + u(xi)` from the unit
+sphere. The `n = 2` case was first proven in **Fuglede 1986**;
+Fuglede 1989 extends to all `n >= 2` with explicit constants
+(improvable to `(0.24, 0.54)` for `n = 2`). Fuglede's footnote 1
+(page 619) traces the `n = 2` ancestry back to **Hurwitz 1902**'s
+Fourier-series proof of the isoperimetric inequality.
+
+What this means for the closure stated above. The equality
+`||y_n'||_L2^2 = Delta(gamma_tilde_n) + R_n` — with the explicit
+`R_n` and its geometric attribution — sits inside an established
+research thread. The program's contribution is not the existence of
+the Sobolev-norm-on-deviation identification (Hurwitz, Fuglede 1986
+already had the planar case) but its specialization to the
+**circumscribed regular `n`-gon family**, with `R_n` to order
+`1/n^6` and the `(4/45) + (12/45)` decomposition into Hessian and
+cubic-curvature pieces.
+
+A complementary route in the same footnote: Hurwitz's Fourier proof
+also yields Bonnesen's geometric inequality
+`(r_2 - r_1)^2 <= c · (L^2 - 4 pi A) / (4 pi)` with `c = 5 pi`,
+weaker than Bonnesen 1924's own sharp `c = 1`. The Sobolev/H¹ route
+is sharp on the **rate** of `Delta_n` decay (`Theta(1/n^2)` matches
+the actual leading order). The geometric Bonnesen route is sharp on
+the **constant** (`c = 1` is provably best). They are not
+interchangeable: rate statements on regular `n`-gons should use
+Sobolev/H¹; constant-tight statements should use Bonnesen direct.
+
+References:
+
+- Fuglede, B. (1989). *Stability in the isoperimetric problem for
+  convex or nearly spherical domains in `R^n`.* Trans. AMS **314**(2),
+  pp. 619–638. Briefed at
+  [iso/FUGLEDE-1989-BRIEF.md](iso/FUGLEDE-1989-BRIEF.md).
+- Hurwitz 1902 (Fuglede ref [8]), the original `n = 2` Fourier proof.
+- Fuglede 1986 (Fuglede ref [6]), the first `n = 2` Sobolev proof.
+
+---
+
 ## Follow-up edits this memo recommends
 
 1. **`memos/STRIP-TISSUE-FOURIER.md`**, end of file. Replace the open

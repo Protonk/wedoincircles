@@ -212,8 +212,10 @@ furthest-afield:
    structural pattern: `cos(π/7)`, `cos(3π/7)`, `cos(5π/7)` are
    Galois conjugates over `ℚ` with shared minimal polynomial
    `8x³ − 4x² − 4x + 1`, illustrating the form of conjugate-collapse
-   the min-poly-only ledger inherits; sweep x-cells exhibit related
-   collapses with their own min-polys, verified per-cell by Sage).
+   the min-poly-only ledger inherits. This is the `x = cos(π/7)`
+   normalization; the `y = 2 cos(π/7)` normalization has monic cubic
+   `y³ − y² − 2y + 1`. Sweep x-cells exhibit related collapses with
+   their own min-polys, verified per-cell by Sage).
    Surviving form is `V_cert(N) = Σ_{cells C} (deg(P_C) + height(P_C)
    + root-isolation cost)` at lattice coordinate `(P3, A2)`, dominating
    `F2` and incomparable with `O_cert` — see §"Ledger lattice" below.
@@ -294,7 +296,7 @@ arbitrary tiebreaks that the lattice dissolves.
   A-axis, because algebraic depth can be moved into coefficients,
   basis changes, or precomputed linear maps (the FFT mult-to-add
   conversion is the canonical mechanism; see Hazard 2 of
-  [memos/FFT-CYCLOTOMIC-COMPLEXITY.md](memos/FFT-CYCLOTOMIC-COMPLEXITY.md)).
+  [fft/FFT-CYCLOTOMIC-COMPLEXITY.md](fft/FFT-CYCLOTOMIC-COMPLEXITY.md)).
 
 The lattice described below is the semantic lattice. When the memo
 speaks of "matching" and "cost," it is implicitly fixing a
@@ -446,7 +448,7 @@ positional/incidence (`F2`), strengthened-task certificate production
 certifier.** Two structural caveats follow. First, the product order
 treats positional and algebraic content as independent axes, which is
 optimistic: rational equivalence (per Hazard 5 of
-[memos/FFT-CYCLOTOMIC-COMPLEXITY.md](memos/FFT-CYCLOTOMIC-COMPLEXITY.md))
+[fft/FFT-CYCLOTOMIC-COMPLEXITY.md](fft/FFT-CYCLOTOMIC-COMPLEXITY.md))
 can preserve algebraic certification while destroying per-cell
 positional structure, so "incomparability" rulings between two ledgers
 can reflect axis coupling rather than orthogonality, and should be
@@ -462,7 +464,7 @@ deferred to whatever proves the matching.
 **Importing existing literature bounds requires structure-preservation
 checks.** A multiplicative-complexity bound from the FFT-complexity
 literature (e.g., Auslander–Feig–Winograd 1984 per
-[memos/FFT-CYCLOTOMIC-COMPLEXITY.md](memos/FFT-CYCLOTOMIC-COMPLEXITY.md))
+[fft/FFT-CYCLOTOMIC-COMPLEXITY.md](fft/FFT-CYCLOTOMIC-COMPLEXITY.md))
 lives at a coarser grain than `V_cert` and rests on rational-equivalence
 preservation — exactly the relation that can scramble per-cell
 positional structure. Importing such a bound into `V_cert`-style
@@ -570,7 +572,7 @@ precision, uniform in `N`) are the working defaults; explicit
 commitment is pending and is itself part of the bridge work.
 
 **Partial settlement from Morgenstern 1973**
-([memos/MORGENSTERN-1973-BRIEF.md](memos/MORGENSTERN-1973-BRIEF.md)):
+([fft/MORGENSTERN-1973-BRIEF.md](fft/MORGENSTERN-1973-BRIEF.md)):
 the existing FFT-complexity literature's bounded-coefficient lower
 bound settles axiom 2 in a *modulus-bounded* variant (rather than
 algebraic-height-bounded), axiom 3 in *binary fan-in* form, and
@@ -588,7 +590,7 @@ than free bounded advice.
 space, plus its place in the four-framework FFT-complexity literature
 (AFW, Morgenstern, Winograd 1978, Schönhage–Strassen), is recorded as
 load-bearing at
-[memos/FFT-COMPLEXITY-FOUR-FRAMEWORK-SYNTHESIS.md](memos/FFT-COMPLEXITY-FOUR-FRAMEWORK-SYNTHESIS.md).
+[fft/FOUR-FRAMEWORK-SYNTHESIS.md](fft/FOUR-FRAMEWORK-SYNTHESIS.md).
 That memo establishes the program's regime as a fifth axiom-coordinate
 distinct from all four briefed frameworks, and articulates the bridge
 work as construction (not import) of that fifth coordinate.

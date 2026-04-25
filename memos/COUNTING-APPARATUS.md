@@ -1,8 +1,24 @@
 # COUNTING-APPARATUS
 
-Working notes for the program's most uncertain ambition: binding the counting apparatus at `n-gons/counting/` to the circle-side equivariant surrogate, so that the counting word `M_N` becomes a compute-cost ledger and the whole thing can be stated as a computational-impossibility lower bound paralleling Landfall's log-side result.
+Working notes for the program's most uncertain ambition: binding the
+counting apparatus at `n-gons/counting/` to the circle-side equivariant
+surrogate, so that a ledger extracted from the counting apparatus can
+support a computational-impossibility lower bound paralleling
+Landfall's log-side result. The original hope was that the counting
+word length `|M_N|` itself would be that ledger; the current
+ledger-pivot state drops `|M_N|` for T1/T3 and promotes `V_cert`
+under a certification-preserving compute model, with `F2` reserved for
+a strengthened typed-incidence T2 branch.
 
-This is a **search doc**, not a result doc. It lays out four prerequisites — (A) compute model, (B) task that makes counting the natural ledger, (C) portrait of τ strong enough to carry belief, (D) small-case walkthrough — tracks what's known and unknown for each, and notes which existing repo materials feed in. Progress gets appended here until the pieces are sharp enough to state a conjecture; at that point the result-shaped material promotes to `BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md` (Inscription §§1/4 hardening) and possibly its own companion doc.
+This is a **search doc**, not a result doc. It lays out four
+prerequisites — (A) compute model, (B) task that makes the ledger
+natural, (C) portrait of τ strong enough to carry belief, (D)
+small-case walkthrough — tracks what's known and unknown for each, and
+notes which existing repo materials feed in. Progress gets appended
+here until the pieces are sharp enough to state a conjecture; at that
+point the result-shaped material promotes to
+`BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md` (Inscription §§1/4
+hardening) and possibly its own companion doc.
 
 ---
 
@@ -18,7 +34,10 @@ Circle-side analog, desired shape:
 
 - **Equivariant surrogate**: `round(2cos(2π/n))`, free in the lattice representation (integer arithmetic on R_n), exact on the crystallographic set {1, 2, 3, 4, 6}.
 - **Residue**: τ(n) = 2cos(2π/n) − round(2cos(2π/n)), algebraic of degree φ(n)/2 over ℚ, zeros exactly on the crystallographic set, values in [−1/2, 1/2].
-- **Compute-cost lower bound**: any process beating round-trace at n-gon corner resolution N must perform ≥ g(N) primitive operations, where g(N) matches the counting apparatus's `M_N` growth.
+- **Compute-cost lower bound**: any process beating round-trace at
+  n-gon corner resolution N must perform ≥ g(N) primitive operations,
+  where the live Landfall-parallel candidate has g(N) governed by
+  `V_cert` rather than by `|M_N|` length.
 
 Three a-priori facts that make the circle-side ambition plausible, playing the role Gelfond–Schneider / smoothness-break / Padé-closure-failure play on the log side:
 
@@ -44,15 +63,28 @@ The facts exist. The work is to assemble them into a belief-forming portrait and
 
 **Decision gate.** Commit before (B) and (D). Current lean: (3) or (4).
 
-**Open:** whether the chosen model is expressive enough to state the bind without circularity, and restrictive enough that the lower bound isn't vacuous. The compute-model choice is explicitly coupled to the ledger choice. **Update:** `memos/LEDGER-PIVOT-SEARCH.md` §"Task-ledger admissibility" has surfaced a best-current-candidate triple under the original Landfall-parallel ambition: model (3) algebraic-arithmetic over ℚ *in its certification-preserving form (paid adjunctions, bounded constants, no free unbounded linear combinations)* — or model (4) ASLP with charged field extensions — with `V_cert` as the cost ledger, viable for tasks T1 and T3 below. The certification-preserving qualifier is load-bearing: under unbounded-linear readings of algebraic-arithmetic, the A-axis of the lattice collapses (FFT-style mult-to-add conversion) and `V_cert` is no longer matching for T1/T3; see `LEDGER-PIVOT-SEARCH §"Matching is model-indexed"`. The original "lean (3) or (4)" is now narrowed to the certification-preserving triple, *under the working form of the driving impossibility plus a still-needed cost theorem connecting V_cert components to primitive-op count*. Path 1 (crystallographic rank/lattice with ψ-ledger) and the combinatorial F2 alternative remain available as different-theorem branches but require different compute models; see `LEDGER-PIVOT-SEARCH §"Compute-model / ledger coupling"` and §"Task-ledger admissibility". **Note from the AFW directed read** (`memos/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md`): importing a multiplicative-complexity bound from the FFT-complexity literature — the most likely external path to the cost theorem — requires resolving two model-conversion gaps the literature does not bridge for free. Model (3) charges precision and field adjunctions; AFW's m/d count is silent on both. The cost-conversion theorem must decide whether those costs remain free, are bounded by a harmless polynomial, or dominate the desired ledger.
+**Open:** whether the chosen model is expressive enough to state the bind without circularity, and restrictive enough that the lower bound isn't vacuous. The compute-model choice is explicitly coupled to the ledger choice. **Update:** `memos/LEDGER-PIVOT-SEARCH.md` §"Task-ledger admissibility" has surfaced a best-current-candidate triple under the original Landfall-parallel ambition: model (3) algebraic-arithmetic over ℚ *in its certification-preserving form (paid adjunctions, bounded constants, no free unbounded linear combinations)* — or model (4) ASLP with charged field extensions — with `V_cert` as the cost ledger, viable for tasks T1 and T3 below. The certification-preserving qualifier is load-bearing: under unbounded-linear readings of algebraic-arithmetic, the A-axis of the lattice collapses (FFT-style mult-to-add conversion) and `V_cert` is no longer matching for T1/T3; see `LEDGER-PIVOT-SEARCH §"Matching is model-indexed"`. The original "lean (3) or (4)" is now narrowed to the certification-preserving triple, *under the working form of the driving impossibility plus a still-needed cost theorem connecting V_cert components to primitive-op count*. Path 1 (crystallographic rank/lattice with ψ-ledger) and the combinatorial F2 alternative remain available as different-theorem branches but require different compute models; see `LEDGER-PIVOT-SEARCH §"Compute-model / ledger coupling"` and §"Task-ledger admissibility". **Note from the AFW directed read** (`fft/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md`): importing a multiplicative-complexity bound from the FFT-complexity literature — the most likely external path to the cost theorem — requires resolving two model-conversion gaps the literature does not bridge for free. Model (3) charges precision and field adjunctions; AFW's m/d count is silent on both. The cost-conversion theorem must decide whether those costs remain free, are bounded by a harmless polynomial, or dominate the desired ledger.
 
 ---
 
-## (B) A task that makes counting the natural ledger
+## (B) A task that makes the ledger natural
 
-**What it is.** A precise computational task whose primitive-operation cost in the chosen compute model is lower-bounded by `|M_N|` (or some explicit function of M_N). This is the bind itself — the load-bearing piece, and the reason the whole ambition might be vain.
+**What it is.** A precise computational task whose primitive-operation
+cost in the chosen compute model is lower-bounded by an explicit
+ledger. The original proposal used `|M_N|`, the length of the
+outside-out counting word, as that ledger. The ledger-pivot search has
+closed that branch negative for T1/T3: `|M_N|` factors through the
+wrong quotient and is no longer the theorem-track ledger for the
+Landfall-parallel compute-cost ambition.
 
-The outside-out counting word `M_N` is already an output of a specific computation — the outside-out corner sweep over regular n-gons n ∈ [3, N] circumscribed around the unit circle, projected to strip coordinates. Each cell of `M_N` records a corner-count at a specific X-value on [−1, 1]. The question is whether this output's length and update complexity are a real cost measure for a task that requires beating the round-trace surrogate.
+The outside-out counting word `M_N` remains an output of a specific
+computation — the outside-out corner sweep over regular n-gons
+n ∈ [3, N] circumscribed around the unit circle, projected to strip
+coordinates. Each cell of `M_N` records a corner-count at a specific
+X-value on [−1, 1]. What changed is the cost observable: for T1/T3,
+the live candidate is `V_cert` under a certification-preserving model;
+for a strengthened T2-style typed-incidence task, the live candidate is
+`F2`.
 
 **Candidate task statements:**
 
@@ -60,15 +92,43 @@ The outside-out counting word `M_N` is already an output of a specific computati
 - **T2.** Compute `M_N` itself. Output: the integer sequence of length |M_N|.
 - **T3.** Distinguish pairs (n, k) whose round-trace agrees but whose actual trace differs at precision ε. Output: a distinguishing witness at each such pair.
 
-T2 is simplest but risks being tautological ("|M_N| is the cost of computing M_N"). T1 and T3 are substantive but need a lower-bound argument that ties them to M_N.
+T2 is simplest but risks being tautological ("|M_N| is the cost of
+computing M_N"). Under the current lattice analysis, literal T2 does
+not demand an algebraic-content ledger; only a strengthened typed-
+incidence version of T2 has `F2` as a matching ledger. T1 and T3 are
+the substantive Landfall-parallel tasks, with `V_cert` as the current
+best candidate under certification-preserving algebraic-arithmetic.
 
 **Generate-vs-distinguish framing (Fortnow).** T1 and T2 are *generating* tasks — produce `x` given input, in the sense of Fortnow's time-bounded `C^t`. T3 is a *distinguishing* task — label a candidate `z` as `=x` or not in time `t`, in the sense of `CD^t`. See `memos/FORTNOW-KOLMOGOROV-BRIEF.md` §7. Without a time bound, `C ≤ CD + O(1)` by brute-force search, but in polynomial time Fortnow's Theorem 7.2 says unconditional `C^q ≤ CD^p + c log|x|` is equivalent to a poly-time function emitting the unique satisfying assignment of any formula with exactly one satisfying assignment — "only slightly weaker than `P = NP`." A direct poly-time T3 → T2 reduction would therefore sit near `P = NP` and should be treated as presumptively unavailable.
 
-The consequence for this search: the right direction is to land on T3 directly, with `|M_N|` as the natural ledger, and *not* reduce it to T2. Fortnow's Theorem 8.1 gives a matching upper bound `CD^p(x) ≤ 2 log|A ∩ Σ^n| + c log n` for any `A ∈ P`, which a T3 lower bound has to beat to be non-trivial. See `memos/LOWER-BOUND-COUNTRY.md` §(E) for the Kolmogorov-complexity reading thread that makes this concrete.
+The consequence for this search: the right direction is to land on T3
+directly, and *not* reduce it to T2. Fortnow's Theorem 8.1 gives a
+matching upper bound `CD^p(x) ≤ 2 log|A ∩ Σ^n| + c log n` for any
+`A ∈ P`, which a T3 lower bound has to beat to be non-trivial. See
+`memos/LOWER-BOUND-COUNTRY.md` §(E) for the Kolmogorov-complexity
+reading thread that makes this concrete. The old version of this
+paragraph named `|M_N|` as the natural T3 ledger; that is now the
+retired branch.
 
-**Target claim:** the cost of T1 (or T3) is Θ(|M_N|) in the chosen compute model. The easy direction (|M_N| as an upper bound, via the outside-out sweep) is constructive. The hard direction (|M_N| as a lower bound) is the real research question.
+**Target claim:** under certification-preserving algebraic-arithmetic
+over `ℚ`, the cost of T1 or T3 is lower-bounded by the `V_cert`
+components forced internally by the model: minimum-polynomial degree,
+height, and root-isolation cost. The easy direction is still
+constructive, in the sense that the outside-out sweep provides a way to
+produce the relevant ordered cells. The hard direction is now the
+model-indexed lower bound: proving that any process completing T1/T3
+must internalize `V_cert`-level work.
 
-**Open:** given the Fortnow framing above, the earlier question — is there a direct reduction from beating-round-trace (T3) to corner-enumeration (T2)? — is presumptively closed in the polynomial-time direction: a yes-answer would imply a result near `P = NP`. The live question becomes whether T3 can be attacked directly, with `|M_N|` as the natural ledger, without any reduction to T2. If yes, the bind stands on T3's own terms. If no, the bind needs a different T3-shaped task or a different cost measure than `|M_N|`. **(Now resolved — see Update below: the "different cost measure" branch was taken.)**
+**Open:** given the Fortnow framing above, the earlier question — is
+there a direct reduction from beating-round-trace (T3) to corner-
+enumeration (T2)? — is presumptively closed in the polynomial-time
+direction: a yes-answer would imply a result near `P = NP`. The live
+question is whether T3 can be attacked directly with `V_cert` under the
+certification-preserving model, and whether the seven model axioms can
+be committed so that `V_cert` is a real primitive-op ledger rather than
+a semantic certificate. Literal T2 is no longer the Landfall-parallel
+branch; strengthened typed-incidence T2 is the separate `F2` theorem
+track.
 
 **Update from `LEDGER-PIVOT-SEARCH §"Task-ledger admissibility"`.** The "different cost measure than `|M_N|`" question is now answered, with the model-indexing qualifier load-bearing: under *certification-preserving* algebraic-arithmetic over `ℚ` (paid adjunctions, bounded constants, no free unbounded linear combinations), `V_cert` (per-cell value certificates) is the lattice-matching ledger for both T1 and T3, and `|M_N|` is dropped as a ledger candidate for those tasks. The matching claim is *model-induced*, not task-literal: T1 and T3 don't intrinsically demand min-poly / height / isolating-interval data; the certification-preserving model forces them as the internal accounting of any process producing the task's output. Under unbounded-linear readings of algebraic-arithmetic the matching demotes (per `LEDGER-PIVOT-SEARCH §"Matching is model-indexed"`); see the open-axioms list there for what "certification-preserving" needs committed before it becomes a model-theoretic regime rather than a label. T2 admits no algebraic-content ledger except by reformulation as typed-incidence production, in which case `F2` (the six-field incidence ledger) is the match. The program's branch choice — Landfall-parallel cyclotomic-depth lower bound (T1/T3 + `V_cert` under certification-preserving algebraic-arithmetic) vs. combinatorial typed-incidence theorem (T2 + `F2`) — is now legible at the compute-cost level.
 
