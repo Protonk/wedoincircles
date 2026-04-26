@@ -313,8 +313,10 @@ Existing material this memo draws on:
 - [memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md) —
   the closure-depth no-go, in `K_n` vocabulary. The cyclotomic ladder is
   the same object the FFT-complexity literature factorizes.
-- [memos/LANDFALL-EXPORT.md](memos/LANDFALL-EXPORT.md) — the log-side
-  Kraft accounting (§5) that the bridge wants to import to.
+- [sources/landfall.pdf](sources/landfall.pdf) — the log-side Kraft
+  accounting (§5) that the bridge wants to import to; see
+  [paper/LANDFALL-EXPORT.md](paper/LANDFALL-EXPORT.md) for the slim
+  proof-template extract.
 - [memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md](memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md)
   and [memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md](memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md) —
   the Kraft-Parseval budget that wants Morgenstern as a load-bearing input.

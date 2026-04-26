@@ -144,4 +144,4 @@ This brief freezes when each step in the program's compute-cost argument can be 
 - **L–W essential**: the argument depends on L–W in a load-bearing way. Flag. Check whether a pre-L–W substitute exists.
 - **Circular**: the argument purports to derive L–W (or a consequence the target implies) while invoking L–W as a step. Refactor.
 
-Promotion: once the Inscription §§1/4 hardening in `BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md` is drafted and each step is L–W-tagged, the content of this brief's §"The circularity risk" migrates into a methodology appendix of that paper-plan, and this brief reduces to a pointer.
+Promotion: once a compute-cost argument is drafted and each step is L–W-tagged, the content of this brief's §"The circularity risk" migrates into a methodology appendix of that writeup, and this brief reduces to a pointer.

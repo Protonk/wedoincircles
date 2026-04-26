@@ -12,9 +12,9 @@ Each entry below is a short bestiary with its role. Full content is in the linke
 
 ### LANDFALL-EXPORT
 
-The log-side program reference. Foundational write-up of the floating-point residue ε(m) = log₂(1+m) − m, the six-wall structure that forces a compute-cost lower bound, Mitchell's pseudo-log L = E + m as the equivariant surrogate, and the program-facing exports (β arithmetic type, Gosper's CF machine, the Padé wall at §4) that other memos build on.
+Paper-level extract of three proof templates from Landfall: affine closure, no-invariant-measure aggregation, and finite-closure refusal. The full source paper remains at `sources/landfall.pdf` for the six-wall structure, Kraft section, pointwise dyadic transcendence, and program-facing exports.
 
-→ `memos/LANDFALL-EXPORT.md`
+→ `paper/LANDFALL-EXPORT.md`
 
 ### BIDDER-AND-SON
 

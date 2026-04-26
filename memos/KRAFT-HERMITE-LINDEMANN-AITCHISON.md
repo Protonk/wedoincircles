@@ -1,6 +1,6 @@
 # KRAFT-HERMITE-LINDEMANN-AITCHISON
 
-A search memo on whether effective Hermite–Lindemann at $n=1$ — transcendence of $\pi$ with an effective irrationality measure — can be reproduced as a pure Kraft argument on the circle. The ambition is to replace Hermite's 1873 integral-auxiliary construction with a Kraft–Parseval budget assembled from three pieces already on the program's desk: (i) Aitchison's 1959 density-side Fourier expansion on $\mathbb{T}$ via Poisson summation (`sources/A Statistical Theory of Remnants.pdf`), (ii) the Erdős–Turán–Koksma discrepancy-sum inequality in its multi-dimensional harmonic-weighted form (`sources/K-N-Chapter2.pdf`, §2 and p. 116), and (iii) the Kraft-arithmetic machinery already in use on the log side at `memos/LANDFALL-EXPORT.md` §5.
+A search memo on whether effective Hermite–Lindemann at $n=1$ — transcendence of $\pi$ with an effective irrationality measure — can be reproduced as a pure Kraft argument on the circle. The ambition is to replace Hermite's 1873 integral-auxiliary construction with a Kraft–Parseval budget assembled from three pieces already on the program's desk: (i) Aitchison's 1959 density-side Fourier expansion on $\mathbb{T}$ via Poisson summation (`sources/A Statistical Theory of Remnants.pdf`), (ii) the Erdős–Turán–Koksma discrepancy-sum inequality in its multi-dimensional harmonic-weighted form (`sources/K-N-Chapter2.pdf`, §2 and p. 116), and (iii) the Kraft-arithmetic machinery already in use on the log side in `sources/landfall.pdf` §5.
 
 The non-obvious hook — the part the memo proposes but does not yet prove — is that **Dido**'s isoperimetric extremum, expressed in Hurwitz's 1902 Fourier-analytic form, gives $\pi$ a variational certificate whose Fourier-support condition is native to the Kraft–Parseval budget. That removes the need to route through the exp-map the way classical Hermite–Lindemann does, and pairs the transcendence statement to the geometry of approximating the circle by polygons rather than to algebraic relations among $e^\alpha$ for algebraic $\alpha$. This is what the program's opening commitment to "approximating the circle" reaches for. If the memo closes, the deliverable is not a new theorem but a new **proof structure** with an explicit effective constant extractable from the budget — and, if the lineage check passes, a strictly pre-L–W provenance.
 
@@ -14,7 +14,7 @@ Single sentence, honest about uncertainty:
 
 > Reprove transcendence of $\pi$ (Hermite–Lindemann at $n=1$) as the saturation of a Kraft–Parseval budget (Aitchison $\times$ Erdős–Turán–Koksma) against the Hurwitz–Dido isoperimetric extremum, with an effective $|q\pi - p| \gg q^{-C}$ constant extractable from the same argument and strictly pre-L–W provenance verified.
 
-Landfall template, compressed. `memos/LANDFALL-EXPORT.md` §5 already reads prefix-free halting domains through Kraft's inequality and concludes "composition redistributes the available Kraft budget; it does not create the missing correction." On the log side, the uncorrected-by-finite-composition object is $\varepsilon(m) = \log_2(1+m) - m$; the pointwise transcendence statement (Landfall §4) is $\varepsilon(k/2^p)$ transcendental at every interior machine dyadic, via Gelfond–Schneider. On the circle side, the uncorrected-by-finite-composition object is $\pi$ itself, and the pointwise transcendence statement the program would like is H–L at $n=1$. The two statements sit at the same altitude on their respective sides — they're the clean arithmetic-depth fact each program leg wants to land.
+Landfall template, compressed. The source paper `sources/landfall.pdf` §5 reads prefix-free halting domains through Kraft's inequality and concludes "composition redistributes the available Kraft budget; it does not create the missing correction." On the log side, the uncorrected-by-finite-composition object is $\varepsilon(m) = \log_2(1+m) - m$; the pointwise transcendence statement (Landfall §4) is $\varepsilon(k/2^p)$ transcendental at every interior machine dyadic, via Gelfond–Schneider. On the circle side, the uncorrected-by-finite-composition object is $\pi$ itself, and the pointwise transcendence statement the program would like is H–L at $n=1$. The two statements sit at the same altitude on their respective sides — they're the clean arithmetic-depth fact each program leg wants to land.
 
 Desired shape, paralleling `memos/COUNTING-APPARATUS.md`'s "equivariant surrogate / residue / compute-cost" triptych:
 
@@ -209,7 +209,7 @@ arithmetic side on which any K-H-L-A effective constant must live.
 
 ## Adjacent anchors
 
-- [memos/LANDFALL-EXPORT.md](memos/LANDFALL-EXPORT.md) — §5 Kraft machinery is the log-side template this memo transposes; §4 is the log-side pointwise transcendence statement ($\varepsilon(k/2^p)$ transcendental, via Gelfond–Schneider — noting the asymmetry: the log side uses post-L–W machinery for its pointwise statement, while this memo hopes to avoid it on the circle side).
+- [sources/landfall.pdf](sources/landfall.pdf) — §5 Kraft machinery is the log-side template this memo transposes; §4 is the log-side pointwise transcendence statement ($\varepsilon(k/2^p)$ transcendental, via Gelfond–Schneider — noting the asymmetry: the log side uses post-L–W machinery for its pointwise statement, while this memo hopes to avoid it on the circle side). See [paper/LANDFALL-EXPORT.md](paper/LANDFALL-EXPORT.md) for the slim proof-template extract.
 - [memos/LINDEMANN-BRIEF.md](memos/LINDEMANN-BRIEF.md) — the circularity map. Every step of this memo's argument has to be tagged per that brief's §"Exit criteria" classification (pre-L–W / background / essential / circular).
 - [rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md) — Lefèvre–Muller 1998 use 3DT for table-maker's-dilemma worst-case filtering; that is the log-side precedent for "Kraft + Diophantine arguments on a rotation orbit." Structurally parallel to what this memo wants on the circle side.
 - [rotations/CONTINUED-FRACTIONS-CROSSWALK.md](rotations/CONTINUED-FRACTIONS-CROSSWALK.md) — the continued-fraction convergents of $\pi$ are the arithmetic substrate under the Archimedean polygon approximation; the crosswalk now supplies six indexed perspectives on this substrate and logs this K-H-L-A branch as the effective-transcendence perspective.
@@ -234,7 +234,7 @@ Five neighboring literatures converge here, and none is the center:
 
 - **Classical transcendence theory** (Liouville 1844, Hermite 1873, Lindemann 1882, Weierstrass 1885, Mahler 1953, Baker 1966, Feldman, Waldschmidt, Nesterenko, Salikhov 2008). Landscape this memo is trying to re-derive a single piece of, pre-L–W.
 - **Uniform distribution / discrepancy theory** (Weyl 1916, van der Corput, Koksma, Erdős–Turán 1948, Kuipers–Niederreiter 1974). The Fourier-budget side.
-- **Information theory / Kraft accounting** (Kraft 1949, Shannon 1948, Chaitin 1966–75). The Kraft vocabulary; already in use at `memos/LANDFALL-EXPORT.md` §5.
+- **Information theory / Kraft accounting** (Kraft 1949, Shannon 1948, Chaitin 1966–75). The Kraft vocabulary; already in use in Landfall §5 (`sources/landfall.pdf`).
 - **Fourier-analytic isoperimetry** (Hurwitz 1902, Polya–Szegő 1951, Osserman 1978). The Dido extremum in Parseval form.
 - **Table-maker's dilemma** (Muller 1997, Lefèvre–Muller 1998, Brent–Zimmermann 2010). The log-side Kraft-+-Diophantine template; see `rotations/3DT-BRIEF.md`.
 
@@ -287,7 +287,7 @@ Ranked from least load-bearing / fastest to check toward the real research bottl
 
 Optional follow-on to steps 1–2: **circumscribed counterpart**. `corners/hurwitz_gap_circumscribed.sage` would do the same for the circumscribed regular $n$-gon ($L_n^{\text{circ}} = 2n \tan(\pi/n)$, $A_n^{\text{circ}} = n \tan(\pi/n)$). The Archimedean squeeze uses both sides, and the E-T-K $\times$ Aitchison Kraft budget wants the inscribed $+$ circumscribed sum. Not yet built.
 
-Promotion out of this doc: when (A), (B), (C), (D) combine to produce an effective statement with a clean L–W-safety tagging, the combined result promotes to a standalone writeup — possibly paired with `BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md` as the circle-side transcendence statement the Inscription was looking for. Alternatively, if step 3 or 5 fails, the memo freezes as a lineage-check record and the finding migrates into `memos/LINDEMANN-BRIEF.md` §"Post-Lindemann tools."
+Promotion out of this doc: when (A), (B), (C), (D) combine to produce an effective statement with a clean L–W-safety tagging, the combined result promotes to a standalone writeup. Alternatively, if step 3 or 5 fails, the memo freezes as a lineage-check record and the finding migrates into `memos/LINDEMANN-BRIEF.md` §"Post-Lindemann tools."
 
 ---
 
@@ -295,7 +295,7 @@ Promotion out of this doc: when (A), (B), (C), (D) combine to produce an effecti
 
 The memo freezes and promotes when any one of the following triggers:
 
-1. **Effective rate derived with L–W-safety tag.** Item (D) produces $|q\pi - p| \ge c\, q^{-C}$ with explicit $c, C$ and all steps tagged per `memos/LINDEMANN-BRIEF.md` §"Exit criteria." Promote the argument to a standalone writeup; consider paper-plan companion at `BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md`.
+1. **Effective rate derived with L–W-safety tag.** Item (D) produces $|q\pi - p| \ge c\, q^{-C}$ with explicit $c, C$ and all steps tagged per `memos/LINDEMANN-BRIEF.md` §"Exit criteria." Promote the argument to a standalone writeup.
 
 2. **Dido route collapses to Hermite's auxiliary.** Item (C) shows the polygon-vs-circle gap is Hermite's $\int_0^t e^{-x} f(x) dx$ under Poisson-summation change of variable. The memo becomes a pedagogical note; promote to `memos/HERMITE-AS-DIDO-BRIEF.md` and close the search.
 

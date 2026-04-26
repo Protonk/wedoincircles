@@ -91,7 +91,7 @@ viewed through six source families.
 
 - For the spectral perspective on CF: `rotations/10-MARTINIS-BRIEF.md`.
 - For the combinatorial and algorithmic 3DT perspectives: `rotations/3DT-BRIEF.md`.
-- For the Gosper / computational perspective: `memos/LANDFALL-EXPORT.md`, especially §7 and Program-Facing Export 5.
+- For the Gosper / computational perspective: `paper/LANDFALL-EXPORT.md` Template 3.
 - For the probabilistic / Diophantine Fourier-substitute perspective: `iso/BECK-1994-BRIEF.md`.
 - For the K-H-L-A effective-transcendence branch and its Step 5 bookkeeping interface: `memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md`, `memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md`.
 - For the discipline rule on admitting CF computation while forbidding the Stern-Brocot tree as organizing frame: `BNHA/triad/PLUS_ULTRA.md`.

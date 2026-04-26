@@ -17,7 +17,7 @@ The radial-graph lift `γ̃_n` *is* the circumscribed polygon. This is the Sobol
 
 `memos/COUNTING-APPARATUS.md` records the equivariant-surrogate / residue / ledger-pivot triptych for the polygon-circle approximation problem: the regular `n`-gon as equivariant surrogate, `τ(n)` as residue, `M_N` as counting output, and `V_cert` as the current certification-preserving cost-ledger candidate for the T1/T3 branch.
 
-`memos/LANDFALL-EXPORT.md` is the analogous program on the log side: residue `ε(m) = log₂(1 + m) − m`, prefix-free halting via Kraft (§5), pointwise transcendence at interior dyadics via Gelfond–Schneider (§4), affine closure `Aff⁺(ℝ)` (§2). Available as cross-side comparison without re-import.
+Landfall is the analogous program on the log side: residue `ε(m) = log₂(1 + m) − m`, source-paper Kraft and dyadic-transcendence sections at `sources/landfall.pdf`, and the paper-level proof-template extract at `paper/LANDFALL-EXPORT.md`. Available as cross-side comparison without re-import.
 
 ## Enabled and open
 

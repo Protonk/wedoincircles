@@ -54,7 +54,7 @@ Define τ(n) = 2cos(2π/n) − round(2cos(2π/n)). Closed form. Real-valued. Zer
 
 τ is constructible, countable at every integer n, and has closed-form properties: not periodic in n (a sequence on ℤ_{≥1} with τ(n) → 0 as n → ∞, since 2cos(2π/n) → 2 and round picks up 2 once n is large enough), boundedness in [−1/2, 1/2], and algebraic structure — τ(n) is algebraic of degree φ(n)/2 for n ≥ 5 outside {6}, inherited from 2cos(2π/n) minus an integer.
 
-The zero set {1, 2, 3, 4, 6} is the 2D crystallographic restriction (cf. item 8 on ψ): a 2D rotation matrix R_n in a lattice basis has integer trace exactly for n in this set. The rounding step that defines τ is free — lattice arithmetic — and τ is exactly what that rounding leaves behind. Higher-dimensional lattices enlarge the zero set via ψ; the sibling-paper draft `BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md` works 2D throughout.
+The zero set {1, 2, 3, 4, 6} is the 2D crystallographic restriction (cf. item 8 on ψ): a 2D rotation matrix R_n in a lattice basis has integer trace exactly for n in this set. The rounding step that defines τ is free — lattice arithmetic — and τ is exactly what that rounding leaves behind. Higher-dimensional lattices enlarge the zero set via ψ; this memo works 2D throughout.
 
 ### C2. The paired complexity table.
 

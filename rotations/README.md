@@ -18,7 +18,7 @@ Contents:
 - `CONTINUED-FRACTIONS-CROSSWALK.md` — meta-document on
   continued-fraction convergents as the recurring primitive across
   four independent memos (this folder's two briefs plus
-  `memos/LANDFALL-EXPORT.md` §7 and the Lefèvre–Muller pseudocode
+  `paper/LANDFALL-EXPORT.md` Template 3 and the Lefèvre–Muller pseudocode
   embedded in `3DT-BRIEF.md`).
 - Source-extraction briefs:
   - `10-MARTINIS-BRIEF.md` — Avila–Jitomirskaya almost-Mathieu;
@@ -44,5 +44,5 @@ Adjacent material kept elsewhere:
   (gap-as-discrepancy reading); the rotations/ folder holds the
   explicitly-rotations-themed material that doesn't dual-purpose into
   another register.
-- `memos/LANDFALL-EXPORT.md` §7 — Gosper's continued-fraction
+- `paper/LANDFALL-EXPORT.md` Template 3 — Gosper's continued-fraction
   transducer, computational perspective on the same CF substrate.

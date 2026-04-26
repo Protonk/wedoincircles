@@ -16,9 +16,8 @@ natural, (C) portrait of τ strong enough to carry belief, (D)
 small-case walkthrough — tracks what's known and unknown for each, and
 notes which existing repo materials feed in. Progress gets appended
 here until the pieces are sharp enough to state a conjecture; at that
-point the result-shaped material promotes to
-`BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md` (Inscription §§1/4
-hardening) and possibly its own companion doc.
+point the result-shaped material promotes to a standalone writeup or
+paper-facing companion doc.
 
 ---
 
@@ -138,7 +137,7 @@ track.
 
 **What it is.** A combined structural description of τ(n) that makes the closure-failure visible the way ε's shape did on the log side. Not a proof; a belief-forming picture.
 
-**Atomic facts already in the repo** (scattered across CREATI §§C1/item-9, PSEUDO-CHEBYSHEV-NODES, INSCRIPTION-PAPER-PLAN):
+**Atomic facts already in the repo** (scattered across CREATI §§C1/item-9 and PSEUDO-CHEBYSHEV-NODES):
 
 - **Domain**: n ∈ ℤ_{≥1}. Discrete. No natural continuous parameter at this level. (BIND's continuous-E τ_c(n, k, E) is a continuous-parameter analog on a different axis.)
 - **Values**: τ(n) ∈ [−1/2, 1/2]. Bounded.
@@ -222,12 +221,11 @@ perfectly clustering Lyndon words."
 
 Existing material this work draws on:
 
-- `memos/LANDFALL-EXPORT.md` — log-side template.
+- `paper/LANDFALL-EXPORT.md` — log-side template.
 - `corners/PSEUDO-CHEBYSHEV-NODES.md` — algebraic-degree catalog, Gauss–Wantzel constructibility, the n = 7 first-break.
 - `BNHA/triad/Creati/CREATI-THE-CIRCLE.md` §§C1, item 9 — τ definition and algebraic-degree.
 - `n-gons/counting/COUNTING.md` and the `n-gons/counting/` directory generally — the counting apparatus itself (output `M_N`, update maps, raster figures, Champernowne encoding).
 - `rotations/CONTINUED-FRACTIONS-CROSSWALK.md` — continued fractions as the shared substrate under the spectral, 3DT, computational, Beck, and K-H-L-A readings.
-- `BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md` §§1/4 — the "softened" walls this work wants to harden.
 - `BNHA/SirNighteye/DONT-BELIEVE-ME-JUST-WATCH.md` — the verdict outline, stated in advance in compact-Fourier vocabulary. Its seven rubrics (D1–D4 disanalogies, C5–C7 structural contrasts, plus the coordinative consequence Δ^L = −ε) are each a place this search's quantitative witness has to land. Direct impact here: C6 names item (A)'s compute-model candidate in FFT vocabulary (Cooley–Tukey radix-2 butterfly, native on the unit circle, non-recurring on the log-binade); D1 locates where the Lindemann-dependence of the mismatch enters, feeding the circularity map in `memos/LINDEMANN-BRIEF.md`; and the coordinative-consequence closer reframes "beating the surrogate" as closing an additive-vs-logarithmic (or angular-vs-Euclidean) displacement field — which is the shape the portrait-of-τ in item (C) has been trying to articulate.
 - `BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md` — τ_c continuous-E tool; the continuous-parameter analog of τ.
 - `n-gons/CRYSTALLOGRAPHIC-RESTRICTION-BRIEF.md` — the Bamberg–Cairns–Kilminster ψ-function and the higher-dimensional lattice extension.
@@ -242,7 +240,7 @@ Existing material this work draws on:
 ## What this doc is not
 
 - **Not a proof.** Nothing here is theorem-shaped yet.
-- **Not a paper plan.** The paper plan (Inscription) lives at `BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md`. This doc is upstream: it supplies the compute-cost content that the paper plan currently disclaims in §"What the paper is for."
+- **Not a paper plan.** This doc is upstream search material: it supplies compute-cost content for a later result-shaped writeup.
 - **Not a commitment to achievability.** The ambition may be vain. This doc is for tracking the search while that's still uncertain. Partial success is informative; full failure would be informative too.
 
 ---
@@ -257,4 +255,4 @@ Ranked from least load-bearing / fastest to complete toward the real research bo
 4. Run (D) — the n = 7 walkthrough. Script + short narrative appended here.
 5. Attempt (B) — the task statement. Will likely iterate; interacts with (A) once tried.
 
-Promotion out of this doc: when (C) and (D) together carry belief, and (A) and (B) are sharp enough to state a conjecture, the combined result promotes to an Inscription-§§1/4-hardening section, and `BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md` §"What the paper is for" gets its impossibility-disclaim rewritten as an aim.
+Promotion out of this doc: when (C) and (D) together carry belief, and (A) and (B) are sharp enough to state a conjecture, the combined result promotes to a standalone writeup or paper-facing companion section.

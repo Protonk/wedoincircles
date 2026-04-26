@@ -125,7 +125,7 @@ $$
 
 or by the cyclotomic structure $\zeta_n + \zeta_n^{-1}$.
 
-Landfall §2 (see `memos/LANDFALL-EXPORT.md`) argues that the log-side analog of this closure is Aff⁺(ℝ): the machine's mantissa operations generate affine maps x ↦ ax + b, and composition stays affine. The log side has no native ℤ[x]; its operational closure is capped at degree 1.
+Landfall §2 (see `paper/LANDFALL-EXPORT.md`) argues that the log-side analog of this closure is Aff⁺(ℝ): the machine's mantissa operations generate affine maps x ↦ ax + b, and composition stays affine. The log side has no native ℤ[x]; its operational closure is capped at degree 1.
 
 So Niven's clean circle-side proof has no log-side analog. The arithmetic restriction (rational ⇒ integer for 2cos at rational angles) is a consequence of the circle's polynomial closure, and the log side lacks the closure that would generate an analogous restriction. PERMEATE Leg 2's predicted n = 7 break sits in the same family: the first integer where the circle-side polynomial structure (via ψ from Bamberg–Cairns–Kilminster, briefed at `n-gons/CRYSTALLOGRAPHIC-RESTRICTION-BRIEF.md`) reaches a prime outside the log rep's support — a specific arithmetic witness of the same closure mismatch.
 
