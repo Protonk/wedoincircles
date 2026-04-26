@@ -28,7 +28,20 @@ Context, claim, the operational-side reading paired with the algebraic-side clos
 
 ## §1. Cost manifolds and the mult/add map
 
-Define the multiplicative cost manifold (Schönhage–Strassen 1971's operational uniform model; Winograd 1978's modular-product / CRT-cyclotomic ledger; Auslander–Feig–Winograd 1984's cyclotomic decomposition under rational equivalence) and the additive cost manifold (Morgenstern 1973's bounded-coefficient additive lower bound). Specify the mult/add conversion as a map between them.
+### §1.1. Cost manifolds
+Working definition: a cost manifold is a space of cost-bearing primitives equipped with a complexity measure on their compositions. Lower-bound work on a problem inhabits such a manifold; the paper treats this inhabitance explicitly.
+
+### §1.2. The multiplicative cost manifold
+The manifold of multiplicative-complexity bounds for cyclotomic-DFT and adjacent computations. Schönhage–Strassen 1971, Winograd 1978, and Auslander–Feig–Winograd 1984 each give it structure (full presentation at §3).
+
+### §1.3. The additive cost manifold
+The manifold of additive-complexity bounds. Morgenstern 1973 is the canonical structure-bearing result (full presentation at §3.3).
+
+### §1.4. Coefficient regimes
+Bounded vs unbounded coefficients. The regime is a parameter of every cost-bearing measure on either side; many bounds — Morgenstern's notably — depend on which regime is in force.
+
+### §1.5. The mult/add conversion map
+A map between §1.2 and §1.3. FFT-style algorithms operate as instances of this conversion. The map's behavior is parameterized by §1.4's regime.
 
 ## §2. The tour
 
@@ -36,19 +49,83 @@ Promissory. After §1 establishes language, §2 promises the route: cards on the
 
 ## §3. Cards on the table
 
-The four FFT frameworks (Schönhage–Strassen 1971, Morgenstern 1973, Winograd 1978, Auslander–Feig–Winograd 1984) presented in their best light. Then what each avoids individually and as a set: AFW under rational equivalence avoids certification cost; Morgenstern's bound avoids unbounded-coefficient regimes; Winograd's μ-bounds avoid paid adjunctions; Schönhage–Strassen's operational model is not a lower-bound source. The avoidances foreshadow §5/§6 without yet naming the impossibility.
+### §3.1. The canon together
+Frame: four sources, 1971–1984, define the FFT lower-bound apparatus the paper engages with.
+
+### §3.2. Schönhage–Strassen 1971
+Operational uniform model: bit/gate primitives, FFT over a representation where root multiplication is cheap by construction.
+
+### §3.3. Morgenstern 1973
+Bounded-coefficient additive lower bound: `Ω(n log n)` additions for `n × n` determinant.
+
+### §3.4. Winograd 1978
+Modular-product theorem `μ(T_P) = 2n − k`; multiplicative complexity factors along the CRT decomposition.
+
+### §3.5. Auslander–Feig–Winograd 1984
+Semisimple cyclotomic decomposition of finite-abelian DFTs with multiplicative complexity under rational equivalence.
+
+### §3.6. Common manifolds
+What do the four attacks share in the language of cost manifolds we just introduced?
 
 ## §4. Main theorem
 
-Formal propositional statement of the FFT-impossibility on cyclotomic-DFT and adjacent compute-cost problems. Precise hypothesis specifying what counts as "FFT-style" lower-bound methods (the four-framework canon plus its standard composability), conclusion stating no descent below the existing thresholds is reachable, proof outline naming §5 + §6 + the Landfall §2 affine-closure template as the load-bearing pieces.
+### §4.1. Frame
+Preview in plain language: an impossibility theorem on FFT-style descent below existing lower-bound thresholds for cyclotomic-DFT and adjacent compute-cost problems. The formal version is at §4.5.
+
+### §4.2. FFT-style methods
+The hypothesis class. The native operations of §1's cost manifold — multiplicative-side primitives from §1.2, additive-side primitives from §1.3, the conversion-map applications of §1.5 — under the standard composability of the four-framework canon (§3.2–§3.5). What the class includes; what it excludes.
+
+### §4.3. Cyclotomic-DFT and adjacent
+The problem class. Cyclotomic-DFT specifically — the discrete Fourier transform over cyclotomic fields. "Adjacent" pinned down: compute-cost problems sharing the cost-manifold structure of §1, differing in inputs but not in the manifold the bounds inhabit.
+
+### §4.4. Existing thresholds
+The current best lower bounds the theorem asserts are unreachable from below. AFW's multiplicative-complexity threshold for cyclotomic DFTs under rational equivalence; Morgenstern's `Ω(n log n)` bounded-coefficient additive threshold; Winograd's modular-product threshold. Named precisely; cited to §3.
+
+### §4.5. The theorem
+Formal propositional statement. For every FFT-style method `M` (§4.2) and every problem `P` (§4.3), `M` does not prove a lower bound on `P` below the existing threshold `T(P)` of §4.4. Equivalently: no FFT-style descent below the current thresholds is reachable on this substrate.
+
+### §4.6. Proof outline
+Two load-bearing ingredients. §5.6: information-uniformity at the boundary. §6.5: native operations have closed composition. Composed via the affine-closure template inherited from Landfall §2 (extracted at `paper/LANDFALL-EXPORT.md`). §5 and §6 carry the load; §4.6 names the route.
 
 ## §5. A maze of twisting passages, all alike
 
-The problem of information passage through the FFT. Five substrate-side lemmas, one per witness from `paper/`: rotation-orbit Diophantine kinematics; non-nesting isoperimetric registers; closed-form polygon arithmetic; cyclotomic-ladder unboundedness against affine flatness; admissibility envelope. Each lemma establishes that every FFT-algorithm passage hits the bounded/unbounded coefficient boundary in the same way — no passage distinguishes itself, no information is available to choose a descent direction.
+### §5.1. Rotation-orbit Diophantine kinematics
+Arena: orbit data carries `β(π) = 0`; no FFT-algorithm passage finds a kinematic feature distinguishing itself from another.
+
+### §5.2. Non-nesting isoperimetric registers
+Currencies: the three (rate, constant, almost-every) do not nest; no passage gets a free conversion between them.
+
+### §5.3. Closed-form polygon arithmetic
+Values: Hurwitz coefficients, gap `4π⁴/(3n²)`, and the sharp constant `6/π² = 1/ζ(2)` are fixed; descent reaches them only at threshold.
+
+### §5.4. Cyclotomic-ladder unboundedness against affine flatness
+Structure: `[K_n : ℚ] = φ(n)/2` grows unbounded with `n`; affine closure is flat; native operations cannot bridge the asymmetry.
+
+### §5.5. The admissibility envelope
+Audit: within L-W safety, closed-branch evidence, and the auxiliary-tool repertoire, no admissible method extracts additional descent information.
+
+### §5.6. Information-uniformity at the boundary
+Synthesis: §5.1–§5.5 jointly establish that every passage hits the bounded/unbounded coefficient boundary the same way. The result §6 inherits.
 
 ## §6. Gradients without information
 
-Gradient descent on the cost manifold robbed of information at the boundary. The affine-closure proof template inherited from Landfall §2 (extracted at `paper/LANDFALL-EXPORT.md`): no finite composition of native operations produces a route through the discontinuity. The substrate-side lemmas of §5 supply the information-uniformity that makes the template fire. QED for the §4 main theorem.
+### §6.1. Gradient descent on the cost manifold
+Setup: descent on the cost manifold means trading a higher cost-bearing complexity bound for a lower one by reorganizing the underlying computation. Lower-bound improvement *is* successful descent. Frame the problem in §1's language.
+
+### §6.2. What descent requires
+For descent to succeed at the boundary in §1.5's conversion map, the algorithm must extract information distinguishing one passage from another. Without distinguishing information, descent is undirected.
+
+### §6.3. §5.6 inherited
+§5.6 establishes information-uniformity at the boundary. The substrate refuses to provide what §6.2 says descent needs.
+
+### §6.4. The affine-closure template (Landfall §2)
+The proof template extracted at `paper/LANDFALL-EXPORT.md`, restated for cost manifolds: no finite composition of native operations produces a route outside the operations' closure class. The argument's shape is structural; it does not depend on the specific cost-bearing primitives.
+
+### §6.5. Native operations have closed composition
+Apply the template to our setting. The multiplicative-side primitives of §1.2 compose into a closure class bounded by §1.4's regime parameters. The additive-side primitives of §1.3 compose into another. The discontinuity of the conversion map in §1.5 lies outside both classes.
+
+### §6.6. No descent route exists; QED
+Compose §6.3 + §6.5: descent has no distinguishing information; native operations don't compose into a route across the discontinuity. No FFT-style descent below current thresholds is reachable on this substrate. QED for §4.
 
 ## §7. Back again
 
