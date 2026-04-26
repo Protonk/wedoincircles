@@ -306,3 +306,25 @@ Three load-bearing claims:
 3. **Hypothesis-class structure across registers.** Each register's principal results require a hypothesis class that doesn't simply nest within the others. Osserman: convex bodies in plane (deterministic, single-curve). Fuglede: nearly-spherical domains in ℝⁿ (deterministic; without the nearly-spherical hypothesis, stability fails per the spike-on-ball counter-example). Beck: almost-every `α` in ℝᵏ for `k ≥ 2` (measure-theoretic; specific-α-π is measure-zero, so almost-every doesn't certify pointwise). State each register's hypothesis class precisely and characterize the bridge needed for program use of each (e.g., empirical-to-density proxy for almost-every → specific-α).
 
 Output: `iso/THREE-REGISTER-SYNTHESIS.md` (or whatever name reads cleanly). Cross-source synthesis register: load-bearing, with explicit witnesses (citations to specific theorem statements in each brief that establish each claim).
+
+## 31
+
+What's the situation at n < 22? The synthesis's `n ≥ 22` threshold for Fuglede's nearly-spherical hypothesis establishes a clean boundary, but the program's load-bearing small-n cases (Gauss-Wantzel constructibility, `n = 7` first cubic, small-prime polygons) sit on the wrong side. The synthesis flags "alternative route or per-n bridging" without constructing one.
+
+Two sub-questions:
+
+1. **Coverage from existing apparatus.** For `n ∈ {3, ..., 21}`, is Δ_n stability information already covered by other repo apparatus — `corners/HURWITZ-GAP.md`'s three-way computation, the strip-`H¹` identification (`memos/STRIP-H1-HURWITZ-CLOSURE.md`), or Osserman's `Δ ≥ π²(R - r)²` specialized? Identify which small-n cases are covered and which aren't.
+
+2. **Bridge for the uncovered cases.** Where coverage is incomplete, what's the cheapest bridge? Candidates: extension of Sobolev framework dropping nearly-spherical (at a cost); Beck applied to fixed-n discrete distributions (if Beck supplies anything there); per-n direct verification; or naming the case as outside iso/'s reach. Rank candidates by cost.
+
+Append findings to `iso/THREE-REGISTER-SYNTHESIS.md` Claim 3 — the bridge analysis there stops at n = 22; this fills in the small-n side where the program's most interesting load-bearing cases sit.
+
+## 32
+
+The fft/ folder has both `fft/FOUR-FRAMEWORK-SYNTHESIS.md` (literature-side) and `fft/PROVENANCE-AND-TRANSFERABILITY.md` (program-side INHERIT). The iso/ folder has `iso/THREE-REGISTER-SYNTHESIS.md`, which already does substantial program-side work — naming three audit tasks, the `n ≥ 8` hypothesis bridge, the route-by-step audit map for K-H-L-A.
+
+Does iso/ want its own PROVENANCE-AND-TRANSFERABILITY, or has THREE-REGISTER-SYNTHESIS already absorbed it? Read `iso/THREE-REGISTER-SYNTHESIS.md` and `fft/PROVENANCE-AND-TRANSFERABILITY.md` side by side. Report what you find — the answer might be yes-with-distinctive-content (and what), no-already-covered (and why), or some middle ground (and where the seams are).
+
+## 33
+
+Audit `corners/fuglede_ratio_small_n.sage`. The script claims to compute Fuglede's stability ratio `Delta_F / (||u||^2 + ||grad u||^2)` for inscribed regular `N`-gons at `N in {3, ..., 12}`, using closed-form integrals on each wedge of width `2 pi / N`. Read the docstring's setup; check whether the script computes what it claims to compute; cross-check the numerical output against existing repo apparatus where applicable (Hurwitz `Delta_n` in `corners/HURWITZ-GAP.md`, `alpha_n = n tan(pi/n)` in `memos/LIOUVILLE-SCALE-TEST.md`). Don't fix; report findings.

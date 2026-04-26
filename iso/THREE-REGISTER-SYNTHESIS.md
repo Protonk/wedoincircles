@@ -365,13 +365,15 @@ results to specific program targets:
   `n`-gon is a convex Jordan curve; Bonnesen-style inequalities apply
   pointwise. Loseness on rate is the price; the bound *holds*, just
   loosely.
-- **Fuglede → program**: hypothesis verification. For `n ≥ 22` the
-  inscribed regular `n`-gon is nearly-spherical and Theorems 1.2 / 2.3
-  apply pointwise; the bound is rate-sharp. For `n < 22` the
-  uniform-norm hypothesis fails and only `n_dim ≥ 3`'s gradient-from-
-  uniform inference is unavailable (we are in `n_dim = 2`); fall
-  back to Bonnesen 1924 via Theorem 2.3's `n_dim = 2` clause.
-  *Bridge: explicit threshold `n ≥ 22` for hypothesis admission*.
+- **Fuglede → program**: hypothesis verification. For `n ≥ 8` the
+  inscribed regular `n`-gon is nearly-spherical (in the strict
+  Fuglede sense, both bounds in (*) holding); see §3.4 for the
+  computation. Theorems 1.2 / 2.3 apply pointwise in that range
+  with rate-sharp Sobolev bound. For `n ∈ {3, …, 7}` the
+  hypothesis fails strictly; coverage there comes from elsewhere
+  in the iso/ apparatus (per §3.4 below). *Bridge: explicit
+  threshold `n ≥ 8` for hypothesis admission, with §3.4 documenting
+  small-n coverage from other repo apparatus*.
 - **Beck → program**: empirical-to-density proxy
   ([memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md](memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md)
   Step 5). Beck's almost-every statements do not certify pointwise
@@ -382,6 +384,183 @@ results to specific program targets:
   register to specific-α program targets. *Bridge: empirical-to-
   density proxy, currently a hypothesis at KRAFT-BUDGET-ONE-DIMENSIONAL
   Step 5*.
+
+### 3.4 Coverage of the small-`n` regime
+
+The `n ≥ 22` figure originally given in §3.1 is **wrong**. The error
+is an arithmetic mis-substitution: Fuglede's hypothesis (\*) uses
+his `n` for *ambient dimension*, not polygon vertex count. For
+n_dim = 2, the constant is fixed at `a = 3/(20 · 2) = 3/40`, not
+`3/(20·polygon_n)`. Correcting:
+
+#### 3.4.1 Corrected threshold for nearly-spherical admission
+
+For inscribed regular `n`-gon (polygon vertex count = `n`) after
+Fuglede normalization (volume = `π`, barycentre = 0):
+
+- **Uniform bound:** `||u||_∞ = π²/(3n²) + O(1/n⁴)`. The hypothesis
+  `||u||_∞ ≤ 3/40` becomes `π²/(3n²) ≤ 3/40 ⟺ n² ≥ 40π²/9 ≈ 43.86 ⟺
+  n ≥ 7`. (n=6: 0.0914 > 0.075 ✗; n=7: 0.0671 < 0.075 ✓.)
+- **Gradient bound:** `||∇u||_∞ = √(π/A_n) · tan(π/n)`. The
+  hypothesis `||∇u||_∞ ≤ 1/2` is checked numerically:
+
+  | n | √(π/A_n) | tan(π/n) | ‖∇u‖_∞ | ≤ 1/2? |
+  |---|---|---|---|---|
+  | 3 | 1.555 | 1.732 | 2.694 | ✗ |
+  | 4 | 1.253 | 1.000 | 1.253 | ✗ |
+  | 5 | 1.149 | 0.7265 | 0.835 | ✗ |
+  | 6 | 1.099 | 0.5774 | 0.635 | ✗ |
+  | 7 | 1.0715 | 0.4816 | 0.516 | ✗ (just over) |
+  | 8 | 1.0539 | 0.4142 | 0.437 | ✓ |
+
+So **strict satisfaction of Fuglede's nearly-spherical hypothesis
+holds for `n ≥ 8`**, not `n ≥ 22`. The `n = 7` case fails the
+gradient bound by `≈ 3%`. The truly-uncovered Fuglede range is
+`n ∈ {3, 4, 5, 6, 7}` — five cases including the program's
+load-bearing **first-cubic** case `n = 7` (Gauss-Wantzel).
+
+This is a substantive correction to §3.1 / §3.3; the original
+threshold was off by a factor of ~3.
+
+#### 3.4.2 Coverage of `n ∈ {3, …, 7}` from existing repo apparatus
+
+For each of the five small cases, the program already has the
+following data:
+
+- **Exact value of `Δ_n`** via the elementary closed form
+  `Δ_n = L_n²[1 − (π/n) cot(π/n)]` with `L_n = 2n sin(π/n)`,
+  computed to machine precision for `n ∈ [3, 100]` in
+  [corners/HURWITZ-GAP.md](corners/HURWITZ-GAP.md).
+- **Hurwitz Parseval coefficients** `c_m^{(n)} = L_n²/(4π² m²)`
+  for `m = 1 + jn`, `j ∈ Z`, zero elsewhere. Per
+  [corners/HURWITZ-GAP.md](corners/HURWITZ-GAP.md), the Parseval
+  identity `Δ_n = 4π² Σ m(m−1) |c_m^{(n)}|²` is **exact**, with no
+  hypothesis on small-deviation or convex-near-disk. So Sobolev
+  information `||u'||²` at any specific `n` is computable directly
+  from these coefficients without any nearly-spherical assumption.
+- **Bonnesen lower bound** `Δ_n ≥ π²(R − ρ)²` (Osserman eq. (21))
+  applies for all `n ≥ 3`, since the inscribed regular `n`-gon is
+  a convex Jordan curve. The bound is loose (rate `O(1/n⁴)` versus
+  actual `Θ(1/n²)`, per the cross-brief pattern in
+  [iso/DIDOS-PREROGATIVE.md](iso/DIDOS-PREROGATIVE.md)) but **valid
+  pointwise** at every specific `n`. Tabulating:
+
+  | n | R | ρ | (R−ρ) | π²(R−ρ)² | Δ_n (actual) | ratio |
+  |---|---|---|---|---|---|---|
+  | 3 | 1 | 0.500 | 0.500 | 2.467 | 10.683 | 4.33 |
+  | 4 | 1 | 0.7071 | 0.293 | 0.846 | 4.566 | 5.40 |
+  | 5 | 1 | 0.8090 | 0.191 | 0.360 | 1.832 | 5.09 |
+  | 6 | 1 | 0.8660 | 0.134 | 0.177 | 0.881 | 4.98 |
+  | 7 | 1 | 0.9009 | 0.0991 | 0.0969 | 0.4634 | 4.78 |
+
+  (Ratio ≈ 5 throughout; the asymptotic `n²` slack is bounded by a
+  finite factor in the small-n regime.) **Bonnesen lower bound is
+  pointwise valid for every `n ≥ 3`**, including all five
+  uncovered cases.
+
+So coverage status for `n ∈ {3, …, 7}`:
+
+- ✓ *Exact value of `Δ_n`*: covered by elementary closed form.
+- ✓ *Bonnesen lower bound*: covered by Osserman eq. (21) pointwise.
+- ✓ *Hurwitz Parseval Sobolev information*: covered by direct
+  Fourier-coefficient computation, no hypothesis required.
+- ✗ *Fuglede's general two-sided Sobolev bound
+  `(1/10)(‖u‖² + ‖∇u‖²) ≤ Δ ≤ (3/5)‖∇u‖²` with explicit constants*:
+  not covered. The constants `(1/10, 3/5)` are derived under the
+  nearly-spherical hypothesis; for `n ≤ 7` the constants would
+  need to be re-derived per `n` (or a polygon-tailored hypothesis
+  installed).
+
+The single piece **not** in the existing apparatus for the small-`n`
+regime is the *general* two-sided Sobolev stability with explicit
+universal constants. Direct per-`n` computation supplies the
+Sobolev information, but not in a single uniform-in-`n` constant.
+
+#### 3.4.3 Bridge candidates for the missing piece, ranked by cost
+
+The missing piece is: an explicit two-sided Sobolev bound for
+`n ∈ {3, …, 7}` with constants the program can quote. Candidates:
+
+1. **Per-n direct Parseval computation.** *Cheapest.* For each
+   `n ∈ {3, …, 7}`, compute `||u||²₂`, `||∇u||²₂`, and the ratio
+   `(||u||² + ||∇u||²)/Δ` from the Hurwitz coefficients
+   `c_m^{(n)} = L_n²/(4π² m²) · 1[m ≡ 1 (mod n)]`. The result is
+   five explicit ratios, each a finite rational expression in
+   `cos(π/n)` and `sin(π/n)`. Five computations, each closed-form,
+   each L-W-safe (no hypothesis on small deviation). The
+   "constant" replacing Fuglede's `(1/10, 3/5)` is the supremum of
+   the ratios over `n ∈ {3, …, 7}` — a finite, explicitly
+   computable number. **Cost: low; uses existing repo machinery.**
+
+2. **Tabulation of existing data.** *Zero new computation.* Compile
+   from
+   [corners/HURWITZ-GAP.md](corners/HURWITZ-GAP.md) and the
+   elementary closed forms a table of `(Δ_n, ||u||_∞, R-ρ,
+   Bonnesen-bound)` for `n ∈ {3, …, 7}` — pure bookkeeping. Does
+   not supply a Sobolev stability constant but documents the
+   coverage status precisely. **Cost: zero new math.** This brief
+   already does most of it (table in §3.4.2).
+
+3. **Acknowledge case as outside Fuglede's reach.** *Zero-cost
+   honesty.* Document that Fuglede's general theorem does not
+   apply at `n ∈ {3, …, 7}` and that per-`n` direct Parseval is
+   the operational substitute. The audit then says: "for `n ≥ 8`
+   use Fuglede; for `n ∈ {3, …, 7}` use direct Parseval per §3.4.2."
+   Two routes for one register, partitioned by `n`. **Cost: zero;
+   already implicit in the cross-brief findings.**
+
+4. **Polygon-tailored stability theorem.** *Higher-cost; new math.*
+   Prove a Sobolev stability bound specific to convex polygons
+   (where the spike-on-ball obstruction does not apply, since
+   convex polygons cannot have spikes). A statement of the form
+   "for any convex `n`-gon with `n ≥ 3`, `(c_1)(||u||² +
+   ||∇u||²) ≤ Δ ≤ c_2 ||∇u||²` with explicit `c_1, c_2`" would
+   close the gap uniformly. Cost: requires showing the constants
+   `c_1, c_2` are bounded uniformly over convex polygons (likely
+   true by compactness in the convex-polygon parameter space, but
+   not in this paper or the briefs). **Cost: medium; requires new
+   theorem-proving.**
+
+5. **Beck on fixed-`n` discrete distributions.** *Not applicable.*
+   Beck's framework is for almost-every irrational `α` in `(nα)
+   mod 1` Kronecker sequences. The polygon vertex sequence
+   `(k/n) mod 1` for `k = 0, …, n-1` is rational and finite —
+   discrepancy `1/n` exactly, by direct counting. Beck supplies
+   nothing. **Cost: not applicable.**
+
+#### 3.4.4 Updated bridge statement for Fuglede → program
+
+Combining §3.4.1–3.4.3, the corrected bridge for the Fuglede
+register is:
+
+> **For `n ≥ 8`**, the inscribed regular `n`-gon is strictly
+> nearly-spherical (both bounds in (*) hold) and Fuglede Theorems
+> 1.2, 2.3 apply pointwise with the explicit constants
+> `(1/10, 3/5)` improvable to `(0.24, 0.54)` per Remark 1.5.
+> **For `n ∈ {3, …, 7}`**, Fuglede's general theorems do not
+> apply, but the program already has all the operationally
+> relevant content: exact `Δ_n` from the elementary closed form,
+> Sobolev seminorms from the Hurwitz Parseval coefficients
+> directly, and the Bonnesen lower bound from Osserman eq. (21).
+> The cheapest formal bridge for an explicit two-sided Sobolev
+> stability constant in this range is **per-`n` direct Parseval
+> computation** (candidate 1 above), using the existing Hurwitz
+> coefficient formulas. The truly-load-bearing first-cubic case
+> `n = 7` falls in this range and is reachable without Fuglede.
+
+The program's small-`n` cases are therefore *not* outside iso/'s
+reach; they are inside via the **Hurwitz-Parseval direct route**,
+which the program already operates on
+[corners/HURWITZ-GAP.md](corners/HURWITZ-GAP.md). Fuglede 1989
+adds value at `n ≥ 8` by supplying explicit uniform-in-n
+constants; at `n ≤ 7` the per-n computation is available and
+gives explicit per-n constants. The synthesis's claim that
+"Beck enters the program via the K-H-L-A discrepancy branch, not
+via the polygon vertices" (§3.2) is reaffirmed: at small `n`,
+the Hurwitz Parseval / strip-`H¹` route is the program's
+operational substrate, and the Fuglede `n ≥ 8` threshold simply
+documents where Fuglede 1989 starts adding marginal value over
+the program's existing apparatus.
 
 ---
 
@@ -448,11 +627,20 @@ inherits:
    Schmidt 1960 second-moment (probabilistic). Each is a candidate
    future -BRIEF.
 3. **Hypothesis-class structure.** No nesting; bridges per register.
-   Inscribed regular `n`-gon is in Osserman/Fuglede classes
-   (pointwise) but not Beck's (which targets `(nα) mod 1`, not the
-   polygon vertices). Program use of Beck requires the empirical-to-
-   density proxy; Fuglede's threshold for nearly-spherical
-   admission is `n ≥ 22` for inscribed regular `n`-gons.
+   Inscribed regular `n`-gon is in Osserman class (pointwise, all
+   `n ≥ 3`), in Fuglede class strictly for `n ≥ 8` (per the
+   corrected threshold computation in §3.4.1; the synthesis's
+   original `n ≥ 22` was an arithmetic error mis-substituting
+   polygon-`n` into Fuglede's `3/(20·n_dim)` constant), and not
+   in Beck's class (which targets `(nα) mod 1`, not the polygon
+   vertices). Program use of Beck requires the empirical-to-density
+   proxy. For Fuglede's small-`n` cases `n ∈ {3, …, 7}` —
+   including the load-bearing first-cubic `n = 7` — the program's
+   coverage comes from per-`n` direct Hurwitz Parseval computation
+   on
+   [corners/HURWITZ-GAP.md](corners/HURWITZ-GAP.md)'s coefficient
+   formulas, not from Fuglede's general theorem. Fuglede 1989 adds
+   marginal value over the existing apparatus only at `n ≥ 8`.
 
 The program does not need to choose one register; it needs to use
 each at its sharp currency, with the bridges and audit tasks

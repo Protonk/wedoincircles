@@ -384,49 +384,9 @@ shared discipline; it is not a mathematical object that either leg is
 
 ## #7 — All-for-One (refused: the premise — and the setup is already counterfactual)
 
-All-for-One's setup imagines all six defended results as forming a
-coherent piece of architecture, with the staircase between
-closure-mismatch and transcendence floors *"built and load-bearing."*
-But #6 has already refused the staircase: it does not exist, and the
-program is not a building. So All-for-One is asking after a version of
-the program that #6 has declined to be — six results forming one
-structure with one subject. Even granting his counterfactual, the
-question's deeper premise must be refused.
+All-for-One's setup imagines a program's deliverable must be *one theorem about one subject*, and anything less is a museum. We fundamentally rejects this hierarchy in general. 
 
-That deeper premise is that a program's deliverable must be *one theorem
-about one subject*, and anything less is a museum. The program
-fundamentally rejects this hierarchy.
-
-The closure-depth no-go ([memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md))
-is a theorem under the native functorial axioms A1-A4: no such native
-functor unifies the log-side and circle-side closure generators while
-preserving the required closure-generator depth. The program's own
-load-bearing result rules out that strongest named form of unification,
-not every imaginable weaker comparison.
-
-Answering All-for-One in his preferred register would require ignoring
-that A1-A4 no-go.
-
-The unifying content of such a program is the *discipline*, not an
-object. The triad
-([BNHA/PLUS_ULTRA.md](BNHA/PLUS_ULTRA.md)) names three production
-disciplines (PERMEATE, CREATI, BIND); the two meta-disciplines
-([BNHA/SirNighteye/DONT-BELIEVE-ME-JUST-WATCH.md](BNHA/SirNighteye/DONT-BELIEVE-ME-JUST-WATCH.md)
-and
-[BNHA/Nezu/COMPUTE-POINTED-TOWARD-ENEMY.md](BNHA/Nezu/COMPUTE-POINTED-TOWARD-ENEMY.md))
-enforce foresight and verification. Together they are *what* makes the
-six results cohere: a set of standards the results were produced under.
-Not *what the results are about*, which is six different things.
-
-All-for-One's question is well-posed for programs whose ambition is a
-monolithic theorem. The Langlands program is about automorphic forms.
-The proof of Fermat's Last Theorem is about modular elliptic curves.
-Those programs have subjects. This program does not, by design, and the
-design choice is load-bearing on the F-theorem.
-
-Laboring under All-for-One's frame does not just produce a different kind of program;
-it produces a *worse version of this program*. The frame must be
-refused for the work to make sense.
+Furthermore, the unified theoretical explanation he asks for would be a candidate functor *F*. We submit no such native functor exists.
 
 # Coda
 

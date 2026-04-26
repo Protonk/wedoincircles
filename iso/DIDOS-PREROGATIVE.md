@@ -74,6 +74,99 @@ isoperimetric statements only) versus on post-L-W machinery (Bernstein
 post-1882 and require their own audit, may be admissible only as
 setup). This memo is the coordination point for those briefs.
 
+## Three-thread chain (skeleton for a future historiographical brief)
+
+The literature DIDOS coordinates does not converge to a single origin
+the way the FFT chain converges to Gauss 1805. Three threads run
+through it, with different origin dates and different convergence
+patterns. A future historiographical brief — the iso/ analog of
+[fft/HEIDEMAN-JOHNSON-BURRUS-1985-BRIEF.md](fft/HEIDEMAN-JOHNSON-BURRUS-1985-BRIEF.md)
+— would unfold these threads as historiography. This section is the
+skeleton.
+
+**Thread 1 — Geometric / Bonnesen-style.**
+- Pre-1882 substrate: Zenodorus c. 200 BCE (qualitative isoperimetric
+  inequality, polygonal extremal cases); Steiner ~1830s
+  (symmetrization technique, qualitative). Both pre-L-W.
+- First quantitative Bonnesen-style: Bernstein 1905 (sphere → plane
+  limit; constant `≈ 1700`, weak).
+- Sharp constants: Bonnesen 1921 (`(R − ρ)²` form, constant `π²`);
+  Bonnesen 1924 (annulus-width form `Δ ≥ 4π · d²`, constant `4π`
+  provably best).
+- Convex-only → non-convex extensions: Schmidt 1939 (analytic),
+  Fiala 1941 (interior parallels), Hadwiger 1941 (integral
+  geometry); Fejes-Tóth 1950 (polygonal direct, drops integral
+  geometry).
+- Modern survey: Osserman 1979
+  ([iso/OSSERMAN-1979-BRIEF.md](iso/OSSERMAN-1979-BRIEF.md)).
+- Convergence point: Bonnesen 1924 sharp `Δ ≥ 4π · d²`.
+
+**Thread 2 — Sobolev / Hurwitz-Fourier.**
+- Pre-1882 substrate: Fourier 1822 (trigonometric series machinery).
+- First quantitative Sobolev: Hurwitz 1902 (Parseval identity
+  `Δ_H = 4π² Σ m(m−1)|c_m|²` for arclength-parametrized curves).
+  Calendar-post-1882 by 20 years; transcendence-free in content.
+- L² + H¹ stability for nearly-spherical: Fuglede 1986
+  (n_dim = 3 case of Theorem 1.2 (I.a)).
+- All-dimensions with explicit constants: Fuglede 1989
+  ([iso/FUGLEDE-1989-BRIEF.md](iso/FUGLEDE-1989-BRIEF.md), Theorem
+  1.2 for all `n_dim ≥ 2`).
+- Convergence point: Sobolev L² + H¹ stability of nearly-spherical
+  domains; for inscribed regular n-gon, sharp rate `Θ(1/n²)`.
+
+**Thread 3 — Probabilistic / Diophantine.**
+- Pre-1882 substrate: Poisson 1827 (summation formula); classical
+  Fourier from thread 2.
+- First quantitative metric: Khintchine 1923/1924 (1-dim Borel-Cantelli
+  for `Δ((nα) mod 1; N)`); proof via continued fractions.
+- Multi-dim via Erdős-Turán-Koksma: Schmidt 1964 (`(log N)^{k+1+ε}`,
+  one log over conjecture).
+- Universal lower bound: **Roth 1954** "On irregularities of
+  distribution," `Δ(α; N) ≫ (log N)^{k/2}` for *every* `α ∈ R^k`.
+  Methodologically L²-Fourier discrepancy — *not* Roth 1955's
+  transcendence theorem on rational approximations to algebraic
+  numbers.
+- Multi-dim Khintchine analog: Beck 1994
+  ([iso/BECK-1994-BRIEF.md](iso/BECK-1994-BRIEF.md), Theorem 1);
+  Fourier + Poisson + second-moment + Borel-Cantelli substituting
+  for continued fractions.
+- Convergence point: `(log N)^k · φ(log log N)` Borel-Cantelli
+  threshold for almost every `α`.
+
+**Documented gaps and continuities.**
+- *Continuity, thread 2:* Hurwitz 1902 → Fuglede 1986 explicit, via
+  Fuglede 1989 footnote 1 ("Still another proof — quite short — can
+  be read off from Hurwitz' Fourier series proof"). Same Hilbert
+  space, same Parseval identity, four decades apart.
+- *Disambiguation, thread 3:* Roth 1954 [Mathematika 1, 73–79,
+  "On irregularities of distribution"] vs. Roth 1955 [Mathematika 2,
+  1–20, "Rational approximations to algebraic numbers"]. Same author,
+  adjacent year, distinct papers, distinct registers. The 1954
+  paper is the discrepancy lower bound used by Beck; the 1955 paper
+  is the transcendence theorem the program audits as
+  post-Lindemann-Weierstrass.
+- *Pre-1882 substrate sufficiency:* qualitative isoperimetric
+  inequality (thread 1, Zenodorus + Steiner) is fully pre-L-W.
+  *Quantitative* content in all three threads is post-1882: even
+  Hurwitz 1902 and Bonnesen 1921 sit on the post-L-W side of the
+  audit calendar. Content audit (per
+  [memos/OLD-TIME-RELIGION.md](memos/OLD-TIME-RELIGION.md)) finds
+  all three threads transcendence-free in content despite
+  calendar-post-1882 dating.
+- *Cross-thread convergence:* threads 1 and 2 both target the
+  inscribed regular n-gon and converge on the same Δ_n via
+  Hurwitz Parseval (sharp on rate) vs. Bonnesen `(R − ρ)²` (sharp
+  on constant). Thread 3 targets the *adjacent* sequence
+  `(n π) mod 1`, not the polygon vertices `(k/n) mod 1` (which are
+  rational, discrepancy `1/n` exactly). The three threads do not
+  share a single test object.
+
+A historiographical brief unfolding these threads would document the
+chain at the level of detail HJB-1985 documents the Gauss → Cooley-
+Tukey chain — primary-source quotes, transmission events,
+attribution corrections, calendar vs. content audit. The skeleton
+above is what such a brief would be expanding on.
+
 ## Brief findings (append-only)
 
 ### From [iso/OSSERMAN-1979-BRIEF.md](iso/OSSERMAN-1979-BRIEF.md)
