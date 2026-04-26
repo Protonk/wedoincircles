@@ -1,10 +1,8 @@
-# Charter
+# Eff Eff Tee
 
 >Meta instruction for humans and agents. Stage direction.
 
 JACM is the venue. ~25 pages with figures is the target. The register is engineering inflected mathematics. Savoir faire is the goal.
-
-# Paper
 
 ## Abstract
 
