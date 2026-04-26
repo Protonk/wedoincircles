@@ -5,7 +5,7 @@ What the analogy to the Three Distance Theorem does and does not buy for the out
 Primary references:
 
 - `n-gons/counting/COUNTING.md`
-- `memos/3DT-BRIEF.md`
+- `rotations/3DT-BRIEF.md`
 
 ## The appeal
 

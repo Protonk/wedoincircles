@@ -76,7 +76,7 @@ This means **the 3DT is Erasure-legal under BIND when taken via Marklof–Ström
 
 The upshot for Leg 3 specifically: τ_c and ε can be studied alongside the 3DT's finite-valued function F on Γ\SL(2, ℝ), all under the same Erasure-legal vocabulary. If τ_c's spectrum admits a lattice-geometric reading on Γ\SL(2, ℝ) — whether directly or through some related homogeneous space — that's a spectral-rhyme candidate BIND can pursue without importing shared vocabulary. The continuous-E tool stays, the lattice-geometric 3DT joins it, and the cross-check between them becomes a concrete Leg 3 task.
 
-Pointer for the ring-theoretic / geometric details: `memos/3DT-BRIEF.md` §"The third angle: 3DT from the space of lattices (Marklof–Strömbergsson 2017)".
+Pointer for the ring-theoretic / geometric details: `rotations/3DT-BRIEF.md` §"The third angle: 3DT from the space of lattices (Marklof–Strömbergsson 2017)".
 
 ## What has to happen next
 

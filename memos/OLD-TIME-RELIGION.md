@@ -389,7 +389,7 @@ failure names one.
   CF-convergents of `pi` as a pre-1882 accounting scheme alternative to
   the dyadic shells of Kraft-Parseval. Speculative restatement, not
   directed work; recall if a CF-specific audit target ever opens. The
-  crosswalk memo [memos/CONTINUED-FRACTIONS-CROSSWALK.md](memos/CONTINUED-FRACTIONS-CROSSWALK.md)
+  crosswalk memo [rotations/CONTINUED-FRACTIONS-CROSSWALK.md](rotations/CONTINUED-FRACTIONS-CROSSWALK.md)
   identifies CF convergents as a primitive shared across four memos, but
   none of those contact points currently sit on a load-bearing audit
   step.

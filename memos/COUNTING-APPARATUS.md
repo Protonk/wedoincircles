@@ -223,7 +223,7 @@ Existing material this work draws on:
 - `BNHA/SirNighteye/DONT-BELIEVE-ME-JUST-WATCH.md` — the verdict outline, stated in advance in compact-Fourier vocabulary. Its seven rubrics (D1–D4 disanalogies, C5–C7 structural contrasts, plus the coordinative consequence Δ^L = −ε) are each a place this search's quantitative witness has to land. Direct impact here: C6 names item (A)'s compute-model candidate in FFT vocabulary (Cooley–Tukey radix-2 butterfly, native on the unit circle, non-recurring on the log-binade); D1 locates where the Lindemann-dependence of the mismatch enters, feeding the circularity map in `memos/LINDEMANN-BRIEF.md`; and the coordinative-consequence closer reframes "beating the surrogate" as closing an additive-vs-logarithmic (or angular-vs-Euclidean) displacement field — which is the shape the portrait-of-τ in item (C) has been trying to articulate.
 - `BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md` — τ_c continuous-E tool; the continuous-parameter analog of τ.
 - `n-gons/CRYSTALLOGRAPHIC-RESTRICTION-BRIEF.md` — the Bamberg–Cairns–Kilminster ψ-function and the higher-dimensional lattice extension.
-- `memos/CONTINUED-FRACTIONS-CROSSWALK.md` — the CF axis that cuts across disciplines.
+- `rotations/CONTINUED-FRACTIONS-CROSSWALK.md` — the CF axis that cuts across disciplines.
 - `memos/LINDEMANN-BRIEF.md` — classical transcendence of π, plus a circularity map for when invoking Lindemann–Weierstrass in the compute-cost argument is safe, programmatically weak, or strictly circular. The base case.
 
 **Anchors yet to be written:**

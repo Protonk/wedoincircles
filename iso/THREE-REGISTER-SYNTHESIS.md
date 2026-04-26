@@ -327,24 +327,30 @@ Three pairwise non-inclusions:
 
 - **Osserman ⊄ Fuglede.** Osserman's class includes far-from-spherical
   convex curves (e.g., a thin ellipse with eccentricity → 1) which
-  fail Fuglede's `‖u‖_∞ ≤ 3/(20n)` hypothesis. Fuglede stability
+  fail Fuglede's `‖u‖_∞ ≤ 3/(20·n_dim)` hypothesis. Fuglede stability
   fails on such curves; Bonnesen `Δ ≥ π²(R − ρ)²` still holds.
-- **Fuglede ⊄ Osserman.** Fuglede's class includes non-convex
-  nearly-spherical domains (small spike included, since spike-on-
-  ball with small enough spike still satisfies a relaxed
-  nearly-spherical condition). Osserman's quantitative theorems
-  require convexity directly (extension to non-convex via Schmidt
-  1939 et al. is a separate theorem).
+- **Fuglede ⊄ convex-Osserman (Bonnesen subclass).** Fuglede's class
+  includes non-convex nearly-spherical domains (small spike included,
+  since spike-on-ball with small enough spike still satisfies the
+  nearly-spherical condition). Osserman's *quantitative* theorems —
+  including Bonnesen's `Δ ≥ π²(R − ρ)²` strengthening — require
+  convexity directly. Fuglede's class is *contained* in Osserman's
+  broad rectifiable-Jordan-curve register; the non-inclusion is
+  strictly against the convex sub-register where the quantitative
+  Bonnesen form lives. (Extension to non-convex via Schmidt 1939,
+  Fiala 1941 is a separate theorem.)
 - **Beck ⊄ {Osserman ∪ Fuglede}.** Beck's measure-1 class lives in
   `α`-parameter space, not curve-shape space. There is no embedding
   of Beck's hypothesis class into the geometric or Sobolev classes;
-  they are about different objects (sequences vs. curves).
+  they are about different objects (sequences vs. curves). This
+  non-inclusion is *categorial* — at the level of input type — not
+  a numerical comparison.
 
 The classes intersect on specific test cases. The **inscribed regular
 `n`-gon** is in:
 
 - Osserman's class (convex Jordan curve in plane), for all `n ≥ 3`.
-- Fuglede's class (nearly-spherical), for `n ≥ 22` per §3.1.
+- Fuglede's class (nearly-spherical), for `n ≥ 8` per §3.4 (corrected from the original §3.1 claim of `n ≥ 22`, which was the namespace-collision error).
 - *Not* directly in Beck's class — the polygon-vertex sequence
   `(k/n) mod 1` for `k = 0, …, n−1` is rational with discrepancy
   exactly `1/n`, not an irrational Kronecker sequence. Beck enters
@@ -355,6 +361,31 @@ So even on the program's central test case, the three registers
 attach to *different objects*: Osserman/Fuglede attach to the
 polygon as a curve; Beck attaches to a Diophantine sequence
 elsewhere in the K-H-L-A apparatus.
+
+#### 3.2.1 Numerical witness verification
+
+The first two pairwise non-inclusions have been verified by direct
+construction in
+[corners/pairwise_non_inclusion_witnesses.sage](corners/pairwise_non_inclusion_witnesses.sage):
+
+- **Osserman ⊄ Fuglede** via thin ellipse `(a = 2, b = 1/2)`, area
+  exactly `π` (no rescaling). Bonnesen lower bound `π²(R − ρ)² ≈
+  22.21`; actual `Δ_H ≈ 34.11` (Osserman slack: `+53.6 %`).
+  `‖u‖_∞ = 1.0` vs Fuglede bound `0.075` (Fuglede excess: `+1233 %`).
+- **Fuglede ⊄ convex-Osserman** via small-spike non-convex
+  `r(θ) = 1 + ε cos(k θ)` with `k = 5`, `ε = 0.0575`. After
+  volume-normalization: `‖u‖_∞ ≈ 0.058` (Fuglede margin: `+22.3 %`),
+  `‖∇u‖_∞ ≈ 0.287` (Fuglede margin: `+42.6 %`), `κ_dip ≈ −0.558`
+  (non-convex; threshold margin `+43.75 %`). All three audit margins
+  exceed `+10 %`.
+
+Witness 3 (Beck) is categorial — type-signature non-comparability —
+and has no numerical witness; the prose argument carries the claim.
+
+Script audited per Q34: `elliptic_ec` perimeter convention checked
+against direct integration to `2.5 × 10⁻¹⁵`; polar-curvature formula
+sign convention verified; volume normalization verified to give
+exactly `A = π`.
 
 ### 3.3 Bridges per register
 
@@ -581,14 +612,28 @@ Ratios increase monotonically toward `≈ 0.5`, matching the
 leading-order asymptotic `(π²/(6 n²)) / (π²/(3 n²)) = 1/2` (since
 `Δ_F ∼ π²/(6 n²)` and `‖∇u‖² ∼ π²/(3 n²)` dominate `‖u‖² ∼ π⁴/(45 n⁴)`).
 
-**Verdict.** Fuglede's lower bound `(1/10)(‖u‖² + ‖∇u‖²) ≤ Δ_F`
-holds at every inscribed regular `n`-gon with `n ≥ 3` by direct
-Parseval verification — including at `n ∈ {3, …, 7}` where
-hypothesis (*) formally fails. The bound's *conclusion* holds on the
-full polygon family even where the bound's *hypothesis* does not;
-this gap between hypothesis-satisfaction and conclusion-holding is
-program intelligence about how loose Fuglede's universal constant
-`1/10` is on this specific family.
+**Lower-bound verdict.** Fuglede's lower bound
+`(1/10)(‖u‖² + ‖∇u‖²) ≤ Δ_F` holds at every inscribed regular
+`n`-gon with `n ≥ 3` by direct Parseval verification — including at
+`n ∈ {3, …, 7}` where hypothesis (*) formally fails. The bound's
+*conclusion* holds on the full polygon family even where the bound's
+*hypothesis* does not; this gap between hypothesis-satisfaction and
+conclusion-holding is program intelligence about how loose Fuglede's
+universal `1/10` is on this specific family.
+
+**Upper-bound verdict.** Fuglede's upper bound
+`Δ_F ≤ (3/5)‖∇u‖²` also holds at every `n ∈ {3, …, 12}` by direct
+verification. Sup of `Δ_F / ‖∇u‖²` over `n ∈ {3, …, 7}` is
+`≈ 0.4640` at `n = 7` — a slack of `≈ 22.7 %` under the universal
+`3/5 = 0.6`. The improved Remark 1.5 constant `0.54` is closer to
+the actual asymptotic `0.5`, but the universal `3/5` holds with
+comfortable margin across the polygon family.
+
+Together these certify the **full two-sided Theorem 1.2 (I.a)** on
+the inscribed regular `n`-gon family for `n ≥ 3`, even where
+hypothesis (*) fails. The bound's hypothesis is sufficient for the
+conclusion, not necessary; on this specific structured family the
+conclusion holds well beyond the hypothesis's strict reach.
 
 Script audited per Q33: math verified, `Δ_F` cross-checked against
 Hurwitz `Δ_H = L² − 4πA` to residual `~ 10⁻²⁴`, hypothesis flags

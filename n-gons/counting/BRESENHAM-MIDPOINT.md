@@ -76,7 +76,7 @@ None of these four is a decided link to the main argument. They are the reasons 
 **What's unknown**:
 
 - Whether anyone has explicitly factored a Bresenham-midpoint circle word into Christoffel segments keyed to rational tangent slopes along the octant.
-- Whether such a factorization, if it exists, aligns with the continued-fraction structure tracked in `memos/CONTINUED-FRACTIONS-CROSSWALK.md`.
+- Whether such a factorization, if it exists, aligns with the continued-fraction structure tracked in `rotations/CONTINUED-FRACTIONS-CROSSWALK.md`.
 - Whether the word's length, as a function of `R`, admits a *combinatorial* cost measure (e.g., sum of continued-fraction partial quotients of some associated real) that differs meaningfully from the raw pixel count.
 
 **Search moves:**
@@ -129,7 +129,7 @@ Existing material this memo draws on:
 - `memos/RAMANUJANS-COMPLIMENT.md` — the sister memo on upper-bound benchmarks; Bresenham-midpoint is the lattice-resolution counterpart to Chudnovsky's full-precision rate.
 - `corners/PSEUDO-CHEBYSHEV-NODES.md` — algebraic-degree catalog; the `round(2cos(2π/n))` surrogate. Bresenham-midpoint is a compute-model instance of exactly the same round-to-integer operation, applied to the whole circle rather than a single node.
 - `n-gons/CRYSTALLOGRAPHIC-RESTRICTION-BRIEF.md`, `BNHA/triad/NIVEN-THREE-WAYS.md`, `memos/MIZAR-NIVEN-FOREBODING.md` — the crystallographic-restriction side; relevant to item (C).
-- `memos/CONTINUED-FRACTIONS-CROSSWALK.md` — the continued-fraction machinery that the Christoffel-word angle in item (B) plugs into.
+- `rotations/CONTINUED-FRACTIONS-CROSSWALK.md` — the continued-fraction machinery that the Christoffel-word angle in item (B) plugs into.
 - `n-gons/counting/COUNTING.md` and the full `n-gons/counting/` directory — the comparison target for item (D).
 - `n-gons/ARCHIMEDEAN-STRIP-FLIP.md`, `BNHA/triad/Eraserhead/ARCHIMEDEAN-CONSTRICTION.md` — the exhaustion tradition; Bresenham-midpoint is an integer-lattice descendant of Archimedean exhaustion.
 - `memos/LANDFALL-EXPORT.md` — the log-side template; Bresenham-midpoint is the circle-side answer to "what plays the role of Mitchell's `L(x) = E + m`?" for lattice resolution rather than mantissa precision.
@@ -156,7 +156,7 @@ The memo freezes and its content migrates when *any one* of the following trigge
 
 1. **Item (A) resolved.** Bresenham-midpoint is committed as the compute-model upper-bound benchmark for `memos/COUNTING-APPARATUS.md` item (A) (and promoted there), or explicitly ruled out (and noted there as "considered and rejected because …").
 2. **Item (D) resolved.** The comparison script in `n-gons/counting/` either shows Bresenham-midpoint's octant word matches `M_N` under a legible coordinate change (promote finding to `n-gons/counting/COUNTING.md`), or shows they are structurally different in a specific way (promote the mismatch-shape to the same file as a finding).
-3. **Item (B) resolved or stalled.** Either the Christoffel-segment factorization of the circle-word is established from existing literature (promote a short writeup to `memos/CONTINUED-FRACTIONS-CROSSWALK.md`), or two directed reads turn up nothing load-bearing (note it here, move on).
+3. **Item (B) resolved or stalled.** Either the Christoffel-segment factorization of the circle-word is established from existing literature (promote a short writeup to `rotations/CONTINUED-FRACTIONS-CROSSWALK.md`), or two directed reads turn up nothing load-bearing (note it here, move on).
 4. **Bresenham-midpoint loses relevance.** If the main argument takes a turn that makes integer-arithmetic-on-`ℤ²` irrelevant — e.g., the compute model commits to algebraic-arithmetic-over-ℚ and never revisits the integer-only register — the memo freezes as historical record.
 
 ---

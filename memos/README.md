@@ -2,6 +2,8 @@
 
 Promoted internal references for the program. Source-extraction briefs, cross-source syntheses, program-level notes, concrete worked tests, and active search memos all live here. Conventions for the three written patterns used in this directory — `-BRIEF` source extractions, search memos, general cross-source syntheses — are in `memos/AGENTS.md`.
 
+Thematic siblings hold imported reads in their own domain: `fft/` (FFT-complexity), `iso/` (isoperimetric), `rotations/` (irrational rotations and Kronecker sequences). Briefs and syntheses in those folders follow the same conventions documented here.
+
 Each entry below is a short bestiary with its role. Full content is in the linked file.
 
 ---
@@ -20,12 +22,6 @@ Two notes in one. Part I records the mental-arithmetic procedures by which G. P.
 
 → `memos/BIDDER-AND-SON.md`
 
-### CONTINUED-FRACTIONS-CROSSWALK
-
-A cross-source synthesis on continued-fraction convergents as a recurring primitive across four independent memos — spectral (10-MARTINIS), combinatorial (3DT), algorithmic (Lefèvre–Muller via 3DT), and computational (LANDFALL-EXPORT via Gosper). Not a source brief; a read-across.
-
-→ `memos/CONTINUED-FRACTIONS-CROSSWALK.md`
-
 ### MIZAR-NIVEN-FOREBODING
 
 A future-facing anchor on Korniłowicz & Naumowicz's 2016 formalization of Niven's theorem in Mizar. Not active program material; parked for the moment a formally-verified Chebyshev / monic-ℤ / rational-root chain becomes necessary.
@@ -37,18 +33,6 @@ A future-facing anchor on Korniłowicz & Naumowicz's 2016 formalization of Niven
 ## Source-extraction briefs
 
 Each brief is the repo's extracted reading of a specific paper stashed under `sources/` (gitignored). The writing standard is in `memos/AGENTS.md` §"Source extraction memos".
-
-### 10-MARTINIS-BRIEF
-
-Avila–Jitomirskaya's *Ten Martini Problem* result. Spectral analysis of the almost-Mathieu operator. The arithmetic parameter β(α) = limsup (ln q_{n+1}) / q_n classifies α as Diophantine vs. Liouville; the proof splits parameter space by β.
-
-→ `memos/10-MARTINIS-BRIEF.md`
-
-### 3DT-BRIEF
-
-The Three-Distance Theorem: the gap structure of an α-rotation orbit on ℝ/ℤ partitions the circle into at most three distinct gap lengths. Three proofs are present: Berthé–Reutenauer's combinatorial, Lefèvre–Muller's algorithmic (Table Maker's Dilemma §2.2.1), Marklof–Strömbergsson's lattice-geometric on `Γ\SL(2, ℝ)`.
-
-→ `memos/3DT-BRIEF.md`
 
 ### LINDEMANN-BRIEF
 

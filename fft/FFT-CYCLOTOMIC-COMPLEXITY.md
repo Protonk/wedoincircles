@@ -326,7 +326,7 @@ Existing material this memo draws on:
   algebraic-complexity reading queue this memo's papers slot into. Several
   of the entries there (Strassen 1973, Bürgisser–Clausen–Shokrollahi 1997)
   are direct upstream of the five papers here.
-- [memos/CONTINUED-FRACTIONS-CROSSWALK.md](memos/CONTINUED-FRACTIONS-CROSSWALK.md) —
+- [rotations/CONTINUED-FRACTIONS-CROSSWALK.md](rotations/CONTINUED-FRACTIONS-CROSSWALK.md) —
   recurring arithmetic substrate. The cyclotomic ladder is the algebraic
   cousin of the CF crosswalk; both index the same underlying Galois-
   theoretic structure on `Q(zeta_n)`.

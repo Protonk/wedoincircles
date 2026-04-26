@@ -193,15 +193,15 @@ would be historically interesting only as a pre-L–W argument.
 
 - [memos/LANDFALL-EXPORT.md](memos/LANDFALL-EXPORT.md) — §5 Kraft machinery is the log-side template this memo transposes; §4 is the log-side pointwise transcendence statement ($\varepsilon(k/2^p)$ transcendental, via Gelfond–Schneider — noting the asymmetry: the log side uses post-L–W machinery for its pointwise statement, while this memo hopes to avoid it on the circle side).
 - [memos/LINDEMANN-BRIEF.md](memos/LINDEMANN-BRIEF.md) — the circularity map. Every step of this memo's argument has to be tagged per that brief's §"Exit criteria" classification (pre-L–W / background / essential / circular).
-- [memos/3DT-BRIEF.md](memos/3DT-BRIEF.md) — Lefèvre–Muller 1998 use 3DT for table-maker's-dilemma worst-case filtering; that is the log-side precedent for "Kraft + Diophantine arguments on a rotation orbit." Structurally parallel to what this memo wants on the circle side.
-- [memos/CONTINUED-FRACTIONS-CROSSWALK.md](memos/CONTINUED-FRACTIONS-CROSSWALK.md) — the continued-fraction convergents of $\pi$ are the arithmetic substrate under the Archimedean polygon approximation; the crosswalk supplies four independent lenses on this substrate.
+- [rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md) — Lefèvre–Muller 1998 use 3DT for table-maker's-dilemma worst-case filtering; that is the log-side precedent for "Kraft + Diophantine arguments on a rotation orbit." Structurally parallel to what this memo wants on the circle side.
+- [rotations/CONTINUED-FRACTIONS-CROSSWALK.md](rotations/CONTINUED-FRACTIONS-CROSSWALK.md) — the continued-fraction convergents of $\pi$ are the arithmetic substrate under the Archimedean polygon approximation; the crosswalk supplies four independent lenses on this substrate.
 - [memos/LOWER-BOUND-COUNTRY.md](memos/LOWER-BOUND-COUNTRY.md) — the symmetric partner to `memos/RAMANUJANS-COMPLIMENT.md`; the complexity-theoretic reading queue. If this memo's argument lands as a compute-cost lower bound rather than a transcendence measure, promotion target is there.
 - [corners/PSEUDO-CHEBYSHEV-NODES.md](corners/PSEUDO-CHEBYSHEV-NODES.md) — circle-side algebraic-depth catalog: $\cos(\pi/n)$ of degree $\varphi(2n)/2$, first non-constructible at $n=7$. These are the polygon vertices in (C).
 - [corners/CIRCLE-TRANSFORMATIONS.md](corners/CIRCLE-TRANSFORMATIONS.md) §4 Leash framework — the tightness–informativeness tradeoff is the framework for what Hurwitz's extremum condition is buying: the Fourier-support condition is the tightest possible leash on a planar simple closed curve.
 - [BNHA/SirNighteye/DONT-BELIEVE-ME-JUST-WATCH.md](BNHA/SirNighteye/DONT-BELIEVE-ME-JUST-WATCH.md) — disanalogies D1 (algebraic vs transcendental characters) and D4 (finite vs infinite character group) are what distinguish the unit-circle Fourier side (where Hurwitz's identity is exact) from the log-binade-circle Fourier side (where the Fourier tail at $O(1/n^2)$ never terminates). This memo lives entirely on the unit-circle side, and the disanalogies are what make the circle side available to the argument while the log side is not.
 - `sources/A Statistical Theory of Remnants.pdf` — Aitchison 1959, JRSS B 21(1). Equations (2.2), (2.3), and the $k$-dim (6.3), (6.8) are the density-side Fourier bounds.
 - `sources/K-N-Chapter2.pdf` — Kuipers–Niederreiter 1974, *Uniform Distribution of Sequences*, Ch. 2. Theorems 2.5 (Erdős–Turán), 3.2 / 3.4 (type-based bounds on $(n\alpha) \bmod 1$), Example 3.1 (Thue–Siegel–Roth as type 1 for algebraic irrationals), and the multi-dim Erdős–Turán–Koksma on p. 116.
-- `sources/the table maker's dilemma.pdf` — Lefèvre–Muller–Tisserand 1998. §2.2.1 is the 3DT-based filter already extracted into `memos/3DT-BRIEF.md`; the implicit Kraft accounting on worst-case bits is the log-side template.
+- `sources/the table maker's dilemma.pdf` — Lefèvre–Muller–Tisserand 1998. §2.2.1 is the 3DT-based filter already extracted into `rotations/3DT-BRIEF.md`; the implicit Kraft accounting on worst-case bits is the log-side template.
 
 **Anchors yet to be written:**
 
@@ -218,7 +218,7 @@ Five neighboring literatures converge here, and none is the center:
 - **Uniform distribution / discrepancy theory** (Weyl 1916, van der Corput, Koksma, Erdős–Turán 1948, Kuipers–Niederreiter 1974). The Fourier-budget side.
 - **Information theory / Kraft accounting** (Kraft 1949, Shannon 1948, Chaitin 1966–75). The Kraft vocabulary; already in use at `memos/LANDFALL-EXPORT.md` §5.
 - **Fourier-analytic isoperimetry** (Hurwitz 1902, Polya–Szegő 1951, Osserman 1978). The Dido extremum in Parseval form.
-- **Table-maker's dilemma** (Muller 1997, Lefèvre–Muller 1998, Brent–Zimmermann 2010). The log-side Kraft-+-Diophantine template; see `memos/3DT-BRIEF.md`.
+- **Table-maker's dilemma** (Muller 1997, Lefèvre–Muller 1998, Brent–Zimmermann 2010). The log-side Kraft-+-Diophantine template; see `rotations/3DT-BRIEF.md`.
 
 The memo's discipline: the argument must be constructible from pieces in at least three of these five, with the fourth and fifth entering as background at most. If the argument ends up living entirely inside classical transcendence theory, the program has not done anything new. If it ends up living entirely inside Fourier analysis, the effective rate is probably vacuous. The sweet spot is what the memo is betting on.
 

@@ -2,7 +2,7 @@
 
 ## Source extraction memos
 
-Source-facing extraction memos live in this directory (`memos/`) with the `-BRIEF` suffix, e.g. `memos/10-MARTINIS-BRIEF.md`, `memos/3DT-BRIEF.md`. The parent `sources/` directory holds the raw PDFs and is gitignored.
+Source-facing extraction memos use the `-BRIEF` suffix. They live either in this directory (`memos/`) or in a thematic sibling folder when one exists — e.g. `fft/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md`, `iso/OSSERMAN-1979-BRIEF.md`, `rotations/10-MARTINIS-BRIEF.md`, `rotations/3DT-BRIEF.md`. The parent `sources/` directory holds the raw PDFs and is gitignored.
 
 Writing standard for a brief:
 

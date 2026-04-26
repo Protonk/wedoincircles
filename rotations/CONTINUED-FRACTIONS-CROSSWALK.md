@@ -56,8 +56,8 @@ For our program this means: **we have four independent reasons to treat the cont
 
 ## Pointers
 
-- For the spectral perspective on CF: `memos/10-MARTINIS-BRIEF.md`.
-- For the combinatorial and algorithmic 3DT perspectives: `memos/3DT-BRIEF.md`.
+- For the spectral perspective on CF: `rotations/10-MARTINIS-BRIEF.md`.
+- For the combinatorial and algorithmic 3DT perspectives: `rotations/3DT-BRIEF.md`.
 - For the Gosper / computational perspective: `memos/LANDFALL-EXPORT.md`, especially §7 and Program-Facing Export 5.
 - For the discipline rule on admitting CF computation while forbidding the Stern-Brocot tree as organizing frame: `BNHA/PLUS_ULTRA.md`.
 - For the saturation-side use of convergents: `BNHA/triad/Lemillion/PERMEATE-THE-CIRCLE.md`.
