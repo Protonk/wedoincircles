@@ -1,12 +1,12 @@
 # LANDFALL-EXPORT
 
-This file extracts three proof templates from Landfall (Adam, 9-page proof-essay on the residual `ε(m) = log₂(1 + m) − m` of the affine pseudo-logarithm). Under the program's FFT-impossibility direction, Landfall is read as a proof-template repository rather than as a sibling paper for cross-side reference. Three obstructions are inherited as templates: §2's affine closure, §6's no-invariant-measure aggregation, §7's finite-closure refusal. Other Landfall content — polynomial wall, local corona failure, transcendence-at-dyadics — is on the page in the source paper and not extracted here.
+This file extracts three proof templates from Landfall (`sources/landfall.pdf`, Adam, 9-page proof-essay on the residual `ε(m) = log₂(1 + m) − m` of the affine pseudo-logarithm). Under the program's FFT-impossibility direction, Landfall is read as a proof-template repository rather than as a sibling paper for cross-side reference. Three obstructions are inherited as templates: §2's affine closure, §6's no-invariant-measure aggregation, §7's finite-closure refusal. Other Landfall content — polynomial wall, local corona failure, transcendence-at-dyadics — is on the page in the source paper and not extracted here.
 
 ## Template 1: Affine closure (Landfall §2)
 
 Native binade operations generate `Aff⁺(ℝ)`: additions translate, multiplications scale, composition stays in the two-parameter affine class. Landfall §2 proves that `lambda(m) = log₂(1 + m)` is not in this closure; therefore no finite composition of native binade operations produces `lambda`.
 
-This is the proof template the paper inherits for the mult/add gradient destruction. The argument generalizes: native FFT operations (multiplications under FFT-style reduction; bounded-coefficient additions) generate a closed cost-map class; the descent past current FFT lower bounds is a cost-map outside that class; therefore no finite composition of native FFT operations yields the descent. The paper has to earn this generalization at the cost-manifold level — item (ii) on `paper/IMPOSSIBILITY-CHARTER.md`'s to-be-earned list.
+This is the proof template the paper inherits for the mult/add gradient destruction. The argument generalizes: native FFT operations (multiplications under FFT-style reduction; bounded-coefficient additions) generate a closed cost-map class; the descent past current FFT lower bounds is a cost-map outside that class; therefore no finite composition of native FFT operations yields the descent. The paper has to earn this generalization at the cost-manifold level — item (ii) on `paper/IMPOSSIBILITY-OUTLINE.md`'s to-be-earned list.
 
 The algebraic-side twin is `memos/NATIVE-F-MINIMAL-DEFINITION.md`: no functor `F` preserves closure-depth from `Aff⁺(ℝ)` to `{K_n}`. Same template-structure, different closure class.
 

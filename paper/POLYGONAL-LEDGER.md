@@ -11,7 +11,7 @@ c_m^(n) = L_n^2 / (4 pi^2 m^2)   for m ≡ 1 (mod n),
 c_m^(n) = 0                      otherwise,
 ```
 
-with `L_n = 2 n sin(π/n)`. The closed-form Hurwitz gap is `Δ_n = L_n²(1 − (π/n) cot(π/n))` with Archimedean asymptote `4π⁴/(3n²)`. The pseudo-Chebyshev nodes `node(n) = cos(π/n)` are algebraic of degree `φ(2n)/2`. The `τ`-residue `τ(n) = 2cos(2π/n) − round(2cos(2π/n))` is catalogued at `corners/TAU-PORTRAIT.md`. Numerical agreement with elementary geometry is verified to machine precision in `corners/hurwitz_gap.sage`.
+with `L_n = 2 n sin(π/n)`. The closed-form Hurwitz gap is `Δ_n = L_n²(1 − (π/n) cot(π/n))` with Archimedean asymptote `4π⁴/(3n²)`. The pseudo-Chebyshev nodes `node(n) = cos(π/n)` are algebraic of degree `φ(2n)/2`. The `τ`-residue `τ(n) = 2cos(2π/n) − round(2cos(2π/n))` is catalogued at `corners/TAU-PORTRAIT.md`. The circumscribed area scale `alpha_n = n tan(π/n)` is the companion outer datum used by `memos/LIOUVILLE-SCALE-TEST.md` and the strip/circumscribed Hurwitz bridge. Numerical agreement with elementary geometry is verified to machine precision in `corners/hurwitz_gap.sage`.
 
 ## Sharp concentration
 

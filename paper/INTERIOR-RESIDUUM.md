@@ -4,6 +4,8 @@ The `memos/` register supplies the program with disciplinary scaffolding, closed
 
 ## Auxiliary substrate
 
+The circularity filter lives at `memos/LINDEMANN-BRIEF.md` and `memos/OLD-TIME-RELIGION.md`: imports are tagged safe, weak, or circular before entering the proof chain.
+
 `memos/FORTNOW-KOLMOGOROV-BRIEF.md` supplies the universal semicomputable measure `μ(x) = 2^{−K(x)}` and Fact 6.2 universal dominance: any semicomputable `τ` with `Σ τ(x) ≤ 1` satisfies `τ(x) ≤ c μ(x)`. The K-H-L-A discrepancy branch pulls this onto the paired-shell semimeasure at `memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md` Step 4.
 
 `memos/STRIP-TISSUE-FOURIER.md` and `memos/STRIP-H1-HURWITZ-CLOSURE.md` identify the strip `H¹` seminorm with the circumscribed regular `n`-gon's Hurwitz gap up to a closed-form residue:
