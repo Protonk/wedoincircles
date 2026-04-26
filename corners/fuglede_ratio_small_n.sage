@@ -13,8 +13,12 @@ holds at small N where the nearly-spherical hypothesis (*) formally fails.
 Per `iso/THREE-REGISTER-SYNTHESIS.md` Sec 3.4: namespace-corrected
 threshold for the inscribed N-gon family is N >= 8 (gradient bound) or
 N >= 7 (uniform bound). Below those, hypothesis (*) fails. The synthesis
-flagged "Bridge 1" (per-N direct Parseval computation using existing
-Hurwitz coefficient formulas) as cheapest; this script is that bridge.
+flagged "Bridge 1" (per-N direct Parseval computation) as cheapest; this
+script implements that bridge via direct wedge integration of u^2 and
+(du/dphi)^2 on the boundary parametrization r(phi) = cos(pi/N)/cos(phi).
+Mathematically equivalent to evaluating the Hurwitz Fourier-coefficient
+sums directly, but more elementary: closed forms in terms of
+sin/cos/tan/log of pi/N, no coefficient series.
 
 Setup
 -----
@@ -109,7 +113,7 @@ def main():
 
     header = (
         f"{'N':>3} | {'||u||_oo':>10} {'unif':>4} {'||grad u||_oo':>13} {'grad':>4} | "
-        f"{'Delta_F':>11} {'||u||^2+||grad u||^2':>20} {'ratio':>10} {'>=1/10':>6}"
+        f"{'Delta_F':>11} {'||u||²+||∇u||²':>16} {'ratio':>10} {'>=1/10':>6}"
     )
     print(header)
     print("-" * len(header))
@@ -118,7 +122,7 @@ def main():
             f"{r['N']:>3} | "
             f"{float(r['u_inf']):>10.6f} {'Y' if r['unif_ok'] else 'N':>4} "
             f"{float(r['grad_u_inf']):>13.6f} {'Y' if r['grad_ok'] else 'N':>4} | "
-            f"{float(r['Delta_F']):>11.5e} {float(r['sum_norms']):>20.5e} "
+            f"{float(r['Delta_F']):>11.5e} {float(r['sum_norms']):>16.5e} "
             f"{float(r['ratio']):>10.6f} "
             f"{'Y' if r['ratio'] >= ONE_TENTH else 'N':>6}"
         )

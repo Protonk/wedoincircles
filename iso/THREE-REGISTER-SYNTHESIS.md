@@ -562,6 +562,38 @@ operational substrate, and the Fuglede `n ≥ 8` threshold simply
 documents where Fuglede 1989 starts adding marginal value over
 the program's existing apparatus.
 
+#### 3.4.5 Bridge 1 executed: per-`n` direct Sobolev ratios
+
+Bridge 1 (per-`n` direct Parseval/wedge computation) has been carried
+out in
+[corners/fuglede_ratio_small_n.sage](corners/fuglede_ratio_small_n.sage).
+Computed ratios `Δ_F / (||u||² + ||∇u||²)` at `n ∈ {3, …, 12}`
+(200-bit precision; truncated for display):
+
+| n     | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+|-------|---|---|---|---|---|---|---|----|----|----|
+| ratio | 0.2739 | 0.3729 | 0.4184 | 0.4432 | 0.4582 | 0.4680 | 0.4747 | 0.4795 | 0.4830 | 0.4857 |
+
+All ten ratios exceed Fuglede's universal `1/10`. The infimum over
+the small-`n` range `n ∈ {3, …, 7}` (hypothesis (*) formally fails)
+is `≈ 0.274` at `n = 3` — a margin of `≈ 174 %` over `1/10`.
+Ratios increase monotonically toward `≈ 0.5`, matching the
+leading-order asymptotic `(π²/(6 n²)) / (π²/(3 n²)) = 1/2` (since
+`Δ_F ∼ π²/(6 n²)` and `‖∇u‖² ∼ π²/(3 n²)` dominate `‖u‖² ∼ π⁴/(45 n⁴)`).
+
+**Verdict.** Fuglede's lower bound `(1/10)(‖u‖² + ‖∇u‖²) ≤ Δ_F`
+holds at every inscribed regular `n`-gon with `n ≥ 3` by direct
+Parseval verification — including at `n ∈ {3, …, 7}` where
+hypothesis (*) formally fails. The bound's *conclusion* holds on the
+full polygon family even where the bound's *hypothesis* does not;
+this gap between hypothesis-satisfaction and conclusion-holding is
+program intelligence about how loose Fuglede's universal constant
+`1/10` is on this specific family.
+
+Script audited per Q33: math verified, `Δ_F` cross-checked against
+Hurwitz `Δ_H = L² − 4πA` to residual `~ 10⁻²⁴`, hypothesis flags
+match the corrected threshold table in §3.4.1.
+
 ---
 
 ## Synthesis: Three Registers, Three Sub-Questions
