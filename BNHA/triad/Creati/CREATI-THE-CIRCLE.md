@@ -81,7 +81,7 @@ The highly composite numbers with prime support in {2, 3, 5} form an explicit li
 
 ### C5. The Chebyshev functor candidate (Leg 1 of the triad).
 
-CREATI pursues the Chebyshev-polynomial leg of F. The other two legs (crystallographic ↔ p-adic, τ_c / ε spectral rhyme) are not pursued from inside this discipline; see `BNHA/triad/TRIAD-ABSTRACT-PATTERN.md`.
+CREATI pursues the Chebyshev-polynomial leg of F. The other two legs (crystallographic ↔ p-adic, τ_c / ε spectral rhyme) are not pursued from inside this discipline; their current machinery now lives through `rotations/3DT-BRIEF.md` and `rotations/CONTINUED-FRACTIONS-CROSSWALK.md`. See `BNHA/triad/TRIAD-ABSTRACT-PATTERN.md` for the triad-level split.
 
 Define F on identities: the circle-side identity trace(R_n^m) = 2·T_m(cos(2π/n)) is a closed-form polynomial identity tying rotations at different n's. F, if it exists, must send this to a log-side closed-form identity tying ε at different m's. The question is whether such a log-side identity exists.
 

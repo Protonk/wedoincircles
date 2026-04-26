@@ -444,7 +444,7 @@ reading of a two-dimensional decomposition. The closure-side instance is
 the decomposition
 `Q(zeta_n) = K_n ⊕ K_n · (zeta_n - zeta_n^{-1})` under
 `sigma_{-1}`; the comparison is methodological only, not a
-closure-depth theorem supplied by 3DT.
+closure-depth result from 3DT.
 
 ## Three-Way Correspondence
 
@@ -507,12 +507,25 @@ the content-not-calendar audit criterion, and
 [iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md)
 Claim 2 §2.3 uses it as the comparison case for Beck's
 Fourier-discrepancy audit. This is a program-facing consequence of the
-three-source read, not a separate BIND-safety theorem proved by the
+three-source read, not an independent BIND-safety result proved by the
 papers.
 
 ### 3. 3DT is both circle-side and log-side
 
 Berthé–Reutenauer and Marklof–Strömbergsson treat the theorem as a rotation/lattice phenomenon. Lefèvre–Muller–Tisserand use the same structure inside a floating-point worst-case search for elementary functions. So in repository terms, 3DT is not just circle-side material that can be exported; it already has a native log-side occurrence.
+
+Program-catalog use: this makes 3DT the program's first explicit
+two-sided primitive, in the weak candidate-class sense now recorded in
+[BNHA/triad/PLUS_ULTRA.md](BNHA/triad/PLUS_ULTRA.md) §"Two-sided
+primitive pattern." The comparison class also includes
+[memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md)
+§"Pattern note: `K_n` as a two-sided primitive" as the algebraic/geometric
+example, and
+[memos/STRIP-H1-HURWITZ-CLOSURE.md](memos/STRIP-H1-HURWITZ-CLOSURE.md)
+§"Catalog note: adjacent two-sided primitives" as the strip/circle bridge
+comparison. This is a program-facing catalog observation derived from the
+source extraction, not a theorem in the 3DT papers and not an exhaustive
+taxonomy of two-sided primitives.
 
 ### 4. The lattice paper gives a positive homogeneous-space example
 

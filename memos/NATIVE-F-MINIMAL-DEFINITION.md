@@ -72,6 +72,26 @@ functor must respect is not chosen by the program; it is the unique
 multiplicatively-closed half of a Galois-canonical decomposition of
 `Q(zeta_n)`. A2 inherits its non-arbitrariness from this fact.
 
+### Pattern note: `K_n` as a two-sided primitive
+
+`K_n` is two-sided in a different sense from 3DT. Its algebraic face is
+the `(+1)` fixed field inside `Q(zeta_n)`, forced by complex
+conjugation and multiplicative closure. Its geometric face is the real
+trace/cosine data coming from the regular `n`-gon on the circle side.
+
+The nearby comparison object is 3DT: circle-side as a rotation-orbit
+theorem on `R/Z`, but log-side native in Lefèvre–Muller–Tisserand's
+floating-point filter. See
+[rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md)
+§"Lefèvre–Muller–Tisserand: The Algorithmic Lens" and
+§"Program-Facing Consequences," subsection 3.
+
+These are not identical meanings of "side": `K_n` is algebraic/geometric,
+while 3DT is circle/log-machine-arithmetic. The shared program use is
+weaker and candidate-shaped: both are native-on-two-sides primitives that
+can be catalogued without treating one side as a mere imported theorem.
+This note records the pattern; it is not a new closure theorem.
+
 ---
 
 ## Native Functor Axioms

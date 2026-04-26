@@ -183,7 +183,7 @@ complexity-shaped tasks has, on file:
   boundedness as theorem (not slogan), uniformize the cost
   accounting — in FOUR-FRAMEWORK-SYNTHESIS §"Construction Required".
 - A candidate Kraft-side machinery from 3DT BWT/Lyndon words:
-  [rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md) §"Burrows-Wheeler
+  [rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md) §"Burrows–Wheeler
   and perfectly clustering Lyndon words" records the Ferenczi-Zamboni
   finite-word avatar of rotation-orbit structure. This is successor
   work, not supply: the open construction question is whether that

@@ -80,6 +80,22 @@ is not a new curve; it is the circumscribed polygon in polar form. That
 makes `Delta(gamma_tilde_n)` a Hurwitz gap of a classically-named object,
 not an ad hoc invariant.
 
+### Catalog note: adjacent two-sided primitives
+
+This memo is a strip/circle bridge: the strip `H^1` quantity and the
+circumscribed Hurwitz gap are compared through the radial-graph lift.
+For the program's candidate catalog of two-sided primitives, 3DT is the
+older worked example on rotation orbits: it is circle-side as a finite
+orbit theorem, while Lefèvre–Muller–Tisserand use the same structure
+inside log-side machine arithmetic. See
+[rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md)
+§"Lefèvre–Muller–Tisserand: The Algorithmic Lens" and
+§"Program-Facing Consequences," subsection 3.
+
+The comparison here is only a pattern observation. It does not say that
+the strip bridge and 3DT have the same mechanism, or that the program has
+already finished the two-sided candidate taxonomy.
+
 ---
 
 ## Exact closed forms

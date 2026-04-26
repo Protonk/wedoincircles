@@ -45,5 +45,12 @@ If a search memo is growing faster than it is converging, that is a finding. Not
   \beta(\alpha)=\limsup \frac{\ln q_{n+1}}{q_n},
   $$
   not $\limsup \ln q_{n+1}/\ln q_n$.
+  Existing finite irrationality-measure bounds put `pi` on the
+  `beta(pi)=0` / Diophantine side; do not reopen the Liouville-vs-
+  Diophantine fork when working in K-H-L-A Step 5.
+- The Ferenczi–Zamboni / 3DT Lyndon-word line is candidate machinery
+  for Kraft-cyclotomic bookkeeping, not a constructed bridge. Cite
+  `rotations/3DT-BRIEF.md` §"Burrows–Wheeler and perfectly clustering
+  Lyndon words" with that candidate framing.
 - The crystallographic function `\psi` is additive on prime-power parts. It is not `\varphi/2`.
 - In the lattice 3DT formulation, `r_2`, `s_2`, and `r_2+s_2` are unscaled lattice-function values. The actual circle-gap lengths are those quantities divided by `N`.

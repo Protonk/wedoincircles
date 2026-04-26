@@ -62,8 +62,10 @@ Source PDFs in scope:
 [sources/Fuglede-StabilityIsoperimetricProblem-1989.pdf](sources/Fuglede-StabilityIsoperimetricProblem-1989.pdf)
 (quantitative stability — not yet briefed); and
 [sources/Beck-ProbabilisticDiophantineApproximation-1994.pdf](sources/Beck-ProbabilisticDiophantineApproximation-1994.pdf)
-(probabilistic Diophantine approximation — not yet briefed; enters
-DIDOS through the gap-as-discrepancy reading on the K-H-L-A side).
+(probabilistic Diophantine approximation — briefed at
+[iso/BECK-1994-BRIEF.md](iso/BECK-1994-BRIEF.md); enters DIDOS through
+the K-H-L-A empirical-to-density discrepancy proxy, not as a direct
+isoperimetric theorem).
 Each requires an INHERIT-discipline extraction brief with the
 L-W-safety audit
 ([memos/OLD-TIME-RELIGION.md](memos/OLD-TIME-RELIGION.md)) declaring

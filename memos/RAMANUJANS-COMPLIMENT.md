@@ -18,6 +18,12 @@ Ramanujan gives the same three, plus a fourth Bidder's log side didn't have:
 
 4. **Upper-bound benchmarks.** Rapid-convergence series for π (Ramanujan 1914, Chudnovsky 1988, Borwein–Bailey descendants) give numerical rates against which any claimed compute-cost lower bound is evaluated. A lower bound embarrassingly looser than Chudnovsky's ~14 digits per term would be uninformative; a lower bound comparable-to-or-tighter would be load-bearing.
 
+Rotations-side comparison is now on file: `rotations/3DT-BRIEF.md` and
+`rotations/CONTINUED-FRACTIONS-CROSSWALK.md` supply the 3DT/continued-
+fraction machinery that lets these upper-bound benchmarks be compared to
+orbit-compression and Diophantine-substrate readings rather than only to
+Ramanujan-style analytic navigation.
+
 Where Bidder had to be translated into the modern compute-in-a-bounded-register register, Ramanujan's corpus is already in the algebraic-cyclotomic-modular register the circle-side catalog uses. The vocabulary matches.
 
 5. Ramanujan and Hardy are linked and I like Hardy.

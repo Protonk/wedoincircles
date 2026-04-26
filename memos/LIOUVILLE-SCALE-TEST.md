@@ -243,6 +243,9 @@ The Reserve row *"cyclotomic units and sine-product identities"* (formerly
 (A8) in the reserve list, now the key intended refinement) is still
 available — it could in principle attack a different small algebraic
 quantity — but it cannot rescue `alpha_n` specifically. That's confirmed.
+Its current program location is the six-perspective continued-fraction
+substrate in `rotations/CONTINUED-FRACTIONS-CROSSWALK.md`, not a rescue
+of the naive `alpha_n` Liouville scale.
 
 Suggested update to `OLD-TIME-RELIGION.md`:
 

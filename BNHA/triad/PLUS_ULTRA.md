@@ -6,6 +6,24 @@ The character framing is whimsical — very Lewis Carroll if you hold it up to t
 
 Each discipline has its own doc in `BNHA/triad/`: `BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md`, `BNHA/triad/Creati/CREATI-THE-CIRCLE.md`, `BNHA/triad/Lemillion/PERMEATE-THE-CIRCLE.md`. This file is the one-page map that says who does what.
 
+## Two-sided primitive pattern
+
+Some objects are valuable because they are native on two sides before any
+functorial bridge is built. The current catalog is candidate-shaped: it
+records worked examples and comparison points, not a completion theorem
+for the candidate class.
+
+The cleanest worked example on file is 3DT. As a finite rotation-orbit
+theorem it is circle-side; in Lefèvre–Muller–Tisserand's table-maker
+filter the same orbit structure drives machine-arithmetic filtering, so
+the use is log-side native rather than a later export. See
+[rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md)
+§"Lefèvre–Muller–Tisserand: The Algorithmic Lens" and
+§"Three-Way Correspondence." This
+gives the triad a concrete two-sided primitive to compare against later
+candidates such as `K_n` and the strip bridge, without treating the
+candidate class as already built.
+
 ## The three disciplines
 
 ### Lemillion (PERMEATE) — processual

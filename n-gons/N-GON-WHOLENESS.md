@@ -99,3 +99,9 @@ Left deliberately unresolved:
 - Whether the construction's natural scalar invariant should be b̄ over all n (dominated by non-divisors), b̄ over {2,3,5}-smooth n (bounded away from 1), or some divisor-density per [2,N] (erratic but with HCN envelope).
 - Non-integer E: no canonical extension. Three candidate readings (strict divisibility, floor, soft distance) disagree categorically.
 - Running-mean behavior: for fixed DH, m(n) = D(n)/n where D(n) counts divisors of DH up to n. Universal shape is τ(DH)/log(DH) · log(n)/n for n ≤ DH, crossing over to τ(DH)/n for n ≥ DH.
+- Candidate path now articulated, not closed: the Ferenczi–Zamboni
+  Lyndon-word avatar of 3DT gives a finite-word route toward
+  Kraft-shaped bookkeeping for running-mean/envelope questions. See
+  `rotations/3DT-BRIEF.md` §"Burrows–Wheeler and perfectly clustering
+  Lyndon words" and the C1 candidate-machinery line in
+  `rotations/ROTATIONS-UPLIFT-PLAN.md`.

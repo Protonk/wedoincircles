@@ -76,7 +76,7 @@ This means **the 3DT is Erasure-legal under BIND when taken via Marklof–Ström
 
 The upshot for Leg 3 specifically: τ_c and ε can be studied alongside the 3DT's finite-valued function F on Γ\SL(2, ℝ), all under the same Erasure-legal vocabulary. If τ_c's spectrum admits a lattice-geometric reading on Γ\SL(2, ℝ) — whether directly or through some related homogeneous space — that's a spectral-rhyme candidate BIND can pursue without importing shared vocabulary. The continuous-E tool stays, the lattice-geometric 3DT joins it, and the cross-check between them becomes a concrete Leg 3 task.
 
-Pointer for the ring-theoretic / geometric details: `rotations/3DT-BRIEF.md` §"The third angle: 3DT from the space of lattices (Marklof–Strömbergsson 2017)".
+Pointer for the ring-theoretic / geometric details: `rotations/3DT-BRIEF.md` §"Marklof–Strömbergsson: The Geometric Lens".
 
 ## What has to happen next
 
@@ -115,6 +115,12 @@ Failures are the most informative results.
 **If Leg 3 succeeds.** Give a closed-form spectral invariant pairing: a decay exponent, a symmetry under an involution, or a Fourier relation that τ_c and ε share, checkable on a finite window. State the categorical setting. Verify that the invariant respects composition. Identify what the pairing preserves and what it distorts. [PLUS ULTRA]
 
 **If Leg 3 fails.** Construct a specific invariant on each side such that any spectral map between the two obstruction structures must either respect both invariants or fail. The Babylonian fossil — v₃ ≤ 2 on the log-DH axis — is a coordinate artifact of 3.6·10^E. The circle-side ψ-constraint is a geometric invariant of any lattice in dimension d. A spectral F would need to send the coordinate artifact to the geometric invariant; the guess is that this cannot be done naturally, and Leg 3's obstruction is an explicit computation of how much the coordinate artifact differs in kind from the geometric invariant. [PLUS ULTRA]
+
+Pointers for the construction attempt: `rotations/3DT-BRIEF.md`
+§"Marklof–Strömbergsson: The Geometric Lens" is the lattice-geometric
+machinery already BIND-legal, and
+`rotations/CONTINUED-FRACTIONS-CROSSWALK.md` is the continued-fraction
+substrate index for the arithmetic side of the comparison.
 
 The computation of this difference is the missing center of Leg 3. The other legs' obstructions, if they share this mechanism, triangulate to the triad-level result in `BNHA/triad/TRIAD-ABSTRACT-PATTERN.md`. [PLUS ULTRA]
 

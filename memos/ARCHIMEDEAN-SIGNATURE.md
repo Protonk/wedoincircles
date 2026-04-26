@@ -110,6 +110,9 @@ The strip tissue `y_n(x) = sec(2 pi (x - k/n)) - 1` has a different
 BIND-native Fourier substrate, living on the lattice `n Z`; the
 construction and all `d_k` identities are in
 [memos/STRIP-TISSUE-FOURIER.md](memos/STRIP-TISSUE-FOURIER.md).
+The same lesson — one object may carry distinct lattice/coefficient
+readings without collapsing them — is visible in `rotations/3DT-BRIEF.md`
+§"Marklof–Strömbergsson: The Geometric Lens."
 
 These two coefficient systems support four distinct outcomes.
 

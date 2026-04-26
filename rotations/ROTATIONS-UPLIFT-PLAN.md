@@ -33,8 +33,8 @@ program plus the rotations/ supply that addresses it.
 **A1. K-H-L-A empirical-to-density proxy ← Lefèvre–Muller compressed
 orbit.** `memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md` Step 5 names the
 proxy as a hypothesis: bridge from pointwise per-`n` discrepancy to
-averaged-over-range. `rotations/3DT-BRIEF.md` §"Lefèvre–Muller: The
-Algorithmic Lens" supplies a worked pseudocode (`gamma, delta, d,
+averaged-over-range. `rotations/3DT-BRIEF.md` §"Lefèvre–Muller–
+Tisserand: The Algorithmic Lens" supplies a worked pseudocode (`gamma, delta, d,
 u, v` with Euclidean updates) that compresses the rotation orbit
 without enumerating its points — exactly the move the proxy
 proposes, in 1-dim algorithmic form. Beck 1994 (in iso/) is the
@@ -124,7 +124,7 @@ Kraft-shaped bookkeeping.
 **C2. Two-sided log/circle objects ← Lefèvre–Muller "log-side
 native" 3DT use.** The program seeks objects that natively live on
 both sides (log: Landfall ε(m); circle: K_n, polygon vertices).
-`rotations/3DT-BRIEF.md` §"Lefèvre–Muller: The Algorithmic Lens"
+`rotations/3DT-BRIEF.md` §"Lefèvre–Muller–Tisserand: The Algorithmic Lens"
 flags 3DT's table-maker's-dilemma deployment as "log-side native,
 not merely a circle-side theorem later imported." 3DT is the
 program's *first* explicit two-sided object; K_n (post HJB-1985) is
@@ -181,8 +181,8 @@ One sub-subsection per target. Each populated by:
   serves); `iso/BECK-1994-BRIEF.md` (higher-dim Fourier-substitute
   methodological alignment, already on file as the K-H-L-A
   branch's structural validation).
-- **rotations/ supply.** `rotations/3DT-BRIEF.md` §"Lefèvre–Muller:
-  The Algorithmic Lens" — worked pseudocode (`gamma, delta, d, u, v`
+- **rotations/ supply.** `rotations/3DT-BRIEF.md` §"Lefèvre–Muller–
+  Tisserand: The Algorithmic Lens" — worked pseudocode (`gamma, delta, d, u, v`
   with Euclidean updates) that compresses the rotation orbit
   without enumerating its points. This is the 1-dim algorithmic
   shape of exactly what the proxy proposes. Beck 1994 supplies the
@@ -200,8 +200,8 @@ One sub-subsection per target. Each populated by:
     dim Fourier-substitute methodological alignment via Beck 1994
     (per `iso/BECK-1994-BRIEF.md`); the proxy now has two
     precedents in adjacent registers.
-  - `rotations/3DT-BRIEF.md` §"Lefèvre–Muller: The Algorithmic
-    Lens": back-pointer to the K-H-L-A Step 5 use site.
+  - `rotations/3DT-BRIEF.md` §"Lefèvre–Muller–Tisserand: The
+    Algorithmic Lens": back-pointer to the K-H-L-A Step 5 use site.
   - `iso/BECK-1994-BRIEF.md` (optional cross-link): note that
     Beck's higher-dim Fourier-substitute is paired with Lefèvre–
     Muller's 1-dim algorithmic precedent for the K-H-L-A empirical-
@@ -287,7 +287,7 @@ One sub-subsection per target. Each populated by:
     for rotation-orbit machinery (finite words, Burrows–Wheeler,
     lattice F on Γ\SL(2,R), Euclidean updates) before the audit
     discipline was formally named. Cite `rotations/3DT-BRIEF.md`
-    §"Program-Facing Consequences 2".
+    §"Program-Facing Consequences", subsection 2.
   - `iso/THREE-REGISTER-SYNTHESIS.md` Claim 2 §2.3 (Beck content-
     path subsection): add a forward-pointer noting that the BIND-
     compatibility claim for Beck's Fourier-discrepancy machinery
@@ -296,9 +296,10 @@ One sub-subsection per target. Each populated by:
     share BIND-compatibility status; the precedent strengthens the
     audit verdict from "isolated audit on Beck" to "audit-with-
     precedent."
-  - `rotations/3DT-BRIEF.md` §"Program-Facing Consequences 2": back-
-    pointer to the OLD-TIME-RELIGION audit-criterion section and the
-    iso/THREE-REGISTER-SYNTHESIS Claim 2 use site.
+  - `rotations/3DT-BRIEF.md` §"Program-Facing Consequences",
+    subsection 2: back-pointer to the OLD-TIME-RELIGION audit-
+    criterion section and the iso/THREE-REGISTER-SYNTHESIS Claim 2
+    use site.
 - **Audit step (verification pass).**
   - (a) Verify the BIND-compatibility claim is structurally accurate.
     The 3DT brief lists (Stern–Brocot tree, Farey-as-tree, Thomae,
@@ -869,8 +870,8 @@ One sub-subsection per target. Each populated by:
   triad disciplines), and the triad memos in `BNHA/triad/`. The two-sided
   pattern is the program's core architecture but has no central
   catalog of named instances.
-- **rotations/ supply.** `rotations/3DT-BRIEF.md` §"Lefèvre–Muller:
-  The Algorithmic Lens" — flags 3DT's table-maker's-dilemma
+- **rotations/ supply.** `rotations/3DT-BRIEF.md` §"Lefèvre–Muller–
+  Tisserand: The Algorithmic Lens" — flags 3DT's table-maker's-dilemma
   deployment as "log-side native, not merely a circle-side theorem
   later imported into log-side questions." Lefèvre–Muller use 3DT
   inside a real floating-point filtering algorithm; the orbit
@@ -888,7 +889,7 @@ One sub-subsection per target. Each populated by:
     note that the program's two-sided pattern has an articulated
     worked example in 3DT, with explicit log-side native deployment
     via Lefèvre–Muller. Cite `rotations/3DT-BRIEF.md`
-    §"Lefèvre–Muller: The Algorithmic Lens" and §"Three-Way
+    §"Lefèvre–Muller–Tisserand: The Algorithmic Lens" and §"Three-Way
     Correspondence." Frame strictly as candidate or worked example,
     not as result.
   - `memos/STRIP-H1-HURWITZ-CLOSURE.md` (strip-side bridge memo):
@@ -952,7 +953,9 @@ One sub-subsection per target. Each populated by:
   candidate-machinery framing discipline that C2 inherits). Most
   candidate-shaped of the remaining five; needs the most care.
   Sequenced last in the second batch.
-- **Status.** not-started.
+- **Status.** complete; C2a program-side two-sided catalog edits and C2b
+  3DT back-pointer landed and verified, with two-sidedness/candidate-
+  language audit complete.
 - **Change in program capacity.**
   - *Before.* The program's two-sided pattern (log + circle, or
     algebraic + geometric, or strip + curve) is articulated across
@@ -1052,7 +1055,7 @@ Cross-target conflicts to coordinate during execution:
 - **3DT-BRIEF as cross-target hub.** Six targets (A1, A2, B2, B3,
   C1, C2) add back-pointers to `rotations/3DT-BRIEF.md`. Each
   target's back-pointer attaches to the appropriate source-section
-  ("Lefèvre–Muller: The Algorithmic Lens" for A1; "Program-Facing
+  ("Lefèvre–Muller–Tisserand: The Algorithmic Lens" for A1; "Program-Facing
   Consequences" subsection 2 for A2 and subsection 3 for C2;
   "Marklof–Strömbergsson: The Geometric Lens" for B3;
   "Burrows–Wheeler and perfectly clustering Lyndon words" for C1;
@@ -1160,6 +1163,12 @@ After all nine targets land, a single consistency pass verifies:
   ((i)–(iv)) have landed as part of their parent targets (A4, B1,
   B3, A1 respectively), with no orphaned references.
 
+**Status.** complete; post-nine-target consistency pass run after C2.
+Small fixes landed for stale 3DT section-title references and guardrail
+phrasing in two-sided/candidate notes. Pointer symmetry, trust-boundary
+language, claim-escalation checks, shared-memo composition, and
+sub-citation completeness verified.
+
 ### 2.4 Final synthesis memo
 
 With all nine targets populated and sequenced, the synthesis memo's
@@ -1238,7 +1247,7 @@ decision waits until all nine targets close.
 | B3 | methodological precedent | 6 | complete; landed and verified |
 | B2 | methodological precedent | 7 | complete; landed and verified |
 | C1 | candidate machinery | 8 | complete; landed and verified |
-| C2 | candidate machinery | 9 | not-started; **plan populated and sequenced** |
+| C2 | candidate machinery | 9 | complete; landed and verified |
 
 | Sub-citation | Parent target | Sequence | Status |
 |---|---|---:|---|
@@ -1508,6 +1517,12 @@ Category 1–3 edits (lands as Turn 14a) and Category 4–5 paper-
 prep flagging (Turn 14b). The synthesis memo and theorem-
 statement work surfaced by Category 5 are post-plan in scope and
 do not belong inside this plan file.
+
+**Status.** complete; Category 1–3 pointer/framing edits landed, the
+verified stale `COUNTING-APPARATUS` parenthetical was removed, and the
+Category 4–5 paper-prep items remain flagged rather than implemented.
+Post-plan paper blockers remain: deferred synthesis memo and top-level
+main-theorem statement.
 
 ---
 

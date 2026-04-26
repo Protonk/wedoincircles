@@ -201,7 +201,7 @@ The irrational case is different. For irrational `α`, the first `N` points of t
 
 ### BIND-legality
 
-The lattice-geometric proof of 3DT via Marklof–Strömbergsson 2017, operating in `Γ\SL(2, ℝ)` with `Γ = SL(2, ℤ)`, is on the allowed-primitives list of `BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md`. Reading the anchored `n`-gon construction through 3DT is therefore a BIND-native frame: the family of anchored rational-rotation orbits at all resolutions can be discussed without importing Minkowski `?(x)`, Stern–Brocot, Farey, Thomae, or Denjoy.
+The lattice-geometric proof of 3DT via Marklof–Strömbergsson 2017, operating in `Γ\SL(2, ℝ)` with `Γ = SL(2, ℤ)`, is on the allowed-primitives list of `BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md`. Reading the anchored `n`-gon construction through 3DT is therefore a BIND-native frame: the family of anchored rational-rotation orbits at all resolutions can be discussed without importing Minkowski `?(x)`, Stern–Brocot, Farey, Thomae, or Denjoy. For the extracted lattice reading, see `rotations/3DT-BRIEF.md` §"Marklof–Strömbergsson: The Geometric Lens."
 
 ### Two BIND-legal frames on the same object
 

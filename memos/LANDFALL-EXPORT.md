@@ -381,6 +381,12 @@ It says:
 
 This turns “Chebyshev-style iteration probably fails on the log side” into a structural obstruction, not just a failed guess.
 
+Circle-side closure comparison now lives in
+`BNHA/triad/Creati/CREATI-THE-CIRCLE.md` §"C5. The Chebyshev functor
+candidate (Leg 1 of the triad)" and in
+`rotations/CONTINUED-FRACTIONS-CROSSWALK.md`, which indexes the
+continued-fraction substrate used by the circle-side candidates.
+
 ### 2. Transcendence At Every Interior Dyadic
 
 This is the clean arithmetic-depth statement exported by the current memo and it remains the main single-line theorem worth carrying around:

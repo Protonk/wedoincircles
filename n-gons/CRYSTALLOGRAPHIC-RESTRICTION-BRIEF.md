@@ -186,6 +186,8 @@ In particular, the first prime outside the log-side `{2,3,5}` support is reflect
 - $\psi(7)=6$.
 
 That makes the predicted break at `7` arithmetically structural rather than ad hoc.
+For the prime-valuation form of the same obstruction on subpolygon
+orders, see `n-gons/SUBPOLYGON.md` §"Prime-Valuation Form."
 
 ### 4. It makes the Goldbach boundary explicit
 

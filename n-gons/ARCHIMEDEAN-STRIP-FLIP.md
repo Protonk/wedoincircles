@@ -111,6 +111,8 @@ X = (1+y)\cos(2\pi x),
 $$
 
 so the outside-out counting word `M_N` from `n-gons/counting/COUNTING.md` can be read as a corner-incidence count for equal-`X` contours on the same strip. Subpolygon asks which floor points lie on a `DH`-grid; counting asks which corner points lie on the same `X`-contour. See `n-gons/counting/COUNTING-AND-STRIP.md`.
+For the grid-incidence-as-discrepancy reading adjacent to this picture,
+see `iso/BECK-1994-BRIEF.md` and `iso/DIDOS-PREROGATIVE.md`.
 
 ---
 

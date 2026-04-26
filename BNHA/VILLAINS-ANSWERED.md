@@ -317,8 +317,8 @@ enters as program-internal accounting, not as smuggled circle-content.
 
 A concrete candidate path is now on file for the Kraft side of this
 bridge. [rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md)
-§"Burrows-Wheeler and perfectly clustering Lyndon words" extracts the
-Ferenczi-Zamboni characterization: every three-distance encoding word
+§"Burrows–Wheeler and perfectly clustering Lyndon words" extracts the
+Ferenczi–Zamboni characterization: every three-distance encoding word
 is a perfectly clustering Lyndon word. That gives a finite-word
 candidate machinery from rotation-orbit structure toward Kraft-shaped
 bookkeeping, separable from the geometric circle data. It is not a
@@ -405,6 +405,14 @@ finite algebraic closure produces an unbounded cyclotomic ladder. Same
 template, different tools, different conclusions. The template is the
 shared discipline; it is not a mathematical object that either leg is
 "about."
+
+What the rotations integrations add is candidate scaffolding, not a
+staircase. A1 gives the K-H-L-A branch a one-dimensional
+empirical-to-density proxy template via Lefèvre–Muller–Tisserand's 3DT
+filter, and C1 gives the Kraft side a finite-word candidate path via the
+Ferenczi–Zamboni BWT/Lyndon characterization. These are named pieces a
+future bridge would have to use or refute; they do not turn the closure
+theorem and the transcendence program into one theorem.
 
 ---
 

@@ -7,6 +7,9 @@ object. The strip tissue lives on the frequency lattice `n Z`, has
 
 No Stern-Brocot / Farey / Thomae primitive enters. This is BIND-native strip
 geometry: secant arcs, integration, and Fourier modes on `[0, 1]`.
+For the modular-surface/lattice context that BIND permits alongside this
+strip Fourier substrate, see `BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md`
+§"The lattice-geometric 3DT".
 
 ![Three panels under the title "Strip-tissue Fourier object: DC area, signed modes, and first-pair concentration". Top panel (a) "strip tissue y_10(x): area is the DC mode" runs across the full width on a horizontal axis from 0 to 1, showing repeating gray cusped arcs that dip down and back up many times, a dashed orange horizontal reference at the DC level, and a single blue-shaded "one strip period" patch near x=1/2. Bottom-left panel (b) "signed nonzero modes" is a stem chart over integer mode index k from -12 to +12 with three overlaid series (orange dots, green dots, red x-markers) alternating in sign. Bottom-right panel (c) "nonzero L² energy: first pair carries almost all mass" is a green bar chart over mode-pair k from 1 to about 13, descending steeply, with a red limit curve and a callout "90/π⁴ ≈ 0.924".](../figures/strip_tissue_fourier.png)
 
@@ -299,4 +302,3 @@ TV(y_n) = 2n (sec(pi/n) - 1) = pi^2/n + O(n^-3).
 
 This is a `1/n` observable, not part of the `1/n^2` Archimedean signature,
 but it may be useful as a BIND-local roughness measure.
-

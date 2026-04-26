@@ -149,7 +149,7 @@ track.
 - **Cyclotomic closure**: ⋃_n ℚ(τ(n)) has no finite-degree subfield containing all τ(n); any attempt to fit the sequence in a fixed cyclotomic extension breaks at some finite n.
 - **No obvious Fourier content**: τ is defined on ℤ, not on a continuous seam. A Dirichlet-style or lattice-Fourier picture may still be worth working out.
 
-**Artifact (built):** `corners/tau_portrait.py` produces `figures/tau_portrait.png` — two panels, stem plot of τ(n) on linear y over n ∈ [3, 60] colored by algebraic degree **φ(n)/2** (the correct degree for 2cos(2π/n); an earlier revision of this bullet said φ(2n)/2, which is the degree of cos(π/n) — a different object at `corners/PSEUDO-CHEBYSHEV-NODES.md`), Niven zeros at {1, 2, 3, 4, 6} marked with green stars, and a log-log companion of |τ(n)| against the 4π²/n² Taylor-tail asymptote.
+**Artifact (built):** `corners/tau_portrait.py` produces `figures/tau_portrait.png` — two panels, stem plot of τ(n) on linear y over n ∈ [3, 60] colored by algebraic degree **φ(n)/2** for 2cos(2π/n), Niven zeros at {1, 2, 3, 4, 6} marked with green stars, and a log-log companion of |τ(n)| against the 4π²/n² Taylor-tail asymptote.
 
 ![A two-panel scientific plot. Top panel: a lollipop chart of vertical stems rising and falling from a zero baseline across integer values from 3 to 60, with circular markers colored in green, orange, blue, red, purple, gold, and gray bands; green stars sit at the leftmost three positions and arrow callouts label "Niven zeros (crystallographic set)", a "positive bulge", and a "sign flip" near the early integers. Bottom panel: a log-log scatter of colored dots descending along a dashed reference line from upper-left to lower-right, with the same color palette as the top panel.](../figures/tau_portrait.png)
 
@@ -207,6 +207,13 @@ Three observations the figure makes precise:
 
 2. **The counting ledger step does not share this discontinuity.** Step increments Δ\|M_n\| across n = 5…11 are `+2, +1, +3, +2, +4, +2, +5` — a pattern governed by n mod 4 (odd n give larger steps: +2, +3, +4, +5 at n = 5, 7, 9, 11; even n stay small: +1, +2, +2 at n = 6, 8, 10) rather than by algebraic depth. The +3 at n = 7 fits the odd-n trend; it is *not* anomalous against its neighbors. This is an honest negative finding: the counting-apparatus *length* observable does not localize the Gauss–Wantzel failure directly, and the "three cost measures tracking each other" framing in the original version of this section was too strong.
 
+Downstream placement: the Gauss-Wantzel constructibility check now feeds
+the compute-model primitive list rather than standing alone as evidence.
+The K-H-L-A side supplies `beta(pi)=0` / Diophantine placement via
+`rotations/10-MARTINIS-BRIEF.md`, while the Kraft-cyclotomic side has
+candidate machinery via `rotations/3DT-BRIEF.md` §"Burrows–Wheeler and
+perfectly clustering Lyndon words."
+
 3. **Implication for the search.** If the compute-cost bind the program is after requires the ledger to witness algebraic-depth discontinuities at specific n, then the ledger in its current form (length or step increment of the outside-out word) is the wrong observable. A different corner-side observable — perhaps the *value* structure of the M_N entries (Euler-phi content via the terminal singleton `2(N−2)` and the interior singletons) rather than their *length* — may be where the algebraic-depth signature lives. Allied extant reading: `figures/counting_psi_stratification.png` shows the ψ(n)-stratified sweep-x-support through n = 40, which *does* localize the algebraic-depth discontinuity at n = 7 through the ψ classes. That figure is a stronger candidate for belief-forming than the length-based ledger shown here. See `n-gons/counting/PSI-STRATIFICATION.md` for the figure's companion memo.
 
 ---
@@ -219,11 +226,11 @@ Existing material this work draws on:
 - `corners/PSEUDO-CHEBYSHEV-NODES.md` — algebraic-degree catalog, Gauss–Wantzel constructibility, the n = 7 first-break.
 - `BNHA/triad/Creati/CREATI-THE-CIRCLE.md` §§C1, item 9 — τ definition and algebraic-degree.
 - `n-gons/counting/COUNTING.md` and the `n-gons/counting/` directory generally — the counting apparatus itself (output `M_N`, update maps, raster figures, Champernowne encoding).
+- `rotations/CONTINUED-FRACTIONS-CROSSWALK.md` — continued fractions as the shared substrate under the spectral, 3DT, computational, Beck, and K-H-L-A readings.
 - `BNHA/triad/Creati/INSCRIPTION-PAPER-PLAN.md` §§1/4 — the "softened" walls this work wants to harden.
 - `BNHA/SirNighteye/DONT-BELIEVE-ME-JUST-WATCH.md` — the verdict outline, stated in advance in compact-Fourier vocabulary. Its seven rubrics (D1–D4 disanalogies, C5–C7 structural contrasts, plus the coordinative consequence Δ^L = −ε) are each a place this search's quantitative witness has to land. Direct impact here: C6 names item (A)'s compute-model candidate in FFT vocabulary (Cooley–Tukey radix-2 butterfly, native on the unit circle, non-recurring on the log-binade); D1 locates where the Lindemann-dependence of the mismatch enters, feeding the circularity map in `memos/LINDEMANN-BRIEF.md`; and the coordinative-consequence closer reframes "beating the surrogate" as closing an additive-vs-logarithmic (or angular-vs-Euclidean) displacement field — which is the shape the portrait-of-τ in item (C) has been trying to articulate.
 - `BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md` — τ_c continuous-E tool; the continuous-parameter analog of τ.
 - `n-gons/CRYSTALLOGRAPHIC-RESTRICTION-BRIEF.md` — the Bamberg–Cairns–Kilminster ψ-function and the higher-dimensional lattice extension.
-- `rotations/CONTINUED-FRACTIONS-CROSSWALK.md` — the CF axis that cuts across disciplines.
 - `memos/LINDEMANN-BRIEF.md` — classical transcendence of π, plus a circularity map for when invoking Lindemann–Weierstrass in the compute-cost argument is safe, programmatically weak, or strictly circular. The base case.
 
 **Anchors yet to be written:**

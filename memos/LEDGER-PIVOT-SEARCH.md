@@ -561,7 +561,7 @@ operation count is required.
 
 Path 2 also has a candidate machinery for the Kraft side of that cost
 theorem: [rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md)
-§"Burrows-Wheeler and perfectly clustering Lyndon words" records the
+§"Burrows–Wheeler and perfectly clustering Lyndon words" records the
 Ferenczi-Zamboni finite-word characterization of three-distance
 encoding words as perfectly clustering Lyndon words. The attraction is
 that this is a word-side, rotation-orbit avatar with no free circle

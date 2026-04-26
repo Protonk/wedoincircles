@@ -49,7 +49,7 @@ Use literally descriptive alt-text (`< 1000` characters) for embeds of all figur
 
 ## Old-time religion
 
-When the program leans on machinery post-Lindemann 1882 (Fortnow, Aitchison, Erdős-Turán, Baker, Gelfond-Schneider, Thue-Siegel-Roth), that machinery must be methodologically re-certified as pre-L-W in its use; judged to be sufficiently nongermane to number theory and labeled as potentially hazardous; or be replaced by a pre-1882 anchor. Do not smuggle in number-theoretic ease, as this carries with it pi transcendental.
+When the program leans on machinery post-Lindemann 1882 (Fortnow, Aitchison, Erdős-Turán, Baker, Gelfond-Schneider, Thue-Siegel-Roth), that machinery must be methodologically re-certified as pre-L-W in its use; judged to be sufficiently nongermane to number theory and labeled as potentially hazardous; or be replaced by a pre-1882 anchor. Do not smuggle in number-theoretic ease, as this carries with it pi transcendental. Keep Roth 1954 discrepancy and Beck 1994 Fourier/metric discrepancy separate from Roth 1955 Diophantine approximation: the former can be audited as transcendence-free methodology, while the latter is part of the Thue-Siegel-Roth hazard class.
 
 ## Working tree is dirty
 
