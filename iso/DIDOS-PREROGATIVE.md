@@ -223,3 +223,81 @@ setup). This memo is the coordination point for those briefs.
   For rate statements on regular n-gons, prefer Hurwitz / strip-`H^1`
   (sharp rate). The two routes are not interchangeable; the program
   inherits the bifurcation rather than resolving it.
+
+### From [iso/BECK-1994-BRIEF.md](iso/BECK-1994-BRIEF.md)
+
+- **Headline theorem.** Beck Theorem 1: for almost every
+  `alpha in R^k` with `k >= 2`,
+  `Delta(alpha; N) << (log N)^k · phi(log log N) <=>
+  sum 1/phi(n) < infty`. Multidimensional Borel-Cantelli analog of
+  Khintchine 1923 (1-dim, via continued fractions). Sharpens
+  Schmidt 1964's `(log N)^{k+1+eps}` by one logarithm. Theorem 2
+  (sum of fractional-part products, almost every `alpha`) and the
+  continuous version (geodesic line on `T^{k+1}`) are derived from
+  Theorem 1.
+
+- **Methodological substitution.** Beck's tools — Fourier analysis,
+  Poisson summation, Fejér smoothing, second-moment method, local
+  Borel-Cantelli lemmas, combinatorial box decomposition —
+  *substitute for continued fractions* in higher-dimensional
+  discrepancy proofs (Beck p. 452). This is methodologically the
+  same recipe the program's K-H-L-A discrepancy branch uses
+  (Aitchison + Erdős-Turán-Koksma + Kraft) at 1-dim; Beck is a
+  worked example at higher dimension.
+
+- **Roth-1954 vs. Roth-1955 distinction.** Beck's lower bound
+  `Delta(alpha; N) >> (log N)^{k/2}` for *every* `alpha in R^k`
+  (eq. 2.17) cites **Roth 1954** "On irregularities of distribution"
+  (Mathematika 1, 73-79) — the L²-Fourier *discrepancy* lower bound.
+  This is methodologically distinct from Roth 1955's *transcendence*
+  theorem on rational approximations to algebraic numbers. The 1954
+  paper is transcendence-free in content; the 1955 paper is the
+  problematic post-L-W input. *For program audit purposes:
+  Beck's content does not depend on Roth-1955 transcendence
+  machinery.*
+
+- **Almost-every vs. specific-`alpha` mismatch.** Beck's headline
+  theorems are measure-theoretic ("for almost every `alpha`"). The
+  program targets specific `alpha = pi` (or polygon-related
+  algebraic number). Beck's bounds do not directly apply to a
+  specific point of measure zero. The empirical-to-density proxy at
+  [memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md](memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md)
+  Step 5 is the program's bridge from "almost every" to "this
+  specific `alpha`"; Beck's local-lemma structure (Lemmas 4.1-4.4)
+  is a usable methodological template but not a direct input.
+
+- **L-W-safety audit verdict.** Beck 1994 is calendar-post-1882
+  (1994 - 1882 = 112 years), but methodologically *plausibly
+  L-W-safe in content*. The proof techniques (Poisson summation,
+  Fejér smoothing, Cauchy-Schwarz, Borel-Cantelli, Schmidt 1960
+  second-moment inequality) are transcendence-free; the only
+  potentially-problematic input is **Schmidt 1960** [18], which
+  would require its own L-W-safety brief if program use becomes
+  load-bearing. The Roth input is Roth 1954 (discrepancy), not Roth
+  1955 (transcendence) — a distinction that matters for the audit.
+
+- **Cross-brief pattern, third axis.** Osserman + Fuglede + Beck
+  cover three distinct registers attaching to `Delta`:
+  - *Geometric* (Osserman): `Delta >= pi^2 (R - rho)^2` etc.;
+    family-specific, loose by `n^2` on regular n-gons.
+  - *Sobolev / Stability* (Fuglede): `Delta >= const ||grad u||^2`;
+    sharp rate on regular n-gons; explicit constants `(0.24, 0.54)`.
+  - *Probabilistic / Diophantine* (Beck): discrepancy of `(n alpha)
+    mod 1` sequences; almost-every register, no specific-alpha
+    bound. **Distinct hypothesis class** from the regular-polygon
+    family — Beck's `(n alpha) mod 1` is irrational sequence;
+    polygon vertices `(k/n) mod 1` are rational with discrepancy
+    `1/n` exactly. So Beck does not enter the regular-polygon test
+    case directly; the entry is via the K-H-L-A discrepancy branch
+    on `(n pi) mod 1`, a *different* sequence than the polygon
+    vertices.
+
+- **Program-side methodological alignment.** The K-H-L-A discrepancy
+  branch already uses Aitchison + Erdős-Turán-Koksma + Kraft; Beck
+  uses Poisson + Fejér + second-moment + Borel-Cantelli on the
+  multidim version of the same target. The two are
+  methodologically convergent: both replace continued-fraction
+  arguments with Fourier-side machinery for non-1-dim or
+  averaged-over-range targets. Beck's 1994 paper provides a fully
+  worked example that the Fourier substitution suffices, which
+  affirms the K-H-L-A program's strategic choice.

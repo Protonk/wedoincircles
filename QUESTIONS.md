@@ -48,7 +48,7 @@ Cleanup pass on recent search-memo work. Files in scope:
 - `memos/COUNTING-APPARATUS.md` §(A) "Open" paragraph and §(B) "Open" paragraph + "Update from `LEDGER-PIVOT-SEARCH`" annotation
 - `README.md` compute-cost branch bullet
 
-Cross-reference against: `n-gons/counting/verify_increment_formula.py`, `n-gons/counting/verify_psi_fracture.py`, `n-gons/counting/COUNTING.md` (six-field decomposition), `memos/CRYSTALLOGRAPHIC-RESTRICTION-BRIEF.md` (ψ definition).
+Cross-reference against: `n-gons/counting/verify_increment_formula.py`, `n-gons/counting/verify_psi_fracture.py`, `n-gons/counting/COUNTING.md` (six-field decomposition), `n-gons/CRYSTALLOGRAPHIC-RESTRICTION-BRIEF.md` (ψ definition).
 
 Check two classes of problem:
 
@@ -267,4 +267,42 @@ Audit pass on recent program work. Three independent spot-checks; answer at spot
 
 Output: short report, per-issue, identifying file + approximate location + the problem + whether it's drift, hallucination, or boundary violation.
 
-...
+## 28
+
+Read Beck 1994 (`sources/Beck-ProbabilisticDiophantineApproximation-1994.pdf`) as a source-extraction brief. Beck enters `iso/DIDOS-PREROGATIVE.md`'s coordination through the gap-as-discrepancy reading: the isoperimetric gap `Δ_n` on regular `n`-gons has a discrepancy interpretation, and the program's K-H-L-A discrepancy branch (`memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md`, `memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md`) is the live successor to the closed-negative naive Liouville endgame. Beck's register is probabilistic Diophantine approximation, distinct from Osserman's and Fuglede's deterministic isoperimetric register. The paper is substantial — scope to what's program-relevant.
+
+Two sub-questions:
+
+1. **Principal theorem(s) on discrepancy of sequences.** State Beck's main discrepancy results precisely — for each headline theorem: hypothesis class, conclusion (discrepancy bound in what currency), proof technique. Anchor on results most likely relevant to the program: Erdős-Turán-style discrepancy inequalities and their improvements, discrepancy bounds for `{n α}` sequences with irrational `α`, irregularities-of-distribution theorems with explicit constants. Distinguish what Beck first proves from what he extends or sharpens from preceding authors (Roth, Schmidt, Erdős-Turán, etc.).
+
+2. **Position relative to the program's discrepancy branch.** `memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md` Step 5 (empirical-to-density proxy) and `memos/OLD-TIME-RELIGION.md` §(A6) (Jacobi theta / Poisson test case) are the live targets on the program's discrepancy side. What does Beck supply that could enter the program as either an upper-bound input or a contradiction-step lower bound? Where does Beck's hypothesis class match or fail to match what the program needs? If results require post-1882 transcendence-theoretic machinery (Roth 1955, Baker-style bounds, etc.), name what and flag whether the proof admits a transcendence-free re-routing.
+
+Brief lands at `iso/BECK-1994-BRIEF.md`, source-extraction register per `CONTRIBUTING.md`. After the brief, propagate any cross-brief findings to `iso/DIDOS-PREROGATIVE.md` "Brief findings" section.
+
+## 29
+
+Higher-level audit pass on `memos/`. Propose mergers, retirements, and (where natural) moves into existing thematic folders (`fft/`, `iso/`, `corners/`, `n-gons/`). Don't execute; produce a list of named proposals with reasoning. Each proposal is a candidate for review, not a commitment.
+
+Three categories:
+
+1. **Merger candidates.** Pairs or small clusters of memos whose union would read more cleanly than the parts. Consider: parent + child memos where the child has matured to subsume the parent's coordination role; working-form memos that have stabilized and could fold into their result memo; topically-overlapping memos with redundant setup or definitions. For each: name the memos, name the proposed result memo (kept-name or new), one-paragraph rationale.
+
+2. **Retirement candidates.** Memos whose function has already been replaced or whose status is dead. Consider: memos whose substantive content has been promoted to sections in other memos; memos already tagged "closed negative", "retired", or "superseded" in their own text; memos referenced from no other live memo. For each: name the memo, where its content has gone (or "no live referent"), one-paragraph rationale.
+
+3. **Move candidates.** Memos in `memos/` that thematically belong in an existing folder (`fft/`, `iso/`, `corners/`, `n-gons/`) by content fit, not by surface name match. For each: name the memo, name the destination folder, one-paragraph rationale.
+
+Hard cap at 5 proposals total across the three categories — max-and-go-home: once 5 are named, stop and wrap the turn. Fewer than 5 is fine; the pass doesn't need to fill quota. Output a list of named proposals; don't execute; the list will be reviewed and selectively acted on.
+
+## 30
+
+Compose a cross-source synthesis brief drawing on the three iso/ briefs (`iso/OSSERMAN-1979-BRIEF.md`, `iso/FUGLEDE-1989-BRIEF.md`, `iso/BECK-1994-BRIEF.md`) and the cross-brief findings accumulated in `iso/DIDOS-PREROGATIVE.md` "Brief findings" section. Third-register memo per `CONTRIBUTING.md`: load-bearing.
+
+Three load-bearing claims:
+
+1. **Currency-by-route map.** Each register is sharp on a specific currency: Fourier/Sobolev sharp on the *rate* of `Δ_n` decay (Hurwitz/Fuglede achieve `Θ(1/n²)` matching the actual leading order); geometric/Hausdorff sharp on the *constant* (Bonnesen 1924's `c = 4π` provably best); probabilistic routes apply to *almost-every distributions*, not specific-α (Beck's hypothesis class). State the correspondence and the resulting non-interchangeability — route chosen by currency-fit, not aesthetic preference.
+
+2. **L-W-safety content map.** Each register has a transcendence-free re-routing path: Osserman → Steiner-symmetrization as pre-1882 substrate; Fuglede → Hurwitz 1902 (per Fuglede footnote 1); Beck → Roth 1954 (discrepancy, L²-Fourier — **not** Roth 1955 transcendence theorem; distinct papers, same author, adjacent year). Articulate the path per register with outstanding audit targets named (per Beck brief, Schmidt 1960's second-moment inequality is the cleanest single audit task).
+
+3. **Hypothesis-class structure across registers.** Each register's principal results require a hypothesis class that doesn't simply nest within the others. Osserman: convex bodies in plane (deterministic, single-curve). Fuglede: nearly-spherical domains in ℝⁿ (deterministic; without the nearly-spherical hypothesis, stability fails per the spike-on-ball counter-example). Beck: almost-every `α` in ℝᵏ for `k ≥ 2` (measure-theoretic; specific-α-π is measure-zero, so almost-every doesn't certify pointwise). State each register's hypothesis class precisely and characterize the bridge needed for program use of each (e.g., empirical-to-density proxy for almost-every → specific-α).
+
+Output: `iso/THREE-REGISTER-SYNTHESIS.md` (or whatever name reads cleanly). Cross-source synthesis register: load-bearing, with explicit witnesses (citations to specific theorem statements in each brief that establish each claim).

@@ -11,6 +11,7 @@ Files in this directory:
 - [build_strip_observables.py](n-gons/counting/build_strip_observables.py): renders the strip bridge figure for counting vs subpolygon.
 - [build_psi_table.py](n-gons/counting/build_psi_table.py): writes the `\psi`-aligned counting saturation table.
 - [build_psi_stratification.py](n-gons/counting/build_psi_stratification.py): plots the outside-out vertex x-coordinates stratified by `ψ(n)`, with backbone and tested-empty guides as colored ticks. Companion memo [PSI-STRATIFICATION.md](n-gons/counting/PSI-STRATIFICATION.md).
+- [BRESENHAM-MIDPOINT.md](n-gons/counting/BRESENHAM-MIDPOINT.md): search memo on Bresenham's midpoint circle algorithm as an integer-arithmetic upper-bound benchmark and possible word-level cousin of `M_N`.
 - [case_seven.py](n-gons/counting/case_seven.py): three-panel small-case walkthrough at `n = 7`, comparing ruler-and-compass cost, algebraic degree `φ(2n)/2`, and counting word length `|M_n|` across `n ∈ [5, 11]`. Produces `figures/case_seven_three_costs.png` and writes `case_seven_table.tsv`. Closes the (D) "Candidate artifact" line of `memos/COUNTING-APPARATUS.md`; see that memo for the read-off.
 - [non2_entries.tsv](n-gons/counting/non2_entries.tsv): tabular output of the second probe.
 - [psi_counting_table.tsv](n-gons/counting/psi_counting_table.tsv): `n`, `\psi(n)`, six-field increments, and exact contour hits on `X \in \{\pm1,\pm1/2,0\}`.

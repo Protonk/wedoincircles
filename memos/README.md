@@ -50,12 +50,6 @@ The Three-Distance Theorem: the gap structure of an α-rotation orbit on ℝ/ℤ
 
 → `memos/3DT-BRIEF.md`
 
-### CRYSTALLOGRAPHIC-RESTRICTION-BRIEF
-
-Bamberg–Cairns–Kilminster 2003 ψ-function. A 2D rotation R_n preserves an integer lattice iff n ∈ {1, 2, 3, 4, 6}; higher-dimensional lattices enlarge the admissible set. ψ(n) gives the minimum ambient dimension in which R_n is crystallographic. Load-bearing for CREATI's catalog and the τ portrait.
-
-→ `memos/CRYSTALLOGRAPHIC-RESTRICTION-BRIEF.md`
-
 ### LINDEMANN-BRIEF
 
 Classical transcendence of π (Lindemann 1882) and its Weierstrass-1885 generalization (Lindemann–Weierstrass). Plus a circularity map for when invoking Lindemann–Weierstrass in the compute-cost argument is safe, programmatically weak, or strictly circular. The program's target would uphold Lindemann–Weierstrass for e and π, so using it as a tool needs explicit care.

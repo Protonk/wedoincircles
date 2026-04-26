@@ -125,7 +125,7 @@ A directed read should close with a sentence of the form *"This produces a bound
 
 - `memos/RAMANUJANS-COMPLIMENT.md` — the upper-bound partner. This memo's reading list is the explicit continuation of that memo's §"What to read instead, when exit triggers."
 - `memos/COUNTING-APPARATUS.md` — the parent search; all four items (A)–(D) are where any lower-bound result has to land to be load-bearing.
-- `memos/BRESENHAM-MIDPOINT.md` — the integer-arithmetic upper-bound witness. Any lower bound this memo finds has to be at least as strong as Bresenham-midpoint's `O(R)` integer-op rate, or the bind gets pinned.
+- `n-gons/counting/BRESENHAM-MIDPOINT.md` — the integer-arithmetic upper-bound witness. Any lower bound this memo finds has to be at least as strong as Bresenham-midpoint's `O(R)` integer-op rate, or the bind gets pinned.
 - `memos/LINDEMANN-BRIEF.md` — transcendence-theoretic circularity map. Baker's theorem sits adjacent to this memo and is the one transcendence-theoretic tool that doubles as a diophantine lower-bound source.
 - `memos/BIDDER-AND-SON.md` §"Open question" — the log-side Baker-closure question this memo might end up dual-using on the circle side.
 

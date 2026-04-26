@@ -9,9 +9,11 @@ Contents:
 - `N-GON-WHOLENESS.md` — wholeness apparatus (rationals k/n on the circle).
 - `SUBPOLYGON.md` — gcd refinement of wholeness (`g_n(DH) = gcd(n, DH)`).
 - `ARCHIMEDEAN-STRIP-FLIP.md` — strip + inversion bridge connecting tangency data to corner data.
+- `CRYSTALLOGRAPHIC-RESTRICTION-BRIEF.md` — Bamberg–Cairns–Kilminster ψ-function; lattice-symmetry orders and the crystallographic restriction used throughout the n-gon material.
 - `counting/` — counting apparatus subdirectory (compute-cost ledger candidates).
 - Scripts (`*.py`, `*.sage`) — figure builders and counting utilities.
 
 A construct earns an entry when load-bearing across multiple program threads
-and defined by its own mathematical content. Adaptations of external objects
-go in `memos/`; disciplines and program-moves in `BNHA/triad/`.
+and defined by its own mathematical content. Domain-owned source briefs may
+live here when the extracted result has become local infrastructure;
+disciplines and program-moves stay in `BNHA/triad/`.
