@@ -6,7 +6,7 @@ The `iso/` register supplies the program with three-register decomposition machi
 
 Beck 1994's Fourier + Poisson + Fejér + second-moment + Borel–Cantelli machinery is the higher-dimensional substitute for continued-fraction Diophantine control on Kronecker sequences. It pairs with Lefèvre–Muller–Tisserand's 1-dim compressed-orbit pseudocode at `memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md` Step 5 as adjacent-register precedent for the K-H-L-A empirical-to-density proxy.
 
-Fuglede 1989 Theorem 1.2 gives the stability bound on nearly-spherical domains: `(1/10)(‖u‖² + ‖∇u‖²) ≤ Δ ≤ (3/5)‖∇u‖²`. The strip H¹ ↔ circumscribed Hurwitz gap identification at `memos/STRIP-H1-HURWITZ-CLOSURE.md` lives in this register.
+Fuglede 1989 Theorem 1.2 gives the stability bound on nearly-spherical domains: `(1/10)(‖u‖² + ‖∇u‖²) ≤ Δ ≤ (3/5)‖∇u‖²`. The strip H¹ ↔ circumscribed Hurwitz gap identification at `memos/STRIP-H1-HURWITZ-CLOSURE.md` is the adjacent Sobolev/Hurwitz bridge for that stability currency.
 
 Osserman 1979's Bonnesen-strengthening inequality `L² − 4πA ≥ π²(R − r)²` is the geometric-rate sharp instance among the three.
 
@@ -22,4 +22,4 @@ Citation-precision audit catalogue with four dimensions on file at `iso/THREE-RE
 
 Enabled. Register-non-interchangeability is on the page. The discrepancy register has a BIND-audit precedent paired with `rotations/3DT-BRIEF.md`. The currency-by-route map is explicit. The Beck path is audited as content-not-calendar pre-L-W-safe.
 
-Open. Whether Fuglede-style stability promotes to inscribed and circumscribed regular polygons with effective constants at every `n ≥ 3`. Whether Beck's `(log N)^k φ(log log N)` Borel–Cantelli threshold promotes to pointwise control on `π`. Whether the three currencies admit a unified register at higher resolution, or whether the non-nesting result is structural and unification is precluded.
+Open. Whether the verified inscribed computations and the circumscribed Hurwitz bridge promote to theorem-grade regular-polygon stability statements with effective constants at every `n ≥ 3`. Whether Beck's `(log N)^k φ(log log N)` Borel–Cantelli threshold promotes to pointwise control on `π`. Whether the three currencies admit a unified register at higher resolution, or whether the non-nesting result is structural and unification is precluded.

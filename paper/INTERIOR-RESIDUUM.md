@@ -15,12 +15,12 @@ R_n = (16/45) π⁶/n⁴ + (128/315) π⁸/n⁶ + O(n^{−8}).
 
 The radial-graph lift `γ̃_n` *is* the circumscribed polygon. This is the Sobolev ↔ Hurwitz bridge available without invoking transcendence machinery.
 
-`memos/COUNTING-APPARATUS.md` records the equivariant-surrogate / residue / compute-cost triptych for the polygon-circle approximation problem: the regular `n`-gon as equivariant surrogate, `τ(n)` as residue, `M_N` as compute-cost ledger.
+`memos/COUNTING-APPARATUS.md` records the equivariant-surrogate / residue / ledger-pivot triptych for the polygon-circle approximation problem: the regular `n`-gon as equivariant surrogate, `τ(n)` as residue, `M_N` as counting output, and `V_cert` as the current certification-preserving cost-ledger candidate for the T1/T3 branch.
 
 `memos/LANDFALL-EXPORT.md` is the analogous program on the log side: residue `ε(m) = log₂(1 + m) − m`, prefix-free halting via Kraft (§5), pointwise transcendence at interior dyadics via Gelfond–Schneider (§4), affine closure `Aff⁺(ℝ)` (§2). Available as cross-side comparison without re-import.
 
 ## Enabled and open
 
-Enabled. The four primary witness memos lean on this auxiliary substrate; the tools are pre-vetted for citation without circularity, available as cross-side comparison rather than as fresh imports.
+Enabled. The four primary witness memos lean on this auxiliary substrate. The strip-Fourier and counting tools are available internally; Landfall stays a cross-side comparison rather than a fresh import.
 
 Open. Whether the strip-Fourier residue `R_n` admits closed-form sharpening beyond `O(n⁻⁸)`; whether the COUNTING-APPARATUS triptych extends to register the impossibility-side cost manifold; whether Fortnow's universal-dominance constant `c` admits a tighter form for the K-H-L-A bookkeeping.
