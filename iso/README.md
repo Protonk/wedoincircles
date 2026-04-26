@@ -10,7 +10,8 @@ Contents:
 - Source-extraction briefs:
   - `OSSERMAN-1979-BRIEF.md` (Bonnesen-style modern survey)
   - `FUGLEDE-1989-BRIEF.md` (Sobolev stability)
-- Pending: `BECK-1994-BRIEF.md` (probabilistic Diophantine approximation), plus a cross-source synthesis once Beck lands.
+  - `BECK-1994-BRIEF.md` (probabilistic Diophantine approximation)
+- `THREE-REGISTER-SYNTHESIS.md` — cross-source synthesis (currency-by-route, L-W-safety content map, hypothesis-class structure).
 
 New briefs follow `CONTRIBUTING.md` source-extraction register; L-W-safety
 audit per `memos/OLD-TIME-RELIGION.md`; trust boundary explicit per brief.
