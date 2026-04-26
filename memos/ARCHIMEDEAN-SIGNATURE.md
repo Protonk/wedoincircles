@@ -1,10 +1,5 @@
 # ARCHIMEDEAN-SIGNATURE
 
-Reusable reference for the circle side's recurring `1/n^2` quantitative
-signature.
-
-The short version:
-
 > Many circle-side observables vanish at rate `constant / n^2` because the
 > regular `n`-gon differs from the circle at second order in the half-angle
 > `theta = pi / n`. This Taylor / Hessian statement is the universal
@@ -15,17 +10,8 @@ The short version:
 > known: the strip `H^1` seminorm matches the Hurwitz gap of its
 > radial-graph lift up to an explicit `O(n^-4)` correction.
 
-This memo consolidates the scattered `1/n^2` appearances in:
-
-- [corners/TAU-PORTRAIT.md](corners/TAU-PORTRAIT.md)
-- [corners/HURWITZ-GAP.md](corners/HURWITZ-GAP.md)
-- [corners/HURWITZ-FIRST-BAND-CONCENTRATION.md](corners/HURWITZ-FIRST-BAND-CONCENTRATION.md)
-- [BNHA/triad/Eraserhead/ARCHIMEDEAN-CONSTRICTION.md](BNHA/triad/Eraserhead/ARCHIMEDEAN-CONSTRICTION.md)
-- [n-gons/counting/NEAR-HALF-GAPS.md](n-gons/counting/NEAR-HALF-GAPS.md)
-- [memos/STRIP-TISSUE-FOURIER.md](memos/STRIP-TISSUE-FOURIER.md)
-- [memos/STRIP-H1-HURWITZ-CLOSURE.md](memos/STRIP-H1-HURWITZ-CLOSURE.md)
-
-Scope and exclusions: see [§"What This Does Not Claim"](#what-this-does-not-claim).
+Reusable reference for the circle side's recurring `1/n^2` quantitative
+signature.
 
 ---
 
@@ -204,8 +190,8 @@ a DC coefficient or a Parseval norm.
 
 ## Cross-Row Theorem
 
-The one theorem hosted by this signature memo is the strip-Hurwitz bridge.
-Let `y_n` be the strip tissue and define its radial-graph lift
+The strip-Hurwitz bridge. Let `y_n` be the strip tissue and define its
+radial-graph lift
 
 ```text
 gamma_tilde_n(theta) = (1 + y_n(theta/(2 pi))) e^(i theta).
@@ -230,53 +216,10 @@ secondary Archimedean squeeze.
 
 ![A three-panel figure titled "Hurwitz gap and strip H1 seminorm: same Archimedean jet, different observables". Top panel (a) "same leading rate, different substrates" is a log-log plot with three nearly coincident series — a dashed gray "shared guide", blue dots "Hurwitz gap Δn", and green dots "strip seminorm |y_n'|²" — descending across the plot from n=10 to n=100. Bottom-left panel (b) "second-order match" is a linear plot with two curves converging to a shared horizontal level near 1.0: a blue "Hurwitz approaches from below" and a green "strip H1 approaches from above". Bottom-right panel (c) "not an identity: next term separates them" plots a single red curve flattening into a horizontal limit annotated "76π⁶/45 ≈ 1623.68".](../figures/hurwitz_strip_h1_match.png)
 
-## Program Use
+## Scope
 
-This memo gives the circle side a stable quantitative sentence:
-
-> Across several independent observables, regular `n`-gon exhaustion of the
-> circle first appears at order `1/n^2`; this is the Archimedean signature.
-
-Its default role is companion vocabulary. The exception is the cross-row
-theorem above, which belongs here because it identifies two rows of the
-signature table through the circumscribed radial lift rather than living
-inside either row memo alone.
-
-For the closure-mismatch program, this is a companion metric; the
-load-bearing no-go (closure depth: circle-side `phi(n)/2` unbounded
-vs. log-side `Aff^+(R)` flat) is stated in
-[memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md).
-
-For the Kraft/Hermite-Lindemann side, the Hurwitz row is the important one:
-the Fourier support condition and first-band concentration are theorem-level
-inputs to [memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md](memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md).
-
-For BIND, the `A_below` row now supplies a real strip-Fourier substrate:
-linear modes `d_k` on `n Z`, with the area as `d_0`. The same substrate also
-gives `||y_n||_L2^2 ~ pi^4/(20n^4)` and
-`||y_n'||_L2^2 ~ 4pi^4/(3n^2)`; see
-[memos/STRIP-TISSUE-FOURIER.md](memos/STRIP-TISSUE-FOURIER.md). The
-`H^1` seminorm now also has the circumscribed-Hurwitz comparison recorded
-above. For the counting side, the near-half row remains diagnostic: it
-shows the same second-order Archimedean rate after an arithmetic
-subsequence is selected, without pretending to be Fourier-Parseval.
-
-## What This Does Not Claim
-
-- It does not claim every `1/n^2` observable is a first-band Fourier
-  observable.
-- It does not claim every Fourier reading uses the same coefficient lattice.
-- It does not claim the strip lattice `n Z` and the Hurwitz arclength
-  lattice `1 + n Z` are the same; the cross-row theorem passes through a
-  geometric radial lift.
-- It does not claim the counting word `M_N` is a compute-cost lower-bound
-  ledger.
-- It does not claim `A_below`, peak height, or near-half gaps are the right
-  final observables for the F theorem.
-- It does not replace the need to define the category-theoretic meaning of
-  "native F."
-
-The useful claim is narrower and defensible: Taylor is the universal
-language of the Archimedean signature; Fourier is stronger where the
-observable has a native coefficient system, but the coefficient system and
-functional type must be named each time.
+- Not every `1/n^2` observable is a first-band Fourier observable.
+- Not every Fourier reading uses the same coefficient lattice.
+- The strip lattice `n Z` and the Hurwitz arclength lattice `1 + n Z`
+  are not the same; the cross-row theorem passes through a geometric
+  radial lift.

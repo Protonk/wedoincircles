@@ -24,17 +24,9 @@ n(x, r) = π / arccos(x / r),  x ∈ [0, r),
 
 which is the r = 1 curve horizontally rescaled by factor r. Shape identical; only the asymptote moves from x = 1 at r = 1 down to x = r at general r and to x = 0 at r = 0. Every integer stem compresses toward 0 linearly in r.
 
-**What makes this a foil.** The uniform r-shrink is a similarity transformation: every angle and geometric ratio in the construction is preserved. The normalized node values `node(n, r) / r = cos(π/n)` are unchanged. Non-similar deformations (§§2 and 3) can change the construction itself; this one cannot.
+The uniform r-shrink is a similarity transformation. `node(n, r) / r = cos(π/n)` is invariant in r; absolute Niven-rationals scale linearly (`node(2, r) = 0`, `node(3, r) = r/2`); the asymptote at x = r tracks the scaling. At r = 0 the construction degenerates to a point.
 
-Specific consequences of the scaling being similar:
-
-- **Arithmetic preserved in ratios.** `node(n, r) / r = cos(π/n)` is invariant in r. The pseudo-Chebyshev data lives entirely in that ratio; normalize by r and the structure is r-invariant.
-- **Absolute values collapse uniformly.** Every node → 0 as r → 0. The Niven-rationals `node(2) = 0` and `node(3) = r/2` remain rational when r is rational and compress toward 0. At r = 0 all integer stems pile at x = 0 — the mirror image, at the left end of the node axis, of the d → 1 collapse that §2 shows at x = 1.
-- **No new arithmetic after normalization.** As absolute numbers, the values `node(n, r) = r·cos(π/n)` inherit whatever arithmetic is already present in r: for rational or algebraic r they stay algebraic, while for transcendental r they are transcendental as soon as n > 2. But after dividing by r, the pseudo-Chebyshev data is exactly the original `cos(π/n)` sequence. So the r-shrink does not introduce a new parameter-dependent arithmetic regime.
-
-**Diagnostic rule.** If the object of interest is scale-free, similarity transformations are mostly diagnostic: they do not alter the underlying shape or the normalized node sequence. At r = 0 the construction degenerates because it has been scaled to a point, not because a new phenomenon appeared along the way.
-
-**Demonstration.** See `corners/uniform_scaling.sage` and `figures/pseudo_chebyshev_uniform_scaling.png`. The figure is a 3×2 grid showing the geometric construction (left column) and the node-sequence curve (right column) at r = 1, r = 0.5, and r = 0.25. The shape of the right-pane curve is identical across rows; only the horizontal extent changes.
+See `corners/uniform_scaling.sage` and `figures/pseudo_chebyshev_uniform_scaling.png`. The figure is a 3×2 grid showing the geometric construction (left column) and the node-sequence curve (right column) at r = 1, r = 0.5, and r = 0.25. The shape of the right-pane curve is identical across rows; only the horizontal extent changes.
 
 ![A 3×2 grid of subplots, titled "Uniform-scaling deformation: pseudo-Chebyshev at r = 1, 0.5, 0.25". Each row shares a layout: the left subplot is a "Geometric construction" with a black quarter-arc and a fan of colored rays piercing the arc at colored disks, with a black arrow pointing toward an anchor; the right subplot is "Node-sequence space" — a black curve rising from low n through colored integer-sample disks toward a vertical asymptote, with horizontal axis labeled "node value = r·cos(π/n)". Across the three rows the asymptote location moves from x=1 (top) to x=0.5 (middle) to x=0.25 (bottom); the curve shapes are identical and only the horizontal extent shrinks.](../figures/pseudo_chebyshev_uniform_scaling.png)
 
@@ -42,9 +34,7 @@ Specific consequences of the scaling being similar:
 
 ## §2. Convex-preserving arc-flattening
 
-The interesting counterpart to §1's similarity foil: a deformation that changes shape. Flatten the quarter-circle arc into a vertical line segment without ever bending the arc the wrong way. The point is to watch what happens to the right-pane curve when the left-pane geometry is pulled continuously through a family of convex arcs.
-
-The short version: the curve remains smooth on its shrinking domain, compresses rightward, loses small-n samples one at a time, and in the limit collapses onto the vertical line x = 1. The construction's explicit cyclotomic arithmetic does not survive the deformation.
+Flatten the quarter-circle arc into a vertical line segment without ever bending the arc the wrong way.
 
 ### The deformation family
 
@@ -116,31 +106,17 @@ Evaluating:
 
 So under this deformation only n = 2 and n = 3 drop out; every integer sample n ≥ 4 survives all the way to d = 1 and lands at node = 1.
 
-### Discussion
+### Arithmetic collapse
 
-Four observations about what the right-pane curve does.
+The two rational node values at d = 0 — node(2) = 0 and node(3) = 1/2 — both disappear under the deformation, at d = 0⁺ and d ≈ 0.861 respectively. At d = 1, every surviving sample is at node = 1: one rational value shared by all n ≥ 4. Between the endpoints, the clean cyclotomic formula `cos(π/n)` is gone; the sample values are defined only implicitly by a mixed trigonometric/linear equation, so the explicit algebraic-degree control present at d = 0 has been lost.
 
-**1. The right-pane curve stays well-behaved in this family.** For each fixed d < 1, the curve is smooth on its domain and numerically remains monotone increasing and convex as a graph of n against x. The preserved convexity of the underlying arc points the same way, but this section is using that as guidance rather than a full proof of convexity for every d.
+At d = 0 the crossing is (cos(π/n), sin(π/n)) — both coordinates encode n. At d = 1 the crossing is (1, tan(π/n)) — only y encodes n; the x-coordinate is frozen at 1. Choosing x as the node picked up the degenerate direction.
 
-**2. Rightward compression.** For every integer n ≥ 4, the sample value moves from cos(π/n) at d = 0 toward 1 at d = 1. The whole curve compresses into the strip [d, 1) × [n_min(d), ∞), where
+For each fixed d < 1, the right-pane curve is smooth on its domain and numerically monotone increasing and convex as a graph of n against x. The whole curve compresses into the strip [d, 1) × [n_min(d), ∞) with
 
-    n_min(d) = π / arctan((1 + d·(π/2 − 1)) / d),   d > 0,
+    n_min(d) = π / arctan((1 + d·(π/2 − 1)) / d),   d > 0.
 
-is the smallest real t for which the origin-to-corner segment still hits the arc. At d = 0, n_min = 2 and the curve occupies the full domain [0, 1) × [2, ∞). At d = 1, the continuous curve has collapsed to the vertical line x = 1 with t > π / arctan(π/2) ≈ 3.129, so the surviving integer samples are n = 4, 5, 6, …
-
-**3. Arithmetic collapse.** The two rational node values at d = 0 — node(2) = 0 and node(3) = 1/2 — both disappear under the deformation, at d = 0⁺ and d ≈ 0.861 respectively. At d = 1, every surviving sample is at node = 1: one rational value shared by all n ≥ 4. Between the endpoints, the clean cyclotomic formula `cos(π/n)` is gone. The sample values are now defined only implicitly by a mixed trigonometric/linear equation, so the explicit algebraic-degree control present at d = 0 has been lost. Some middle values may be algebraic, others transcendental; this section does not classify them.
-
-**4. Information migrates from x to y.** At d = 0, the crossing is (cos(π/n), sin(π/n)) — both coordinates encode n. At d = 1, the crossing is (1, tan(π/n)) — only y encodes n; the x-coordinate is frozen at 1. If we had defined the "node" as the crossing's y-coordinate rather than its x-coordinate, the deformation would morph the sin(π/n) sequence into the tan(π/n) sequence — a non-degenerate transformation between two related sequences. Choosing x picked up the degenerate direction.
-
-### What the program takes from this
-
-A concrete existence proof of smooth-vs-arithmetic decoupling, on a small scale. Three specific things:
-
-- **The smooth structure of the right-pane curve is relatively deformation-robust in this family.** The curve stays smooth on its domain, keeps its monotone rightward drift, and numerically retains the same convex shape.
-- **The arithmetic structure of the integer samples is deformation-fragile.** The Niven-rationals are lost; the explicit cyclotomic algebraicity at integer samples is lost; in the limit every surviving sample has the same value.
-- **Preserving convexity of the underlying arc is what keeps the geometry tame here.** This family was chosen to preserve convexity, and the right-pane behavior stays correspondingly orderly. A family that allowed the arc itself to go non-convex would be free to produce more complicated right-pane behavior as well.
-
-This is the continuity frame at its cleanest: the same object (the pseudo-Chebyshev construction) read two ways (smooth / arithmetic), watched as it is pulled continuously toward a degenerate endpoint. Continuity preserves one reading and destroys the other. The decoupling is not hypothetical — this one-parameter family exhibits it explicitly.
+At d = 1 the surviving integer samples are n = 4, 5, 6, …
 
 ---
 
@@ -262,14 +238,7 @@ Every chord is tangent to the circle at the origin, with no other forward-direct
 
 So c = 1 is a nondegenerate limit (produces the sin(2π/n) sequence, related to the original by angle-doubling), while c = −1 is a degenerate collapse (every node becomes 0). Another instance of translation's asymmetry.
 
-### What this reveals
-
-- **Translation is a non-similar, symmetry-breaking deformation.** Unlike uniform scaling (§1), it changes shape. Unlike arc-flattening (§2), it is sign-sensitive.
-- **Asymptote-symmetry without path-symmetry.** √(1 − c²) depends only on |c|, but the path each curve takes to its asymptote depends strongly on the sign of c.
-- **The special rational value disappears immediately.** For example, `node(3, 1/2) = (√3 + √15) / 8`, so the rational value `node(3, 0) = 1/2` is destroyed as soon as the circle is translated.
-- **c = 1 is a clean secondary construction.** sin(2π/n) is a classical sequence, and it emerges from the pseudo-Chebyshev setup simply by sliding the circle up until it kisses the origin. The operation is entirely geometric; the identity is what's revealing.
-
-**Demonstration.** See `corners/translation.sage` and `figures/pseudo_chebyshev_translation.png`. Three rows at c = 0.5, c = 0, c = −0.5. Left column: translated circle with the fixed chords and crossing markers. Right column: node-sequence curve with integer stems, and asymptote √(1 − c²) annotated. The overshoot at c = 0.5 is visible above the dashed asymptote; the monotone behavior at c = −0.5 is visible below it.
+See `corners/translation.sage` and `figures/pseudo_chebyshev_translation.png`. Three rows at c = 0.5, c = 0, c = −0.5. Left column: translated circle with the fixed chords and crossing markers. Right column: node-sequence curve with integer stems, and asymptote √(1 − c²) annotated. The overshoot at c = 0.5 is visible above the dashed asymptote; the monotone behavior at c = −0.5 is visible below it.
 
 ![A 3×2 grid of subplots, titled "Translation deformation: pseudo-Chebyshev with circle at (0, c) for c = +0.5, 0, -0.5". Each row pairs a "Geometric construction" on the left with a "Node-sequence space" on the right. The left subplots show a black circle whose center moves from (0, +0.5) at the top down to (0, 0) and (0, -0.5) at the bottom, each crossed by a fan of colored chords emanating from a black star at the origin, with a dashed vertical guide at x=1. The right subplots show a smooth black curve through colored integer-sample disks rising toward a vertical asymptote whose location moves with c — at x = √(1−c²) ≈ 0.866 in the top and bottom rows and x = 1 in the middle row.](../figures/pseudo_chebyshev_translation.png)
 
@@ -335,32 +304,3 @@ Monotonicity is the loosest nontrivial property. Stricter properties require tig
 4. **Explicit cyclotomic control at integer samples.** Leash: the integer samples remain in the same explicit family `cos(π/n)` up to a fixed scale factor. The undeformed circle has this exactly. Rational uniform scalings preserve the degree pattern over ℚ; arbitrary real scalings preserve it only after normalization by r. Arc-flattening and translation destroy this immediately at nonzero deformation.
 5. **The original Niven pair at n = 2, 3.** Leash: the target curve passes through the original sample points (0, 1) and (1/2, √3/2), hence giving node(2) = 0 and node(3) = 1/2 exactly. Only the undeformed unit circle has this. If one weakens the property to "rational at n = 2, 3", then rational uniform scalings preserve it.
 
-### Stratification of the deformation space
-
-The deformation space can be stratified by which properties are preserved:
-
-- **Unit-circle point**: all five properties are present.
-- **Uniform-scaling ray**: monotonicity and right-pane shape survive exactly; the asymptote rescales to x = r; normalized cyclotomic structure survives; absolute arithmetic over ℚ survives only for rational r.
-- **Convex-target region** (convex-preserving arc-flattening): monotonicity survives; convex right-pane behavior is numerically robust; the asymptote stays at x = 1 for d < 1; explicit cyclotomic control is lost.
-- **Monotone-target region** (includes downward translation c ≤ 0): monotonicity survives; stronger shape properties need separate checking; the asymptote moves; explicit cyclotomic control is lost.
-- **General deformation** (upward translation c > 0, non-convex deformations): no monotonicity guarantee. Folds can appear.
-
-The translation family straddles the monotone-target and general regions, with the dividing line at c = 0.
-
-### The tightness–informativeness tradeoff
-
-The leash framework makes an explicit tradeoff visible. A tighter leash preserves more properties but admits a narrower family of deformations and therefore reveals less. A looser leash admits a broader family and reveals more about what can break.
-
-- The undeformed unit circle: tightest leash, preserves everything, reveals nothing.
-- Uniform scaling: still a very tight leash; it preserves the normalized geometry and normalized sample structure, but not every absolute arithmetic feature.
-- Convex arc-flattening: medium leash, preserves monotonicity and appears to preserve the same convex right-pane shape, while revealing the smooth/arithmetic decoupling.
-- Translation at c > 0: loose leash, breaks monotonicity, reveals how folds form and how asymmetric deformations work.
-
-The program's use of deformation is not to find the tightest leash (that would just confirm similarity invariances) but to choose the leash appropriate to the question being asked. If the question is "how does arithmetic structure respond to geometric deformation?", convex arc-flattening is the right leash — tight enough to preserve smooth regularity, loose enough to destroy cyclotomic depth.
-
-### Open questions
-
-- What is the cleanest geometric hypothesis weaker than "decreasing graph to the x-axis" but strong enough to imply the exact polar inequality d/dθ [r(θ) cos θ] ≤ 0?
-- Is there a deformation that preserves algebraic depth but breaks monotonicity? Plausibly not among natural deformations, since algebraic depth is tied to the pseudo-Chebyshev's cyclotomic origin.
-- What does the leash for a "combined" deformation (e.g., translation composed with scaling) look like? Presumably the intersection of the individual leashes, but with a subtler form when the deformations interact nonlinearly.
-- Can the leash framework be lifted to other n-gon constructs (`n-gons/N-GON-WHOLENESS.md`)? What counts as "bending backward" in the wholeness b_n(DH) sequence, say?

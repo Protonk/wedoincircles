@@ -207,6 +207,19 @@ Combining this with Theorem 1:
 
 That is the paper’s clean finite-word avatar of the theorem.
 
+Program-candidate use: this BWT/Lyndon characterization is now cited as
+candidate machinery for the Kraft-cyclotomic bridge in
+[BNHA/VILLAINS-ANSWERED.md](BNHA/VILLAINS-ANSWERED.md) §#5,
+[memos/LEDGER-PIVOT-SEARCH.md](memos/LEDGER-PIVOT-SEARCH.md)
+§"Two paths and one sibling",
+[fft/FOUR-FRAMEWORK-SYNTHESIS.md](fft/FOUR-FRAMEWORK-SYNTHESIS.md)
+§"Source Inputs To The Construction", and
+[fft/PROVENANCE-AND-TRANSFERABILITY.md](fft/PROVENANCE-AND-TRANSFERABILITY.md)
+§3.1. The characterization supplies a finite-word candidate path
+toward Kraft-shaped bookkeeping; it does not construct the
+cyclotomic-cost bridge. The open task is to test whether the Lyndon/BWT
+avatar can be promoted to a prefix-free ledger coupled to `V_cert`.
+
 ## Lefèvre–Muller–Tisserand: The Algorithmic Lens
 
 ### Why the theorem appears in Table Maker’s Dilemma
@@ -295,6 +308,13 @@ For this brief, the important point is structural rather than historical:
 > In this paper, the Three Distance Theorem is not a side remark. It is the engine of a real floating-point filtering algorithm.
 
 That makes 3DT log-side-native in this repository’s terms, not merely a circle-side theorem later imported into log-side questions.
+
+Program use: [memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md](memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md)
+Step 5 cites this compressed-orbit loop as the one-dimensional
+operational template for its empirical-to-density proxy. The citation is
+for the variables `gamma, delta, d, u, v`, their Euclidean-style updates,
+and the fact that the orbit is handled without enumerating its points,
+not for a proof of the proxy itself.
 
 ## Marklof–Strömbergsson: The Geometric Lens
 
@@ -418,6 +438,14 @@ That is the paper’s contribution:
 - proves the three-valuedness geometrically,
 - and shows that the “sum of the other two” clause is really a lattice-addition fact.
 
+Program use: [fft/HEIDEMAN-JOHNSON-BURRUS-1985-BRIEF.md](fft/HEIDEMAN-JOHNSON-BURRUS-1985-BRIEF.md)
+§5 cites this as the rotations-layer precedent for a basis-vector
+reading of a two-dimensional decomposition. The closure-side instance is
+the decomposition
+`Q(zeta_n) = K_n ⊕ K_n · (zeta_n - zeta_n^{-1})` under
+`sigma_{-1}`; the comparison is methodological only, not a
+closure-depth theorem supplied by 3DT.
+
 ## Three-Way Correspondence
 
 The three papers are talking about the same structure in different languages.
@@ -473,6 +501,15 @@ The main objects used here are:
 
 None of the three papers requires the repo’s disallowed circle-side machinery such as the Stern–Brocot tree, Farey-as-tree organization, Thomae’s function, or Minkowski’s question-mark function. Continued fractions do appear, but as local arithmetic data, not as a global organizing tree.
 
+Program-audit use: [memos/OLD-TIME-RELIGION.md](memos/OLD-TIME-RELIGION.md)
+now cites this as a worked BIND / Erasure-compatible precedent inside
+the content-not-calendar audit criterion, and
+[iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md)
+Claim 2 §2.3 uses it as the comparison case for Beck's
+Fourier-discrepancy audit. This is a program-facing consequence of the
+three-source read, not a separate BIND-safety theorem proved by the
+papers.
+
 ### 3. 3DT is both circle-side and log-side
 
 Berthé–Reutenauer and Marklof–Strömbergsson treat the theorem as a rotation/lattice phenomenon. Lefèvre–Muller–Tisserand use the same structure inside a floating-point worst-case search for elementary functions. So in repository terms, 3DT is not just circle-side material that can be exported; it already has a native log-side occurrence.
@@ -480,6 +517,20 @@ Berthé–Reutenauer and Marklof–Strömbergsson treat the theorem as a rotatio
 ### 4. The lattice paper gives a positive homogeneous-space example
 
 Here the relevant homogeneous space is $\Gamma\backslash SL(2,\mathbb{R})$, and the theorem works because the lattice function $F$ is well defined there. That gives the repo a concrete positive example of invariant-geometry machinery succeeding on a specific space, in contrast with the no-invariant-measure obstructions that appear elsewhere in the notes.
+
+### 5. 3DT is the first lens-multiplication instance
+
+This brief is the program's first instance of a recurring synthesis
+move: multiple independent lenses on one mathematical object. Here the
+lenses are three source papers on one theorem — combinatorial,
+algorithmic, and geometric/lattice. The later
+[rotations/CONTINUED-FRACTIONS-CROSSWALK.md](rotations/CONTINUED-FRACTIONS-CROSSWALK.md)
+extends the move to six perspectives on one primitive substrate, and
+[iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md)
+uses it at higher resolution: three registers on the isoperimetric gap,
+each sharp on a different currency. This is a program-facing pattern
+observed across the notes, not a claim made by the 3DT papers
+themselves.
 
 ## Bottom Line
 

@@ -802,6 +802,45 @@ This is the density-orbit interface hypothesis already implicit in the
 parent memo. Step 5 treats it as a hypothesis, not as a theorem proved in
 this note.
 
+### Operational precedents
+
+The parent memo now fixes the relevant arithmetic classification before
+this interface is used: for the continued-fraction parameter
+`beta(alpha) = limsup log(q_{n+1}) / q_n` extracted in
+[rotations/10-MARTINIS-BRIEF.md](rotations/10-MARTINIS-BRIEF.md)
+§"The Arithmetic Parameter", existing finite irrationality-measure
+results put `pi` on the `beta(pi) = 0` / Diophantine side. Thus Step 5's
+open point is the empirical-to-density proxy itself, not a choice between
+Liouville and Diophantine regimes.
+
+The one-dimensional operational template is Lefèvre–Muller–Tisserand's
+Three Distance Theorem filter for the table-maker's dilemma, extracted in
+[rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md) §"Lefèvre–Muller–
+Tisserand: The Algorithmic Lens." Their loop keeps the rotation orbit
+compressed in the variables `gamma, delta, d, u, v`: `gamma` and
+`delta` are the current two shorter gap lengths, `u` and `v` count arcs
+of those lengths, and `d` is the running lower bound to grid points. The
+updates are Euclidean-style subtractions on `gamma` and `delta`, with
+matching updates to `u` and `v`; the filter works without enumerating
+the orbit points. This is not a proof of the proxy, but it is a worked
+one-dimensional algorithmic precedent for replacing explicit orbit
+enumeration by density-shaped bookkeeping.
+
+The complementary higher-dimensional precedent is Beck 1994, briefed at
+[iso/BECK-1994-BRIEF.md](iso/BECK-1994-BRIEF.md): Fourier + Poisson +
+Fejér smoothing + second-moment / Borel-Cantelli machinery substitutes
+for continued fractions in `k >= 2` discrepancy. Beck does not give a
+pointwise bound for `pi`, but it supplies the higher-dimensional
+Fourier-substitute methodology adjacent to Lefèvre–Muller–Tisserand's
+one-dimensional compressed-orbit algorithm.
+
+The consolidated index is
+[rotations/CONTINUED-FRACTIONS-CROSSWALK.md](rotations/CONTINUED-FRACTIONS-CROSSWALK.md):
+it records this Step 5 interface as part of the K-H-L-A sixth
+perspective, where continued-fraction convergents of `pi` are the
+arithmetic scaffold for reading an effective constant rather than a
+finished proof of that constant.
+
 ### Exact weighted lemma
 
 Let

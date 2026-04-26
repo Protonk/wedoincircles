@@ -84,6 +84,20 @@ descendants), the anchor fails the audit even if the paper is ancient.
 Conversely, a post-1882 result whose proof is provably
 transcendence-free can serve as a contradiction-step anchor.
 
+BIND / Erasure compatibility is one concrete version of this content
+test. The question is whether a proof routes through the shared
+circle/log vocabulary banned in
+[BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md](BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md)
+— Stern-Brocot, Farey-as-tree, Thomae/popcorn, Minkowski `?`, Denjoy —
+or whether it stays inside local primitives. A worked precedent is
+[rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md) §"Program-Facing
+Consequences", item 2: the 3DT source brief records finite words,
+Burrows-Wheeler transforms, continued-fraction / Euclidean updates, and
+unimodular-lattice data as enough for the three-paper package, with
+continued fractions used locally rather than as a global organizing tree.
+That was logged before this audit discipline was named here; it now
+serves as the comparison case for later Fourier-discrepancy imports.
+
 ---
 
 ## Target

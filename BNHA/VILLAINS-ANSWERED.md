@@ -64,6 +64,21 @@ by any mathematician working independently, not internal to the program:
 Procrustes gets his prediction. The theorem survives until one of the
 three appears.
 
+Polar-set audit: this does **not** currently add a fourth falsifier shape.
+[rotations/10-MARTINIS-BRIEF.md](rotations/10-MARTINIS-BRIEF.md)
+uses a genuine spectral-theory mechanism: a reducibility/localization
+set in an analytic phase-or-energy parameter space is forced to be polar
+or to have interior, and the proof gets a contradiction when the
+fictitious regularity makes the exceptional set too large. The
+closure-mismatch theorem has no matching ambient capacity/measure
+space. Its obstruction is algebraic and categorical: A1-A4 force an
+unbounded cyclotomic closure ladder into the two-parameter affine
+closure class. Adding a topology or measure on a closure-generator
+moduli space would change the axiomatization; a result exploiting that
+would fall under falsifier 1 or 2 above, not a new polar-set-style
+falsifier. The 10-martinis citation is therefore proof-shape precedent,
+not a source of a closure-depth obstruction.
+
 What Procrustes *does* land: several of the program's witnesses —
 `n = 7`, the `tau_c / epsilon` rhyme, `Z[x]` vs `Aff^+(R)` — were
 selected for coherence with the named verdict. The program acknowledges
@@ -299,6 +314,17 @@ program-side closure-asymmetry observation recorded in
 involution decomposition of `Q(zeta_n)`, so the algebraic-side
 commitment is forced by closure rather than aesthetic. Kraft–Parseval
 enters as program-internal accounting, not as smuggled circle-content.
+
+A concrete candidate path is now on file for the Kraft side of this
+bridge. [rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md)
+§"Burrows-Wheeler and perfectly clustering Lyndon words" extracts the
+Ferenczi-Zamboni characterization: every three-distance encoding word
+is a perfectly clustering Lyndon word. That gives a finite-word
+candidate machinery from rotation-orbit structure toward Kraft-shaped
+bookkeeping, separable from the geometric circle data. It is not a
+construction yet. The open step is whether this Lyndon/BWT avatar can
+be turned into a genuine prefix-free coding ledger whose costs track
+cyclotomic depth rather than merely word structure.
 
 The bet's specificity: from "marry two registers" to "construct at one
 specific axiom-coordinate, with named commitments per axiom, and prove

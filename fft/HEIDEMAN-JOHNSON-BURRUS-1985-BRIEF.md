@@ -574,6 +574,24 @@ to `K_n` lives in the `(+1)`-eigenspace and ignores the
 `(-1)`-component. The identification "even-symmetric eigenspace under
 `theta -> -theta`" is exact. ∎
 
+### Methodological note
+
+This basis-vector reading has a rotations-layer precedent in
+[rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md)
+§"Marklof–Strömbergsson: The Geometric Lens." There, a unimodular
+lattice basis `r, s` makes the three gap values visible as
+`r_2`, `s_2`, and `r_2 + s_2`; the identity comes from reading the
+theorem off the basis. Here, the `K_n`-basis
+`1, zeta_n - zeta_n^{-1}` makes the `(+1)` and `(-1)` eigenspaces of
+`sigma_{-1}` visible, and the forced choice of `K_n` comes from which
+summand is multiplicatively closed.
+
+The analogy is methodological, not a transfer of content. The 3DT brief
+does not supply a closure-depth theorem, and the eigenspace fact here is
+proved algebraically above. It is currently a two-instance pattern in the
+program: a two-dimensional object decomposes by basis data, and the
+load-bearing identity is read from that decomposition.
+
 ### Connection to the paper's algorithmic verdict
 
 The paper's equivalence statement on p. 271 (quoted in §1) ends with

@@ -165,6 +165,23 @@ field `Q(cos(2pi/7))` and the first non-constructible half-angle node.
 The asymptotic form of the contradiction is the unbounded ladder
 `phi(n)/2`.
 
+### Methodological note
+
+This proof now has an explicit methodological precedent:
+[rotations/10-MARTINIS-BRIEF.md](rotations/10-MARTINIS-BRIEF.md)
+§"Program-Facing Exports", item 1 names the template "absence of X
+implies impossible regularity." The spectral instance assumes non-
+Cantor spectrum, obtains fictitious analytic regularity of the
+`m`-function / IDS, and uses that regularity past the reach of the
+honest methods. The present closure-mismatch instance assumes a native
+`F`, uses A2-A4 to force the circle-side cyclotomic ladder into the
+log-side closure class, and then collides with the affine class's
+two-parameter flatness.
+
+The citation is methodological only. The almost-Mathieu paper supplies
+the proof-shape precedent, not any quantitative closure-depth estimate
+or spectral input for this no-go theorem.
+
 ---
 
 ## Diagnostic Preservation Properties

@@ -168,6 +168,24 @@ Archimedean-squeeze + cyclotomic-height matching. Compare Salikhov 7.6
 competitive with the transcendence-theoretic literature; a $C$ in the 20s
 would be historically interesting only as a pre-L–W argument.
 
+**Diophantine classification of $\pi$.** The continued-fraction control
+parameter to use here is
+
+$$
+\beta(\alpha)=\limsup_{n\to\infty}\frac{\ln q_{n+1}(\alpha)}{q_n(\alpha)},
+$$
+
+not $\limsup \ln q_{n+1}/\ln q_n$. See
+[rotations/10-MARTINIS-BRIEF.md](rotations/10-MARTINIS-BRIEF.md)
+§"The Arithmetic Parameter" for the source-extraction note. Any finite
+irrationality measure $|\alpha-p/q|\ge c q^{-C}$ forces
+$\beta(\alpha)=0$: applying the lower bound to convergents gives
+$q_{n+1}\le c^{-1}q_n^{C-1}$, hence
+$\ln q_{n+1}/q_n\to 0$. Existing irrationality-measure results for $\pi$
+therefore place $\pi$ on the $\beta=0$ / Diophantine side in this
+classification. This does not close the memo's target; it only fixes the
+arithmetic side on which any K-H-L-A effective constant must live.
+
 **L–W-safety tags** (per `memos/LINDEMANN-BRIEF.md` §"Exit criteria"):
 
 | Ingredient | Source | Tag |
@@ -194,7 +212,7 @@ would be historically interesting only as a pre-L–W argument.
 - [memos/LANDFALL-EXPORT.md](memos/LANDFALL-EXPORT.md) — §5 Kraft machinery is the log-side template this memo transposes; §4 is the log-side pointwise transcendence statement ($\varepsilon(k/2^p)$ transcendental, via Gelfond–Schneider — noting the asymmetry: the log side uses post-L–W machinery for its pointwise statement, while this memo hopes to avoid it on the circle side).
 - [memos/LINDEMANN-BRIEF.md](memos/LINDEMANN-BRIEF.md) — the circularity map. Every step of this memo's argument has to be tagged per that brief's §"Exit criteria" classification (pre-L–W / background / essential / circular).
 - [rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md) — Lefèvre–Muller 1998 use 3DT for table-maker's-dilemma worst-case filtering; that is the log-side precedent for "Kraft + Diophantine arguments on a rotation orbit." Structurally parallel to what this memo wants on the circle side.
-- [rotations/CONTINUED-FRACTIONS-CROSSWALK.md](rotations/CONTINUED-FRACTIONS-CROSSWALK.md) — the continued-fraction convergents of $\pi$ are the arithmetic substrate under the Archimedean polygon approximation; the crosswalk supplies four independent lenses on this substrate.
+- [rotations/CONTINUED-FRACTIONS-CROSSWALK.md](rotations/CONTINUED-FRACTIONS-CROSSWALK.md) — the continued-fraction convergents of $\pi$ are the arithmetic substrate under the Archimedean polygon approximation; the crosswalk now supplies six indexed perspectives on this substrate and logs this K-H-L-A branch as the effective-transcendence perspective.
 - [memos/LOWER-BOUND-COUNTRY.md](memos/LOWER-BOUND-COUNTRY.md) — the symmetric partner to `memos/RAMANUJANS-COMPLIMENT.md`; the complexity-theoretic reading queue. If this memo's argument lands as a compute-cost lower bound rather than a transcendence measure, promotion target is there.
 - [corners/PSEUDO-CHEBYSHEV-NODES.md](corners/PSEUDO-CHEBYSHEV-NODES.md) — circle-side algebraic-depth catalog: $\cos(\pi/n)$ of degree $\varphi(2n)/2$, first non-constructible at $n=7$. These are the polygon vertices in (C).
 - [corners/CIRCLE-TRANSFORMATIONS.md](corners/CIRCLE-TRANSFORMATIONS.md) §4 Leash framework — the tightness–informativeness tradeoff is the framework for what Hurwitz's extremum condition is buying: the Fourier-support condition is the tightest possible leash on a planar simple closed curve.

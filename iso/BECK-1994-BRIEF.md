@@ -336,6 +336,17 @@ dimension. Three specific ingredients the program could borrow:
   (statement of `(* )`-type hypotheses, then verification for
   almost every α) is a usable template.
 
+Cross-register pairing: [rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md)
+§"Lefèvre–Muller–Tisserand: The Algorithmic Lens" now supplies the
+one-dimensional compressed-orbit precedent for the same K-H-L-A
+empirical-to-density proxy. Beck remains the higher-dimensional
+Fourier-substitute exemplar: useful as methodology, not as a pointwise
+bound for `pi`. The central index for this role is
+[rotations/CONTINUED-FRACTIONS-CROSSWALK.md](rotations/CONTINUED-FRACTIONS-CROSSWALK.md),
+which logs Beck as the fifth perspective: a Fourier-side substitute
+that preserves the Diophantine content continued fractions carry in
+dimension one.
+
 ### 2.3 Where Beck's hypothesis class fails to match
 
 Three mismatches:

@@ -350,28 +350,6 @@ References:
 
 ---
 
-## Follow-up edits this memo recommends
-
-1. **`memos/STRIP-TISSUE-FOURIER.md`**, end of file. Replace the open
-   question ("Are `Delta_n` and `||y_n'||_L2^2` evaluations of one bilinear
-   form...") with the closure statement and a pointer here. The pairing
-   goes through `gamma_tilde_n` (circumscribed), not `Delta_n` (inscribed),
-   and the closure is affirmative with the explicit `R_n`.
-2. **`memos/ARCHIMEDEAN-SIGNATURE.md`**, §"Program Use" or a new theorem
-   section. Promote SIGNATURE from "companion vocabulary" to "companion
-   vocabulary hosting one cross-row theorem," and state the identification
-   above. The "intended promotion path" note in recent discussion can be
-   retired: the gate is closed affirmatively.
-3. **`memos/OLD-TIME-RELIGION.md`**, §(A5) Fourier/Parseval framing inside
-   (A4). The Hurwitz gap of `gamma_tilde_n` is exactly the circumscribed
-   `n`-gon's Hurwitz gap, so the `1/n^2` match is pre-1882 Fourier applied
-   to a classical Archimedean object. Worth a one-line note.
-
-These edits are outside the scope of this computation memo; flagged here
-for a follow-up pass.
-
----
-
 ## What this does not claim
 
 - Not a claim that `||y_n'||_L2^2 = Delta(gamma_tilde_n)` exactly. `R_n`
@@ -384,8 +362,3 @@ for a follow-up pass.
   anything. The inscribed and circumscribed Hurwitz gaps differ at order
   `1/n^4` by `(4/3) pi^6 / n^4`; only the circumscribed lift is the
   right bridge to `||y_n'||^2`.
-- Not a claim that the closure resolves anything in the closure-depth /
-  F-obstruction program. That program is independent (per
-  [memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md)).
-  SIGNATURE becomes a companion with one theorem; the primary
-  architecture is untouched.

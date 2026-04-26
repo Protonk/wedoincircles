@@ -50,6 +50,14 @@ Interpretation:
 
 The thresholds in the paper are expressed in terms of $|\ln \lambda|$ versus $\beta$.
 
+Program use: [memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md](memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md)
+now uses this exponential-rate parameter to place $\pi$ on the
+$\beta(\pi)=0$ / Diophantine side before asking whether the
+Kraft–Parseval budget can reproduce an effective constant. The companion
+one-dimensional bookkeeping interface is
+[memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md](memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md)
+Step 5.
+
 ## Strategy In One Sentence
 
 The proof joins two incompatible-looking approaches:
@@ -404,6 +412,14 @@ In this paper:
 - derive contradiction.
 
 This is the same abstract pattern the old brief noticed, but now grounded in the actual proof sections rather than just the introduction.
+
+Program use: [memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md)
+§"No-Go Theorem" instantiates this as the closure-mismatch proof shape:
+assume a native `F`, force the circle-side cyclotomic ladder through the
+log-side closure class, then contradict the two-parameter flatness of
+affine composition. This is a proof-shape export only; it carries no
+quantitative closure-depth estimate and no spectral content into the
+native-`F` theorem.
 
 ### 2. The arithmetic of $\alpha$ is exponential, not logarithmic-in-logarithmic
 

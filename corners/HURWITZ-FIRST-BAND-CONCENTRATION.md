@@ -1,21 +1,5 @@
 # HURWITZ-FIRST-BAND-CONCENTRATION
 
-This note promotes the first-band picture in
-[corners/HURWITZ-GAP.md](corners/HURWITZ-GAP.md) from "visible in the
-stacked frequency plot" to an explicit theorem. It closes Steps 1–4 of
-[memos/HURWITZ-FIRST-BAND-CONCENTRATION-PLAN.md](memos/HURWITZ-FIRST-BAND-CONCENTRATION-PLAN.md):
-
-- derive the paired-band formula,
-- prove the monotonic comparison lemma,
-- take the zeta corollary.
-- derive the dyadic-shell estimate.
-
-The shell estimate is the first honest Kraft-shaped corollary on the
-Fourier side: it turns the `1/j^2` band decay into geometric decay on
-dyadic shells.
-
----
-
 ## Setup
 
 For the inscribed regular `n`-gon in the unit circle, write
@@ -268,46 +252,64 @@ This is the claimed shell estimate.
 
 ## Numerical check
 
-The closed form matches the direct paired Hurwitz-Parseval sum to machine
-precision in a `sage -python` check at
+Computed by
+[`corners/hurwitz_shell_masses.sage`](corners/hurwitz_shell_masses.sage)
+at 200-bit precision. The closed form matches the direct paired
+Hurwitz-Parseval sum to machine precision in a `sage -python` check at
 
 - `n in {3, 5, 7, 10, 40}`,
 - `j in {1, 2, 3, 4, 5}`.
 
-The first-band ratio behaves as predicted:
+### First-band ratio
+
+Exact closed-form values of `B_1(n) / Delta_n`:
 
 | `n` | `B_1(n) / Delta_n` |
 |---:|---:|
-| 3 | 0.7297250691 |
-| 5 | 0.6555814041 |
-| 7 | 0.6328095073 |
-| 10 | 0.6202770089 |
-| 40 | 0.6087247208 |
+| 3 | 0.7297110451 |
+| 5 | 0.6555644296 |
+| 7 | 0.6327917727 |
+| 10 | 0.6202588877 |
+| 40 | 0.6087062638 |
 
-while
+Asymptotic limit `6 / pi^2 = 0.6079271019...`; already visible by
+`n = 40`.
+
+### Dyadic-shell masses at `n = 10`
+
+| `r` | shell range | `S_r(n)` | `2^(-r) B_1(n)` | `S_r / bound` | `S_r / S_(r-1)` |
+|---:|---:|---:|---:|---:|---:|
+| 0 | `[1, 1]` | 7.846e-1 | 7.846e-1 | 1.0000 | — |
+| 1 | `[2, 3]` | 2.702e-1 | 3.923e-1 | 0.6889 | 0.3444 |
+| 2 | `[4, 7]` | 1.117e-1 | 1.962e-1 | 0.5693 | 0.4132 |
+| 3 | `[8, 15]` | 5.077e-2 | 9.808e-2 | 0.5176 | 0.4546 |
+| 4 | `[16, 31]` | 2.421e-2 | 4.904e-2 | 0.4937 | 0.4769 |
+| 5 | `[32, 63]` | 1.182e-2 | 2.452e-2 | 0.4822 | 0.4884 |
+
+The bound `S_r(n) <= 2^(-r) B_1(n)` holds row by row. Cumulative
+through `r = 5`: `99.08%` of `Delta_10`.
+
+### Asymptotic of `S_r / bound` is `n`-dependent
+
+Closed-form gives, for fixed `n`,
 
 ```text
-6 / pi^2 = 0.6079271019...
+lim_{r -> infty} S_r(n) / (2^(-r) B_1(n))
+  = (n^2 - 1)^3 / (2 n^4 (n^2 + 3)).
 ```
 
-So the theorem constant is correct and the asymptotic sharpness is visible
-already by `n = 40`.
+Sample values:
 
-The shell estimate is also numerically consistent with the same data:
-for fixed `n`, shell masses decrease geometrically and stay well below
-the upper bound `2^(-r) B_1(n)`.
+| `n` | limit |
+|---:|---:|
+| 3 | 0.2634 |
+| 5 | 0.3950 |
+| 7 | 0.4429 |
+| 10 | 0.4710 |
+| 40 | 0.4981 |
 
----
-
-## Program use
-
-This note closes the first theorem-level ingredient behind the Fourier side
-of [memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md](memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md):
-the Hurwitz gap is not merely concentrated near the first admissible band
-empirically, but uniformly controlled there with an explicit constant, and
-the higher bands satisfy a genuine dyadic-shell estimate.
-
-What it does not yet close is the global Aitchison `×` Erdős–Turán–Koksma
-constant consolidation. The local Fourier budget is now Kraft-shaped; the
-remaining work is to splice that local estimate into the full discrepancy /
-density budget without overstating what the shell inequality alone proves.
+The "factor-of-two slack" reading of the dyadic-shell bound is
+asymptotic in `n` as well as in `r`; for small `n`, the bound is
+meaningfully tighter at large `r` than `(1/2) B_1(n)` would suggest.
+The decay ratio `S_r / S_(r-1) -> 1/2` is the universal-in-`n`
+asymptotic; the bound-comparison ratio is not.

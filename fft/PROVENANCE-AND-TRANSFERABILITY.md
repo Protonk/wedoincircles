@@ -182,6 +182,13 @@ complexity-shaped tasks has, on file:
   preserving machine, operationalize the algebraic ledger, import
   boundedness as theorem (not slogan), uniformize the cost
   accounting — in FOUR-FRAMEWORK-SYNTHESIS §"Construction Required".
+- A candidate Kraft-side machinery from 3DT BWT/Lyndon words:
+  [rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md) §"Burrows-Wheeler
+  and perfectly clustering Lyndon words" records the Ferenczi-Zamboni
+  finite-word avatar of rotation-orbit structure. This is successor
+  work, not supply: the open construction question is whether that
+  Lyndon/BWT avatar can become a prefix-free ledger coupled to the
+  `V_cert` certification costs.
 
 A successor does not start from "is there a lower bound somewhere
 nearby"; they start from "here is the specific axiom-coordinate, here

@@ -29,6 +29,17 @@ sub-question and a loose proxy for the others. This synthesis
 articulates the structural pattern and its operational consequence
 for the program.
 
+**Methodological lineage.** This is not the program's first
+multi-lens synthesis. [rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md)
+is the first instance: three papers give combinatorial, algorithmic,
+and geometric/lattice lenses on one theorem.
+[rotations/CONTINUED-FRACTIONS-CROSSWALK.md](rotations/CONTINUED-FRACTIONS-CROSSWALK.md)
+then turns the move into a primitive-substrate index, gathering six
+perspectives on continued-fraction convergents. The present iso/
+synthesis is the higher-resolution instance: the lenses are not three
+proofs of one theorem, but three registers that are sharp on distinct
+currencies of the same isoperimetric gap.
+
 ---
 
 ## Claim 1 — Currency-by-Route Map
@@ -228,6 +239,19 @@ audit):
   metric Diophantine approximation — not transcendence theory — so
   the certification task is plausibly tractable, though not yet
   written.
+
+BIND-compatibility has a worked precedent in
+[rotations/3DT-BRIEF.md](rotations/3DT-BRIEF.md) §"Program-Facing
+Consequences", item 2. There the allowed rotation-orbit machinery is
+finite words, Burrows-Wheeler transforms, Euclidean updates, and
+unimodular-lattice data, with continued fractions kept as local
+arithmetic rather than the forbidden global Stern-Brocot / Farey /
+Thomae / Minkowski-`?` vocabulary. Beck's probabilistic path is not the
+same machinery, but its Poisson + Fejér + second-moment +
+Borel-Cantelli proof inventory has the same audit shape: Fourier-
+discrepancy content without transcendence input and without the erased
+circle/log vocabulary. The Beck verdict is therefore audit-with-
+precedent, not an isolated clearance.
 
 ### 2.4 Synthesis of the L-W-safety map
 

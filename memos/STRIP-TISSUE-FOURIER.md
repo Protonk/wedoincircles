@@ -5,18 +5,6 @@ arc-length coefficient lattice, and it should not be folded into that
 object. The strip tissue lives on the frequency lattice `n Z`, has
 `1/n^2` nonzero modes, and produces theorem-level observables of its own.
 
-This note promotes the strip-Fourier part of
-[memos/ARCHIMEDEAN-SIGNATURE.md](memos/ARCHIMEDEAN-SIGNATURE.md) from
-"`A_below` is a DC coefficient" to a small toolkit:
-
-- `A_below(n)` is the zeroth mode of the strip tissue.
-- The nonzero modes satisfy `d_k = (-1)^k/(k^2 n^2) + O(n^-4)`.
-- The nonzero-mode `L^2` energy is a `1/n^4` observable with first-pair
-  concentration ratio `90/pi^4`.
-- The strip `H^1` seminorm is a `1/n^2` observable with leading constant
-  `4pi^4/3`, matching the Hurwitz gap of the radial-graph lift at leading
-  order up to an explicit `O(n^-4)` correction.
-
 No Stern-Brocot / Farey / Thomae primitive enters. This is BIND-native strip
 geometry: secant arcs, integration, and Fourier modes on `[0, 1]`.
 
@@ -312,30 +300,3 @@ TV(y_n) = 2n (sec(pi/n) - 1) = pi^2/n + O(n^-3).
 This is a `1/n` observable, not part of the `1/n^2` Archimedean signature,
 but it may be useful as a BIND-local roughness measure.
 
-## Program Use
-
-The strip tissue gives BIND a Fourier toolkit independent of Hurwitz:
-
-| Substrate | Function | Frequency lattice | Natural observables |
-|---|---|---|---|
-| Arc-length polygon | complex curve `gamma_n(s)` | `1 + n Z` | Hurwitz gap `Delta_n ~ 1/n^2` |
-| Strip tissue | real function `y_n(x)` | `n Z` | `A_below = d_0`, `||y_n||_L2^2 ~ 1/n^4`, `||y_n'||_L2^2 ~ 1/n^2` |
-
-The key point is not that BIND recreates the inscribed Hurwitz gap. It does
-not. The strip has its own native Fourier object on `n Z`; its `H^1`
-seminorm reaches the Hurwitz register only after the radial-graph lift
-`gamma_tilde_n`, which is the circumscribed regular `n`-gon. The closure
-memo
-[memos/STRIP-H1-HURWITZ-CLOSURE.md](memos/STRIP-H1-HURWITZ-CLOSURE.md)
-settles the former open question affirmatively in this two-step form:
-
-```text
-||y_n'||_L2([0,1])^2 = Delta(gamma_tilde_n) + R_n,
-R_n = (16/45) pi^6 / n^4 + O(n^-6).
-```
-
-So `||y_n'||_L2^2` and the circumscribed Hurwitz gap share the same
-isoperimetric Hessian at leading order, with an explicit lower-order
-geometric correction. The direct comparison to the inscribed `Delta_n`
-remains a secondary Archimedean squeeze, not the primary bilinear-form
-identification.
