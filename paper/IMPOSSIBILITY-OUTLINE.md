@@ -1,12 +1,10 @@
 # Charter
 
-Current FFT-style lower-bound methods can only improve by descent informed by information from how the FFT converts multiplication to addition and vice versa. The mult/add conversion is treated as a map between cost manifolds. On each side it is coherent; across the bounded/unbounded coefficient boundary it loses the descent gradient. A stronger FFT-style lower bound would need a continuous route through that boundary. No such route is available.
-
-## Guidance
-
 >Meta instruction for humans and agents. Stage direction.
 
 JACM is the venue. ~25 pages with figures is the target. The register is engineering inflected mathematics. Savoir faire is the goal.
+
+# Paper
 
 ## Abstract
 
@@ -25,7 +23,6 @@ We prove that current FFT-style lower-bound methods cannot descend below their e
 - Mathematics of computing → Discrete mathematics → **Combinatorics**
 - Mathematics of computing → Mathematical analysis → **Numerical analysis**
 
-# Paper
 
 ## §Intro
 
