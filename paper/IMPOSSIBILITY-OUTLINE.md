@@ -26,11 +26,11 @@ We prove that current FFT-style lower-bound methods cannot descend below their e
 
 ## §Intro
 
-Context, claim, the operational-side reading paired with the algebraic-side closure-mismatch companion (`memos/NATIVE-F-MINIMAL-DEFINITION.md`). Methodological signature: substrate-side lemmas + boundary discontinuity composed under an affine-closure proof template inherited from prior work on the affine-pseudo-logarithm residue.
+Context, claim, the operational-side reading paired with the algebraic-side closure-mismatch companion (`memos/NATIVE-F-MINIMAL-DEFINITION.md`). 
 
 ## §1. Cost manifolds and the mult/add map
 
-Define the multiplicative cost manifold (Schönhage–Strassen 1971's operational uniform model; Winograd 1978's modular-product / CRT-cyclotomic ledger; Auslander–Feig–Winograd 1984's cyclotomic decomposition under rational equivalence) and the additive cost manifold (Morgenstern 1973's bounded-coefficient additive lower bound). Specify the mult/add conversion as a map between them. Notation hands the reader the paper's working language; the four frameworks enter as definitional apparatus, not yet as objects of engagement.
+Define the multiplicative cost manifold (Schönhage–Strassen 1971's operational uniform model; Winograd 1978's modular-product / CRT-cyclotomic ledger; Auslander–Feig–Winograd 1984's cyclotomic decomposition under rational equivalence) and the additive cost manifold (Morgenstern 1973's bounded-coefficient additive lower bound). Specify the mult/add conversion as a map between them.
 
 ## §2. The tour
 
@@ -46,7 +46,7 @@ Formal propositional statement of the FFT-impossibility on cyclotomic-DFT and ad
 
 ## §5. A maze of twisting passages, all alike
 
-The problem of information passage through the FFT. Five substrate-side lemmas, one per witness from `paper/`: rotation-orbit Diophantine kinematics; non-nesting isoperimetric registers; closed-form polygon arithmetic; cyclotomic-ladder unboundedness against affine flatness; admissibility envelope. Each lemma establishes that every FFT-algorithm passage hits the bounded/unbounded coefficient boundary in the same way — no passage distinguishes itself, no information is available to choose a descent direction. The maze is uniform.
+The problem of information passage through the FFT. Five substrate-side lemmas, one per witness from `paper/`: rotation-orbit Diophantine kinematics; non-nesting isoperimetric registers; closed-form polygon arithmetic; cyclotomic-ladder unboundedness against affine flatness; admissibility envelope. Each lemma establishes that every FFT-algorithm passage hits the bounded/unbounded coefficient boundary in the same way — no passage distinguishes itself, no information is available to choose a descent direction.
 
 ## §6. Gradients without information
 
@@ -54,7 +54,7 @@ Gradient descent on the cost manifold robbed of information at the boundary. The
 
 ## §7. Back again
 
-Return to the four frameworks of §3, now under the impossibility. Schönhage–Strassen, Morgenstern, Winograd, AFW are at their natural limits — not from defect, but because no further descent is reachable on this substrate by these methods. Pair with the algebraic-side closure-mismatch reading (`memos/NATIVE-F-MINIMAL-DEFINITION.md`): the operational-side and algebraic-side companions complete each other. The canon is intact; what the paper has shown is where descent stalls.
+Return to the four frameworks of §3, now under the impossibility. Schönhage–Strassen, Morgenstern, Winograd, AFW are at their natural limits — not from defect, but because no further descent is reachable on this substrate by these methods. Pair with the algebraic-side closure-mismatch reading (`memos/NATIVE-F-MINIMAL-DEFINITION.md`): the operational-side and algebraic-side companions complete each other.
 
 ## §Conclusion
 
