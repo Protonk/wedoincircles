@@ -16,7 +16,7 @@ For every FFT-style method `M` and every problem `P` in the cyclotomic-DFT class
 From §1, in working form. None of the items below is a finished formal definition; each names an object the paper has to specify.
 
 - **Multiplicative cost `μ` and additive cost.** Two complexity measures on FFT-style algorithms (per §1.2 and §1.3). **[Construction debt:** precise specification of each measure under the canon's standard accounting. Currently working language only.**]**
-- **The mult/add conversion.** An adaptive strategy family that FFT-style algorithms search through (per §1.5 and `paper/FFT-SEARCH-PLAN.md`); each strategy is a finite composition of native operations under the canon's standard composability, and methods select a strategy adaptively from problem data. The same computation may admit multiple strategies under different decompositions or representations. **[Construction debt:** the conversion as a precisely-typed object — an adaptive strategy family closed under composition rather than a single partial function. Domain, codomain, regime-dependent behavior, route-multiplicity, search-strategy space, and search-space topology all need formal specification.**]**
+- **The mult/add conversion.** An adaptive strategy family that FFT-style algorithms search through (per §1.5 and `fft/FFT-SEARCH-PLAN.md`); each strategy is a finite composition of native operations under the canon's standard composability, and methods select a strategy adaptively from problem data. The same computation may admit multiple strategies under different decompositions or representations. **[Construction debt:** the conversion as a precisely-typed object — an adaptive strategy family closed under composition rather than a single partial function. Domain, codomain, regime-dependent behavior, route-multiplicity, search-strategy space, and search-space topology all need formal specification.**]**
 - **Transaction cost `δ`.** A non-zero quantity associated with each instance of the conversion, reflecting irreducible cost. Vocabulary and typing follow Coase 1937 (`memos/COASE-FRICTION-AND-SPECIALISTS.md`): the existence of friction (`δ > 0`) is one claim; the algebra of friction is another. Lemma B is the existence-side claim about `δ`; the algebra of `δ` — and with it the full impossibility region — is debt #2. **[Construction debt:** the *algebra* of `δ` is not yet specified. Open questions: is it additive across compositions? amortizable over many uses? asymptotic? per-size? per-precision? representation-dependent? bypass-resistant under advice? Each is a distinct sub-debt — Lemma B as stated only blocks the simplest zeroing route; bypass / amortization / advice / multi-route effects require their own arguments under whatever algebra the paper specifies.**]**
 - **Native operations and closure classes.** Operations the canon admits, and the closure classes they generate. **[Construction debt:** operational definitions of the four-framework canon's native operations, and the closure classes they generate. Per `fft/PROVENANCE-AND-TRANSFERABILITY.md`, *bridge work is construction, not import*.**]**
 - **Coefficient regimes.** Bounded vs unbounded (§1.4). The regime parameterizes both the cost measures and `δ`.
@@ -25,18 +25,60 @@ From §1, in working form. None of the items below is a finished formal definiti
 
 ## Strategy
 
-The proof composes the Bridge Theorem and Lemma B via a template inherited from Landfall §2. None of the three is yet earned; the strategy below identifies what each piece would contribute and what construction it requires. Lemma A is named as parallel reading; its equivalence with the Bridge + B + Template route is its own debt and Lemma A does not enter the QED.
+The proof has a potential-style skeleton with three separated claims — Bridge, Separation, Native drift — that combine into the impossibility. None is yet earned; the strategy below identifies what each piece contributes and what construction it requires. Lemma A is named as parallel reading; its equivalence with the three-claim route is its own debt (#6) and Lemma A does not enter the QED.
 
-- **Bridge Theorem (open; central construction).** Any FFT-style method that proves a lower bound on `P` improving past `T(P)` requires `δ` at the bounded/unbounded coefficient boundary to drop to zero.
-  - This is the equivalence between "any threshold-improving descent" and "frictionless conversion at the boundary." Without it, Lemma B can block the frictionless-conversion route but not other routes. **[Construction debt:** the paper's central new theorem. Currently asserted, not derived. Substantive claim about the structure of descent paths under the cost / conversion framework.**]**
-- **Lemma B (Closed composition).** Native operations compose into closure classes; reducing `δ` at the boundary to zero is outside the closure classes' reach.
-- **Template (Landfall §2, restated for the cost / conversion framework).** No finite composition of native operations produces an effect outside the operations' closure class.
+- **Bridge claim (Bridge Theorem; open; central construction).** Any FFT-style method that proves a lower bound on `P` improving past `T(P)` requires crossing a named defect gap: `δ` at the bounded/unbounded coefficient boundary moves from `δ > 0` to `δ = 0`.
+  - Endpoint-side claim. Without it, Native drift can block per-operation crossings but not the equivalence between threshold improvement and gap-crossing in the first place. **[Construction debt:** the paper's central new theorem. Currently asserted, not derived. Substantive claim about the structure of descent paths under the cost / conversion framework.**]**
+- **Separation claim (Template, Landfall §2 transported).** `δ = 0` lies outside the native closure class `C_FFT`.
+  - Target-side claim. The endpoint of the bridge is not in the closure of native operations, established via the Template (Landfall §2 transported per debt #3 / character reflection barrier per `fft/PHASE-DEFECT.md`).
+- **Native drift claim (Lemma B; per-operation).** Each native operation has bounded (or non-crossing) effect on the defect potential `δ` at the boundary; no single native operation crosses the gap.
+  - Step-side claim. Per-operation drift bound, the analog of Ailon's per-gate `Φ(M_i) − Φ(M_{i-1}) ≤ 2`.
 
-Bridge Theorem + Lemma B + Template close the impossibility.
+**Interface (potential-style skeleton).** The three claims combine: the gap must be crossed (Bridge), the target lies outside the closure (Separation), and no single native operation crosses the gap (Native drift); therefore no finite composition of native operations crosses the gap. Proof-shape precedent: `fft/AILON-2013-UNITARY-FFT-LOWER-BOUND-BRIEF.md` — endpoint values `Φ(Id) = 0`, `Φ(F) = n log₂ n`; per-gate drift `Φ(M_i) − Φ(M_{i-1}) ≤ 2`; therefore `m ≥ (n log₂ n)/2`. Ailon enters as **shape, not content**: the program's potential is `δ`, not matrix entropy; the model is the canon's FFT-style methods, not unitary `2 × 2` layered circuits. The trust-boundary posture in `fft/AILON-2013-UNITARY-FFT-LOWER-BOUND-BRIEF.md` §4 governs the citation.
 
 **Lemma A (Information-uniformity at the boundary; parallel reading).** No FFT-algorithm passage extracts information distinguishing one trade from another at the boundary. Lemma A is the information-side reading of the same impossibility; whether it is rigorously equivalent to the Bridge-plus-B-plus-Template route is itself **[Construction debt]**. *Lemma A is not assumed by the QED below.*
 
-## Lemma A — Information-uniformity at the boundary
+## Lemma B — Native drift on the defect potential
+
+**Claim (native drift; per-operation).** Each native operation `o` has bounded (or non-crossing) effect on the defect potential `δ` at the bounded/unbounded coefficient boundary: the per-step change `δ(o(x)) − δ(x)` is either zero, or bounded above by a constant that depends only on the operation's class — not on the running state. No single native operation crosses the gap from `δ > 0` to `δ = 0`.
+
+**Sketch.**
+
+- *Mult-side drift.* Composition of multiplicative-side primitives stays inside a closure class; the per-operation effect on `δ` at the boundary is bounded.
+- *Add-side drift.* Composition of additive-side primitives stays inside another closure class; the per-operation effect on `δ` is bounded.
+- *No single-op crossing.* Neither class contains an operation whose single application drops `δ` from positive to zero at the boundary.
+
+The shape is potential-style: `δ` is the potential, the boundary is the gap locus, and the claim is that each native operation moves `δ` only by a bounded amount. The Template (Separation) places `δ = 0` outside the closure of native operations; Native drift places per-operation effect inside the closure. Combined with the Bridge claim that threshold improvement requires crossing the gap, finitely many bounded steps cannot cross to a target outside the closure.
+
+*Existence vs algebra* (per `memos/COASE-FRICTION-AND-SPECIALISTS.md`). Native drift is the existence-side claim: `δ > 0` at the boundary, and each native operation has bounded effect on `δ` there. The algebra of `δ` — its scaling with problem, regime, and strategy — is debt #2's open structure. Native drift, composed with the Bridge claim and the Separation claim, closes the core no-crossing contradiction at the boundary; the §4.5 statement's full quantification over `P`, `T(P)`, and the canon's distinct currencies (multiplicative complexity, additive complexity, modular product) still depends on debt #2's algebra of `δ`. The full impossibility *region* (which thresholds `T(P)` sit unreachable across the problem class) closes when debt #2 closes.
+
+**[Construction debt:** each sub-claim requires explicit calculation in the cost / conversion formalism. Mult-side and add-side closure classes need definition; the boundary's `δ` behavior needs precise characterization; non-reduction is a calculation, not an inspection. The construction depends on the algebra of `δ` (see Setup); under amortization or advice-augmented regimes the no-reduction claim may need refinement or separate sub-arguments.**]**
+
+**[Trust-boundary debt.** Per `fft/PROVENANCE-AND-TRANSFERABILITY.md` §3.2: SS supplies the operational model, not a lower bound; Morgenstern's bound is bounded-coefficient only; Winograd's μ-bounds are under rational equivalence; AFW is rational-equivalence cyclotomic decomposition, not certification cost. Lemma B's closure-class statement must respect each "should be cited for / should NOT be cited for" boundary.**]**
+
+## Template — Separation: `δ = 0` outside the closure (Landfall §2, transported)
+
+**Statement (separation).** `δ = 0` lies outside the native closure class `C_FFT`. The Bridge claim's target endpoint is therefore not in the closure of native operations.
+
+**Source-side instance (in hand).** Native binade operations generate `Aff⁺(ℝ)`; `λ(m) = log₂(1+m)` is not in the closure; therefore no finite composition of native binade operations produces `λ`. Equivalently, `ε = λ − m` is non-affine since `m` is affine.
+
+**[Construction debt: template transfer.** The cost / conversion generalization is the paper's work; per `paper/LANDFALL-EXPORT.md` Template 1, the source-side operation is `λ`/`ε` and the target-side burden is to prove a transport lemma carrying `ε ∉ C_Aff` to `δ = 0 ∉ C_FFT`. Candidate transport: the **character reflection barrier** of `fft/PHASE-DEFECT.md`, with **phase-lift conservativity** as its analytic-exponential specialization. Both are conditional on PHASE-DEFECT's gates and sub-debts; the Separation claim is sharpened (target named: `δ = 0`; source-side instance named: `λ`/`ε`) but not yet transferred.**]**
+
+## Proof of the theorem (conditional on debts)
+
+*Assuming* Bridge, Separation, and Native drift:
+
+Suppose `M` is an FFT-style method proving a lower bound on `P` strictly improving past `T(P)`. Then `M` is a finite composition of native operations producing such a descent. By the **Bridge** claim, the descent corresponds to crossing the defect gap from `δ > 0` to `δ = 0` at the boundary. By the **Separation** claim, the target endpoint `δ = 0` lies outside the native closure class `C_FFT`. By the **Native drift** claim, each native operation has bounded (or non-crossing) effect on `δ` at the boundary; in particular, no single native operation crosses the gap. A finite composition of bounded-drift operations whose target lies outside the closure cannot reach that target — finitely many bounded steps inside the closure stay inside the closure. Contradiction. ∎
+
+The argument is potential-style: endpoint gap (Bridge) + per-step drift bound (Native drift) + target-outside-closure (Separation). The shape is on the shelf in `fft/AILON-2013-UNITARY-FFT-LOWER-BOUND-BRIEF.md` (`Φ(Id) = 0`, `Φ(F) = n log₂ n`, `ΔΦ ≤ 2` per gate, hence `m ≥ (n log₂ n)/2`). The program's specific instantiation — `δ` as the potential, the bounded/unbounded coefficient boundary as the gap locus, the FFT canon's native operations as the steps — is the program's content; Ailon's matrix-entropy machinery does not enter, only the shape does.
+
+**Information-side reading via Lemma A** (parallel; not assumed by the QED above; conditional on the equivalence debt). At the boundary, choosing a frictionless trade requires information distinguishing one trade from another; Lemma A says no such information exists; therefore the trade cannot be directed even if the cost could be paid. The reading is informational; whether it is rigorously equivalent to the closure-class route is itself a **[Construction debt]**.
+
+**Smarter-FFT rebuttal** (conditional on the above closing). A smarter FFT-style method does not answer the obstruction — same cost measures, same native operations, same closure classes, same `δ` at the boundary. The mathematical non-elimination claim is Lemma B's: smarter strategies redistribute or amortize cost but cannot zero `δ` at the boundary by finite composition. Coase 1937 (`memos/COASE-FRICTION-AND-SPECIALISTS.md`) supplies the vocabulary and methodological precedent — *reduce yes, eliminate no*, "Coasean specialists" — for naming what the lemma rules out. `δ` is on the substrate, not on the algorithm.
+
+## Lemma A — Information-uniformity at the boundary (parallel reading)
+
+*Not used in the QED above. Presented here as the information-side reading of the same impossibility; equivalence with the closure-class route is its own construction debt (#6).*
 
 **Claim.** At the boundary between bounded- and unbounded-coefficient regimes, no admissible FFT-algorithm passage extracts information distinguishing one trade from another.
 
@@ -50,41 +92,9 @@ Bridge Theorem + Lemma B + Template close the impossibility.
 
 **[Construction debt: exhaustiveness.** The five bullets cover specific substrate-side classes of distinguishing information. The universal claim "no admissible distinguishing information" requires an **exhaustiveness argument**: that the five angles cover *every* admissible source available to FFT-style methods. Not implied by the bullets; a separate covering argument is owed.
 
-The argument closes by negative space. Any distinguishing-information source not covered by the five witnesses must violate one of the program's named constraints — L-W safety (`memos/OLD-TIME-RELIGION.md`), trust boundaries on the FFT canon (`fft/PROVENANCE-AND-TRANSFERABILITY.md`), the closure-mismatch theorem (`memos/NATIVE-F-MINIMAL-DEFINITION.md`), or BIND vocabulary erasure (`BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md`). The five witnesses live inside the constraint envelope; the constraints close the rest.
+The candidate closure route is by negative space. Any distinguishing-information source not covered by the five witnesses would have to violate one of the program's named constraints — L-W safety (`memos/OLD-TIME-RELIGION.md`), trust boundaries on the FFT canon (`fft/PROVENANCE-AND-TRANSFERABILITY.md`), the closure-mismatch theorem (`memos/NATIVE-F-MINIMAL-DEFINITION.md`), or BIND vocabulary erasure (`BNHA/triad/Eraserhead/BIND-THE-CIRCLE.md`). The five witnesses live inside the constraint envelope; whether the constraints close the rest is itself the exhaustiveness debt, not yet discharged.
 
-Closure-class typing supplies the technical backbone: information of types incompatible with the closure class cannot enter the proof, since extracting it would require an operation outside the closure class — which by the Template does not exist. NATIVE-F's universal no-functor statement covers functorial-route information sources directly: distinguishing information that requires a functor between sides is foreclosed by the algebraic-side companion.**]**
-
-## Lemma B — Closed composition of native operations
-
-**Claim (existence-side).** Native operations compose into closure classes; no finite composition reduces `δ` at the bounded/unbounded boundary to zero.
-
-**Sketch.**
-
-- *Mult-side closure.* Composition of multiplicative-side primitives stays inside a closure class; `δ` contributions stay nonzero across the regime boundary.
-- *Add-side closure.* Composition of additive-side primitives stays inside another closure class; same boundary behavior.
-- *No reduction.* The boundary's irreducible `δ` is outside the reach of finite composition on either side.
-
-*Existence vs algebra* (per `memos/COASE-FRICTION-AND-SPECIALISTS.md`). Lemma B is the existence-side claim: `δ > 0` at the boundary, and finite composition does not zero it. The algebra of `δ` — its scaling with problem, regime, and strategy — is debt #2's open structure. Lemma B suffices to compose with the Bridge Theorem and the Template to close the §4.5 theorem statement; the full impossibility *region* (which thresholds `T(P)` sit unreachable across the problem class) closes when debt #2 closes.
-
-**[Construction debt:** each sub-claim requires explicit calculation in the cost / conversion formalism. Mult-side and add-side closure classes need definition; the boundary's `δ` behavior needs precise characterization; non-reduction is a calculation, not an inspection. The construction depends on the algebra of `δ` (see Setup); under amortization or advice-augmented regimes the no-reduction claim may need refinement or separate sub-arguments.**]**
-
-**[Trust-boundary debt.** Per `fft/PROVENANCE-AND-TRANSFERABILITY.md` §3.2: SS supplies the operational model, not a lower bound; Morgenstern's bound is bounded-coefficient only; Winograd's μ-bounds are under rational equivalence; AFW is rational-equivalence cyclotomic decomposition, not certification cost. Lemma B's closure-class statement must respect each "should be cited for / should NOT be cited for" boundary.**]**
-
-## Template (Landfall §2, restated)
-
-**Statement (Landfall's instance, in hand).** Native binade operations generate `Aff⁺(ℝ)`; `λ(m) = log₂(1+m)` is not in the closure; therefore no finite composition of native binade operations produces `λ`.
-
-**[Construction debt: template transfer.** The cost / conversion generalization is the paper's work; per `paper/LANDFALL-EXPORT.md` Template 1: "*the paper has to earn this generalization at the cost-manifold level.*" (LANDFALL-EXPORT was written under the manifold framing; the transfer task in the cost / conversion framework is parallel and inherits the same debt.) The concrete burden: **identify the specific operation or effect that, like `λ`, lies outside the closure class — i.e., the operation that would, if achievable by finite composition of native operations, zero `δ` at the boundary.** Until that specific operation is named with the same precision as `λ(m) = log₂(1+m)`, the template transfer is a structural analogy rather than a transferred proof.**]**
-
-## Proof of the theorem (conditional on debts)
-
-*Assuming* the Bridge Theorem, Lemma B, and the cost / conversion-generalized Template:
-
-Suppose `M` is an FFT-style method proving a lower bound on `P` strictly improving past `T(P)`. Then `M` is a finite composition of native operations producing such a descent. By the Bridge Theorem, the descent requires `δ` at the bounded/unbounded boundary to drop to zero. By Lemma B, no finite composition of native operations reduces `δ` at the boundary to zero. By the Template, no finite composition produces an effect outside the operations' closure class. Contradiction. ∎
-
-**Information-side reading via Lemma A** (parallel; not assumed by the QED above; conditional on the equivalence debt). At the boundary, choosing a frictionless trade requires information distinguishing one trade from another; Lemma A says no such information exists; therefore the trade cannot be directed even if the cost could be paid. The reading is informational; whether it is rigorously equivalent to the closure-class route is itself a **[Construction debt]**.
-
-**Smarter-FFT rebuttal** (conditional on the above closing). A smarter FFT-style method does not answer the obstruction — same cost measures, same native operations, same closure classes, same `δ` at the boundary. Per Coase 1937 (`memos/COASE-FRICTION-AND-SPECIALISTS.md`): the cost may be reduced by smarter strategies (Coasean specialists) but it will not be eliminated. `δ` is on the substrate, not on the algorithm.
+Closure-class typing is the candidate technical backbone: information of types incompatible with the closure class would not be available to the proof if extracting it required an operation outside the closure class — which the Template would forbid (subject to the Template's own transfer debt #3). NATIVE-F's universal no-functor statement is the candidate cover for functorial-route information sources: distinguishing information that requires a functor between sides would be foreclosed by the algebraic-side companion. Each step is a candidate route, not a closed argument.**]**
 
 ## Scope
 
@@ -94,15 +104,17 @@ Suppose `M` is an FFT-style method proving a lower bound on `P` strictly improvi
 
 ## Construction-debt summary
 
-The proof depends on the following debts, ordered by how load-bearing each is for the QED:
+The proof depends on the following debts. Debts #1, #3, #4 are the three-claim interface (Bridge, Separation, Native drift respectively) and carry the headline impossibility; debt #2 is foundational and gates the others; debts #5, #6, #8 condition Lemma A's parallel-reading status (not the QED); debt #7 is per-citation discipline. The eight-debt count is unchanged.
 
-1. **Bridge Theorem.** Any threshold-improving FFT-style descent requires `δ` at the boundary to drop to zero. Central new theorem.
-2. **Cost / conversion formalization.** `μ`, additive cost, the conversion (as an adaptive strategy family closed under composition rather than a partial function; see `paper/FFT-SEARCH-PLAN.md`), `δ` with explicit algebra (additivity, amortizability, asymptotics, representation-dependence, bypass-resistance, sign-vs-shape — see `memos/COASE-FRICTION-AND-SPECIALISTS.md` for methodological precedent), search-strategy space and topology, regime parameter, threshold `T(P)` made formal per §1's framework. The algebra of `δ` closes the impossibility *region*; Lemma B's existence-side claim alone closes only the §4.5 theorem statement.
-3. **Template transfer.** Landfall §2's affine-closure argument generalized to the cost / conversion framework. Concrete burden: name the specific operation or effect — analog of `λ(m) = log₂(1+m)` — that lies outside the closure class. Paper-internal construction per `paper/LANDFALL-EXPORT.md`.
-4. **Lemma B's closure-class calculation.** Mult-side closure, add-side closure, non-reduction of `δ` at the boundary — three calculations, not inspections, dependent on the algebra of `δ`.
+Dependency structure: #2 is foundational; #1, #3, #4 depend on #2's algebra of `δ` for their target objects; #5, #6, #8 condition Lemma A's status (#6 promotes Lemma A to QED status; #5, #8 are then load-bearing); #7 is ongoing discipline that extends per-citation as new sources enter.
+
+1. **Bridge Theorem (Bridge claim).** Any threshold-improving FFT-style descent requires crossing the defect gap from `δ > 0` to `δ = 0` at the boundary. Central new theorem; endpoint-side claim of the potential-style interface.
+2. **Cost / conversion formalization.** `μ`, additive cost, the conversion (as an adaptive strategy family closed under composition rather than a partial function; see `fft/FFT-SEARCH-PLAN.md`), `δ` with explicit algebra (additivity, amortizability, asymptotics, representation-dependence, bypass-resistance, sign-vs-shape — see `memos/COASE-FRICTION-AND-SPECIALISTS.md` for methodological precedent), search-strategy space and topology, regime parameter, threshold `T(P)` made formal per §1's framework. The algebra of `δ` closes the impossibility *region*; Lemma B's existence-side claim alone closes only the §4.5 theorem statement. Under the candidate cocycle realization of `fft/PHASE-DEFECT.md`, bypass-resistance acquires a concrete analytic-exponential target: **phase-lift conservativity** — the claim that competitive construction of `{Δ_k}` forces competitive construction of `ε` in `C_Aff` after small-branch arg-unwrapping. Not derivable from Landfall §2 ∪ §4 alone; it is the substantive new content the analytic sequel must earn. Bypass-resistance has two distinct shapes: against advice / oracle-constants / non-uniformity, it is a **uniformity-and-non-growth guard** on the closure-class definition (uniform, non-growing, fixed base field — excluded by definition, not refuted by argument); against amortization / per-instance specialization, it is a substantive sub-claim under whatever algebra the paper specifies.
+3. **Template transfer (Separation claim).** Landfall §2's affine-closure argument generalized to the cost / conversion framework — places `δ = 0` outside `C_FFT`, the target-side claim of the potential-style interface. Source-side operation named: `λ`/`ε` per Landfall §2, with `ε = λ − m` non-affine since `m` is affine. Target-side: produce a transport lemma carrying `ε ∉ C_Aff` to `δ = 0 ∉ C_FFT`. Candidate transport: the **character reflection barrier** of `fft/PHASE-DEFECT.md`. Until that lemma is proved, the template is sharpened but not yet transferred. Paper-internal construction per `paper/LANDFALL-EXPORT.md`.
+4. **Lemma B's per-operation drift calculation (Native drift claim).** Mult-side drift bound, add-side drift bound, no-single-op-crossing — three calculations, not inspections, dependent on the algebra of `δ`. Per-operation drift bound is the step-side claim of the potential-style interface; the analog of Ailon's `ΔΦ ≤ 2`. Conditional on `fft/PHASE-DEFECT.md` closing, the FFT-side calculation narrows to a targeted transport check: whether `{Δ_k}` inherits `ε`'s `C_Aff`-non-membership through the character-pullback lift, rather than a blank closure-class search. The narrowing is conditional, not free.
 5. **Lemma A's exhaustiveness.** The five substrate-side angles do not yet constitute a covering theorem.
 6. **A↔B equivalence.** Information route (Lemma A) and closure route (Bridge + B + Template) need an equivalence if Lemma A is to enter the proof rather than serve as parallel reading.
-7. **Trust-boundary discipline.** Each citation of the FFT canon respects `fft/PROVENANCE-AND-TRANSFERABILITY.md`'s "should be cited for / should NOT be cited for" boundaries.
+7. **Trust-boundary discipline.** Each citation of the FFT canon respects `fft/PROVENANCE-AND-TRANSFERABILITY.md`'s "should be cited for / should NOT be cited for" boundaries. The discipline extends to adjacent prior art under each source's own brief: Ailon under `fft/AILON-2013-UNITARY-FFT-LOWER-BOUND-BRIEF.md` §4 (shape-not-content); Bowen under `memos/BOWEN-DRILLING-AND-DENSITY.md` Trust Boundary (vocabulary-warning-tactical, not theorem-transfer); Coase under `memos/COASE-FRICTION-AND-SPECIALISTS.md` (vocabulary and methodological precedent, not content transfer). Each new source acquires its own trust-boundary clause as it enters.
 8. **β(π) = 0 L-W audit.** If load-bearing in Lemma A's first bullet, the reference must be audited under `memos/OLD-TIME-RELIGION.md`.
 
 The eight debts are the paper's writing agenda. The sketch above is the destination; closing each debt is the work.

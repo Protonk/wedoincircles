@@ -35,13 +35,13 @@ Two cost measures track FFT-style algorithm cost: multiplicative cost (§1.2) an
 The cost-bearing primitives are multiplications; the complexity measure `μ` counts them under bilinear / rational-equivalence accounting. Schönhage–Strassen 1971, Winograd 1978, and Auslander–Feig–Winograd 1984 each give `μ` structure on cyclotomic-DFT and adjacent computations (full presentation at §3).
 
 ### §1.3. Additive cost
-The cost-bearing primitives are additions; the complexity measure counts them, sensitive to the coefficient regime. Morgenstern 1973's `Ω(n log n)` bounded-coefficient additive lower bound is the canonical structure-bearing result (full presentation at §3.3).
+The cost-bearing primitives are additions; the complexity measure counts them, sensitive to the coefficient regime. Morgenstern 1973's `Ω(n log n)` bounded-coefficient additive lower bound is the canonical structure-bearing result (full presentation at §3.3). Ailon 2013 is the adjacent normalized-FFT comparison: in a layered `2 × 2` unitary-gate model, matrix entropy gives the same `Ω(n log n)` scale without determinant growth.
 
 ### §1.4. Coefficient regimes
 Bounded vs unbounded coefficients. The regime is a parameter of every cost measure on either side; many bounds — Morgenstern's notably — depend on which regime is in force. `δ` (§1.5) also depends on regime.
 
 ### §1.5. The mult/add conversion
-The family of strategies FFT-style algorithms use to trade multiplicative cost for additive cost (or vice versa); methods select a strategy adaptively (Gauss 1805's `4×3` vs `3×4` for Pallas is the pre-1882 worked example, per `fft/GOLDSTINE-1977-INTERPOLATION-BRIEF.md`; deeper framing parked at `paper/FFT-SEARCH-PLAN.md`). The transaction cost `δ` — the irreducible cost of executing a strategy — depends on §1.4's regime parameter; `δ`'s behavior at the bounded/unbounded coefficient boundary is the object §4's main theorem speaks about.
+The family of strategies FFT-style algorithms use to trade multiplicative cost for additive cost (or vice versa); methods select a strategy adaptively (Gauss 1805's `4×3` vs `3×4` for Pallas is the pre-1882 worked example, per `fft/GOLDSTINE-1977-INTERPOLATION-BRIEF.md`; deeper framing parked at `fft/FFT-SEARCH-PLAN.md`). The transaction cost `δ` — the irreducible cost of executing a strategy — depends on §1.4's regime parameter; `δ`'s behavior at the bounded/unbounded coefficient boundary is the object §4's main theorem speaks about. A candidate concrete realization of `δ` — `δ ≡ cost of {Δ_k} cocycle compression` — is parked at `fft/PHASE-DEFECT.md`, conditional on that file's gating debts and four sub-debts (formal-character composition, closure-class transport, phase-lift conservativity, canon-bound translation).
 
 ## §2. The tour
 
@@ -64,14 +64,19 @@ Modular-product theorem `μ(T_P) = 2n − k`; multiplicative complexity factors 
 ### §3.5. Auslander–Feig–Winograd 1984
 Semisimple cyclotomic decomposition of finite-abelian DFTs with multiplicative complexity under rational equivalence.
 
-### §3.6. Common manifolds
-What do the four attacks share in the language of cost manifolds we just introduced?
+### §3.6. Common cost / conversion structure
+What do the four attacks share in §1's cost / conversion framework?
 
 #### §3.6.1. Translation
-Each of §3.2–§3.5 re-read in cost-manifold language. SS's operational uniform model as a structure on the multiplicative manifold; Morgenstern's bound as the additive-manifold floor; Winograd's modular product as a CRT-factored ledger on the multiplicative side; AFW's cyclotomic decomposition as a factor-by-factor reading on the multiplicative side.
+Each of §3.2–§3.5 re-read in §1's cost / conversion language. SS's operational uniform model as a multiplicative-side structure; Morgenstern's bound as the additive-side floor; Winograd's modular product as a CRT-factored ledger on the multiplicative side; AFW's cyclotomic decomposition as a factor-by-factor reading on the multiplicative side.
 
 #### §3.6.2. What's structurally shared
-The four manifold-language readings converge on common structure: shared cost-bearing primitives, compatible composability, shared regime parameter, one mult/add conversion map between the same two manifolds.
+The four cost / conversion readings converge on common structure: shared cost-bearing primitives, compatible composability, shared regime parameter, one mult/add conversion connecting the same two cost classes.
+
+### §3.7. Adjacent restricted-model lower bound: Ailon 2013
+Ailon records the warning the paper must keep visible: nontrivial Fourier-transform lower bounds in broad linear-circuit models remain open, and known successes come with strong restrictions. His model keeps only `n` live coordinates; each gate applies a `2 × 2` unitary mixing to two coordinates. The normalized FFT fits this model in `O(n log n)` gates, and Ailon proves any such circuit needs at least `(1/2)n log_2 n` gates.
+
+The proof mechanism is the useful import. For a unitary matrix `M`, define `Phi(M) = -∑_{p,q} |M(p,q)|² log_2 |M(p,q)|²`. Then `Phi(Id)=0`, `Phi(F)=n log_2 n` for the normalized Fourier matrix, and one native `2 × 2` unitary gate can raise `Phi` by at most `2`. Program use: Ailon supplies an entropy-potential precedent at the same scale as Morgenstern's determinant-potential lower bound, but in a different restricted model. It is not a broad FFT lower bound and not a proof of the program's `δ`; it is evidence that native-operation restrictions can make a monotone potential carry the lower-bound load.
 
 ## §4. Main theorem
 
@@ -85,10 +90,10 @@ The hypothesis class.
 The composability rules used by Schönhage–Strassen, Morgenstern, Winograd, and AFW (§3.2–§3.5). The class is closed under these.
 
 #### §4.2.2. The class defined
-Formally: an FFT-style method is a finite composition of native operations under the standard composability of the canon — equivalently, an adaptive strategy family closed under composition (per §1.5's reading; see `paper/FFT-SEARCH-PLAN.md` for the Gauss 1805 anchor and the deeper search-theoretic framing). This is the formal object §4.5 quantifies over.
+Formally: an FFT-style method is a finite composition of native operations under the standard composability of the canon — equivalently, an adaptive strategy family closed under composition (per §1.5's reading; see `fft/FFT-SEARCH-PLAN.md` for the Gauss 1805 anchor and the deeper search-theoretic framing). This is the formal object §4.5 quantifies over.
 
 ### §4.3. Cyclotomic-DFT and adjacent
-The problem class. Cyclotomic-DFT specifically — the discrete Fourier transform over cyclotomic fields. "Adjacent" pinned down: compute-cost problems sharing the cost-manifold structure of §1, differing in inputs but not in the manifold the bounds inhabit.
+The problem class. Cyclotomic-DFT specifically — the discrete Fourier transform over cyclotomic fields. "Adjacent" pinned down: compute-cost problems sharing §1's cost / conversion structure, differing in inputs but not in the cost / conversion framework the bounds inhabit.
 
 ### §4.4. Existing thresholds
 The current best lower bounds the theorem asserts are unreachable from below. AFW's multiplicative-complexity threshold for cyclotomic DFTs under rational equivalence; Morgenstern's `Ω(n log n)` bounded-coefficient additive threshold; Winograd's modular-product threshold. Named precisely; cited to §3.
@@ -97,7 +102,7 @@ The current best lower bounds the theorem asserts are unreachable from below. AF
 Formal propositional statement. For every FFT-style method `M` (§4.2) and every problem `P` (§4.3), `M` does not prove a lower bound on `P` below the existing threshold `T(P)` of §4.4. Equivalently: no FFT-style descent below the current thresholds is reachable on this substrate.
 
 ### §4.6. Proof outline
-Two load-bearing ingredients. §5.6: information-uniformity at the boundary. §6.5: native operations have closed composition. Composed via the affine-closure template inherited from Landfall §2 (extracted at `paper/LANDFALL-EXPORT.md`). §5 and §6 carry the load; §4.6 names the route.
+Three load-bearing claims combine into a potential-style argument (per `paper/FIRST-PROOF.md`). **Bridge** (§6.2): threshold improvement requires crossing the defect gap from `δ > 0` to `δ = 0` at the boundary. **Separation** (§6.4): `δ = 0` lies outside the native closure class, via the affine-closure template inherited from Landfall §2 (`paper/LANDFALL-EXPORT.md`). **Native drift** (§6.5): each native operation has bounded effect on `δ` at the boundary; no single native operation crosses the gap. Combined at §6.6: finitely many bounded steps inside the closure cannot reach a target outside it. Lemma A (§5.6 / §6.3) is the information-side parallel reading; not assumed by the QED. Proof-shape precedent: Ailon's matrix-entropy potential (§3.7), imported as shape, not content.
 
 ## §5. A maze of twisting passages, all alike
 
@@ -121,29 +126,25 @@ Synthesis: §5.1–§5.5 jointly establish that every passage hits the bounded/u
 
 ## §6. Gradients without information
 
-### §6.1. Gradient descent on the cost manifold
-Setup: descent on the cost manifold means trading a higher cost-bearing complexity bound for a lower one by reorganizing the underlying computation. Lower-bound improvement *is* successful descent. Frame the problem in §1's language.
+### §6.1. Descent in the cost / conversion framework
+Setup: descent in §1's framework means trading a higher cost-bearing complexity bound for a lower one by reorganizing the underlying computation. Lower-bound improvement *is* successful descent. The proof asks whether such descent is reachable by FFT-style methods past `T(P)`.
 
-### §6.2. What descent requires
-For descent to succeed at the boundary in §1.5's conversion, the algorithm must extract information distinguishing one strategy from another. Without distinguishing information, descent is undirected.
+### §6.2. Bridge claim: threshold improvement requires crossing the defect gap
+For descent past `T(P)` to succeed, the algorithm must drive `δ` at the bounded/unbounded coefficient boundary from positive to zero — equivalently, cross the defect gap. The Bridge claim asserts this equivalence: threshold improvement *is* gap-crossing. Endpoint-side claim of the potential-style interface (`paper/FIRST-PROOF.md`). Central new theorem of the program. **[Construction debt #1.]**
 
-### §6.3. §5.6 inherited
-§5.6 establishes information-uniformity at the boundary. The substrate refuses to provide what §6.2 says descent needs.
+### §6.3. Lemma A inherited (parallel reading)
+§5.6 establishes information-uniformity at the boundary: no FFT-algorithm passage extracts information distinguishing one trade from another. This is the information-side parallel reading of the impossibility, equivalent (modulo construction debt #6) to the closure-class route of §6.4–§6.5. *Not used in the QED*; presented for completeness as the substrate-side answer to "why can't a smarter algorithm just pick the cheap trade?" Per `paper/FIRST-PROOF.md`, Lemma A's exhaustiveness is its own debt (#5).
 
-### §6.4. The affine-closure template (Landfall §2)
-The proof template extracted at `paper/LANDFALL-EXPORT.md`, restated for the cost / conversion framework: no finite composition of native operations produces an effect outside the operations' closure class. The argument's shape is structural; it does not depend on the specific cost-bearing primitives.
+### §6.4. Separation claim: `δ = 0` outside the native closure class
+The proof template extracted at `paper/LANDFALL-EXPORT.md` Template 1, restated for the cost / conversion framework as the Separation claim: `δ = 0` lies outside the closure of native operations. Source-side instance: Landfall §2's affine-closure result that `λ(m) = log₂(1+m)` is not in the closure generated by binade operations; equivalently `ε = λ − m` is non-affine since `m` is affine. Target-side: prove a transport lemma carrying `ε ∉ C_Aff` to `δ = 0 ∉ C_FFT`. Candidate transport: the **character reflection barrier** of `fft/PHASE-DEFECT.md`, with **phase-lift conservativity** as its analytic-exponential specialization. Target-side claim of the potential-style interface. **[Construction debt #3.]**
 
-### §6.5. Native operations have closed composition
-Apply the template to our setting.
+### §6.5. Native drift claim: bounded per-operation effect on `δ`
+Each native operation has bounded (or non-crossing) effect on the defect potential `δ` at the boundary. Mult-side primitives of §1.2 compose into a closure class; per-operation drift on `δ` is bounded. Add-side primitives of §1.3 compose into another closure class; same drift bound. No single native operation crosses the gap from `δ > 0` to `δ = 0`. Step-side claim of the potential-style interface. **[Construction debt #4.]**
 
-#### §6.5.1. Multiplicative-side and additive-side closure
-The multiplicative-side primitives of §1.2 compose into a closure class bounded by §1.4's regime parameters. Composition stays inside. The additive-side primitives of §1.3 compose into another closure class. Composition stays inside.
+Proof-shape precedent: Ailon 2013 (§3.7) demonstrates the potential-style argument in a restricted unitary model — endpoint values `Φ(Id) = 0`, `Φ(F) = n log₂ n`, per-gate drift `ΔΦ ≤ 2`, conclusion `m ≥ (n log₂ n)/2`. The program imports the *shape*, not the content: `δ` is the potential, the bounded/unbounded coefficient boundary is the gap locus, the FFT canon's native operations are the steps. Ailon's matrix-entropy machinery does not enter; only the three-claim skeleton does. Trust-boundary discipline per `fft/AILON-2013-UNITARY-FFT-LOWER-BOUND-BRIEF.md` §4.
 
-#### §6.5.2. Discontinuity outside both classes
-At the bounded/unbounded coefficient boundary, `δ` (§1.5) is non-zero — outside both closure classes' reach. No finite composition of native operations reduces it to zero. This is the closure-class observation §6.6 composes with §6.3.
-
-### §6.6. No descent route exists; QED
-Compose §6.3 + §6.5: descent has no distinguishing information; native operations don't compose into a route across the discontinuity. No FFT-style descent below current thresholds is reachable on this substrate. A smarter FFT-style method does not answer the impossibility — it lives in the same tangent space, which is what lacks a descent direction. The obstruction is in the geometry, not in algorithmic cleverness. QED for §4.
+### §6.6. Compose the three claims; QED
+Compose Bridge + Separation + Native drift. Descent past `T(P)` requires crossing the defect gap (Bridge), but the target `δ = 0` lies outside the native closure class (Separation), and each native operation has bounded effect on `δ` at the boundary (Native drift). A finite composition of bounded-drift operations whose target lies outside the closure cannot reach that target; finitely many bounded steps inside the closure stay inside the closure. No FFT-style descent below current thresholds is reachable on this substrate. A smarter FFT-style method does not answer the impossibility — same cost measures, same native operations, same closure classes, same `δ` at the boundary. The mathematical non-elimination claim is Native drift's; Coase 1937 (`memos/COASE-FRICTION-AND-SPECIALISTS.md`) supplies the vocabulary (*reduce yes, eliminate no*) for naming what the lemma rules out. The obstruction is structural, not in algorithmic cleverness. QED for §4.
 
 ## §7. Back again
 
@@ -168,7 +169,7 @@ Six figures, theorem-paired, each with an alt-text-ready companion document. All
 | [figures/pseudo_chebyshev_arithmetic_ladder.png](figures/pseudo_chebyshev_arithmetic_ladder.png) | [corners/pseudo_chebyshev_arithmetic_ladder.sage](corners/pseudo_chebyshev_arithmetic_ladder.sage) | [corners/PSEUDO-CHEBYSHEV-NODES.md](corners/PSEUDO-CHEBYSHEV-NODES.md) | §5.4 |
 | [figures/counting_psi_stratification.png](figures/counting_psi_stratification.png) | [n-gons/counting/build_psi_stratification.py](n-gons/counting/build_psi_stratification.py) | [n-gons/counting/PSI-STRATIFICATION.md](n-gons/counting/PSI-STRATIFICATION.md) | §Conclusion |
 
-Gaps the prose pass will identify a need for but the repo does not yet have: §1.5 cost-manifold conversion schematic (bounded↔unbounded coefficient boundary as discontinuity); §3 four-frameworks comparison (probably better as a table); §6.5 closure-class / tangent-bundle picture (discontinuity outside both closure classes). Each is a schematic to be drawn during the prose pass, not extracted from existing repo material.
+Gaps the prose pass will identify a need for but the repo does not yet have: §1.5 cost / conversion schematic (bounded↔unbounded coefficient boundary as the gap from `δ > 0` to `δ = 0`); §3 four-frameworks comparison (probably better as a table); §6.5 closure-class picture (target `δ = 0` outside the native closure class; per-operation drift inside it). Each is a schematic to be drawn during the prose pass, not extracted from existing repo material.
 
 ---
 
@@ -182,8 +183,12 @@ Gaps the prose pass will identify a need for but the repo does not yet have: §1
 - **Morgenstern, J., 1973** — bounded-coefficient additive lower bound; cited at §1, §3, §6 (the floor that turns out to be unreachable from below).
 - **Winograd, S., 1978** — modular-product theorem `μ(T_P) = 2n − k` and CRT-cyclotomic factor ledger; cited at §1, §3.
 - **Auslander, L., Feig, E., and Winograd, S., 1984** — cyclotomic decomposition under rational equivalence; cited at §1, §3.
-- **`paper/FFT-COMPLEXITY-ARTICULATION.md`** *(in-program extract)* — proof-template and trust-boundary index for the four FFT frameworks.
-- **Goldstine, H. H., 1977** — *A History of Numerical Analysis from the 16th Through the 19th Century*, §4.12–13. Pre-1882 anchor for the FFT-as-adaptive-search reading: Gauss 1805's divide-and-conquer interpolation engine, with the Pallas worked example (`4×3` vs `3×4`) chosen on practical grounds rather than asymptotic ones. Source-extraction at `fft/GOLDSTINE-1977-INTERPOLATION-BRIEF.md`; deeper framing parked at `paper/FFT-SEARCH-PLAN.md`. Cited at §1.5, §4.2, and (potentially) §3 / §7.
+- **`fft/FFT-COMPLEXITY-ARTICULATION.md`** *(in-program extract)* — proof-template and trust-boundary index for the four FFT frameworks.
+- **Goldstine, H. H., 1977** — *A History of Numerical Analysis from the 16th Through the 19th Century*, §4.12–13. Pre-1882 anchor for the FFT-as-adaptive-search reading: Gauss 1805's divide-and-conquer interpolation engine, with the Pallas worked example (`4×3` vs `3×4`) chosen on practical grounds rather than asymptotic ones. Source-extraction at `fft/GOLDSTINE-1977-INTERPOLATION-BRIEF.md`; deeper framing parked at `fft/FFT-SEARCH-PLAN.md`. Cited at §1.5, §4.2, and (potentially) §3 / §7.
+
+## Adjacent FFT lower-bound prior art (§3.7)
+
+- **Ailon, N., 2013** — `Ω(n log n)` lower bound for the normalized Fourier transform in a layered `2 × 2` unitary-gate model, proved by a matrix-entropy potential; cited for the survey warning that broad linear-circuit Fourier lower bounds remain open and for the restricted-model entropy-potential precedent. Source-extraction at `fft/AILON-2013-UNITARY-FFT-LOWER-BOUND-BRIEF.md`.
 
 ## Cost / conversion framework anchor (§1)
 
@@ -235,6 +240,6 @@ Gaps the prose pass will identify a need for but the repo does not yet have: §1
 
 ## Proof-template precedent (§6)
 
-- **`paper/LANDFALL-EXPORT.md`** *(in-program extract from Adam, Landfall)* — affine-closure template (Landfall §2), no-invariant-measure aggregation (Landfall §6 via Bowen 2002), finite-closure refusal (Landfall §7 via Gosper). Cited at §6 as the template the impossibility argument inherits.
-- **Bowen, L., 2002** — no `PSL(2, ℝ)`-invariant probability measure on the binary tiling space.
+- **`paper/LANDFALL-EXPORT.md`** *(in-program extract from Adam, Landfall)* — affine-closure template (Landfall §2), no-invariant-measure aggregation (Landfall §6, deploying the source content documented in `memos/BOWEN-DRILLING-AND-DENSITY.md`), finite-closure refusal (Landfall §7 via Gosper). Cited at §6 as the template the impossibility argument inherits.
+- **Bowen, L. P.** *Density in Hyperbolic Spaces.* Ph.D. dissertation, University of Texas at Austin, 2002. — §2.3.1 no-`PSL(2, ℝ)`-invariant probability measure on the binary tiling space; §2.3.1 hole-drilling instability of density under arbitrarily small perturbations; §2.3.2 alternative no-invariant-measure construction via free-group action on a noncompact `H²`-covered surface. See `memos/BOWEN-DRILLING-AND-DENSITY.md` for the source-extraction brief; citation form lifted from Landfall.
 - **Gosper, R. W., 1972** — continued-fraction arithmetic machine; cited as the negative anchor (exact computation in unbounded state, finite closure refused).
