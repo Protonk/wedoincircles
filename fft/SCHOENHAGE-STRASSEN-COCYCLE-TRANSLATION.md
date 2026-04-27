@@ -1,29 +1,33 @@
 # SCHOENHAGE-STRASSEN-COCYCLE-TRANSLATION
 
 A worked first translation of one canon source through the cocycle
-lens of [fft/PHASE-DEFECT.md](PHASE-DEFECT.md) §"Gating debt 1." The
-purpose is not to re-derive Schönhage-Strassen; it is to record a
-verdict on whether SS's `O(n log n log log n)` integer-multiplication
-bound becomes a `{Δ_k}`-compressibility claim under the
-additive/log-binade quotient-clock lens, and what that verdict implies
-for the No Free Descent theorem's scope.
+lens of [fft/PHASE-DEFECT.md](fft/PHASE-DEFECT.md) §"Gating debt 1."
+The purpose is not to re-derive Schönhage-Strassen; it is to record a
+verdict on whether SS's bounds become `{Δ_k}`-compressibility claims
+under the additive/log-binade quotient-clock lens, and what that
+verdict implies for the No Free Descent theorem's scope.
 
-Reference: A. Schönhage and V. Strassen, "Schnelle Multiplikation
-großer Zahlen," *Computing* 7 (1971), 281–292. Local source not
-retrieved for this stub; the algorithm is reconstructed from canonical
-secondary sources (Knuth Vol. 2, Crandall-Pomerance), and the
-translation is sensitive to that level of detail.
+The substantive content of SS 1971 is summarized in
+[fft/SCHOENHAGE-STRASSEN-1971-BRIEF.md](fft/SCHOENHAGE-STRASSEN-1971-BRIEF.md);
+this memo presupposes that brief and works through its lens.
 
-## What SS does, in two lines
+## SS 1971 has two methods
 
-Given two `n`-bit integers, split each into chunks of size ~√`n`,
-treat as polynomials of degree √`n` with integer coefficients, and
-multiply the polynomials via FFT in the Fermat ring `R_k = ℤ/(2^k+1)`
-where `2` is a `2(k+1)`-th root of unity. The convolution recurses:
-coefficient products in `R_k` are themselves SS multiplications at
-smaller scale. Total cost: `O(n log n log log n)`.
+Per [fft/SCHOENHAGE-STRASSEN-1971-BRIEF.md](fft/SCHOENHAGE-STRASSEN-1971-BRIEF.md)
+§"The Two Algorithms":
 
-## Applying the cocycle lens
+- **Method 1 (over ℂ).** FFT with `w_n = e^{2πi · 2^{-n}}`, performed
+  in **fixed-point arithmetic** with `s` digits after the decimal
+  point. Three nesting levels give bounds `O(N(log N)²)`, `O(N log N
+  (log log N)²)`, `O(N log N log log N · (log log log N)²)`.
+- **Method 2 (over `ℤ_{F_n}`).** FFT in the Fermat ring `ℤ/(2^{2^n}+1)`
+  where `2` is a primitive `2^{n+1}`-th root of unity, twiddle
+  multiplications as cyclic shifts. Final bound `O(N log N log log N)`.
+
+The two methods have structurally different primitive-operation
+layers. The cocycle lens must be applied to each separately.
+
+## The cocycle lens
 
 PHASE-DEFECT's two quotient clocks are:
 
@@ -31,97 +35,130 @@ PHASE-DEFECT's two quotient clocks are:
 - `L = ℝ_{>0}/2^ℤ` — log-binade clock.
 
 The defect `ε(m) = log₂(1+m) − m` is the *displacement* between these
-two coordinates on the floating-point binade `[1, 2)`. The defect
+two coordinates **on the floating-point binade `[1, 2)`**. The defect
 cocycle `Δ_k(m) = χ_k(ε(m))` is the residual phase factor any
-character pullback through `ψ = m + ε` must carry.
+character pullback through `ψ = m + ε` must carry, and it is *born at
+the floating-point binade structure* — the additive/log-binade seam is
+specifically the seam floating-point hardware crosses when normalizing
+mantissas across binade boundaries.
 
-**SS does not work on this seam.** SS operates entirely on integer
-coordinates: input is `n`-bit integers, intermediate values are
-polynomial coefficients in `R_k`, output is integer. The
-log-binade clock `L` does not appear; mantissa-vs-binade coordinate
-displacement is not a quantity in the algorithm. There is no `ε`
-at the algorithm's primitive-operation level.
+This is the load-bearing observation for the SS translation: the seam
+is a floating-point-specific phenomenon, not a general
+integer-arithmetic or modular-arithmetic phenomenon.
 
-The roots of unity SS uses (powers of `2` in `R_k`) are *finite-ring*
-roots, not `e^{2πi/N}`. The character system of the additive group
-`ℤ_{2^k+1}` is also finite, indexed by `ℤ_{2^k+1}` itself. A
-finite-character cocycle analog could be written formally, but it
-would have *no `ε` to carry* — there is no log-binade displacement in
-the integer setting.
+## Method 1 under the lens
+
+Method 1 uses **fixed-point arithmetic**, not floating-point. Fixed-
+point numbers have an implicit shared scaling factor across all
+operands; multiplications are integer multiplications followed by a
+fixed-rescaling shift. There is no per-number binade and no
+renormalization across binade boundaries. The mantissa-vs-binade
+displacement `ε` does not appear at the primitive-operation level
+because there are no binades.
+
+The complex roots of unity `w_n = e^{2πi · 2^{-n}}` *appear in
+fixed-point quantization*, not as live floating-point objects: they
+are precomputed once at the chosen precision `s` and stored as
+fixed-point complex pairs. The runtime arithmetic does not invoke
+log/exp at any butterfly.
+
+Method 1 therefore does not cross the additive/log-binade seam in its
+primitive operations. The `{Δ_k}` cocycle has no native presence in
+the algorithm.
+
+## Method 2 under the lens
+
+Method 2 operates entirely in `ℤ_{F_n}`. Twiddle multiplications by
+`2^κ` are cyclic shifts of the bit representation — by the
+[fft/SCHOENHAGE-STRASSEN-1971-BRIEF.md](fft/SCHOENHAGE-STRASSEN-1971-BRIEF.md)
+§"Repo Inference — The Cyclic-Shift Trick" structural observation —
+not arithmetic operations at all in the Turing-machine cost model.
+
+There is no log-binade clock anywhere in Method 2: `ℤ_{F_n}` is a
+finite ring, characters of its additive group are finite, and the
+algorithm never traffics in mantissa coordinates. The cocycle
+construction `χ_k(ε(m))` requires `ε(m)` to exist; in Method 2 it
+does not.
 
 ## What this means for the cocycle compressibility question
 
 The compressibility question PHASE-DEFECT poses — "does the scheme
 produce a defect-free FFT-style composition law whose character
 products agree across all butterfly refinements and primitive modes?"
-— *cannot be evaluated on SS as a self-contained integer algorithm*.
-There is no defect cocycle to compress; the algorithm never crosses
-the seam where the cocycle would be born.
+— *cannot be evaluated* on either SS method as a self-contained
+algorithm. There is no defect cocycle to compress in either method:
 
-This is not a failure of SS or of the cocycle lens. It is a scope
-fact: the cocycle obstruction lives at the additive/log-binade seam.
-Algorithms that work entirely on one side of the seam — pure integer
-arithmetic, pure modular arithmetic, pure log-domain — are not subject
-to the compressibility obstruction in their native domain.
+- **Method 1**: no binade structure (fixed-point), no `ε`.
+- **Method 2**: no mantissa coordinate (modular ring), no `ε`.
+
+The seam where the cocycle is born is the floating-point binade
+seam; SS uses non-floating-point arithmetic throughout in both
+methods.
 
 ## The verdict
 
 **(b) Conditional translation.** SS does not natively translate to a
-`{Δ_k}`-compressibility question. The translation succeeds at the
-*interface* level — when SS is used as a building block in
-floating-point computation (e.g., as part of high-precision multiplier
-in a numerical library), the seam returns at the interface and the
-cocycle compressibility question applies to the interface logic, not
-to the SS internals.
+`{Δ_k}`-compressibility question in either method; the obstruction
+is the same in both cases (no floating-point binade), but reached
+by different means (fixed-point in Method 1, modular in Method 2).
 
-The theorem scope therefore narrows, but the narrowing is principled:
-**No Free Descent speaks to FFT-style methods at points where they
-cross the additive/log-binade seam, not to FFT-style methods that work
-entirely within an integer or modular ring.**
+The theorem scope therefore narrows in a principled way: **No Free
+Descent speaks to FFT-style methods that cross the floating-point
+additive/log-binade seam at their primitive-operation level, not to
+FFT-style methods that work in fixed-point or modular arithmetic.**
 
 The natural in-scope test cases are:
 
 - Cooley-Tukey radix-2 FFT applied to floating-point complex numbers
   (the textbook FFT in numerical libraries; mantissa × mantissa
-  crosses the seam every butterfly);
-- Bluestein's algorithm and other floating-point convolution methods;
+  crosses the seam every butterfly through binade renormalization);
+- Bluestein's algorithm and other floating-point convolution
+  methods;
 - log-domain FFTs that explicitly factor through `log` to convert
   multiplications to additions (cross the seam by construction);
 - any FFT-style scheme whose primitive operations include a
-  floating-point multiplication.
+  floating-point multiplication with binade renormalization.
 
-The natural out-of-scope test cases (in addition to SS):
+The natural out-of-scope cases (in addition to both SS methods):
 
 - pure modular FFTs over `ℤ/p` or `ℤ/(2^k+1)`;
 - number-theoretic transforms over finite fields;
-- Furer-style algorithms working in finite rings without a
-  floating-point seam.
+- Fürer-style algorithms working in finite rings without a
+  floating-point seam;
+- fixed-point FFTs (no binade structure, no `ε`).
 
 ## What changes in PHASE-DEFECT.md
 
 Update §"Gating debt 1: coordinate-cut alignment" to record:
 
-- SS sits *outside* theorem scope as a self-contained integer
-  algorithm. Its `O(n log n log log n)` bound does not become a
-  `{Δ_k}`-compressibility claim under the cocycle lens.
+- SS sits outside theorem scope **in both Method 1 (fixed-point ℂ)
+  and Method 2 (Fermat ring)**. Its bounds do not become
+  `{Δ_k}`-compressibility claims in either method, because neither
+  method crosses the floating-point binade seam at primitive-operation
+  level.
 - The theorem scope is principled: in-scope iff the algorithm crosses
-  the additive/log-binade seam at its primitive-operation level.
-- Reference back to PHASE-DEFECT.md's "Excluded patterns under the
-  regularity guard" — the SS exclusion is *seam-orthogonal* exclusion,
-  not regularity-guard exclusion. They are two distinct ways an
-  FFT-style algorithm can fall outside theorem scope.
+  the *floating-point* additive/log-binade seam at its
+  primitive-operation level. Fixed-point and modular FFTs are
+  out-of-scope structurally, not by regularity-guard exclusion.
+- This is *seam-orthogonal* scope-narrowing, distinct from the
+  regularity-guard exclusion of advice-bearing / non-uniform /
+  growing-state schemes.
 
 ## Trust boundary
 
-This stub does not re-derive SS; it does not run a literature audit
-on whether the in-scope/out-of-scope partition is exhaustive; and it
-does not check whether the conditional translation at the *interface*
-level is itself clean (that interface-level question may import
-content the audit at PHASE-DEFECT-PLAN's Edit 5 must resolve). The
-stub is sized to record one verdict on one canon source, no more.
+This memo presupposes the substantive content of
+[fft/SCHOENHAGE-STRASSEN-1971-BRIEF.md](fft/SCHOENHAGE-STRASSEN-1971-BRIEF.md);
+it does not re-derive SS, does not run a full literature audit on
+whether the floating-point/non-floating-point partition is exhaustive,
+and does not check whether other canon sources (Cooley-Tukey,
+Bluestein, Bailey, AFW, Winograd) actually translate cleanly when the
+in-scope criterion is applied to them. Those are downstream test
+cases, each warranting its own translation memo.
 
-The verdict is **(b) Conditional** in the plan's three-verdict scheme:
-SS-class methods are out-of-scope as native integer algorithms;
-in-scope only at floating-point interfaces, where the cocycle question
-re-applies to the interface logic. Theorem scope narrows; the
-narrowing is principled and structural, not ad-hoc.
+The verdict here is **(b) Conditional**: SS is one fully-worked
+out-of-scope verdict via two structurally different paths, both
+landing at the same boundary (no floating-point binade structure).
+The conditional shape — theorem scope narrows to floating-point
+seam-crossing — is recorded; whether downstream canon sources (the
+ones actually expected to be in-scope) translate cleanly is a
+separate question this memo does not answer.
