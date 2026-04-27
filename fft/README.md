@@ -13,6 +13,7 @@ Contents:
   - `WINOGRAD-1978-BRIEF.md`
   - `SCHOENHAGE-STRASSEN-1971-BRIEF.md`
 - `HEIDEMAN-JOHNSON-BURRUS-1985-BRIEF.md` — historiographical audit (Gauss → Cooley–Tukey chain).
+- `GOLDSTINE-1977-INTERPOLATION-BRIEF.md` — technical companion to HJB85: Goldstine's exposition of Gauss 1805 (Theoria interpolationis) and Gauss 1809 (Theoria Motus rounding errors), with two reading lenses (FFT-branch, KHLA-branch).
 - `FOUR-FRAMEWORK-SYNTHESIS.md` — cross-source synthesis on the four briefs.
 - `PROVENANCE-AND-TRANSFERABILITY.md` — INHERIT-discipline synthesis (provenance backward + transferability forward).
 

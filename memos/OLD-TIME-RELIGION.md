@@ -383,7 +383,81 @@ height calculation the Liouville step ultimately needs.
   cancellation does not collapse its height; the worst conjugates near
   `n/2` survive and force `log M(alpha_n) ~ phi(2n) log n` along primes.
   Keep this row only as a possible tool for a genuinely different small
-  algebraic quantity.
+  algebraic quantity. The sine-product cancellation candidate flagged in
+  [fft/GOLDSTINE-1977-INTERPOLATION-BRIEF.md](fft/GOLDSTINE-1977-INTERPOLATION-BRIEF.md)
+  §8 branch (i) is one such candidate. It now has **two** verified
+  pre-1882 audit anchors:
+  (i) Beta-reflection at rational arguments
+  (`int_0^infty x^(m-1) dx / (1 + x^n) = pi / (n sin(m pi/n))`, Euler 1768
+  Cap. VIII §352, lineage Wallis 1655 + Euler 1738; see
+  [memos/EULER-1768-INTEGRAL-BRIEF.md](memos/EULER-1768-INTEGRAL-BRIEF.md)),
+  and (ii) the log-sin Fourier series `sum_(k>=1) cos(ku)/k =
+  -log(2 sin(u/2))` from Euler's *Nova Methodus quantitates integrales
+  determinandi* (Novi Commentarii XIX, ~1774; reprinted Vol IV Supp V
+  §51; see [memos/EULER-1794-SUPPLEMENT-BRIEF.md](memos/EULER-1794-SUPPLEMENT-BRIEF.md)),
+  which yields `int_0^pi log sin u du = -pi log 2` by one elementary
+  step. Euler attributes the constant-determination method to **Daniel
+  Bernoulli** (p. 285), pushing the lineage further pre-1882. The
+  candidate does not reopen this row until a transcendence-content
+  audit on whether use of either identity inside a Liouville-style
+  argument smuggles L-W content is closed.
+
+### (A9) Gauss 1805 trigonometric interpolation, aliasing, discrete DFT
+
+Goldstine §4.12
+([fft/GOLDSTINE-1977-INTERPOLATION-BRIEF.md](fft/GOLDSTINE-1977-INTERPOLATION-BRIEF.md))
+extracts three pre-1882 weapons from Gauss's *Theoria interpolationis
+methodo nova tractata* (1805): (i) the trigonometric Lagrange formula
+(Goldstine eq. 4.61); (ii) the discrete Fourier inversion identity, exact
+on `mu = 2m+1` equally-spaced samples on the circle; (iii) the aliasing
+identity — under length-`mu` sampling, real-basis modes in residue
+classes `+/- m (mod mu)` collapse onto a single recovered coefficient.
+Lineage anchored in Lemma 1 (Euler 1748, *Introd. in Anal. Inf.* §240)
+and Lemma 2 (Gauss 1805, derived from Lemma 1).
+
+- **Known.** This is the constructive discrete-side complement to (A4)'s
+  analytical Fourier/Parseval anchor. (i) supplies finite interpolation;
+  (ii) supplies *exact* reconstruction of `2m+1` Fourier coefficients
+  from `2m+1` samples — no kernel approximation, no convergence
+  hypothesis. (iii) supplies the discrete-side congruence-class structure
+  dual to the regular `n`-gon's continuous-side Fourier-support
+  condition `c_m^(n) != 0  iff  m == 1 (mod n)`
+  ([corners/HURWITZ-FIRST-BAND-CONCENTRATION.md](corners/HURWITZ-FIRST-BAND-CONCENTRATION.md)).
+  Goldstine's exposition is post-1882 in calendar but adds no
+  transcendence content, so the row is admissible under §"Audit
+  criterion: content, not calendar" above.
+- **Unknown.** Whether (ii) collapses the empirical-to-density proxy of
+  [memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md](memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md)
+  Step 5 to an identity on the polygon corner *in a form usable by the
+  budget*; whether (iii) gives a Kraft-encoding of the polygon Fourier
+  support without smuggling transcendence content through the encoding.
+  Both are flagged as live leads in
+  [memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md](memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md)
+  §(A) and §(B) "What remains open."
+- **Closing condition.** Either (1) demonstrate that the Gauss discrete
+  inversion plus aliasing identity gives a complete pre-1882 derivation
+  of the polygon corner of the Kraft-Parseval budget — replacing the
+  Aitchison-side proxy on regular-polygon input — with constants paid
+  explicitly; or (2) show the derivation needs Aitchison 1959 /
+  Erdős-Turán 1948 / Koksma 1950s essentially, in which case the polygon
+  corner remains in (A4)'s methodologically-safe-modern register and
+  this row is downgraded to a structural existence note.
+- **Status.** Open audit (live). The brief contributes lineage and
+  technical content; the audit work is not yet done. Two failure modes
+  to watch: (a) the Hermite-disguise hazard
+  ([memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md](memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md)
+  §"Hazards" 1) restated for the discrete identities — whether
+  sine-product or aliasing collapses to Hermite's auxiliary under
+  Poisson summation; (b) **transcendence-content circularity** when a
+  sine-product specialization is used to manufacture a replacement
+  small algebraic quantity for (A8). The relevant pre-1882 anchors are
+  now both located: Beta-reflection at Vol 1 §352
+  ([memos/EULER-1768-INTEGRAL-BRIEF.md](memos/EULER-1768-INTEGRAL-BRIEF.md)
+  §5.3) and the log-sin Fourier series at Vol IV Supp V §51
+  ([memos/EULER-1794-SUPPLEMENT-BRIEF.md](memos/EULER-1794-SUPPLEMENT-BRIEF.md)
+  §4.3-4.4). The audit asks whether transporting either identity
+  into a Liouville-style step over `K_n Q(pi)` smuggles L-W content.
+  Sourcing audit closed; transcendence-content audit open.
 
 ### Reserve (not promoted)
 
@@ -555,6 +629,32 @@ entries; note outcomes below.
   Step 5 — the empirical-to-density proxy, currently a hypothesis. With
   the (A2)+(A3) Liouville branch closed negative, this is the natural live
   target on the discrepancy side.
+- [fft/GOLDSTINE-1977-INTERPOLATION-BRIEF.md](fft/GOLDSTINE-1977-INTERPOLATION-BRIEF.md)
+  — Goldstine §4.12 exposition of Gauss 1805. Source for (A9). §8 of the
+  brief names three KHLA leads (discrete inversion as polygon-corner
+  density-side identity, aliasing as Kraft-encoded support dual,
+  sine-product cancellation as replacement-quantity candidate); each
+  carries a flagged audit step before it can act on the program.
+- [memos/EULER-1768-INTEGRAL-BRIEF.md](memos/EULER-1768-INTEGRAL-BRIEF.md)
+  — direct read of Euler 1768 *Institutiones calculi integralis* Vol 1
+  (E342). Settles the audit-target migration for (A8) and (A9): the
+  sine-product cancellation candidate's pre-1882 anchor is **Beta-
+  reflection at rational arguments** (Cap. VIII §352, lineage
+  Wallis 1655 + Euler 1738), not the log-sin integral that the
+  original audit flag named (which is not in Vol 1). Wallis even/odd
+  integral parity (§330-331) and Wallis-pair cancellation (§332-334)
+  flagged as collateral pre-1882 anchors of independent program
+  interest.
+- [memos/EULER-1794-SUPPLEMENT-BRIEF.md](memos/EULER-1794-SUPPLEMENT-BRIEF.md)
+  — direct read of Euler Vol IV *Supplementum* (originally 1794,
+  reprint 1845). Re-attaches the `pi log 2` audit thread to Vol IV Supp
+  V §51 (Fourier series `sum cos(ku)/k = -log(2 sin(u/2))`, originally
+  *Nova Methodus quantitates integrales determinandi*, Novi Commentarii
+  XIX, ~1774). One elementary step gives `int_0^pi log sin u du =
+  -pi log 2`. Constant-determination method attributed by Euler to
+  **Daniel Bernoulli** (p. 285). Together with EULER-1768, the two
+  briefs pin both branch (i) audit anchors (Beta-reflection and
+  log-sin) to verified pre-1882 sources.
 - [memos/LINDEMANN-BRIEF.md](memos/LINDEMANN-BRIEF.md) — the circularity
   map. Tags in this memo defer to that brief's exit criteria.
 - [memos/FORTNOW-KOLMOGOROV-BRIEF.md](memos/FORTNOW-KOLMOGOROV-BRIEF.md) —
