@@ -290,8 +290,8 @@ as the briefing described.
 - [fft/PHASE-LIFT-CONSERVATIVITY-AUDIT.md](fft/PHASE-LIFT-CONSERVATIVITY-AUDIT.md)
   — recovery-cost vs forward-construction-cost separation; the audit
   handles recovery; this memo handles forward construction.
-- [paper/MEASURE-THEORETIC-OBSTRUCTIONS.md](paper/MEASURE-THEORETIC-OBSTRUCTIONS.md)
-  §5.1, §5.4, §5.5 — substrate-side measure-theoretic registers; the
+- [measure/SUBSTRATE-OBSTRUCTIONS.md](measure/SUBSTRATE-OBSTRUCTIONS.md)
+  §1, §4, §5 — substrate-side measure-theoretic registers; the
   three candidate routes draw on Haar, counting, and L-W respectively.
 - [memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md)
   — algebraic-side closure-mismatch companion; load-bearing for

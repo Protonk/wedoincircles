@@ -10,7 +10,7 @@ measure").
 **Why this brief exists.** Landfall §6 already inherits Bowen 2002
 §2.3.1 for the no-`PSL(2,ℝ)`-invariant-measure result on binary
 tilings, and the program inherits that inheritance via
-[paper/LANDFALL-EXPORT.md](paper/LANDFALL-EXPORT.md) Template 2.
+[fft/LANDFALL-PROOF-TEMPLATES.md](fft/LANDFALL-PROOF-TEMPLATES.md) Template 2.
 Beyond what Landfall lifts, §2.3.1 contains a separate observation
 the user surfaced — a *hole-drilling instability* lemma that says the
 density of a tiling becomes ill-defined under arbitrarily small
@@ -56,7 +56,7 @@ vocabulary and uses the geometric kinship as a tactical resource for
 aggregation-route rebuttals (per
 [fft/PHASE-DEFECT.md](fft/PHASE-DEFECT.md) Track-A's closure-class
 regularity guard and the C2 tactical reach in
-[paper/LANDFALL-EXPORT.md](paper/LANDFALL-EXPORT.md) Template 2).
+[fft/LANDFALL-PROOF-TEMPLATES.md](fft/LANDFALL-PROOF-TEMPLATES.md) Template 2).
 
 ---
 
@@ -89,7 +89,7 @@ by the protrusion on each body in the tiling" (p. 43). If a
 would be a `G`-invariant measure on `Δ` — contradiction.
 
 **For the program.** This is the Landfall §6 ⇒
-[LANDFALL-EXPORT.md](paper/LANDFALL-EXPORT.md) Template 2 inheritance:
+[fft/LANDFALL-PROOF-TEMPLATES.md](fft/LANDFALL-PROOF-TEMPLATES.md) Template 2 inheritance:
 representation-relocation rebuttals presupposing equivariant
 aggregation across a representation cannot be supported by an
 invariant measure in the binary-tiling setting. Already in the
@@ -160,7 +160,7 @@ horocyclic-strip, or dyadic-tower-shaped — the hole-drilling
 observation strengthens the no-invariant-measure result of §1: not
 only is there no invariant measure, but density on the would-be
 tiling is *itself* structurally unstable. C2's tactical reach (per
-[paper/LANDFALL-EXPORT.md](paper/LANDFALL-EXPORT.md) Template 2)
+[fft/LANDFALL-PROOF-TEMPLATES.md](fft/LANDFALL-PROOF-TEMPLATES.md) Template 2)
 acquires this additional content when the attack's geometry is
 Bowen-embeddable.
 
@@ -279,7 +279,7 @@ write it.
 
 | Bowen content | Program use | Status |
 |---|---|---|
-| §2.3.1 no-invariant-measure on binary tilings | LANDFALL-EXPORT Template 2; aggregation rebuttal | Inherited via Landfall §6 |
+| §2.3.1 no-invariant-measure on binary tilings | LANDFALL-PROOF-TEMPLATES Template 2; aggregation rebuttal | Inherited via Landfall §6 |
 | §2.3.1 hole-drilling instability | PHASE-DEFECT disquiet at log-binade gluing; C2 tactical strengthening | New; analogy not theorem |
 | §2.3.1 `D(β) < ε` for `ε > 0` (citing [8]) | Methodological warning: tilings in `H^n` can have arbitrarily small optimal density | Background only |
 | §2.3.2 alternative construction (free-group action on `S`) | Reserve for non-Penrose-tiling attacks | Methodological precedent |
@@ -342,7 +342,7 @@ matching the COASE methodological-import shape:
 ### Provenance tag for the program
 
 **Methodological-warning anchor and tactical resource (PHASE-DEFECT,
-LANDFALL-EXPORT Template 2).** Bowen 2002 §2.3.1 supplies the
+LANDFALL-PROOF-TEMPLATES Template 2).** Bowen 2002 §2.3.1 supplies the
 hole-drilling vocabulary, the typing of density as substrate-
 unstable under measure-zero perturbations, and the tactical reach
 that any binary-tiling-embeddable aggregation attack inherits both
@@ -352,7 +352,7 @@ and method. Cited at
 [fft/PHASE-DEFECT.md](fft/PHASE-DEFECT.md) (disquiet paragraph and
 Track A closure-class regularity guard, when the prose pass earns
 the citation) and
-[paper/LANDFALL-EXPORT.md](paper/LANDFALL-EXPORT.md) Template 2
+[fft/LANDFALL-PROOF-TEMPLATES.md](fft/LANDFALL-PROOF-TEMPLATES.md) Template 2
 (C2 tactical reach).
 
 ---

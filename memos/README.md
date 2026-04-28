@@ -10,11 +10,11 @@ Each entry below is a short bestiary with its role. Full content is in the linke
 
 ## Program-level references
 
-### LANDFALL-EXPORT
+### LANDFALL-PROOF-TEMPLATES
 
-Paper-level extract of three proof templates from Landfall: affine closure, no-invariant-measure aggregation, and finite-closure refusal. The full source paper remains at `sources/landfall.pdf` for the six-wall structure, Kraft section, pointwise dyadic transcendence, and program-facing exports.
+Detailed extraction of three proof templates from Landfall: affine closure, no-invariant-measure aggregation, and finite-closure refusal. The paper-level routing card remains at `paper/LANDFALL-EXPORT.md`; the full source paper remains at `sources/landfall.pdf` for the six-wall structure, Kraft section, pointwise dyadic transcendence, and program-facing exports.
 
-→ `paper/LANDFALL-EXPORT.md`
+→ `fft/LANDFALL-PROOF-TEMPLATES.md`
 
 ### BIDDER-AND-SON
 

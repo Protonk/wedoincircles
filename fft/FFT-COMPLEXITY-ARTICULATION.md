@@ -1,6 +1,6 @@
 # FFT-COMPLEXITY-ARTICULATION
 
-This file extracts proof templates from the four FFT-complexity frameworks the paper engages with directly: Schönhage–Strassen 1971, Morgenstern 1973, Winograd 1978, Auslander–Feig–Winograd 1984. Each template is paired with the witness it composes with from the chain and tagged by paper-direction — *inherits*, *extends*, or *specifies against*. Same shape as `paper/LANDFALL-EXPORT.md`. Trust boundaries follow `fft/PROVENANCE-AND-TRANSFERABILITY.md` §3.2.
+This file extracts proof templates from the four FFT-complexity frameworks the paper engages with directly: Schönhage–Strassen 1971, Morgenstern 1973, Winograd 1978, Auslander–Feig–Winograd 1984. Each template is paired with the witness it composes with from the chain and tagged by paper-direction — *inherits*, *extends*, or *specifies against*. Same shape as `fft/LANDFALL-PROOF-TEMPLATES.md`. Trust boundaries follow `fft/PROVENANCE-AND-TRANSFERABILITY.md` §3.2.
 
 ## Template 1: Operational uniform model (Schönhage–Strassen 1971)
 

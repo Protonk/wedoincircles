@@ -315,7 +315,7 @@ Existing material this memo draws on:
   the same object the FFT-complexity literature factorizes.
 - [sources/landfall.pdf](sources/landfall.pdf) — the log-side Kraft
   accounting (§5) that the bridge wants to import to; see
-  [paper/LANDFALL-EXPORT.md](paper/LANDFALL-EXPORT.md) for the slim
+  [fft/LANDFALL-PROOF-TEMPLATES.md](fft/LANDFALL-PROOF-TEMPLATES.md) for the slim
   proof-template extract.
 - [memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md](memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md)
   and [memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md](memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md) —

@@ -8,6 +8,8 @@ The `rotations/` register sits underneath the program's three named registers �
 
 The Lefèvre–Muller–Tisserand compressed-orbit loop on `(gamma, delta, d, u, v)` with Euclidean updates is the 1-dimensional algorithmic template for the empirical-to-density proxy at `memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md` Step 5. It handles the rotation orbit without enumerating points. Beck 1994's higher-dimensional Fourier + second-moment + Borel–Cantelli machinery is the adjacent-register precedent.
 
+Fortnow's universal semicomputable measure and dominance fact supply the auxiliary K-H-L-A bookkeeping anchor at `memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md` Step 4; they are budget tools, not descent information.
+
 Two-sided primitives — natively on log and circle sides without a functorial bridge — have named instances at `BNHA/triad/PLUS_ULTRA.md` §"Two-sided primitive pattern": 3DT (rotation orbit / machine arithmetic), `K_n` (algebraic / geometric), strip bridge (candidate). The `K_n` instance carries an algebraic-side proof at `fft/HEIDEMAN-JOHNSON-BURRUS-1985-BRIEF.md` §5: `K_n` is the unique multiplicatively-closed half of the involution decomposition `Q(ζ_n) = K_n ⊕ K_n · 2i sin(2π/n)` under `σ_{−1}`. The class is candidate-shaped.
 
 ## Direct technical input

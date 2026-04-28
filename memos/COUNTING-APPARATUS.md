@@ -221,7 +221,7 @@ perfectly clustering Lyndon words."
 
 Existing material this work draws on:
 
-- `paper/LANDFALL-EXPORT.md` — log-side template.
+- `fft/LANDFALL-PROOF-TEMPLATES.md` — log-side template.
 - `corners/PSEUDO-CHEBYSHEV-NODES.md` — algebraic-degree catalog, Gauss–Wantzel constructibility, the n = 7 first-break.
 - `BNHA/triad/Creati/CREATI-THE-CIRCLE.md` §§C1, item 9 — τ definition and algebraic-degree.
 - `n-gons/counting/COUNTING.md` and the `n-gons/counting/` directory generally — the counting apparatus itself (output `M_N`, update maps, raster figures, Champernowne encoding).

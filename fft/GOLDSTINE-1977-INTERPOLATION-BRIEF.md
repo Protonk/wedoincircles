@@ -383,7 +383,7 @@ separate work from the interpolation manuscript.)
 
 **For the program.** This is the pre-1882 ancestor of the program's
 log-side floating-point analysis in
-[paper/LANDFALL-EXPORT.md](paper/LANDFALL-EXPORT.md): Gauss 1809 doing
+[fft/LANDFALL-PROOF-TEMPLATES.md](fft/LANDFALL-PROOF-TEMPLATES.md): Gauss 1809 doing
 forward error analysis under fixed-precision tables, on a transcendental
 relation (the eccentric-anomaly equation). Whether the analogy carries
 content beyond methodology — i.e., whether Gauss's table-error
@@ -429,7 +429,7 @@ do not:
 4. **A pre-1882 forward-error analysis** (§4.13, Theoria Motus 1809).
    Gauss's eccentric-anomaly equation (4.68) under table errors is the
    methodological ancestor of the program's
-   [paper/LANDFALL-EXPORT.md](paper/LANDFALL-EXPORT.md) residue
+   [fft/LANDFALL-PROOF-TEMPLATES.md](fft/LANDFALL-PROOF-TEMPLATES.md) residue
    analysis. The L1 lens reads this as a clean methodological precedent
    for floating-point-style residue analysis with pre-1882 lineage.
 

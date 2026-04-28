@@ -151,9 +151,9 @@ scale without vanishing under specialization.
 
 **Existing scaffolding.** FIRST-PROOF debt #2 and PHASE-DEFECT both
 separate this from the advice-side regularity guard. The proposed proof
-material is [paper/MEASURE-THEORETIC-OBSTRUCTIONS.md](paper/MEASURE-THEORETIC-OBSTRUCTIONS.md):
+material is [measure/SUBSTRATE-OBSTRUCTIONS.md](measure/SUBSTRATE-OBSTRUCTIONS.md):
 amortization across samples would need a substrate-compatible averaging
-operation that the five §5 obstructions are meant to refuse.
+operation that the five substrate obstructions are meant to refuse.
 
 **What closes it.** A per-sample lower bound on `δ` that is independent
 of `N` — i.e., `δ(N samples) ≥ N · c` for some `c > 0`. The candidate
@@ -338,7 +338,7 @@ distinguishability bound of the form Route 3 needs.
 - [fft/FFT-SEARCH-PLAN.md](fft/FFT-SEARCH-PLAN.md):
   strategy-family and search/execution-cost framing.
 - [paper/FIRST-PROOF.md](paper/FIRST-PROOF.md),
-  [paper/MEASURE-THEORETIC-OBSTRUCTIONS.md](paper/MEASURE-THEORETIC-OBSTRUCTIONS.md),
+  [measure/SUBSTRATE-OBSTRUCTIONS.md](measure/SUBSTRATE-OBSTRUCTIONS.md),
   [memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md):
   debt #2, substrate-side refusal, and algebraic closure companion.
 

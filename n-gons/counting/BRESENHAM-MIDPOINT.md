@@ -132,7 +132,7 @@ Existing material this memo draws on:
 - `rotations/CONTINUED-FRACTIONS-CROSSWALK.md` — the continued-fraction machinery that the Christoffel-word angle in item (B) plugs into.
 - `n-gons/counting/COUNTING.md` and the full `n-gons/counting/` directory — the comparison target for item (D).
 - `n-gons/ARCHIMEDEAN-STRIP-FLIP.md`, `BNHA/triad/Eraserhead/ARCHIMEDEAN-CONSTRICTION.md` — the exhaustion tradition; Bresenham-midpoint is an integer-lattice descendant of Archimedean exhaustion.
-- `paper/LANDFALL-EXPORT.md` — the log-side template; Bresenham-midpoint is the circle-side answer to "what plays the role of Mitchell's `L(x) = E + m`?" for lattice resolution rather than mantissa precision.
+- `fft/LANDFALL-PROOF-TEMPLATES.md` — the log-side template; Bresenham-midpoint is the circle-side answer to "what plays the role of Mitchell's `L(x) = E + m`?" for lattice resolution rather than mantissa precision.
 - `memos/LINDEMANN-BRIEF.md` — the transcendence boundary; Bresenham-midpoint gets arbitrarily close to π at `R → ∞` with integer-arithmetic only, which is a quantitative sharpening of "Lindemann is the `E = ∞` corner."
 
 Anchors yet to be written:
