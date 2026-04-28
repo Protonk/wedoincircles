@@ -6,7 +6,7 @@ JACM is the venue. ~25 pages with figures is the target. The register is enginee
 
 ## Abstract
 
-We prove that current FFT-style lower-bound methods cannot improve past their existing thresholds on cyclotomic-DFT and adjacent compute-cost problems. The mult/add conversion underlying the FFT framework (Schönhage–Strassen 1971, Morgenstern 1973, Winograd 1978, Auslander–Feig–Winograd 1984) carries a transaction cost — the irreducible cost of trading multiplicative cost for additive cost or vice versa — that is bounded away from zero at the bounded/unbounded coefficient boundary. A stronger FFT-style lower bound would require a frictionless conversion across that boundary, and the substrate it would operate on — rotation-orbit Diophantine kinematics, non-nesting isoperimetric registers, closed-form polygon arithmetic, and cyclotomic-ladder unboundedness against affine flatness — supplies no such conversion.
+We prove that current FFT-style lower-bound methods cannot improve past their existing thresholds on cyclotomic-DFT and adjacent compute-cost problems. The mult/add conversion underlying the FFT framework (Schönhage–Strassen 1971, Morgenstern 1973, Winograd 1978, Auslander–Feig–Winograd 1984) carries a transaction cost — the irreducible cost of trading multiplicative cost for additive cost or vice versa — that is bounded away from zero at the bounded/unbounded coefficient boundary, with each canon framework reaching its bound through its own measure-theoretic potential (Lebesgue / counting / ℚ-vector-space dimension / Shannon entropy across the canon and adjacent restricted-model lower bounds). A stronger FFT-style lower bound would require a frictionless conversion across that boundary, and the substrate it would operate on — rotation-orbit Diophantine kinematics under Haar measure, non-nesting isoperimetric registers across three measure-theoretic currencies, closed-form polygon arithmetic via `ζ(2)`-tail counting on Hurwitz-band decompositions, cyclotomic-ladder unboundedness against affine flatness as a counting-invariant asymmetry, and a Lebesgue null/full dichotomy under the L-W admissibility envelope — supplies no such conversion under any of these measures.
 
 ### CCS
 
@@ -43,6 +43,8 @@ Bounded vs unbounded coefficients. The regime is a parameter of every cost measu
 ### §1.5. The mult/add conversion
 The family of strategies FFT-style algorithms use to trade multiplicative cost for additive cost (or vice versa); methods select a strategy adaptively (Gauss 1805's `4×3` vs `3×4` for Pallas is the pre-1882 worked example, per `fft/GOLDSTINE-1977-INTERPOLATION-BRIEF.md`; deeper framing parked at `fft/FFT-SEARCH-PLAN.md`). The transaction cost `δ` — the irreducible cost of executing a strategy — depends on §1.4's regime parameter; `δ`'s behavior at the bounded/unbounded coefficient boundary is the object §4's main theorem speaks about. A candidate concrete realization of `δ` — `δ ≡ cost of {Δ_k} cocycle compression` — is parked at `fft/PHASE-DEFECT.md`, conditional on that file's gating debts and four sub-debts (formal-character composition, closure-class transport, phase-lift conservativity, canon-bound translation).
 
+Figure: [figures/cost_conversion_schematic.png](figures/cost_conversion_schematic.png) — the cost-pair `(μ, α)` plane with the actual frontier (canon thresholds Morgenstern, AFW, Winograd marked), the counterfactual `δ = 0` frontier (unreachable per §4), the hatched `δ`-gap between them, and the Bridge equivalence `descent past T(P) ⟺ δ = 0 at boundary` (§6.2) shown as a double-headed vertical arrow at the bounded/unbounded coefficient boundary (§1.4). Bridge-side picture only; the closure-class story lives at §6.5. Companion at [paper/code/COST-CONVERSION-SCHEMATIC.md](paper/code/COST-CONVERSION-SCHEMATIC.md).
+
 ## §2. The tour
 
 Promissory. After §1 establishes language, §2 promises the route: cards on the table at §3, theorem at §4, the maze at §5, gradients at §6, back to the canon at §7. Names the substrate-side corpus (rotation-orbit Diophantine kinematics, non-nesting isoperimetric registers, closed-form polygon arithmetic, cyclotomic-ladder unboundedness against affine flatness, admissibility envelope) as the proof material §5 will deploy.
@@ -71,7 +73,16 @@ What do the four attacks share in §1's cost / conversion framework?
 Each of §3.2–§3.5 re-read in §1's cost / conversion language. SS's operational uniform model as a multiplicative-side structure; Morgenstern's bound as the additive-side floor; Winograd's modular product as a CRT-factored ledger on the multiplicative side; AFW's cyclotomic decomposition as a factor-by-factor reading on the multiplicative side.
 
 #### §3.6.2. What's structurally shared
-The four cost / conversion readings converge on common structure: shared cost-bearing primitives, compatible composability, shared regime parameter, one mult/add conversion connecting the same two cost classes.
+The four cost / conversion readings converge on common structure: shared cost-bearing primitives, compatible composability, shared regime parameter, one mult/add conversion connecting the same two cost classes. Per-framework projection onto §1's axes:
+
+| Framework | Cost side | Composability | Regime | Output |
+|---|---|---|---|---|
+| Schönhage–Strassen 1971 (§3.2) | mult | recursive Fermat-ring FFT in uniform bit/gate model | n/a (constructive) | upper: `O(N log N log log N)` for integer multiplication |
+| Morgenstern 1973 (§3.3) | add | linear-composition closure | bounded coefficients | lower: `Ω(n log n)` additions for `n × n` DFT-related determinant |
+| Winograd 1978 (§3.4) | mult | CRT-factored ledger via modular-product theorem | unbounded (rational equivalence) | exact: `μ(T_P) = 2n − k` for modular product |
+| Auslander–Feig–Winograd 1984 (§3.5) | mult | semisimple cyclotomic decomposition | unbounded (rational equivalence) | per-factor `μ`-bound on cyclotomic DFTs |
+
+Three of four sit on the multiplicative side; Morgenstern is the lone additive-side framework, and the only one that *requires* the bounded-coefficient regime (§1.4) to bind. SS's bound is upper, not lower, and its role in the paper is the operational uniform model rather than the bound itself. Together the four span the cost/conversion axes §6 deploys: mult-side / add-side, bounded / unbounded, constructive / lower-bound. None of them gives a bound transferable to another's regime — every transfer has to pay δ at §1.4's boundary.
 
 ### §3.7. Adjacent restricted-model lower bound: Ailon 2013
 Ailon records the warning the paper must keep visible: nontrivial Fourier-transform lower bounds in broad linear-circuit models remain open, and known successes come with strong restrictions. His model keeps only `n` live coordinates; each gate applies a `2 × 2` unitary mixing to two coordinates. The normalized FFT fits this model in `O(n log n)` gates, and Ailon proves any such circuit needs at least `(1/2)n log_2 n` gates.
@@ -107,19 +118,19 @@ Three load-bearing claims combine into a potential-style argument (per `paper/FI
 ## §5. A maze of twisting passages, all alike
 
 ### §5.1. Rotation-orbit Diophantine kinematics
-Arena: orbit data carries `β(π) = 0`; no FFT-algorithm passage finds a kinematic feature distinguishing itself from another.
+Arena: finite irrationality measure for `π` implies the Avila–Jitomirskaya parameter `β(π) = 0`, placing the orbit `{kπ mod 1}` in Weyl's equidistribution regime against Haar measure on `T = ℝ/ℤ`. No FFT-algorithm passage extracts a kinematic feature distinguishing one trade from another beyond the Haar mean for continuous and Riemann-integrable test functions. Source-side typing per `paper/MEASURE-THEORETIC-OBSTRUCTIONS.md` §1.
 
 ### §5.2. Non-nesting isoperimetric registers
-Currencies: the three (rate, constant, almost-every) do not nest; no passage gets a free conversion between them.
+Currencies: the three (rate, constant, almost-every) do not nest; no passage gets a free conversion between them. Constant register: Bonnesen-strengthening per Osserman 1979 / Bonnesen 1921. Almost-every register: Khintchine / Beck 1994 tradition. Source-side typing per `paper/MEASURE-THEORETIC-OBSTRUCTIONS.md` §2.
 
 ### §5.3. Closed-form polygon arithmetic
-Values: Hurwitz coefficients, gap `4π⁴/(3n²)`, and the sharp constant `6/π² = 1/ζ(2)` are fixed; descent reaches them only at threshold. Figures: [figures/archimedean_triptych.png](figures/archimedean_triptych.png) sets up the inside-out / outside-out / strip substrate; [figures/hurwitz_gap_rate.png](figures/hurwitz_gap_rate.png) closes the Hurwitz identity at the `4π⁴/(3n²)` Archimedean rate (three series collapse to one line over seven decades); [figures/hurwitz_gap_frequency_decomposition.png](figures/hurwitz_gap_frequency_decomposition.png) shows the first-band concentration `B_1(n) ≥ (6/π²) Δ_n` directly as a stacked-area chart over `n`.
+Values: Hurwitz coefficients (Fourier expansion on the sparse lattice `m ≡ 1 mod n`), gap `4π⁴/(3n²)`, and the first-band concentration constant `6/π² = 1/ζ(2)` (from the `ζ(2)`-tail comparison `B_j(n) ≤ B_1(n)/j²` per `corners/HURWITZ-FIRST-BAND-CONCENTRATION.md` §1) are fixed; descent reaches them only at threshold. Source-side typing per `paper/MEASURE-THEORETIC-OBSTRUCTIONS.md` §3. Figures: [figures/archimedean_triptych.png](figures/archimedean_triptych.png) sets up the inside-out / outside-out / strip substrate; [figures/hurwitz_gap_rate.png](figures/hurwitz_gap_rate.png) closes the Hurwitz identity at the `4π⁴/(3n²)` Archimedean rate (three series collapse to one line over seven decades); [figures/hurwitz_gap_frequency_decomposition.png](figures/hurwitz_gap_frequency_decomposition.png) shows the first-band concentration `B_1(n) ≥ (6/π²) Δ_n` directly as a stacked-area chart over `n`.
 
 ### §5.4. Cyclotomic-ladder unboundedness against affine flatness
-Structure: `[K_n : ℚ] = φ(n)/2` grows unbounded with `n`; affine closure is flat; native operations cannot bridge the asymmetry. Figure: [figures/pseudo_chebyshev_arithmetic_ladder.png](figures/pseudo_chebyshev_arithmetic_ladder.png) — degrees of `cos(π/n)` over ℚ as a stem chart, constructible nodes filled and non-constructible open, with `n = 7` highlighted as the first cubic and first non-constructible node.
+Structure: the maximal real subfield `K_n^+ = ℚ(ζ_n + ζ_n^{−1})` has `[K_n^+ : ℚ] = φ(n)/2`, which grows unbounded with `n`; affine closure is flat; native operations cannot bridge the asymmetry. Source-side typing per `paper/MEASURE-THEORETIC-OBSTRUCTIONS.md` §4 (counting-invariant obstruction). Figure: [figures/pseudo_chebyshev_arithmetic_ladder.png](figures/pseudo_chebyshev_arithmetic_ladder.png) — degrees of `cos(π/n)` over ℚ as a stem chart, constructible nodes filled and non-constructible open, with `n = 7` highlighted as the first cubic and first non-constructible node.
 
 ### §5.5. The admissibility envelope
-Audit: within L-W safety, closed-branch evidence, and the auxiliary-tool repertoire, no admissible method extracts additional descent information.
+Audit: within L-W safety, closed-branch evidence, and the auxiliary-tool repertoire, no admissible method extracts additional descent information. The operative measure-theoretic fact within the envelope is the Lebesgue null/full dichotomy on `ℝ` (algebraics null; transcendentals full); finer distinctions among transcendentals trigger per-instance content-not-calendar audits per `memos/OLD-TIME-RELIGION.md`. Source-side typing per `paper/MEASURE-THEORETIC-OBSTRUCTIONS.md` §5.
 
 ### §5.6. Information-uniformity at the boundary
 Synthesis: §5.1–§5.5 jointly establish that every passage hits the bounded/unbounded coefficient boundary the same way. The result §6 inherits.
@@ -133,7 +144,7 @@ Setup: descent in §1's framework means trading a higher cost-bearing complexity
 For descent past `T(P)` to succeed, the algorithm must drive `δ` at the bounded/unbounded coefficient boundary from positive to zero — equivalently, cross the defect gap. The Bridge claim asserts this equivalence: threshold improvement *is* gap-crossing. Endpoint-side claim of the potential-style interface (`paper/FIRST-PROOF.md`). Central new theorem of the program. **[Construction debt #1.]**
 
 ### §6.3. Lemma A inherited (parallel reading)
-§5.6 establishes information-uniformity at the boundary: no FFT-algorithm passage extracts information distinguishing one trade from another. This is the information-side parallel reading of the impossibility, equivalent (modulo construction debt #6) to the closure-class route of §6.4–§6.5. *Not used in the QED*; presented for completeness as the substrate-side answer to "why can't a smarter algorithm just pick the cheap trade?" Per `paper/FIRST-PROOF.md`, Lemma A's exhaustiveness is its own debt (#5).
+§5.6 establishes information-uniformity at the boundary: no FFT-algorithm passage extracts information distinguishing one trade from another. Under `BNHA/hakamada/MEASURE-TWICE.md`'s discipline this is the **substrate-side measure-theoretic refusal** — the substrate's five measures (per `paper/MEASURE-THEORETIC-OBSTRUCTIONS.md`) jointly refuse the distinguishing information descent would need. The closure route of §6.4–§6.5 is the complementary **algorithm-side measure-theoretic refusal**; together they form a measure-theoretic squeeze on `T(P)` (per `paper/FIRST-PROOF.md` debt #6, re-framed as squeeze convergence rather than logical equivalence). *Lemma A is not used in the QED*; the QED closes via the closure route alone, with the Bridge claim's equivalence between threshold improvement and gap-crossing supplying sufficiency. Lemma A's exhaustiveness debt (#5) governs the substrate-side half independently.
 
 ### §6.4. Separation claim: `δ = 0` outside the native closure class
 The proof template extracted at `paper/LANDFALL-EXPORT.md` Template 1, restated for the cost / conversion framework as the Separation claim: `δ = 0` lies outside the closure of native operations. Source-side instance: Landfall §2's affine-closure result that `λ(m) = log₂(1+m)` is not in the closure generated by binade operations; equivalently `ε = λ − m` is non-affine since `m` is affine. Target-side: prove a transport lemma carrying `ε ∉ C_Aff` to `δ = 0 ∉ C_FFT`. Candidate transport: the **character reflection barrier** of `fft/PHASE-DEFECT.md`, with **phase-lift conservativity** as its analytic-exponential specialization. Target-side claim of the potential-style interface. **[Construction debt #3.]**
@@ -141,10 +152,31 @@ The proof template extracted at `paper/LANDFALL-EXPORT.md` Template 1, restated 
 ### §6.5. Native drift claim: bounded per-operation effect on `δ`
 Each native operation has bounded (or non-crossing) effect on the defect potential `δ` at the boundary. Mult-side primitives of §1.2 compose into a closure class; per-operation drift on `δ` is bounded. Add-side primitives of §1.3 compose into another closure class; same drift bound. No single native operation crosses the gap from `δ > 0` to `δ = 0`. Step-side claim of the potential-style interface. **[Construction debt #4.]**
 
+Figure: [figures/delta_phase_plot.png](figures/delta_phase_plot.png) — the closure-class picture in algebraic-phase space (amortization rate, asymptotic floor). Above the working-floor line `δ_min`: the IMPOSSIBILITY region (native closure of mult/add primitives). Below the foreclosed strip: the FFT canon's claimed territory at `floor = 0`, unreachable by finite composition. The horizontal mustard band straddling the working floor is debt #2 in the open: where `δ_min` actually sits depends on the algebra of `δ`. Companion at [paper/code/COASE-PHASE.md](paper/code/COASE-PHASE.md).
+
 Proof-shape precedent: Ailon 2013 (§3.7) demonstrates the potential-style argument in a restricted unitary model — endpoint values `Φ(Id) = 0`, `Φ(F) = n log₂ n`, per-gate drift `ΔΦ ≤ 2`, conclusion `m ≥ (n log₂ n)/2`. The program imports the *shape*, not the content: `δ` is the potential, the bounded/unbounded coefficient boundary is the gap locus, the FFT canon's native operations are the steps. Ailon's matrix-entropy machinery does not enter; only the three-claim skeleton does. Trust-boundary discipline per `fft/AILON-2013-UNITARY-FFT-LOWER-BOUND-BRIEF.md` §4.
 
 ### §6.6. Compose the three claims; QED
-Compose Bridge + Separation + Native drift. Descent past `T(P)` requires crossing the defect gap (Bridge), but the target `δ = 0` lies outside the native closure class (Separation), and each native operation has bounded effect on `δ` at the boundary (Native drift). A finite composition of bounded-drift operations whose target lies outside the closure cannot reach that target; finitely many bounded steps inside the closure stay inside the closure. No FFT-style descent below current thresholds is reachable on this substrate. A smarter FFT-style method does not answer the impossibility — same cost measures, same native operations, same closure classes, same `δ` at the boundary. The mathematical non-elimination claim is Native drift's; Coase 1937 (`memos/COASE-FRICTION-AND-SPECIALISTS.md`) supplies the vocabulary (*reduce yes, eliminate no*) for naming what the lemma rules out. The obstruction is structural, not in algorithmic cleverness. QED for §4.
+Compose Bridge + Separation + Native drift. Descent past `T(P)` requires crossing the defect gap (Bridge), but the target `δ = 0` lies outside the native closure class (Separation), and each native operation has bounded effect on `δ` at the boundary (Native drift). A finite composition of bounded-drift operations whose target lies outside the closure cannot reach that target; finitely many bounded steps inside the closure stay inside the closure. No FFT-style descent below current thresholds is reachable on this substrate. A smarter FFT-style method does not answer the impossibility — same cost measures, same native operations, same closure classes, same `δ` at the boundary. The mathematical non-elimination claim is Native drift's — the existence-side claim of the §1.1 typing, with the algebra-side held open at debt #2. Coase 1937 (`memos/COASE-FRICTION-AND-SPECIALISTS.md`) supplies the vocabulary (*reduce yes, eliminate no*) for naming what the lemma rules out. The obstruction is structural, not in algorithmic cleverness. QED for §4.
+
+*Meta-claim (FIRST-PROOF debt #6, re-framed as squeeze convergence).* Originally, debt #6 sought a logical equivalence between substrate-side refusal (Lemma A, §6.3) and algorithm-side refusal (Bridge + Separation + Native drift, §6.2 / §6.4 / §6.5). The outline re-frames the relationship as **squeeze convergence**: the bound `T(P)` is structurally real because every algorithm-side framework reaches it via a measure-theoretic argument (the canon's `Ω(n log n)` cluster, each in its own measure: Lebesgue / counting / dimension / Shannon entropy / bit-counting) and every substrate-side angle refuses descent under a different measure-theoretic argument (the five §5 obstructions: Haar / three isoperimetric registers / `ζ(2)`-tail counting / counting-invariant on extensions / Lebesgue null-full). The two sides converge on `T(P)` from different cost-currencies; the convergence is the structural fact, not an artifact of any one framework, and not the logical equivalence the original debt sought. Substrate-side typing per `paper/MEASURE-THEORETIC-OBSTRUCTIONS.md`; methodological character per `BNHA/hakamada/MEASURE-TWICE.md`.
+
+### §6.7. Construction-debt accounting
+
+The eight debts of `paper/FIRST-PROOF.md` mapped to outline location and current status. Status taxonomy: **load-bearing for QED** (the three-claim interface), **foundational** (gates the others), **parallel-reading** (Lemma A's status; not used in QED), **methodological** (per-citation discipline).
+
+| # | Name | Outline location | Status | Note |
+|---|---|---|---|---|
+| 1 | Bridge Theorem | §6.2 `[Construction debt #1]` | Load-bearing (QED) | Equivalence between threshold improvement and gap-crossing; central new theorem |
+| 2 | Cost / conversion formalization (algebra of `δ`) | §1.1 (typing), §1.5, §6.6 | Foundational; gates #1, #3, #4 | `μ`, additive cost, strategy-family conversion, `δ` algebra; closes the impossibility *region*, vs Lemma B alone closing the §4.5 *statement* |
+| 3 | Template transfer (Separation) | §6.4 `[Construction debt #3]` | Load-bearing (QED) | Carries `ε ∉ C_Aff` (Landfall §2) to `δ = 0 ∉ C_FFT`; candidate transport via character reflection barrier (`fft/PHASE-DEFECT.md`) |
+| 4 | Lemma B per-operation drift (Native drift) | §6.5 `[Construction debt #4]` | Load-bearing (QED) | Mult-side, add-side, no-single-op-crossing — three calculations, not inspections |
+| 5 | Lemma A's exhaustiveness | §6.3 (parenthetical) | Parallel-reading (not QED) | Five substrate-side angles must cover every admissible distinguishing-information source |
+| 6 | A and B as squeeze halves | §6.3, §6.6 (meta-claim) | Parallel-reading; meta-claim | Articulates squeeze convergence on `T(P)`; rigorous `A ⟺ B` no longer required |
+| 7 | Trust-boundary discipline | §3, §6, References (per-source) | Methodological | Each canon citation respects `fft/PROVENANCE-AND-TRANSFERABILITY.md`'s "should be cited for / should NOT be cited for" boundaries |
+| 8 | `β(π) = 0` L-W audit | §5.1 | Parallel-reading; conditional | If load-bearing in Lemma A's first bullet, audit under `memos/OLD-TIME-RELIGION.md` |
+
+Pay-down status as of this revision: #1, #3, #4 sharpened (named and located) but not earned; #2's `δ` algebra parked per Coase precedent; #6 re-framed from logical-equivalence to squeeze convergence; #7 and #8 are ongoing per-source / per-citation discipline.
 
 ## §7. Back again
 
@@ -158,18 +190,20 @@ Coda. What's named, what's left as future work: the cost-manifold map at higher 
 
 # Figures
 
-Six figures, theorem-paired, each with an alt-text-ready companion document. All figures live at `figures/`; build scripts and companion documents per the table below.
+Eight figures, theorem-paired, each with an alt-text-ready companion document. All figures live at `figures/`; build scripts and companion documents per the table below.
 
 | Figure | Build script | Companion document | Section |
 |---|---|---|---|
 | [figures/native_f_closure_mismatch.png](figures/native_f_closure_mismatch.png) | [memos/build_native_f_closure_mismatch.py](memos/build_native_f_closure_mismatch.py) | [memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md) | §Intro, §7 |
+| [figures/cost_conversion_schematic.png](figures/cost_conversion_schematic.png) | [paper/code/build_cost_conversion_schematic.py](paper/code/build_cost_conversion_schematic.py) | [paper/code/COST-CONVERSION-SCHEMATIC.md](paper/code/COST-CONVERSION-SCHEMATIC.md) | §1.5 |
 | [figures/archimedean_triptych.png](figures/archimedean_triptych.png) | [n-gons/build_archimedean_triptych.py](n-gons/build_archimedean_triptych.py) | [n-gons/ARCHIMEDEAN-STRIP-FLIP.md](n-gons/ARCHIMEDEAN-STRIP-FLIP.md) | §5.3 |
 | [figures/hurwitz_gap_rate.png](figures/hurwitz_gap_rate.png) | [corners/hurwitz_gap.sage](corners/hurwitz_gap.sage) | [corners/HURWITZ-GAP.md](corners/HURWITZ-GAP.md) | §5.3 |
 | [figures/hurwitz_gap_frequency_decomposition.png](figures/hurwitz_gap_frequency_decomposition.png) | [corners/hurwitz_gap.sage](corners/hurwitz_gap.sage) | [corners/HURWITZ-FIRST-BAND-CONCENTRATION.md](corners/HURWITZ-FIRST-BAND-CONCENTRATION.md) | §5.3 |
 | [figures/pseudo_chebyshev_arithmetic_ladder.png](figures/pseudo_chebyshev_arithmetic_ladder.png) | [corners/pseudo_chebyshev_arithmetic_ladder.sage](corners/pseudo_chebyshev_arithmetic_ladder.sage) | [corners/PSEUDO-CHEBYSHEV-NODES.md](corners/PSEUDO-CHEBYSHEV-NODES.md) | §5.4 |
+| [figures/delta_phase_plot.png](figures/delta_phase_plot.png) | [paper/code/build_delta_phase_plot.py](paper/code/build_delta_phase_plot.py) | [paper/code/COASE-PHASE.md](paper/code/COASE-PHASE.md) | §6.5 |
 | [figures/counting_psi_stratification.png](figures/counting_psi_stratification.png) | [n-gons/counting/build_psi_stratification.py](n-gons/counting/build_psi_stratification.py) | [n-gons/counting/PSI-STRATIFICATION.md](n-gons/counting/PSI-STRATIFICATION.md) | §Conclusion |
 
-Gaps the prose pass will identify a need for but the repo does not yet have: §1.5 cost / conversion schematic (bounded↔unbounded coefficient boundary as the gap from `δ > 0` to `δ = 0`); §3 four-frameworks comparison (probably better as a table); §6.5 closure-class picture (target `δ = 0` outside the native closure class; per-operation drift inside it). Each is a schematic to be drawn during the prose pass, not extracted from existing repo material.
+All previously named figure-and-table gaps are now in place; further gaps will be identified during the prose pass.
 
 ---
 
@@ -200,6 +234,8 @@ Gaps the prose pass will identify a need for but the repo does not yet have: §1
 - **`memos/NATIVE-F-MINIMAL-DEFINITION.md`** *(in-program companion)* — closure-mismatch theorem (no functor `F` preserves closure-depth from `Aff⁺(ℝ)` to `{K_n}`); cited at §Intro and §7 as the algebraic-side companion.
 
 ## Substrate-side sources (§5)
+
+- **`paper/MEASURE-THEORETIC-OBSTRUCTIONS.md`** *(in-program companion)* — substrate-side measure-theoretic typing of the five §5 angles: Haar measure on `T = ℝ/ℤ` for §5.1; non-nesting of three measure-theoretic registers (rate / constant / almost-every) for §5.2; `ζ(2)`-tail comparison and Hurwitz Fourier expansion for §5.3; ℚ-vector-space dimension as counting-invariant obstruction for §5.4; Lebesgue null/full dichotomy under L-W safety for §5.5. Sister to `paper/LANDFALL-EXPORT.md` and `fft/PHASE-DEFECT.md`. Cited at §5.1–§5.5 as the source-side typing layer.
 
 ### Rotation-orbit Diophantine kinematics
 

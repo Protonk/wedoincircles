@@ -157,6 +157,29 @@ This is a load-bearing definitional move:
   or `paper/IMPOSSIBILITY-OUTLINE.md` until that re-establishment
   is in hand.
 
+**Update.** The deferred re-derivation has been attempted in
+[fft/LANDFALL-EXTENDED-CAFF-TRANSFER.md](fft/LANDFALL-EXTENDED-CAFF-TRANSFER.md).
+Verdict: under reading (P) at fixed precision — the audit's natural
+reading — the §2 transfer **fails**. Polynomial Taylor approximation
+of `log₂(1+m)` lives in extended `C_Aff` at `O(1)` per sample, so
+`ε ∈ extended C_Aff` competitively at fixed precision. The bridge
+contrapositive does not bite under this resolution; the bridge as
+audited delivers no FFT-side impossibility.
+
+A **replacement** source-side obstruction is identified: under
+**variable precision** (`p ∝ log N`) with **effective Hermite-
+Lindemann at `n = 1`** (program substrate-side interim target),
+Landfall §4's transcendence-at-dyadics fact upgrades to a per-sample
+distinguishability lower bound of `Ω(precision)` bits per sample,
+giving `ε ∈ Ω(N log N)` in extended `C_Aff` at precision `∝ log N`.
+The bridge contrapositive then bites and the impossibility lands.
+
+The promotion verdict refines from **(ii) Clean-conditional on the
+`C_Aff` definitional move** to **(ii) Clean-conditional on (a)
+adopting variable precision and (b) effective H-L `n = 1` delivering
+the per-sample bound in cost-norm-compatible form**. Both conditionals
+are now load-bearing for the rewrite.
+
 ## Caveat: scheme-side variability
 
 The audit assumes the FFT-style scheme produces `{Δ_k}` in a form from
