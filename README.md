@@ -12,18 +12,29 @@ The shape of the no is a closure-depth mismatch. On the log side, the native clo
 
 ## State
 
-Current state, per branch:
+Settled: the closure-depth no-go is proved under named functorial
+axioms, and the strip-`H¹` / Hurwitz comparison gives a second
+theorem-grade bridge inside the polygon apparatus. The Liouville-style
+routes toward `π` have also produced useful negative information: the
+obvious Archimedean approximants are too high, and the natural
+Euler-identity route crosses into post-L-W transcendence machinery.
 
-- **Closure-depth no-go.** Proven under named functorial axioms. Self-contained algebra; names no transcendental constants.
-- **Strip-H¹ / circumscribed-Hurwitz identification.** Proven: the strip-tissue `H¹` seminorm equals the circumscribed regular `n`-gon's Hurwitz gap up to `R_n = 16π⁶/(45n⁴) + 128π⁸/(315n⁶) + O(n⁻⁸)`. The radial-graph lift *is* the circumscribed polygon.
-- **Naive Liouville endgame for transcendence of `π`.** Closed negative. All circle-side Archimedean observables factor through a single approximant `α_n = n tan(π/n)`, whose cyclotomic height is exponential in `φ(n) log n`. The Liouville lower bound fails to meet the `1/n²` Archimedean upper bound for every `n ≥ 3`.
-- **Euler-identity-mediated Liouville endgame for transcendence of `π`.** Closed negative-pending-counterexample. The pre-1882 anchors located in Vol 1 §352 (Beta-reflection, [memos/EULER-1768-INTEGRAL-BRIEF.md](memos/EULER-1768-INTEGRAL-BRIEF.md)) and Vol IV Supp V §51 (log-sin Fourier series, [memos/EULER-1794-SUPPLEMENT-BRIEF.md](memos/EULER-1794-SUPPLEMENT-BRIEF.md)) are derivation-clean but their use routes effective Diophantine extraction through linear forms in logarithms, which is Baker 1966-67 — and Baker uses Gelfond-Schneider essentially (post-L-W). Sourcing audit closed positive; transcendence-content audit closes negative on Baker-circularity unless a one-transcendental construction surfaces.
-- **Kraft–Parseval discrepancy route for effective transcendence of `π`.** Speculative off-branch. The structural results in §(B) Hurwitz–Dido and §(A) Kraft-Parseval budget are clean; the empirical-to-density bridge is now exact at the polygon corner via Goldstine §3 discrete Fourier inversion ([fft/GOLDSTINE-1977-INTERPOLATION-BRIEF.md](fft/GOLDSTINE-1977-INTERPOLATION-BRIEF.md)). With both Liouville-style endgames closed negative, this branch's only remaining transcendence path is the discrepancy/Aitchison endgame, which has its own pre-existing post-L-W hazard (Roth's type-1 input). Step 5 of [memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md](memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md) §"Proposed order of work" — promoted to live target — audits whether the budget can run on Liouville-1844-only inputs (pre-1882-safe) or needs Roth essentially (post-L-W, same circularity shape). Treated as speculative off-branch, not a load-bearing strut, until that audit closes.
-- **Compute-cost lower bound on counting primitives.** Open search; ledger pivot has surfaced a best-current-candidate triple under stated working assumptions: T1/T3 + `V_cert` (per-cell value certificates) + algebraic-arithmetic over ℚ *in its certification-preserving form (paid adjunctions, bounded constants, no free unbounded linear combinations)*, with `|M_N|` dropped as ledger. The certification-preserving qualifier is load-bearing — under unbounded-linear readings of the model the A-axis collapses (FFT-style mult-to-add conversion) and the matching demotes. The Landfall-parallel theorem still requires promoting the driving impossibility from working form to a proven impossibility, and a cost theorem connecting `V_cert` components to primitive-op count. See [memos/LEDGER-PIVOT-SEARCH.md](memos/LEDGER-PIVOT-SEARCH.md) for the lattice apparatus and [fft/FOUR-FRAMEWORK-SYNTHESIS.md](fft/FOUR-FRAMEWORK-SYNTHESIS.md) for the load-bearing summary of where the bridge sits relative to the FFT-complexity literature: four frameworks at four axiom-coordinates, with the program's certification-preserving regime as a fifth coordinate that no existing framework occupies — making the bridge work *construction*, not *import*.
+Live: the compute-cost branch is the main open construction. Its
+current shape is certification-preserving algebraic arithmetic, a
+`V_cert`-type ledger, and a still-needed theorem connecting the ledger
+to primitive-operation cost. The FFT-side material now names what that
+theorem has to earn: the zero-defect endpoint must be a forbidden
+closure boundary, not just a small numerical limit.
 
-The closure-depth theorem does not depend on any of the other branches; the strip-H¹ identification does not use Liouville; the negative closures of the Liouville endgames (naive on $\alpha_n$, then Euler-identity-mediated on Baker-circularity) are disciplined outputs in their own right — the first records plainly that the circle side's Archimedean observables factor through an approximant whose height rules out the contradiction the endgame wanted; the second records that the natural pre-1882 analytic anchors push the construction across the arithmetic gap between Liouville (one-transcendental, 1844) and Baker (multi-transcendental, 1966) where Baker is post-L-W.
+Parked: the Kraft-Parseval discrepancy route remains available, but it
+is not load-bearing unless its Roth / post-L-W audit closes cleanly.
+Other branches are treated the same way: useful as substrate and
+discipline, not premises, until their own trust boundary is explicit.
 
-The final lower-bound theorem, when it closes, will have a **diadic** structure under the current state of the program: two independent struts speaking different cost-currencies. The two are the closure-depth no-go (the *structural* fault line, already in hand) and the compute-cost lower bound on counting primitives (the *per-instance algebraic-content* fault line, open search). The Kraft–Parseval discrepancy bound (the *cross-input encoding* fault line) was originally framed as a third strut but is now treated as a speculative off-branch pending the Step 5 Roth-essentiality audit in [memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md](memos/KRAFT-HERMITE-LINDEMANN-AITCHISON.md); if that audit closes positive, the third strut returns. The truss-bridge analogy still applies — triangulation combines compression, tension, and shear on different members — but the program currently expects two struts where it once hoped for three. Other branches of the program may yet prove load-bearing for one or more of these in ways not yet foreseen.
+Under this state the expected final theorem has two main struts: the
+structural closure-depth fault line already in hand, and the open
+compute-cost fault line. More struts may return, but none is allowed to
+enter by atmosphere.
 
 ## Stance
 
