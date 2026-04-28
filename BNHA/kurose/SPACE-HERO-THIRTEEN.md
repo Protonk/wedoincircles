@@ -126,6 +126,20 @@ at gluing loci (the binade transitions are where the
 packing-masquerading-as-tiling fact is at its most pointed). The
 proof has to pass through both.
 
+Under [BNHA/hakamada/MEASURE-TWICE.md](../hakamada/MEASURE-TWICE.md)'s
+measure-theoretic discipline, both refusals read as measure-theoretic
+special cases of a shared methodological character. Lensing is a
+*measure-recovery* claim: no canonical measure exists without
+frame insertion; the wheel turns until something says stop, and the
+choice of stop is a choice of measure. Bowen is a *no-invariant-measure*
+claim: the substrate's rigid-motion group is rich enough to preclude
+any single invariant probability measure, and the hole-drilling
+exposes the resulting contestation. Thirteen names the *mechanisms*
+(directional pull, frame insertion); Best Jeanist names what's
+structurally shared between them (*measure-theoretic character
+without object-level unification*). Both disciplines are compatible
+and address different aspects of the same substrate.
+
 ---
 
 ## Cost measures as frame insertions, held together regardless
@@ -279,6 +293,45 @@ a future session brings them load-bearing.
   statement is the same as the current Bridge Theorem or sharper.
 
 ---
+
+## Relationship to MEASURE-TWICE
+
+[BNHA/hakamada/MEASURE-TWICE.md](../hakamada/MEASURE-TWICE.md) names
+the *measure-theoretic character* of the bound at `T(P)`: every
+framework's reach to `T(P)` and every substrate-side angle's refusal
+at `T(P)` is a measure-theoretic argument, with the multifariousness
+of measure theory itself accounting for the convergence without
+object-level unification. Thirteen and Best Jeanist are working on
+the same substrate at different layers:
+
+- **Thirteen** names the *mechanisms* by which the substrate
+  refuses object-level unification — frame insertion required
+  everywhere (lensing, passive); class membership pulls toward a
+  specific failure of aggregation (Bowen, active). Mechanism-level
+  vocabulary.
+- **Best Jeanist** names the *methodological character* shared by
+  what Thirteen's mechanisms are doing — both refusals are
+  measure-theoretic in character; the constellation is
+  multifarious in measure choice and uniform in measure-theoreticness.
+  Character-level vocabulary.
+
+The two are compatible and complementary. Thirteen's frame-insertion
+catalog is a list of measure-choice points (each frame insertion is
+a measure choice); Best Jeanist's five-by-five constellation
+includes those measure choices as fibers in the substrate-side
+side of the squeeze. Bowen's class membership is a measure-theoretic
+structural fact (no invariant probability measure on a substrate
+with rich-enough symmetry); Best Jeanist names the structural fact
+as one of the substrate-side measure-theoretic refusals.
+
+Deployment register: when the situation calls for *naming the
+mechanism* (a specific frame-insertion locus, a specific
+class-membership pull), reach for Thirteen. When the situation
+calls for *naming the methodological grain* (the constellation,
+the measure-theoretic character of the bound's assignment, the
+All-for-One refusal made measure-theoretically), reach for Best
+Jeanist. Either alone undersells what's happening on the substrate;
+together they articulate it.
 
 ## Trust boundary
 

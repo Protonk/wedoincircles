@@ -175,23 +175,38 @@ level where a "global density" is asserted by construction. This is
 the program-side echo of Landfall's "the floor does not stabilize
 that way" (cited from Landfall's §2.1/2.3.1 reading of Bowen).
 
-**The warning we deploy.** Bowen's hole-drilling observation does not
-transfer to the log-binade circle as a theorem — sub-check (α) of
-new test 2 confirms that the gluing locus lands on a horocycle
+**The warning we deploy, re-typed under the measure-theoretic discipline.**
+Bowen's hole-drilling observation does not transfer to the
+log-binade circle as a theorem — sub-check (α) of new test 2
+confirms that the gluing locus lands on a horocycle
 tile-*boundary* in the strip embedding (Landfall §1.2.2), while
 Bowen's drilling acts on tile-*interiors*; the locus-types differ
-and the mechanism does not carry. What does carry is a suggestion:
-density on a space that closes by a measure-zero identification is
-no more obvious than density on a tile that closes by a measure-zero
-perturbation, and Bowen supplies at least one concrete worked
-example (p. 44, `D(β) < ε` for any `ε > 0`) where the obviousness
-was misleading by an arbitrary factor. We deploy this tactically:
-when an opposing argument leans on the apparent obviousness of
-density-theoretic structure at a binade transition or at any locus
-where the substrate closes by identification, Bowen's warning is the
-lever — *things aren't so simple, you see*. Rhetorical-with-content;
-it punctures overconfident density-theoretic premises rather than
-proving an obstruction.
+and the mechanism does not carry. What does carry, under
+[BNHA/hakamada/MEASURE-TWICE.md](BNHA/hakamada/MEASURE-TWICE.md)'s
+measure-theoretic discipline, is *methodological character*. Bowen
+explicitly demonstrates that density is the contested
+measure-theoretic invariant on his substrate, and the hole-drilling
+is his mechanism for naming the contestation. His own phrase —
+*"the essential nature of the assignment of density for packings"*
+(p. 45) — is what Best Jeanist now names structurally as
+*measure-theoretic character*: density on Bowen's substrate is
+multifarious because the rigid-motion group is rich enough to
+preclude any single invariant probability measure, and the
+hole-drilling exposes the contestation that was already there. We
+deploy Bowen as the substrate-side methodological precedent for
+the All-for-One refusal made measure-theoretically: density on his
+substrate is multifarious; `T(P)` on ours is multifarious for
+analogous structural reasons (no native functor `F` per
+`memos/NATIVE-F-MINIMAL-DEFINITION.md`); both reflect substrate
+structure too rich for object-level unification. Bowen supplies
+at least one concrete worked instance of the contestation
+(p. 44, `D(β) < ε` for any `ε > 0`, where the apparently obvious
+density-1 was misleading by an arbitrary factor). The deployment
+register upgrades from rhetorical-with-content to *load-bearing
+methodological precedent*: when the program defends the All-for-One
+refusal in measure-theoretic terms, Bowen has done structurally
+analogous work in his own setting, and the citation carries that
+load. Mechanism doesn't transfer; methodological character does.
 
 ## 3. Alternative construction without an invariant measure (§2.3.2, pp. 47–49)
 
