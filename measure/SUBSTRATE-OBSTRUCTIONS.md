@@ -28,9 +28,13 @@ implies `β(α) = 0`, and `β(α) > 0` implies `α` is Liouville. The
 converse fails: some Liouville `α` can still have `β(α) = 0`.
 Existing finite irrationality-measure bounds for `π` therefore imply
 `β(π) = 0`; they do not imply `π` lies on the Roth `μ = 2` boundary,
-and the `β` parameter alone does not characterize non-Liouville. The
-orbit `{kα mod 1 : k in Z}` is the kinematic substrate the algorithm
-operates on.
+and the `β` parameter alone does not characterize non-Liouville.
+L-W-safety provenance for the chain `finite μ(π) ⟹ β(π) = 0` audited
+at [rotations/BETA-PI-LW-AUDIT.md](rotations/BETA-PI-LW-AUDIT.md):
+Hermite-Padé auxiliary-function arithmetic in Mahler 1953 / Hata 1993
+/ Salikhov 2008 plus classical CF algebra; no Baker / Gelfond-Schneider
+/ Thue-Siegel-Roth content. The orbit `{kα mod 1 : k in Z}` is the
+kinematic substrate the algorithm operates on.
 
 **Connection to measure theory.** Haar measure on `T = R/Z`
 (equivalently, normalized Lebesgue measure on `[0, 1)`) is the unique

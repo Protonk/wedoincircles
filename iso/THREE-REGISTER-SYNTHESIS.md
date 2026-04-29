@@ -38,7 +38,11 @@ then turns the move into a primitive-substrate index, gathering six
 perspectives on continued-fraction convergents. The present iso/
 synthesis is the higher-resolution instance: the lenses are not three
 proofs of one theorem, but three registers that are sharp on distinct
-currencies of the same isoperimetric gap.
+currencies of the same isoperimetric gap. The lineage now closes back
+through [rotations/SIX-LENS-SYNTHESIS.md](rotations/SIX-LENS-SYNTHESIS.md),
+which promotes the rotations register to the same load-bearing
+standing — six lenses on the convergent substrate, sharp on different
+operative aspects, organized by substitution rather than hierarchy.
 
 ---
 
@@ -162,7 +166,7 @@ The audit criterion is *content* not *calendar*, per
 | Register | Calendar-late paper | Transcendence-free substrate | Outstanding audit target |
 |---|---|---|---|
 | Geometric (Osserman 1979) | survey of post-1882 Bonnesen-style | Steiner symmetrization (~1830s, pre-1882) for *qualitative* isoperimetric statement; Fejes-Tóth 1950 polygonal proof for *quantitative* `(R − ρ)²` form | Fejes-Tóth 1950 polygonal proof certification for L-W-safety |
-| Sobolev (Fuglede 1989) | post-1882 spherical harmonics + Minkowski parallel bodies | Hurwitz 1902 Fourier proof (per Fuglede footnote 1, p. 619) — calendar-post-1882 but *transcendence-free in content* | Hurwitz 1902 Parseval-form derivation in transcendence-free language (program already has the structural fact in [corners/HURWITZ-GAP.md](corners/HURWITZ-GAP.md); explicit certification not yet written) |
+| Sobolev (Fuglede 1989) | post-1882 spherical harmonics + Minkowski parallel bodies | Hurwitz 1902 Fourier proof (per Fuglede footnote 1, p. 619) — calendar-post-1882 but *transcendence-free in content* | **Discharged** at [iso/HURWITZ-1902-LW-AUDIT.md](iso/HURWITZ-1902-LW-AUDIT.md): proof terminates at Fourier 1822 + Parseval 1799 + Green 1828 + Cauchy 1821 / Weierstrass 1872 + complex-number algebra + Archimedean diameter ratio; no L-W / Baker / Gelfond-Schneider / Thue-Siegel-Roth content. |
 | Probabilistic (Beck 1994) | post-1965 measure-theoretic Diophantine | Roth 1954 (discrepancy, L²-Fourier) + Cauchy-Schwarz + classical Fourier + Borel-Cantelli; **NOT** Roth 1955 (transcendence) | Schmidt 1960's second-moment inequality (Beck Lemma 9.71 input); cleanest single audit task |
 
 ### 2.1 Witnesses for the geometric content-path
@@ -210,10 +214,14 @@ tag for the program":
   area-perimeter formulas — both pre-1882.
 - The program already has the Hurwitz Parseval identity in
   [corners/HURWITZ-GAP.md](corners/HURWITZ-GAP.md), computed three
-  ways for the inscribed regular `n`-gon. **The structural content
-  is in the program; explicit L-W-safety certification of the
-  derivation is not yet written.** This is the audit task on the
-  Sobolev side.
+  ways for the inscribed regular `n`-gon. **The L-W-safety
+  certification of the derivation is now in hand at
+  [iso/HURWITZ-1902-LW-AUDIT.md](iso/HURWITZ-1902-LW-AUDIT.md):**
+  the Hurwitz Parseval identity `Δ = 4π² Σ m(m − 1) |c_m|²` derives
+  from Fourier 1822 + Parseval 1799 + Green 1828 + classical
+  convergence machinery + complex-number algebra + the Archimedean
+  diameter-to-circumference ratio, with no transcendence-theoretic
+  input. The Sobolev register's audit task is discharged.
 
 ### 2.3 Witnesses for the probabilistic content-path
 
@@ -273,6 +281,14 @@ new substrate. Three concrete audit tasks:
 Each task is a candidate -BRIEF; the audit closes the L-W-safety
 side of DIDOS-PREROGATIVE for the corresponding register.
 
+**Status:** Hurwitz 1902 (task 2) is **discharged** at
+[iso/HURWITZ-1902-LW-AUDIT.md](iso/HURWITZ-1902-LW-AUDIT.md). The
+remaining two — Fejes-Tóth 1950 (geometric register) and Schmidt 1960
+(probabilistic register) — are open. With the Sobolev register
+certified, the program's principal rate-sharp content
+(`Δ_n = 4π⁴/(3n²) + O(1/n⁴)` and the Parseval-form gap) sits on
+certified L-W-safe substrate.
+
 ---
 
 ## Claim 3 — Hypothesis-Class Structure Across Registers
@@ -289,7 +305,7 @@ class for program use.
 | Register | Hypothesis class | Why class is necessary | Bridge for program use |
 |---|---|---|---|
 | Osserman / geometric | rectifiable Jordan curves bounding plane domains; quantitative results require *convex* (or extension to non-convex via Schmidt 1939, Fiala 1941) | Bonnesen-style requires `R, ρ` well-defined; in plane only | Direct: inscribed regular `n`-gon is convex Jordan curve |
-| Fuglede / Sobolev | nearly-spherical: `‖u‖_∞ ≤ 3/(20n)`, `‖∇u‖_∞ ≤ 1/2` (n_dim ≥ 3 has gradient bound implied by uniform via Lemma 2.2) | Without the hypothesis, stability fails — *spike-on-ball counter-example* (Fuglede §1, p. 621) | Verify hypothesis: for inscribed regular `n`-gon, `‖u‖_∞ = π²/(3n²)` so `n ≥ ?` puts within nearly-spherical class |
+| Fuglede / Sobolev | nearly-spherical: `‖u‖_∞ ≤ 3/(20·n_dim)`, `‖∇u‖_∞ ≤ 1/2` (n_dim ≥ 3 has gradient bound implied by uniform via Lemma 2.2; for n_dim = 2 the planar constant is `3/40` and both bounds must be hypothesized) | Without the hypothesis, stability fails — *spike-on-ball counter-example* (Fuglede §1, p. 621) | Verify hypothesis: for inscribed regular `n`-gon, `‖u‖_∞ = π²/(3n²)`; uniform bound holds at polygon `n ≥ 7`, gradient bound is the binding constraint with strict satisfaction at **`n ≥ 8`** per §3.4.1 |
 | Beck / probabilistic | almost-every `α ∈ R^k` for `k ≥ 2` (1-dim is Khintchine, similar class); Lemmas 4.1–4.4 specify the measure-1 set | Specific `α` is measure zero; the Borel-Cantelli machinery is intrinsically about a measure-1 conclusion | Empirical-to-density proxy ([memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md](memos/KRAFT-BUDGET-ONE-DIMENSIONAL.md) Step 5) bridges almost-every to specific α via averaged-over-range |
 
 ### 3.1 Witnesses for hypothesis precision
@@ -310,9 +326,13 @@ class for program use.
 **Fuglede / Sobolev** —
 [iso/FUGLEDE-1989-BRIEF.md](iso/FUGLEDE-1989-BRIEF.md) §1.1:
 
-- "Nearly-spherical hypothesis" (Definition 1.1): `‖u‖_∞ ≤ a := 3/(20n)`,
-  `‖∇u‖_∞ ≤ 1/2`. For `n_dim ≥ 3` the gradient bound follows from the
-  uniform bound (Lemma 2.2). For `n_dim = 2` both must be hypothesized.
+- "Nearly-spherical hypothesis" (Definition 1.1): `‖u‖_∞ ≤ a := 3/(20·n_dim)`,
+  `‖∇u‖_∞ ≤ 1/2` (Fuglede's `n_dim` is *ambient dimension*, not polygon
+  vertex count — the namespace collision was the source of the original
+  arithmetic error fixed in §3.4.1). For `n_dim ≥ 3` the gradient bound
+  follows from the uniform bound (Lemma 2.2). For `n_dim = 2` (where the
+  program lives) both must be hypothesized; the planar uniform-bound
+  constant is `a = 3/40`.
 - **Necessity of the hypothesis.** Fuglede §1 opener (p. 621), in
   Fuglede brief §1.4: "*it was shown that some restriction like (\*)
   above is necessary for stability — whether in uniform norm or in
@@ -322,12 +342,24 @@ class for program use.
   a nearly-spherical pre-hypothesis. The Sobolev stability fails for
   the same reason.
 - For inscribed regular `n`-gon (Fuglede brief §2.2):
-  `‖u‖_∞ = π²/(3n²) + O(1/n⁴)`. The hypothesis `‖u‖_∞ ≤ 3/(20n)`
-  becomes `π²/(3n²) ≤ 3/(20n)`, i.e., `n ≥ 20π²/9 ≈ 21.9` — so for
-  `n ≥ 22` the inscribed regular `n`-gon is nearly-spherical and
-  Fuglede's theorems apply pointwise. (For smaller `n`, Theorem 2.3
-  applies if `n_dim ≥ 3`; for `n_dim = 2` and small `n`, Bonnesen
-  1924 covers via Theorem 2.3's `n = 2` clause.)
+  `‖u‖_∞ = π²/(3n²) + O(1/n⁴)`. With `n_dim = 2`, the planar
+  uniform-bound hypothesis `‖u‖_∞ ≤ 3/40` becomes
+  `π²/(3n²) ≤ 3/40`, i.e., `n² ≥ 40π²/9 ≈ 43.86`, so the uniform
+  bound holds at polygon `n ≥ 7`. The gradient bound
+  `‖∇u‖_∞ ≤ 1/2` is the binding constraint and fails marginally at
+  `n = 7` (≈ 0.516 vs `1/2`), holding strictly from `n ≥ 8` onward.
+  **Strict nearly-spherical admission for the inscribed regular
+  `n`-gon: `n ≥ 8`** per the corrected computation in §3.4.1. (The
+  original `n ≥ 22` figure in this paragraph was an arithmetic
+  mis-substitution of polygon-`n` into Fuglede's `3/(20·n_dim)`
+  constant, off by a factor of `~3` — fixed at §3.4.1 with the
+  small-`n` coverage worked out at §3.4.2 / §3.4.5.) For
+  `n ∈ {3, …, 7}` (where the hypothesis fails strictly), Fuglede's
+  general theorems do not apply; the program covers these via
+  per-`n` direct Hurwitz Parseval computation as documented in
+  §3.4.2 and verified at §3.4.5, where Bridge 1's per-`n` direct
+  ratios confirm Theorem 1.2 (I.a)'s *conclusion* holds across the
+  full `n ≥ 3` family even where its hypothesis does not.
 
 **Beck / probabilistic** —
 [iso/BECK-1994-BRIEF.md](iso/BECK-1994-BRIEF.md) §1.2:
@@ -758,9 +790,10 @@ This memo should be cited for:
 - The L-W-safety content map (Claim 2) and the three named outstanding
   audit tasks.
 - The hypothesis-class structure (Claim 3) and the per-register
-  bridges, including the explicit `n ≥ 22` threshold for Fuglede on
-  inscribed regular `n`-gons and the empirical-to-density proxy as
-  the Beck bridge.
+  bridges, including the explicit `n ≥ 8` threshold for Fuglede on
+  inscribed regular `n`-gons (corrected from the original `n ≥ 22`
+  arithmetic mis-substitution per §3.4.1) and the empirical-to-density
+  proxy as the Beck bridge.
 - The synthesis claim that the three registers answer three distinct
   sub-questions, hence the non-interchangeability is structural not
   defective.

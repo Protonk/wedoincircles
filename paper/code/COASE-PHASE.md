@@ -62,4 +62,4 @@ content of Lemma B; the label states it.
 - Figure file: [figures/delta_phase_plot.png](../../figures/delta_phase_plot.png)
 - Build script: [paper/code/build_delta_phase_plot.py](build_delta_phase_plot.py)
 - Companion outline section: [paper/IMPOSSIBILITY-OUTLINE.md](../IMPOSSIBILITY-OUTLINE.md) §6
-- Methodological precedent: [memos/COASE-FRICTION-AND-SPECIALISTS.md](../../memos/COASE-FRICTION-AND-SPECIALISTS.md)
+- Methodological precedent: [measure/COASE-FRICTION-AND-SPECIALISTS.md](../../measure/COASE-FRICTION-AND-SPECIALISTS.md)

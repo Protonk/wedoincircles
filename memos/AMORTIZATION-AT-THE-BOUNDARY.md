@@ -1,6 +1,6 @@
 # AMORTIZATION-AT-THE-BOUNDARY
 
-Follow-on memo from [memos/ALGEBRA-OF-DELTA.md](memos/ALGEBRA-OF-DELTA.md)
+Follow-on memo from [measure/ALGEBRA-OF-DELTA.md](measure/ALGEBRA-OF-DELTA.md)
 §(4) primary attack: the conjecture that `δ` is non-amortizable per-sample
 at the bounded/unbounded coefficient boundary, in the strong form that
 also closes §(5)'s asymptotic question. Conditional on the cocycle
@@ -283,7 +283,7 @@ as the briefing described.
 
 ## Adjacent anchors
 
-- [memos/ALGEBRA-OF-DELTA.md](memos/ALGEBRA-OF-DELTA.md) §(4), §(5),
+- [measure/ALGEBRA-OF-DELTA.md](measure/ALGEBRA-OF-DELTA.md) §(4), §(5),
   cross-cutting (β) — the parent memo this follows from.
 - [fft/PHASE-DEFECT.md](fft/PHASE-DEFECT.md) — cocycle realization;
   sub-debts 1 and 3 are the upstream blockers.
@@ -296,7 +296,7 @@ as the briefing described.
 - [memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md)
   — algebraic-side closure-mismatch companion; load-bearing for
   Route 2's mode-axis dimensionality argument.
-- [memos/COASE-FRICTION-AND-SPECIALISTS.md](memos/COASE-FRICTION-AND-SPECIALISTS.md)
+- [measure/COASE-FRICTION-AND-SPECIALISTS.md](measure/COASE-FRICTION-AND-SPECIALISTS.md)
   §3 row "Amortization across uses" — methodological precedent;
   Coase's "friction-per-transaction varies with scale" supplies the
   vocabulary, not the content.

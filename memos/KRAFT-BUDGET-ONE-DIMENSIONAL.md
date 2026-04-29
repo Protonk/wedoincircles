@@ -826,6 +826,16 @@ the orbit points. This is not a proof of the proxy, but it is a worked
 one-dimensional algorithmic precedent for replacing explicit orbit
 enumeration by density-shaped bookkeeping.
 
+The loop is instantiated for $\alpha = \pi$ at
+[corners/lefevre_muller_pi.sage](corners/lefevre_muller_pi.sage). The
+script verifies termination, sublinear compression
+(8 ops at $N = 10$ scaling to 330 ops at $N = 10^7$), the lower-bound
+semantics $d_{\text{LMT}} \le d_{\text{brute}}$, and the
+$(u + v) = q_n$ correspondence with $\pi$'s CF convergent
+denominators. The instance discharges Open Slot A of
+[rotations/SIX-LENS-SYNTHESIS.md](rotations/SIX-LENS-SYNTHESIS.md) and
+upgrades this Step 5 citation from rhetorical to demonstrated.
+
 The complementary higher-dimensional precedent is Beck 1994, briefed at
 [iso/BECK-1994-BRIEF.md](iso/BECK-1994-BRIEF.md): Fourier + Poisson +
 Fejér smoothing + second-moment / Borel-Cantelli machinery substitutes

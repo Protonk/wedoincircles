@@ -1,6 +1,8 @@
 # CONTINUED-FRACTIONS-CROSSWALK
 
-A cross-source synthesis note on one arithmetic object that keeps recurring: the continued-fraction convergents $p_n/q_n$ of $\alpha$. This is not a source brief; it is the crosswalk among six indexed perspectives across `rotations/`, `iso/`, and `memos/`.
+An **index** meta-document on one arithmetic object that keeps recurring: the continued-fraction convergents $p_n/q_n$ of $\alpha$. This is not a source brief and it is not the rotations/ synthesis; it is the crosswalk among six indexed perspectives across `rotations/`, `iso/`, and `memos/`.
+
+The structural reading on top of this index is at [rotations/SIX-LENS-SYNTHESIS.md](rotations/SIX-LENS-SYNTHESIS.md), which disciplines the K-H-L-A entry below as a *consumption interface* (program-internal) rather than a co-equal external lens, and articulates the substitution structure across the five external lenses.
 
 The useful content that remains here is the read-across itself: six different literatures, six different rhetorics, one recurring arithmetic substrate.
 

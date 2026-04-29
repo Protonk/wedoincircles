@@ -150,7 +150,7 @@ reminder lives here.
   definition; sub-debt 3 status.
 - [fft/PHASE-LIFT-CONSERVATIVITY-AUDIT.md](fft/PHASE-LIFT-CONSERVATIVITY-AUDIT.md)
   — audit verdict refinement consuming this spec.
-- [memos/ALGEBRA-OF-DELTA.md](memos/ALGEBRA-OF-DELTA.md) §(4), §(5)
+- [measure/ALGEBRA-OF-DELTA.md](measure/ALGEBRA-OF-DELTA.md) §(4), §(5)
   — algebra-of-`δ` sub-questions whose discharge this spec specifies
   (substrate-side delivery actually discharges).
 

@@ -473,7 +473,7 @@ For a nearby but nonidentical procedural problem on the outside-out annulus, see
 
 ## Program-Facing Consequences
 
-### 1. CREATI C3 gets a real circle-side reflection identity
+### 1. A non-iterative circle-side gap-sum identity, sibling-open to CREATI C3
 
 The theorem supplies an exact, non-iterative circle-side identity:
 
@@ -483,11 +483,23 @@ $$
 
 whenever three distinct distances occur.
 
-That fills the open reflection-style slot more seriously than trace/inverse trivialities do. Marklof–Strömbergsson strengthens this by showing the identity is not only combinatorial but lattice-geometric:
+Marklof–Strömbergsson strengthens this by showing the identity is not only combinatorial but lattice-geometric:
 
 $$
 d_b = \frac{r_2+s_2}{N}.
 $$
+
+Relation to CREATI C3. The identity is a sibling-open analog of the
+CREATI C3 trace-reflection slot, not a fill of it. CREATI C3's open
+slot is a *trace* identity under an involution
+$\sigma$: $\mathrm{trace}(R_n) + \mathrm{trace}(R_{\sigma(n)}) =$
+closed form. The 3DT identity is a *gap-length sum*. These are
+different objects on different substrates. The 3DT identity is what
+the program's BIND/Erasure-compatible vocabulary delivers on the
+circle side; CREATI C3's slot remains its own enumeration question.
+Disambiguation recorded at
+[rotations/SIX-LENS-SYNTHESIS.md](rotations/SIX-LENS-SYNTHESIS.md)
+Claim 3.
 
 ### 2. The vocabulary is unusually Erasure-compatible
 

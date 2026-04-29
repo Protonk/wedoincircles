@@ -264,11 +264,13 @@ frameworks before claiming it as the program's character.
   instability is a measure phenomenon). Thirteen's two-sided
   geometry observation reads under Best Jeanist as "two sides of a
   measure-theoretic substrate."
-- **`memos/COASE-FRICTION-AND-SPECIALISTS.md`.** Coase supplies
-  vocabulary for *typing `δ` as a non-zero invariant with an
-  algebra*. Best Jeanist supplies vocabulary for *typing the
+- **`measure/COASE-FRICTION-AND-SPECIALISTS.md`.** Coase supplies
+  vocabulary for *typing `δ` as a coordinate on a substrate-side
+  discontinuity*. Best Jeanist supplies vocabulary for *typing the
   bound as measure-theoretic in character*. Coase types the
-  obstruction; Best Jeanist types the reach.
+  obstruction's existence-vs-algebra wedge; Best Jeanist types
+  the reach. Both anchor on the substrate side of the
+  algorithm/substrate split.
 - **`memos/BOWEN-DRILLING-AND-DENSITY.md`.** Bowen supplies a
   *configurational* framing (packing-with-measure-zero-hole) and
   a *rhetorical-with-content* warning. Best Jeanist promotes

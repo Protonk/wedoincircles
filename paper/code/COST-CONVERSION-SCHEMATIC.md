@@ -91,4 +91,4 @@ Three claims read off the picture:
 - Build script: [paper/code/build_cost_conversion_schematic.py](paper/code/build_cost_conversion_schematic.py)
 - Companion outline section: [paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md) §1.5 (with re-references at §3, §4, §6.2)
 - Companion closure-class figure: [paper/code/COASE-PHASE.md](paper/code/COASE-PHASE.md) (the §6.5 phase plot, where Separation and Native drift live)
-- Methodological precedent for transaction-cost vocabulary: [memos/COASE-FRICTION-AND-SPECIALISTS.md](memos/COASE-FRICTION-AND-SPECIALISTS.md)
+- Methodological precedent for transaction-cost vocabulary: [measure/COASE-FRICTION-AND-SPECIALISTS.md](measure/COASE-FRICTION-AND-SPECIALISTS.md)

@@ -313,3 +313,82 @@ asymptotic in `n` as well as in `r`; for small `n`, the bound is
 meaningfully tighter at large `r` than `(1/2) B_1(n)` would suggest.
 The decay ratio `S_r / S_(r-1) -> 1/2` is the universal-in-`n`
 asymptotic; the bound-comparison ratio is not.
+
+---
+
+## Asymptotic expansion of `B_1(n) / Delta_n`
+
+The first-band concentration ratio admits a closed-form asymptotic
+expansion in `1/n^2`, with rational-in-`pi^2` coefficients to all
+orders. Through `O(1/n^6)`:
+
+```text
+B_1(n) / Delta_n = 6/pi^2
+                 + 12 (15 - pi^2) / (5 pi^2 n^2)
+                 + 2 (34 pi^4 - 1260 pi^2 + 7875) / (175 pi^2 n^4)
+                 - 4 (22 pi^6 - 1530 pi^4 + 23625 pi^2 - 110250) /
+                   (2625 pi^2 n^6)
+                 + O(1/n^8).
+```
+
+Numerical leading-correction constant: `12(15 - pi^2)/(5 pi^2) ≈
+1.24756`. The sign of the leading correction is **positive**, so the
+excess `B_1(n)/Delta_n - 6/pi^2` approaches zero from above as
+`n -> infty` — matching the table above (`0.7297, 0.6556, 0.6328,
+0.6203, 0.6087 -> 0.6079271 ...`), where the inequality `B_1(n) >=
+(6/pi^2) Delta_n` from §"Theorem" is approached, not realized, at
+each finite `n`.
+
+### Derivation
+
+Set `u = pi/n` and substitute the closed forms `B_1(n) = (L_n^4 /
+(2 pi^2)) * n^2 (n^2 + 3) / (n^2 - 1)^3` and `Delta_n = L_n^2 *
+[1 - (pi/n) cot(pi/n)]`. The ratio becomes
+
+```text
+B_1(n)/Delta_n = 2 pi^2 sin^2(u) (pi^2 + 3 u^2) /
+                 [(pi^2 - u^2)^3 * (1 - u cot u)],
+```
+
+a rational expression in `sin u`, `cos u`, and polynomials in `u` and
+`pi`. Taylor expansion around `u = 0` gives the coefficients above.
+
+### Numerical agreement
+
+Computed at 200-bit precision by
+[corners/hurwitz_first_band_excess.sage](corners/hurwitz_first_band_excess.sage):
+
+| `n` | exact `B_1/Delta` | leading + `c_1/n^2` | through `c_3/n^6` |
+|---:|---:|---:|---:|
+| 3 | 0.7297110451 | 0.7465451698 | 0.7297444674 |
+| 5 | 0.6555644296 | 0.6578296063 | 0.6555650004 |
+| 7 | 0.6327917727 | 0.6333875633 | 0.6327918115 |
+| 10 | 0.6202588877 | 0.6204027280 | 0.6202588900 |
+| 40 | 0.6087062638 | 0.6087068285 | 0.6087062638 |
+| 100 | 0.6080518437 | 0.6080518581 | 0.6080518437 |
+| 10000 | 0.6079271143 | 0.6079271143 | 0.6079271143 |
+
+By `n = 10000`, the truncation through `O(1/n^6)` matches the exact
+value to floating-point precision; for `n >= 10`, the leading
+`c_1/n^2` correction is good to better than 1 part in 4000.
+
+### Inheritance across the Archimedean squeeze
+
+The expansion is *invariant* across the inscribed/circumscribed
+squeeze of [corners/hurwitz_gap_circumscribed.sage](corners/hurwitz_gap_circumscribed.sage).
+Both `B_j(n)` and `Delta_n` scale by the same `sec^2(pi/n)` factor
+between inscribed and circumscribed regular `n`-gons, so the ratio
+`B_1(n)/Delta_n` is identical on the two sides; the leading
+correction `~ 1.24756/n^2` and all higher-order coefficients above
+transfer verbatim. The first-band concentration story — `6/pi^2`
+asymptote, with this explicit pre-asymptotic correction — therefore
+holds uniformly across the squeeze without modification.
+
+### What this closes
+
+The open question at [paper/POLYGONAL-LEDGER.md](paper/POLYGONAL-LEDGER.md)
+§"Open" — "whether the sharpness constant `6/pi^2` has tractable
+higher-order corrections (the `B_1(n)/Delta_n` excess decays as
+`O(1/n^2)`)" — is closed: yes, fully tractable, with explicit
+rational-in-`pi^2` coefficients. The leading rate is `O(1/n^2)` as
+predicted, with the explicit constant `12(15 - pi^2)/(5 pi^2)`.

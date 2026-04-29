@@ -396,3 +396,38 @@ above is what such a brief would be expanding on.
   averaged-over-range targets. Beck's 1994 paper provides a fully
   worked example that the Fourier substitution suffices, which
   affirms the K-H-L-A program's strategic choice.
+
+### From [iso/HURWITZ-1902-LW-AUDIT.md](iso/HURWITZ-1902-LW-AUDIT.md)
+
+- **Sobolev-register L-W-safety audit closed.** Hurwitz 1902's
+  Parseval derivation `Δ = L² − 4πA = 4π² Σ m(m − 1) |c_m|²` is
+  L-W-safe in content under the OLD-TIME-RELIGION content-not-
+  calendar criterion. The proof terminates at Fourier 1822 +
+  Parseval 1799 + Green 1828 + Cauchy 1821 / Weierstrass 1872 +
+  complex-number algebra (Cauchy / Argand 1806 / Gauss) + the
+  Archimedean diameter-to-circumference ratio. No Lindemann-
+  Weierstrass / Baker / Gelfond-Schneider / Thue-Siegel-Roth content
+  is invoked; `π` enters the identity only as the Euclidean
+  normalization constant from Green's theorem, not as an
+  algebraic-vs-transcendental claim.
+
+- **Inheritance.** The Hurwitz Parseval content used at
+  [corners/HURWITZ-GAP.md](corners/HURWITZ-GAP.md),
+  [corners/HURWITZ-FIRST-BAND-CONCENTRATION.md](corners/HURWITZ-FIRST-BAND-CONCENTRATION.md),
+  [memos/STRIP-H1-HURWITZ-CLOSURE.md](memos/STRIP-H1-HURWITZ-CLOSURE.md),
+  [memos/ARCHIMEDEAN-SIGNATURE.md](memos/ARCHIMEDEAN-SIGNATURE.md)
+  §"Cross-Row Theorem", and the just-derived Archimedean squeeze /
+  first-band excess work all inherit L-W-safe provenance through
+  this audit.
+
+- **Audit-task list status.** With Hurwitz 1902 discharged, two of
+  the three iso/ register audit targets named at
+  [iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md)
+  §2.4 remain open: **Fejes-Tóth 1950** (geometric register, audits
+  the polygonal exterior-parallel-curve technique) and
+  **Schmidt 1960** (probabilistic register, audits the second-moment
+  inequality used by Beck Lemma 9.71). Each remains a candidate
+  future -BRIEF. The Sobolev register is now the only fully
+  certified iso/ register — and is also the program's load-bearing
+  route for rate-sharp statements about `Δ_n` decay on the inscribed
+  regular `n`-gon family.

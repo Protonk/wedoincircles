@@ -15,22 +15,22 @@ unification.
 
 Contents:
 
-- `CONTINUED-FRACTIONS-CROSSWALK.md` — meta-document on
-  continued-fraction convergents as the recurring primitive across
-  four independent memos (this folder's two briefs plus
-  Landfall's Gosper finite-closure template and the Lefèvre–Muller pseudocode
-  embedded in `3DT-BRIEF.md`).
+- `SIX-LENS-SYNTHESIS.md` — third-register cross-source synthesis on
+  top of the briefs: six lenses (Avila–Jitomirskaya, Berthé–Reutenauer,
+  Lefèvre–Muller, Marklof–Strömbergsson, Beck, K-H-L-A consumption
+  interface) on the continued-fraction convergent substrate. Analog of
+  `fft/FOUR-FRAMEWORK-SYNTHESIS.md` and `iso/THREE-REGISTER-SYNTHESIS.md`.
+- `CONTINUED-FRACTIONS-CROSSWALK.md` — index meta-document on
+  continued-fraction convergents as the recurring primitive across the
+  six lenses. Pre-work to the synthesis.
 - Source-extraction briefs:
   - `10-MARTINIS-BRIEF.md` — Avila–Jitomirskaya almost-Mathieu;
     `β(α) = limsup (ln q_{n+1}) / q_n` Liouville/Diophantine cut.
   - `3DT-BRIEF.md` — Three-Distance Theorem (Berthé–Reutenauer
     combinatorial; Lefèvre–Muller algorithmic; Marklof–Strömbergsson
     lattice-geometric).
-
-A cross-source synthesis on top of the briefs is not yet written; it
-would be the analog of `fft/FOUR-FRAMEWORK-SYNTHESIS.md` or
-`iso/THREE-REGISTER-SYNTHESIS.md`. The crosswalk memo is partial
-pre-work toward such a synthesis.
+- `BETA-PI-LW-AUDIT.md` — L-W-safety audit on the `β(π) = 0` chain via
+  Mahler 1953 / Hata 1993 / Salikhov 2008 plus classical CF algebra.
 
 New briefs follow `CONTRIBUTING.md` source-extraction register;
 L-W-safety audit per `memos/OLD-TIME-RELIGION.md`; trust boundary
