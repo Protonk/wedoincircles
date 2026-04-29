@@ -1,5 +1,14 @@
 # FOR-BREAKFAST
 
+![A two-panel figure titled "The reduction collapse: k/n → p/q many-to-one from the integer lattice to reduced rationals." Top panel: scatter plot with horizontal axis x = k/n ∈ [0, 1] and vertical axis "polygon order n" running from 2 at the bottom to 30 at the top. About 435 small dots in two colors — blue for gcd(k, n) = 1 (already reduced) and orange for gcd(k, n) > 1 (collapses on reduction). Dots form curving rows at each n level. Vertical pale-purple bands at x = 1/2, 1/3, 2/3 with a pale-teal band at x = 1/29; annotations at top read "1/2: 15→1", "1/3: 10→1", "2/3: 10→1", and "1/29: 1→1 (lossless)". Center divider: bold italic label "the reduction step k/n → p/q (the operative arithmetic step BIND-Erasure refuses)". Bottom panel: Thomae popcorn at the same Farey horizon N = 30 — vertical stems at every reduced p/q with q ≤ 30, height 1/q, tallest stem at x = 1/2 reaching y = 0.5. Subtitle: "Same Farey horizon N = 30. Integer lattice: 435 distinguishable (k, n) points. Reduced popcorn: 277 stems. Collapse ratio at p/q is ⌊N/q⌋ → 1."](../figures/reduction_collapse.png)
+
+*The frontispiece is the boundary as an operation: the reduction
+`k/n → p/q`. Top panel — the integer-sample regime, where each pair
+`(k, n)` is its own object. Bottom panel — Stern-Brocot land, where
+the same data has been reduced and decorated by `1/q` (Thomae's
+popcorn). The middle label names what the program refuses as an
+operative arithmetic step. Full tour at §The reduction step.*
+
 The substrate has algebraic-arithmetic rigidity at integer samples.
 The program's operative apparatus stays inside that regime by
 construction. The instant the samples aren't integer, you are in
@@ -356,6 +365,77 @@ sibling discipline on a different axis (post-1882 results don't
 smuggle transcendence-theory machinery). Both are substrate-side
 disciplines that keep the program in a regime where its
 measure-theoretic refusals carry weight.
+
+## The reduction step
+
+The boundary between the regimes is an *operation*: the reduction
+`k/n → p/q`. Above the line, you label `(k, n)` unreduced and the
+integer-sample regime holds. Below the line, you take the same
+rational `k/n`, reduce it to lowest terms `p/q`, and let `q` become
+the operative arithmetic object — and you are in Stern-Brocot land.
+The figure draws the operation explicitly.
+
+![A two-panel figure titled "The reduction collapse: k/n → p/q many-to-one from the integer lattice to reduced rationals." Top panel: scatter plot with horizontal axis x = k/n ∈ [0, 1] and vertical axis "polygon order n" running from 2 at the bottom to 30 at the top. About 435 small dots in two colors — blue for gcd(k, n) = 1 (already reduced; one-to-one with popcorn stem) and orange for gcd(k, n) > 1 (collapses to a smaller-denominator stem). Dots form curving rows at each n level, fanning outward from the center of the strip. Vertical pale-purple bands cut through the cloud at x = 1/2, 1/3, and 2/3, with a pale-teal vertical band at x = 1/29 near the left edge. Annotations at the top of the panel read "1/2: 15→1" at center, "1/3: 10→1" and "2/3: 10→1" at staggered lower positions, and "1/29: 1→1 (lossless)" near the left edge. A legend at the bottom of the panel names the two colors. Center divider: bold italic label "the reduction step k/n → p/q" with subtitle "(the operative arithmetic step BIND-Erasure refuses)". Bottom panel: Thomae popcorn at the same Farey horizon N = 30 — vertical stems at every reduced p/q with q ≤ 30, height 1/q, tallest stem at x = 1/2 reaching y = 0.5, identical to the popcorn figure earlier in this memo, with the same purple and teal vertical bands aligning to the top panel's columns. Subtitle records: "Same Farey horizon N = 30. Integer lattice: 435 distinguishable (k, n) points. Reduced popcorn: 277 stems. Collapse ratio at p/q is ⌊N/q⌋ → 1."](../figures/reduction_collapse.png)
+
+Two panels at the same Farey horizon `N = 30`.
+
+**Top — integer lattice.** Every integer pair `(k, n)` with
+`1 ≤ k < n ≤ 30`, plotted at `(k/n, n)`. 435 distinguishable points.
+Color encodes `gcd(k, n)`: blue when the pair is already in lowest
+terms (`gcd = 1`, in bijection with a unique popcorn stem below) and
+orange when the pair will collapse on reduction (`gcd > 1`, projecting
+onto a stem with smaller denominator). The columns at the most lossy
+rationals are visible at a glance: `1/2` carries 15 stacked points
+(the `n ∈ {2, 4, 6, …, 30}` tower), `1/3` and `2/3` each carry 10,
+and the lossless `1/29` row sits as a single isolated dot.
+
+**Bottom — popcorn.** The same 277 stems that appear in the Thomae
+figure earlier in this memo. Reduced rationals `p/q` with `q ≤ 30`,
+height `1/q`. Identical structure, identical Lebesgue-null support.
+
+**The reduction step** sits between them, labeled across the
+divider. It maps the top panel onto the bottom by sending each
+`(k, n)` to its reduced representative `(p, q) = (k/g, n/g)` with
+`g = gcd(k, n)`. The collapse ratio at each rational is
+`⌊N/q⌋ → 1`. Annotated landmarks: `1/2` (15 → 1, the most lossy
+rational at `N = 30`), `1/3` and `2/3` (10 → 1 each), and `1/29`
+(1 → 1, lossless because nothing else with `n ≤ 30` reduces there).
+
+Three things the figure makes operative.
+
+1. **The two regimes are the same data, two readings.** Top and
+   bottom show the same Farey horizon. The popcorn picture
+   immediately below in *Why crossing costs measure* is the bottom
+   panel of this figure. The strip portrait at the top of the memo
+   is the geometric realization of the same `(k, n)` lattice, with
+   corner heights and crystallographic contours added. The
+   reduction step is what takes you from the integer lattice
+   (geometrically rich, individuated) to the Stern-Brocot popcorn
+   (denominator-decorated, Lebesgue-null).
+
+2. **The collapse is information loss.** The integer side has 435
+   distinguishable points; the popcorn has 277 stems. The 158-point
+   difference is what the reduction throws away. The popcorn's tall
+   stems are exactly the most-collapsed columns — `1/2` is tall
+   (height `1/2`) because every even `n` projects there; `1/29` is
+   short (height `1/29`) because only `n = 29` does. The popcorn's
+   visual prominence at small denominators is collapse-multiplicity
+   read as height.
+
+3. **Diagnostic #1 has a picture.** The diagnostics section above
+   asks: *Are you reducing `k/n` to lowest terms `p/q` and arguing
+   about `q`?* When you next encounter an argument that wants to,
+   this figure is what just happened. The argument has executed the
+   projection drawn here. Whether that's legitimate depends on what
+   the argument needs from `q` — but the reduction step is the
+   boundary-crossing operation, and pretending the argument stayed
+   integer-sample-side after invoking it is the failure mode the
+   diagnostics are protecting against.
+
+The figure does no work the memo's prose isn't already doing. It
+provides a single anchor for the operation the rest of the
+sensitizer orbits around. Build script:
+[measure/build_reduction_collapse.py](measure/build_reduction_collapse.py).
 
 ## Why crossing costs measure
 
