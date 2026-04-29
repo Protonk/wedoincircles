@@ -12,7 +12,12 @@ fact in standard measure theory, Diophantine analysis, or the program's
 audited literature. Implications and methodological readings live in
 [measure/THE-FIRST-BRIDGE.md](measure/THE-FIRST-BRIDGE.md),
 [paper/FIRST-PROOF.md](paper/FIRST-PROOF.md), and
-[paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md).
+[paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md). The
+σ-algebra coarsening reading of these five faces — which faces
+transcribe to direct fiber-non-constant L-observables in the
+[measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §The kernel sense,
+and which require separate handling — is recorded at
+§Kernel partition below.
 
 ---
 
@@ -162,3 +167,57 @@ cannot proceed by appeal to the null-vs-full distinction alone. Finer
 distinctions among transcendentals are per-instance audit questions;
 typical distinctions of program interest engage post-1882 machinery
 and must pass `memos/OLD-TIME-RELIGION.md`.
+
+---
+
+## Kernel partition
+
+The five §-faces above transcribe unevenly into
+[measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §The kernel.
+The kernel works on the integer-indexed lattice
+`L = {(k, n) : 1 ≤ k < n, n ≥ 3}` with the reduction map `R : L → F`
+to the Farey set; its `R^*`-pullback is the fiber-constant L-functions,
+and a face is a *direct* K2 instance iff it transcribes to a
+fiber-non-constant L-observable. Three of the five faces transcribe
+directly. Two do not.
+
+| Substrate angle | K2 status | Notes |
+|---|---|---|
+| §1 — Haar / `β(α)` on rotation orbit | **not a direct L-observable** | Haar measure lives on `T = ℝ/ℤ`; `β(α)` is a function of irrational `α`. Translating either to `L` requires a separate transport that the kernel does not yet construct. |
+| §2 rate — `Δ_n` decay along the regular `n`-gon family | direct L-observable | `f₃(k, n) = Δ_n = L_n²(1 − (π/n)\cot(π/n))` is K2 instance #3. |
+| §2 constant — Bonnesen-strengthening sharp constant | direct L-observable | The Bonnesen ratio is a scalar function of `n` on the regular `n`-gon family; e.g., `L_n = 2n\sin(π/n)` plays the role through `f₂` in K2. |
+| §2 almost-every — Khintchine / Beck full-measure register | not a scalar L-observable | The almost-every register is a measure operation on a parameterized family of curves, not a scalar function on `L`. To become K2-eligible it requires a stated parameter family and a chosen scalar reduction. |
+| §3 — Hurwitz Fourier on lattice `m ≡ 1 mod n`; `B_1(n)/Δ_n → 6/π²` | direct L-observable | `f₂(k, n) = L_n` (equivalently the Hurwitz first Fourier coefficient `c_1^{(n)} = L_n²/(4π²)`) is K2 instance #2. The closed-form `Δ_n`, `B_j(n)` ledger gives the analytic content underwriting this and §2's rate face. |
+| §4 — Cyclotomic ladder `[K_n^+ : ℚ] = φ(n)/2`, `n > 2` | direct L-observable | `f₁(k, n) = φ(n)/2` is K2 instance #1, with explicit witness `f₁(1, 5) = 2 ≠ 4 = f₁(3, 15)`. The kernel's `n ≥ 3` restriction lines up with §4's own `n > 2` hypothesis. |
+| §5 — L-W null/full Lebesgue dichotomy | **fiber-constant on `L` under literal reading** | Every `cos(2π/n)` for integer `n` is algebraic; the algebraic-vs-transcendental dichotomy assigns the same value to every point of `L`. The finer cyclotomic-depth content is §4's `f₁`, not §5's dichotomy. |
+
+The three direct entries (§2 rate, §3, §4) ground FOR-BREAKFAST K2's
+proof of σ-algebra coarsening: each is fiber-non-constant on `L` by
+the explicit witnesses recorded in K2's proof. The two non-direct
+entries (§1, §5) flag scope:
+
+- **§1 transport.** Promoting the §1 obstruction to a direct K2
+  instance requires a measurable map from rotation-orbit Haar /
+  β(α) data to an L-observable. The kernel does not supply this;
+  it is open work.
+- **§5 fiber-constancy.** Promoting §5 to a direct K2 instance
+  requires a finer reading than the algebraic-vs-transcendental
+  dichotomy. The Niven set `{n : cos(2π/n) ∈ ℚ} = {1, 2, 3, 4, 6}`
+  and the cyclotomic-depth profile `[K_n : ℚ]` are finer; both are
+  already handled by §4's `f₁`. So §5 contributes no additional
+  L-observable beyond what §4 already supplies.
+
+§2's almost-every register sits between: it is not fiber-constant in
+a vacuous sense (it does not produce an L-value at all without a
+stated parameter family), so it is not a K2 *instance* until the
+family is fixed. The rate and constant registers within §2 are
+direct K2 instances; the almost-every register is a separate
+measure operation.
+
+**Caveat.** The Kernel partition is a reading of the §1-5 typing
+through one specific lens (FOR-BREAKFAST's atomic σ-algebra
+coarsening). The `σ`-algebra coarsening reading is necessary
+infrastructure for the load-bearing measure-theoretic bridge at
+[measure/THE-FIRST-BRIDGE.md](measure/THE-FIRST-BRIDGE.md), not the
+bridge itself. The §-face content and obstructions above stand on
+their own at the source-side typing level.

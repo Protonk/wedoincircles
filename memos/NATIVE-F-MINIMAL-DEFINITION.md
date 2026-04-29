@@ -181,7 +181,10 @@ form. There is no log-side native closure ladder with unbounded depth.
 Contradiction.
 
 The witness localizing the contradiction is `n = 7`: the first cubic trace
-field `Q(cos(2pi/7))` and the first non-constructible half-angle node.
+field `Q(cos(2pi/7))` and the first non-constructible half-angle node;
+this is the same `n = 7` highlighted as the first-cubic row in the
+ψ-stratification figure of
+[n-gons/counting/PSI-STRATIFICATION.md](n-gons/counting/PSI-STRATIFICATION.md).
 The asymptotic form of the contradiction is the unbounded ladder
 `phi(n)/2`.
 
@@ -201,6 +204,22 @@ two-parameter flatness.
 The citation is methodological only. The almost-Mathieu paper supplies
 the proof-shape precedent, not any quantitative closure-depth estimate
 or spectral input for this no-go theorem.
+
+A sibling structural result — *not* downstream of the present no-go,
+*not* a corollary of it, but reading the same integer-vs-continuum
+asymmetry through a different formal language — is the σ-algebra
+coarsening theorem at
+[measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §The kernel.
+There the reduction map `R : L → F` collapses the integer-indexed
+lattice onto the Farey set, and three concrete L-observables
+(cyclotomic-ladder degree `f₁ = phi(n)/2`, polygon perimeter,
+isoperimetric gap rate) are shown not to lie in `R^*(M(F))`. The
+shared motif is "integer label opens new structure that the
+continuum-parameter side cannot match"; the proof routes are
+independent — the present no-go uses closure-depth comparison in two
+algebraic closure classes, FOR-BREAKFAST K uses fiber-coarsening on
+an atomic σ-algebra. Either could be true while the other failed.
+The corroboration is structural rhyme, not theorem dependency.
 
 ---
 

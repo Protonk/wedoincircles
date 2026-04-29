@@ -19,13 +19,20 @@ about *this coordinate's algebra*, not about the substrate-side fact
 itself. Its place in `measure/` reflects that:
 
 - The substrate-side fact is upstream and load-bearing. It lives at
-  [measure/SUBSTRATE-OBSTRUCTIONS.md](measure/SUBSTRATE-OBSTRUCTIONS.md).
+  [measure/SUBSTRATE-OBSTRUCTIONS.md](measure/SUBSTRATE-OBSTRUCTIONS.md),
+  with one structural facet proved as a σ-algebra coarsening
+  theorem at [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md)
+  §The kernel for three concrete L-observables (cyclotomic-ladder
+  degree, polygon perimeter, Hurwitz isoperimetric gap).
 - The substrate-side / coordinate-side posture comes from
   [measure/COASE-FRICTION-AND-SPECIALISTS.md](measure/COASE-FRICTION-AND-SPECIALISTS.md).
 - The bridge from coordinate to substrate boundary is named at
   [measure/THE-FIRST-BRIDGE.md](measure/THE-FIRST-BRIDGE.md): `δ`
   must be a faithful measurable coordinate for the closure boundary,
-  not an arbitrary potential function.
+  not an arbitrary potential function. T4 of FOR-BREAKFAST §K.6
+  splits this task: T4a (common indexing domain) is achieved on the
+  substrate side; T4b (boundary object with `δ`-faithfulness) is
+  the bridge memo's open task.
 - The present memo picks the cocycle realization as one specific
   coordinate choice and explores its algebra. Other reasonable
   coordinate choices are open — the substrate-side discontinuity does
@@ -68,6 +75,16 @@ is not. The lineage is Coase 1937 → Williamson, Hart-Moore, Varian →
 the present memo: in each case, a substrate-side observation got a
 local formalization whose precise shape was empirical-plural rather
 than canonically derived.
+
+The substrate-side discontinuity is not pure posture; one structural
+facet is proved at [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md)
+§The kernel as a σ-algebra coarsening theorem. There the reduction
+`R: L → F` collapses the integer-indexed lattice onto the Farey set,
+and three concrete L-observables (cyclotomic-ladder degree, polygon
+perimeter, Hurwitz isoperimetric gap) fail to lie in `R^*(M(F))`.
+The present memo's cocycle coordinate is one choice on top of the
+substrate-side discontinuity that K reads from a different angle;
+they are sibling structural readings, not competing ones.
 
 ---
 
@@ -233,10 +250,16 @@ independent of `N` — i.e., `δ(N samples) ≥ N · c` for some `c > 0`.
 The candidate proof shape is measure-theoretic: pair the `{Δ_k}`
 realization with the substrate's Haar / counting / dimension /
 Shannon registers and show that no measure-preserving averaging
-across samples zeros the per-sample residual. The argument is
-parallel to Lemma A's substrate-side measure-theoretic refusal but
-at the algorithm-side amortization question rather than at the
-information-distinguishing question.
+across samples zeros the per-sample residual. The substrate-side
+prototype for this shape is FOR-BREAKFAST K
+([measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §The kernel),
+which proves σ-algebra coarsening with fiber-varying L-observables
+not in `R^*(M(F))`. The algorithm-side amortization claim wants the
+analogous structure with `δ` as a fiber-varying observable on the
+boundary state space whose construction is T4b — whence the
+argument is parallel to Lemma A's substrate-side measure-theoretic
+refusal at the algorithm-side amortization question rather than at
+the information-distinguishing question.
 
 **Status.** Open and substantive. First attack made in
 [memos/AMORTIZATION-AT-THE-BOUNDARY.md](memos/AMORTIZATION-AT-THE-BOUNDARY.md):
@@ -465,7 +488,25 @@ remains; the program would need a different chart, not a different
 manifold. The five witnesses at
 [measure/SUBSTRATE-OBSTRUCTIONS.md](measure/SUBSTRATE-OBSTRUCTIONS.md)
 are independent of any choice of `δ`-coordinate and supply the
-substrate-side fact directly.
+substrate-side fact directly. Three of those five witnesses
+(isoperimetric rate, Hurwitz Fourier, cyclotomic ladder) transcribe
+to direct fiber-non-constant L-observables in FOR-BREAKFAST K2's
+σ-algebra coarsening; two are non-direct under the literal source-side
+reading (the Haar / `β(α)` face on `T = ℝ/ℤ` needs separate transport;
+the L-W null/full face is fiber-constant on `L`). Per
+[measure/SUBSTRATE-OBSTRUCTIONS.md](measure/SUBSTRATE-OBSTRUCTIONS.md)
+§Kernel partition.
+
+**(δ) The T4 split tells the bridge from this memo what's owed.** T4a
+(common indexing domain) is achieved on the substrate side: `L` is the
+shared state space for the three direct K2 L-observables. T4b
+(boundary object with `δ`-faithfulness) is open and is the content of
+[measure/THE-FIRST-BRIDGE.md](measure/THE-FIRST-BRIDGE.md). This memo
+is *one specific* coordinate's algebra; what would let the cocycle
+realization be a *faithful* coordinate (not just a useful one) is the
+bridge memo's open task, not this memo's. The cocycle's promotion
+path goes through THE-FIRST-BRIDGE, not through any of the seven
+sub-questions in isolation.
 
 The natural next move follows from the AMORTIZATION verdict: push
 PHASE-DEFECT sub-debt 1 (operational compressibility) toward
@@ -512,6 +553,15 @@ needs.
   Coase posture
   ([measure/COASE-FRICTION-AND-SPECIALISTS.md](measure/COASE-FRICTION-AND-SPECIALISTS.md)
   §3) explicitly accepts this plurality.
+- **Not a claim that the impossibility region is invariant across
+  reasonable `δ`-algebras.** The substrate-side discontinuity is
+  upstream of the chart (Coase posture; FOR-BREAKFAST K's σ-algebra
+  coarsening provides one worked instance for `f₁, f₂, f₃`), but
+  cross-chart invariance of the resulting impossibility region at
+  `T(P)` is a separate invariance theorem (T6 in FOR-BREAKFAST §K.6's
+  notation) not delivered by either the Coase posture or K. This
+  memo's seven sub-questions are *this coordinate's* algebra; cross-
+  coordinate comparisons live in T6 and are open.
 - **Not authorization to rewrite [paper/FIRST-PROOF.md](paper/FIRST-PROOF.md)
   or [paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md).**
   Promotion requires a named sub-question to earn its way.

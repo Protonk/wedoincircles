@@ -223,11 +223,20 @@ the *unique games conjecture* — both structural assertions defended
 by track record rather than derivation, used as load-bearing
 primitives in many impossibility proofs. Both leave a permanent
 asterisk on the results that depend on them, but the results are
-real. The program's `δ` is structurally analogous, with one important
-difference: `δ` is more transparently substrate-grounded than ROM or
-UGC, because Coase is *explicitly* the methodological anchor and the
-substrate-side witnesses are catalogued at
-[measure/SUBSTRATE-OBSTRUCTIONS.md](measure/SUBSTRATE-OBSTRUCTIONS.md).
+real. The program's `δ` is structurally analogous, with two
+distinguishing features: `δ` is more transparently substrate-grounded
+than ROM or UGC, because Coase is *explicitly* the methodological
+anchor and the substrate-side witnesses are catalogued at
+[measure/SUBSTRATE-OBSTRUCTIONS.md](measure/SUBSTRATE-OBSTRUCTIONS.md);
+and the program has at least one proved structural reading of the
+substrate-side discontinuity in the form of FOR-BREAKFAST K
+([measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §The kernel),
+a σ-algebra coarsening theorem with transport failure for three
+concrete L-observables (cyclotomic-ladder degree, polygon perimeter,
+Hurwitz isoperimetric gap). That distinguishes the δ situation
+moderately from ROM/UGC's purely-track-record posture: the
+substrate-side fact is not only empirically witnessed but also has
+one formally-proved structural facet.
 
 The posture is what transfers. It is what lets the paper say:
 *there's a discontinuity at the boundary, the existing thresholds
@@ -242,6 +251,14 @@ local chart that lets the impossibility region come into focus.
 - It is **not** a claim that the algebra of `δ` is canonical. Different
   reasonable algebras would give different impossibility-region
   shapes; all chart the same substrate-side discontinuity.
+- It is **not** a claim that all reasonable `δ`-algebras yield the
+  *same* impossibility region at `T(P)`. The Coase posture supports
+  upstream-ness of the substrate boundary relative to any chosen
+  coordinate (different shapes, same discontinuity); cross-chart
+  invariance of the resulting impossibility region is a separate
+  invariance theorem (T6 in
+  [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §K.6's
+  notation), not entailed by the posture alone.
 - It is **not** a claim that Coase derived something we are using as
   proof material. Coase asserted a structural feature of the world; he
   did not prove it.
@@ -282,6 +299,9 @@ local chart that lets the impossibility region come into focus.
 - the claim that any specific algebra of `δ` is canonical — Coase's
   own work, and the lineage that grew on top of it, treats the
   algebra as plural and locally refinable;
+- the claim that all reasonable `δ`-algebras yield the same
+  impossibility region at `T(P)` — that is a separate invariance
+  theorem (T6) not delivered by the posture transfer;
 - pp. 397–405 of the original — not read here;
 - empirical economics claims — not the program's domain.
 
