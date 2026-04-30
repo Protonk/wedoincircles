@@ -2,6 +2,8 @@
 
 Why a tilted straight-line sweep across the Archimedean strip hits at most one vertex at a time, why a sweep with any positive bandwidth eventually hits more, and how the two facts coexist.
 
+The two halves of this memo carry different proof status. The thick-sweep claim — for any slope `s ≥ 0` and any bandwidth `δ > 0`, some `N` produces a band containing two or more vertices — is **proved** by pigeonhole below. The thin-sweep claim — distinct `(n, k), (n', k')` give distinct sweep coordinates `c_{n,k}` for slope `s = 1/√3` and all `N` — is **open Lemma T2** of [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §K.5. The empirical floor `≈ 1.4 × 10⁻⁷` through `N = 100` and the algebraic structure of the equation are consistent witness; the all-`N` no-coincidence statement is conjectural.
+
 ## The strip
 
 Each regular polygon `n = 3, …, N` contributes `n` vertices. In the strip view, vertex `k` of polygon `n` sits at angular coordinate `x = (2k+1)/(2n)` on the interval `[0, 1)` (with `0` and `1` identified), at height `y = sec(π/n) − 1`:
@@ -30,7 +32,9 @@ The thin sweep hits two vertices simultaneously iff `c_{n,k} = c_{n',k'}` for di
 sec(π/n) − sec(π/n') = s · ((2k+1)/(2n) − (2k'+1)/(2n')).
 ```
 
-The left side lies in the totally real cyclotomic field `ℚ(cos(π/n), cos(π/n'))`. The right is `s` times a rational. For `s = 1/√3`, the equation forces `√3` to relate to a specific cyclotomic element in a way that fails case by case. Empirically, no exact coincidences appear through `N = 100`; the closest pair sits at `c`-distance `≈ 1.4 × 10⁻⁷`. This algebraic rigidity is what keeps the thin sweep from producing anything but `1`s under any single slope.
+The left side lies in the totally real cyclotomic compositum `ℚ(cos(π/n), cos(π/n'))`. The right is `s` times a rational. For `s = 1/√3`, the right side acquires the quadratic irrationality `√3 ∈ ℚ(ζ_{12})`, which sits *inside* cyclotomic composita with the cosines on the left for many `(n, n')`. The all-`N` no-coincidence claim is **Lemma T2** of [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §K.5, and it is **open** — *not* parallel to T1's proof in the same memo.
+
+The non-parallel obstruction is specific. For T1 (off-backbone empty contour at `X = ±1/2`, no slope quadratic irrationality), squaring + trace down to `ℚ` + Ramanujan-sum reduction `4 c_n(2k+1) = μ(n) − 3 φ(n)` plus a `φ(h)` exclusion bound closes the all-`n` claim uniformly. For T2, the trace step doesn't close the same way: `√3` lives inside `ℚ(ζ_{12})`, which is contained in `ℚ(ζ_n)` whenever `12 | n`, and the relation between `√3` and a specific cyclotomic combination of `cos(π/n), cos(π/n'), cos((2k+1)π/n), cos((2k'+1)π/n')` is what would need to be ruled out — but the same Ramanujan-sum identity that handled T1 doesn't trace `√3` cleanly down to a divisibility constraint. The all-`N` claim therefore needs a different cyclotomic-rigidity argument; the per-`(n, k, n', k')` failure does not aggregate to the structural rigidity claim by the T1 path. Empirically, no exact coincidences appear through `N = 100`; the closest pair sits at `c`-distance `≈ 1.4 × 10⁻⁷`. The algebraic rigidity is the conjectured shape of the proof; the proof is open.
 
 ## The thick sweep
 
@@ -70,4 +74,4 @@ The empirical minimum consecutive gap drops far below the averaging bound. The s
 
 The pigeonhole bound is enough for the existence claim; the actual minimum gap appears to shrink polynomially faster, but the argument doesn't require this.
 
-The two regimes coexist. Vertices get arbitrarily close in the `c`-coordinate as `N` grows, but never coincide. The bandwidth `δ` converts proximity into multiplicity.
+The two regimes coexist (conjecturally, where T2 holds). The proximity claim — `min` consecutive `c`-gap goes to zero — follows from pigeonhole and the empirical staircase; the never-coincide claim is open Lemma T2. The bandwidth-converts-proximity-into-multiplicity claim is the load-bearing content here and is genuinely proved: for any `δ > 0` there is `N` putting two vertices within a band of width `δ`. Whether the never-coincide claim holds at the boundary `δ → 0` is the open question.

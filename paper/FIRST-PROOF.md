@@ -1,6 +1,8 @@
 # FIRST-PROOF
 ## Sketch of the descent impossibility, with construction debts visible
 
+> **v1 articulation snapshot.** The active destination map is now [paper/SECOND-PROOF.md](paper/SECOND-PROOF.md), which states the impossibility through *substrate-side σ-algebra coarsening* (Theorem K, proved) plus an open *cost-algebra commitment* (T4b). The three-claim potential skeleton below — Bridge / Separation / Native drift, with Lemma A as parallel reading — has been retired in favor of that shape. This document is preserved as v1 because its debt register and trust-boundary discipline still record the moves the program made along the way.
+
 Working draft. Sections §4–§6 of the paper sketched in proof form. Load-bearing claims currently *asserted* rather than *earned* are flagged inline as **[Construction debt: …]**. The proof's central open object is the **Bridge Theorem**, named below and listed as debt #1 in the summary at the end.
 
 This is the destination map the paper points toward; closing each debt is the paper's work.

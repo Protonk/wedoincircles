@@ -8,6 +8,15 @@ Route 3 and
 replacement obstruction. Algorithm-side memo; substrate-side delivery
 is parked program work.
 
+This is the substrate-side input THE-FIRST-BRIDGE consumes — the
+"lower-bound shape the bridge needs to consume" of
+[measure/THE-FIRST-BRIDGE.md](measure/THE-FIRST-BRIDGE.md). The bridge
+whose construction it consumes is T4b in
+[measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §K.6 (boundary
+object with `δ`-faithfulness). The form spec'd here is what T4b's open
+load-bearing task needs to acquire its quantitative content; without
+delivery in this form, the bridge's contrapositive does not bite.
+
 ---
 
 ## The spec

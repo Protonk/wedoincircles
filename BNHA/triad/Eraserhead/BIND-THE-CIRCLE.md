@@ -24,6 +24,8 @@ Primitives on the log side: floating-point representation, ε(m) = log₂(1+m) �
 
 Primitives on the circle side: Euclidean lattice vectors, integer trace constraints on rotation matrices, regular polygon incircle tangencies, divisibility n | DH, the ψ-function from the crystallographic restriction theorem (Bamberg–Cairns–Kilminster 2003: ψ(n) > d forces n-fold rotational symmetry to be incompatible with any d-dimensional Euclidean lattice), and the space of 2D Euclidean lattices Γ\SL(2, ℝ) with Γ = SL(2, ℤ) — including lattice-geometric theorems proved on it, such as the Three Distance Theorem via Marklof–Strömbergsson 2017 (see below).
 
+Erasure has a formal counterpart at [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §The kernel: the σ-algebra coarsening theorem there proves that the reduction step Erasure refuses (`k/n → p/q` whenever `q` is operative) collapses three concrete integer-indexed observables — cyclotomic-ladder degree `φ(n)/2`, polygon perimeter `L_n`, Hurwitz isoperimetric gap `Δ_n` — onto fiber-constant data, so they cannot be recovered after crossing. The discipline is the operative refusal; the kernel is the formal cost.
+
 ## The toe-hold
 
 A fixed circle, circumscribed by each of a family of regular n-gons (the circle is the shared incircle; each n-gon is tangent to the circle along one anchor edge, with position 0 of every n-gon coinciding at 0° on the circle). Position k of the n-gon sits at angle k·360°/n.

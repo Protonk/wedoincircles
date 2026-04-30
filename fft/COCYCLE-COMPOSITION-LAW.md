@@ -83,6 +83,17 @@ parallel to sub-debt 3's (per
 formal-layer clean, analytic-layer conditional on a definitional
 move (here, the cost-norm choice).
 
+**What this provides for T4b.** The cocycle-product composition law
+is the algebraic structure required for `δ ≡ cost of {Δ_k}
+compression` to be a *candidate* δ-faithful coordinate for T4b
+([measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §K.6 / [measure/THE-FIRST-BRIDGE.md](measure/THE-FIRST-BRIDGE.md)).
+Without a composition law, δ-faithfulness cannot be stated — the
+bridge needs `δ` to behave coherently under FFT-style composition
+before "faithfulness" has a target. The verdict's partial-yes supplies
+the formal-character skeleton that makes the candidate well-posed; the
+cost-norm choice is what determines whether the resulting candidate
+satisfies T4b's faithfulness condition uniformly.
+
 ---
 
 ## Setup

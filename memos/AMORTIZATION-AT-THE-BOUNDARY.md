@@ -163,6 +163,20 @@ This is downstream-to-upstream signal in the sense the briefing
 described: working on `(4)` reveals that the program's existing direction
 on the substrate side carries algorithm-side payoff at no extra cost.
 
+**T4b connection.** T4b in [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md)
+§K.6 — the open load-bearing piece of the bridge: a boundary object
+with `δ`-faithfulness — is what this reduction is ultimately
+producing for. Route 3 says T4b's δ-faithfulness needs effective H-L
+`n = 1` to deliver per-sample distinguishability of cocycle values
+in cost-norm-compatible form; without that input, T4b cannot acquire
+the quantitative content the bridge requires. The substrate-side
+prototype is K2 of FOR-BREAKFAST K.2: the three concrete L-observables
+`f₁, f₂, f₃` are fiber-non-constant on R-fibers, and so are not in the
+image of the σ-algebra coarsening pullback `R^*` — they don't
+amortize across fibers in K's structural sense. The amortization
+conjecture in this memo is the algorithm-side analog, expressed in
+cost-norm-compatible form on the cocycle product.
+
 ---
 
 ## What this is not — the stuck point

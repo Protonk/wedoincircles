@@ -54,6 +54,39 @@ as a sum of positive paired-band contributions.
 
 ---
 
+## Kernel cross-reference
+
+The closed forms `L_n = 2 n sin(pi / n)` and `Delta_n = L_n^2 [1 -
+(pi/n) cot(pi/n)]` are the source for two of the three concrete
+L-observables of FOR-BREAKFAST K2
+([measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §K.2):
+
+- `f_2(k, n) = L_n` — polygon perimeter, equivalently the Hurwitz
+  first Fourier coefficient `c_1^(n) = L_n^2 / (4 pi^2)`.
+- `f_3(k, n) = Delta_n` — Hurwitz isoperimetric gap, the
+  rate-register substrate-side observable.
+
+The K2 fiber-non-constancy witnesses are explicit at the fiber
+`(1, 3) → (2, 6) ∈ R^{-1}(1/3) ∩ L`:
+
+```text
+L_3 = 6 sin(pi/3) = 3 sqrt(3) ~ 5.196
+L_6 = 12 sin(pi/6) = 6
+Delta_3 ~ 10.66
+Delta_6 ~ 3.39
+```
+
+distinct on either side. Both observables are not in `R^*(M(F))`
+by FOR-BREAKFAST K1 + K2; they are functions of `n` alone, so the
+"`(k, n)` unreduced label" content sits on the `n`-component for
+this memo's role in the kernel. The constant `6 / pi^2 = 1 / zeta(2)`
+established below is independent kernel content from §K2's
+fiber-non-constancy; here it sets the asymptotic ratio
+`B_1(n) / Delta_n` and is not invoked by Theorem K's σ-algebra
+coarsening argument.
+
+---
+
 ## Theorem
 
 For every `n >= 3`:
