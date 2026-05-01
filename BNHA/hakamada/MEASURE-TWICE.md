@@ -58,7 +58,7 @@ about what no algorithm in its hypothesis class can do better than
 
 ### Substrate-side exhaustion — five §5 angles refuse via five measures
 
-Each substrate-side angle in `paper/IMPOSSIBILITY-OUTLINE.md` §5
+Each substrate-side angle in `paper/OUTLINE.md` §5
 refuses descent information at the boundary via a different
 measure-theoretic instrument.
 

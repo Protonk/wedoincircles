@@ -2,7 +2,7 @@
 
 L-W-safety audit on the load-bearing step `finite irrationality measure
 for π ⟹ β(π) = 0` invoked at
-[paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md) §5.1
+[paper/OUTLINE.md](paper/OUTLINE.md) §5.1
 and flagged at [paper/FIRST-PROOF.md](paper/FIRST-PROOF.md) Lemma A
 bullet 1 / debt #8 (the "if load-bearing here, β(π) = 0 needs L-W-safety
 provenance per OLD-TIME-RELIGION" caveat).
@@ -207,7 +207,7 @@ Thue–Siegel–Roth content. The cheapest L-W-safe witness is Mahler
 1953.
 
 The Lemma A first-bullet usage in [paper/FIRST-PROOF.md](paper/FIRST-PROOF.md)
-and §5.1 of [paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md)
+and §5.1 of [paper/OUTLINE.md](paper/OUTLINE.md)
 therefore stands without an L-W-circularity hazard.
 
 **Methodological note.** The audit consumes an existing literature
@@ -229,7 +229,7 @@ hazards.
   **discharged (parallel-reading)**, with the "do not re-claim"
   guidance (do not treat β(π) = 0 as L-W-safe until provenance is
   audited) lifted in favor of a citation pointer.
-- [paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md)
+- [paper/OUTLINE.md](paper/OUTLINE.md)
   §6.7 debt #8 row: same status promotion.
 - [measure/SUBSTRATE-OBSTRUCTIONS.md](measure/SUBSTRATE-OBSTRUCTIONS.md)
   §1: backreference to this audit, retaining the careful "finite

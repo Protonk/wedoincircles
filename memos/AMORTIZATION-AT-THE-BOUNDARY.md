@@ -58,7 +58,7 @@ dyadics). The cocycle realization
 amortizes cleanly. The amortization question is about *forward
 construction cost*, which the audit does not address.
 
-The cost model is the canon's (per IMPOSSIBILITY-OUTLINE §1.2 / §1.3):
+The cost model is the canon's (per OUTLINE §1.2 / §1.3):
 multiplicative cost `μ` and additive cost `α` under the canon's standard
 accounting, with the regularity guard of PHASE-DEFECT excluding
 advice-bearing and growing-state schemes.

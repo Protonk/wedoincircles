@@ -421,7 +421,7 @@ theorem; all are language and structural distinction. Cited at
 [fft/PHASE-DEFECT.md](fft/PHASE-DEFECT.md) (when the prose pass
 earns it, sharpening the option-3 discriminator's "regime boundary
 crossing" toward "commensurability-class crossing"),
-[paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md)
+[paper/OUTLINE.md](paper/OUTLINE.md)
 §1 and §3 (when the floating-point seam-crossing language is
 upgraded to commensurability vocabulary), and (potentially)
 [paper/FIRST-PROOF.md](paper/FIRST-PROOF.md) Setup (when the cost /

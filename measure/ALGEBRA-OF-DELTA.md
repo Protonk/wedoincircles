@@ -296,7 +296,7 @@ non-vanishing-in-the-limit fact is substrate-side.
 with scale. Here the variables are problem size `N`, mode index `k`,
 and precision.
 
-**Scaffolding.** IMPOSSIBILITY-OUTLINE §6.2 requires zeroing `δ` at
+**Scaffolding.** OUTLINE §6.2 requires zeroing `δ` at
 the boundary; the asymptotic question is whether `δ` has positive
 infimum or merely positive value at each finite `N`. PHASE-DEFECT
 §"What this would buy" lists two candidate compressibility
@@ -440,6 +440,26 @@ the memo, not the other way around.
 
 ---
 
+## (8) Floor extension from at-threshold to past-threshold (the continuity bridge for #5)
+
+**Working position.** *Open.* Does the at-threshold floor `δ_min(P)` extend to a past-threshold lower bound? Equivalently: is `δ` lower-semicontinuous (or monotone) along the cost frontier near `T(P)`, such that strict improvement past `T(P)` forces `δ → 0` rather than some `δ ∈ (0, δ_min)`?
+
+**Substrate-side reading.** Floor extension is a coordinate-side question about how `δ` populates the past-`T(P)` regime. The substrate-side discontinuity at the boundary doesn't by itself say how a coordinate measuring conversion friction should behave as a method's cost moves below the canon threshold. Different reasonable coordinates would give different answers; the question is what the cocycle realization (or whatever load-bearing coordinate the program commits to) supports.
+
+**Coase hook.** Coase p. 396's firm-size determination: friction varies with how much coordination work is being done, but does not vanish at intermediate scales. The program needs the analogous structural claim — friction at the floor at `T(P)` extends to friction below `T(P)` rather than dropping discontinuously to some smaller positive value.
+
+**Scaffolding.** Debt #5's route-2 lemma form bundles two halves: (a) any FFT-style method achieving `T(P)` pays `δ ≥ δ_min(P) > 0` at the boundary (existence half); (b) strict improvement past `T(P)` requires `δ → 0` (implication half). Without (8), the two halves are independent claims sharing a label; with (8), they read as two views of one floor-extension fact. The §6.6 contradiction relies on the bridge: the substrate-side `δ > 0` fact contradicts the endpoint *via* (8)'s extension of the at-threshold floor to the past-threshold regime.
+
+**What closes it.** Three candidate forms:
+
+1. **Continuity claim.** `δ` is lower-semicontinuous on the cost frontier near `T(P)`. Standard but requires the coordinate to be analytically well-behaved; depends on the cost-norm commitment (#14) and the composition law in (3).
+2. **Monotonicity claim.** `δ(M)` decreases monotonically as `C(M)` decreases past `T(P)`. Stronger than continuity; requires a directional structure on the cost frontier.
+3. **Quantization claim.** `δ(M)` takes values in `{0} ∪ [δ_min(P), ∞)` for FFT-style M; no values in the open interval `(0, δ_min)` are realized by any M improving past `T(P)`. Strongest; would close the bridge directly without continuity / monotonicity.
+
+**Status.** Open. Couples to (3) (additivity / composition law) and #14 (cost-norm choice). Sub-question (8) is the structural bridge debt #5 has been quietly using; the §6.6 composition rides on it. Cited in debt #5's ledger entry and in the §6.6 contradiction.
+
+---
+
 ## Cross-cutting positions
 
 Three structural observations that fall out of the above:
@@ -560,10 +580,19 @@ needs.
   cross-chart invariance of the resulting impossibility region at
   `T(P)` is a separate invariance theorem (T6 in FOR-BREAKFAST §K.6's
   notation) not delivered by either the Coase posture or K. This
-  memo's seven sub-questions are *this coordinate's* algebra; cross-
-  coordinate comparisons live in T6 and are open.
+  memo's eight sub-questions are *this coordinate's* algebra; cross-
+  coordinate comparisons live in T6 and are open. **Tracked as
+  construction-debt #15** in `paper/OUTLINE.md` and
+  `paper/PROOF-CHAIN.md`; committed via **route 3** (recursion-
+  theoretic horizon absorption per the §Conclusion / §7 outflow): the
+  extensional question "do all reasonable δ-algebras agree?" is
+  Rice-flavored ("reasonable" is not syntactically decidable), so T6
+  sits at the same horizon as channel exhaustiveness #11(iii) and
+  cost-norm uniformity #14. Route 3 does not foreclose later upgrades
+  to direct invariance per candidate algebra or finite-list
+  verification.
 - **Not authorization to rewrite [paper/FIRST-PROOF.md](paper/FIRST-PROOF.md)
-  or [paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md).**
+  or [paper/OUTLINE.md](paper/OUTLINE.md).**
   Promotion requires a named sub-question to earn its way.
 - **Not a commitment to the cocycle realization.** PHASE-DEFECT is
   parked; this memo notes that the cocycle realization gives the

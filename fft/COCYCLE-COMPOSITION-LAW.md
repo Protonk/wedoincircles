@@ -109,7 +109,7 @@ L := ℝ_{>0}/2^ℤ                       log-binade clock
 Δ_k(m) := χ_k(ε(m))                   defect cocycle
 ```
 
-Native operations of the FFT canon (per IMPOSSIBILITY-OUTLINE §4.2.1)
+Native operations of the FFT canon (per OUTLINE §4.2.1)
 act on floating-point values `v = (m, e)` where `m ∈ [0, 1)` is the
 mantissa and `e ∈ ℤ` is the binade exponent. An operation `O` takes
 input value(s) and produces output `v' = (m', e')`. The cocycle
@@ -447,7 +447,7 @@ cost-norm discussion.
 
 The cost-norm choice is named as a definitional move; the recommended
 choice (operational compressibility) is consistent with PHASE-DEFECT's
-primary definition. **As of `paper/IMPOSSIBILITY-OUTLINE.md` §6.4 /
+primary definition. **As of `paper/OUTLINE.md` §6.4 /
 construction-debt #14, the program has committed to operational
 compressibility as the cost-norm**, ahead of PHASE-DEFECT's full
 promotion. The earlier trust-boundary discipline ("should not be cited
@@ -463,5 +463,5 @@ existing program material:
 [fft/SCHOENHAGE-STRASSEN-COCYCLE-TRANSLATION.md](fft/SCHOENHAGE-STRASSEN-COCYCLE-TRANSLATION.md),
 [memos/AMORTIZATION-AT-THE-BOUNDARY.md](memos/AMORTIZATION-AT-THE-BOUNDARY.md),
 [measure/ALGEBRA-OF-DELTA.md](measure/ALGEBRA-OF-DELTA.md),
-[paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md),
+[paper/OUTLINE.md](paper/OUTLINE.md),
 [paper/FIRST-PROOF.md](paper/FIRST-PROOF.md).

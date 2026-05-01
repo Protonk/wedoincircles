@@ -1,7 +1,7 @@
 # COST-CONVERSION-SCHEMATIC
 
 Companion to `figures/cost_conversion_schematic.png`, the
-mult/add conversion economy schematic for [paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md) §1.5.
+mult/add conversion economy schematic for [paper/OUTLINE.md](paper/OUTLINE.md) §1.5.
 
 ![A 2D schematic, "The mult/add conversion economy". X-axis multiplicative cost μ; y-axis additive cost α. Top: italic grey ribbon "← bounded coefficients · unbounded coefficients →". Upper-left tan region: "ACHIEVABLE". A solid black concave curve — the actual frontier — runs upper-left to lower-right with three blue canon dots: Morgenstern (upper-left), AFW (middle-left), Winograd (lower-right); "T(P) thresholds (canon)" labels them collectively. A dashed red curve below dips near the middle: "counterfactual δ=0 frontier (unreachable)". Between them a hatched red gap is widest at the middle and tapers toward both ends. A red double-headed vertical arrow at the middle spans the gap, marked δ, annotated "Bridge claim (§6.2): descent past T(P) ⟺ δ=0 at boundary". Mustard bidirectional arrows tangent to the frontier near Morgenstern: "conversion strategies (trade α↔μ)". Below the actual frontier: light grey region, italic "FFT-style methods do not reach below the frontier".](../../figures/cost_conversion_schematic.png)
 
@@ -89,6 +89,6 @@ Three claims read off the picture:
 
 - Figure file: [figures/cost_conversion_schematic.png](figures/cost_conversion_schematic.png)
 - Build script: [paper/code/build_cost_conversion_schematic.py](paper/code/build_cost_conversion_schematic.py)
-- Companion outline section: [paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md) §1.5 (with re-references at §3, §4, §6.2)
+- Companion outline section: [paper/OUTLINE.md](paper/OUTLINE.md) §1.5 (with re-references at §3, §4, §6.2)
 - Companion closure-class figure: [paper/code/COASE-PHASE.md](paper/code/COASE-PHASE.md) (the §6.5 phase plot, where Separation and Native drift live)
 - Methodological precedent for transaction-cost vocabulary: [measure/COASE-FRICTION-AND-SPECIALISTS.md](measure/COASE-FRICTION-AND-SPECIALISTS.md)

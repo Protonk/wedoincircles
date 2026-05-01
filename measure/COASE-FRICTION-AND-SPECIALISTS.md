@@ -87,7 +87,7 @@ this substrate-side fact; Lemma B is its existence-side bookkeeping.
 Third-party intermediaries (specialists) can reduce friction but
 cannot zero it. The cost is *substrate*, not *agent*. Reduction is
 possible; elimination is not. Mapping: the program's analog is the
-"smarter-FFT rebuttal" of [paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md)
+"smarter-FFT rebuttal" of [paper/OUTLINE.md](paper/OUTLINE.md)
 §6.6 — a smarter FFT-style method does not answer the impossibility
 because the friction is on the substrate, not on the algorithm. The
 Coasean answer is *reduce yes, eliminate no*; the program's analog
@@ -313,7 +313,7 @@ positive scalar with an algebra, the discipline of separating
 existence claims from algebraic claims, and the structural claim that
 the friction is on the substrate rather than on the agent. None of
 these is content transfer; all are posture. Cited at
-[paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md)
+[paper/OUTLINE.md](paper/OUTLINE.md)
 §1.6, §6.6, and (potentially) §Conclusion as the methodological
 anchor.
 

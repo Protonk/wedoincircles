@@ -368,7 +368,7 @@ model (fixed vs variable precision), and (ii) the source-side
 obstruction (Landfall §2 statement vs §4 + effective H-L). The
 program's commitment must name both choices explicitly before the
 rewrite of [paper/FIRST-PROOF.md](paper/FIRST-PROOF.md) or
-[paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md)
+[paper/OUTLINE.md](paper/OUTLINE.md)
 proceeds.
 
 ---

@@ -329,7 +329,7 @@ is the open upgrade.
 ## The algorithm-side projection
 
 The bounded/unbounded coefficient boundary in
-[paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md)
+[paper/OUTLINE.md](paper/OUTLINE.md)
 §1.4 is a candidate algorithm-side parallel to the same regime
 boundary. Morgenstern's `Ω(n log n)` additive lower bound holds
 *under bounded coefficients* because a step
@@ -584,7 +584,7 @@ referring to.
 ## What this means for the impossibility theorem
 
 The substrate-side fact the paper is asserting — that
-[paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md)
+[paper/OUTLINE.md](paper/OUTLINE.md)
 §4.5's `T(P)` is structural rather than engineering — has its
 content here. `T(P)` is the floor reachable while the apparatus
 stays inside the integer-indexed regime. Descent past `T(P)` would
@@ -973,6 +973,19 @@ Coase posture, and would need to be earned by direct argument
 against each candidate algebra. The kernel keeps T6 in the weaker
 form.
 
+**Tracked as construction-debt #15** in `paper/OUTLINE.md` and
+`paper/PROOF-CHAIN.md`; committed via **route 3** (recursion-theoretic
+horizon absorption per the §Conclusion / §7 outflow): the extensional
+question "do all reasonable δ-algebras agree?" is Rice-flavored
+("reasonable" is not syntactically decidable), so T6 sits at the same
+horizon as channel exhaustiveness #11(iii) and cost-norm uniformity
+#14. The `paper/OUTLINE.md` §4.5 / `paper/PROOF-CHAIN.md` working
+theorem holds on the syntactic δ-algebra (cocycle realization at
+`fft/PHASE-DEFECT.md`); lifting to the extensional class meets the
+recursion-theoretic horizon. Route 3 does not foreclose later upgrades
+to direct invariance per candidate algebra or finite-list verification
+if a stronger claim becomes available.
+
 ### Summary of the kernel
 
 | Object | Role | Status |
@@ -990,7 +1003,7 @@ form.
 | T3 (`x`-support / ψ compatibility) | depth-stratification compatibility | open |
 | T4a (common indexing domain `L`) | indexing-side prerequisite | trivial / achieved |
 | T4b (boundary object with `δ`-faithfulness) | promotes K to THE-FIRST-BRIDGE form | **open; load-bearing** |
-| T6 (boundary upstream of `δ`) | weaker upstream-ness only | open posture-statement |
+| T6 (boundary upstream of `δ`) | weaker upstream-ness only; stronger cross-chart invariance tracked as `paper/OUTLINE.md` debt #15 (route 3) | open posture-statement; debt #15 absorbs the stronger form into the §Conclusion outflow as a Rice-flavored sub-question |
 
 Theorem K is a σ-algebra coarsening result: it shows information
 loss under one specific operational reduction `R`. T1 is now a

@@ -1,7 +1,7 @@
 # SUBSTRATE-OBSTRUCTIONS
 
 Detailed measure-theoretic typing of the five substrate-side angles in
-[paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md) §5.
+[paper/OUTLINE.md](paper/OUTLINE.md) §5.
 This is the source-side catalogue behind the paper-level pointer
 [paper/MEASURE-THEORETIC-OBSTRUCTIONS.md](paper/MEASURE-THEORETIC-OBSTRUCTIONS.md).
 Each entry records: the object, the measure-theoretic structure it
@@ -12,7 +12,7 @@ fact in standard measure theory, Diophantine analysis, or the program's
 audited literature. Implications and methodological readings live in
 [measure/THE-FIRST-BRIDGE.md](measure/THE-FIRST-BRIDGE.md),
 [paper/FIRST-PROOF.md](paper/FIRST-PROOF.md), and
-[paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md). The
+[paper/OUTLINE.md](paper/OUTLINE.md). The
 σ-algebra coarsening reading of these five faces — which faces
 transcribe to direct fiber-non-constant L-observables in the
 [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §The kernel sense,

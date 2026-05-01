@@ -1,5 +1,5 @@
 """
-Build the delta-algebra phase plot for paper/IMPOSSIBILITY-OUTLINE.md §6.
+Build the delta-algebra phase plot for paper/OUTLINE.md §6.
 
 A 2D phase diagram in delta-algebra space. Two axes:
     x: amortization rate alpha       (delta_k ~ k^(-alpha) under composition)

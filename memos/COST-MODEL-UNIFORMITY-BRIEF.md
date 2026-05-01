@@ -121,7 +121,7 @@ The transfer is at three levels, parallel to the Coase 1937 anchor:
 
 ### Provenance tag for the program
 
-**Cost-model anchor (debt #9).** Cook–Reckhow 1973 supplies the charging-granularity vocabulary (`l(n)`); Slot–van Emde Boas 1984 / van Emde Boas 1988/1990 supplies the Invariance Thesis as the principle that complexity classes are model-independent under reasonable charging. Cited at [paper/FIRST-PROOF.md](paper/FIRST-PROOF.md) debt #9 (pending), [memos/EFFECTIVE-HL-N1-COST-FORM.md](memos/EFFECTIVE-HL-N1-COST-FORM.md) §"Cost-model uniformity," and [fft/LANDFALL-EXTENDED-CAFF-TRANSFER.md](fft/LANDFALL-EXTENDED-CAFF-TRANSFER.md) §"Cost-model uniformity, not table-permissive vs strict." Forward note to [paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md) §1 once the prose pass touches the cost-framework setup.
+**Cost-model anchor (debt #9).** Cook–Reckhow 1973 supplies the charging-granularity vocabulary (`l(n)`); Slot–van Emde Boas 1984 / van Emde Boas 1988/1990 supplies the Invariance Thesis as the principle that complexity classes are model-independent under reasonable charging. Cited at [paper/FIRST-PROOF.md](paper/FIRST-PROOF.md) debt #9 (pending), [memos/EFFECTIVE-HL-N1-COST-FORM.md](memos/EFFECTIVE-HL-N1-COST-FORM.md) §"Cost-model uniformity," and [fft/LANDFALL-EXTENDED-CAFF-TRANSFER.md](fft/LANDFALL-EXTENDED-CAFF-TRANSFER.md) §"Cost-model uniformity, not table-permissive vs strict." Forward note to [paper/OUTLINE.md](paper/OUTLINE.md) §1 once the prose pass touches the cost-framework setup.
 
 ---
 

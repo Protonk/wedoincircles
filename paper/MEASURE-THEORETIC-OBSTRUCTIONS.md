@@ -11,7 +11,7 @@ the bridge obligation lives at
 ## What This Memo Carries
 
 The impossibility outline uses five substrate-side angles in
-[paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md) §5:
+[paper/OUTLINE.md](paper/OUTLINE.md) §5:
 
 1. rotation-orbit Diophantine kinematics, typed by Haar measure on
    `T = R/Z`;
@@ -40,7 +40,7 @@ closure boundary, so closure preservation and bounded drift become two
 readings of one measurable invariant.
 
 [paper/FIRST-PROOF.md](paper/FIRST-PROOF.md) and
-[paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md) decide
+[paper/OUTLINE.md](paper/OUTLINE.md) decide
 how this measure package enters the proof. Lemma A remains a parallel
 substrate-side reading, not a QED premise, until its exhaustiveness debt
 is closed.

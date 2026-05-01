@@ -241,7 +241,7 @@ structural in both cases.
 [memos/OLD-TIME-RELIGION.md](memos/OLD-TIME-RELIGION.md)'s
 content-not-calendar criterion. The sixth (K-H-L-A) is the consumer,
 not a source, so its L-W-safety is inherited from the externals it
-calls and from the audit of [paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md)
+calls and from the audit of [paper/OUTLINE.md](paper/OUTLINE.md)
 itself.
 
 ### 2.1 — Per-lens audit

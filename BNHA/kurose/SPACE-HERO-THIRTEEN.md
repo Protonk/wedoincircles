@@ -280,7 +280,7 @@ a future session brings them load-bearing.
   future session needs it; until then, it stays as a configurational
   observation about Bowen's content.
 - The Herculean-up-to-the-margin reading of the canon is latent in
-  IMPOSSIBILITY-OUTLINE §3 (Cards on the table) and §4.5 (theorem
+  OUTLINE §3 (Cards on the table) and §4.5 (theorem
   statement) and §6.5 (smarter-FFT rebuttal). The program already
   treats each canon source as supplying its own frame; what is *not*
   yet explicit is that each frame is bought specifically to extract

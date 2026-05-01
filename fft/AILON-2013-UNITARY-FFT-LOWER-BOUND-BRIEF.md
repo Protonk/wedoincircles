@@ -215,7 +215,7 @@ Both reach `Ω(n log n)`, but by different restricted mechanisms.
 ### Program Position
 
 Ailon is adjacent prior art, not one of the four canon sources in
-`paper/IMPOSSIBILITY-OUTLINE.md`. Its role is to keep the paper honest
+`paper/OUTLINE.md`. Its role is to keep the paper honest
 about the landscape: the FFT lower-bound literature has real `Ω(n log n)`
 results, but each successful lower bound is attached to a restriction
 that makes a potential function monotone. The program's proposed

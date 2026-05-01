@@ -10,7 +10,7 @@ import Baker-style or other post-1882 transcendence machinery?
 This is the gate-deciding audit per
 [fft/PHASE-DEFECT-PLAN.md](fft/PHASE-DEFECT-PLAN.md) Edit 5 /
 "Promotion Rule." A verdict here unlocks (or blocks) any rewrite of
-[paper/IMPOSSIBILITY-OUTLINE.md](paper/IMPOSSIBILITY-OUTLINE.md)
+[paper/OUTLINE.md](paper/OUTLINE.md)
 or [paper/FIRST-PROOF.md](paper/FIRST-PROOF.md) around No Free
 Descent.
 
@@ -154,7 +154,7 @@ This is a load-bearing definitional move:
 - **The rewrite must make the `C_Aff` definition explicit and
   re-establish the Landfall transfer in that definition.** The
   present audit does not authorize rewriting `paper/FIRST-PROOF.md`
-  or `paper/IMPOSSIBILITY-OUTLINE.md` until that re-establishment
+  or `paper/OUTLINE.md` until that re-establishment
   is in hand.
 
 **Update.** The deferred re-derivation has been attempted in

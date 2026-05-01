@@ -1,5 +1,5 @@
 """
-Build the cost-conversion schematic for paper/IMPOSSIBILITY-OUTLINE.md §1.5.
+Build the cost-conversion schematic for paper/OUTLINE.md §1.5.
 
 A 2D schematic in the cost-pair (μ, α) plane orienting the reader to the
 mult/add conversion economy before §3 lays out the canon and §6 closes the
