@@ -447,8 +447,14 @@ cost-norm discussion.
 
 The cost-norm choice is named as a definitional move; the recommended
 choice (operational compressibility) is consistent with PHASE-DEFECT's
-primary definition. The recommendation should not be cited as a
-program commitment until PHASE-DEFECT's promotion lands.
+primary definition. **As of `paper/IMPOSSIBILITY-OUTLINE.md` §6.4 /
+construction-debt #14, the program has committed to operational
+compressibility as the cost-norm**, ahead of PHASE-DEFECT's full
+promotion. The earlier trust-boundary discipline ("should not be cited
+as a program commitment until PHASE-DEFECT's promotion lands") is
+superseded for this specific choice; PHASE-DEFECT promotion remains
+gated on its own sub-debts (3 and 4) but the cost-norm question is
+no longer downstream of that promotion.
 
 This memo does not introduce new external sources. All inputs are
 existing program material:
