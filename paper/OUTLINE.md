@@ -200,7 +200,7 @@ Structure: the maximal real subfield `K_n^+ = ℚ(ζ_n + ζ_n^{−1})` has `[K_n
 
 **Cyclotomic-rigidity supports** (proved alongside Theorem K). T1 (off-backbone empty contour: `sec(π/n) cos((2k+1)π/n) ≠ ±1/2` for all `n ≥ 3`) is proved at [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §K.5 via squaring + trace from `K_n` to `ℚ` + Ramanujan-sum reduction + `φ(h)` exclusion. T2 (thin-sweep all-N at slope `s = 1/√3`) and T3 (`x`-support / ψ trace-field compatibility) remain open (construction-debt ledger #7, #8).
 
-## §6. Gradients without information
+## §6. The measure of the conversion
 
 ### §6.1. Descent in the cost / conversion framework
 Setup: descent in §1's framework means trading a higher cost-bearing complexity bound for a lower one by reorganizing the underlying computation. Lower-bound improvement *is* successful descent. The proof asks whether such descent is reachable by FFT-style methods past `T(P)`. Per §3.6.2's non-transfer, the §6 argument runs *currency-by-currency*: the endpoint commitment (§6.2), T4b (§6.3), and the candidate transport (§6.5) each land in every canon currency the impossibility is stated against. `δ` is conceptually single but realizes in a chosen cost-norm; the cost-algebra commitments are uniform in shape but plural-in-currencies in execution. The "currency-by-currency" quantification here is over *algorithm-side* canon currencies (`μ`, `α`); substrate-side iso/ currencies (§5.2, per §3.6.2's substrate-side currency-stratification face) feed in as facts — substrate-side `δ > 0` instances per §1.6's definition — not as additional axes §6 quantifies over.
