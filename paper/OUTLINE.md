@@ -80,22 +80,22 @@ The FFT is the conversion of multiplication and addition on the circle. This pap
 ## §3. Cards on the table
 
 ### §3.1. The canon together
-Frame: four sources, 1971–1984, define the FFT lower-bound apparatus we engage with.
+Four sources, 1971–1984, define the FFT lower-bound apparatus we engage with. Schönhage–Strassen 1971 supplies the operational cost model and the recursive composability template; Morgenstern 1973 supplies the bounded-coefficient additive floor; Winograd 1978 and Auslander–Feig–Winograd 1984 supply two readings of multiplicative complexity on the unbounded rational-equivalence side. None of the four targets another's regime or currency, and that non-transfer is what §3.6 unpacks. The canon is the measurement apparatus, not the target the impossibility extends — the program's content reads what these four together can and cannot reach.
 
 ### §3.2. Schönhage–Strassen 1971
-Operational uniform model: bit/gate primitives, FFT over a representation where root multiplication is cheap by construction.
+Operational uniform model: bit/gate primitives counted under a uniform-charge cost discipline. The construction works in the ring `Z/F_n Z` (`F_n = 2^{2^n} + 1` Fermat numbers), where `2` is a primitive `2^{n+1}`-th root of unity and root multiplication reduces to a cyclic shift — cheap by construction. Headline result: integer multiplication in `O(N log N log log N)` bit operations via recursive FFT decomposition. SS is the canon's operational template, not a lower-bound theorem; §3.6.1 places it as the model-and-composability anchor for the §1.2 cost-framework discipline.
 
 ### §3.3. Morgenstern 1973
-Bounded-coefficient additive lower bound: `Ω(n log n)` additions for `n × n` determinant.
+Bounded-coefficient additive lower bound: any linear circuit computing the `n`-point DFT under coefficients bounded by a constant `c` requires `Ω(n log n)` additions. Mechanism: a determinant-potential argument — the DFT matrix has determinant of magnitude `n^{n/2}` (Vandermonde-style), and in the bounded-coefficient model each gate grows the running determinant by at most a constant factor, so reaching the full determinant requires at least `Ω(n log n)` gates. The bounded-coefficient regime is essential: without it, the determinant potential does not bind (cf. Ailon's normalized-FFT case at §3.7, where the matrix determinant has modulus 1 and the potential is silent). Cost-framework role: additive cost `α` on the bounded side of §1.4.
 
 ### §3.4. Winograd 1978
-Modular-product theorem `μ(T_P) = 2n − k`; multiplicative complexity factors along the CRT decomposition.
+Modular-product theorem: for a degree-`n` polynomial `T_P` with `k` irreducible factors over the base field, the bilinear multiplicative complexity of multiplication mod `T_P` is exactly `μ(T_P) = 2n − k`. Mechanism: CRT decomposition reduces polynomial multiplication mod `T_P` to factor-by-factor multiplication in the residue rings, and the lower bound follows by counting essential bilinear multiplications inside each factor. Cost-framework role: multiplicative cost `μ` on the unbounded rational-equivalence side; the CRT-cyclotomic factor ledger is what §3.5's AFW will lift from polynomial-quotient rings to the full cyclotomic-DFT class.
 
 ### §3.5. Auslander–Feig–Winograd 1984
-Semisimple cyclotomic decomposition of finite-abelian DFTs with multiplicative complexity under rational equivalence.
+Semisimple cyclotomic decomposition of finite-abelian DFTs: the group ring `ℚ[G]` of a finite abelian group `G` decomposes by CRT into a product of cyclotomic fields `ℚ(ζ_d)` (one per divisor `d` of `|G|`), and the DFT factors accordingly. Multiplicative complexity is computed factor-by-factor under rational equivalence — bilinear / linear-rational substitutions are free, only essential nonrational multiplications count. The result extends Winograd's modular-product accounting (§3.4) from polynomial-quotient rings to the full semisimple algebra structure of finite-abelian-group DFTs. Cost-framework role: multiplicative cost `μ` on the unbounded cyclotomic side.
 
 ### §3.6. Common cost / conversion structure
-What do the four attacks share in §1's cost / conversion framework?
+What do the four attacks share in §1's cost / conversion framework? §3.6.1 re-reads §3.2–§3.5 through five coordinates and surfaces the surface structure. §3.6.2 reads the deeper structural fact: the canon's heterogeneity is non-transfer at the bounded/unbounded coefficient boundary, and the non-transfer is structural.
 
 #### §3.6.1. Translation into the §1 stack
 We re-read §3.2–§3.5 through five coordinates: cost model / guard, cost currency, coefficient regime, conversion role, and `δ` status. This keeps theorem content separate from model vocabulary.
