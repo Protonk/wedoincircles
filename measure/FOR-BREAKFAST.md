@@ -888,7 +888,7 @@ but the φ(h)-bound argument above is uniform.
 > `c_{n,k} = sec(π/n) − 1 − s · (2k+1)/(2 n)`, distinct
 > `(n, k), (n', k')` give `c_{n,k} ≠ c_{n', k'}`.
 
-*Status.* Empirical floor `≈ 1.4 × 10⁻⁷` through `n ≤ 100` (per
+*Status.* Empirical floor `≈ 4.5 × 10⁻⁸` through `n ≤ 100` (per
 [n-gons/counting/THICK-SWEEP.md](n-gons/counting/THICK-SWEEP.md)),
 no exact coincidence observed. The all-`N` claim is **not**
 parallel to T1: adjoining `s = 1/√3` introduces `√3 ∈ ℚ(ζ_{12})`,

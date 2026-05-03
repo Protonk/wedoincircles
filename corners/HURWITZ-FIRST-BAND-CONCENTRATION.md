@@ -72,8 +72,8 @@ The K2 fiber-non-constancy witnesses are explicit at the fiber
 ```text
 L_3 = 6 sin(pi/3) = 3 sqrt(3) ~ 5.196
 L_6 = 12 sin(pi/6) = 6
-Delta_3 ~ 10.66
-Delta_6 ~ 3.39
+Delta_3 ~ 10.68
+Delta_6 ~ 3.35
 ```
 
 distinct on either side. Both observables are not in `R^*(M(F))`
