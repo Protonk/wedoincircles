@@ -26,9 +26,9 @@ Six nodes, each a measurable space `(X_i, ℱ_i)` with a cost coordinate `κ_i :
 
 **`N_rate` (Iso rate register).** `X_rate` = inscribed regular `n`-gon family, indexed by `n ≥ 3`. `ℱ_rate`: discrete on `n`. `κ_rate(n) = Δ_n = 4π⁴/(3n²) + O(1/n⁴)` per Hurwitz Parseval expansion ([corners/HURWITZ-FIRST-BAND-CONCENTRATION.md](corners/HURWITZ-FIRST-BAND-CONCENTRATION.md)).
 
-**`N_const` (Iso constant register).** `X_const` = simple closed planar curves with isoperimetric data `(L, A, Δ = L² − 4πA)`. `ℱ_const`: Borel on curve-shape space (Hausdorff metric on simple closed curves). `κ_const(γ) = Δ(γ)`, with Bonnesen-strengthening `Δ(γ) ≥ 4π · d(γ)²` (annulus-width form, Bonnesen 1924; [iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md) Claim 1).
+**`N_const` (Iso constant register).** `X_const` = **convex** simple closed planar curves with isoperimetric data `(L, A, Δ = L² − 4πA)`. The convex restriction is load-bearing: convex bodies have well-defined area without invoking the Jordan curve theorem (post-1882), keeping N_const's content pre-1882 in the L-W-envelope sense (`memos/OLD-TIME-RELIGION.md` content-not-calendar discipline). Bonnesen 1921 / 1924 strengthenings are convex-curve facts; the 5π chain inflation in `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1 holds in the convex setting; nothing load-bearing is lost by restriction. `ℱ_const`: Borel on convex-curve-shape space (Hausdorff metric on convex bodies). `κ_const(γ) = Δ(γ)`, with Bonnesen-strengthening `Δ(γ) ≥ 4π · d(γ)²` (annulus-width form, Bonnesen 1924; [iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md) Claim 1).
 
-**`N_aae` (Iso almost-every register).** `X_aae` = parametric measure spaces (parametric family + probability measure on parameter space; Khintchine / Beck 1994 framework). `ℱ_aae`: Borel on parametric measure space. `κ_aae(family, μ)` = a.e. value of `Δ` under `μ`.
+**`N_aae` (Iso almost-every register).** `X_aae` = parametric measure spaces (parametric family of convex curves + probability measure on parameter space; Khintchine / Beck 1994 framework). `ℱ_aae`: Borel on parametric measure space. `κ_aae(family, μ)` = a.e. value of `Δ` under `μ`. Convex-family restriction inherited from N_const's convex restriction.
 
 ### Structure morphisms (debt #12)
 
@@ -100,19 +100,25 @@ The substrate-side has no closed loops in the current 5-morphism diagram (`rate 
 
 ## The `δ`-coordinate on `Z`
 
-`δ : Z → ℝ_{≥0}` is the universal transaction cost. Phase 1b commits to the following functional form:
+`δ : Z → ℝ_{≥0}` is the universal transaction cost. Phase 1b commits to the **rescaled-spread functional form** (refined per debt #12's per-morphism rigor at [measure/CURRENCY-MORPHISMS.md](measure/CURRENCY-MORPHISMS.md)):
 ```
-δ((x_i)_i)  :=  max_i  κ_i(x_i)  −  min_i  κ_i(x_i),
+δ((x_i)_i)  :=  max  over  directed-path (i → j) in the diagram  of  | κ_j(x_j)  −  r_{ij}^{(κ)} · κ_i(x_i) |,
 ```
-the spread of currency-specific cost readings at the `Z`-point.
+where `r_{ij}^{(κ)}` is the composite cost-coordinate rescaling along the directed path from node `i` to node `j` (product of named per-morphism rescalings along the path; well-defined by composition closure of the diagram). Paths whose rescaling is non-finite (e.g., paths traversing the categorial type-gap of `f_{ca}`) are excluded from the max; the structural type-gap is encoded separately via Phase 1c clause (ii)'s non-existence of measurable inverse with finite rescaling.
 
-**Justification.** On `Z`, by construction, each `x_i` is the morphism-image of a source coordinate (e.g., `x_W = f_{MW}(x_M)`); the `κ_i(x_i)` values may differ due to morphism-rescalings. `δ` measures the failure of the `κ_i` to agree — exactly the "transaction cost" of converting between currencies. `δ((x_i)) = 0` iff all `κ_i(x_i)` agree, which happens when the morphisms are cost-preserving (no rescaling factor); `δ((x_i)) > 0` captures the rescaling discrepancy.
+**Justification.** On `Z`, each `x_i` is the morphism-image of a source coordinate; the per-point κ values may agree (e.g., `κ_rate(n) = κ_const(γ_n) = Δ_n` at n-gons), but the morphism *carries* its rescaling factor as a structural commitment — the chain's cost-of-derivation between currencies. `δ` reads this structural commitment by comparing each pair's κ values *after* applying the morphism rescaling. The Coasean transaction-cost reading lands literally: `δ((x_i)) = 0` iff every directed-path rescaling is exactly identity (no chain inflation between any pair); `δ((x_i)) > 0` captures the rescaling discrepancy as transaction cost.
 
-**Measurability.** `δ` is measurable on `(Z, ℱ_Z)` because each `κ_i ∘ proj_i : Z → ℝ_{≥0}` is measurable (composition of measurable projections with measurable cost coordinates), and `max, min` over a finite set of measurable functions preserve measurability. Hence `δ = max_i (κ_i ∘ proj_i) − min_i (κ_i ∘ proj_i)` is measurable on `Z`.
+For example, on a substrate-side `Z`-point at the `n`-gon with `f_{rc}` carrying `r_{rc}^{(κ)} = 5π` (per `measure/CURRENCY-MORPHISMS.md`):
+```
+| κ_const(γ_n)  −  r_{rc}^{(κ)} · κ_rate(n) |  =  | Δ_n  −  5π · Δ_n |  =  (5π − 1) · Δ_n  ≈  14.7 · Δ_n,
+```
+positive at every `n ≥ 3`. The 5π chain inflation is encoded in `δ` at every substrate-side Z-point.
 
-**Phase 1a / Phase 1b interface.** Phase 1a's `δ` on `D = S × M × P` is the algorithm-side cocycle-product failure-to-agree. The map `D → Z` embeds `D` into the algorithm-side portion of `Z` — each `(S, m, p) ∈ D` produces an `X_M`-state, an `X_W`-state, an `X_AFW`-state via `S`'s decomposition into circuits / bilinear products / cyclotomic decompositions. Phase 1a's `δ_D(S, m, p)` and Phase 1b's `δ_Z(z)` are related by `δ_D = δ_Z ∘ (D → Z)` on the algorithm-side image of `D` in `Z`. The rigorous embedding map is downstream of Phase 1b's scope and lives at the Phase 1c interface.
+**Measurability.** Each `κ_i ∘ proj_i : Z → ℝ_{≥0}` is measurable; each finite `r_{ij}^{(κ)}` (constant or measurable function of input) preserves measurability under multiplication; `max` over a finite set of measurable functions preserves measurability. Hence `δ` is measurable on `(Z, ℱ_Z)`.
 
-**Alternative functional forms.** Sup-inf, weighted aggregate, or Coasean-style normalized cost are alternative candidate forms for `δ` on `Z`. Phase 1b commits to `max − min` for concreteness; alternatives are open and can be substituted if Phase 1c's faithfulness clauses don't verify under `max − min`.
+**Phase 1a / Phase 1b interface.** Phase 1a's `δ` on `D = S × M × P` is the algorithm-side cocycle-product failure-to-agree. The map `D → Z` embeds `D` into the algorithm-side portion of `Z`. Phase 1a's `δ_D(S, m, p)` and Phase 1b's `δ_Z(z)` are related by `δ_D = δ_Z ∘ (D → Z)` on the algorithm-side image, with `δ_Z`'s rescaled-spread form picking up algorithm-side cost-rescalings (`r_{MW}^{(κ)}`, `r_{WAFW}^{(κ)}`) where they bind.
+
+**Why rescaled spread, not raw spread.** The earlier (provisional) form `δ = max κ_i − min κ_i` reads the per-point spread but doesn't pick up morphism rescalings when per-point κ values agree (as they do at `n`-gons under `f_{rc}`). The rescaled-spread form is the necessary refinement — the morphism's rescaling factor is what reads on `δ`, not just the per-point κ comparison. Phase 1c clause (ii)'s claim that "δ encodes the 5π overhead" becomes literal under this form: every substrate-side Z-point traversing `f_{rc}` contributes at least `(5π − 1) · κ_rate` to `δ`.
 
 ## Compatibility with §6.3 prose
 

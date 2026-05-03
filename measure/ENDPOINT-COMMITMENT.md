@@ -30,15 +30,18 @@ For an FFT-style method `M`, the algorithm-side embedding `embed : S → Z` (Pha
 
 By Phase 1c's clause (i) factor-through, `f_3(_, n_P) = Δ_{n_P}` factors through `δ_Z`; specifically, `δ_Z(embed(M))` is at least the substrate-side iso-register cost contribution at `n_P`, which is `Δ_{n_P} > 0`.
 
-Per `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1, the substrate-side currency-stratification supplies a worked-instance overhead between rate and constant of `5π · Δ_{n_P}`: any cross-register conversion at `n_P` pays at least this overhead. By Phase 1c's clause (ii) encoding, this overhead reads on `δ_Z` as a contribution to the spread `max_i κ_i − min_i κ_i` at substrate-side Z-points reachable from `embed(M)` through the diagram morphisms.
+Per `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1, the substrate-side currency-stratification supplies a worked-instance overhead between rate and constant of `5π · Δ_{n_P}`: the chain's cost-of-derivation factor between rate-register and constant-register readings is `r_{rc}^{(κ)} = 5π` (per `measure/CURRENCY-MORPHISMS.md`). By Phase 1c's clause (ii) encoding, the rescaling reads on `δ_Z`'s rescaled-spread form: at substrate-side Z-points,
+```
+δ_Z(z)  ≥  | κ_const(γ_{n_P})  −  r_{rc}^{(κ)} · κ_rate(n_P) |  =  | Δ_{n_P}  −  5π · Δ_{n_P} |  =  (5π − 1) · Δ_{n_P}.
+```
 
 Therefore
 ```
-δ_Z(embed(M's state at T(P)))  ≥  δ_min(P)  :=  max(Δ_{n_P}, (5π − 1) · Δ_{n_P} / 5π, type_gap_contribution_{n_P})  >  0.
+δ_Z(embed(M's state at T(P)))  ≥  δ_min(P)  :=  (5π − 1) · Δ_{n_P}  >  0,
 ```
-The right-hand side is strictly positive for every `n_P ≥ 3` because each component is.
+strictly positive for every `n_P ≥ 3` because `Δ_{n_P} > 0`.
 
-**Currency-by-currency.** The lemma's "currency-by-currency" reading per §6.2 is automatic from `δ_Z`'s `max − min` form: the spread takes contributions from each of the 3 algorithm-side and 3 substrate-side currencies; the substrate-side iso-register contribution is positive (as shown above); therefore `δ_Z > 0` regardless of which algorithm-side currency dominates.
+**Currency-by-currency.** The lemma's "currency-by-currency" reading per §6.2 is automatic from `δ_Z`'s rescaled-spread form: the max takes contributions from each directed-path comparison `(κ_j(x_j), r_{ij}^{(κ)} · κ_i(x_i))` in the diagram; the substrate-side iso-register contribution is positive (as shown above); therefore `δ_Z > 0` regardless of which algorithm-side currency dominates.
 
 For each currency `c ∈ {Morgenstern, Winograd, AFW}`, write `δ_min^{(c)}(P)` for the lemma's floor specialized to currency `c`'s threshold cell (Morgenstern's `Ω(n log n)` additive, Winograd's `2n − k` modular product, AFW's per-factor multiplicative). The lemma reads `δ_Z(embed(M)) ≥ δ_min^{(c)}(P) > 0` at currency `c`'s threshold cell, with `δ_min^{(c)}(P)` derived from the substrate-side floor at `n_P` weighted by currency-specific morphism rescalings (debt #12 supplies the rescalings; the floor's positivity is invariant under multiplicative rescalings).
 
