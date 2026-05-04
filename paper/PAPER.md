@@ -285,11 +285,7 @@ Because `T(P)` has distinct cost currencies, the endpoint commitment, T4b, and t
 
 For descent past `T(P)` to succeed, the algorithm must drive `δ` at the bounded/unbounded coefficient boundary toward zero. In the cocycle coordinate of §1.7 this is competitive compression of the per-sample `{Δ_k}` cost object.
 
-At `T(P)`, any FFT-style method pays `δ ≥ δ_min(P) > 0` at the bounded/unbounded coefficient boundary, currency-by-currency. Strict improvement past `T(P)` requires `δ → 0`. The floor extends past threshold because the substrate-side lower bound
-
-`δ_min(P) ≥ (5π - 1) · Δ_{n_P}`
-
-comes from the iso-register structure, not from the location of the method relative to `T(P)`.
+At `T(P)`, any FFT-style method pays `δ ≥ δ_min(P) > 0` at the bounded/unbounded coefficient boundary, currency-by-currency. Strict improvement past `T(P)` requires `δ → 0`. The floor extends past threshold because T4b reads the rate-to-constant overhead as a positive `δ`-floor proportional to the relevant polygon gap `Δ_n`; the exact normalization, including the worked `(5π - 1) · Δ_n` instance, belongs to the T4b proposition rather than to the endpoint commitment.
 
 ## §6.3. T4b — the keystone proposition
 
@@ -299,7 +295,7 @@ The δ-coordinate takes the rescaled-spread form across directed paths in the di
 
 T4b requires three faithfulness clauses:
 
-- The §5 scalar substrate-side observables `f₁ = φ(n)/2`, `f₂ = L_n`, `f₃ = Δ_n` factor through `δ`.
+- `Z` carries measurable lifts of the §5 scalar substrate-side observables `f₁ = φ(n)/2`, `f₂ = L_n`, `f₃ = Δ_n`, and `δ` detects the descent obstruction created when an FFT-style method loses or translates the information those observables carry.
 - The iso-register currency structure is encoded measurably, so cross-register conversion costs read on `δ` alongside `(μ, α)`.
 - Closure-class membership reads measurably against `(Z, ℱ, ν, δ)`.
 
