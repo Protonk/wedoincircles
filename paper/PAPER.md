@@ -1,3 +1,25 @@
+
+# Notes to be collected and worked on
+
+Notes here are marked off by either `[N.B.]` or `[NOTE]` with a number like `[NOTE 3]`. In the paper body we see similar notes with section numbering, for example `[NOTE §Intro.1]`. In text, we also see unnumbered `[CONNECT]`, which indicates that an internal connection or an external connection (usually to a memo) needs to be make manifest in the text.
+
+Even though the proof is nasty, this is not a complicated paper. We propose an algebra of transaction cost (informational friction). We show FFT needs transactions. We show 3 exemplary FFT lower bounds, show how the FFT has at root `δ > 0` for the needed transactions, show that can't descend further due to needing frictionless info, `δ > 0` => QED. We need to build the paper with care and TRUST the reader. It won't work otherwise. 
+
+[NOTE 1]: We make lots of self references, negations to unasked attacks, enumeration of small counts (2 things here, 3 things there) for ideas, repeitition of a point in a blunter clause. Almost all of these are unwelcome. We need true self-references where they are needed. A paper this big needs deliberate (ie not uniform!) signposting for important ideas ahead but in most cases the facts can and should be transmitted by themselves. 
+
+[NOTE 2]: We care about the program discipline, **and** reader of the paper could give a rip. Our discipline must be evident from our work. Anything else is apology, which we will not do. Our claims are provable by the proofs we have and they are demonstrable by prose we can write. They are not tied to our discipline and therefore that must not be in the paper. 
+
+[NOTE 3]: Similarly, we care about trust boundaries, but that's a working project issue. e.g. trust boundaries are important when designing an airplane; once it is in the air, all pieces are engaged in the job. The final paper must only carry the reference and proof sequencing that comes from the trust boundary. We don't do anything **really** dramatic with trust boundaries. The weirdest thing is Mahler 1953 but that's also straightforward enough to just be read as normal. 
+
+[N.B. 4]: The legal writing strategy of "say it once, say it again, say it one more time" is not going to work here. We simply have too much to do. I think our pipeline needs: say once; teach at most one more time, usually 0 times. Coase we say and teach. add/mul cost conversion we say and teach. §4.2.3, we say once. Lots of things BENEFIT from not being repeated. Almost nothing benefits from rhetorical repetition. 
+
+The sum-up of the above notes is that the paper contains huge amounts of engineering theater. This theater is/was important for us as a project but is noise for a paper reader. We have enough finished and checked mathematical content to get into the paper without pausing for breath after trust boundaries, program discipline, forward reference, repeated small value enumeration, and unargued premise negations.
+
+[NOTE 5]: In text, "this paper" -> "we" in most cases. It's shorter and less weird to say. 
+
+
+# FFT paper
+
 # §Intro
 
 ## §Intro.1. The claim
@@ -35,15 +57,23 @@ The algebraic-side closure-mismatch reading at §7 (NATIVE-F) is a sibling struc
 
 Frame figure: [figures/native_f_closure_mismatch.png](figures/native_f_closure_mismatch.png) — flat affine closure (left) against the unbounded `φ(n)/2` cyclotomic ladder (right), the closure-depth contrast in one panel; re-referenced at §7.
 
+[CONNECT]: All content is internal to the paper. So we may not structurally discharge anything. It must be proof, prose, table, reference, or figure.  
+
 # §1. Cost, conversion, and defect
+
+[CONNECT]: For `§6`, we might want fewer forward connections. If we define these terms here we just carry them forward. If knowing something about section six is needed here, then we move it here and say it once. 
 
 ## §1.1. The accounting stack
 
 §1 sets the four nested objects this paper measures with: cost model, cost currencies, conversion strategies, and transaction cost `δ`. The cost model governs what is charged; the currencies say what is being counted; the conversion is the adaptive family of strategies trading one currency for another; `δ` is the cost attached to that conversion. `δ` is not a synonym for the mult/add conversion. It is a typed object that ranges across both algorithm-side currencies (`(μ, α)`) and substrate-side ones (§5.2's iso/-register triple); §1.6 names how it ranges and what its algebra owes.
 
+[CONNECT]: Signpost to where we will see the conversions and the costs. Costs in §1.3, conversion ~ §1.5. 
+
 ## §1.2. Cost model
 
 We work in a uniform-charge / logarithmic-measure cost model in the Cook–Reckhow 1973 / Slot–van Emde Boas 1984 sense. Bit growth is charged. Advice strings, oracle constants, and table-per-size shortcuts are handled by the regularity guard at §4.2.1 — admissible only when their construction and storage are charged inside the method at the same granularity. "Uniform" in this paper does not mean Cook–Reckhow constant `l(n) = 1` or van Emde Boas uniform measure; it means logarithmic-measure charging in both senses, and the methodological commitment is set here. Compatibility under variable precision — re-reading Morgenstern, Winograd, AFW, and Ailon under this guard — is the substantive remaining work that lands at §6.5.
+
+[CONNECT]: We need to prove, not suggest the above.
 
 ## §1.3. Cost currencies
 
@@ -69,21 +99,27 @@ Adaptivity is the move that looks like it might evade `δ`, and does not. Switch
 
 ## §1.6. Transaction cost `δ`
 
-The conversion has a transaction cost. Following Coase 1937, we keep two questions separate: whether the cost is non-zero, and what its algebra is. *Existence* (`δ > 0`) is one claim; *algebra* is the other. Coase's distinction between the existence of friction (p. 390: "there is a cost of using the price mechanism") and its algebra (p. 395 marginal condition; p. 396 the firm-size determination as costs of organising rise with transactions organised) is the precedent the program inherits, and it is the explicit organizing move of this section: existence is what §6.2's endpoint commitment carries; algebra is the open work named at §6.5; the *reduce-yes-eliminate-no* facet returns at §6.6.
+The conversion has a transaction cost. Following Coase 1937, we keep two questions separate: whether the cost is non-zero (*Existence* of a `δ > 0`), and what its algebra is. Coase's distinction between the existence of friction (p. 390: "there is a cost of using the price mechanism") and its algebra (p. 395 marginal condition; p. 396 the firm-size determination as costs of organising rise with transactions organised) is the precedent the program inherits, and it is the explicit organizing move of this section.
 
 The algebra of `δ` resolves at three levels of work, with one separate item that is not algebra at all but the bridge between two halves of the endpoint commitment. *Reduced to substrate-side input:* amortization across repeated uses and asymptotics in size and precision both couple, via the Lindemann–Weierstrass envelope, to effective Hermite–Lindemann at `n = 1` (§6.5's substrate-side input); closing that closes the substantive open part of the algebra. *Closed in spirit under the program's discipline:* representation-dependence under change of coordinates closes under §1.5's adaptive-family reading; bypass-resistance under specialist intermediation closes under §1.2's regularity guard; multi-route effects close methodologically. *Skeleton in hand:* additivity under composition has its formal-character skeleton at the cocycle composition law of §6.5 — partial-yes, cross-term collapsing under the regularity guard. *Separate from the algebra*: the bridge heading — *floor extension from at-threshold to past-threshold* — is not algebra of `δ` but the structural bridge between the existence claim *at* `T(P)` and the implication claim *past* `T(P)`; §6.2 names it as the load-bearing step between those two halves.
 
 The framework hosts more than the §1.3 `(μ, α)` currency pair. `δ` is the transaction cost between *any two non-nesting measure-theoretic readings of one quantity*. The algorithm-side instance is the bounded/unbounded coefficient conversion. The substrate-side instance is §5.2's iso/-register triple — three non-nesting measure-theoretic readings of the planar isoperimetric gap (rate, constant, almost-every), with `5π ≈ 15.7×` worked-instance overhead between rate and constant on the chained Sobolev → geometric route, and a categorial type-gap to almost-every (`iso/THREE-REGISTER-SYNTHESIS.md` Claim 1).
 
+[CONNECT]: This memo content must become paper content. 
+
 ## §1.7. Candidate cocycle realization
 
 The paper carries a candidate concrete realization of `δ` from §6 onward: `δ` is the cost of `{Δ_k}` cocycle compression — the failure-to-agree of cocycle-product factors across butterfly refinements and primitive modes, measured pointwise. The formal composition law is the cocycle composition law of §6.5; the faithfulness condition the candidate must satisfy is T4b's keystone proposition at §6.3. This is candidate machinery, declared here to flag the form §6 will commit to; the operational cost-norm commitment is made at §6.5.
+
+[NOTE §1.7]: "carries a candidate concrete realization of `δ` from §6 onward" This is correct but also weird. This is a deep forward reference. I think it is probably not needed here. What do we want to say instead here?
 
 ## §1.8. Threshold interface `T(P)`
 
 For a problem `P`, the threshold `T(P)` is the lower-bound frontier supplied by the three sources — Morgenstern's `Ω(n log n)` additive on bounded coefficients, AFW's multiplicative-complexity threshold under rational equivalence, Winograd's modular-product `μ(T_P) = 2n − k`, each in its own currency. Descent past `T(P)` means trading a higher cost-bearing bound for a lower one by reorganizing the computation. The endpoint commitment of §6.2 ties descent to a specific cost-coordinate value: descent past `T(P)` *implies* `δ → 0` at the bounded/unbounded coefficient boundary, which in §1.7's candidate cocycle coordinate reads as competitive `{Δ_k}` compression. The implication direction is what §6.2 has to earn; a biconditional is not claimed.
 
 Figure: [figures/cost_conversion_schematic.png](figures/cost_conversion_schematic.png) — the cost-pair `(μ, α)` plane with the three thresholds (Morgenstern, AFW, Winograd) marked, the counterfactual `δ = 0` frontier, the hatched `δ`-gap between them, and the endpoint implication at the bounded/unbounded coefficient boundary. Endpoint-side picture only; the keystone proposition lives at §6.3, the substrate-side faithfulness witnesses at §6.4, the inputs T4b consumes at §6.5, and the algebraic-side companion at §7. Companion at [paper/code/COST-CONVERSION-SCHEMATIC.md](paper/code/COST-CONVERSION-SCHEMATIC.md).
+
+[CONNECT]: This memo content must become paper content.
 
 # §2. The conversion
 
@@ -183,6 +219,8 @@ What do the three lower bounds of §3.3–§3.5 share in §1's cost / conversion
 
 We re-read the three lower bounds of §3.3–§3.5 through §1's five coordinates: cost model and guard, currency, regime, conversion role, and `δ` status. The point is to keep theorem content separate from program-side typing.
 
+[NOTE §3.6.1]: The above is a good fine-grained example of what we need to remove. "The point is to keep theorem content separate from program-side typing." <- this is stage direction.
+
 Morgenstern 1973 lives in a bounded-coefficient linear-composition setting; its currency is additive `α`; its regime sits on the bounded side of §1.4 (the determinant potential binds only there); its conversion role is to supply the additive floor against which conversion is measured; its `δ` status is no transfer to unbounded coefficients. Winograd 1978 lives in bilinear / rational-equivalence accounting; currency is multiplicative `μ`; regime is unbounded rational-equivalence; conversion role is the CRT modular-product ledger; `δ` status is no transfer to bounded coefficients or to additive cost. Auslander–Feig–Winograd 1984 sits at rational-equivalence cyclotomic decomposition; currency is multiplicative `μ`; regime is unbounded cyclotomic; conversion role is factor-by-factor multiplicative accounting via CRT decomposition; `δ` status is no transfer to bounded coefficients or to additive cost.
 
 The §1.2 uniform-charge / logarithmic-measure guard is a program-side requirement placed over this re-read; where a source does not itself formulate variable-precision charging, the variable-precision re-read is the substantive open work landing at §6.5. The cost-model methodology of §3.2 (Schönhage–Strassen for the operational baseline; Ailon for the cost-model-forces-potential sensitivity) is the program-side anchor under which this re-read operates — it is what makes the three lower bounds' regime and currency placements measurable in the same framework.
@@ -238,6 +276,8 @@ The class is fixed by §4.2.2's descriptive operation list, not by what §6.6 ha
 
 This is the formal object §4.5 quantifies over.
 
+[NOTE §4.2.3] The Gauss and search-theoretic framing may need to move to section seven. 
+
 ## §4.3. Cyclotomic-DFT and adjacent
 The problem class.
 
@@ -268,11 +308,15 @@ Let `M_FR` be the *Farey-regularized recursive FFT*: at each butterfly stage, `M
 
 The specimen is native — recursive decomposition, linear composition, cyclotomic factor accounting, and adaptive choice from problem data, all under §4.2.1's regularity guard — and naively tempting: Farey reduction is the most natural regularization move on cyclotomic indices, and gcd-equivalence-class amortization would let `M_FR` absorb residue if it worked.
 
+[NOTE §4.6]: It's on us to show why this adversary is a toy for our purposes and why we aren't chosing some best case adversary from the lit. 
+
 **Headline attempt: mult-add trading.** `M_FR` tries to amortize a multiplicative-side residue through Morgenstern's bounded-coefficient additive ledger to escape the AFW cyclotomic-multiplicative threshold — the one-line route through the maze any reader will think of first.
 
 The trade fails at the cost-algebra obstruction (§6.3, §6.4): §3.6.2's currency-stratification (Morgenstern↔Ailon non-transfer per §3.2; the determinant potential doesn't reach the normalized FFT, entropy is forced) makes the cross-currency conversion read on `δ`, and `δ` does not vanish at the bounded/unbounded coefficient boundary.
 
 The substrate content of *why* the conversion costs are bounded below is earned in §5 (specifically §3.6.2 face (iv) plus §5.2's iso non-nesting on the substrate-side iso half).
+
+[NOTE §4.6 2]: We may want to show how it does and that there's a cost. We can simply defer the bounds question, not just defer "why bounded?"
 
 **Three variants foreshadowed for §5 to dispatch.**
 
