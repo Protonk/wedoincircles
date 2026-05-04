@@ -68,7 +68,7 @@ The framework hosts more than the §1.3 `(μ, α)` currency pair. `δ` is the tr
 
 ## §1.7. Candidate cocycle realization
 
-The concrete coordinate for `δ` is `{Δ_k}` cocycle compression: the failure-to-agree of cocycle-product factors across butterfly refinements and primitive modes, measured pointwise. The formal composition law is the cocycle composition law of §6.5; the faithfulness condition is T4b's keystone proposition at §6.3.
+The concrete coordinate for `δ` is `{Δ_k}` cocycle compression: the failure-to-agree of cocycle-product factors across butterfly refinements and primitive modes, measured pointwise. The formal composition law is the cocycle composition law of §6.5; the faithfulness conditions are the T4b package at §6.3.
 
 ## §1.8. Threshold interface `T(P)`
 
@@ -285,29 +285,69 @@ Because `T(P)` has distinct cost currencies, the endpoint commitment, T4b, and t
 
 For descent past `T(P)` to succeed, the algorithm must drive `δ` at the bounded/unbounded coefficient boundary toward zero. In the cocycle coordinate of §1.7 this is competitive compression of the per-sample `{Δ_k}` cost object.
 
-At `T(P)`, any FFT-style method pays `δ ≥ δ_min(P) > 0` at the bounded/unbounded coefficient boundary, currency-by-currency. Strict improvement past `T(P)` requires `δ → 0`. The floor extends past threshold because T4b reads the rate-to-constant overhead as a positive `δ`-floor proportional to the relevant polygon gap `Δ_n`; the exact normalization, including the worked `(5π - 1) · Δ_n` instance, belongs to the T4b proposition rather than to the endpoint commitment.
+At `T(P)`, any FFT-style method pays `δ ≥ δ_min(P) > 0` at the bounded/unbounded coefficient boundary, currency-by-currency. Strict improvement past `T(P)` requires `δ → 0`. The floor extends past threshold because T4b.4 reads the rate-to-constant overhead as a positive `δ`-floor proportional to the relevant polygon gap `Δ_n`; the exact normalization, including the worked `(5π - 1) · Δ_n` instance, belongs to T4b.3/T4b.4 rather than to the endpoint commitment.
 
-## §6.3. T4b — the keystone proposition
+## §6.3. T4b — decompressed boundary package
 
-T4b constructs a currency-universal limit object: a measure space `(Z, ℱ, ν)` together with a `δ`-coordinate `δ : Z → ℝ_{≥0}`. The object `Z` is the inverse limit over the three lower-bound currencies — Morgenstern bounded-additive, Winograd modular product, AFW cyclotomic-multiplicative — joined on equal footing with the substrate-side iso registers of §5.2. Structure morphisms between currency-specific cost coordinates supply the diagram whose limit is `Z`.
+T4b is a package of seven named statements. Together they construct a currency-universal measurable object, define the `δ` coordinate, and make the obstruction visible to FFT-style closure. The decomposition keeps existence, normalization, iso-register detection, algorithm-side faithfulness, and closure-class measurability separate.
 
-The δ-coordinate takes the rescaled-spread form across directed paths in the diagram: `δ((x_i)_i) := max over (i → j) of |κ_j(x_j) − r_{ij}^{(κ)} · κ_i(x_i)|`, reading the morphisms' cost-rescaling factors as the Coasean transaction cost. Substrate-side, the morphism `f_{rc} : N_rate → N_const` carries `r_{rc}^{(κ)} = 5π` as the chain's structural cost commitment (per `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1), reading on δ at every n-gon Z-point as `(5π − 1) · Δ_n > 0`. The categorial type-gap of `f_{ca} : N_const → N_aae` registers as the non-availability of a finite cost-rescaling along paths through it; paths whose composite rescaling is non-finite are excluded from the max.
+### §6.3.0. T4b.0 — currency diagram
 
-T4b requires three faithfulness clauses:
+Let `D_T` be the small measurable diagram whose algorithm-side nodes are `C_Mor` (Morgenstern bounded-additive), `C_Win` (Winograd modular-product multiplicative), and `C_AFW` (AFW cyclotomic-multiplicative), and whose substrate-side nodes are `N_rate`, `N_const`, and `N_aae` from §5.2. Bookkeeping nodes record coefficient regime, precision, rational-equivalence quotienting, and table/advice state when those data are needed to make a morphism's domain explicit.
 
-- `Z` carries measurable lifts of the §5 scalar substrate-side observables `f₁ = φ(n)/2`, `f₂ = L_n`, `f₃ = Δ_n`, and `δ` detects the descent obstruction created when an FFT-style method loses or translates the information those observables carry.
-- The iso-register currency structure is encoded measurably, so cross-register conversion costs read on `δ` alongside `(μ, α)`.
-- Closure-class membership reads measurably against `(Z, ℱ, ν, δ)`.
+Morphisms in `D_T` state what information is preserved, what cost coordinate is rescaled, and where comparison is partial or type-blocked. The substrate morphism `f_{rc} : N_rate → N_const` carries the worked `5π` rescaling from the chained Sobolev → geometric route; `f_{ca} : N_const → N_aae` is not a finite-rescaling morphism but the type-gap witness. Algorithm-side morphisms distinguish bounded additive, unbounded multiplicative, rational-equivalence, and restricted unitary-entropy coordinates rather than identifying them.
 
-The universality of `Z` supplies the cross-currency reconciliation the lower-bound apparatus does not perform internally.
+### §6.3.1. T4b.1 — existence of `Z`
+
+The diagram `D_T` has a currency-universal measurable envelope `(Z, ℱ, ν)` with structure maps to every node. Concretely, `Z` is the product/equalizer envelope of the node spaces, with compatibility imposed only along admissible finite-rescaling morphisms. The σ-algebra `ℱ` is generated by the structure maps. The measure `ν` is a proof-carrier measure sufficient for measurability of the registered coordinates; no probability interpretation is used unless a later register supplies one.
+
+Partial morphisms and type gaps are represented by absent or non-finite comparison paths. The construction therefore does not force a finite conversion where the source facts only give non-transfer.
+
+### §6.3.2. T4b.2 — measurable currency encoding
+
+The algorithm-side currencies `(μ, α)` and the substrate-side iso registers have measurable coordinates on `Z`. The §5 scalar substrate observables `f₁ = φ(n)/2`, `f₂ = L_n`, and `f₃ = Δ_n` lift measurably to `Z` at the substrate nodes where they are defined.
+
+This clause does not say that `f₁`, `f₂`, and `f₃` factor through the scalar `δ`. Theorem K says the opposite kind of thing about Farey-side recoding: those observables are not recoverable from `F`. What T4b.2 supplies is a place where the observables and their loss can be spoken about in the same measurable apparatus.
+
+### §6.3.3. T4b.3 — `δ` coordinate and normalization
+
+For each node `i` with a cost observable `κ_i`, and for each admissible finite-rescaling path `i → j` with rescaling factor `r_{ij}^{(κ)}`, define the path defect
+
+`d_{ij}((x_i)_i) = |κ_j(x_j) - r_{ij}^{(κ)} · κ_i(x_i)|`.
+
+The `δ` coordinate is the max, or the finite-method supremum, of these path defects over the comparison family available to the method. Paths through type gaps are not included as finite comparisons; they are obstructions to forming such a path. When a single scalar `δ : Z → ℝ_{≥0}` is named, it is after choosing the operational cost norm of §6.5; before that choice, the same construction is read currency-by-currency as a `δ`-tuple.
+
+### §6.3.4. T4b.4 — iso-register detection
+
+The iso-register structure of §5.2 contributes a positive `δ` floor. At `n`-gon `Z`-points, the finite comparison `f_{rc} : N_rate → N_const` carries `r_{rc}^{(κ)} = 5π`. In the normalization where the direct rate-side and constant-side polygon readings are both expressed in `Δ_n` units, the worked instance contributes
+
+`d_{rc} = (5π - 1) · Δ_n > 0`.
+
+Changing normalization changes the displayed scalar but not the positive proportional floor. The almost-every register remains separate: the `f_{ca}` type-gap is not a large finite constant but the non-availability of a finite-rescaling path.
+
+### §6.3.5. T4b.5 — algorithm-side currency faithfulness
+
+Algorithm-side non-transfer is measurable in `Z` and registers as positive `δ` obstruction. Morgenstern's determinant potential binds bounded-coefficient additive cost; it does not transfer to the normalized FFT, whose determinant has modulus `1`, where Ailon's entropy potential is forced instead. Winograd and AFW supply unbounded rational-equivalence multiplicative ledgers; those ledgers do not transfer to bounded additive cost without crossing the coefficient-regime boundary.
+
+Thus "same scale" is not "same currency." The Morgenstern↔Ailon comparison and the Winograd/AFW rational-equivalence ledgers mark unavailable, partial, or positive-cost morphisms in `D_T`, and T4b.3 reads those failures as nonzero `δ` in the chosen operational norm.
+
+### §6.3.6. T4b.6 — closure-class measurability
+
+FFT-style method membership is measurable against `(Z, ℱ, ν, δ)`. The description space is the space of uniformly described finite strategy families generated by the native operations of §4.2.2, with adaptive choices from problem data allowed only under the §4.2.1 regularity guard. Finite composition and guarded adaptive choice preserve measurability of the associated `Z`-coordinates.
+
+The four escape channels of §4.6 are therefore visible to the T4b package: Farey recoding, cross-register iso conversion, cross-currency mult/add trading, and size-dependent tables/advice. Tables, oracle constants, advice strings, and hidden state remain outside the class unless their construction and storage are charged at the same granularity.
+
+The universality of `Z` supplies the cross-currency reconciliation the lower-bound apparatus does not perform internally; T4b.2-T4b.6 state the separate faithfulness conditions needed for the contradiction in §6.6.
 
 ## §6.4. Substrate-side facts as faithfulness witnesses
 
-Theorem K (§5.6) supplies the scalar-observable clause: an apparatus restricted to F-side coordinates cannot recover `f₁`, `f₂`, or `f₃`.
+Theorem K (§5.6) supplies the T4b.2 witness: an apparatus restricted to F-side coordinates cannot recover `f₁`, `f₂`, or `f₃`. Thus Farey recoding can be measured inside `Z`, but the lost scalar observables are not reconstructed from Farey data.
 
-The iso-register facts of §5.2 and the algorithm-side non-transfer of §3.6.2 supply the currency clause. The `5π` rescaling of `f_{rc}` reads on `δ` at every substrate-side `Z`-point as `(5π - 1) · Δ_n`; Morgenstern↔Ailon non-transfer supplies the corresponding algorithm-side obstruction.
+The iso-register facts of §5.2 supply T4b.4. The `5π` rescaling of `f_{rc}` reads on `δ` at `n`-gon `Z`-points as a positive floor, with `(5π - 1) · Δ_n` in the normalization of §6.3.4. The type-gap to almost-every remains a non-finite comparison, not an additional finite constant.
 
-The admissibility envelope of §5.5 and the regularity guard of §4.2.1 supply the closure-class clause. Size-dependent tables, advice, oracle constants, and hidden state are outside the class unless paid at the same granularity, with per-sample cost `≥ c · p` from effective Hermite–Lindemann at `n = 1` (§6.5).
+The algorithm-side non-transfer of §3.6.2 supplies T4b.5. Morgenstern↔Ailon non-transfer supplies the determinant/entropy obstruction, while Winograd and AFW supply the rational-equivalence multiplicative cells that do not identify with bounded additive cost.
+
+The admissibility envelope of §5.5 and the regularity guard of §4.2.1 supply T4b.6. Size-dependent tables, advice, oracle constants, and hidden state are outside the class unless paid at the same granularity, with per-sample cost `≥ c · p` from effective Hermite–Lindemann at `n = 1` (§6.5).
 
 ## §6.5. Inputs T4b consumes
 
@@ -325,9 +365,9 @@ Figure: [figures/delta_phase_plot.png](figures/delta_phase_plot.png) — the clo
 
 ## §6.6. Conditional impossibility
 
-Suppose `M` is an FFT-style method proving a lower bound on `P` strictly improving past `T(P)`. By §6.2, this descent implies `δ → 0` at the bounded/unbounded coefficient boundary. By T4b, `δ` is faithfully measurable on `(Z, ℱ, ν)`, and closure-class membership factors through it.
+Suppose `M` is an FFT-style method proving a lower bound on `P` strictly improving past `T(P)`. By §6.2, this descent implies `δ → 0` at the bounded/unbounded coefficient boundary. By T4b.0-T4b.3, the relevant currencies are represented in `(Z, ℱ, ν)` and the attempted descent has a `δ` reading in the chosen operational norm. By T4b.6, closure-class membership and the escape-channel classification are measurable in the same apparatus.
 
-The faithfulness clauses of §6.3 route every FFT-style escape through one of the obstructions in §6.4. Farey recoding loses `f₁`, `f₂`, and `f₃` because they are not recoverable on `F`; cross-register iso conversion retains the `5π` overhead and the type-gap in `δ`; cross-currency mult-add trading retains Morgenstern↔Ailon non-transfer in `δ`; tables and advice leave the class unless charged at the same granularity. Each case contradicts `δ → 0`.
+The T4b package routes every FFT-style escape through one of the obstructions in §6.4. Farey recoding loses `f₁`, `f₂`, and `f₃` because they are not recoverable on `F` (T4b.2 plus Theorem K); cross-register iso conversion retains the `5π` overhead and the type-gap (T4b.4); cross-currency mult/add trading retains Morgenstern↔Ailon and bounded/unbounded non-transfer (T4b.5); tables and advice leave the class unless charged at the same granularity (T4b.6 plus §6.5). Each case contradicts `δ → 0`.
 
 Finite compositions of the native operations in §4.2.2 stay inside those cases. Therefore, conditional on the effective Hermite–Lindemann `n = 1` cost form, the variable-precision canon re-read, and the rigorous type-gap at `f_{ca}`, no FFT-style strengthening past current thresholds is reachable on this substrate.
 
