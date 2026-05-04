@@ -24,6 +24,8 @@ The local substrate fact is Theorem K, a σ-algebra coarsening result on the int
 
 The theorem is conditional on a cost-form of effective Hermite–Lindemann at `n = 1`, the variable-precision canon re-read under the §1.2 guard, and a rigorous form of the type-gap at `f_{ca}`.
 
+Status of ingredients. Theorem K is the local substrate input, proved in companion form at §5.6. The FFT lower-bound canon is imported as source material and normalized under the §1.2 charging guard. T4b is the paper's internal cost-algebra construction, decompressed at §6.3. The effective H-L cost form, the variable-precision re-read, and the rigorous `f_{ca}` type-gap are the explicit conditional inputs consumed at §6.5 and §6.6.
+
 Figure [figures/native_f_closure_mismatch.png](figures/native_f_closure_mismatch.png) shows flat affine closure against the unbounded `φ(n)/2` cyclotomic ladder.
 
 # §1. Cost, conversion, and defect
@@ -78,23 +80,19 @@ Figure: [figures/cost_conversion_schematic.png](figures/cost_conversion_schemati
 
 # §2. The conversion
 
-The FFT is the conversion of multiplication and addition on the circle. The mult/add conversion is the family of strategies FFT-style methods use to trade multiplicative cost for additive cost on the cyclotomic substrate, with roots of unity indexed by the integer lattice `L = {(k, n) : 1 ≤ k < n, n ≥ 3}`.
+The FFT is the conversion of multiplication and addition on the circle.
 
-It is adaptive: methods select strategies from problem data, and the class is closed under composition (§1.5, §4.2.3).
+In the ordinary `n`-point FFT, a coefficient vector is read as a polynomial and evaluated at the `n`-th roots of unity. The roots are characters of the cyclic group, so cyclic convolution becomes pointwise multiplication in the Fourier coordinates. The algorithm pays for the basis change by a network of additions and twiddle-factor scalar multiplications: a butterfly takes two entries and replaces them by `x + ω^k y` and `x - ω^k y`. Repeating that move turns a large multiplication problem into many small additions, scalar multiplications, and pointwise products.
 
-The five sources expose the conversion in different cost coordinates: Schönhage–Strassen builds it operationally; Morgenstern measures it from the additive side under bounded coefficients; Winograd factors it through the CRT modular product; Auslander–Feig–Winograd decomposes it through cyclotomic semisimple structure; Ailon measures it through matrix entropy on a restricted unitary-gate model.
+That is the mult/add conversion. Multiplication is not eliminated; it is moved into a coordinate system where the circle makes it diagonal. Addition is not free; it is the price of moving into and out of that coordinate system. Roots of unity make the trade possible because their group law turns rotation into character multiplication, and the integer lattice `L = {(k, n) : 1 ≤ k < n, n ≥ 3}` records which root and which cyclotomic level are being used.
 
-The failure is two halves of one boundary fact: existence (`δ > 0` at `T(P)`) and implication (`δ → 0` past `T(P)`), joined by the floor-extension step of §6.2.
+FFT-style methods are adaptive strategy families built from this trade. They choose decompositions, CRT factorizations, coefficient regimes, and precision schedules from problem data, and the class is closed under composition (§1.5, §4.2.3).
 
-The heterogeneity across the three lower bounds is what failure looks like algorithm-side: each source picks up a piece of cost-coordinate space and none transfers across the boundary cleanly (§3.6.2).
+The lower-bound canon measures the same conversion in different currencies. Schönhage–Strassen builds it operationally; Morgenstern measures the additive side under bounded coefficients; Winograd measures a multiplicative CRT ledger; Auslander–Feig–Winograd measures cyclotomic semisimple factors under rational equivalence; Ailon measures spread by matrix entropy in a restricted unitary-gate model. Each source sees a real part of the trade, but none gives a frictionless translation into all the others.
 
-Morgenstern's determinant potential cannot reach the normalized FFT, and matrix entropy is forced in its place at Ailon 2013 (§3.2).
+The failure is two halves of one boundary fact: existence (`δ > 0` at `T(P)`) and implication (`δ → 0` past `T(P)`), joined by the floor-extension step of §6.2. Algorithm-side, this looks like heterogeneity across lower-bound currencies (§3.6.2): Morgenstern's determinant potential cannot reach the normalized FFT, and Ailon's entropy potential is forced in its place (§3.2). Substrate-side, it looks like non-nesting readings of the same geometric quantity: §5.2's rate, constant, and almost-every iso registers, with `5π` worked overhead between rate and constant and a categorial type-gap to almost-every.
 
-The substrate side carries its own failure shape: §5.2's three iso registers (rate, constant, almost-every) are non-nesting measure-theoretic readings of the planar isoperimetric gap, with `5π` worked overhead between rate and constant and a categorial type-gap to almost-every.
-
-The reduction map `R: L → F` from the integer-indexed lattice to the Farey set induces σ-algebra coarsening on `L`; the substrate observables `f₁ = φ(n)/2`, `f₂ = L_n`, `f₃ = Δ_n` do not factor through `R` (proved in companion form at §5.6).
-
-K certifies that the substrate has structure the conversion has to respect; the impossibility theorem (§6.6) composes K with the cost-algebra apparatus to say no FFT-style method can drive `δ → 0` past `T(P)`.
+The reduction map `R: L → F` from the integer-indexed lattice to the Farey set induces σ-algebra coarsening on `L`; the substrate observables `f₁ = φ(n)/2`, `f₂ = L_n`, `f₃ = Δ_n` do not factor through `R` (proved in companion form at §5.6). Theorem K certifies that the substrate has structure the conversion has to respect. The impossibility theorem (§6.6) composes K with the cost-algebra apparatus to say no FFT-style method can drive `δ → 0` past `T(P)`.
 
 # §3. Cards on the table
 
@@ -217,13 +215,17 @@ For every FFT-style method `M` (§4.2) and every problem `P` (§4.3), `M` does n
 
 ## §4.6. A worked adversary
 
-Let `M_FR` be the *Farey-regularized recursive FFT*: at each butterfly stage, `M_FR` attempts to coarsen its cyclotomic index by passing `(k, n)` through the reduction map `R: (k, n) ↦ (k/g, n/g)` (with `g = gcd(k, n)`) to read on the Farey side, then composes the residual through every adaptive escape FFT-style closure permits.
+Let `M_FR` be the *Farey-regularized recursive FFT*. At each butterfly stage, `M_FR` sees a cyclotomic index `(k, n)` and first tries the cheapest regularization available: pass it through the reduction map `R: (k, n) ↦ (k/g, n/g)` with `g = gcd(k, n)`. The hope is that the gcd-equivalence class captures the threshold-relevant data, so all points in one Farey fiber can be amortized together.
 
 The method is native: recursive decomposition, linear composition, cyclotomic factor accounting, and adaptive choice from problem data, all under §4.2.1's regularity guard. Farey reduction is the natural regularization move on cyclotomic indices, and gcd-equivalence-class amortization would absorb residue if it were compatible with the threshold data.
 
-The mult-add trade fails at the cost-algebra obstruction (§6.3, §6.4): §3.6.2's currency-stratification makes cross-currency conversion read on `δ`, and `δ` does not vanish at the bounded/unbounded coefficient boundary.
+The first squeeze is Theorem K. Farey recoding keeps only the reduced pair `(k/g, n/g)`, but the threshold-facing substrate observables are not fiber-constant: `f₁ = φ(n)/2`, `f₂ = L_n`, and `f₃ = Δ_n` can change inside one Farey fiber. Thus `M_FR` loses cyclotomic degree, polygon perimeter, and gap-rate data exactly where it hoped to average them away.
 
-The remaining escape routes fail at the same boundary object. Farey recoding strips off `f₁, f₂, f₃`, which do not factor through `R` by Theorem K (§5.6). Cross-register iso conversion runs into §5.2's non-nesting and the `5π` worked overhead between rate and constant. Precomputed tables and advice are outside the class unless charged at the same granularity by §4.2.1, with the per-sample cost form supplied by effective Hermite–Lindemann at `n = 1` (§6.5).
+The next natural move is to pay in another algorithm-side currency. `M_FR` tries to trade the missing bounded-additive information against multiplicative structure from CRT or cyclotomic factor accounting. That is the mult/add escape, and it fails at the cost-algebra obstruction (§6.3, §6.4): §3.6.2's currency-stratification makes cross-currency conversion read on `δ`, and `δ` does not vanish at the bounded/unbounded coefficient boundary.
+
+The method can then try to read the lost substrate information through the iso registers instead of through Farey data. This escape also squeezes shut: rate, constant, and almost-every are non-nesting readings of the planar gap. The rate-to-constant route carries the `5π` worked overhead, and the almost-every register is type-incompatible with the pointwise curve registers (§5.2).
+
+The last native escape is to specialize. `M_FR` can store tables, advice, oracle constants, or hidden state for the troublesome fibers. Under §4.2.1, those objects remain outside the FFT-style class unless their construction and storage are charged at the same granularity, with the per-sample cost form supplied by effective Hermite–Lindemann at `n = 1` (§6.5).
 
 Thus `M_FR` exhibits the same four channels the proof classifies in §6.6: Farey recoding, cross-register iso conversion, cross-currency mult-add trading, and size-dependent tables/advice.
 
@@ -237,7 +239,9 @@ What the substrate gives is Haar-mean access for continuous and Riemann-integrab
 
 ## §5.2. Non-nesting isoperimetric registers
 
-The planar isoperimetric gap `Δ = L² − 4πA` admits three measure-theoretic readings on non-nesting hypothesis classes: *rate* (asymptotic decay along a parametric family of convex curves approaching a disk), *constant* (pointwise sharp inequality on a single convex curve, Bonnesen-strengthening per Osserman 1979 / Bonnesen 1924 — the annulus-width form `Δ ≥ 4π · d²` the §5.2 derivation routes through; convex restriction keeps substrate-side content pre-1882 in the L-W-envelope sense, avoiding the post-1882 Jordan curve theorem), and *almost-every* (full-measure under a distribution on parameter space, Khintchine / Beck 1994 tradition).
+The planar isoperimetric gap `Δ = L² − 4πA` admits three measure-theoretic readings, and each answers a different question. The *rate* register asks how fast a parametric family of convex curves approaches equality with the disk. The *constant* register asks what sharp pointwise inequality holds for one curve at a time. The *almost-every* register asks what happens for a full-measure set inside a distributed parameter class.
+
+Those questions live on non-nesting hypothesis classes. Rate is asymptotic along a family. Constant is pointwise, using Bonnesen-strengthening per Osserman 1979 / Bonnesen 1924 — the annulus-width form `Δ ≥ 4π · d²` the §5.2 derivation routes through; convex restriction keeps substrate-side content pre-1882 in the L-W-envelope sense, avoiding the post-1882 Jordan curve theorem. Almost-every belongs to the Khintchine / Beck 1994 tradition on parameter space.
 
 Worked-instance witnesses for non-nesting: the thin ellipse `(a = 2, b = 1/2)` and the small-spike `r(θ) = 1 + ε cos(5θ)` give the two pairwise non-inclusions on curve-shape space; Beck's class lives on `α`-parameter space and is type-incompatible with both. Worked-instance overhead between rate and constant: `5π ≈ 15.7×` weaker than Bonnesen direct on the chained Sobolev → geometric route, with no single extremal function realizing all three sharpnesses simultaneously ([iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md) Claim 1).
 
@@ -283,9 +287,15 @@ Because `T(P)` has distinct cost currencies, the endpoint commitment, T4b, and t
 
 ## §6.2. Endpoint commitment
 
-For descent past `T(P)` to succeed, the algorithm must drive `δ` at the bounded/unbounded coefficient boundary toward zero. In the cocycle coordinate of §1.7 this is competitive compression of the per-sample `{Δ_k}` cost object.
+For descent past `T(P)` to succeed, the algorithm must drive `δ` at the bounded/unbounded coefficient boundary toward zero. This is the hinge between "lower-bound improvement" and "conversion obstruction."
 
-At `T(P)`, any FFT-style method pays `δ ≥ δ_min(P) > 0` at the bounded/unbounded coefficient boundary, currency-by-currency. Strict improvement past `T(P)` requires `δ → 0`. The floor extends past threshold because T4b.4 reads the rate-to-constant overhead as a positive `δ`-floor proportional to the relevant polygon gap `Δ_n`; the exact normalization, including the worked `(5π - 1) · Δ_n` instance, belongs to T4b.3/T4b.4 rather than to the endpoint commitment.
+In cost-coordinate space, a descent attempt starts with a bound in one currency and tries to land it in another currency or coefficient regime at lower cost. That landing is the risky step. If the source and target readings are non-nesting, the method does not merely change notation; it pays the residual cost of translation. That residual is `δ`.
+
+A positive `δ` floor is an obstruction, not an annotation. It means the translated statement lands with a fixed unpaid defect in the target coordinate. Currency-by-currency, the lower-bound frontier is then shifted by that residual; the method may reorganize where the payment appears, but it has not crossed the threshold in the target currency.
+
+A smaller positive friction would still leave a smaller positive shifted frontier. The phrase "past `T(P)`" is therefore read as an endpoint claim: to beat the existing frontier strictly in the same cost coordinate, the residual conversion cost must be negligible in that coordinate. In the cocycle coordinate of §1.7 this is competitive compression of the per-sample `{Δ_k}` cost object, i.e. `δ → 0` along the attempted descent.
+
+At `T(P)`, any FFT-style method pays `δ ≥ δ_min(P) > 0` at the bounded/unbounded coefficient boundary, currency-by-currency. The floor extends past threshold because T4b.4 reads the rate-to-constant overhead as a positive `δ`-floor proportional to the relevant polygon gap `Δ_n`; the exact normalization, including the worked `(5π - 1) · Δ_n` instance, belongs to T4b.3/T4b.4 rather than to the endpoint commitment.
 
 ## §6.3. T4b — decompressed boundary package
 
@@ -303,6 +313,8 @@ The diagram `D_T` has a currency-universal measurable envelope `(Z, ℱ, ν)` wi
 
 Partial morphisms and type gaps are represented by absent or non-finite comparison paths. The construction therefore does not force a finite conversion where the source facts only give non-transfer.
 
+A typical `Z`-point is a bookkeeping tuple, not a new substrate. For an `n`-gon instance it may carry a rate-side entry recording `Δ_n`, a constant-side entry recording the Bonnesen-normalized pointwise gap, and a bounded-additive entry recording the Morgenstern cost coordinate for the corresponding Fourier computation. The point belongs to `Z` because these entries are being compared in one proof attempt; it need not assert that all entries are freely convertible.
+
 ### §6.3.2. T4b.2 — measurable currency encoding
 
 The algorithm-side currencies `(μ, α)` and the substrate-side iso registers have measurable coordinates on `Z`. The §5 scalar substrate observables `f₁ = φ(n)/2`, `f₂ = L_n`, and `f₃ = Δ_n` lift measurably to `Z` at the substrate nodes where they are defined.
@@ -316,6 +328,8 @@ For each node `i` with a cost observable `κ_i`, and for each admissible finite-
 `d_{ij}((x_i)_i) = |κ_j(x_j) - r_{ij}^{(κ)} · κ_i(x_i)|`.
 
 The `δ` coordinate is the max, or the finite-method supremum, of these path defects over the comparison family available to the method. Paths through type gaps are not included as finite comparisons; they are obstructions to forming such a path. When a single scalar `δ : Z → ℝ_{≥0}` is named, it is after choosing the operational cost norm of §6.5; before that choice, the same construction is read currency-by-currency as a `δ`-tuple.
+
+Toy path. Take the `Z`-point just described, with a rate node, a constant node, and a bounded-additive node. Along the finite substrate path `N_rate → N_const`, the method compares `κ_const(x_const)` with `5π · κ_rate(x_rate)`. If both polygon readings are normalized in `Δ_n` units, this path contributes `(5π - 1) · Δ_n` to `δ`. If the same method also tries to trade bounded-additive cost against a multiplicative ledger, that algorithm-side comparison contributes its own path defect. The scalar `δ` is the chosen cost-norm's way of reading all such finite defects together; it is not a claim that the scalar reconstructs every coordinate of the `Z`-point.
 
 ### §6.3.4. T4b.4 — iso-register detection
 
@@ -377,6 +391,8 @@ A method improving past `T(P)` would need a cross-currency or cross-regime trans
 
 The conversion lives on the circle: the cyclotomic substrate, the integer lattice indexing roots of unity, and the planar isoperimetric gap used on the substrate side. The five canon sources measure that circle structure in five cost coordinates — three lower bounds (Morgenstern, Winograd, Auslander–Feig–Winograd) and two cost-model anchors (Schönhage–Strassen, Ailon).
 
+After the machinery, the perceptual shift is this: the FFT is not merely a fast recursive decomposition. It is a conversion apparatus. It uses the circle's roots of unity to move computation between additive networks, scalar twiddles, pointwise products, and cyclotomic factor ledgers. The lower-bound canon records where those measurements stop translating freely.
+
 Figure [figures/native_f_closure_mismatch.png](figures/native_f_closure_mismatch.png) records the closure-depth contrast: flat affine closure against the unbounded `φ(n)/2` cyclotomic ladder.
 
 Schönhage–Strassen's operational baseline and Ailon's restricted-model sensitivity are the cost-model side of that same structure.
@@ -393,6 +409,8 @@ The lower-bound apparatus reads cost-of-`P` through heterogeneous measures: Morg
 The Morgenstern↔Ailon pair (per Table 2 above, with Ailon's circle reading paired against Morgenstern's bounded-side determinant) is the most explicit currency-stratification demonstration: same problem class (FFT), same scale (`Ω(n log n)`), two restricted models with two forced potentials — determinant on the unnormalized side, entropy on the normalized side (since determinant has modulus 1 there).
 
 The lower-bound currencies are plural because the circle's structure is multi-coordinate. T4b reconciles that plurality with Theorem K's substrate-side coarsening by placing the currencies in one limit object `Z`.
+
+That is the payoff of the paper. A lower bound here is not a number floating above the FFT; it is a reading of the circle through a cost coordinate. The impossibility result says that FFT-style methods can move among the native readings, but they cannot make the transaction cost of that movement disappear past the existing thresholds.
 
 **Algebraic-side companion (NATIVE-F closure-mismatch).** The closure-mismatch *theorem target* at [memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md) §No-Go Theorem asserts that no closure-depth-preserving functor `F: C_log → C_circle` satisfying axioms A1–A4 exists between the log-side and circle-side closure systems.
 
