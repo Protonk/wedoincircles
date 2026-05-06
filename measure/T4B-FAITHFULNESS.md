@@ -7,13 +7,13 @@ Phase 1c of the T4b decomposition (`paper/T4B-DECOMPOSITION.md`): verify the thr
 T4b's three faithfulness clauses (per PAPER §6.3 / `measure/THE-FIRST-BRIDGE.md`):
 
 - *(i)* `f₁, f₂, f₃` factor through `δ`.
-- *(ii)* iso-register currency structure encoded measurably so cross-register conversion costs read on `δ` alongside `(μ, α)`.
+- *(ii)* iso-register currency structure and register-state labels encoded measurably so cross-register conversion costs, type gaps, and unresolved bridge/audit states read on `δ` alongside `(μ, α)`.
 - *(iii)* closure-class membership reads measurably against `(Z, ℱ, ν, δ)`.
 
 Phase 1c proves each clause, consuming a different witness:
 
 - *(i):* Theorem K (PAPER §5.6 / `measure/FOR-BREAKFAST.md` §K.0–§K.4).
-- *(ii):* `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1 (5π overhead worked; categorial type-gap to almost-every).
+- *(ii):* `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1 plus the register-state ledger (resolved `5π` overhead; categorial type-gap to almost-every; Fejes-Tóth and specific-`π` bridges unresolved).
 - *(iii):* PAPER §5.5 admissibility envelope + §4.2.1 regularity guard.
 
 The three clauses parallelize across witnesses; we proceed sequentially because clause (i) sets up the substrate-side `L → Z` embedding that clause (ii) reuses.
@@ -74,7 +74,7 @@ cross_{ra}(z)  :=  κ_aae(proj_aae(z))   −  κ_rate(proj_rate(z))    [composed
 ```
 Each is a measurable function on `(Z, ℱ_Z)` because `proj_·` are measurable and `κ_·` are measurable cost coordinates on each node.
 
-**Encoding the 5π overhead (`iso/THREE-REGISTER-SYNTHESIS.md` Claim 1).** The 5π overhead is the structural cost-rescaling factor `r_{rc}^{(κ)} = 5π` on `f_{rc}` (per `measure/CURRENCY-MORPHISMS.md`) — the chain's cost-of-derivation between the rate-register asymptotic-bound construction and the constant-register direct-Bonnesen reading. Phase 1b's δ_Z reads this rescaling literally via the rescaled-spread form: at every substrate-side Z-point ι(k, n),
+**Encoding the resolved 5π overhead (`iso/THREE-REGISTER-SYNTHESIS.md` Claim 1).** The 5π overhead is the structural cost-rescaling factor `r_{rc}^{(κ)} = 5π` on `f_{rc}` (per `measure/CURRENCY-MORPHISMS.md`) — the chain's cost-of-derivation between the rate-register asymptotic-bound construction and the constant-register direct-Bonnesen reading. Phase 1b's δ_Z reads this rescaling literally via the rescaled-spread form: at every substrate-side Z-point ι(k, n),
 ```
 δ_Z(z)  ≥  | κ_const(γ_n)  −  r_{rc}^{(κ)} · κ_rate(n) |  =  | Δ_n  −  5π · Δ_n |  =  (5π − 1) · Δ_n  ≈  14.7 · Δ_n,
 ```
@@ -82,9 +82,11 @@ positive at every `n ≥ 3`. The 5π is *encoded measurably* on `(Z, ℱ_Z)` at 
 
 **Encoding the categorial type-gap.** The type-gap to almost-every (per `iso/THREE-REGISTER-SYNTHESIS.md`) is a structural feature: there is no measurable right-inverse `s : N_aae → N_const` of `f_{ca}` with finite cost-rescaling — the constant-register reading is on convex curve-shape space, the almost-every reading is on parametric-measure space, and the two are type-incompatible at the apparatus level. The type-gap encodes as the *non-availability of a finite `r_{ca}^{(κ)}`* in the diagram: `f_{ca}` is measurable, but no path through the diagram traversing `f_{ca}` admits a finite composite rescaling. Per Phase 1b's δ_Z definition, paths whose composite rescaling is non-finite are excluded from the max — the structural type-gap registers as the *exclusion* of cross-currency paths that pass through `f_{ca}`, not as a numerical δ-contribution. The qualitative non-existence reading suffices for Phase 1c here; rigorous measure-theoretic non-existence proof is a sharpening item tracked at `measure/CURRENCY-MORPHISMS.md` (Phase 1c residual + #12 sharpening).
 
+**Encoding unresolved bridge/audit states.** The Fejes-Tóth certification bridge and Beck → specific-`π` bridge are carried as register-state labels on the relevant iso nodes. They are measurable state distinctions, not completed finite-rescaling morphisms and not numerical δ contributions.
+
 **No extended-real-line needed.** Phase 1c's verification finds that the type-gap is structural rather than pointwise-unbounded; pointwise δ stays in `ℝ_{≥0}` (each `κ_i` is finite at each `Z`-point); the type-gap surfaces in the *morphism structure*, not in δ-values. Phase 1b's `δ : Z → ℝ_{≥0}` codomain is sufficient; the brief's anticipated extension to `[0, ∞]` is unnecessary.
 
-**Cross-side coupling alongside `(μ, α)`.** δ's `max − min` form takes the spread across all 6 currencies. At a `Z`-point where algorithm-side κ_i contribute non-trivially (an FFT-style scheme's embedding), the algorithm-side `(μ, α)` cost-currency values appear in the δ spread alongside the substrate-side iso-register values. The cross-register iso costs and the algorithm-side cost-currencies *both* read on δ, "on equal footing" per §6.3's framing.
+**Cross-side coupling alongside `(μ, α)`.** δ's rescaled-spread form takes the spread across all 6 currencies. At a `Z`-point where algorithm-side κ_i contribute non-trivially (an FFT-style scheme's embedding), the algorithm-side `(μ, α)` cost-currency values appear in the δ spread alongside the substrate-side iso-register values and state labels. The cross-register iso costs, unresolved states, and algorithm-side cost-currencies *all* read on δ, "on equal footing" per §6.3's framing.
 
 **Clause (ii) ✓** (modulo Phase 1b's `f_{rc}` and `f_{ca}` morphism-property assumptions, which are debt #12's residual).
 
@@ -111,13 +113,13 @@ where `embed : S → Z` is the algorithm-side embedding map (Phase 1a's `D → Z
 - Clause (ii)'s "Witness (substrate-side): §5.2 iso non-nesting; Witness (algorithm-side): §3.6.2 currency-stratification" is the structural input the encoding consumes. The cross-register conversion costs are constructed here as measurable functions on `(Z, ℱ_Z)`.
 - Clause (iii)'s "Witness: §5.5 admissibility envelope plus §4.2.1 regularity guard" is the joint commitment; the indicator's measurability is verified here.
 
-§6.4's "→ clause (X)" expansions in PAPER are paraphrased correctly: Theorem K certifies non-recoverability from F (clause (i)'s necessity); §5.2 + 5π synthesis encodes the iso-register stratification (clause (ii)); §5.5 + §4.2.1 typify closure-class membership (clause (iii)).
+§6.4's "→ clause (X)" expansions in PAPER are paraphrased correctly: Theorem K certifies non-recoverability from F (clause (i)'s necessity); §5.2 + 5π synthesis + register-state ledger encode the iso-register stratification (clause (ii)); §5.5 + §4.2.1 typify closure-class membership (clause (iii)).
 
 ## What Phase 1c does not do
 
 - **Debt #5 existence-half lemma.** "Any FFT-style method achieving `T(P)` pays `δ ≥ δ_min(P) > 0`" is downstream of T4b closing; Phase 1c gives δ faithful structure but doesn't prove non-vanishing.
 - **Debt #2(8) floor extension.** The bridge between #5's existence and implication halves is a separate proof obligation; Phase 1c provides faithful δ on Z, the substrate the bridge proof needs.
-- **Debt #12 morphism-property verification.** Phase 1c uses the morphism rescalings (`f_{rc}` 5π, `f_{ca}` type-gap, algorithm-side cost-rescalings) as named at Phase 1b. Rigorous per-morphism verification stays at debt #12.
+- **Debt #12 morphism-property verification.** Phase 1c uses the morphism rescalings and state labels (`f_{rc}` resolved `5π`, `f_{ca}` type-gap, unresolved bridge/audit states, algorithm-side cost-rescalings) as named at Phase 1b. Rigorous per-morphism verification stays at debt #12.
 - **Phase 1a `D → Z` embedding rigor.** Phase 1c's clause (iii) uses `embed : S → Z` informally as a projection chain; the rigorous embedding map remains a Phase 1c-side bookkeeping item, low difficulty.
 - **Debt #11 channel exhaustiveness.** Now-tractable downstream priority per `project_debt_11_priority.md` memory; Phase 1c does not address it.
 
@@ -132,7 +134,7 @@ where `embed : S → Z` is the algorithm-side embedding map (Phase 1a's `D → Z
 | Criterion | Status |
 |---|---|
 | Clause (i): `f₁, f₂, f₃` factor through `δ` | ✓ Substrate-side `ι : L → Z`, recover via `Δ_n`-injectivity, π_i constructed measurably. Theorem K is necessity-side witness. |
-| Clause (ii): iso-register currency structure encoded measurably | ✓ Cross-register conversion costs constructed as measurable functions; 5π overhead and type-gap encoded structurally; modulo debt #12. |
+| Clause (ii): iso-register currency structure and state encoded measurably | ✓ Cross-register conversion costs and state labels constructed as measurable functions; resolved `5π` overhead, type-gap, and unresolved bridge/audit states encoded structurally; modulo debt #12. |
 | Clause (iii): closure-class membership measurable | ✓ `C_FFT` is countable image of a measurable scheme-set in `Z`; indicator measurable. |
 
 **Phase 1c complete (modulo debt #12).** All three clauses verified. T4b decomposition (Phase 1a + Phase 1b + Phase 1c) closes debt #1 in the form named at the ledger entry, conditional on debt #12's per-morphism rigorous verification.
@@ -140,7 +142,7 @@ where `embed : S → Z` is the algorithm-side embedding map (Phase 1a's `D → Z
 ## Hand-off back to the apparatus
 
 With T4b (debt #1) closed at the structural level:
-- **Debt #5 (endpoint commitment)** becomes tractable. The existence-half lemma "any FFT-style method achieving `T(P)` pays `δ ≥ δ_min(P) > 0`" now has a faithful `(Z, ℱ, ν, δ)` to live on. The substrate-side `δ > 0` instance from §3.6.2 face (iv) — the substrate-side currency-stratification with 5π overhead and type-gap — is encoded on Z via clause (ii); δ ≥ this substrate-side instance everywhere on the substrate-side embedding image.
+- **Debt #5 (endpoint commitment)** becomes tractable. The existence-half lemma "any FFT-style method achieving `T(P)` pays `δ ≥ δ_min(P) > 0`" now has a faithful `(Z, ℱ, ν, δ)` to live on. The substrate-side `δ > 0` instance from §3.6.2 face (iv) — the substrate-side currency-stratification with resolved `5π` overhead, type-gap, and unresolved bridge/audit states — is encoded on Z via clause (ii); δ ≥ the completed finite substrate-side instance everywhere on the substrate-side embedding image.
 - **Debt #2(8) (floor extension bridge)** becomes tractable. Bridge between #5's existence and implication halves; the structural locus where #5 lives (faithful δ on Z) is now in hand.
 - **Debt #11 (channel exhaustiveness)** is the next priority per `project_debt_11_priority.md` memory. The four §6.6 channels-to-clauses mapping is now stated against verified faithfulness clauses: Farey recoding → clause (i); cross-register iso → clause (ii)-substrate; mult-add trading → clause (ii)-algorithm; tables/advice → clause (iii). Path (i)-by-enumeration over §4.2.2's five native operations becomes a finite check against the now-verified clause structure.
 - **Debt #9(b) (cross-currency `T(P)` reconciliation)** substantially closes — `Z`'s universality *is* the reconciliation per the Coasean reading. Residual: per-entry currency check on the route-3 limit, debt #12-adjacent.

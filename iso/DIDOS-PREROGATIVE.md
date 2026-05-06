@@ -319,6 +319,16 @@ above is what such a brief would be expanding on.
   (sharp rate). The two routes are not interchangeable; the program
   inherits the bifurcation rather than resolving it.
 
+- **Register-state summary.** The three imported routes are best read
+  as a register-resolution ledger: each route has isolated a sharp
+  currency, but only some program bridges are fully resolved.
+
+  | Register | Sharp currency isolated | Current program state | Open bridge |
+  |---|---|---|---|
+  | Geometric / Bonnesen | constants in Hausdorff / annulus-width geometry | pointwise usable on convex regular `n`-gons | Fejes-Tóth 1950 L-W audit for quantitative proof certification |
+  | Sobolev / Hurwitz-Fuglede | `Θ(1/n^2)` rate and Fourier-mass accounting | resolved for the program's regular-`n` rate work via Hurwitz Parseval and small-`n` direct computation | conversion to geometric constants pays `5 pi`; no longer treated as a failure of the Sobolev route |
+  | Probabilistic / Beck | almost-every discrepancy threshold | methodological exemplar for discrepancy machinery | Schmidt 1960 audit and empirical-to-density bridge for specific `alpha = pi` |
+
 ### From [iso/BECK-1994-BRIEF.md](iso/BECK-1994-BRIEF.md)
 
 - **Headline theorem.** Beck Theorem 1: for almost every

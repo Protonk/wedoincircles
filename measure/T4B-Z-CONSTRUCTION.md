@@ -40,8 +40,8 @@ Algorithm-side (3):
 
 Substrate-side (2):
 
-- **`f_{rc} : N_rate → N_const`.** `5π` Sobolev → geometric chain. Inscribed regular `n`-gon family produces curves with `Δ_n`; the morphism associates each `n`-gon to its constant-register reading via the Sobolev → geometric chain. Cost-rescaling: the chain has worked overhead `5π ≈ 15.7×` weaker than Bonnesen direct ([iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md) Claim 1).
-- **`f_{ca} : N_const → N_aae`.** Curve → parametric family embedding. Each constant-register curve admits a parametric family (e.g., the linear interpolation family between the curve and the disk); the morphism associates the curve's pointwise sharp inequality with the family's a.e. reading. *Type-gap*: discrete pointwise reading → continuous a.e. reading (categorial type-gap per [iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md)). The morphism exists at the level of the construction; whether it is cost-preserving up to a *finite* rescaling or admits only an asymptotic rescaling is debt #12's residual.
+- **`f_{rc} : N_rate → N_const`.** `5π` Sobolev → geometric chain. Inscribed regular `n`-gon family produces curves with `Δ_n`; the morphism associates each `n`-gon to its constant-register reading via the Sobolev → geometric chain. Cost-rescaling: the chain has worked overhead `5π ≈ 15.7×` weaker than Bonnesen direct ([iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md) Claim 1). This is the resolved finite iso-register overhead.
+- **`f_{ca} : N_const → N_aae`.** Curve → parametric family embedding. Each constant-register curve admits a parametric family (e.g., the linear interpolation family between the curve and the disk); the morphism associates the curve's pointwise sharp inequality with the family's a.e. reading. *Type-gap*: discrete pointwise reading → continuous a.e. reading (categorial type-gap per [iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md)). The morphism exists at the level of the construction; it is not treated as a completed finite-rescaling morphism. Fejes-Tóth certification and Beck → specific-`π` remain unresolved bridge/audit states carried by the register-state labels.
 
 Cross-side (algorithm-side ↔ substrate-side):
 
@@ -128,7 +128,7 @@ Phase 1b's construction implements this exactly: `Z` as the inverse limit of the
 
 ## What Phase 1b does not do
 
-- **Faithfulness clauses (i), (ii), (iii).** Phase 1c's job. Phase 1b delivers `(Z, ℱ, ν, δ)`; Phase 1c proves the three faithfulness conditions against this object using Theorem K (clause i), the 5π synthesis (clause ii), and §5.5 + §4.2.1 (clause iii).
+- **Faithfulness clauses (i), (ii), (iii).** Phase 1c's job. Phase 1b delivers `(Z, ℱ, ν, δ)`; Phase 1c proves the three faithfulness conditions against this object using Theorem K (clause i), the 5π synthesis plus register-state ledger (clause ii), and §5.5 + §4.2.1 (clause iii).
 - **Per-morphism rigorous verification.** Debt #12's residual. Phase 1b lists the morphisms and assumes their properties; debt #12 verifies measurability, measure-preservation rescalings, and loop-consistency.
 - **The full `D → Z` embedding.** Phase 1b sketches the Phase 1a / Phase 1b interface (D embeds via algorithm-side currencies); the rigorous embedding map is a Phase 1c interface task.
 - **Direct cross-side morphisms.** Phase 1b commits to cross-side coupling via `δ` rather than via direct algorithm-side ↔ substrate-side morphisms. If Phase 1c clause (ii) (cross-register channel) requires a direct morphism, the diagram extends; Phase 1b's commitment is provisional in that sense.
@@ -155,7 +155,7 @@ Phase 1b's construction implements this exactly: `Z` as the inverse limit of the
 
 **Phase 1b hand-off to Phase 1c.** Phase 1c receives `(Z, ℱ, ν, δ)` plus Phase 1a's `δ` on `D` and proves the three faithfulness clauses:
 - (i) `f₁, f₂, f₃` factor through `δ` via Theorem K's L-side encoding (substrate-side route into `Z`'s `N_const` / `N_rate` projections);
-- (ii) iso-register currency structure encodes measurably so cross-register conversion costs read on `δ` (the 5π Sobolev → geometric chain encoded via `f_{rc}` and the type-gap via `f_{ca}`);
+- (ii) iso-register currency structure and register-state labels encode measurably so cross-register conversion costs and unresolved states read on `δ` (the resolved `5π` Sobolev → geometric chain encoded via `f_{rc}`, the type-gap via `f_{ca}`, and open Fejes-Tóth / specific-`π` bridges kept as unresolved states);
 - (iii) closure-class membership reads measurably against `(Z, ℱ, ν, δ)` (§5.5 admissibility envelope plus §4.2.1 regularity guard giving the `C_FFT` indicator on `Z`).
 
 The three clauses parallelize cleanly across the three witnesses; each consumes a specific portion of `Z`'s structure. Phase 1b's `Z` and `δ` definitions are the inputs; Phase 1c's faithfulness verification is the output.

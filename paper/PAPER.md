@@ -66,7 +66,7 @@ The conversion has a transaction cost. Following Coase 1937, we keep two questio
 
 Amortization across repeated uses and asymptotics in size and precision both couple, via the Lindemann–Weierstrass envelope, to effective Hermite–Lindemann at `n = 1` (§6.5). Representation-dependence under change of coordinates is handled by the adaptive-family reading of §1.5; bypass-resistance under specialist intermediation is handled by the regularity guard of §1.2. Additivity under composition is represented by the cocycle composition law of §6.5. The floor extension from at-threshold to past-threshold is the bridge between `δ > 0` at `T(P)` and the implication claim past `T(P)`.
 
-The framework hosts more than the §1.3 `(μ, α)` currency pair. `δ` is the transaction cost between *any two non-nesting measure-theoretic readings of one quantity*. The algorithm-side instance is the bounded/unbounded coefficient conversion. The substrate-side instance is §5.2's iso/-register triple — three non-nesting measure-theoretic readings of the planar isoperimetric gap (rate, constant, almost-every), with `5π ≈ 15.7×` worked-instance overhead between rate and constant on the chained Sobolev → geometric route, and a categorial type-gap to almost-every (`iso/THREE-REGISTER-SYNTHESIS.md` Claim 1).
+The framework hosts more than the §1.3 `(μ, α)` currency pair. `δ` is the transaction cost between *any two non-nesting measure-theoretic readings of one quantity*. The algorithm-side instance is the bounded/unbounded coefficient conversion. The substrate-side instance is §5.2's iso/-register triple — three non-nesting measure-theoretic readings of the planar isoperimetric gap (rate, constant, almost-every), with `5π ≈ 15.7×` worked-instance overhead between rate and constant on the chained Sobolev → geometric route, and a categorial type-gap to almost-every (`iso/THREE-REGISTER-SYNTHESIS.md` Claim 1). The iso case also carries a register-state distinction: a currency may be isolated without its program bridge being resolved. The `5π` overhead is therefore a resolved conversion cost between already-isolated registers, not evidence that the Sobolev rate register failed to isolate the right content.
 
 ## §1.7. Candidate cocycle realization
 
@@ -90,7 +90,7 @@ FFT-style methods are adaptive strategy families built from this trade. They cho
 
 The lower-bound canon measures the same conversion in different currencies. Schönhage–Strassen builds it operationally; Morgenstern measures the additive side under bounded coefficients; Winograd measures a multiplicative CRT ledger; Auslander–Feig–Winograd measures cyclotomic semisimple factors under rational equivalence; Ailon measures spread by matrix entropy in a restricted unitary-gate model. Each source sees a real part of the trade, but none gives a frictionless translation into all the others.
 
-The failure is two halves of one boundary fact: existence (`δ > 0` at `T(P)`) and implication (`δ → 0` past `T(P)`), joined by the floor-extension step of §6.2. Algorithm-side, this looks like heterogeneity across lower-bound currencies (§3.6.2): Morgenstern's determinant potential cannot reach the normalized FFT, and Ailon's entropy potential is forced in its place (§3.2). Substrate-side, it looks like non-nesting readings of the same geometric quantity: §5.2's rate, constant, and almost-every iso registers, with `5π` worked overhead between rate and constant and a categorial type-gap to almost-every.
+The failure is two halves of one boundary fact: existence (`δ > 0` at `T(P)`) and implication (`δ → 0` past `T(P)`), joined by the floor-extension step of §6.2. Algorithm-side, this looks like heterogeneity across lower-bound currencies (§3.6.2): Morgenstern's determinant potential cannot reach the normalized FFT, and Ailon's entropy potential is forced in its place (§3.2). Substrate-side, it looks like non-nesting readings of the same geometric quantity: §5.2's rate, constant, and almost-every iso registers, with `5π` worked overhead between rate and constant, a categorial type-gap to almost-every, and a register-state distinction between isolated currency and resolved program bridge.
 
 The reduction map `R: L → F` from the integer-indexed lattice to the Farey set induces σ-algebra coarsening on `L`; the substrate observables `f₁ = φ(n)/2`, `f₂ = L_n`, `f₃ = Δ_n` do not factor through `R` (proved in companion form at §5.6). Theorem K certifies that the substrate has structure the conversion has to respect. The impossibility theorem (§6.6) composes K with the cost-algebra apparatus to say no FFT-style method can drive `δ → 0` past `T(P)`.
 
@@ -166,7 +166,7 @@ The shared structure is the stack: charged operations, cost currencies, a coeffi
 
 The algorithm-side argument is correspondingly currency-stratified: the endpoint commitment, the T4b boundary object, and the candidate transport must land in every cell of `T(P)`. `δ` is conceptually single but realizes in a chosen cost-norm; the three-cell currency plurality forces a `δ`-tuple.
 
-Theorem K (§5.6) is currency-blind: a σ-algebra fact on the integer-indexed lattice, indifferent to cost-counting and equally applicable across algorithm-side currencies (§1.3) and substrate-side iso/ registers (§5.2). The substrate side carries its own currency-stratification: the three iso/ registers (rate, constant, almost-every) are non-nesting measure-theoretic readings of the planar isoperimetric gap, with `5π ≈ 15.7×` worked-instance overhead between rate and constant ([iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md) Claim 1) and a categorial type-gap to almost-every.
+Theorem K (§5.6) is currency-blind: a σ-algebra fact on the integer-indexed lattice, indifferent to cost-counting and equally applicable across algorithm-side currencies (§1.3) and substrate-side iso/ registers (§5.2). The substrate side carries its own currency-stratification: the three iso/ registers (rate, constant, almost-every) are non-nesting measure-theoretic readings of the planar isoperimetric gap, with `5π ≈ 15.7×` worked-instance overhead between rate and constant ([iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md) Claim 1), a categorial type-gap to almost-every, and unresolved bridge/audit states where isolated currency has not yet become program-resolved use.
 
 §3.2 supplies the in-canon witness for non-transfer: Morgenstern's determinant potential cannot reach the normalized FFT, and Ailon's matrix-entropy potential is forced in its place. Translation across the three threshold currencies is not free.
 
@@ -223,7 +223,7 @@ The first squeeze is Theorem K. Farey recoding keeps only the reduced pair `(k/g
 
 The next natural move is to pay in another algorithm-side currency. `M_FR` tries to trade the missing bounded-additive information against multiplicative structure from CRT or cyclotomic factor accounting. That is the mult/add escape, and it fails at the cost-algebra obstruction (§6.3, §6.4): §3.6.2's currency-stratification makes cross-currency conversion read on `δ`, and `δ` does not vanish at the bounded/unbounded coefficient boundary.
 
-The method can then try to read the lost substrate information through the iso registers instead of through Farey data. This escape also squeezes shut: rate, constant, and almost-every are non-nesting readings of the planar gap. The rate-to-constant route carries the `5π` worked overhead, and the almost-every register is type-incompatible with the pointwise curve registers (§5.2).
+The method can then try to read the lost substrate information through the iso registers instead of through Farey data. This escape also squeezes shut: rate, constant, and almost-every are non-nesting readings of the planar gap. The rate-to-constant route carries the `5π` worked overhead, the almost-every register is type-incompatible with the pointwise curve registers, and open bridge/audit states cannot be treated as completed program bridges (§5.2).
 
 The last native escape is to specialize. `M_FR` can store tables, advice, oracle constants, or hidden state for the troublesome fibers. Under §4.2.1, those objects remain outside the FFT-style class unless their construction and storage are charged at the same granularity, with the per-sample cost form supplied by effective Hermite–Lindemann at `n = 1` (§6.5).
 
@@ -245,7 +245,7 @@ Those questions live on non-nesting hypothesis classes. Rate is asymptotic along
 
 Worked-instance witnesses for non-nesting: the thin ellipse `(a = 2, b = 1/2)` and the small-spike `r(θ) = 1 + ε cos(5θ)` give the two pairwise non-inclusions on curve-shape space; Beck's class lives on `α`-parameter space and is type-incompatible with both. Worked-instance overhead between rate and constant: `5π ≈ 15.7×` weaker than Bonnesen direct on the chained Sobolev → geometric route, with no single extremal function realizing all three sharpnesses simultaneously ([iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md) Claim 1).
 
-The three readings are currencies in §1.6's transaction-cost sense, with the non-nesting plus the worked overhead supplying a substrate-side `δ > 0` instance.
+The three readings are currencies in §1.6's transaction-cost sense, with the non-nesting plus the worked overhead supplying a substrate-side `δ > 0` instance. Their resolution status is not uniform. The geometric register isolates the sharp constant currency and is pointwise usable on convex regular `n`-gons, while its Fejes-Tóth L-W audit remains open. The Sobolev register is resolved for the program's regular-`n` rate work through Hurwitz Parseval and small-`n` direct computation; converting that rate information into a geometric constant pays the `5π` overhead. The probabilistic register isolates the almost-every discrepancy currency, but its Schmidt 1960 audit and specific-`π` empirical-to-density bridge remain unresolved.
 
 ## §5.3. Closed-form polygon arithmetic
 
@@ -283,7 +283,7 @@ Proof at [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §K.0–§K.4. The
 
 Descent in §1's framework means trading a higher cost-bearing complexity bound for a lower one by reorganizing the computation. Lower-bound improvement *is* successful descent; §6 asks whether descent past `T(P)` is reachable by FFT-style methods.
 
-Because `T(P)` has distinct cost currencies, the endpoint commitment, T4b, and the candidate transport are asserted currency-by-currency over the algorithm-side currencies (`μ`, `α`). The substrate-side iso/ currencies of §5.2 enter as `δ > 0` facts through T4b.
+Because `T(P)` has distinct cost currencies, the endpoint commitment, T4b, and the candidate transport are asserted currency-by-currency over the algorithm-side currencies (`μ`, `α`). The substrate-side iso/ currencies of §5.2 enter as `δ > 0` facts through T4b, with their register-state preserved: isolated currency, unresolved bridge, or program-resolved use are different statuses in the comparison.
 
 ## §6.2. Endpoint commitment
 
@@ -303,9 +303,9 @@ T4b is a package of seven named statements. Together they construct a currency-u
 
 ### §6.3.0. T4b.0 — currency diagram
 
-Let `D_T` be the small measurable diagram whose algorithm-side nodes are `C_Mor` (Morgenstern bounded-additive), `C_Win` (Winograd modular-product multiplicative), and `C_AFW` (AFW cyclotomic-multiplicative), and whose substrate-side nodes are `N_rate`, `N_const`, and `N_aae` from §5.2. Bookkeeping nodes record coefficient regime, precision, rational-equivalence quotienting, and table/advice state when those data are needed to make a morphism's domain explicit.
+Let `D_T` be the small measurable diagram whose algorithm-side nodes are `C_Mor` (Morgenstern bounded-additive), `C_Win` (Winograd modular-product multiplicative), and `C_AFW` (AFW cyclotomic-multiplicative), and whose substrate-side nodes are `N_rate`, `N_const`, and `N_aae` from §5.2. Bookkeeping nodes record coefficient regime, precision, rational-equivalence quotienting, table/advice state, and iso-register state when those data are needed to make a morphism's domain explicit.
 
-Morphisms in `D_T` state what information is preserved, what cost coordinate is rescaled, and where comparison is partial or type-blocked. The substrate morphism `f_{rc} : N_rate → N_const` carries the worked `5π` rescaling from the chained Sobolev → geometric route; `f_{ca} : N_const → N_aae` is not a finite-rescaling morphism but the type-gap witness. Algorithm-side morphisms distinguish bounded additive, unbounded multiplicative, rational-equivalence, and restricted unitary-entropy coordinates rather than identifying them.
+Morphisms in `D_T` state what information is preserved, what cost coordinate is rescaled, and where comparison is partial, audit-open, bridge-open, or type-blocked. The substrate morphism `f_{rc} : N_rate → N_const` carries the worked `5π` rescaling from the chained Sobolev → geometric route; it is a resolved overhead, not a free identification. `f_{ca} : N_const → N_aae` is not a finite-rescaling morphism but the type-gap witness. The geometric Fejes-Tóth certification and the probabilistic specific-`π` bridge are represented as unresolved bridge/audit states, not as completed morphisms. Algorithm-side morphisms distinguish bounded additive, unbounded multiplicative, rational-equivalence, and restricted unitary-entropy coordinates rather than identifying them.
 
 ### §6.3.1. T4b.1 — existence of `Z`
 
@@ -317,7 +317,7 @@ A typical `Z`-point is a bookkeeping tuple, not a new substrate. For an `n`-gon 
 
 ### §6.3.2. T4b.2 — measurable currency encoding
 
-The algorithm-side currencies `(μ, α)` and the substrate-side iso registers have measurable coordinates on `Z`. The §5 scalar substrate observables `f₁ = φ(n)/2`, `f₂ = L_n`, and `f₃ = Δ_n` lift measurably to `Z` at the substrate nodes where they are defined.
+The algorithm-side currencies `(μ, α)` and the substrate-side iso registers have measurable coordinates on `Z`. The §5 scalar substrate observables `f₁ = φ(n)/2`, `f₂ = L_n`, and `f₃ = Δ_n` lift measurably to `Z` at the substrate nodes where they are defined. For iso registers, measurability includes register-state data: currency isolated, bridge/audit unresolved, or program-resolved. T4b does not collapse these states into a single availability label.
 
 This clause does not say that `f₁`, `f₂`, and `f₃` factor through the scalar `δ`. Theorem K says the opposite kind of thing about Farey-side recoding: those observables are not recoverable from `F`. What T4b.2 supplies is a place where the observables and their loss can be spoken about in the same measurable apparatus.
 
@@ -333,11 +333,11 @@ Toy path. Take the `Z`-point just described, with a rate node, a constant node, 
 
 ### §6.3.4. T4b.4 — iso-register detection
 
-The iso-register structure of §5.2 contributes a positive `δ` floor. At `n`-gon `Z`-points, the finite comparison `f_{rc} : N_rate → N_const` carries `r_{rc}^{(κ)} = 5π`. In the normalization where the direct rate-side and constant-side polygon readings are both expressed in `Δ_n` units, the worked instance contributes
+The iso-register structure of §5.2 contributes a positive `δ` floor where a finite comparison is actually available. At `n`-gon `Z`-points, the finite comparison `f_{rc} : N_rate → N_const` carries `r_{rc}^{(κ)} = 5π`. In the normalization where the direct rate-side and constant-side polygon readings are both expressed in `Δ_n` units, the worked instance contributes
 
 `d_{rc} = (5π - 1) · Δ_n > 0`.
 
-Changing normalization changes the displayed scalar but not the positive proportional floor. The almost-every register remains separate: the `f_{ca}` type-gap is not a large finite constant but the non-availability of a finite-rescaling path.
+Changing normalization changes the displayed scalar but not the positive proportional floor. The almost-every register remains separate: the `f_{ca}` type-gap is not a large finite constant but the non-availability of a finite-rescaling path. Likewise, an open audit or bridge is not read as a finite overhead; it is recorded as unresolved register state.
 
 ### §6.3.5. T4b.5 — algorithm-side currency faithfulness
 
@@ -349,7 +349,7 @@ Thus "same scale" is not "same currency." The Morgenstern↔Ailon comparison and
 
 FFT-style method membership is measurable against `(Z, ℱ, ν, δ)`. The description space is the space of uniformly described finite strategy families generated by the native operations of §4.2.2, with adaptive choices from problem data allowed only under the §4.2.1 regularity guard. Finite composition and guarded adaptive choice preserve measurability of the associated `Z`-coordinates.
 
-The four escape channels of §4.6 are therefore visible to the T4b package: Farey recoding, cross-register iso conversion, cross-currency mult/add trading, and size-dependent tables/advice. Tables, oracle constants, advice strings, and hidden state remain outside the class unless their construction and storage are charged at the same granularity.
+The four escape channels of §4.6 are therefore visible to the T4b package: Farey recoding, cross-register iso conversion, cross-currency mult/add trading, and size-dependent tables/advice. The cross-register iso channel means treating an isolated register as if its bridge were resolved without paying the registered overhead or respecting the type gap. Tables, oracle constants, advice strings, and hidden state remain outside the class unless their construction and storage are charged at the same granularity.
 
 The universality of `Z` supplies the cross-currency reconciliation the lower-bound apparatus does not perform internally; T4b.2-T4b.6 state the separate faithfulness conditions needed for the contradiction in §6.6.
 
@@ -357,7 +357,7 @@ The universality of `Z` supplies the cross-currency reconciliation the lower-bou
 
 Theorem K (§5.6) supplies the T4b.2 witness: an apparatus restricted to F-side coordinates cannot recover `f₁`, `f₂`, or `f₃`. Thus Farey recoding can be measured inside `Z`, but the lost scalar observables are not reconstructed from Farey data.
 
-The iso-register facts of §5.2 supply T4b.4. The `5π` rescaling of `f_{rc}` reads on `δ` at `n`-gon `Z`-points as a positive floor, with `(5π - 1) · Δ_n` in the normalization of §6.3.4. The type-gap to almost-every remains a non-finite comparison, not an additional finite constant.
+The iso-register facts of §5.2 supply T4b.4. The `5π` rescaling of `f_{rc}` reads on `δ` at `n`-gon `Z`-points as a positive floor, with `(5π - 1) · Δ_n` in the normalization of §6.3.4. The type-gap to almost-every remains a non-finite comparison, not an additional finite constant. The open Fejes-Tóth and specific-`π` bridges remain bridge states rather than finite morphism costs.
 
 The algorithm-side non-transfer of §3.6.2 supplies T4b.5. Morgenstern↔Ailon non-transfer supplies the determinant/entropy obstruction, while Winograd and AFW supply the rational-equivalence multiplicative cells that do not identify with bounded additive cost.
 
@@ -381,7 +381,7 @@ Figure: [figures/delta_phase_plot.png](figures/delta_phase_plot.png) — the clo
 
 Suppose `M` is an FFT-style method proving a lower bound on `P` strictly improving past `T(P)`. By §6.2, this descent implies `δ → 0` at the bounded/unbounded coefficient boundary. By T4b.0-T4b.3, the relevant currencies are represented in `(Z, ℱ, ν)` and the attempted descent has a `δ` reading in the chosen operational norm. By T4b.6, closure-class membership and the escape-channel classification are measurable in the same apparatus.
 
-The T4b package routes every FFT-style escape through one of the obstructions in §6.4. Farey recoding loses `f₁`, `f₂`, and `f₃` because they are not recoverable on `F` (T4b.2 plus Theorem K); cross-register iso conversion retains the `5π` overhead and the type-gap (T4b.4); cross-currency mult/add trading retains Morgenstern↔Ailon and bounded/unbounded non-transfer (T4b.5); tables and advice leave the class unless charged at the same granularity (T4b.6 plus §6.5). Each case contradicts `δ → 0`.
+The T4b package routes every FFT-style escape through one of the obstructions in §6.4. Farey recoding loses `f₁`, `f₂`, and `f₃` because they are not recoverable on `F` (T4b.2 plus Theorem K); cross-register iso conversion retains the `5π` overhead, the type-gap, and the unresolved bridge states rather than treating isolated currencies as freely resolved (T4b.4); cross-currency mult/add trading retains Morgenstern↔Ailon and bounded/unbounded non-transfer (T4b.5); tables and advice leave the class unless charged at the same granularity (T4b.6 plus §6.5). Each case contradicts `δ → 0`.
 
 Finite compositions of the native operations in §4.2.2 stay inside those cases. Therefore, conditional on the effective Hermite–Lindemann `n = 1` cost form, the variable-precision canon re-read, and the rigorous type-gap at `f_{ca}`, no FFT-style strengthening past current thresholds is reachable on this substrate.
 

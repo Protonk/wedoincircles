@@ -152,6 +152,27 @@ not aesthetic preference. For program audit calculations:
 The three routes are not interchangeable; the program's audit
 choices respect the currency-by-route map.
 
+### 1.5 Register-state view
+
+The FFT cyclotomic-isolation memo suggests a useful distinction here:
+**currency isolation is not the same thing as program resolution**.
+Each iso/ register has been isolated as the sharp tool for one
+currency, but only some register-to-program bridges are fully
+resolved.
+
+| Register | Isolated currency | Still unresolved | Directly usable / resolved piece |
+|---|---|---|---|
+| Geometric / Bonnesen | sharp constants in Hausdorff / annulus-width geometry | Fejes-Tóth 1950 L-W audit; rate looseness on regular `n`-gons remains structural | pointwise Bonnesen bounds on convex regular `n`-gons |
+| Sobolev / Hurwitz-Fuglede | sharp `Θ(1/n²)` rate and Fourier-mass accounting | conversion to geometric constants pays the documented `5π` overhead | Hurwitz Parseval route, small-`n` direct computation, and L-W audit closed |
+| Probabilistic / Beck | sharp almost-every discrepancy threshold | Schmidt 1960 audit; empirical-to-density bridge for specific `π` | methodological exemplar until the specific-`π` bridge closes |
+
+In this language, the `5π` overhead is not evidence that the
+Sobolev register failed to isolate the right content. It is the cost
+of converting from an already-isolated rate register into the
+geometric constant register.
+
+![Register-state barcode for the iso synthesis. The horizontal axis has four columns labeled currency isolated, L-W audit, bridge or hypothesis, and program target. Three rows labeled geometric/Bonnesen, Sobolev/Hurwitz-Fuglede, and probabilistic/Beck show status cells. Medium blue marks isolated but unresolved status and dark blue marks resolved status. The geometric row is resolved at currency isolation and direct convex-n-gon bridge, but unresolved at L-W audit and program target because the Fejes-Tóth certification remains open. The Sobolev row is dark blue in all four columns, with a note that the 5 pi conversion is overhead rather than failure. The probabilistic row is resolved at almost-every currency isolation but unresolved at L-W audit, specific-pi bridge, and program target.](../figures/iso_register_state_barcode.png)
+
 ---
 
 ## Claim 2 — L-W-Safety Content Map

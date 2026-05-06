@@ -63,9 +63,9 @@ Prove the three faithfulness clauses against Phase 1b's `(Z, ℱ, ν)` and Phase
 
 **File target.** [measure/T4B-FAITHFULNESS.md](measure/T4B-FAITHFULNESS.md) — single file with the three clause proofs; sequential within the file (clause (i)'s substrate-side embedding is reused by clause (ii)).
 
-**Status.** **Complete (modulo debt #12).** All three clauses verified. (i) `f₁, f₂, f₃` factor through `δ` via the substrate-side `L → N_rate → Z` embedding; recover map exploits `Δ_n`-injectivity on `ℕ_{≥3}`; Theorem K is the necessity-side witness ruling out the F-side route. (ii) Cross-register conversion costs constructed as measurable functions on `(Z, ℱ_Z)`; 5π overhead and categorial type-gap encoded structurally without needing extended-real-line δ (the type-gap is structural rather than pointwise-unbounded). (iii) `C_FFT ⊂ Z` is the countable image of a measurable scheme-set; indicator measurable.
+**Status.** **Complete (modulo debt #12).** All three clauses verified. (i) `f₁, f₂, f₃` factor through `δ` via the substrate-side `L → N_rate → Z` embedding; recover map exploits `Δ_n`-injectivity on `ℕ_{≥3}`; Theorem K is the necessity-side witness ruling out the F-side route. (ii) Cross-register conversion costs and register-state labels constructed as measurable functions on `(Z, ℱ_Z)`; resolved `5π` overhead, categorial type-gap, and unresolved bridge/audit states encoded structurally without needing extended-real-line δ (the type-gap and open bridges are structural rather than pointwise-unbounded). (iii) `C_FFT ⊂ Z` is the countable image of a measurable scheme-set; indicator measurable.
 
-**Parallelizable.** The three clauses parallelize across witnesses (Theorem K / 5π synthesis / §5.5 + §4.2.1) and use different portions of `Z`'s structure. Sequential writing was chosen because clause (i)'s substrate-side embedding is reused by clause (ii); single file at ~150 lines.
+**Parallelizable.** The three clauses parallelize across witnesses (Theorem K / 5π synthesis plus register-state ledger / §5.5 + §4.2.1) and use different portions of `Z`'s structure. Sequential writing was chosen because clause (i)'s substrate-side embedding is reused by clause (ii); single file at ~150 lines.
 
 ## Critical path
 

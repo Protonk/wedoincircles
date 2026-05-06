@@ -12,6 +12,9 @@ Contents:
   - `FUGLEDE-1989-BRIEF.md` (Sobolev stability)
   - `BECK-1994-BRIEF.md` (probabilistic Diophantine approximation)
 - `THREE-REGISTER-SYNTHESIS.md` — cross-source synthesis (currency-by-route, L-W-safety content map, hypothesis-class structure).
+- `build_register_state_barcode.sage` — generates
+  `figures/iso_register_state_barcode.png`, the register-state
+  barcode embedded in `THREE-REGISTER-SYNTHESIS.md`.
 
 New briefs follow `CONTRIBUTING.md` source-extraction register; L-W-safety
 audit per `memos/OLD-TIME-RELIGION.md`; trust boundary explicit per brief.
