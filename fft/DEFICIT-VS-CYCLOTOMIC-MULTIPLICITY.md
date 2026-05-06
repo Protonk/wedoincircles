@@ -71,6 +71,13 @@ The bookkeeping admits three states per `Φ_d`:
 Both *isolated* and *fully resolved* count toward `iso(j)`; *lumped*
 does not.
 
+The middle state is load-bearing: it separates the moment a
+cyclotomic factor stops sharing moduli with foreign factors from the
+later moment when its own internal evaluation has been fully resolved.
+Without that distinction, radix-2 and AFW-direct would collapse into
+a coarser two-state bookkeeping at precisely the point this memo is
+trying to observe.
+
 ---
 
 ## Worked specimen: radix-2 DIT on cyclic DFT, `N = 2^k`
@@ -127,8 +134,19 @@ For `N = 64` (`k = 6`): per-stage ratios `2, 4, 8, 16, 32, 32`.
 The ratio doubles per stage and plateaus at the final stage because
 `Φ₁` and `Φ₂` co-emerge from the terminal `(x² − 1)` lump. The
 identity `Σⱼ Δiso(j) · 2^{min(j, k−1)} = N log₂ N` is the
-stoichiometric signature of the radix-2 DIT schedule; it does not
-transport to other schedules.
+stoichiometric signature of the radix-2 DIT schedule, but not a
+separate coincidence: since `ΔΨ = N` is flat, it rewrites the total
+`N · k` as `Σⱼ Δiso(j)` against the stage weights
+`N / Δiso(j)`. The content is the geometric `Δiso` profile, not the
+mere rebundling of the endpoint total.
+
+For `N = 64`, the same closed form can be drawn factorwise:
+
+![Cyclotomic isolation barcode for radix-2 DIT with N = 64. The horizontal axis shows stages j = 0 through 6. The vertical axis stacks cyclotomic factors Phi_1, Phi_2, Phi_4, Phi_8, Phi_16, Phi_32, and Phi_64 with row heights proportional to phi(d), so Phi_64 occupies half the barcode height, Phi_32 a quarter, and so on. Gray cells mark lumped factors, medium blue cells mark isolated but unresolved factors, and dark blue cells mark the final fully resolved stage. Phi_64 turns blue at stage 1, Phi_32 at stage 2, Phi_16 at stage 3, Phi_8 at stage 4, Phi_4 at stage 5, and Phi_1 and Phi_2 co-emerge only at stage 6. A top strip shows constant row-deficit clearing with Delta Psi divided by N equal to 1 at every nonzero stage, while Delta iso labels read 32, 16, 8, 4, 2, 2.](figures/cyclotomic_isolation_barcode_n64.png)
+
+The barcode is the geometric rendering of the three-state
+bookkeeping: gray-to-blue records isolation, while blue-to-dark-blue
+records the separate final resolution stage.
 
 ---
 
@@ -172,6 +190,11 @@ exhibits the opposite shape from radix-2: `Δiso` front-loaded,
 ## Observed pattern
 
 ![Joint-trace phase plane: four polylines for N = 8, 16, 32, 64 plotted in the unit square with normalized iso(j)/N on the horizontal axis and normalized cleared deficit (N log2 N − Psi(j))/(N log2 N) on the vertical axis. All four polylines start at (0, 0) and end at (1, 1). A faint dotted diagonal y = x marks the uniform-stoichiometry reference. Each polyline descends below the diagonal: the first vertex always lands at x = 0.5 (radix-2 DIT halves the unresolved factor mass at stage 1) with y = 1/k where k = log2 N, the second vertex at x = 0.75, the third at x = 0.875, and so on along x = 1 − 2^{-j}, producing a staircase that hugs the right edge of the square. The N = 64 polyline is annotated with stage labels j = 1 through j = 6 along its vertices.](figures/deficit_vs_iso_phase_plane.png)
+
+The dotted diagonal is a uniform-stoichiometry reference line, not an
+efficiency target or an asserted achievable schedule. Falling below
+it records the mismatch between flat `ΔΨ` and geometric `Δiso`, not
+a defect in the radix-2 schedule.
 
 Across the three schedule types, the joint trace `(Ψ(j), iso(j))`
 sits at a different point in per-stage space at each intermediate
@@ -222,6 +245,21 @@ schedules with twiddle-table reuse can break monotonicity of `iso`
 while `Ψ` continues to descend — is well-defined inside the
 bookkeeping above and stays
 observational regardless of how it lands.
+
+---
+
+## Stress test: Bluestein
+
+Bluestein is the natural stress test for the monotonicity question,
+but it needs a definition extension before it becomes a worked
+specimen. Cooley–Tukey refines a fixed modulus tower and so keeps
+`iso` monotone by construction. Bluestein instead embeds a cyclic
+`N`-DFT into a convolution modulo `x^M − 1` for some larger `M`; the
+original `Φ_d` factors for `x^N − 1` are transported into a new
+ambient cyclotomic structure and may be re-lumped with factors coming
+from `M`. A future `N = 5` or `N = 7` tabulation should therefore
+define a transported `iso_N` inside the Bluestein ambient modulus
+before claiming an actual drop.
 
 ---
 
