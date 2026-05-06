@@ -6,11 +6,10 @@ radix-2 DIT FFT applied to the cyclic DFT of size N at four sizes
 N in {8, 16, 32, 64}.
 
   - Psi(A) := N log2 N - sum_i H(p_i)  with p_i(j) = |A_ij|^2
-    is the row-deficit potential of the contributor package at
-    ground_state_deficit_bound_package/. Computed honestly by
-    simulating radix-2 butterflies on I_N (twiddle phases do not
+    is the row-deficit potential used in the memo. Computed directly
+    by simulating radix-2 butterflies on I_N (twiddle phases do not
     affect |.|^2 distributions, so the Psi trajectory matches the
-    Walsh-Hadamard trajectory tabulated in the package).
+    Walsh-Hadamard trajectory in row-marginal coordinates).
 
   - iso(j) is the cyclotomic-factor isolation profile defined in
     the memo: cumulative sum of phi(d) over Phi_d that are isolated

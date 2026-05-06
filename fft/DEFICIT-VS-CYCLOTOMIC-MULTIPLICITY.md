@@ -1,10 +1,8 @@
 # DEFICIT-VS-CYCLOTOMIC-MULTIPLICITY
 
-Joint-trace observation pairing the row-deficit potential `Ψ(A)` from
-the contributor package at
-[ground_state_deficit_bound_package/](ground_state_deficit_bound_package/)
-with the cyclotomic-factor isolation profile coming from the
-AFW 1984 / Winograd 1978 reading at
+Joint-trace observation pairing the row-deficit potential `Ψ(A)` with
+the cyclotomic-factor isolation profile coming from the AFW 1984 /
+Winograd 1978 reading at
 [fft/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md](fft/AUSLANDER-FEIG-WINOGRAD-1984-BRIEF.md)
 and [fft/WINOGRAD-1978-BRIEF.md](fft/WINOGRAD-1978-BRIEF.md). The
 two are independent monitors of FFT progress: `Ψ` is a real-valued
@@ -16,9 +14,9 @@ for radix-2 DIT, with sketches for mixed-radix and AFW-direct.
 The memo is **observational**, not theorem-bearing. It does not claim
 a relationship between `Ψ`-progress and cyclotomic-factor consumption;
 it tabulates what the joint trace looks like for specific schedules.
-The package classifies its own bound as conditional on a bridge it
-does not earn (§7 of the package README); this memo extracts a
-separate joint-trace artifact, not a repair of that bridge.
+The row-deficit lower-bound template would require a separate bounded
+native-channel capacity theorem; this memo uses only the row-state
+monitor, not that bridge.
 
 Per [memos/AGENTS.md](memos/AGENTS.md): exploratory; sharpens
 existing program material; no new external sources.
@@ -27,10 +25,8 @@ existing program material; no new external sources.
 
 ## Two monitors
 
-**Row-deficit potential `Ψ`.** From
-[ground_state_deficit_bound_package/README.md](ground_state_deficit_bound_package/README.md)
-§3: for an `N × N` operator state `A` with row distributions
-`pᵢ(j) = |Aᵢⱼ|²`,
+**Row-deficit potential `Ψ`.** For an `N × N` operator state `A`
+with row distributions `pᵢ(j) = |Aᵢⱼ|²`,
 
 ```text
 Ψ(A) = Σᵢ D(pᵢ ‖ uniform)
@@ -38,9 +34,9 @@ existing program material; no new external sources.
 ```
 
 Endpoints: `Ψ(I_N) = N log₂ N`, `Ψ(F_N) = 0` for any unitary target
-with row marginals `1/N`. Monotone non-increasing under row-mixing
-unitaries; in particular, monotone non-increasing under butterfly
-stages.
+with row marginals `1/N`. In the radix-2 DIT trajectory below, each
+butterfly stage spreads every row over twice as many coordinates, so
+`Ψ` decreases by `N` per stage.
 
 **Cyclotomic-factor isolation profile `iso`.** Polynomial-side
 bookkeeping. The cyclic DFT of size `N` decomposes as
@@ -90,10 +86,9 @@ at stage `j` are `2^j` blocks, each of degree `N/2^j`, of the form
 `x^{N/2^j} − ω` for `ω` ranging over `2^j`-th roots of unity.
 
 The `Ψ`-side trajectory of radix-2 DIT applied to `I_N` is identical
-to the Walsh–Hadamard trajectory in the package: twiddle factors are
-unit-modulus and do not affect `|·|²` distributions. So `ΔΨ(j) = N`
-for every `j ∈ {1, …, k}` and the package's tabulated stage trace
-applies directly here.
+to the Walsh–Hadamard trajectory in row-marginal coordinates: twiddle
+factors are unit-modulus and do not affect `|·|²` distributions. So
+`ΔΨ(j) = N` for every `j ∈ {1, …, k}`.
 
 The `iso`-side trajectory is non-trivial. For `N = 8`:
 
@@ -195,14 +190,14 @@ sits at a different point in per-stage space at each intermediate
   `p`- or `q`-related cyclotomic factors are extracted at the outer
   Cooley–Tukey stage.
 
-Both monitors are individually monotone across butterfly stages of
-a unitary FFT schedule. The joint trace records a coupling: the
+For the schedule shapes sketched here, both monitors are individually
+monotone across stages. The joint trace records a coupling: the
 radix-2 schedule trades large `Δiso` early for small `Δiso` late
 while keeping `ΔΨ` flat, AFW-direct does the opposite, and
-mixed-radix interpolates. The area under the joint polyline in the
-`(iso, ΔΨ)` plane is conserved at `N log₂ N` regardless of schedule
-(since cumulative `ΔΨ = N log₂ N` and cumulative `Δiso = N`), but
-the shape of the polyline distinguishes schedules.
+mixed-radix interpolates. Only the endpoint totals are conserved
+across schedules (`ΣΔΨ = N log₂ N` and `ΣΔiso = N`); the area under
+any plotted joint path is schedule-dependent. The shape of the
+polyline distinguishes schedules.
 
 ---
 
@@ -217,13 +212,15 @@ the cyclotomic factorization has been realized by the algorithm's
 sub-product moduli and is indifferent to how diffuse the matrix
 entries are.
 
-Tracking only `Ψ` does not distinguish radix-2 DIT from AFW-direct;
-tracking only `iso` does not distinguish a unitary FFT from a
-non-unitary one. The joint trace separates these. Across the
-schedules considered, both monitors are individually monotone; the
-empirical question the trace surfaces — whether twiddle-table-reuse
-schedules can break monotonicity of `iso` while `Ψ` continues to
-descend — is well-defined inside the bookkeeping above and stays
+Tracking only endpoint `Ψ` does not distinguish schedules that reach
+the same Fourier row marginals; tracking only `iso` does not
+distinguish a unitary FFT from a non-unitary procedure with the same
+factor-isolation bookkeeping. The joint trace separates these.
+Across the schedules considered, both monitors are individually
+monotone. The empirical question the trace surfaces — whether
+schedules with twiddle-table reuse can break monotonicity of `iso`
+while `Ψ` continues to descend — is well-defined inside the
+bookkeeping above and stays
 observational regardless of how it lands.
 
 ---
@@ -236,8 +233,17 @@ observational regardless of how it lands.
    [fft/COCYCLE-COMPOSITION-LAW.md](fft/COCYCLE-COMPOSITION-LAW.md)
    and debt #14 of [paper/PROOF-CHAIN.md](paper/PROOF-CHAIN.md):
    `δ` is the failure-to-agree of cocycle-product factors across
-   butterfly refinements, not the row-deficit potential. `Ψ` is a
-   contributor's auxiliary monitor; its relation to `δ` is open.
+   butterfly refinements, not the row-deficit potential. `Ψ` is an
+   auxiliary monitor; its relation to `δ` is open.
+
+   The transferred lower-bound template for `Ψ` is conditional: if
+   every admissible native channel removes at most `C` bits of
+   row-deficit, then any path from `I_N` to Fourier-uniform row
+   marginals needs at least `(N log₂ N) / C` channels. Pairwise
+   coordinate-wise conservative channels have `C ≤ 2`; `b`-local
+   conservative channels have `C ≤ b log₂ b`. The unproved bridge is
+   that the program's admissible native channels satisfy some such
+   `C = O(1)` capacity bound.
 
 2. The `iso` profile is a polynomial-side bookkeeping, not the AFW
    per-factor multiplicative-complexity ledger of paper §3.5
@@ -246,10 +252,10 @@ observational regardless of how it lands.
    cost coordinate requires a separate audit; the present memo only
    tracks isolation status.
 
-3. The package's row-distribution evolution treats butterflies as
-   row mixers in the matrix-state picture. Twiddle factors do not
-   affect `|·|²` distributions, so the radix-2 DIT and Walsh–Hadamard
-   produce the same `Ψ`-trajectory on `I_N` input. The cyclotomic
+3. The row-distribution calculation treats butterflies as row mixers
+   in the matrix-state picture. Twiddle factors do not affect `|·|²`
+   distributions, so the radix-2 DIT and Walsh–Hadamard produce the
+   same `Ψ`-trajectory on `I_N` input. The cyclotomic
    structure differs (Walsh–Hadamard is a `(ℤ/2)^k` DFT, all-`Φ₁`
    trivially; the radix-2 cyclic DFT runs the full `Φ_d` ladder),
    so the joint trace is non-trivial only on the cyclic-DFT side.
@@ -264,12 +270,13 @@ observational regardless of how it lands.
 
 ## Trust boundary
 
-`Ψ(A)` and the row-deficit framework: source content from
-[ground_state_deficit_bound_package/](ground_state_deficit_bound_package/),
-welcomed as a contributor artifact, classified failed by its author.
+`Ψ(A)` and the row-deficit framework: used only as an auxiliary
+row-spread monitor with the definition, endpoints, and conditional
+capacity caveat stated above. No row-deficit lower-bound content is
+imported.
 Cyclotomic-factor structure: AFW 1984 and Winograd 1978 per
 [fft/FFT-COMPLEXITY-ARTICULATION.md](fft/FFT-COMPLEXITY-ARTICULATION.md),
 cited inside their stated trust boundaries per
 [fft/PROVENANCE-AND-TRANSFERABILITY.md](fft/PROVENANCE-AND-TRANSFERABILITY.md).
-No lower-bound content is imported from either source; the memo's
+No lower-bound content is imported from AFW/Winograd; the memo's
 content is a joint-trace observation defined inside the program.
