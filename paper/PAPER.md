@@ -2,11 +2,17 @@
 
 The FFT canon — Schönhage–Strassen 1971, Morgenstern 1973, Winograd 1978, Auslander–Feig–Winograd 1984 — registers cost in heterogeneous currencies and reaches correspondingly distinct lower-bound thresholds.
 
-We prove this heterogeneity is structural: FFT-style methods, defined as finite compositions of the canon's native operations under a uniform-charge cost model, cannot improve past those thresholds on cyclotomic-DFT and adjacent compute-cost problems.
+We prove this heterogeneity is structural.
 
-The argument imports Coase 1937's transaction-cost framework, generalizing from economic-coordination friction to measure-theoretic non-nesting overhead: each conversion across the bounded/unbounded coefficient boundary carries an irreducible cost `δ`, and the canon's thresholds are located by — not held above — that friction. [NOTX] [RHETOR]
+FFT-style methods, defined as finite compositions of the canon's native operations under a uniform-charge cost model, cannot improve past those thresholds on cyclotomic-DFT and adjacent compute-cost problems.
 
-Theorem K, a σ-algebra coarsening result on the integer-indexed lattice, certifies that the cyclotomic-ladder degree, polygon perimeter, and isoperimetric gap rate are unrecoverable from Farey coordinates; non-nesting among the rate, constant, and almost-every readings of the planar isoperimetric gap blocks free conversion across measure-theoretic registers.
+The argument imports Coase 1937's transaction-cost framework, generalizing from economic-coordination friction to measure-theoretic non-nesting overhead: each conversion across the bounded/unbounded coefficient boundary carries an irreducible cost `δ`. [NOTX]
+
+The canon's thresholds are located by — not held above — that friction. [RHETOR]
+
+Theorem K, a σ-algebra coarsening result on the integer-indexed lattice, certifies that the cyclotomic-ladder degree, polygon perimeter, and isoperimetric gap rate are unrecoverable from Farey coordinates.
+
+Non-nesting among the rate, constant, and almost-every readings of the planar isoperimetric gap blocks free conversion across measure-theoretic registers.
 
 Composing these substrate-side facts with the algorithm-side cost algebra forecloses the F-side coordinate channel and the cross-register channel.
 
@@ -35,7 +41,9 @@ Extension to behaviorally-equivalent algorithms meets Rice's theorem, and we loc
 
 ### §Intro.1. The claim
 
-We prove an impossibility theorem: FFT-style methods, defined by closure under the canon's native operations under a uniform-charge cost model, cannot improve past their existing lower-bound thresholds on cyclotomic-DFT and adjacent compute-cost problems.
+We prove an impossibility theorem.
+
+FFT-style methods, defined by closure under the canon's native operations under a uniform-charge cost model, cannot improve past their existing lower-bound thresholds on cyclotomic-DFT and adjacent compute-cost problems.
 
 The thresholds in question are heterogeneous — Morgenstern's `Ω(n log n)` bounded-coefficient additive bound, Winograd's modular-product `μ(T_P) = 2n − k`, AFW's multiplicative-complexity threshold under rational equivalence — and the impossibility lands at each one in its own currency.
 
@@ -43,21 +51,31 @@ The thresholds in question are heterogeneous — Morgenstern's `Ω(n log n)` bou
 
 The cost framework imports Coase 1937's transaction-cost vocabulary, generalized from economic-coordination friction to measure-theoretic non-nesting overhead.
 
-Each conversion across the bounded/unbounded coefficient boundary carries an irreducible cost `δ`; the canon's thresholds are *located by* — not held above — that friction. [NOTX] [RHETOR]
+Each conversion across the bounded/unbounded coefficient boundary carries an irreducible cost `δ`. [NOTX]
+
+The canon's thresholds are *located by* — not held above — that friction. [RHETOR]
 
 §3.6.2 demonstrates currency-stratification on both sides: algorithm-side (canon source non-transfer, witnessed constructively by Morgenstern↔Ailon's forced shift from determinant to entropy potential at the normalized FFT) and substrate-side (the planar isoperimetric gap's three non-nesting measure-theoretic readings, with `5π` worked overhead between rate and constant). [RHETOR]
 
-Lower bounds are not numbers; they are measurements made in particular coordinate systems. [NOTX]
+Lower bounds are not numbers. [NOTX]
+
+They are measurements made in particular coordinate systems.
 
 ### §Intro.3. What's earned, what's committed, what's owed
 
 The proof carries three objects at three evidentiary standards.
 
-*Earned*: Theorem K, a σ-algebra coarsening result on the integer-indexed lattice, proved here in companion form — the local, checkable fact certifying that `f₁ = φ(n)/2`, `f₂ = L_n`, `f₃ = Δ_n` are unrecoverable from Farey coordinates; T1's off-backbone empty contour is proved alongside.
+*Earned*: Theorem K, a σ-algebra coarsening result on the integer-indexed lattice, proved here in companion form — the local, checkable fact certifying that `f₁ = φ(n)/2`, `f₂ = L_n`, `f₃ = Δ_n` are unrecoverable from Farey coordinates.
+
+T1's off-backbone empty contour is proved alongside.
 
 *Committed*: a uniform-charge cost model with regularity guard, an operational cost-norm on the cocycle product, and the `δ`-typing extension to substrate-side iso registers.
 
-*Owed*: T4b — the currency-universal boundary object whose three faithfulness clauses tie substrate-side facts to algorithm-side cost; the endpoint commitment that ties threshold improvement to `δ → 0`; the floor extension that bridges at-threshold to past-threshold. [RHETOR]
+*Owed*: T4b — the currency-universal boundary object whose three faithfulness clauses tie substrate-side facts to algorithm-side cost. [RHETOR]
+
+The endpoint commitment that ties threshold improvement to `δ → 0`.
+
+The floor extension that bridges at-threshold to past-threshold.
 
 The algebraic-side closure-mismatch reading at §7 (NATIVE-F) is a sibling structural reading on the integer-vs-continuum asymmetry, not load-bearing for the impossibility. [NOTX] [INTERNAL] [RHETOR]
 
@@ -69,7 +87,13 @@ Frame figure: [figures/native_f_closure_mismatch.png](figures/native_f_closure_m
 
 Orientation: we use four nested objects — cost model, cost currencies, conversion strategies, and transaction cost `δ`.
 
-The cost model governs what is charged; the currencies say what is being counted; the conversion is the adaptive family of strategies trading one currency for another; `δ` is the cost object attached to that conversion.
+The cost model governs what is charged.
+
+The currencies say what is being counted.
+
+The conversion is the adaptive family of strategies trading one currency for another. [RHETOR]
+
+`δ` is the cost object attached to that conversion.
 
 This section prevents `δ` from being treated as a synonym for the mult/add conversion.
 
@@ -87,51 +111,75 @@ They are currencies inside the cost model of §1.2, not yet conversion strategie
 
 #### §1.3.1. Multiplicative cost
 
-The cost-bearing primitives are multiplications; the complexity measure `μ` counts them under bilinear / rational-equivalence accounting.
+The cost-bearing primitives are multiplications.
+
+The complexity measure `μ` counts them under bilinear / rational-equivalence accounting.
 
 Schönhage–Strassen 1971, Winograd 1978, and Auslander–Feig–Winograd 1984 each give `μ` structure on cyclotomic-DFT and adjacent computations (full presentation at §3).
 
 #### §1.3.2. Additive cost
 
-The cost-bearing primitives are additions; the complexity measure `α` counts them, sensitive to the coefficient regime.
+The cost-bearing primitives are additions.
+
+The complexity measure `α` counts them, sensitive to the coefficient regime.
 
 Morgenstern 1973's `Ω(n log n)` bounded-coefficient additive lower bound is the canonical structure-bearing result (full presentation at §3.3).
 
-Ailon 2013 is the adjacent normalized-FFT comparison and the canon's clearest in-canon witness for currency-stratification (§3.6.2): in a layered `2 × 2` unitary-gate model, matrix entropy gives the same `Ω(n log n)` scale without determinant growth — the determinant method does not transfer to the normalized FFT, and entropy is needed in its place. [NOTX] [RHETOR]
+Ailon 2013 is the adjacent normalized-FFT comparison and the canon's clearest in-canon witness for currency-stratification (§3.6.2): in a layered `2 × 2` unitary-gate model, matrix entropy gives the same `Ω(n log n)` scale without determinant growth. [NOTX] [RHETOR]
+
+The determinant method does not transfer to the normalized FFT, and entropy is needed in its place.
 
 ### §1.4. Coefficient regimes and the boundary
 
 Bounded vs unbounded coefficients.
 
-The regime is a parameter of every cost measure on either side; many bounds — Morgenstern's notably — depend on which regime is in force.
+The regime is a parameter of every cost measure on either side.
+
+Many bounds — Morgenstern's notably — depend on which regime is in force.
 
 The bounded/unbounded coefficient boundary is the later measure-theoretic state space where `δ` is evaluated.
 
 ### §1.5. Conversion as adaptive strategy family
 
-The mult/add conversion is the family of strategies FFT-style algorithms use to trade multiplicative cost for additive cost (or vice versa); methods select a strategy adaptively (Gauss 1805's `4×3` vs `3×4` for Pallas is the pre-1882 worked example, per `fft/GOLDSTINE-1977-INTERPOLATION-BRIEF.md`; deeper framing parked at `fft/FFT-SEARCH-PLAN.md`). [INTERNAL] [RHETOR]
+The mult/add conversion is the family of strategies FFT-style algorithms use to trade multiplicative cost for additive cost (or vice versa).
+
+Methods select a strategy adaptively (Gauss 1805's `4×3` vs `3×4` for Pallas is the pre-1882 worked example, per `fft/GOLDSTINE-1977-INTERPOLATION-BRIEF.md`. [INTERNAL]
+
+Deeper framing parked at `fft/FFT-SEARCH-PLAN.md`). [INTERNAL] [RHETOR]
 
 The conversion is an adaptive strategy family closed under composition, not a single partial function. [NOTX] [RHETOR]
 
-Adaptivity does not let a method evade `δ` by switching currencies; the cross-currency move is precisely what `δ` measures, so adaptive currency-choice relocates where `δ` shows up rather than zeroing it (per §3.6.2). [NOTX]
+Adaptivity does not let a method evade `δ` by switching currencies. [NOTX]
+
+The cross-currency move is precisely what `δ` measures, so adaptive currency-choice relocates where `δ` shows up rather than zeroing it (per §3.6.2).
 
 ### §1.6. Transaction cost `δ`: existence vs algebra
 
 The conversion has a transaction cost `δ`: a non-zero quantity reflecting the irreducible cost of executing a strategy.
 
-Vocabulary and typing follow Coase 1937 (`measure/COASE-FRICTION-AND-SPECIALISTS.md`): the existence of friction (`δ > 0`) is one claim; the algebra of friction is another. [INTERNAL]
+Vocabulary and typing follow Coase 1937 (`measure/COASE-FRICTION-AND-SPECIALISTS.md`): the existence of friction (`δ > 0`) is one claim. [INTERNAL]
+
+The algebra of friction is another.
 
 Debt #2 lives here: additivity, amortization, asymptotics, per-size / per-precision behavior, representation dependence, and multi-route effects. [INTERNAL] [RHETOR]
 
-The framework hosts more than the §1.3 `(μ, α)` currency pair: `δ` is the transaction cost between *any two non-nesting measure-theoretic readings of one quantity*, with `(μ, α)` the canonical algorithm-side instance and §5.2's iso/ registers (rate, constant, almost-every) the canonical substrate-side instance. [RHETOR]
+The framework hosts more than the §1.3 `(μ, α)` currency pair. [RHETOR]
+
+`δ` is the transaction cost between *any two non-nesting measure-theoretic readings of one quantity*, with `(μ, α)` the canonical algorithm-side instance and §5.2's iso/ registers (rate, constant, almost-every) the canonical substrate-side instance.
 
 The iso/ registers now carry an additional register-state distinction: isolated currency does not imply resolved program bridge. [NOTX] [INTERNAL]
 
-`5π` Sobolev → geometric is a resolved overhead between isolated registers; Fejes-Tóth certification and Beck → specific-`π` remain unresolved bridge/audit states. [INTERNAL]
+`5π` Sobolev → geometric is a resolved overhead between isolated registers. [INTERNAL]
 
-**This generalization — from Coase's economic-coordination friction to measure-theoretic non-nesting overhead — is committed definitionally here and amortized across the paper as construction-debt #13: down-payment at §3.6.2 face (iv) (worked substrate-side instance with `5π` Sobolev → geometric overhead and categorial type-gap to almost-every, plus the register-state ledger); subsequent amortization at §6.3 (T4b clause (ii)) and §6.6 (cross-register channel argument). [INTERNAL] [RHETOR]
+Fejes-Tóth certification and Beck → specific-`π` remain unresolved bridge/audit states. [INTERNAL]
 
-Discipline: no single argument hinges on the generalization alone — each load-bearing use is independently defensible from substrate-side or algorithm-side facts.** [INTERNAL] [RHETOR]
+**This generalization — from Coase's economic-coordination friction to measure-theoretic non-nesting overhead — is committed definitionally here and amortized across the paper as construction-debt #13: down-payment at §3.6.2 face (iv) (worked substrate-side instance with `5π` Sobolev → geometric overhead and categorial type-gap to almost-every, plus the register-state ledger). [INTERNAL] [RHETOR]
+
+Subsequent amortization at §6.3 (T4b clause (ii)) and §6.6 (cross-register channel argument). [INTERNAL]
+
+Discipline: no single argument hinges on the generalization alone. [INTERNAL]
+
+Each load-bearing use is independently defensible from substrate-side or algorithm-side facts.** [INTERNAL] [RHETOR]
 
 §3.6.2 surfaces the currency-stratification structurally on both sides. [RHETOR]
 
@@ -139,7 +187,9 @@ Discipline: no single argument hinges on the generalization alone — each load-
 
 A candidate concrete realization of `δ` is parked at `fft/PHASE-DEFECT.md`: `δ ≡ cost of {Δ_k} cocycle compression`. [INTERNAL] [RHETOR]
 
-The formal composition law is at `fft/COCYCLE-COMPOSITION-LAW.md`; the faithful `δ`-coordinate condition the candidate must satisfy is the T4b spec at `measure/THE-FIRST-BRIDGE.md` (boundary object with `δ`-faithfulness). [INTERNAL] [RHETOR] [HEDGE]
+The formal composition law is at `fft/COCYCLE-COMPOSITION-LAW.md`. [INTERNAL]
+
+The faithful `δ`-coordinate condition the candidate must satisfy is the T4b spec at `measure/THE-FIRST-BRIDGE.md` (boundary object with `δ`-faithfulness). [INTERNAL] [RHETOR] [HEDGE]
 
 This is candidate machinery, not yet the definition of `δ`. [NOTX]
 
@@ -151,11 +201,15 @@ Descent past `T(P)` means trading a higher cost-bearing bound for a lower one by
 
 The endpoint commitment (§6.2) asserts that descent past `T(P)` *implies* the endpoint condition: `δ → 0` at the boundary, which in the candidate cocycle coordinate of §1.7 reads as competitive `{Δ_k}` compression.
 
-The implication direction is what the bridge debt earns; a biconditional is not claimed. [NOTX] [RHETOR]
+The implication direction is what the bridge debt earns. [NOTX] [RHETOR]
+
+A biconditional is not claimed.
 
 Figure: [figures/cost_conversion_schematic.png](figures/cost_conversion_schematic.png) — the cost-pair `(μ, α)` plane with the actual frontier (canon thresholds Morgenstern, AFW, Winograd marked), the counterfactual `δ = 0` frontier (the endpoint §4 aims to rule out), the hatched `δ`-gap between them, and the endpoint implication `descent past T(P) ⟹ δ → 0 at boundary` (§6.2) shown as a vertical arrow at the bounded/unbounded coefficient boundary (§1.4).
 
-Endpoint-side picture only; the keystone proposition lives at §6.3, the substrate-side faithfulness witnesses at §6.4, the inputs T4b consumes at §6.5, and the algebraic-side companion at §7. [RHETOR]
+Endpoint-side picture only.
+
+The keystone proposition lives at §6.3, the substrate-side faithfulness witnesses at §6.4, the inputs T4b consumes at §6.5, and the algebraic-side companion at §7. [RHETOR]
 
 Companion at [paper/code/COST-CONVERSION-SCHEMATIC.md](paper/code/COST-CONVERSION-SCHEMATIC.md). [INTERNAL]
 
@@ -171,7 +225,13 @@ The mult/add conversion is the family of strategies FFT-style methods use to tra
 
 It is adaptive: methods select strategies from problem data, and the class is closed under composition (§1.5, §4.2.3).
 
-The canon's four sources are four windows on the conversion: Schönhage–Strassen builds it operationally; Morgenstern measures it from the additive side under bounded coefficients; Winograd factors it through the CRT modular product; AFW decomposes it through cyclotomic semisimple structure. [RHETOR]
+The canon's four sources are four windows on the conversion: Schönhage–Strassen builds it operationally. [RHETOR]
+
+Morgenstern measures it from the additive side under bounded coefficients. [RHETOR]
+
+Winograd factors it through the CRT modular product. [RHETOR]
+
+AFW decomposes it through cyclotomic semisimple structure. [RHETOR]
 
 **Where it fails.** [RHETOR]
 
@@ -189,9 +249,13 @@ The §4.6 chase makes the failure operational: a Farey-regularized recursive FFT
 
 Theorem K is the local checkable fact.
 
-The reduction map `R: L → F` from the integer-indexed lattice to the Farey set induces σ-algebra coarsening on `L`; the substrate observables `f₁ = φ(n)/2`, `f₂ = L_n`, `f₃ = Δ_n` do not factor through `R` (proved in companion form at §5.6).
+The reduction map `R: L → F` from the integer-indexed lattice to the Farey set induces σ-algebra coarsening on `L`.
 
-K certifies that the substrate has structure the conversion has to respect; the impossibility theorem (§6.6) composes K with the cost-algebra apparatus to say no FFT-style method can drive `δ → 0` past the canon's thresholds. [RHETOR]
+The substrate observables `f₁ = φ(n)/2`, `f₂ = L_n`, `f₃ = Δ_n` do not factor through `R` (proved in companion form at §5.6).
+
+K certifies that the substrate has structure the conversion has to respect. [RHETOR]
+
+The impossibility theorem (§6.6) composes K with the cost-algebra apparatus to say no FFT-style method can drive `δ → 0` past the canon's thresholds. [RHETOR]
 
 The conversion of multiplication and addition on the circle cannot be made friction-free by any FFT-style passage. [RHETOR]
 
@@ -203,11 +267,17 @@ The canon's heterogeneity is one structural fact in four cost coordinates. [RHET
 
 Four sources, 1971–1984, define the FFT lower-bound apparatus we engage with.
 
-Schönhage–Strassen 1971 supplies the operational cost model and the recursive composability template; Morgenstern 1973 supplies the bounded-coefficient additive floor; Winograd 1978 and Auslander–Feig–Winograd 1984 supply two readings of multiplicative complexity on the unbounded rational-equivalence side.
+Schönhage–Strassen 1971 supplies the operational cost model and the recursive composability template.
+
+Morgenstern 1973 supplies the bounded-coefficient additive floor.
+
+Winograd 1978 and Auslander–Feig–Winograd 1984 supply two readings of multiplicative complexity on the unbounded rational-equivalence side.
 
 None of the four targets another's regime or currency, and that non-transfer is what §3.6 unpacks. [SIGNPOST]
 
-The canon is the measurement apparatus, not the target the impossibility extends — the program's content reads what these four together can and cannot reach. [NOTX] [RHETOR]
+The canon is the measurement apparatus, not the target the impossibility extends. [NOTX] [RHETOR]
+
+The program's content reads what these four together can and cannot reach.
 
 ### §3.2. Schönhage–Strassen 1971
 
@@ -217,13 +287,19 @@ The construction works in the ring `Z/F_n Z` (`F_n = 2^{2^n} + 1` Fermat numbers
 
 Headline result: integer multiplication in `O(N log N log log N)` bit operations via recursive FFT decomposition.
 
-SS is the canon's operational template, not a lower-bound theorem; §3.6.1 places it as the model-and-composability anchor for the §1.2 cost-framework discipline. [NOTX] [SIGNPOST]
+SS is the canon's operational template, not a lower-bound theorem. [NOTX]
+
+§3.6.1 places it as the model-and-composability anchor for the §1.2 cost-framework discipline. [SIGNPOST]
 
 ### §3.3. Morgenstern 1973
 
 Bounded-coefficient additive lower bound: any linear circuit computing the `n`-point DFT under coefficients bounded by a constant `c` requires `Ω(n log n)` additions.
 
-Mechanism: a determinant-potential argument — the DFT matrix has determinant of magnitude `n^{n/2}` (Vandermonde-style), and in the bounded-coefficient model each gate grows the running determinant by at most a constant factor, so reaching the full determinant requires at least `Ω(n log n)` gates.
+Mechanism: a determinant-potential argument.
+
+The DFT matrix has determinant of magnitude `n^{n/2}` (Vandermonde-style).
+
+In the bounded-coefficient model each gate grows the running determinant by at most a constant factor, so reaching the full determinant requires at least `Ω(n log n)` gates.
 
 The bounded-coefficient regime is essential: without it, the determinant potential does not bind (cf. Ailon's normalized-FFT case at §3.7, where the matrix determinant has modulus 1 and the potential is silent). [SIGNPOST] [HEDGE]
 
@@ -233,15 +309,21 @@ Cost-framework role: additive cost `α` on the bounded side of §1.4.
 
 Modular-product theorem: for a degree-`n` polynomial `T_P` with `k` irreducible factors over the base field, the bilinear multiplicative complexity of multiplication mod `T_P` is exactly `μ(T_P) = 2n − k`.
 
-Mechanism: CRT decomposition reduces polynomial multiplication mod `T_P` to factor-by-factor multiplication in the residue rings, and the lower bound follows by counting essential bilinear multiplications inside each factor.
+Mechanism.
 
-Cost-framework role: multiplicative cost `μ` on the unbounded rational-equivalence side; the CRT-cyclotomic factor ledger is what §3.5's AFW will lift from polynomial-quotient rings to the full cyclotomic-DFT class. [SIGNPOST]
+CRT decomposition reduces polynomial multiplication mod `T_P` to factor-by-factor multiplication in the residue rings, and the lower bound follows by counting essential bilinear multiplications inside each factor.
+
+Cost-framework role: multiplicative cost `μ` on the unbounded rational-equivalence side.
+
+The CRT-cyclotomic factor ledger is what §3.5's AFW will lift from polynomial-quotient rings to the full cyclotomic-DFT class. [SIGNPOST]
 
 ### §3.5. Auslander–Feig–Winograd 1984
 
 Semisimple cyclotomic decomposition of finite-abelian DFTs: the group ring `ℚ[G]` of a finite abelian group `G` decomposes by CRT into a product of cyclotomic fields `ℚ(ζ_d)` (one per divisor `d` of `|G|`), and the DFT factors accordingly.
 
-Multiplicative complexity is computed factor-by-factor under rational equivalence — bilinear / linear-rational substitutions are free, only essential nonrational multiplications count.
+Multiplicative complexity is computed factor-by-factor under rational equivalence.
+
+Bilinear / linear-rational substitutions are free, only essential nonrational multiplications count.
 
 The result extends Winograd's modular-product accounting (§3.4) from polynomial-quotient rings to the full semisimple algebra structure of finite-abelian-group DFTs.
 
@@ -276,7 +358,9 @@ Where a source does not itself formulate variable-precision charging, debt #9 is
 
 The shared structure is the stack: charged operations, cost currencies, a coefficient-regime boundary, strategy-family composition, and an unpaid transaction cost at the boundary.
 
-Three of four sources sit on the multiplicative side; Morgenstern is the additive-side floor, and the only source here whose lower bound requires bounded coefficients.
+Three of four sources sit on the multiplicative side.
+
+Morgenstern is the additive-side floor, and the only source here whose lower bound requires bounded coefficients.
 
 Schönhage–Strassen contributes operational model discipline and recursive FFT composability, but its headline result is an upper bound, not the threshold §4 tries to protect. [NOTX] [SIGNPOST]
 
@@ -290,35 +374,51 @@ Every such transfer is exactly what §1.6 calls `δ`, and §6 must prove that na
 
 (Labeled (i)–(iv) here to keep them distinct from §6.6's (a)–(d) composition.) [SIGNPOST]
 
-(i) `T(P)` is *structurally plural*: a fragmented frontier with currency-specific entries (AFW multiplicative on unbounded; Morgenstern's `Ω(n log n)` additive on bounded; Winograd's modular-product `μ(T_P) = 2n − k`).
+(i) `T(P)` is *structurally plural*: a fragmented frontier with currency-specific entries (AFW multiplicative on unbounded.
+
+Morgenstern's `Ω(n log n)` additive on bounded.
+
+Winograd's modular-product `μ(T_P) = 2n − k`).
 
 "Improving past `T(P)`" means improving past any one entry in its own currency.
 
 (ii) The algorithm-side argument is correspondingly *currency-stratified*: the endpoint commitment, the T4b boundary object, and the candidate transport must each land in every canon currency the impossibility is stated against. [RHETOR] [HEDGE]
 
-`δ` is conceptually single but realizes in a chosen cost-norm; the canon's currency-plurality forces a `δ`-tuple, with multi-currency coherence as a sibling spec to debt #2. [INTERNAL] [RHETOR]
+`δ` is conceptually single but realizes in a chosen cost-norm.
+
+The canon's currency-plurality forces a `δ`-tuple, with multi-currency coherence as a sibling spec to debt #2. [INTERNAL] [RHETOR]
 
 (iii) Theorem K (§5.6) is *currency-blind*: a σ-algebra fact on the integer-indexed lattice, indifferent to cost-counting and equally applicable across both algorithm-side currencies (§1.3) and substrate-side iso/ registers (§5.2). [SIGNPOST] [RHETOR]
 
 (iv) The substrate side carries its own *currency-stratification at §5.2*: the three iso/ registers (rate, constant, almost-every) are non-nesting measure-theoretic readings of the planar isoperimetric gap, with `5π` worked-instance overhead between rate and constant (per `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1), a categorial type-gap to almost-every, and a register-state ledger distinguishing isolated currency from resolved program bridge. [SIGNPOST] [INTERNAL] [RHETOR]
 
-They are currencies in §1.6's transaction-cost sense; non-nesting + worked overhead *is* a substrate-side `δ > 0` instance by §1.6's definition, with K's coarsening sitting on top of the register-stratification.
+They are currencies in §1.6's transaction-cost sense.
+
+Non-nesting + worked overhead *is* a substrate-side `δ > 0` instance by §1.6's definition, with K's coarsening sitting on top of the register-stratification.
 
 The substrate/algorithm asymmetry is therefore not "substrate uniform vs algorithm plural" but "currency-pluralities on both sides forcing matching commitments on `δ`, with K supplying the register-blind layer that ties them together." [NOTX]
 
-**The non-transfer is structural:** Ailon 2013 (§3.7) is the canon's constructive witness — Morgenstern's determinant potential cannot reach the normalized FFT (whose determinant has modulus 1), and matrix entropy is forced in its place. [SIGNPOST]
+**The non-transfer is structural:** Ailon 2013 (§3.7) is the canon's constructive witness. [SIGNPOST]
 
-Lower bounds are not numbers; they are measurements made in particular coordinate systems, and the canon does not freely translate between them. [NOTX]
+Morgenstern's determinant potential cannot reach the normalized FFT (whose determinant has modulus 1), and matrix entropy is forced in its place.
+
+Lower bounds are not numbers. [NOTX]
+
+They are measurements made in particular coordinate systems, and the canon does not freely translate between them.
 
 §6.6's smarter-FFT rebuttal lands as content on the strength of this. [SIGNPOST] [RHETOR]
 
-NATIVE-F's closure-mismatch reading at §7 is a sibling structural rhyme on the integer-vs-continuum asymmetry; parallel to this account, not load-bearing for it. [NOTX] [SIGNPOST] [INTERNAL] [RHETOR]
+NATIVE-F's closure-mismatch reading at §7 is a sibling structural rhyme on the integer-vs-continuum asymmetry. [NOTX] [SIGNPOST] [RHETOR]
+
+Parallel to this account, not load-bearing for it. [INTERNAL] [RHETOR]
 
 ### §3.7. Adjacent restricted-model lower bound: Ailon 2013
 
 Ailon records the warning we must keep visible: nontrivial Fourier-transform lower bounds in broad linear-circuit models remain open, and known successes come with strong restrictions. [HEDGE]
 
-His model keeps only `n` live coordinates; each gate applies a `2 × 2` unitary mixing to two coordinates.
+His model keeps only `n` live coordinates.
+
+Each gate applies a `2 × 2` unitary mixing to two coordinates.
 
 The normalized FFT fits this model in `O(n log n)` gates, and Ailon proves any such circuit needs at least `(1/2)n log_2 n` gates.
 
@@ -328,15 +428,23 @@ For a unitary matrix `M`, define `Phi(M) = -∑_{p,q} |M(p,q)|² log_2 |M(p,q)|�
 
 Then `Phi(Id)=0`, `Phi(F)=n log_2 n` for the normalized Fourier matrix, and one native `2 × 2` unitary gate can raise `Phi` by at most `2`.
 
-Program use: Ailon supplies an entropy-potential reading at the same `Ω(n log n)` scale as Morgenstern's determinant-potential lower bound, but in a different restricted model and a different cost currency (Shannon entropy on the layered unitary cost; bit-counting on Morgenstern's bounded-coefficient determinant).
+Program use.
 
-The Morgenstern↔Ailon pair is the canon's *constructive in-canon witness* for §3.6.2's non-transfer claim: per [fft/AILON-2013-UNITARY-FFT-LOWER-BOUND-BRIEF.md](fft/AILON-2013-UNITARY-FFT-LOWER-BOUND-BRIEF.md) §3, Morgenstern's determinant potential sees volume growth and so fits the unnormalized FFT, but does *not* explain a lower bound for the normalized FFT (whose determinant has modulus 1), and matrix entropy is the replacement potential needed in the normalized case. [NOTX] [INTERNAL] [RHETOR]
+Ailon supplies an entropy-potential reading at the same `Ω(n log n)` scale as Morgenstern's determinant-potential lower bound, but in a different restricted model and a different cost currency (Shannon entropy on the layered unitary cost.
+
+Bit-counting on Morgenstern's bounded-coefficient determinant).
+
+The Morgenstern↔Ailon pair is the canon's *constructive in-canon witness* for §3.6.2's non-transfer claim: per [fft/AILON-2013-UNITARY-FFT-LOWER-BOUND-BRIEF.md](fft/AILON-2013-UNITARY-FFT-LOWER-BOUND-BRIEF.md) §3, Morgenstern's determinant potential sees volume growth and so fits the unnormalized FFT, but does *not* explain a lower bound for the normalized FFT (whose determinant has modulus 1). [NOTX] [INTERNAL] [RHETOR]
+
+Matrix entropy is the replacement potential needed in the normalized case.
 
 Two lower-bound currencies, both reaching `Ω(n log n)`, *forced* into different shapes by what each potential can see — currency-segregation as a structural feature of the potential method. [RHETOR]
 
 Ailon's own survey (brief §1) foregrounds the same posture the program owes at §6.6: nontrivial broad linear-circuit Fourier lower bounds remain open, and known successful results require strong model restrictions. [SIGNPOST] [RHETOR] [HEDGE]
 
-It is not a broad FFT lower bound and not a proof of the program's `δ`; it sits in the canon-and-adjacent heterogeneous-measure family at the lower-bound frontier (per §7's multi-measure framing of `T(P)`) — and is the field-internal demonstration that the §3.6.2 non-transfer is forced, not incidental. [NOTX] [SIGNPOST] [RHETOR]
+It is not a broad FFT lower bound and not a proof of the program's `δ`. [NOTX]
+
+It sits in the canon-and-adjacent heterogeneous-measure family at the lower-bound frontier (per §7's multi-measure framing of `T(P)`) — and is the field-internal demonstration that the §3.6.2 non-transfer is forced, not incidental. [SIGNPOST] [RHETOR]
 
 ## §4. Main theorem
 
@@ -368,7 +476,9 @@ The class is closed under these operations when the §4.2.1 guard is respected.
 
 #### §4.2.3. The class defined
 
-Formally: an FFT-style method is a uniformly described strategy family whose per-size methods are finite compositions of the native operations of §4.2.2, possibly with adaptive choices, charged under §4.2.1, and closed under composition (per §1.5's reading; see `fft/FFT-SEARCH-PLAN.md` for the Gauss 1805 anchor and the deeper search-theoretic framing). [INTERNAL]
+Formally: an FFT-style method is a uniformly described strategy family whose per-size methods are finite compositions of the native operations of §4.2.2, possibly with adaptive choices, charged under §4.2.1, and closed under composition (per §1.5's reading.
+
+See `fft/FFT-SEARCH-PLAN.md` for the Gauss 1805 anchor and the deeper search-theoretic framing). [INTERNAL]
 
 This is the formal object §4.5 quantifies over. [SIGNPOST]
 
@@ -384,11 +494,19 @@ Cyclotomic-DFT specifically — the discrete Fourier transform over cyclotomic f
 
 The current best lower bounds the theorem asserts cannot be strengthened past by FFT-style methods.
 
-AFW's multiplicative-complexity threshold for cyclotomic DFTs under rational equivalence; Morgenstern's `Ω(n log n)` bounded-coefficient additive threshold; Winograd's modular-product threshold.
+AFW's multiplicative-complexity threshold for cyclotomic DFTs under rational equivalence.
 
-Named precisely; cited to §3.
+Morgenstern's `Ω(n log n)` bounded-coefficient additive threshold.
 
-The plurality of `T(P)` across distinct cost currencies is structural — see §3.6.2; the impossibility theorem must close at each entry. [HEDGE]
+Winograd's modular-product threshold.
+
+Named precisely.
+
+Cited to §3.
+
+The plurality of `T(P)` across distinct cost currencies is structural — see §3.6.2.
+
+The impossibility theorem must close at each entry. [RHETOR] [HEDGE]
 
 Cross-currency reconciliation is debt #9. [INTERNAL]
 
@@ -404,31 +522,45 @@ Equivalently: no FFT-style strengthening past the current thresholds is reachabl
 
 To stake the theorem before earning it, we run a specimen FFT-style method against `T(P)` and watch where it breaks. [RHETOR]
 
-Let `M_FR` be the *Farey-regularized recursive FFT*: at each butterfly stage, `M_FR` attempts to coarsen its cyclotomic index by passing `(k, n)` through the reduction map `R: (k, n) ↦ (k/g, n/g)` (with `g = gcd(k, n)`) to read on the Farey side, then composes the residual through every adaptive escape FFT-style closure permits.
+Let `M_FR` be the *Farey-regularized recursive FFT*.
 
-The specimen is native — recursive decomposition, linear composition, cyclotomic factor accounting, and adaptive choice from problem data, all under §4.2.1's regularity guard — and naively tempting: Farey reduction is the most natural regularization move on cyclotomic indices, and gcd-equivalence-class amortization would let `M_FR` absorb residue if it worked. [RHETOR] [HEDGE]
+At each butterfly stage, `M_FR` attempts to coarsen its cyclotomic index by passing `(k, n)` through the reduction map `R: (k, n) ↦ (k/g, n/g)` (with `g = gcd(k, n)`) to read on the Farey side, then composes the residual through every adaptive escape FFT-style closure permits.
+
+The specimen is native — recursive decomposition, linear composition, cyclotomic factor accounting, and adaptive choice from problem data, all under §4.2.1's regularity guard — and naively tempting.
+
+Farey reduction is the most natural regularization move on cyclotomic indices, and gcd-equivalence-class amortization would let `M_FR` absorb residue if it worked. [INTERNAL] [RHETOR] [HEDGE]
 
 **Headline attempt: mult-add trading.** [RHETOR]
 
 `M_FR` tries to amortize a multiplicative-side residue through Morgenstern's bounded-coefficient additive ledger to escape the AFW cyclotomic-multiplicative threshold — the one-line route through the maze any reader will think of first.
 
-The trade fails at the cost-algebra obstruction (§6.3, §6.4): §3.6.2's currency-stratification (Morgenstern↔Ailon non-transfer per §3.7; the determinant potential doesn't reach the normalized FFT, entropy is forced) makes the cross-currency conversion read on `δ`, and `δ` does not vanish at the bounded/unbounded coefficient boundary. [SIGNPOST] [RHETOR]
+The trade fails at the cost-algebra obstruction (§6.3, §6.4): §3.6.2's currency-stratification (Morgenstern↔Ailon non-transfer per §3.7. [SIGNPOST] [RHETOR]
+
+The determinant potential doesn't reach the normalized FFT, entropy is forced) makes the cross-currency conversion read on `δ`, and `δ` does not vanish at the bounded/unbounded coefficient boundary.
 
 The substrate content of *why* the conversion costs are bounded below is earned in §5 (specifically §3.6.2 face (iv) plus §5.2's iso non-nesting on the substrate-side iso half). [SIGNPOST]
 
 **Three variants foreshadowed for §5 to dispatch.** [SIGNPOST] [RHETOR]
 
-*Farey recoding* (the namesake attempt): `M_FR` passes `(k, n)` through `R` and tries to read its threshold position on the reduced fraction; broken by Theorem K at §5.6 — `f₁, f₂, f₃` do not factor through `R`. [SIGNPOST]
+*Farey recoding* (the namesake attempt): `M_FR` passes `(k, n)` through `R` and tries to read its threshold position on the reduced fraction.
 
-*Cross-register iso conversion*: `M_FR` tries to trade a rate-form bound for a sharp-constant bound, or treat an almost-every register as if it were a pointwise bridge; broken by §5.2's non-nesting and register-state ledger (`5π` worked overhead between rate and constant, unresolved bridges, categorial type-gap to almost-every). [SIGNPOST] [INTERNAL]
+Broken by Theorem K at §5.6 — `f₁, f₂, f₃` do not factor through `R`. [SIGNPOST]
 
-*Precomputed tables / advice*: `M_FR` tries to absorb residue with size-dependent shortcuts; broken by §5.5's admissibility envelope plus §4.2.1's regularity guard, with per-sample cost `≥ c · p` from effective Hermite–Lindemann at `n = 1`. [SIGNPOST] [RHETOR]
+*Cross-register iso conversion*: `M_FR` tries to trade a rate-form bound for a sharp-constant bound, or treat an almost-every register as if it were a pointwise bridge.
+
+Broken by §5.2's non-nesting and register-state ledger (`5π` worked overhead between rate and constant, unresolved bridges, categorial type-gap to almost-every). [SIGNPOST] [INTERNAL]
+
+*Precomputed tables / advice*: `M_FR` tries to absorb residue with size-dependent shortcuts. [RHETOR]
+
+Broken by §5.5's admissibility envelope plus §4.2.1's regularity guard, with per-sample cost `≥ c · p` from effective Hermite–Lindemann at `n = 1`. [SIGNPOST]
 
 Each variant is a different door, all opening onto the same room — `(Z, ℱ, μ, δ)` — exhausted at §6.6 once the keystone proposition (§6.3) shows the four-attempt span is what every FFT-style method's escape factors through. [SIGNPOST] [RHETOR]
 
 The adversary is artificial.
 
-Its failure does not commit the proof to a single canon currency (the algebra of `δ` extends across all four canon currencies and both substrate-side iso registers; debt #13), does not strip optionality from the floor-extension mechanism (debt #2(8)), and does not formalize channel-exhaustiveness (debt #11). [NOTX] [INTERNAL]
+Its failure does not commit the proof to a single canon currency (the algebra of `δ` extends across all four canon currencies and both substrate-side iso registers. [NOTX]
+
+Debt #13), does not strip optionality from the floor-extension mechanism (debt #2(8)), and does not formalize channel-exhaustiveness (debt #11). [INTERNAL]
 
 It is narrative scaffolding: a vehicle for the cost-algebra obstruction (§6.3) to be tested on a concrete escape attempt before being lifted to the full FFT-style class at §6.6. [SIGNPOST] [RHETOR]
 
@@ -436,17 +568,25 @@ It is narrative scaffolding: a vehicle for the cost-algebra obstruction (§6.3) 
 
 The proof has three parts plus a load-bearing transport, per `paper/PROOF-CHAIN.md`. [INTERNAL] [RHETOR]
 
-The §4.6 chase is the dramatic version; this is the structural one. [RHETOR]
+The §4.6 chase is the dramatic version. [RHETOR]
+
+This is the structural one.
 
 **Substrate-side menagerie** (§5). [SIGNPOST]
 
-The substrate the §4.6 chase navigates: rotation-orbit Diophantine kinematics under Haar measure (§5.1), non-nesting isoperimetric registers (§5.2), closed-form polygon arithmetic via Hurwitz Fourier expansion (§5.3), cyclotomic-ladder unboundedness against affine flatness (§5.4), the L-W admissibility envelope (§5.5), and Theorem K's σ-algebra coarsening on the integer-indexed lattice `L` (§5.6, *proved here in companion form*; proof at `measure/FOR-BREAKFAST.md` §K.0–§K.4). [SIGNPOST] [INTERNAL] [RHETOR]
+The substrate the §4.6 chase navigates: rotation-orbit Diophantine kinematics under Haar measure (§5.1), non-nesting isoperimetric registers (§5.2), closed-form polygon arithmetic via Hurwitz Fourier expansion (§5.3), cyclotomic-ladder unboundedness against affine flatness (§5.4), the L-W admissibility envelope (§5.5), and Theorem K's σ-algebra coarsening on the integer-indexed lattice `L` (§5.6, *proved here in companion form*. [SIGNPOST] [RHETOR]
+
+Proof at `measure/FOR-BREAKFAST.md` §K.0–§K.4). [INTERNAL]
 
 The menagerie is the substrate content of the four doors §4.6 staked.
 
 **T4b — the keystone proposition** (§6.3). [SIGNPOST] [RHETOR]
 
-The single sovereign claim of §6: a currency-universal boundary object `(Z, ℱ, μ, δ)` over canon currencies and substrate-side iso registers, with three faithfulness clauses — (i) §5 scalar substrate observables `f₁, f₂, f₃` factor through `δ`; (ii) iso-register currency structure and register-state status are encoded measurably so cross-register conversion costs, unresolved bridges, and type gaps read on `δ` alongside the algorithm-side `(μ, α)` cost; (iii) closure-class membership reads measurably against `(Z, ℱ, μ, δ)`. [SIGNPOST] [INTERNAL] [RHETOR]
+The single sovereign claim of §6: a currency-universal boundary object `(Z, ℱ, μ, δ)` over canon currencies and substrate-side iso registers, with three faithfulness clauses — (i) §5 scalar substrate observables `f₁, f₂, f₃` factor through `δ`. [SIGNPOST] [RHETOR]
+
+(ii) iso-register currency structure and register-state status are encoded measurably so cross-register conversion costs, unresolved bridges, and type gaps read on `δ` alongside the algorithm-side `(μ, α)` cost. [INTERNAL]
+
+(iii) closure-class membership reads measurably against `(Z, ℱ, μ, δ)`.
 
 Open and load-bearing (debt #1). [INTERNAL] [RHETOR]
 
@@ -454,7 +594,11 @@ Spec at `measure/THE-FIRST-BRIDGE.md`. [INTERNAL]
 
 **Substrate-side facts as faithfulness witnesses** (§6.4). [SIGNPOST]
 
-Theorem K certifies clause (i); §5.2 iso non-nesting plus §3.6.2 currency-stratification certify clause (ii); §5.5 admissibility envelope plus §4.2.1 regularity guard certify clause (iii). [SIGNPOST] [RHETOR]
+Theorem K certifies clause (i).
+
+§5.2 iso non-nesting plus §3.6.2 currency-stratification certify clause (ii). [SIGNPOST] [RHETOR]
+
+§5.5 admissibility envelope plus §4.2.1 regularity guard certify clause (iii). [SIGNPOST]
 
 Each substrate-side fact stops reading as a parallel obstruction and starts reading as a piece of T4b's faithfulness contract — and as the door that closes one of §4.6's escape attempts. [RHETOR]
 
@@ -464,17 +608,25 @@ The cost-algebra apparatus — operational cost-norm (debt #14), composition law
 
 **Conditional impossibility** (§6.6). [SIGNPOST]
 
-The endpoint commitment (§6.2) ties threshold improvement to `δ → 0` at the boundary; T4b's faithfulness clauses bite via §6.4's witnesses; the four §4.6 escape doors each close on `(Z, ℱ, μ, δ)`, exhausting the chase. [SIGNPOST] [RHETOR]
+The endpoint commitment (§6.2) ties threshold improvement to `δ → 0` at the boundary. [SIGNPOST]
+
+T4b's faithfulness clauses bite via §6.4's witnesses. [SIGNPOST] [RHETOR]
+
+The four §4.6 escape doors each close on `(Z, ℱ, μ, δ)`, exhausting the chase. [RHETOR]
 
 NATIVE-F's algebraic-side closure-mismatch reading (§7) is named as a sibling structural reading, not load-bearing. [NOTX] [SIGNPOST] [INTERNAL] [RHETOR]
 
-Construction debts: working ledger at end of document (outline-only; not paper content). [NOTX] [INTERNAL]
+Construction debts: working ledger at end of document (outline-only. [NOTX] [INTERNAL]
+
+Not paper content).
 
 ## §5. A maze of twisting passages, all alike
 
 ### §5.1. Rotation-orbit Diophantine kinematics
 
-Arena: irrationality of `π` already places the orbit `{kπ mod 1}` in Weyl's equidistribution regime against Haar measure on `T = ℝ/ℤ`; finite irrationality measure for `π` further gives the Avila–Jitomirskaya parameter `β(π) = 0`, the stronger discrepancy-side classification.
+Arena: irrationality of `π` already places the orbit `{kπ mod 1}` in Weyl's equidistribution regime against Haar measure on `T = ℝ/ℤ`.
+
+Finite irrationality measure for `π` further gives the Avila–Jitomirskaya parameter `β(π) = 0`, the stronger discrepancy-side classification.
 
 No FFT-algorithm passage extracts a kinematic feature distinguishing one trade from another beyond the Haar mean for continuous and Riemann-integrable test functions.
 
@@ -486,29 +638,47 @@ Source-side typing per `measure/SUBSTRATE-OBSTRUCTIONS.md` §1. [INTERNAL]
 
 Three measure-theoretic readings of the planar isoperimetric gap `Δ = L² − 4πA` — *rate* (asymptotic decay along a parametric family approaching a disk), *constant* (pointwise sharp inequality on a single curve, Bonnesen-strengthening per Osserman 1979 / Bonnesen 1921), *almost-every* (full-measure under a distribution on parameter space, Khintchine / Beck 1994 tradition) — sit on non-nesting hypothesis classes.
 
-Worked-instance witnesses: thin ellipse `(a = 2, b = 1/2)` and small-spike `r(θ) = 1 + ε cos(5θ)` give the two pairwise non-inclusions on curve-shape space; Beck's class lives on `α`-parameter space and is type-incompatible with both.
+Worked-instance witnesses: thin ellipse `(a = 2, b = 1/2)` and small-spike `r(θ) = 1 + ε cos(5θ)` give the two pairwise non-inclusions on curve-shape space.
+
+Beck's class lives on `α`-parameter space and is type-incompatible with both.
 
 Worked-instance overhead between rate and constant: `5π ≈ 15.7×` weaker than Bonnesen direct on the chained Sobolev → geometric route, with no single extremal function realizing all three sharpnesses simultaneously (per `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1). [INTERNAL]
 
-The register-state ledger distinguishes this resolved finite overhead from unresolved bridge/audit states: Fejes-Tóth certification remains open on the geometric route, while Beck → specific-`π` remains open on the probabilistic route. [INTERNAL] [HEDGE]
+The register-state ledger distinguishes this resolved finite overhead from unresolved bridge/audit states. [INTERNAL]
 
-Source-side typing per `measure/SUBSTRATE-OBSTRUCTIONS.md` §2; cross-source synthesis at `iso/THREE-REGISTER-SYNTHESIS.md`. [INTERNAL]
+Fejes-Tóth certification remains open on the geometric route, while Beck → specific-`π` remains open on the probabilistic route. [HEDGE]
 
-The iso/ registers are currencies in §1.6's transaction-cost sense (per §3.6.2 face (iv)); the operational implication — no FFT-style passage gets a free conversion — is §3.6.2's currency-stratification reading composed with §6.6's conditional impossibility (and §6.4's faithfulness-witness reading: §5.2 supplies clause (ii)'s substrate-side half), not a §5.2-internal claim. [NOTX] [SIGNPOST] [RHETOR]
+Source-side typing per `measure/SUBSTRATE-OBSTRUCTIONS.md` §2. [INTERNAL]
 
-§5.2 delivers substrate-side typing only. [NOTX]
+Cross-source synthesis at `iso/THREE-REGISTER-SYNTHESIS.md`. [INTERNAL]
+
+The iso/ registers are currencies in §1.6's transaction-cost sense (per §3.6.2 face (iv)). [NOTX]
+
+The operational implication — no FFT-style passage gets a free conversion — is §3.6.2's currency-stratification reading composed with §6.6's conditional impossibility (and §6.4's faithfulness-witness reading: §5.2 supplies clause (ii)'s substrate-side half), not a §5.2-internal claim. [SIGNPOST] [RHETOR]
+
+§5.2 delivers substrate-side typing only.
 
 ### §5.3. Closed-form polygon arithmetic
 
-Values: Hurwitz coefficients (Fourier expansion on the sparse lattice `m ≡ 1 mod n`), gap `4π⁴/(3n²)`, and the first-band concentration constant `6/π² = 1/ζ(2)` (from the `ζ(2)`-tail comparison `B_j(n) ≤ B_1(n)/j²` per `corners/HURWITZ-FIRST-BAND-CONCENTRATION.md` §1) are fixed; descent reaches them only at threshold. [INTERNAL]
+Values: Hurwitz coefficients (Fourier expansion on the sparse lattice `m ≡ 1 mod n`), gap `4π⁴/(3n²)`, and the first-band concentration constant `6/π² = 1/ζ(2)` (from the `ζ(2)`-tail comparison `B_j(n) ≤ B_1(n)/j²` per `corners/HURWITZ-FIRST-BAND-CONCENTRATION.md` §1) are fixed. [INTERNAL]
+
+Descent reaches them only at threshold.
 
 Source-side typing per `measure/SUBSTRATE-OBSTRUCTIONS.md` §3. [INTERNAL]
 
-Figures: [figures/archimedean_triptych.png](figures/archimedean_triptych.png) sets up the inside-out / outside-out / strip substrate; [figures/hurwitz_gap_rate.png](figures/hurwitz_gap_rate.png) closes the Hurwitz identity at the `4π⁴/(3n²)` Archimedean rate (three series collapse to one line over seven decades); [figures/hurwitz_gap_frequency_decomposition.png](figures/hurwitz_gap_frequency_decomposition.png) shows the first-band concentration `B_1(n) ≥ (6/π²) Δ_n` directly as a stacked-area chart over `n`.
+Figures: [figures/archimedean_triptych.png](figures/archimedean_triptych.png) sets up the inside-out / outside-out / strip substrate.
+
+[figures/hurwitz_gap_rate.png](figures/hurwitz_gap_rate.png) closes the Hurwitz identity at the `4π⁴/(3n²)` Archimedean rate (three series collapse to one line over seven decades).
+
+[figures/hurwitz_gap_frequency_decomposition.png](figures/hurwitz_gap_frequency_decomposition.png) shows the first-band concentration `B_1(n) ≥ (6/π²) Δ_n` directly as a stacked-area chart over `n`.
 
 ### §5.4. Cyclotomic-ladder unboundedness against affine flatness
 
-Structure: the maximal real subfield `K_n^+ = ℚ(ζ_n + ζ_n^{−1})` has `[K_n^+ : ℚ] = φ(n)/2`, which grows unbounded with `n`; affine closure is flat; native operations cannot bridge the asymmetry.
+Structure: the maximal real subfield `K_n^+ = ℚ(ζ_n + ζ_n^{−1})` has `[K_n^+ : ℚ] = φ(n)/2`, which grows unbounded with `n`.
+
+Affine closure is flat.
+
+Native operations cannot bridge the asymmetry.
 
 Source-side typing per `measure/SUBSTRATE-OBSTRUCTIONS.md` §4 (counting-invariant obstruction). [INTERNAL]
 
@@ -520,17 +690,25 @@ Figure: [figures/pseudo_chebyshev_arithmetic_ladder.png](figures/pseudo_chebyshe
 
 Audit: within L-W safety, closed-branch evidence, and the auxiliary-tool repertoire, no admissible method extracts additional descent information.
 
-The operative measure-theoretic fact within the envelope is the Lebesgue null/full dichotomy on `ℝ` (algebraics null; transcendentals full); finer distinctions among transcendentals trigger per-instance content-not-calendar audits per `memos/OLD-TIME-RELIGION.md`. [INTERNAL]
+The operative measure-theoretic fact within the envelope is the Lebesgue null/full dichotomy on `ℝ` (algebraics null.
+
+Transcendentals full).
+
+Finer distinctions among transcendentals trigger per-instance content-not-calendar audits per `memos/OLD-TIME-RELIGION.md`. [INTERNAL]
 
 Source-side typing per `measure/SUBSTRATE-OBSTRUCTIONS.md` §5. [INTERNAL]
 
-Composes with §4.2.1's regularity guard and effective Hermite–Lindemann at `n = 1` (debt #3) to certify clause (iii) of §6.3's keystone proposition: closure-class membership reads measurably; size-dependent shortcuts are out-of-class unless paid at the same granularity. [SIGNPOST] [INTERNAL] [RHETOR]
+Composes with §4.2.1's regularity guard and effective Hermite–Lindemann at `n = 1` (debt #3) to certify clause (iii) of §6.3's keystone proposition: closure-class membership reads measurably. [SIGNPOST] [INTERNAL] [RHETOR]
+
+Size-dependent shortcuts are out-of-class unless paid at the same granularity.
 
 ### §5.6. Theorem K — substrate-side σ-algebra coarsening
 
 **The Farey recoding block** — substrate content behind the door §4.6's namesake attempt slammed into.
 
-Theorem K is the structural fact that closes that door: F-side coordinates strip exactly the substrate observables the adversary needs to read its threshold position.
+Theorem K is the structural fact that closes that door.
+
+F-side coordinates strip exactly the substrate observables the adversary needs to read its threshold position.
 
 Earned here in companion form, then deployed as clause (i)'s witness at §6.3 / §6.4. [SIGNPOST]
 
@@ -538,21 +716,37 @@ Earned here in companion form, then deployed as clause (i)'s witness at §6.3 / 
 
 Let `L = {(k, n) ∈ ℤ² : 1 ≤ k < n, n ≥ 3}` and `F = {(p, q) ∈ ℤ² : 1 ≤ p < q, gcd(p, q) = 1}` carry their atomic σ-algebras, and let `R: L → F`, `R(k, n) = (k/g, n/g)` with `g = gcd(k, n)`, be the reduction map.
 
-Then `R⁻¹(2^F) ⊂ 2^L` is exactly the σ-algebra of fiber-constant subsets, and the three substrate observables `f₁(k, n) = φ(n)/2` (cyclotomic-ladder degree), `f₂(k, n) = L_n = 2n sin(π/n)` (polygon perimeter; equivalently the Hurwitz first Fourier coefficient via `c_1^{(n)} = L_n²/(4π²)`), and `f₃(k, n) = Δ_n = L_n²(1 − (π/n) cot(π/n))` (isoperimetric gap rate) are not fiber-constant — hence not `R⁻¹(2^F)`-measurable, equivalently they do not factor through `R`.
+Then `R⁻¹(2^F) ⊂ 2^L` is exactly the σ-algebra of fiber-constant subsets, and the three substrate observables `f₁(k, n) = φ(n)/2` (cyclotomic-ladder degree), `f₂(k, n) = L_n = 2n sin(π/n)` (polygon perimeter.
+
+Equivalently the Hurwitz first Fourier coefficient via `c_1^{(n)} = L_n²/(4π²)`), and `f₃(k, n) = Δ_n = L_n²(1 − (π/n) cot(π/n))` (isoperimetric gap rate) are not fiber-constant — hence not `R⁻¹(2^F)`-measurable, equivalently they do not factor through `R`.
 
 An apparatus restricted to F-side data (denominator-rank, Thomae-height, Stern-Brocot depth, Minkowski `?`-derivative, or any other function on `F` lifted by `R^*`) cannot recover `f₁, f₂, f₃`.
 
-Proof at [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §K.0–§K.4 (witnesses: `f₁(1, 5) = 2 ≠ 4 = f₁(3, 15)`; `f₂(1, 3) = 3√3 ≠ 6 = f₂(2, 6)`; `f₃(1, 3) ≠ f₃(2, 6)`). [INTERNAL]
+Proof at [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §K.0–§K.4 (witnesses: `f₁(1, 5) = 2 ≠ 4 = f₁(3, 15)`. [INTERNAL]
+
+`f₂(1, 3) = 3√3 ≠ 6 = f₂(2, 6)`.
+
+`f₃(1, 3) ≠ f₃(2, 6)`).
 
 **Kernel partition** (per [measure/SUBSTRATE-OBSTRUCTIONS.md](measure/SUBSTRATE-OBSTRUCTIONS.md) §Kernel partition). [INTERNAL]
 
-Three direct K2 instances: §5.2 rate via `f₃`; §5.2 constant + §5.3 Hurwitz Fourier via `f₂`; §5.4 cyclotomic ladder via `f₁`.
+Three direct K2 instances: §5.2 rate via `f₃`.
 
-Two non-direct: §5.1 rotation-orbit Haar / `β(α)` lives on `T = ℝ/ℤ`, not on `L`; §5.5 L-W null/full is fiber-constant on `L` under literal reading and finer cyclotomic-depth content collapses to §5.4's `f₁`. [NOTX]
+§5.2 constant + §5.3 Hurwitz Fourier via `f₂`.
+
+§5.4 cyclotomic ladder via `f₁`.
+
+Two non-direct: §5.1 rotation-orbit Haar / `β(α)` lives on `T = ℝ/ℤ`, not on `L`. [NOTX]
+
+§5.5 L-W null/full is fiber-constant on `L` under literal reading and finer cyclotomic-depth content collapses to §5.4's `f₁`.
 
 One measure operation: §5.2 almost-every register requires a parameter family before transcribing to a scalar L-observable.
 
-The two non-direct faces still anchor the substrate-side reading at a pre-K2 level: §5.1 supplies the rotation-orbit kinematic substrate (irrationality of `π` gives Weyl equidistribution against Haar; finite irrationality measure of `π` gives the stronger `β(π) = 0` classification, audited L-W-safe at [rotations/BETA-PI-LW-AUDIT.md](rotations/BETA-PI-LW-AUDIT.md)); §5.5 supplies the L-W safety guard for substrate-side reasoning ([memos/OLD-TIME-RELIGION.md](memos/OLD-TIME-RELIGION.md)). [INTERNAL]
+The two non-direct faces still anchor the substrate-side reading at a pre-K2 level: §5.1 supplies the rotation-orbit kinematic substrate (irrationality of `π` gives Weyl equidistribution against Haar.
+
+Finite irrationality measure of `π` gives the stronger `β(π) = 0` classification, audited L-W-safe at [rotations/BETA-PI-LW-AUDIT.md](rotations/BETA-PI-LW-AUDIT.md)). [INTERNAL]
+
+§5.5 supplies the L-W safety guard for substrate-side reasoning ([memos/OLD-TIME-RELIGION.md](memos/OLD-TIME-RELIGION.md)). [INTERNAL]
 
 **Cyclotomic-rigidity supports** (proved alongside Theorem K).
 
@@ -572,9 +766,13 @@ The proof asks whether such descent is reachable by FFT-style methods past `T(P)
 
 Per §3.6.2's non-transfer, the §6 argument runs *currency-by-currency*: the endpoint commitment (§6.2), T4b (§6.3), and the candidate transport (§6.5) each land in every canon currency the impossibility is stated against. [SIGNPOST] [RHETOR]
 
-`δ` is conceptually single but realizes in a chosen cost-norm; the cost-algebra commitments are uniform in shape but plural-in-currencies in execution.
+`δ` is conceptually single but realizes in a chosen cost-norm.
 
-The "currency-by-currency" quantification here is over *algorithm-side* canon currencies (`μ`, `α`); substrate-side iso/ currencies (§5.2, per §3.6.2's substrate-side currency-stratification face) feed in as facts — substrate-side `δ > 0` instances per §1.6's definition — not as additional axes §6 quantifies over. [NOTX] [RHETOR]
+The cost-algebra commitments are uniform in shape but plural-in-currencies in execution.
+
+The "currency-by-currency" quantification here is over *algorithm-side* canon currencies (`μ`, `α`). [NOTX] [RHETOR]
+
+Substrate-side iso/ currencies (§5.2, per §3.6.2's substrate-side currency-stratification face) feed in as facts — substrate-side `δ > 0` instances per §1.6's definition — not as additional axes §6 quantifies over. [RHETOR]
 
 ### §6.2. Endpoint commitment
 
@@ -582,17 +780,29 @@ For descent past `T(P)` to succeed, the algorithm must drive `δ` at the bounded
 
 The endpoint commitment is owed in the form of a **non-vanishing transaction-cost lemma at canon thresholds**: any FFT-style method achieving `T(P)` pays `δ ≥ δ_min(P) > 0` at the boundary, and strict improvement past `T(P)` requires `δ → 0`. [RHETOR]
 
-These are two halves — the existence claim *at* `T(P)` and the implication claim *past* `T(P)` — bridged by ALGEBRA-OF-DELTA sub-question (8) (floor extension from at-threshold to past-threshold; debt #2(8)). [INTERNAL]
+These are two halves — the existence claim *at* `T(P)` and the implication claim *past* `T(P)` — bridged by ALGEBRA-OF-DELTA sub-question (8) (floor extension from at-threshold to past-threshold.
 
-Without (8) the two halves are independent claims sharing a label; closing (8) collapses them into two readings of one floor-extension fact.
+Debt #2(8)). [INTERNAL]
 
-This is the Coasean reading the §1.6 framework commits to (`measure/COASE-FRICTION-AND-SPECIALISTS.md`): the canon thresholds are *located* by irreducible friction at the boundary, not held there by an absent better algorithm; the algebra of friction (debt #2) determines whether the floor can be reduced. [NOTX] [INTERNAL] [RHETOR]
+Without (8) the two halves are independent claims sharing a label.
 
-The lemma must land currency-by-currency (Morgenstern bounded-additive, Winograd modular product, AFW cyclotomic multiplicative; debt #9). [INTERNAL] [RHETOR] [HEDGE]
+Closing (8) collapses them into two readings of one floor-extension fact.
 
-The implication direction (descent → endpoint) is what `measure/THE-FIRST-BRIDGE.md` §What The Argument Must Show owes; a biconditional is not claimed. [NOTX] [INTERNAL] [RHETOR]
+This is the Coasean reading the §1.6 framework commits to (`measure/COASE-FRICTION-AND-SPECIALISTS.md`): the canon thresholds are *located* by irreducible friction at the boundary, not held there by an absent better algorithm. [NOTX] [INTERNAL] [RHETOR]
 
-**What T4b must absorb:** the endpoint is *stated* at the algorithm-side `(μ, α)` boundary, but the keystone proposition (§6.3) extends faithfulness to the §5.2 iso/-register currency structure; `δ → 0` on T4b automatically covers every `δ`-instance T4b's coordinate factors — algorithm-side and substrate-side iso/-register alike. [SIGNPOST] [RHETOR] [HEDGE]
+The algebra of friction (debt #2) determines whether the floor can be reduced. [INTERNAL]
+
+The lemma must land currency-by-currency (Morgenstern bounded-additive, Winograd modular product, AFW cyclotomic multiplicative. [RHETOR] [HEDGE]
+
+Debt #9). [INTERNAL]
+
+The implication direction (descent → endpoint) is what `measure/THE-FIRST-BRIDGE.md` §What The Argument Must Show owes. [NOTX] [INTERNAL] [RHETOR]
+
+A biconditional is not claimed.
+
+**What T4b must absorb:** the endpoint is *stated* at the algorithm-side `(μ, α)` boundary, but the keystone proposition (§6.3) extends faithfulness to the §5.2 iso/-register currency structure. [SIGNPOST] [RHETOR] [HEDGE]
+
+`δ → 0` on T4b automatically covers every `δ`-instance T4b's coordinate factors — algorithm-side and substrate-side iso/-register alike.
 
 The substrate-side `δ > 0` fact (per §3.6.2 face (iv)) then contradicts that endpoint, supplying the substrate-side currency-stratification half of the §6.6 composition. [SIGNPOST] [RHETOR]
 
@@ -602,7 +812,11 @@ The substrate-side `δ > 0` fact (per §3.6.2 face (iv)) then contradicts that e
 
 The single sovereign claim of §6, and the locus where the §4.6 chase exhausts. [RHETOR]
 
-Owed in the form of a **currency-universal limit object**: a measure space `(Z, ℱ, μ)` together with a `δ`-coordinate `δ: Z → ℝ≥0` (the universal transaction cost), where `Z` is the limit over canon currencies (Morgenstern bounded-additive, Winograd modular product, AFW cyclotomic-multiplicative; per debt #9) joined by substrate-side iso registers (rate, constant, almost-every; per §5.2) on equal footing. [INTERNAL]
+Owed in the form of a **currency-universal limit object**: a measure space `(Z, ℱ, μ)` together with a `δ`-coordinate `δ: Z → ℝ≥0` (the universal transaction cost), where `Z` is the limit over canon currencies (Morgenstern bounded-additive, Winograd modular product, AFW cyclotomic-multiplicative.
+
+Per debt #9) joined by substrate-side iso registers (rate, constant, almost-every. [INTERNAL]
+
+Per §5.2) on equal footing.
 
 Structure morphisms between currency-specific cost coordinates are supplied by debt #12. [INTERNAL]
 
@@ -630,11 +844,15 @@ The faithful-measurable-coordinate condition of [measure/THE-FIRST-BRIDGE.md](me
 
 **Door closed:** precomputed tables / advice (§4.6). [RHETOR]
 
-The Coasean algebra reading: `Z` is the boundary object across the whole canon, not one currency — its universality *is* the currency reconciliation of debt #9. [NOTX] [INTERNAL] [RHETOR]
+The Coasean algebra reading: `Z` is the boundary object across the whole canon, not one currency. [NOTX] [RHETOR]
+
+Its universality *is* the currency reconciliation of debt #9. [INTERNAL]
 
 Closing #1 in this form closes a substantial chunk of #9, and the non-vanishing transaction-cost lemma (#5, §6.2) lands at every currency in the limit. [INTERNAL] [HEDGE]
 
-Open; load-bearing. [INTERNAL] [RHETOR]
+Open.
+
+Load-bearing.
 
 **[Construction debt #1.]** [INTERNAL]
 
@@ -648,7 +866,9 @@ The four substrate-side faces ride together rather than as independent obstructi
 
 Theorem K (§5.6) certifies that an apparatus restricted to F-side / Stern-Brocot coordinates cannot recover the three direct K2 substrate observables `f₁, f₂, f₃`.
 
-T4b's clause (i) requires those observables to factor through `δ`; the Farey recoding attempt of §4.6 tries to read on `F` via `R`, which strips exactly those observables off the data the method has access to.
+T4b's clause (i) requires those observables to factor through `δ`.
+
+The Farey recoding attempt of §4.6 tries to read on `F` via `R`, which strips exactly those observables off the data the method has access to.
 
 The door closes: `M_FR` loses the position-reading it needs. [RHETOR]
 
@@ -656,21 +876,29 @@ The door closes: `M_FR` loses the position-reading it needs. [RHETOR]
 
 §5.2 certifies that the planar isoperimetric gap admits three non-nesting measure-theoretic readings (rate, constant, almost-every) with positive worked-instance overhead between rate and constant (`5π` per `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1), a categorial type-gap to almost-every, and unresolved bridge/audit states for Fejes-Tóth certification and Beck → specific-`π`. [INTERNAL]
 
-T4b's clause (ii) encodes this measurably so cross-register conversion costs and bridge states read on `δ` alongside the algorithm-side `(μ, α)` cost; each completed finite conversion is a substrate-side `δ > 0` instance per §1.6's definition (per §3.6.2 face (iv)).
+T4b's clause (ii) encodes this measurably so cross-register conversion costs and bridge states read on `δ` alongside the algorithm-side `(μ, α)` cost.
+
+Each completed finite conversion is a substrate-side `δ > 0` instance per §1.6's definition (per §3.6.2 face (iv)).
 
 The cross-register iso conversion attempt of §4.6 cannot escape via free conversion between readings or by treating isolated registers as resolved. [INTERNAL]
 
 **Currency-stratification at §3.6.2 → clause (ii) algorithm-side half.**
 
-Morgenstern↔Ailon non-transfer (§3.7) demonstrates that no canon source transfers a bound across another's coefficient regime or cost currency; the determinant potential cannot reach the normalized FFT, entropy is forced.
+Morgenstern↔Ailon non-transfer (§3.7) demonstrates that no canon source transfers a bound across another's coefficient regime or cost currency.
 
-T4b's clause (ii) encodes the algorithm-side `(μ, α)` cross-currency structure measurably; the mult-add trading attempt of §4.6 (the headline chase) fails here.
+The determinant potential cannot reach the normalized FFT, entropy is forced.
+
+T4b's clause (ii) encodes the algorithm-side `(μ, α)` cross-currency structure measurably.
+
+The mult-add trading attempt of §4.6 (the headline chase) fails here.
 
 **Admissibility envelope + regularity guard (§5.5, §4.2.1) → clause (iii).**
 
 §5.5's L-W safety operative dichotomy plus §4.2.1's charging discipline jointly require that closure-class membership reads measurably against `(Z, ℱ, μ, δ)`.
 
-The tables/advice attempt of §4.6 tries to absorb residue with size-dependent shortcuts; clause (iii) reads them as out-of-class unless paid at the same granularity, and the per-sample cost is `≥ c · p` from effective Hermite–Lindemann at `n = 1` (debt #3, §6.5). [SIGNPOST] [INTERNAL] [RHETOR]
+The tables/advice attempt of §4.6 tries to absorb residue with size-dependent shortcuts. [RHETOR]
+
+Clause (iii) reads them as out-of-class unless paid at the same granularity, and the per-sample cost is `≥ c · p` from effective Hermite–Lindemann at `n = 1` (debt #3, §6.5). [SIGNPOST] [INTERNAL]
 
 ### §6.5. Inputs T4b consumes
 
@@ -682,13 +910,19 @@ Each item is an input the keystone proposition (§6.3) consumes, not a parallel 
 
 A composition law on the cost coordinate is typed at [fft/COCYCLE-COMPOSITION-LAW.md](fft/COCYCLE-COMPOSITION-LAW.md). [INTERNAL]
 
-The program **commits to operational compressibility** as the cost-norm (debt #14): `δ` is the failure-to-agree of cocycle-product factors across butterfly refinements and primitive modes, measured pointwise. [INTERNAL]
+The program **commits to operational compressibility** as the cost-norm (debt #14). [INTERNAL]
+
+`δ` is the failure-to-agree of cocycle-product factors across butterfly refinements and primitive modes, measured pointwise.
 
 The Coasean reading: this matches "the friction as actually paid," the right coordinate for the substrate-side discontinuity. [RHETOR]
 
-Secondary norms (low-rank, factorization, residual-coordinate) remain available as sharper tests if the operational form needs backing; not committed. [NOTX] [HEDGE]
+Secondary norms (low-rank, factorization, residual-coordinate) remain available as sharper tests if the operational form needs backing. [NOTX] [HEDGE]
 
-The cocycle-product law itself is not yet rigorously proved — that piece sits in #2's remaining work. [NOTX] [INTERNAL]
+Not committed.
+
+The cocycle-product law itself is not yet rigorously proved. [NOTX]
+
+That piece sits in #2's remaining work. [INTERNAL]
 
 **Amortization conjecture.**
 
@@ -696,7 +930,9 @@ Whether per-instance specialization, table precomputation, or asymptotic averagi
 
 The reduction's structural payoff: amortization-failure is not an independent debt but a downstream consequence of #3 landing (modulo cocycle gates and the cost-norm commitment above, both addressed). [NOTX] [INTERNAL] [HEDGE]
 
-Open as a conjecture; conditionally closed by debt #3. [INTERNAL] [HEDGE]
+Open as a conjecture.
+
+Conditionally closed by debt #3. [INTERNAL]
 
 **Substrate-side input.**
 
@@ -706,7 +942,9 @@ With `ε(m) = log₂(1 + m) − m` on machine-dyadic `m = k/2^p` at variable pre
 
 Spec at [memos/EFFECTIVE-HL-N1-COST-FORM.md](memos/EFFECTIVE-HL-N1-COST-FORM.md). [INTERNAL]
 
-Open; substrate-side delivery owed.
+Open.
+
+Substrate-side delivery owed.
 
 **Candidate transport.**
 
@@ -714,13 +952,17 @@ Character reflection barrier with phase-lift conservativity as its analytic-expo
 
 Carries the per-sample cost obstruction on `ε(m)` to a closure-class statement on `δ`.
 
-The original Landfall §2 affine-closure template no longer transfers at cost level under extended `C_Aff` (per [fft/LANDFALL-EXTENDED-CAFF-TRANSFER.md](fft/LANDFALL-EXTENDED-CAFF-TRANSFER.md)); the live source-side obstruction is Landfall §4 plus effective H-L. The phase-lift conservativity audit (`fft/PHASE-LIFT-CONSERVATIVITY-AUDIT.md`) verdict is **clean-conditional** on (a) variable-precision cost model (debt #9's variable-precision-canon-re-read part) and (b) effective H–L `n=1` in cost-norm-compatible form (debt #3, with cost-norm settled by #14's committed operational compressibility). [INTERNAL] [HEDGE]
+The original Landfall §2 affine-closure template no longer transfers at cost level under extended `C_Aff` (per [fft/LANDFALL-EXTENDED-CAFF-TRANSFER.md](fft/LANDFALL-EXTENDED-CAFF-TRANSFER.md)). [INTERNAL]
 
-Debt #4 has no independent open work; closing #3 + #9's variable-precision part closes the transport automatically. [INTERNAL]
+The live source-side obstruction is Landfall §4 plus effective H-L. The phase-lift conservativity audit (`fft/PHASE-LIFT-CONSERVATIVITY-AUDIT.md`) verdict is **clean-conditional** on (a) variable-precision cost model (debt #9's variable-precision-canon-re-read part) and (b) effective H–L `n=1` in cost-norm-compatible form (debt #3, with cost-norm settled by #14's committed operational compressibility). [INTERNAL] [HEDGE]
+
+Debt #4 has no independent open work. [INTERNAL]
+
+Closing #3 + #9's variable-precision part closes the transport automatically. [INTERNAL]
 
 **[Construction debts #2, #3, #4.]** [INTERNAL]
 
-Figure: [figures/delta_phase_plot.png](figures/delta_phase_plot.png) — the closure-class picture in algebraic-phase space (amortization rate, asymptotic floor).
+Figure: [figures/delta_phase_plot.png](figures/delta_phase_plot.png) — the closure-class picture in algebraic-phase space (amortization rate, asymptotic floor). [INTERNAL]
 
 Above the working-floor line `δ_min`: the IMPOSSIBILITY region (native closure of mult/add primitives).
 
@@ -732,7 +974,11 @@ Companion at [paper/code/COASE-PHASE.md](paper/code/COASE-PHASE.md). [INTERNAL]
 
 ### §6.6. Conditional impossibility
 
-Compose: (a) substrate-side facts as faithfulness witnesses (§6.4) — Theorem K for clause (i), §5.2 iso non-nesting and §3.6.2 currency-stratification for clause (ii), §5.5 admissibility envelope plus §4.2.1 regularity guard for clause (iii); (b) T4b as the keystone proposition (§6.3) plus the inputs it consumes (§6.5); (c) endpoint commitment (§6.2). [RHETOR]
+Compose: (a) substrate-side facts as faithfulness witnesses (§6.4) — Theorem K for clause (i), §5.2 iso non-nesting and §3.6.2 currency-stratification for clause (ii), §5.5 admissibility envelope plus §4.2.1 regularity guard for clause (iii). [RHETOR]
+
+(b) T4b as the keystone proposition (§6.3) plus the inputs it consumes (§6.5). [RHETOR]
+
+(c) endpoint commitment (§6.2).
 
 NATIVE-F (§7) is a sibling structural reading and not part of this composition. [NOTX] [SIGNPOST] [RHETOR]
 
@@ -742,31 +988,55 @@ By (c), the descent implies `δ → 0` at the bounded/unbounded coefficient boun
 
 By (b), `δ` is faithfully measurable on `(Z, ℱ, μ)`, and closure-class membership factors through it.
 
-By (a), each of T4b's faithfulness clauses bites: `M`'s escape attempts — the §4.6 chase generalized from the specimen `M_FR` to the full FFT-style class — factor through one of the §4.6 doors, each of which closes on `(Z, ℱ, μ, δ)`. [RHETOR]
+By (a), each of T4b's faithfulness clauses bites. [RHETOR]
 
-Farey recoding factors through clause (i) and contradicts the endpoint because the substrate observables `f₁, f₂, f₃` are not recoverable on `F`; cross-register iso conversion factors through clause (ii)'s substrate-side half and contradicts the endpoint because the `5π` worked overhead, unresolved bridge states, and categorial type-gap are encoded into `δ`; cross-currency mult-add trading factors through clause (ii)'s algorithm-side half and contradicts the endpoint because Morgenstern↔Ailon non-transfer is encoded into `δ`; tables/advice factor through clause (iii) and contradict the endpoint because they read as out-of-class unless charged at the same granularity, with per-sample cost `≥ c · p`. [INTERNAL]
+`M`'s escape attempts — the §4.6 chase generalized from the specimen `M_FR` to the full FFT-style class — factor through one of the §4.6 doors, each of which closes on `(Z, ℱ, μ, δ)`. [RHETOR]
 
-The chase exhausts; `(Z, ℱ, μ, δ)` is the room every escape ends in. [RHETOR]
+Farey recoding factors through clause (i) and contradicts the endpoint because the substrate observables `f₁, f₂, f₃` are not recoverable on `F`.
 
-The contradiction rides on debt #2 sub-question (8) (floor extension from at-threshold to past-threshold): without (8), the substrate-side floor and the past-`T(P)` endpoint operate on different cost-frontier loci, and the contradiction is at the at-threshold locus only. [INTERNAL] [RHETOR] [HEDGE]
+Cross-register iso conversion factors through clause (ii)'s substrate-side half and contradicts the endpoint because the `5π` worked overhead, unresolved bridge states, and categorial type-gap are encoded into `δ`. [INTERNAL]
+
+Cross-currency mult-add trading factors through clause (ii)'s algorithm-side half and contradicts the endpoint because Morgenstern↔Ailon non-transfer is encoded into `δ`.
+
+Tables/advice factor through clause (iii) and contradict the endpoint because they read as out-of-class unless charged at the same granularity, with per-sample cost `≥ c · p`.
+
+The chase exhausts. [RHETOR]
+
+`(Z, ℱ, μ, δ)` is the room every escape ends in. [RHETOR]
+
+The contradiction rides on debt #2 sub-question (8) (floor extension from at-threshold to past-threshold): without (8), the substrate-side floor and the past-`T(P)` endpoint operate on different cost-frontier loci. [INTERNAL] [RHETOR] [HEDGE]
+
+The contradiction is at the at-threshold locus only.
 
 Conditional on (b)–(c) closing — and on debt #9(c)'s variable-precision canon re-read landing (with #9(b) substantially absorbed by debt #1's route-3 limit and #9(a) set per §1.2) — no FFT-style strengthening past current thresholds is reachable on this substrate. [INTERNAL] [HEDGE]
 
 The smarter-FFT rebuttal upgrades from posture to content via §3.6.2. [RHETOR]
 
-Per §3.6.2, no canon source transfers a bound across another's coefficient regime or cost currency, and no FFT-style passage transfers between substrate-side iso/ registers without paying transaction cost; every such transfer is exactly `δ`.
+Per §3.6.2, no canon source transfers a bound across another's coefficient regime or cost currency, and no FFT-style passage transfers between substrate-side iso/ registers without paying transaction cost.
+
+Every such transfer is exactly `δ`.
 
 A smarter FFT-style method improving past `T(P)` would therefore have to invent a *new* cross-currency or cross-regime transfer mechanism. [RHETOR]
 
 The impossibility theorem says FFT-style closure cannot manufacture such a mechanism from the canon's native operations. [RHETOR]
 
-The §4.6 chase exhibits the four natural escapes FFT-style closure suggests; §6.4 shows the substrate-side fact behind each door; §6.3's keystone composes them onto `(Z, ℱ, μ, δ)`. [RHETOR]
+The §4.6 chase exhibits the four natural escapes FFT-style closure suggests. [RHETOR]
 
-The field's own survey aligns with this content claim: Ailon 2013 (§3.7) explicitly foregrounds that nontrivial broad linear-circuit Fourier lower bounds remain open, and known successful results require strong model restrictions — cross-currency or cross-regime transfer mechanisms are not in the literature. [RHETOR] [HEDGE]
+§6.4 shows the substrate-side fact behind each door.
+
+§6.3's keystone composes them onto `(Z, ℱ, μ, δ)`. [RHETOR]
+
+The field's own survey aligns with this content claim. [RHETOR]
+
+Ailon 2013 (§3.7) explicitly foregrounds that nontrivial broad linear-circuit Fourier lower bounds remain open, and known successful results require strong model restrictions. [HEDGE]
+
+Cross-currency or cross-regime transfer mechanisms are not in the literature.
 
 "Smarter FFT" therefore collapses to "FFT-style method plus machinery outside the canon's stack," which by §4.2's class definition puts the alleged method *outside* the FFT-style class, not inside being smarter. [NOTX] [RHETOR]
 
-Coase 1937 (`measure/COASE-FRICTION-AND-SPECIALISTS.md`) supplies the *reduce yes, eliminate no* vocabulary; §3.6.2 supplies the content. [INTERNAL]
+Coase 1937 (`measure/COASE-FRICTION-AND-SPECIALISTS.md`) supplies the *reduce yes, eliminate no* vocabulary. [INTERNAL]
+
+§3.6.2 supplies the content.
 
 The obstruction is structural, not in algorithmic cleverness. [NOTX]
 
@@ -776,7 +1046,9 @@ QED for §4 once (b)–(c) are earned and (9) reconciles.
 
 We return to the circle — the cyclotomic substrate the conversion lived on, the integer lattice it indexed, the roots of unity it composed against, the planar isoperimetric gap it measured. [RHETOR]
 
-The impossibility theorem does not displace the canon; it relocates what the canon was seeing all along. [NOTX] [RHETOR]
+The impossibility theorem does not displace the canon. [NOTX] [RHETOR]
+
+It relocates what the canon was seeing all along. [RHETOR]
 
 What looked like four lower-bound sources is four readings of the circle's structure under four different cost coordinates. [RHETOR]
 
@@ -784,45 +1056,75 @@ What looked like four lower-bound sources is four readings of the circle's struc
 
 Schönhage–Strassen, Morgenstern, Winograd, AFW sit at their natural limits because no further descent is reachable on this substrate by these methods.
 
-Each canon source measured what its cost coordinate could see; the heterogeneity was the circle showing through. [RHETOR]
+Each canon source measured what its cost coordinate could see.
 
-Frame figure re-reference: [figures/native_f_closure_mismatch.png](figures/native_f_closure_mismatch.png) — the §Intro panel re-read after the impossibility theorem closes; the closure-depth contrast is the structural payoff.
+The heterogeneity was the circle showing through. [RHETOR]
+
+Frame figure re-reference: [figures/native_f_closure_mismatch.png](figures/native_f_closure_mismatch.png) — the §Intro panel re-read after the impossibility theorem closes.
+
+The closure-depth contrast is the structural payoff.
 
 **Multi-measure framing of `T(P)`, on the circle.**
 
-The canon's lower-bound apparatus reads cost-of-`P` through heterogeneous measures: Morgenstern's `Ω(n log n)` bit-counting on bounded coefficients; Winograd's modular-product / CRT ledger `μ(T_P) = 2n − k` on bilinear-rational; AFW's multiplicative-complexity / cyclotomic-rational-equivalence ledger; Ailon 2013's Shannon-entropy potential on the restricted `2 × 2` unitary layered model. [RHETOR]
+The canon's lower-bound apparatus reads cost-of-`P` through heterogeneous measures: Morgenstern's `Ω(n log n)` bit-counting on bounded coefficients. [RHETOR]
+
+Winograd's modular-product / CRT ledger `μ(T_P) = 2n − k` on bilinear-rational.
+
+AFW's multiplicative-complexity / cyclotomic-rational-equivalence ledger.
+
+Ailon 2013's Shannon-entropy potential on the restricted `2 × 2` unitary layered model.
 
 The Morgenstern↔Ailon pair is the canon's most explicit currency-stratification demonstration: same problem class (FFT), same scale (`Ω(n log n)`), two restricted models with two forced potentials — determinant on the unnormalized side, entropy on the normalized side (since determinant has modulus 1 there). [RHETOR]
 
-The canon's currencies don't reconcile internally because the circle's structure isn't single-coordinate; the impossibility theorem is what makes their plurality structurally meaningful. [RHETOR]
+The canon's currencies don't reconcile internally because the circle's structure isn't single-coordinate. [RHETOR]
 
-Cross-currency coherence with the substrate-side reading at Theorem K (§5.6) is the *intended* reconciliation; per debt #9, the reconciliation itself — both the canon re-read at variable precision and the cross-currency alignment of `T(P)` — is open. [INTERNAL]
+The impossibility theorem is what makes their plurality structurally meaningful. [RHETOR]
+
+Cross-currency coherence with the substrate-side reading at Theorem K (§5.6) is the *intended* reconciliation.
+
+Per debt #9, the reconciliation itself — both the canon re-read at variable precision and the cross-currency alignment of `T(P)` — is open. [INTERNAL]
 
 **Algebraic-side companion (NATIVE-F closure-mismatch).**
 
 The closure-mismatch *theorem target* at [memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md) §No-Go Theorem asserts that no closure-depth-preserving functor `F: C_log → C_circle` satisfying axioms A1–A4 exists between the log-side and circle-side closure systems. [INTERNAL]
 
-Closure generators: `Aff` log-side (the affine class whose native-operation realization is `Aff⁺(ℝ)`); `{K_n}_{n ≥ 3}` circle-side, where `K_n = ℚ(cos(2π/n))` is the maximal real subfield of `ℚ(ζ_n)` (sometimes written `K_n^+`).
+Closure generators: `Aff` log-side (the affine class whose native-operation realization is `Aff⁺(ℝ)`).
 
-NATIVE-F is the circle's algebraic-side reading — the integer-vs-continuum asymmetry it records is the circle against the line.
+`{K_n}_{n ≥ 3}` circle-side, where `K_n = ℚ(cos(2π/n))` is the maximal real subfield of `ℚ(ζ_n)` (sometimes written `K_n^+`).
 
-Sibling structural reading to Theorem K (substrate-side); both record the same substrate seen through different formal languages.
+NATIVE-F is the circle's algebraic-side reading.
+
+The integer-vs-continuum asymmetry it records is the circle against the line.
+
+Sibling structural reading to Theorem K (substrate-side).
+
+Both record the same substrate seen through different formal languages.
 
 Currently at proof-sketch status with promotion criteria stated. [HEDGE]
 
 **Scope.**
 
-The statement is about *functors* between two small observable categories; its operational reading is narrow — it forecloses the subclass of FFT-style descents that exhibit (or implicitly construct) a closure-preserving correspondence between log-side affine apparatus and circle-side cyclotomic ladder.
+The statement is about *functors* between two small observable categories.
 
-The companion role is what NATIVE-F's own memo claims for itself ("structural rhyme, not theorem dependency", per `memos/NATIVE-F-MINIMAL-DEFINITION.md` §Methodological note); the present outline aligns with that scope. [NOTX] [INTERNAL] [RHETOR]
+Its operational reading is narrow — it forecloses the subclass of FFT-style descents that exhibit (or implicitly construct) a closure-preserving correspondence between log-side affine apparatus and circle-side cyclotomic ladder.
 
-**[Construction debt #6: narrowed to companion-grade; promotion to closure-depth definitions remains, but is not required for the main impossibility.]** [NOTX] [INTERNAL]
+The companion role is what NATIVE-F's own memo claims for itself ("structural rhyme, not theorem dependency", per `memos/NATIVE-F-MINIMAL-DEFINITION.md` §Methodological note). [NOTX] [INTERNAL] [RHETOR]
+
+The present outline aligns with that scope.
+
+**[Construction debt #6: narrowed to companion-grade. [NOTX] [INTERNAL]
+
+Promotion to closure-depth definitions remains, but is not required for the main impossibility.]**
 
 ## §Conclusion
 
 Coda.
 
-What's named, what's left as future work: the cost / conversion map at higher resolution; non-FFT lower-bound methods; the K-H-L-A discrepancy strut as adjacent program.
+What's named, what's left as future work: the cost / conversion map at higher resolution.
+
+Non-FFT lower-bound methods.
+
+The K-H-L-A discrepancy strut as adjacent program.
 
 Operational-observable companion figure: [figures/counting_psi_stratification.png](figures/counting_psi_stratification.png) — the ψ(n)-stratified outside-out sweep-x-support over `n ∈ [3, 40]`, localizing the algebraic-depth discontinuity at `n = 7` through ψ classes (Bravais ψ = 2 backbone vs first cubic ψ = 6).
 
@@ -836,15 +1138,23 @@ Whether the channel exhaustiveness of debt #11 lifts from intensional to extensi
 
 The §4.5 theorem, conditional on the construction-debt ledger closing, is unconditional on the syntactic class — real impossibility, real obstruction, apparatus earned. [INTERNAL] [RHETOR] [HEDGE]
 
-The reader who tries to pay off the dangling thread by extending to behaviorally-equivalent algorithms runs into Rice's theorem: behavioral equivalence to a member of a non-trivial program class is undecidable, and the indicator of the extensional class is non-recursive (Σ⁰₁ set whose Π⁰₁ complement is the halting set up to a recursion-theoretic translation).
+The reader who tries to pay off the dangling thread by extending to behaviorally-equivalent algorithms runs into Rice's theorem: behavioral equivalence to a member of a non-trivial program class is undecidable.
+
+The indicator of the extensional class is non-recursive (Σ⁰₁ set whose Π⁰₁ complement is the halting set up to a recursion-theoretic translation).
 
 Closing it would require an oracle deciding behavioral equivalence to a member of the §4.2 class, which reduces to halting. [HEDGE]
 
-Within the apparatus the same dichotomy surfaces at three places: debt #11 closure form (iii) — negative-space covering is forced to range behaviorally; debt #14 — asking *is the operational norm right for every behaviorally-equivalent scheme?* is Rice-flavored parameterized by norm; and debt #15 (T6 cross-chart invariance) — asking *do all reasonable δ-algebras yield the same impossibility region at `T(P)`?* is Rice-flavored too, since "reasonable coordinate" is not a syntactically decidable class. [INTERNAL]
+Within the apparatus the same dichotomy surfaces at three places: debt #11 closure form (iii) — negative-space covering is forced to range behaviorally. [INTERNAL]
+
+Debt #14 — asking *is the operational norm right for every behaviorally-equivalent scheme?* is Rice-flavored parameterized by norm. [INTERNAL]
+
+And debt #15 (T6 cross-chart invariance) — asking *do all reasonable δ-algebras yield the same impossibility region at `T(P)`?* is Rice-flavored too, since "reasonable coordinate" is not a syntactically decidable class. [INTERNAL]
 
 All three are sub-questions of the outflow rather than separate threads.
 
-The paper does not claim the thread cannot be closed; it locates exactly the recursion-theoretic horizon at which closure would have to happen. [NOTX] [HEDGE]
+The paper does not claim the thread cannot be closed. [NOTX]
+
+It locates exactly the recursion-theoretic horizon at which closure would have to happen. [HEDGE]
 
 *Pencil mark for prose pass.*
 
@@ -900,7 +1210,7 @@ Source-extraction at `fft/AILON-2013-UNITARY-FFT-LOWER-BOUND-BRIEF.md`. [INTERNA
 
 - **Coase, R. H., 1937** — "The Nature of the Firm," *Economica* New Series Vol. 4 No. 16 (Nov. 1937), pp. 386–405.
 PDF at [sources/Coase-1937.pdf](sources/Coase-1937.pdf).
-Source for the transaction-cost framework adopted at §1.6 and §6: trade through any coordination mechanism carries a non-zero, irreducible fee, and the *algebra* of that fee — additivity across compositions, amortization across repeated uses, scale-behavior, representation-dependence, bypass-resistance under specialist intermediation, and heterogeneity across transaction types — determines what the framework lets one prove.
+Source for the transaction-cost framework adopted at §1.6 and §6: trade through any coordination mechanism carries a non-zero, irreducible fee, and the *algebra* of that fee — additivity across compositions, amortization across repeated uses, scale-behavior, representation-dependence, bypass-resistance under specialist intermediation, and heterogeneity across transaction types — determines what the framework lets one prove. [INTERNAL]
 Coase's distinction between the existence of friction (p. 390: "there is a cost of using the price mechanism") and its algebra (p. 395 marginal condition; p. 396 the firm-size determination "(a) the less the costs of organising and the slower these costs rise with an increase in the transactions organised") is the methodological precedent for FIRST-PROOF debt #2 (algebra of `δ` left open with named open sub-questions). [INTERNAL]
 Cited at §1.6 (transaction-cost vocabulary and irreducible-fee framing), §6.6 (the *reduce yes, eliminate no* vocabulary for the conditional argument's structural claim, with full algebra of `δ` deferred per debt #2), and (potentially) §Conclusion as the methodological-framework reference. [INTERNAL]
 - **Cook, S. A., and Reckhow, R. A., 1973** — RAM charging-granularity vocabulary via the `l(n)` function; cited for logarithmic charging, not for FFT lower-bound content. [NOTX]
