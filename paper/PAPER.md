@@ -380,7 +380,7 @@ Every such transfer is exactly what §1.6 calls `δ`, and §6 must prove that na
 
 **Four structural faces of the non-transfer.**
 
-(Labeled (i)–(iv) here to keep them distinct from §6.6's (a)–(d) composition.) [SIGNPOST]
+(Labeled (i)–(iv) here to keep them distinct from §6.6's (a)–(c) composition.) [SIGNPOST]
 
 (i) `T(P)` is *structurally plural*: a fragmented frontier with currency-specific entries (AFW multiplicative on unbounded; Morgenstern's `Ω(n log n)` additive on bounded; Winograd's modular-product `μ(T_P) = 2n − k`).
 
@@ -488,7 +488,19 @@ The problem class.
 
 Cyclotomic-DFT specifically — the discrete Fourier transform over cyclotomic fields.
 
-"Adjacent" pinned down: compute-cost problems sharing §1's cost / conversion structure, differing in inputs but not in the cost / conversion framework the bounds inhabit. [NOTX]
+"Adjacent" glossed: compute-cost problems sharing §1's cost / conversion structure, differing in inputs but not in the cost / conversion framework the bounds inhabit. [NOTX]
+
+Pinned down by two membership conditions, both read off what the §6 apparatus consumes.
+
+(i) `P` carries at least one canon-currency threshold cell: a Morgenstern-type bounded-additive bound, a Winograd-type modular-product bound, or an AFW-type cyclotomic-multiplicative bound applies to `P` natively (§4.4).
+
+(ii) `P`'s instances carry a substrate size parameter `n_P ≥ 3` through which the §5 substrate observables `f₁, f₂, f₃` read — the parameter the §6.2 floor `δ_min(P) = (5π − 1) · Δ_{n_P}` is evaluated at.
+
+Membership calls: polynomial multiplication mod `T_P` (Winograd cell; `n_P` from the modulus degree) and finite-abelian-group DFTs (AFW cell; `n_P` from the group order) are in.
+
+Integer multiplication is out: Schönhage–Strassen supplies an upper bound and model discipline, not a threshold cell (§3.2). [NOTX]
+
+The normalized FFT is out as a problem and in as a witness: Ailon's bound is adjacent prior art, not a `T(P)` entry (§3.7). [NOTX]
 
 ### §4.4. Existing thresholds
 
@@ -1150,9 +1162,9 @@ The §4.5 theorem is unconditional on the apparatus's three syntactic commitment
 
 The reader who tries to pay off the dangling thread by extending to behaviorally-equivalent algorithms runs into Rice's theorem: behavioral equivalence to a member of a non-trivial program class is undecidable.
 
-The indicator of the extensional class is non-recursive (Σ⁰₁ set whose Π⁰₁ complement is the halting set up to a recursion-theoretic translation).
+The indicator of the extensional class is non-recursive: behavioral equivalence to a single fixed total method is already Π⁰₂-complete, and the existential over the syntactic class places membership at Σ⁰₃; no sharper classification is claimed or needed. [HEDGE]
 
-Closing it would require an oracle deciding behavioral equivalence to a member of the §4.2 class, which reduces to halting. [HEDGE]
+Closing it would require an oracle deciding behavioral equivalence to a member of the §4.2 class — at least as hard as the halting problem, and in general strictly harder (Π⁰₂). [HEDGE]
 
 Within the apparatus the same dichotomy surfaces at three places: debt #11 closure form (iii) — negative-space covering is forced to range behaviorally. [INTERNAL]
 
@@ -1168,9 +1180,9 @@ It locates exactly the recursion-theoretic horizon at which closure would have t
 
 *Pencil mark for prose pass.*
 
-The non-FFT vector-field question is well-posed and sharpened by the manifold framing — *is there a non-FFT vector field that crosses the discontinuity?*
+The non-FFT question is well-posed — *is there a non-FFT-style method that crosses the bounded/unbounded coefficient boundary without paying `δ`?*
 
-Point to `memos/NATIVE-F-MINIMAL-DEFINITION.md` as the place where a different vector field is considered (the algebraic-side companion is the natural home for that question). [INTERNAL]
+Point to `memos/NATIVE-F-MINIMAL-DEFINITION.md` as the place where a different method class is considered (the algebraic-side companion is the natural home for that question). [INTERNAL]
 
 Clean handoff, not vague future work. [NOTX]
 
