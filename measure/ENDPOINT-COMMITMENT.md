@@ -8,9 +8,9 @@ Inherits the faithful `(Z, ℱ, ν, δ)` structure from the T4b decomposition (`
 
 **Debt #5 — endpoint commitment.** A non-vanishing transaction-cost lemma at canon threshold `T(P)`, in two halves:
 - *(Existence half)* Any FFT-style method `M` achieving `T(P)` pays `δ ≥ δ_min(P) > 0` at the bounded/unbounded coefficient boundary, currency-by-currency (Morgenstern bounded-additive, Winograd modular product, AFW cyclotomic-multiplicative).
-- *(Implication half)* Strict improvement past `T(P)` requires `δ → 0`.
+- *(Implication half)* Strict descent below `T(P)` requires `δ → 0`.
 
-The lemma ties threshold improvement to the cost-coordinate value δ. Per PAPER §6.2: implication direction (descent → endpoint), not biconditional.
+The lemma ties descent below `T(P)` to the cost-coordinate value δ. Per PAPER §6.2: implication direction (descent → endpoint), not biconditional.
 
 **Debt #2(8) — floor extension bridge.** Sub-question (8) of debt #2's eight-sub-question algebra-of-δ decomposition: the structural bridge between #5's existence claim *at* `T(P)` and the implication claim *past* `T(P)`. Without (8), the halves are independent claims sharing a label; closing (8) collapses them into two readings of one floor-extension fact about the boundary.
 
@@ -51,11 +51,11 @@ For each currency `c ∈ {Morgenstern, Winograd, AFW}`, write `δ_min^{(c)}(P)` 
 
 ## Bridge (debt #2(8)) — floor extension from at-threshold to past-threshold
 
-**Statement.** The substrate-side floor `δ_min(P) > 0` at `T(P)` does not depend on whether `M` is at `T(P)` or attempting to descend past `T(P)`; the floor is invariant under T(P)-movement.
+**Statement.** The substrate-side floor `δ_min(P) > 0` at `T(P)` does not depend on whether `M` is at `T(P)` or attempting to descend below `T(P)`; the floor is invariant under T(P)-movement.
 
 **Proof.** The substrate-side `δ > 0` instance is a property of the iso-register structure itself where a finite comparison is present: the resolved `5π` overhead between rate and constant on the Sobolev → geometric chain (`iso/THREE-REGISTER-SYNTHESIS.md` Claim 1). The same register ledger records the categorial type-gap to almost-every and the open Fejes-Tóth / specific-`π` bridges as non-finite or unresolved states rather than finite costs. This structure depends on the substrate-side state space (planar curves, parametric families) and the morphism `f_{rc}, f_{ca}` rescalings — *not* on the algorithm-side method `M`'s position relative to `T(P)`.
 
-Concretely: when `M` attempts strict improvement past `T(P)`, it moves to a refined algorithm-side state that may differ from the at-threshold state. But the substrate-side projections of `embed(M)` continue to live on the same iso-register diagram with the same morphism rescalings and state labels. The cross-register conversion costs and states (resolved rate→constant overhead, constant→aae type-gap, and unresolved bridge/audit labels) remain measurable on `(Z, ℱ_Z, ν, δ_Z)`.
+Concretely: when `M` attempts strict descent below `T(P)`, it moves to a refined algorithm-side state that may differ from the at-threshold state. But the substrate-side projections of `embed(M)` continue to live on the same iso-register diagram with the same morphism rescalings and state labels. The cross-register conversion costs and states (resolved rate→constant overhead, constant→aae type-gap, and unresolved bridge/audit labels) remain measurable on `(Z, ℱ_Z, ν, δ_Z)`.
 
 The substrate-side floor is therefore *invariant under M's algorithm-side movement*. δ_min(P) at T(P) extends to δ_min(P) past T(P) by this invariance.
 
@@ -67,11 +67,11 @@ Continuity, monotonicity, quantization were candidates for closing (8) under dif
 
 ## Lemma (implication half of #5)
 
-**Statement.** Suppose `M` is an FFT-style method achieving strict improvement past `T(P)`. Then `δ_Z(embed(M)) → 0` along the descent path.
+**Statement.** Suppose `M` is an FFT-style method achieving strict descent below `T(P)`. Then `δ_Z(embed(M)) → 0` along the descent path.
 
-**Proof.** "Strict improvement past `T(P)`" means `M` produces a lower-bound proof at a threshold value strictly below `T(P)` — equivalently, `M` certifies a cost-coordinate value strictly less than `T(P)`'s threshold cell value. Per Phase 1a's δ definition (operational compressibility cost-norm: failure-to-agree of cocycle products across butterfly refinements, measured pointwise), `M`'s cocycle products must agree below the at-threshold spread, which on Z translates to `δ_Z(embed(M)) < δ_min(P)`.
+**Proof.** "Strict descent below `T(P)`" means `M` certifies a cost-coordinate value strictly less than `T(P)`'s threshold cell value. Per Phase 1a's δ definition (operational compressibility cost-norm: failure-to-agree of cocycle products across butterfly refinements, measured pointwise), `M`'s cocycle products must agree below the at-threshold spread, which on Z translates to `δ_Z(embed(M)) < δ_min(P)`.
 
-By the existence half + the bridge: `δ_Z(embed(M)) ≥ δ_min(P) > 0` at *and* past `T(P)`. So `δ_Z(embed(M)) < δ_min(P)` requires `δ_Z(embed(M)) → 0` as `M` attempts strict improvement.
+By the existence half + the bridge: `δ_Z(embed(M)) ≥ δ_min(P) > 0` at *and* past `T(P)`. So `δ_Z(embed(M)) < δ_min(P)` requires `δ_Z(embed(M)) → 0` as `M` attempts strict descent.
 
 **Implication direction only.** §6.2 disclaims biconditional: the lemma says descent → δ → 0, not δ → 0 → descent. The reverse direction would require additional structure (specifically, that any δ → 0 sequence corresponds to an actual descent attempt, which is a separate claim about what δ's vanishing implies for `M`'s lower-bound certificate).
 
@@ -79,11 +79,11 @@ By the existence half + the bridge: `δ_Z(embed(M)) ≥ δ_min(P) > 0` at *and* 
 
 ## Coupled reading: §6.6 contradiction
 
-Combining the existence half, the bridge, and the implication half: any FFT-style method `M` attempting strict improvement past `T(P)` would require `δ_Z(embed(M)) → 0` (implication half), but the substrate-side floor `δ_Z(embed(M)) ≥ δ_min(P) > 0` holds at and past `T(P)` (existence half + bridge). The two requirements contradict.
+Combining the existence half, the bridge, and the implication half: any FFT-style method `M` attempting strict descent below `T(P)` would require `δ_Z(embed(M)) → 0` (implication half), but the substrate-side floor `δ_Z(embed(M)) ≥ δ_min(P) > 0` holds at and past `T(P)` (existence half + bridge). The two requirements contradict.
 
 This is the §6.6 contradiction in lemma form. Combined with channel exhaustiveness (debt #11, discharged at `fft/CHANNEL-EXHAUSTIVENESS.md`), the contradiction lands for *every* FFT-style method's descent attempt: the four channels exhaust the descent routes, T4b's three faithfulness clauses cover the channels, and the endpoint commitment lemma forces the cost-coordinate violation that the channels can't escape.
 
-§4.5's working theorem now reads: no FFT-style method `M` proves a lower bound on `P` improving past the existing threshold `T(P)`, because doing so would force `δ → 0` on a structure that pays `δ ≥ δ_min(P) > 0`.
+§4.5's working theorem now reads: `M` computes `P` at cost at least `T_c(P)` in every currency entry — no FFT-style descent below the existing threshold `T(P)` — because descending would force `δ → 0` on a structure that pays `δ ≥ δ_min(P) > 0`.
 
 ## What this discharge does not do
 
@@ -111,7 +111,7 @@ This is the §6.6 contradiction in lemma form. Combined with channel exhaustiven
 | Item | Status |
 |---|---|
 | Existence half of #5 (`δ ≥ δ_min(P) > 0` at `T(P)`) | ✓ Proved on `(Z, ℱ, ν, δ)` via substrate-side iso-register floor |
-| Implication half of #5 (improvement past `T(P)` ⟹ `δ → 0`) | ✓ Proved via Phase 1a δ definition + bridge |
+| Implication half of #5 (descent below `T(P)` ⟹ `δ → 0`) | ✓ Proved via Phase 1a δ definition + bridge |
 | #2(8) bridge (at-threshold floor extends past-threshold) | ✓ Proved via substrate-side structural invariance under T(P)-movement |
 | Currency-by-currency reading of existence half | ✓ Modulo debt #12 morphism-rescaling specification |
 | §6.6 contradiction lands | ✓ Coupled with debt #11; §4.5 theorem reads as the paper claims |

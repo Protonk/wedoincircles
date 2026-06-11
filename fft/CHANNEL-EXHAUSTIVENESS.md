@@ -4,7 +4,7 @@ Discharge of construction-debt #11 (channel exhaustiveness for §6.6 composition
 
 ## Recap of debt #11
 
-**Structural premise.** Any FFT-style lower-bound proof past `T(P)` must route through one of §6.6's four descent-channel cases. Without exhaustiveness in some form, §4.5's theorem reads "no FFT-style descent through these specific channels" rather than "no FFT-style descent."
+**Structural premise.** Any FFT-style descent below `T(P)` must route through one of §6.6's four descent-channel cases. Without exhaustiveness in some form, §4.5's theorem reads "no FFT-style descent through these specific channels" rather than "no FFT-style descent."
 
 **Committed closure form.** Path (i) by finite-composition enumeration over §4.2.2's five native operations. The §6.6 chase walks the case structure against T4b's three faithfulness clauses (Phase 1c verified): Farey recoding → clause (i); cross-register iso → (ii)-substrate; mult-add trading → (ii)-algorithm; tables/advice → (iii). The residual check is whether finite compositions of §4.2.2's five operations stay inside that four-channel routing.
 
@@ -29,13 +29,13 @@ Discharge of construction-debt #11 (channel exhaustiveness for §6.6 composition
 - **O4 — Cyclotomic factor accounting** (Auslander–Feig–Winograd 1984, §3.5).
 - **O5 — Coefficient-regime bookkeeping** (Morgenstern 1973, §3.3).
 
-**Closure-class framing.** Each channel `X ∈ {A, B, C, D}` defines a closure class `D_X` of descent attempts: the set of FFT-style methods whose escape past `T(P)` factors through channel `X`. Channel exhaustiveness asks whether `D_FFT ⊆ D_A ∪ D_B ∪ D_C ∪ D_D` where `D_FFT` is the set of all FFT-style methods (finite compositions of {O1, …, O5} under §4.2.1's guard) attempting to descend past `T(P)`.
+**Closure-class framing.** Each channel `X ∈ {A, B, C, D}` defines a closure class `D_X` of descent attempts: the set of FFT-style methods whose escape below `T(P)` factors through channel `X`. Channel exhaustiveness asks whether `D_FFT ⊆ D_A ∪ D_B ∪ D_C ∪ D_D` where `D_FFT` is the set of all FFT-style methods (finite compositions of {O1, …, O5} under §4.2.1's guard) attempting to descend below `T(P)`.
 
 The verification proceeds in two parts: (1) per-operation classification — each `O_i` engages some non-empty subset of `{A, B, C, D}` when used in a descent attempt; (2) composition closure — finite compositions of `{O1, …, O5}` stay in the union of channels engaged by their constituents.
 
 ## Per-operation classification
 
-For each native operation `O_i`, name which channel(s) it engages when used as part of a descent past `T(P)`. The classification is "any composition involving `O_i` can be classified as routing through channel `X`" (channels are not disjoint; an op can engage multiple channels depending on context).
+For each native operation `O_i`, name which channel(s) it engages when used as part of a descent below `T(P)`. The classification is "any composition involving `O_i` can be classified as routing through channel `X`" (channels are not disjoint; an op can engage multiple channels depending on context).
 
 ### O1 — Recursive FFT decomposition
 
@@ -129,7 +129,7 @@ where `Channels(O_i)` is the per-operation table's row. Since the table shows ev
 
 The four channels are *closed under composition* in the sense that channel-routing of constituents lifts to channel-routing of the composite. ∎
 
-**Smarter-FFT rebuttal coupling.** The §6.6 smarter-FFT rebuttal closes the residual case: a hypothetical "smarter" FFT-style method improving past `T(P)` would need to invent a *new* cross-currency or cross-regime transfer mechanism outside the canon's stack. By §3.6.2's currency-stratification (Morgenstern↔Ailon non-transfer; substrate-side iso non-nesting), no canon source supplies such a mechanism, and FFT-style closure cannot manufacture one from {O1, …, O5}. The "smarter" method therefore lies outside §4.2's class — not inside it being smarter.
+**Smarter-FFT rebuttal coupling.** The §6.6 smarter-FFT rebuttal closes the residual case: a hypothetical "smarter" FFT-style method descending below `T(P)` would need to invent a *new* cross-currency or cross-regime transfer mechanism outside the canon's stack. By §3.6.2's currency-stratification (Morgenstern↔Ailon non-transfer; substrate-side iso non-nesting), no canon source supplies such a mechanism, and FFT-style closure cannot manufacture one from {O1, …, O5}. The "smarter" method therefore lies outside §4.2's class — not inside it being smarter.
 
 ## What's open / what's closed
 
