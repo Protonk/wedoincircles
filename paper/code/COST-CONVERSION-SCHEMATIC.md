@@ -3,7 +3,7 @@
 Companion to `figures/cost_conversion_schematic.png`, the
 mult/add conversion economy schematic for [paper/OUTLINE.md](paper/OUTLINE.md) §1.5.
 
-![A 2D schematic, "The mult/add conversion economy". X-axis multiplicative cost μ; y-axis additive cost α. Top: italic grey ribbon "← bounded coefficients · unbounded coefficients →". Upper-left tan region: "ACHIEVABLE". A solid black concave curve — the actual frontier — runs upper-left to lower-right with three blue canon dots: Morgenstern (upper-left), AFW (middle-left), Winograd (lower-right); "T(P) thresholds (canon)" labels them collectively. A dashed red curve below dips near the middle: "counterfactual δ=0 frontier (unreachable)". Between them a hatched red gap is widest at the middle and tapers toward both ends. A red double-headed vertical arrow at the middle spans the gap, marked δ, annotated "Bridge claim (§6.2): descent past T(P) ⟺ δ=0 at boundary". Mustard bidirectional arrows tangent to the frontier near Morgenstern: "conversion strategies (trade α↔μ)". Below the actual frontier: light grey region, italic "FFT-style methods do not reach below the frontier".](../../figures/cost_conversion_schematic.png)
+![A 2D schematic, "The mult/add conversion economy". X-axis multiplicative cost μ; y-axis additive cost α. Top: italic grey ribbon "← bounded coefficients · unbounded coefficients →". Upper-left tan region: "ACHIEVABLE". A solid black concave curve — the actual frontier — runs upper-left to lower-right with three blue canon dots: Morgenstern (upper-left), AFW (middle-left), Winograd (lower-right); "T(P) thresholds (canon)" labels them collectively. A dashed red curve below dips near the middle: "counterfactual δ=0 frontier (unreachable)". Between them a hatched red gap is widest at the middle and tapers toward both ends. A red double-headed vertical arrow at the middle spans the gap, marked δ, annotated "Bridge claim (§6.2): descent below T(P) ⟹ δ→0 at boundary". Mustard bidirectional arrows tangent to the frontier near Morgenstern: "conversion strategies (trade α↔μ)". Below the actual frontier: light grey region, italic "FFT-style methods do not reach below the frontier".](../../figures/cost_conversion_schematic.png)
 
 The figure is built by
 [paper/code/build_cost_conversion_schematic.py](paper/code/build_cost_conversion_schematic.py).
@@ -44,8 +44,8 @@ Three claims read off the picture:
   Morgenstern, AFW, Winograd are marked with named dots — not as the
   boundary itself, but as the canon points the program engages with.
 - **The Bridge equivalence (§6.2)** is shown as a double-headed
-  vertical arrow at the boundary spanning the δ-gap, with `⟺`
-  language: descent past `T(P)` ⟺ zeroing `δ` at the boundary. The
+  vertical arrow at the boundary spanning the δ-gap, with `⟹`
+  language: descent below `T(P)` ⟹ `δ → 0` at the boundary. The
   arrow's two heads encode both directions of the equivalence.
 - **The impossibility rule-out** is visualized as the greyed
   below-frontier region: FFT-style methods do not reach below the

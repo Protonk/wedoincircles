@@ -16,7 +16,7 @@ impossibility:
   - Conversion strategies as bidirectional arrows tangent to the frontier.
   - Regime separator as a dashed diagonal crossing the gap.
   - Bridge equivalence (§6.2) as a double-headed vertical arrow spanning the
-    δ-gap, with ⟺ language: descent past T(P) ⟺ δ = 0 at the boundary.
+    δ-gap, with ⟹ language: descent below T(P) ⟹ δ → 0 at the boundary.
 
 This is the Bridge-side picture for §1.5 / §6.2. Lemma B (per-operation
 drift) and Separation (δ = 0 outside C_FFT) are not visualized here — see
@@ -165,7 +165,7 @@ def build_figure():
             ha="left", va="center", zorder=8)
     ax.annotate(
         "Bridge claim (§6.2):\n"
-        r"descent past $T(P)$  $\Longleftrightarrow$  $\delta = 0$ at boundary",
+        r"descent below $T(P)$  $\Longrightarrow$  $\delta \to 0$ at boundary",
         xy=(MU_BOUNDARY + 0.05, (bridge_y_top + bridge_y_bot) / 2),
         xytext=(7.1, 7.5),
         fontsize=9.5, color=DELTA_COLOR, ha="left", va="center",

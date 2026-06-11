@@ -18,6 +18,8 @@ Non-nesting among the rate, constant, and almost-every readings of the planar is
 
 Composing these substrate-side facts with the algorithm-side cost algebra forecloses the F-side coordinate channel and the cross-register channel.
 
+The composition is conditional on two named substrate-side inputs — an effective Hermite–Lindemann cost form at `n = 1` and a variable-precision re-read of the canon — and structural otherwise. [INTERNAL]
+
 Extension to behaviorally-equivalent algorithms meets Rice's theorem, and we locate that horizon precisely.
 
 ### CCS
@@ -75,11 +77,11 @@ T1's off-backbone empty contour is proved alongside.
 
 *Committed*: a uniform-charge cost model with regularity guard, an operational cost-norm on the cocycle product, and the `δ`-typing extension to substrate-side iso registers.
 
-*Owed*: T4b — the currency-universal boundary object whose three faithfulness clauses tie substrate-side facts to algorithm-side cost. [RHETOR]
+T4b — the currency-universal boundary object — is constructed and its three faithfulness clauses verified; the endpoint lemma that ties descent below `T(P)` to `δ → 0`, and the floor extension that bridges at-threshold to past-threshold, are proved on T4b's object (discharge sequence per `paper/PROOF-CHAIN.md`). [INTERNAL]
 
-The endpoint commitment that ties descent below `T(P)` to `δ → 0`.
+*Owed*: the two substrate-side inputs the constructed apparatus consumes — an effective Hermite–Lindemann cost form at `n = 1` (debt #3) and the variable-precision canon re-read (debt #9(c)) — plus a rigor-sharpening of the constant→almost-every type-gap. [INTERNAL]
 
-The floor extension that bridges at-threshold to past-threshold.
+Every conditional clause in the paper routes through these.
 
 The algebraic-side closure-mismatch reading at §7 (NATIVE-F) is a sibling structural reading on the integer-vs-continuum asymmetry, not load-bearing for the impossibility. [NOTX] [INTERNAL] [RHETOR]
 
@@ -105,7 +107,7 @@ This section prevents `δ` from being treated as a synonym for the mult/add conv
 
 We work in a uniform-charge / logarithmic-measure cost model in the Cook-Reckhow / van Emde Boas sense, per `memos/COST-MODEL-UNIFORMITY-BRIEF.md`: bit growth is charged, advice / non-uniformity is handled by the regularity guard, and bare "uniform" is not allowed to mean Cook-Reckhow constant `l(n) = 1` / van Emde Boas uniform measure. [NOTX] [INTERNAL]
 
-Canon compatibility under variable precision remains construction debt #9. [INTERNAL]
+Canon compatibility under variable precision remains construction debt #9(c). [INTERNAL]
 
 ### §1.3. Cost currencies
 
@@ -205,7 +207,7 @@ Descent below `T(P)` means computing at cost under a threshold entry by reorgani
 
 The endpoint commitment (§6.2) asserts that descent below `T(P)` *implies* the endpoint condition: `δ → 0` at the boundary, which in the candidate cocycle coordinate of §1.7 reads as competitive `{Δ_k}` compression.
 
-The implication direction is what the bridge debt earns. [NOTX] [RHETOR]
+The implication direction is earned by the floor-extension bridge (debt #2(8), discharged at `measure/ENDPOINT-COMMITMENT.md`). [NOTX] [INTERNAL]
 
 A biconditional is not claimed.
 
@@ -353,6 +355,8 @@ This keeps theorem content separate from model vocabulary.
 | Morgenstern 1973 (§3.3) | bounded-coefficient linear-composition setting | additive cost `α` | bounded side of §1.4; determinant potential binds only there | supplies the additive floor against which conversion is measured | no transfer to unbounded coefficients |
 | Winograd 1978 (§3.4) | bilinear / rational-equivalence accounting | multiplicative cost `μ` | unbounded rational-equivalence side | CRT modular product gives the multiplicative ledger | no additive-floor transfer |
 | Auslander–Feig–Winograd 1984 (§3.5) | rational-equivalence cyclotomic decomposition | multiplicative cost `μ` | unbounded cyclotomic side | factor-by-factor multiplicative accounting | no additive-floor transfer |
+
+The three lower bounds are tabulated for standalone use at [paper/tables/FFT-CANON-TABLE.md](paper/tables/FFT-CANON-TABLE.md). [INTERNAL]
 
 The §1.2 uniform-charge / logarithmic-measure guard is a program-side requirement placed over this canon re-read.
 
@@ -552,11 +556,11 @@ Broken by §5.2's non-nesting and register-state ledger (`5π` worked overhead b
 
 Broken by §5.5's admissibility envelope plus §4.2.1's regularity guard, with per-sample cost `≥ c · p` from effective Hermite–Lindemann at `n = 1`. [SIGNPOST]
 
-Each variant is a different door, all opening onto the same room — `(Z, ℱ, μ, δ)` — exhausted at §6.6 once the keystone proposition (§6.3) shows the four-attempt span is what every FFT-style method's escape factors through. [SIGNPOST] [RHETOR]
+Each variant is a different door, all opening onto the same room — `(Z, ℱ, ν, δ)` — exhausted at §6.6 once the keystone proposition (§6.3) shows the four-attempt span is what every FFT-style method's escape factors through. [SIGNPOST] [RHETOR]
 
 The adversary is artificial.
 
-Its failure does not commit the proof to a single canon currency (the algebra of `δ` extends across all four canon currencies and both substrate-side iso registers; debt #13), does not strip optionality from the floor-extension mechanism (debt #2(8)), and does not formalize channel-exhaustiveness (debt #11). [NOTX] [INTERNAL]
+Its failure does not commit the proof to a single cost coordinate (the algebra of `δ` extends across the route-3 diagram — three algorithm-side cost coordinates and three iso registers; debt #13), does not strip optionality from the floor-extension mechanism (debt #2(8), discharged at `measure/ENDPOINT-COMMITMENT.md`), and does not by itself establish channel-exhaustiveness — that is debt #11's path-(i) discharge at `fft/CHANNEL-EXHAUSTIVENESS.md`. [NOTX] [INTERNAL]
 
 It is narrative scaffolding: a vehicle for the cost-algebra obstruction (§6.3) to be tested on a concrete escape attempt before being lifted to the full FFT-style class at §6.6. [SIGNPOST] [RHETOR]
 
@@ -576,13 +580,13 @@ The menagerie is the substrate content of the four doors §4.6 staked.
 
 **T4b — the keystone proposition** (§6.3). [SIGNPOST] [RHETOR]
 
-The single sovereign claim of §6: a currency-universal boundary object `(Z, ℱ, μ, δ)` over canon currencies and substrate-side iso registers, with three faithfulness clauses — (i) §5 scalar substrate observables `f₁, f₂, f₃` factor through `δ`. [SIGNPOST] [RHETOR]
+The single sovereign claim of §6: a currency-universal boundary object `(Z, ℱ, ν, δ)` over canon currencies and substrate-side iso registers, with three faithfulness clauses — (i) §5 scalar substrate observables `f₁, f₂, f₃` factor through `δ`. [SIGNPOST] [RHETOR]
 
 (ii) iso-register currency structure and register-state status are encoded measurably so cross-register conversion costs, unresolved bridges, and type gaps read on `δ` alongside the algorithm-side `(μ, α)` cost. [INTERNAL]
 
-(iii) closure-class membership reads measurably against `(Z, ℱ, μ, δ)`.
+(iii) closure-class membership reads measurably against `(Z, ℱ, ν, δ)`.
 
-Open and load-bearing (debt #1). [INTERNAL] [RHETOR]
+Constructed: three-phase discharge at `paper/T4B-DECOMPOSITION.md` (debt #1), modulo substrate-side residuals #3 and #9(c). [INTERNAL]
 
 Spec at `measure/THE-FIRST-BRIDGE.md`. [INTERNAL]
 
@@ -606,7 +610,7 @@ The endpoint commitment (§6.2) ties descent below `T(P)` to `δ → 0` at the b
 
 T4b's faithfulness clauses bite via §6.4's witnesses. [SIGNPOST] [RHETOR]
 
-The four §4.6 escape doors each close on `(Z, ℱ, μ, δ)`, exhausting the chase. [RHETOR]
+The four §4.6 escape doors each close on `(Z, ℱ, ν, δ)`, exhausting the chase. [RHETOR]
 
 NATIVE-F's algebraic-side closure-mismatch reading (§7) is named as a sibling structural reading, not load-bearing. [NOTX] [SIGNPOST] [INTERNAL] [RHETOR]
 
@@ -628,9 +632,11 @@ Source-side typing per `measure/SUBSTRATE-OBSTRUCTIONS.md` §1. [INTERNAL]
 
 **The cross-register block** — substrate content behind the door §4.6's cross-register iso conversion attempt slammed into.
 
-Three measure-theoretic readings of the planar isoperimetric gap `Δ = L² − 4πA` — *rate* (asymptotic decay along a parametric family approaching a disk), *constant* (pointwise sharp inequality on a single curve, Bonnesen-strengthening per Osserman 1979 / Bonnesen 1921), *almost-every* (full-measure under a distribution on parameter space, Khintchine / Beck 1994 tradition) — sit on non-nesting hypothesis classes.
+Three measure-theoretic readings of the planar isoperimetric gap `Δ = L² − 4πA` on convex curves — *rate* (asymptotic decay along a parametric family of convex curves approaching a disk), *constant* (pointwise sharp inequality on a single convex curve; Bonnesen 1924's annulus-width form `Δ ≥ 4π · d²` per Osserman 1979, constant provably best), *almost-every* (full-measure under a distribution on parameter space, Khintchine / Beck 1994 tradition) — sit on non-nesting hypothesis classes.
 
-Worked-instance witnesses: thin ellipse `(a = 2, b = 1/2)` and small-spike `r(θ) = 1 + ε cos(5θ)` give the two pairwise non-inclusions on curve-shape space.
+The convex restriction keeps substrate-side content pre-1882 in the L-W-envelope sense, avoiding the Jordan curve theorem (per `measure/CURRENCY-MORPHISMS.md`). [INTERNAL]
+
+Worked-instance witnesses: thin ellipse `(a = 2, b = 1/2)` and small-spike `r(θ) = 1 + ε cos(5θ)` give the two pairwise non-inclusions on convex curve-shape space.
 
 Beck's class lives on `α`-parameter space and is type-incompatible with both.
 
@@ -706,11 +712,11 @@ Earned here in companion form, then deployed as clause (i)'s witness at §6.3 / 
 
 Let `L = {(k, n) ∈ ℤ² : 1 ≤ k < n, n ≥ 3}` and `F = {(p, q) ∈ ℤ² : 1 ≤ p < q, gcd(p, q) = 1}` carry their atomic σ-algebras, and let `R: L → F`, `R(k, n) = (k/g, n/g)` with `g = gcd(k, n)`, be the reduction map.
 
-Then `R⁻¹(2^F) ⊂ 2^L` is exactly the σ-algebra of fiber-constant subsets, and the three substrate observables `f₁(k, n) = φ(n)/2` (cyclotomic-ladder degree), `f₂(k, n) = L_n = 2n sin(π/n)` (polygon perimeter; equivalently the Hurwitz first Fourier coefficient via `c_1^{(n)} = L_n²/(4π²)`), and `f₃(k, n) = Δ_n = L_n²(1 − (π/n) cot(π/n))` (isoperimetric gap rate) are not fiber-constant — hence not `R⁻¹(2^F)`-measurable, equivalently they do not factor through `R`.
+Then `R⁻¹(2^F) ⊂ 2^L` is exactly the σ-algebra of fiber-constant subsets — for a measurable codomain `(V, 𝒱)` with point-separating σ-algebra (`V = ℝ` with the Borel σ-algebra suffices), a function `f: L → V` factors as `f = g ∘ R` iff `f` is fiber-constant — and the three substrate observables `f₁(k, n) = φ(n)/2` (cyclotomic-ladder degree), `f₂(k, n) = L_n = 2n sin(π/n)` (polygon perimeter; equivalently the Hurwitz first Fourier coefficient via `c_1^{(n)} = L_n²/(4π²)`), and `f₃(k, n) = Δ_n = L_n²(1 − (π/n) cot(π/n))` (isoperimetric gap rate) are not fiber-constant — hence not `R⁻¹(2^F)`-measurable, equivalently they do not factor through `R`.
 
 An apparatus restricted to F-side data (denominator-rank, Thomae-height, Stern-Brocot depth, Minkowski `?`-derivative, or any other function on `F` lifted by `R^*`) cannot recover `f₁, f₂, f₃`.
 
-Proof at [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §K.0–§K.4 (witnesses: `f₁(1, 5) = 2 ≠ 4 = f₁(3, 15)`; `f₂(1, 3) = 3√3 ≠ 6 = f₂(2, 6)`; `f₃(1, 3) ≠ f₃(2, 6)`). [INTERNAL]
+Proof at [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §K.0–§K.4 (witnesses: `f₁(1, 5) = 2 ≠ 4 = f₁(3, 15)`; `f₂(1, 3) = 3√3 ≠ 6 = f₂(2, 6)`; `f₃(1, 3) ≈ 10.68 ≠ 3.35 ≈ f₃(2, 6)`). [INTERNAL]
 
 **Kernel partition** (per [measure/SUBSTRATE-OBSTRUCTIONS.md](measure/SUBSTRATE-OBSTRUCTIONS.md) §Kernel partition). [INTERNAL]
 
@@ -754,7 +760,7 @@ Per §3.6.2's non-transfer, the §6 argument runs *currency-by-currency*: the en
 
 The cost-algebra commitments are uniform in shape but plural-in-currencies in execution.
 
-The "currency-by-currency" quantification here is over *algorithm-side* canon currencies (`μ`, `α`). [NOTX] [RHETOR]
+The "currency-by-currency" quantification here is over the three *algorithm-side* threshold entries (Morgenstern bounded-additive, Winograd modular product, AFW cyclotomic-multiplicative) — cost coordinates refining the primitive currency pair `(μ, α)`. [NOTX]
 
 Substrate-side iso/ currencies (§5.2, per §3.6.2's substrate-side currency-stratification face) feed in as facts — substrate-side `δ > 0` instances per §1.6's definition — not as additional axes §6 quantifies over. [RHETOR]
 
@@ -762,21 +768,23 @@ Substrate-side iso/ currencies (§5.2, per §3.6.2's substrate-side currency-str
 
 For descent below `T(P)` to succeed, the algorithm must drive `δ` at the bounded/unbounded coefficient boundary toward zero — which in the candidate cocycle coordinate of §1.7 reads as competitive compression of the per-sample `{Δ_k}` cost object.
 
-The endpoint commitment is owed in the form of a **non-vanishing transaction-cost lemma at canon thresholds**: any FFT-style method achieving `T(P)` pays `δ ≥ δ_min(P) > 0` at the boundary, and strict descent below `T(P)` requires `δ → 0`. [RHETOR]
+The endpoint commitment is discharged at `measure/ENDPOINT-COMMITMENT.md` in the form of a **non-vanishing transaction-cost lemma at canon thresholds**: any FFT-style method achieving `T(P)` pays `δ ≥ δ_min(P) > 0` at the boundary, and strict descent below `T(P)` requires `δ → 0`. [INTERNAL] [RHETOR]
+
+The floor is quantitative: `δ_min(P) := (5π − 1) · Δ_{n_P}`, read off the rescaled-spread form at substrate-side `Z`-points; per-currency specializations `δ_min^{(c)}(P)` await the quantitative analytic forms of the morphism rescalings (debt #9(c)). [INTERNAL]
 
 These are two halves — the existence claim *at* `T(P)` and the implication claim *past* `T(P)` — bridged by ALGEBRA-OF-DELTA sub-question (8) (floor extension from at-threshold to past-threshold; debt #2(8)). [INTERNAL]
 
-Without (8) the two halves are independent claims sharing a label.
+Without (8) the two halves would be independent claims sharing a label.
 
-Closing (8) collapses them into two readings of one floor-extension fact.
+Closed, (8) collapses them into two readings of one floor-extension fact: the substrate-side floor is invariant under `M`'s movement relative to `T(P)`, so the at-threshold floor extends past threshold (`measure/ENDPOINT-COMMITMENT.md`). [INTERNAL]
 
 This is the Coasean reading the §1.6 framework commits to (`measure/COASE-FRICTION-AND-SPECIALISTS.md`): the canon thresholds are *located* by irreducible friction at the boundary, not held there by an absent better algorithm. [NOTX] [INTERNAL] [RHETOR]
 
 The algebra of friction (debt #2) determines whether the floor can be reduced. [INTERNAL]
 
-The lemma must land currency-by-currency (Morgenstern bounded-additive, Winograd modular product, AFW cyclotomic multiplicative; debt #9). [RHETOR] [HEDGE] [INTERNAL]
+The lemma lands currency-by-currency (Morgenstern bounded-additive, Winograd modular product, AFW cyclotomic multiplicative), with the per-currency floors' quantitative forms gated by debt #9(c). [RHETOR] [INTERNAL]
 
-The implication direction (descent → endpoint) is what `measure/THE-FIRST-BRIDGE.md` §What The Argument Must Show owes. [NOTX] [INTERNAL] [RHETOR]
+The implication direction (descent → endpoint) is proved as the lemma's implication half (`measure/ENDPOINT-COMMITMENT.md`), per the spec at `measure/THE-FIRST-BRIDGE.md` §What The Argument Must Show. [NOTX] [INTERNAL]
 
 A biconditional is not claimed.
 
@@ -786,15 +794,17 @@ A biconditional is not claimed.
 
 The substrate-side `δ > 0` fact (per §3.6.2 face (iv)) then contradicts that endpoint, supplying the substrate-side currency-stratification half of the §6.6 composition. [SIGNPOST] [RHETOR]
 
-**[Construction debt #5.]** [INTERNAL]
+**[Construction debt #5: discharged at `measure/ENDPOINT-COMMITMENT.md`, modulo #9(c).]** [INTERNAL]
 
 ### §6.3. T4b — the keystone proposition
 
 The single sovereign claim of §6, and the locus where the §4.6 chase exhausts. [RHETOR]
 
-Owed in the form of a **currency-universal limit object**: a measure space `(Z, ℱ, μ)` together with a `δ`-coordinate `δ: Z → ℝ≥0` (the universal transaction cost), where `Z` is the limit over canon currencies (Morgenstern bounded-additive, Winograd modular product, AFW cyclotomic-multiplicative; per debt #9) joined by substrate-side iso registers (rate, constant, almost-every; per §5.2) on equal footing. [INTERNAL]
+Constructed as a **currency-universal inverse-limit object**: a measure space `(Z, ℱ, ν)` together with a `δ`-coordinate `δ: Z → ℝ≥0` (the universal transaction cost), where `Z` is the inverse limit over the route-3 diagram — three algorithm-side cost coordinates (Morgenstern bounded-additive, Winograd modular product, AFW cyclotomic-multiplicative) joined by three substrate-side iso registers (rate, constant, almost-every; per §5.2) on equal footing. [INTERNAL]
 
-Structure morphisms between currency-specific cost coordinates are supplied by debt #12. [INTERNAL]
+The `δ`-coordinate takes the rescaled-spread form: `δ((x_i)_i) := max` over directed paths `(i → j)` in the diagram of `|κ_j(x_j) − r_{ij}^{(κ)} · κ_i(x_i)|`, reading the morphisms' cost-rescaling factors as Coasean transaction cost. [INTERNAL]
+
+Structure morphisms between currency-specific cost coordinates are supplied by debt #12, discharged at `measure/CURRENCY-MORPHISMS.md` (five morphisms; convex restriction on substrate-side curve-shape space). [INTERNAL]
 
 **Faithfulness clauses.**
 
@@ -814,7 +824,7 @@ The faithful-measurable-coordinate condition of [measure/THE-FIRST-BRIDGE.md](me
 
 **Doors closed:** cross-register iso conversion and mult-add trading (§4.6).
 
-- *(iii)* Closure-class membership reads measurably against `(Z, ℱ, μ, δ)`.
+- *(iii)* Closure-class membership reads measurably against `(Z, ℱ, ν, δ)`.
 
 **Witness:** §5.5 admissibility envelope plus §4.2.1 regularity guard.
 
@@ -822,15 +832,17 @@ The faithful-measurable-coordinate condition of [measure/THE-FIRST-BRIDGE.md](me
 
 The Coasean algebra reading: `Z` is the boundary object across the whole canon, not one currency. [NOTX] [RHETOR]
 
-Its universality *is* the currency reconciliation of debt #9. [INTERNAL]
+Its universality *is* the currency reconciliation of debt #9(b). [INTERNAL]
 
-Closing #1 in this form closes a substantial chunk of #9, and the non-vanishing transaction-cost lemma (#5, §6.2) lands at every currency in the limit. [INTERNAL] [HEDGE]
+Closing #1 in this form closed the substantial chunk of #9(b), and the non-vanishing transaction-cost lemma (#5, §6.2) lands at every currency in the limit. [INTERNAL]
 
-Open.
+Constructed; load-bearing.
 
-Load-bearing.
+Discharge: three-phase decomposition at `paper/T4B-DECOMPOSITION.md` — Phase 1a `δ`-formalization at Matula 1970 significance spaces (`measure/T4B-DELTA-FORMAL.md`), Phase 1b `Z`-construction as inverse limit (`measure/T4B-Z-CONSTRUCTION.md`), Phase 1c faithfulness clauses verified (`measure/T4B-FAITHFULNESS.md`). [INTERNAL]
 
-**[Construction debt #1.]** [INTERNAL]
+Open residuals: substrate-side #3 and #9(c), plus the qualitative-rigor sharpening of the constant→almost-every type-gap. [INTERNAL] [HEDGE]
+
+**[Construction debt #1: closes structurally via the discharge sequence; residuals #3, #9(c), type-gap sharpening.]** [INTERNAL]
 
 ### §6.4. Substrate-side facts as faithfulness witnesses
 
@@ -870,7 +882,7 @@ The mult-add trading attempt of §4.6 (the headline chase) fails here.
 
 **Admissibility envelope + regularity guard (§5.5, §4.2.1) → clause (iii).**
 
-§5.5's L-W safety operative dichotomy plus §4.2.1's charging discipline jointly require that closure-class membership reads measurably against `(Z, ℱ, μ, δ)`.
+§5.5's L-W safety operative dichotomy plus §4.2.1's charging discipline jointly require that closure-class membership reads measurably against `(Z, ℱ, ν, δ)`.
 
 The tables/advice attempt of §4.6 tries to absorb residue with size-dependent shortcuts. [RHETOR]
 
@@ -944,7 +956,7 @@ Above the working-floor line `δ_min`: the IMPOSSIBILITY region (native closure 
 
 Below the foreclosed strip: the FFT canon's claimed territory at `floor = 0`, targeted as unreachable by finite composition once the bridge closes. [RHETOR]
 
-The horizontal mustard band straddling the working floor is debt #2 in the open: where `δ_min` actually sits depends on the algebra of `δ`. [INTERNAL]
+The horizontal mustard band straddling the working floor is now pinned from below: `δ_min ≥ (5π − 1) · Δ_{n_P}` per the endpoint discharge (`measure/ENDPOINT-COMMITMENT.md`); the band's remaining width is debt #2's composition-law rigor. [INTERNAL]
 
 Companion at [paper/code/COASE-PHASE.md](paper/code/COASE-PHASE.md). [INTERNAL]
 
@@ -962,11 +974,13 @@ Suppose `M` is an FFT-style method computing `P` at cost strictly below some cur
 
 By (c), the descent implies `δ → 0` at the bounded/unbounded coefficient boundary (or competitive `{Δ_k}` compression in the candidate cocycle coordinate).
 
-By (b), `δ` is faithfully measurable on `(Z, ℱ, μ)`, and closure-class membership factors through it.
+By (b), `δ` is faithfully measurable on `(Z, ℱ, ν)`, and closure-class membership factors through it.
 
 By (a), each of T4b's faithfulness clauses bites. [RHETOR]
 
-`M`'s escape attempts — the §4.6 chase generalized from the specimen `M_FR` to the full FFT-style class — factor through one of the §4.6 doors, each of which closes on `(Z, ℱ, μ, δ)`. [RHETOR]
+`M`'s escape attempts — the §4.6 chase generalized from the specimen `M_FR` to the full FFT-style class — factor through one of the §4.6 doors, each of which closes on `(Z, ℱ, ν, δ)`. [RHETOR]
+
+That factoring is debt #11's channel exhaustiveness, discharged in path-(i) form at `fft/CHANNEL-EXHAUSTIVENESS.md`: per-operation classification of the five native operations against the four channels, plus closure of finite compositions in the channel union. [INTERNAL]
 
 Farey recoding factors through clause (i) and contradicts the endpoint because the substrate observables `f₁, f₂, f₃` are not recoverable on `F`.
 
@@ -978,13 +992,11 @@ Tables/advice factor through clause (iii) and contradict the endpoint because th
 
 The chase exhausts. [RHETOR]
 
-`(Z, ℱ, μ, δ)` is the room every escape ends in. [RHETOR]
+`(Z, ℱ, ν, δ)` is the room every escape ends in. [RHETOR]
 
-The contradiction rides on debt #2 sub-question (8) (floor extension from at-threshold to past-threshold): without (8), the substrate-side floor and the past-`T(P)` endpoint operate on different cost-frontier loci. [INTERNAL] [RHETOR] [HEDGE]
+The contradiction's at-threshold-to-past-threshold reach is supplied by debt #2 sub-question (8)'s floor extension, discharged via substrate-side floor invariance under `T(P)`-movement (`measure/ENDPOINT-COMMITMENT.md`): the floor does not move when `M` attempts descent, so the contradiction lands past threshold, not at-threshold only. [INTERNAL]
 
-The contradiction is at the at-threshold locus only.
-
-Conditional on (b)–(c) closing — and on debt #9(c)'s variable-precision canon re-read landing (with #9(b) substantially absorbed by debt #1's route-3 limit and #9(a) set per §1.2) — no FFT-style descent below current thresholds is reachable on this substrate. [INTERNAL] [HEDGE]
+(b) and (c) close structurally via the discharge sequence (`paper/T4B-DECOMPOSITION.md`, `measure/ENDPOINT-COMMITMENT.md`); conditional on the substrate-side residuals — debt #3's effective Hermite–Lindemann cost form and debt #9(c)'s variable-precision canon re-read (with #9(b) absorbed by debt #1's route-3 limit and #9(a) set per §1.2) — no FFT-style descent below current thresholds is reachable on this substrate. [INTERNAL] [HEDGE]
 
 The smarter-FFT rebuttal upgrades from posture to content via §3.6.2. [RHETOR]
 
@@ -1000,7 +1012,7 @@ The §4.6 chase exhibits the four natural escapes FFT-style closure suggests. [R
 
 §6.4 shows the substrate-side fact behind each door.
 
-§6.3's keystone composes them onto `(Z, ℱ, μ, δ)`. [RHETOR]
+§6.3's keystone composes them onto `(Z, ℱ, ν, δ)`. [RHETOR]
 
 The field's own survey aligns with this content claim. [RHETOR]
 
@@ -1016,7 +1028,7 @@ Coase 1937 (`measure/COASE-FRICTION-AND-SPECIALISTS.md`) supplies the *reduce ye
 
 The obstruction is structural, not in algorithmic cleverness. [NOTX]
 
-QED for §4 once (b)–(c) are earned and (9) reconciles.
+QED for §4 once the substrate-side residuals land: #3's cost form and #9(c)'s canon re-read.
 
 ### §6.7. Corollary: measurement non-transport
 
@@ -1074,6 +1086,8 @@ Ailon 2013's Shannon-entropy potential on the restricted `2 × 2` unitary layere
 
 The Morgenstern↔Ailon pair is the canon's most explicit currency-stratification demonstration: same problem class (FFT), same scale (`Ω(n log n)`), two restricted models with two forced potentials — determinant on the unnormalized side, entropy on the normalized side (since determinant has modulus 1 there). [RHETOR]
 
+The cost-model methodology pair (Schönhage–Strassen, Ailon) reread on the circle is tabulated at [paper/tables/COST-MODEL-CIRCLE-READING-TABLE.md](paper/tables/COST-MODEL-CIRCLE-READING-TABLE.md). [INTERNAL]
+
 The canon's currencies don't reconcile internally because the circle's structure isn't single-coordinate. [RHETOR]
 
 The impossibility theorem is what makes their plurality structurally meaningful. [RHETOR]
@@ -1130,9 +1144,9 @@ The compute-cost branch (`memos/LEDGER-PIVOT-SEARCH.md`, `fft/FOUR-FRAMEWORK-SYN
 
 **Outflow: intensional vs extensional closure.**
 
-Whether the channel exhaustiveness of debt #11 lifts from intensional to extensional form — equivalently, whether T4b's faithfulness for the closure-class indicator extends from the syntactic FFT-style class of §4.2 to the class of algorithms behaviorally equivalent to it — is the natural future-research direction. [INTERNAL]
+Whether the channel exhaustiveness of debt #11 lifts from intensional to extensional form (intensional path (i) discharged at `fft/CHANNEL-EXHAUSTIVENESS.md`) — equivalently, whether T4b's faithfulness for the closure-class indicator extends from the syntactic FFT-style class of §4.2 to the class of algorithms behaviorally equivalent to it — is the natural future-research direction. [INTERNAL]
 
-The §4.5 theorem, conditional on the construction-debt ledger closing, is unconditional on the syntactic class — real impossibility, real obstruction, apparatus earned. [INTERNAL] [RHETOR] [HEDGE]
+The §4.5 theorem is unconditional on the apparatus's three syntactic commitments — the FFT-style class fixed at §4.2, the operational cost-norm of debt #14, the `δ`-algebra realized at the cocycle coordinate — and conditional on the substrate-side residuals: debt #3's effective Hermite–Lindemann cost form, debt #9(c)'s variable-precision canon re-read, and the rigor-sharpening of the constant→almost-every type-gap. [INTERNAL] [HEDGE]
 
 The reader who tries to pay off the dangling thread by extending to behaviorally-equivalent algorithms runs into Rice's theorem: behavioral equivalence to a member of a non-trivial program class is undecidable.
 
@@ -1239,10 +1253,10 @@ Cited at §5.1–§5.5 as the source-side typing layer.
 
 ### Non-nesting isoperimetric registers
 
-- **Osserman, R., 1979** — Bonnesen-strengthening inequality `L² − 4πA ≥ π²(R − r)²`.
+- **Osserman, R., 1979** — survey carrying both Bonnesen forms: the annulus-width form `Δ ≥ 4π · d²` (eq. 33; load-bearing for §5.2's constant register) and the inradius/circumradius form `L² − 4πA ≥ π²(R − r)²` (eq. 21).
 - **Fuglede, B., 1989, Theorem 1.2** — stability bound for nearly-spherical domains.
 - **Beck, J., 1994** — higher-dimensional Fourier + second-moment + Borel–Cantelli machinery as Diophantine substitute.
-- **Bonnesen, T., 1921; 1924** — both forms; audit-catalogue same-result-different-constants instance.
+- **Bonnesen, T., 1921; 1924** — both forms; 1924's annulus-width `Δ ≥ 4π · d²` is the load-bearing sharp constant, 1921's `π²(R − ρ)²` the loose audit-catalogue instance (`O(1/n⁴)` on the `n`-gon family).
 - **Hurwitz, A., 1902** — Fourier-isoperimetric identity.
 
 ### Closed-form polygon arithmetic
@@ -1268,7 +1282,7 @@ Cited at §5.1–§5.5 as the source-side typing layer.
 
 ## Proof-template precedent (§6)
 
-- **`measure/THE-FIRST-BRIDGE.md`** *(in-program bridge memo)* — names the T4b spec: a measure space `(Z, ℱ, μ)` with a `δ`-coordinate satisfying the broadened faithful-measurable-coordinate condition — the §5 scalar substrate-side observables factor through `δ`, the §5.2 iso/-register currency structure is encoded measurably so cross-register conversion costs read on `δ` alongside the algorithm-side `(μ, α)` cost, and closure-class membership reads measurably. [INTERNAL] [RHETOR]
+- **`measure/THE-FIRST-BRIDGE.md`** *(in-program bridge memo)* — names the T4b spec: a measure space `(Z, ℱ, ν)` with a `δ`-coordinate satisfying the broadened faithful-measurable-coordinate condition — the §5 scalar substrate-side observables factor through `δ`, the §5.2 iso/-register currency structure is encoded measurably so cross-register conversion costs read on `δ` alongside the algorithm-side `(μ, α)` cost, and closure-class membership reads measurably. [INTERNAL] [RHETOR]
 Also names the endpoint commitment (debt #5) and is the anchor for the conditional argument's structural premises. [INTERNAL]
 - **`paper/LANDFALL-EXPORT.md`** *(paper-level pointer)* — routes the paper reader to the Landfall inheritance map and states the trust boundary. [INTERNAL]
 - **`fft/LANDFALL-PROOF-TEMPLATES.md`** *(detailed template map)* — original affine-closure template (Landfall §2), no-invariant-measure aggregation (Landfall §6, deploying the source content documented in `memos/BOWEN-DRILLING-AND-DENSITY.md`), finite-closure refusal (Landfall §7 via Gosper). [INTERNAL]
@@ -1297,23 +1311,23 @@ The fifteen debts of `paper/PROOF-CHAIN.md`, mapped to outline location, status,
 
 | # | Name | Outline location | Status | Anchor |
 |---|---|---|---|---|
-| 1 | T4b — boundary object with `δ`-faithfulness as currency-universal limit | §6.3 | Open; central. Owed in the form of a currency-universal limit `Z` over canon currencies (Morgenstern, Winograd, AFW; debt #9) joined by substrate-side iso registers (rate, constant, almost-every) with register-state status preserved, with `δ` the universal transaction-cost coordinate. The Coasean algebra reading: `Z` is the boundary object across the whole canon, not one currency. Faithfulness: (i) §5 scalar observables `f₁, f₂, f₃` factor through `δ`; (ii) iso-register currency structure and register-state status are encoded measurably so finite conversion costs, unresolved bridges, and type gaps read on `δ` alongside `(μ, α)`; (iii) closure-class membership reads measurably against `(Z, ℱ, μ, δ)`. Couples to debt #5 (the non-vanishing transaction-cost lemma must land at every currency in the limit) and debt #12 (currency-morphism construction supplies the limit's input). Closing #1 in this form closes a substantial chunk of #9. | [measure/THE-FIRST-BRIDGE.md](measure/THE-FIRST-BRIDGE.md), [fft/PHASE-DEFECT.md](fft/PHASE-DEFECT.md) |
-| 2 | Algebra of `δ` — sub-question status, with (4)+(5) reduced to #3 and (8) added as the bridge for #5 | §1.6, §6.5 | **Partially earned.** Per `measure/ALGEBRA-OF-DELTA.md`'s eight-sub-question decomposition: (1) existence, (2) advice-side bypass-resistance, (6) representation-dependence (closed for all four canon frameworks via the COCYCLE-TRANSLATION memos as (b)-conditional out-of-scope), and (7) sign-vs-shape are closed in spirit; (3) additivity has its formal-character composition-law skeleton in hand at `fft/COCYCLE-COMPOSITION-LAW.md` (partial-yes verdict; cross-term collapses under regularity guard); (4) amortization and (5)-strong asymptotics are reduced to **debt #3 (effective H–L `n=1`)** via the L-W-envelope route at `memos/AMORTIZATION-AT-THE-BOUNDARY.md` — the substantive contribution: amortization-failure at the boundary is downstream of #3 landing, not an independent debt; (8) floor extension from at-threshold to past-threshold is the structural bridge between debt #5's existence and implication halves — open; couples to (3) and #14. **What's still open inside #2:** rigorous proof of the composition law (full FP arithmetic model + regularity-guard exhaustiveness + edge cases like subnormals/overflow); (3)'s super-additive-at-boundary working hypothesis under route-3 morphism semantics (#12); (8) floor extension as the bridge for #5. **Couplings:** #5's route-2 lemma form (`δ ≥ δ_min(P) > 0`) absorbs (5)-strong and consumes (8) as the at-threshold/past-threshold bridge — closing (8) collapses #5's two halves into two readings of one floor-extension fact; #1's route-3 limit demands (3) precision for the universal property; #13 substrate-extends the algebra to iso-register friction with defense-in-depth discipline; #14 (committed cost-norm) is the definitional move that gates the whole apparatus. | [fft/COCYCLE-COMPOSITION-LAW.md](fft/COCYCLE-COMPOSITION-LAW.md), [memos/AMORTIZATION-AT-THE-BOUNDARY.md](memos/AMORTIZATION-AT-THE-BOUNDARY.md), [measure/ALGEBRA-OF-DELTA.md](measure/ALGEBRA-OF-DELTA.md) |
+| 1 | T4b — boundary object with `δ`-faithfulness as currency-universal limit | §6.3 | **Closes structurally** — three-phase discharge at `paper/T4B-DECOMPOSITION.md` (1a `measure/T4B-DELTA-FORMAL.md`; 1b `measure/T4B-Z-CONSTRUCTION.md`; 1c `measure/T4B-FAITHFULNESS.md`), modulo substrate-side residuals #3, #9(c); central. Constructed in the form of a currency-universal limit `Z` over canon currencies (Morgenstern, Winograd, AFW; debt #9) joined by substrate-side iso registers (rate, constant, almost-every) with register-state status preserved, with `δ` the universal transaction-cost coordinate. The Coasean algebra reading: `Z` is the boundary object across the whole canon, not one currency. Faithfulness: (i) §5 scalar observables `f₁, f₂, f₃` factor through `δ`; (ii) iso-register currency structure and register-state status are encoded measurably so finite conversion costs, unresolved bridges, and type gaps read on `δ` alongside `(μ, α)`; (iii) closure-class membership reads measurably against `(Z, ℱ, ν, δ)`. Couples to debt #5 (the non-vanishing transaction-cost lemma must land at every currency in the limit) and debt #12 (currency-morphism construction supplies the limit's input). Closing #1 in this form closes a substantial chunk of #9. | [measure/THE-FIRST-BRIDGE.md](measure/THE-FIRST-BRIDGE.md), [fft/PHASE-DEFECT.md](fft/PHASE-DEFECT.md) |
+| 2 | Algebra of `δ` — sub-question status, with (4)+(5) reduced to #3 and (8) added as the bridge for #5 | §1.6, §6.5 | **Partially earned.** Per `measure/ALGEBRA-OF-DELTA.md`'s eight-sub-question decomposition: (1) existence, (2) advice-side bypass-resistance, (6) representation-dependence (closed for all four canon frameworks via the COCYCLE-TRANSLATION memos as (b)-conditional out-of-scope), and (7) sign-vs-shape are closed in spirit; (3) additivity has its formal-character composition-law skeleton in hand at `fft/COCYCLE-COMPOSITION-LAW.md` (partial-yes verdict; cross-term collapses under regularity guard); (4) amortization and (5)-strong asymptotics are reduced to **debt #3 (effective H–L `n=1`)** via the L-W-envelope route at `memos/AMORTIZATION-AT-THE-BOUNDARY.md` — the substantive contribution: amortization-failure at the boundary is downstream of #3 landing, not an independent debt; (8) floor extension from at-threshold to past-threshold is the structural bridge between debt #5's existence and implication halves — discharged at `measure/ENDPOINT-COMMITMENT.md` via substrate-side floor invariance under T(P)-movement; couples to (3) and #14. **What's still open inside #2:** rigorous proof of the composition law (full FP arithmetic model + regularity-guard exhaustiveness + edge cases like subnormals/overflow); (3)'s super-additive-at-boundary working hypothesis under route-3 morphism semantics (#12). **Couplings:** #5's route-2 lemma form (`δ ≥ δ_min(P) > 0`) absorbs (5)-strong and consumes (8) as the at-threshold/past-threshold bridge — closing (8) collapses #5's two halves into two readings of one floor-extension fact; #1's route-3 limit demands (3) precision for the universal property; #13 substrate-extends the algebra to iso-register friction with defense-in-depth discipline; #14 (committed cost-norm) is the definitional move that gates the whole apparatus. | [fft/COCYCLE-COMPOSITION-LAW.md](fft/COCYCLE-COMPOSITION-LAW.md), [memos/AMORTIZATION-AT-THE-BOUNDARY.md](memos/AMORTIZATION-AT-THE-BOUNDARY.md), [measure/ALGEBRA-OF-DELTA.md](measure/ALGEBRA-OF-DELTA.md) |
 | 3 | Effective H-L `n = 1` cost-form | §6.5 | Open; substrate-side delivery owed. Per-sample bound `cost_total ≥ c · p` against uniform-charge total cost on machine-dyadic `m = k/2^p`. | [memos/EFFECTIVE-HL-N1-COST-FORM.md](memos/EFFECTIVE-HL-N1-COST-FORM.md) |
 | 4 | Character-reflection / phase-lift transport — coupling claim, audit clean-conditional | §6.5 | Open. The phase-lift conservativity audit (`fft/PHASE-LIFT-CONSERVATIVITY-AUDIT.md`) verdict is **clean-conditional** per AMORTIZATION-AT-THE-BOUNDARY's blocker analysis — the audit itself is done. Carries the per-sample cost obstruction on `ε` to a closure-class statement on `δ`. **No independent open work; #4 is structurally a coupling claim.** **Conditions:** (a) variable-precision cost model — debt #9's variable-precision-canon-re-read part; (b) effective H–L `n=1` in cost-norm-compatible form — debt #3, with the "in cost-norm-compatible form" qualifier settled by #14's committed operational compressibility. Closing #3 + #9's variable-precision part closes #4 automatically. Same coupling pattern as (4)+(5)→#3 in debt #2 and (8)-bridge structure for #5: closing one debt visibly moves another. | [fft/PHASE-DEFECT.md](fft/PHASE-DEFECT.md), [fft/PHASE-LIFT-CONSERVATIVITY-AUDIT.md](fft/PHASE-LIFT-CONSERVATIVITY-AUDIT.md), [fft/LANDFALL-EXTENDED-CAFF-TRANSFER.md](fft/LANDFALL-EXTENDED-CAFF-TRANSFER.md) |
-| 5 | Endpoint commitment as non-vanishing transaction-cost lemma at canon thresholds | §6.2 | Open; load-bearing. Owed in the form of two halves bridged by debt #2 sub-question (8): **(existence half)** any FFT-style method achieving the canon threshold `T(P)` pays `δ ≥ δ_min(P) > 0` at the bounded/unbounded coefficient boundary; **(implication half)** strict improvement past `T(P)` requires `δ → 0` (or competitive `{Δ_k}` compression in the candidate cocycle coordinate). The two halves are independent claims sharing a label until #2(8)'s floor-extension closes the bridge — closing (8) collapses them into two readings of one floor-extension fact, and the §6.6 contradiction lands. The Coasean reading the §1.6 framework commits to ([measure/COASE-FRICTION-AND-SPECIALISTS.md](measure/COASE-FRICTION-AND-SPECIALISTS.md)): the canon thresholds are *located* by irreducible friction at the boundary, not held there by an absent better algorithm. Must land currency-by-currency (Morgenstern, Winograd, AFW; debt #9). Pre-work shared with #1: definition of `δ → 0` (equivalence relation, measurability of the boundary) and native operations' measurable action — see THE-FIRST-BRIDGE.md §What The Argument Must Show. | [measure/THE-FIRST-BRIDGE.md](measure/THE-FIRST-BRIDGE.md) §What The Argument Must Show; [measure/COASE-FRICTION-AND-SPECIALISTS.md](measure/COASE-FRICTION-AND-SPECIALISTS.md) |
+| 5 | Endpoint commitment as non-vanishing transaction-cost lemma at canon thresholds | §6.2 | **Closes structurally** at `measure/ENDPOINT-COMMITMENT.md`, with quantitative floor `δ_min(P) = (5π − 1) · Δ_{n_P}` (modulo #9(c) for per-currency quantitative forms); load-bearing. Proved in the form of two halves bridged by debt #2 sub-question (8): **(existence half)** any FFT-style method achieving the canon threshold `T(P)` pays `δ ≥ δ_min(P) > 0` at the bounded/unbounded coefficient boundary; **(implication half)** strict descent below `T(P)` requires `δ → 0` (or competitive `{Δ_k}` compression in the candidate cocycle coordinate). The two halves are independent claims sharing a label until #2(8)'s floor-extension closes the bridge — closing (8) collapses them into two readings of one floor-extension fact, and the §6.6 contradiction lands. The Coasean reading the §1.6 framework commits to ([measure/COASE-FRICTION-AND-SPECIALISTS.md](measure/COASE-FRICTION-AND-SPECIALISTS.md)): the canon thresholds are *located* by irreducible friction at the boundary, not held there by an absent better algorithm. Must land currency-by-currency (Morgenstern, Winograd, AFW; debt #9). Pre-work shared with #1: definition of `δ → 0` (equivalence relation, measurability of the boundary) and native operations' measurable action — see THE-FIRST-BRIDGE.md §What The Argument Must Show. | [measure/THE-FIRST-BRIDGE.md](measure/THE-FIRST-BRIDGE.md) §What The Argument Must Show; [measure/COASE-FRICTION-AND-SPECIALISTS.md](measure/COASE-FRICTION-AND-SPECIALISTS.md) |
 | 6 | NATIVE-F closure-mismatch promotion | §7 | Open; sibling structural reading to K. Forecloses the narrow subclass of FFT-style descents that exhibit a closure-preserving correspondence between log-side and circle-side closure systems; not load-bearing for the §6.6 main composition. Promotion to closure-depth definitions still wanted but not required for §4.5. | [memos/NATIVE-F-MINIMAL-DEFINITION.md](memos/NATIVE-F-MINIMAL-DEFINITION.md) |
 | 7 | T2 thin-sweep all-N | §5.6 (cyclotomic-rigidity supports) | Open; proof target. Real-quadratic intersection with cyclotomic composita; not parallel to T1's path. | [n-gons/counting/THICK-SWEEP.md](n-gons/counting/THICK-SWEEP.md) |
 | 8 | T3 `x`-support / ψ trace-field compatibility | §5.6 | Open. Uniform statement of odd-Chebyshev `K_n`-readability + ψ-coloring agreement. | [n-gons/counting/PSI-STRATIFICATION.md](n-gons/counting/PSI-STRATIFICATION.md) |
 | 9 | Uniform-charge cost model, canon re-read, and `T(P)` currency reconciliation — split into (a) set / (b) absorbed / (c) still owed | §1.2, §6.5, §6.6, §7 | Three components with sharply different status: **(a) Methodological commitment** — uniform-charge cost model, charging discipline, regularity guard. **Set** at §1.2 per `memos/COST-MODEL-UNIFORMITY-BRIEF.md`; closed in spirit. **(b) Cross-currency reconciliation of `T(P)`** — alignment of Morgenstern bounded-additive, Winograd modular product, AFW cyclotomic-multiplicative thresholds in a single cost framework. **Substantially absorbed** by debt #1's route-3 currency-universal limit: `Z`'s universality *is* the reconciliation. Closing #1 + #12 closes most of (b); residual is the explicit currency-by-currency check that the limit construction lands at each entry of `T(P)`. **(c) Variable-precision canon re-read** — re-read Morgenstern, AFW, Winograd, Ailon at variable precision under the uniform-charge guard. **Still owed in full.** Real substantive work; not absorbed by other debts. **Couplings:** (b) closes together with #1 + #12 under route 3; (c) is what gates #4's transport (closing (c) + #3 closes #4). | [memos/COST-MODEL-UNIFORMITY-BRIEF.md](memos/COST-MODEL-UNIFORMITY-BRIEF.md), canon re-reads (Morgenstern, AFW, Winograd, Ailon) |
 | 10 | Trust-boundary discipline | §3, §6, References (per-source) | Ongoing. Each canon citation respects [fft/PROVENANCE-AND-TRANSFERABILITY.md](fft/PROVENANCE-AND-TRANSFERABILITY.md)'s stated boundaries; per-source guardrails at the cited memos. | [fft/PROVENANCE-AND-TRANSFERABILITY.md](fft/PROVENANCE-AND-TRANSFERABILITY.md) |
-| 11 | Channel exhaustiveness for §6.6 composition | §6.6 | Open; load-bearing. The composition blocks two specific descent channels — F-side coordinate (via K) and cross-register (via iso stratification) — and uses (b)+(c) to tie threshold improvement to the cost-coordinate. The cross-register block is now sharper: the forbidden move is treating an isolated iso register as program-resolved without paying a finite overhead, respecting a type gap, or closing an open bridge/audit. It does not argue that these are the only descent channels available to FFT-style methods, nor that any FFT-style lower-bound proof past `T(P)` must route through them. Without exhaustiveness in some form, §4.5 reads as "no FFT-style descent through these specific channels" rather than "no FFT-style descent." Possible forms a closure could take: (i) a substrate-factoring lemma showing the content of any such proof factors through `{f₁, f₂, f₃}` or an iso register-state transition; (ii) a class-definitional closure of §4.2 around exactly those operations that route through the blocked channels; (iii) a negative-space covering argument over candidate non-blocked channels. Provenance: FIRST-PROOF #5 (Lemma A exhaustiveness) was the original home; retired with Lemma A and not transferred. With #6 now narrowed to companion-grade, the old negative-space argument has lost the NATIVE-F pillar. **Recursion-theoretic horizon (per §Conclusion outflow):** closure forms (i) and (ii) stay intensional — decidable in principle on the §4.2 syntactic class. Form (iii) is forced to range *behaviorally* over candidate non-blocked descents and is undecidable in general (Rice's theorem). The §Conclusion outflow recognizes (iii)'s extensional version as the natural future-research horizon, not as a closable debt. | this §6.6; `paper/FIRST-PROOF.md` debt #5 (retired) |
-| 12 | Currency-morphism construction for the T4b limit | §6.3 | Open. Inputs to the route-3 currency-universal limit `Z` (debt #1) — the *diagram* whose limit `Z` is. Each canon currency (Morgenstern bounded-additive, Winograd modular product, AFW cyclotomic-multiplicative) and each substrate-side iso register (rate, constant, almost-every) needs to be presented as a measurable cost-coordinate object, with register-state and structure morphisms between them: e.g., Morgenstern↔Winograd as the bounded↔unbounded coefficient transfer, Winograd↔AFW as modular product → cyclotomic decomposition, and iso-register transitions separated into resolved finite morphisms (`5π` Sobolev → geometric), type gaps (constant → almost-every), and unresolved bridges/audits (Fejes-Tóth certification, Beck → specific-`π`). **Order:** #12 is logically prior to #1 (the diagram precedes the limit); realistically the two close in tandem — sketch diagram, take candidate limit, check faithfulness (i)–(iii), refine, retake. **Route-3 commitment:** #12 only exists because route 3 was committed for #1; routes 1 (cocycle-direct) and 2 (fiber-product) wouldn't generate this debt. **Existing pieces:** Morgenstern↔Ailon morphism worked in-canon at §3.7 (determinant doesn't transfer to normalized FFT; entropy needed) — illustrative negative morphism at one transition; iso-register `5π` Sobolev → geometric overhead worked at `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1, with categorial type-gap to almost-every and register-state ledger now explicit; substrate observables `f₁, f₂, f₃` constructed via Theorem K with explicit fiber-non-constant witnesses. **Scope guard:** #12 stays narrowly scoped to the diagram of cost-coordinate objects, register states, and morphisms. It *uses* #2's cost-norm and composition law; it does not define them. It *consumes* #9's variable-precision canon re-read; it does not perform it. Drift into #2 or #9 territory should be flagged. Depends on debt #9. **Adjacent extensional question (absorbed into §Conclusion outflow by analogy with #15):** are the named structure morphisms (Morgenstern↔Winograd, Winograd↔AFW, iso-register transitions) all the reasonable morphisms in the route-3 diagram, or are there other reasonable morphisms that would change `Z`'s universal property? Diagram-side dual of #15's coordinate question; same Rice flavor (extensional class "all reasonable morphisms" is not syntactically decidable); not separately enumerated in the outflow to keep the trinity clean. The route-3 commitment makes `Z`'s universality a property of *the chosen diagram*; lifting to "the universal limit over all reasonable diagrams" meets the same horizon as #15. | [measure/THE-FIRST-BRIDGE.md](measure/THE-FIRST-BRIDGE.md), [iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md), this §3.7 |
+| 11 | Channel exhaustiveness for §6.6 composition | §6.6 | **Closes via path-(i) discharge** at `fft/CHANNEL-EXHAUSTIVENESS.md` (per-operation classification, 5 ops × 4 channels, plus composition closure); load-bearing. The composition blocks two specific descent channels — F-side coordinate (via K) and cross-register (via iso stratification) — and uses (b)+(c) to tie threshold improvement to the cost-coordinate. The cross-register block is now sharper: the forbidden move is treating an isolated iso register as program-resolved without paying a finite overhead, respecting a type gap, or closing an open bridge/audit. With the discharge, the four channels are exhaustive for finite compositions of the native operations: any FFT-style descent below `T(P)` routes through them. Without the discharge, §4.5 would read as "no FFT-style descent through these specific channels" rather than "no FFT-style descent." Possible forms a closure could take: (i) a substrate-factoring lemma showing the content of any such proof factors through `{f₁, f₂, f₃}` or an iso register-state transition; (ii) a class-definitional closure of §4.2 around exactly those operations that route through the blocked channels; (iii) a negative-space covering argument over candidate non-blocked channels. Provenance: FIRST-PROOF #5 (Lemma A exhaustiveness) was the original home; retired with Lemma A and not transferred. With #6 now narrowed to companion-grade, the old negative-space argument has lost the NATIVE-F pillar. **Recursion-theoretic horizon (per §Conclusion outflow):** closure forms (i) and (ii) stay intensional — decidable in principle on the §4.2 syntactic class. Form (iii) is forced to range *behaviorally* over candidate non-blocked descents and is undecidable in general (Rice's theorem). The §Conclusion outflow recognizes (iii)'s extensional version as the natural future-research horizon, not as a closable debt. | this §6.6; `paper/FIRST-PROOF.md` debt #5 (retired) |
+| 12 | Currency-morphism construction for the T4b limit | §6.3 | **Closes** at `measure/CURRENCY-MORPHISMS.md` (five morphisms specified; convex restriction on substrate-side curve-shape space; modulo #9(c) for quantitative analytic forms). Inputs to the route-3 currency-universal limit `Z` (debt #1) — the *diagram* whose limit `Z` is. Each canon currency (Morgenstern bounded-additive, Winograd modular product, AFW cyclotomic-multiplicative) and each substrate-side iso register (rate, constant, almost-every) needs to be presented as a measurable cost-coordinate object, with register-state and structure morphisms between them: e.g., Morgenstern↔Winograd as the bounded↔unbounded coefficient transfer, Winograd↔AFW as modular product → cyclotomic decomposition, and iso-register transitions separated into resolved finite morphisms (`5π` Sobolev → geometric), type gaps (constant → almost-every), and unresolved bridges/audits (Fejes-Tóth certification, Beck → specific-`π`). **Order:** #12 is logically prior to #1 (the diagram precedes the limit); realistically the two close in tandem — sketch diagram, take candidate limit, check faithfulness (i)–(iii), refine, retake. **Route-3 commitment:** #12 only exists because route 3 was committed for #1; routes 1 (cocycle-direct) and 2 (fiber-product) wouldn't generate this debt. **Existing pieces:** Morgenstern↔Ailon morphism worked in-canon at §3.7 (determinant doesn't transfer to normalized FFT; entropy needed) — illustrative negative morphism at one transition; iso-register `5π` Sobolev → geometric overhead worked at `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1, with categorial type-gap to almost-every and register-state ledger now explicit; substrate observables `f₁, f₂, f₃` constructed via Theorem K with explicit fiber-non-constant witnesses. **Scope guard:** #12 stays narrowly scoped to the diagram of cost-coordinate objects, register states, and morphisms. It *uses* #2's cost-norm and composition law; it does not define them. It *consumes* #9's variable-precision canon re-read; it does not perform it. Drift into #2 or #9 territory should be flagged. Depends on debt #9(c). **Adjacent extensional question (absorbed into §Conclusion outflow by analogy with #15):** are the named structure morphisms (Morgenstern↔Winograd, Winograd↔AFW, iso-register transitions) all the reasonable morphisms in the route-3 diagram, or are there other reasonable morphisms that would change `Z`'s universal property? Diagram-side dual of #15's coordinate question; same Rice flavor (extensional class "all reasonable morphisms" is not syntactically decidable); not separately enumerated in the outflow to keep the trinity clean. The route-3 commitment makes `Z`'s universality a property of *the chosen diagram*; lifting to "the universal limit over all reasonable diagrams" meets the same horizon as #15. | [measure/THE-FIRST-BRIDGE.md](measure/THE-FIRST-BRIDGE.md), [iso/THREE-REGISTER-SYNTHESIS.md](iso/THREE-REGISTER-SYNTHESIS.md), this §3.7 |
 | 13 | Substrate-side `δ` generalization — amortized definitional commitment | §1.6 | Open and ongoing (mortgage-style, not discrete proof). Definitional commitment at §1.6: `δ` is the transaction cost between any two non-nesting measure-theoretic readings of one quantity. This extends Coase's economic-coordination friction to measure-theoretic non-nesting overhead — a generalization that is more than a definition (it asserts the algebra of friction transfers across the extension) and more than a theorem (it sets the typing the rest of the paper uses). **Down-payment:** §3.6.2 face (iv) — substrate-side instance with worked overhead (`5π` Sobolev → geometric per `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1), categorial type-gap to almost-every, and register-state ledger: Sobolev resolved for rate, geometric pointwise usable but Fejes-Tóth audit open, probabilistic isolated but specific-`π` unresolved. **Amortization schedule:** §6.3 T4b clause (ii) treats substrate-side iso-register friction and register state measurably; §6.6 cross-register channel argument uses it for the substrate-side contradiction; debt #1's route-3 limit hosts substrate and algorithm currencies with state preserved; substrate-side Coasean instances accumulate as the paper proceeds. **Defense-in-depth discipline:** no single argument should hinge on the generalization alone — each load-bearing use must be independently defensible from substrate-side or algorithm-side facts, so attacking the definition does not topple the proof. The debt closes asymptotically through usage, not at a discrete moment. **Adjacent extensional question (absorbed into §Conclusion outflow by analogy with #15):** are the three named iso registers (rate, constant, almost-every) all the reasonable measure-theoretic readings of the planar isoperimetric gap, or are there other reasonable readings the substrate-side `δ > 0` instance should account for? Substrate-side dual of #15's coordinate question; same Rice flavor (extensional class "all reasonable measure-theoretic readings" is not syntactically decidable); not separately enumerated in the outflow to keep the trinity clean. The defense-in-depth discipline of the mortgage covers this — no single argument should hinge on the three iso registers being the *only* readings. | this §1.6, §3.6.2 face (iv), §6.3 (ii), §6.6; [measure/COASE-FRICTION-AND-SPECIALISTS.md](measure/COASE-FRICTION-AND-SPECIALISTS.md) |
 | 14 | Cost-norm commitment for `δ` (operational compressibility) | §6.5 | **Committed.** `δ` is the operational cost-norm on the cocycle product across an FFT-style scheme `S`'s composition path (per `fft/COCYCLE-COMPOSITION-LAW.md` recommendation): the failure-to-agree of cocycle-product factors across butterfly refinements and primitive modes, measured pointwise. Definitional move, not a theorem. **Coasean reading:** the operational norm matches "the friction as actually paid" — the right coordinate for the substrate-side discontinuity. **What it gates:** #1 (route-3 limit needs `δ` to have a precise algebra), #5 (route-2 lemma needs `δ_min(P)` defined in some norm), #12 (morphism costs need a norm to live in), #4 (transport carries cost in the norm), and #2's remaining work (rigorous composition-law proof must respect the norm). Secondary cost-norms (low-rank, factorization, residual-coordinate) remain available as sharper tests if the operational form needs backing; not committed. **Recursion-theoretic horizon (per §Conclusion outflow):** asking *is the operational norm right for every behaviorally-equivalent scheme?* is a Rice-flavored question (cost-norm uniformity over the extensional class); the outflow absorbs this as a sub-question of the intensional/extensional dichotomy, not a separate debt. | [fft/COCYCLE-COMPOSITION-LAW.md](fft/COCYCLE-COMPOSITION-LAW.md), [fft/PHASE-DEFECT.md](fft/PHASE-DEFECT.md) |
 | 15 | Cross-chart invariance of the impossibility region (T6) | §6.3, §6.5, §Conclusion | **Open and absorbed by the §Conclusion outflow as route 3.** Two forms per `measure/FOR-BREAKFAST.md` §K.6: **weaker T6** (substrate-side discontinuity is upstream of any specific δ-coordinate; the boundary-as-set is coordinate-independent) is held as posture via Coase 1937; **stronger T6** (all reasonable δ-algebras yield the same impossibility region at `T(P)`) is open and load-bearing for the §4.5 structural claim. The apparatus is committed to the cocycle coordinate (route 3 for #1, route 2 for #5, the (8) bridge); without T6, §4.5 reads "impossibility in the cocycle coordinate" rather than "structural impossibility." **Route 3 commitment:** the extensional T6 ("all reasonable coordinates") is Rice-flavored — "reasonable" is not a syntactically decidable class, and cross-coordinate impossibility-region equivalence is undecidable in general by the same mechanism as #11(iii) and #14 cost-norm uniformity. The §Conclusion outflow absorbs T6 as a sub-question of the intensional/extensional dichotomy, parallel to #11(iii) and #14. The §4.5 theorem holds on the syntactic δ-algebra (cocycle realization at `fft/PHASE-DEFECT.md`); lifting to the extensional class meets the recursion-theoretic horizon. **Couplings:** T4b (route 3 for #1) committed to cocycle coordinate; ALGEBRA-OF-DELTA's Coordinate scope and FOR-BREAKFAST §K.6 acknowledge T6 explicitly. Route 3 does not foreclose later upgrades to direct invariance per candidate algebra or finite-list verification if a stronger claim becomes available. | [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §K.6, [measure/ALGEBRA-OF-DELTA.md](measure/ALGEBRA-OF-DELTA.md) Coordinate scope, [measure/COASE-FRICTION-AND-SPECIALISTS.md](measure/COASE-FRICTION-AND-SPECIALISTS.md) |
 
 Earned and not on this list: σ-algebra coarsening (Theorem K, §5.6), Lemma T1 (off-backbone empty contour, [measure/FOR-BREAKFAST.md](measure/FOR-BREAKFAST.md) §K.5), T4a (common indexing domain `L`), the `β(π) = 0` L-W audit at [rotations/BETA-PI-LW-AUDIT.md](rotations/BETA-PI-LW-AUDIT.md). [INTERNAL]
-The destination is conditional on (1)–(3) and (5) plus (9)(c)'s variable-precision canon re-read, (11)'s channel exhaustiveness, and (12)'s currency-morphism construction; (4) is a coupling claim that closes automatically when #3 + (9)(c) land; (6) is companion material whose promotion is wanted but not required for §4.5; (7)–(8) and (10) are supports and discipline; (13) is qualitatively different — an ongoing definitional commitment with mortgage-style amortization across the paper rather than a discrete proof obligation, with the discipline being defense-in-depth so no single argument depends on the generalization alone; (14) is a committed definitional move (operational compressibility) that gates #1, #5, #12, #4, and #2's remaining work; (15) is recognized as a recursion-theoretic horizon absorbed by the §Conclusion outflow (parallel to #11(iii) and #14 cost-norm uniformity), not a closable debt within the apparatus. [NOTX] [INTERNAL] [RHETOR] [HEDGE]
+The destination is conditional on (3) plus (9)(c)'s variable-precision canon re-read and the constant→almost-every type-gap sharpening; (1), (5) with (2)(8), (11), and (12) close structurally via the discharge sequence (`paper/T4B-DECOMPOSITION.md`, `measure/ENDPOINT-COMMITMENT.md`, `fft/CHANNEL-EXHAUSTIVENESS.md`, `measure/CURRENCY-MORPHISMS.md`); (4) is a coupling claim that closes automatically when #3 + (9)(c) land; (6) is companion material whose promotion is wanted but not required for §4.5; (7)–(8) and (10) are supports and discipline; (13) is qualitatively different — an ongoing definitional commitment with mortgage-style amortization across the paper rather than a discrete proof obligation, with the discipline being defense-in-depth so no single argument depends on the generalization alone; (14) is a committed definitional move (operational compressibility) that gates #1, #5, #12, #4, and #2's remaining work; (15) is recognized as a recursion-theoretic horizon absorbed by the §Conclusion outflow (parallel to #11(iii) and #14 cost-norm uniformity), not a closable debt within the apparatus. [NOTX] [INTERNAL] [RHETOR] [HEDGE]
 Coupling notes: (1)+(9)(b)+(12) close together under route 3 — `Z`'s universality *is* the reconciliation of (9)(b), and (12) supplies the morphism inputs (1) takes the limit over; (9)(a) is set per §1.2; (9)(c) is the substantive remaining work.
 (2)'s sub-questions (4)+(5) reduce to debt #3 via the L-W-envelope route at `memos/AMORTIZATION-AT-THE-BOUNDARY.md`; closing #3 closes the substantive open part of #2; (2)'s sub-question (8) bridges #5's two halves. [INTERNAL]
