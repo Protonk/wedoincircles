@@ -2,7 +2,7 @@
 
 Discharge of construction-debt #12 (currency-morphism construction for the T4b limit). Per-morphism rigorous specification of the five structure morphisms in the inverse-limit diagram of `paper/T4B-DECOMPOSITION.md` / [measure/T4B-Z-CONSTRUCTION.md](measure/T4B-Z-CONSTRUCTION.md). Companion to Phase 1b (which interleaved with #12) and to [measure/ENDPOINT-COMMITMENT.md](measure/ENDPOINT-COMMITMENT.md) (whose currency-by-currency reading consumes the rescalings specified here).
 
-Pointer back from `paper/PROOF-CHAIN.md` §6 debt #12 entry. Sources: PAPER §3.2 (in-canon Morgenstern↔Ailon); `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1 (5π overhead); cocycle-translation memos in `fft/` (`MORGENSTERN-1973-COCYCLE-TRANSLATION.md`, `WINOGRAD-1978-COCYCLE-TRANSLATION.md`, `AUSLANDER-FEIG-WINOGRAD-1984-COCYCLE-TRANSLATION.md`).
+Pointer back from `paper/PROOF-CHAIN.md` §6 debt #12 entry. Sources: SCAFFOLD §3.2 (in-canon Morgenstern↔Ailon); `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1 (5π overhead); cocycle-translation memos in `fft/` (`MORGENSTERN-1973-COCYCLE-TRANSLATION.md`, `WINOGRAD-1978-COCYCLE-TRANSLATION.md`, `AUSLANDER-FEIG-WINOGRAD-1984-COCYCLE-TRANSLATION.md`).
 
 ## Recap
 

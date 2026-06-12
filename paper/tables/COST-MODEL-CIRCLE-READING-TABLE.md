@@ -1,6 +1,6 @@
 # Cost-model methodology, reread on the circle: the §7 table
 
-Source-of-truth markdown table for the cost-model methodology pair (Schönhage–Strassen 1971, Ailon 2013) read through §7's frame. Designed for two audiences: a slide-deck reader (e.g., an FFT-history seminar that wants the structural-significance reading rather than the canonical-result reading), and a `paper/PAPER.md` §7 prose reader who has already seen §3.2's standard presentation and is now reading the impossibility-relocates-what-the-canon-was-seeing reframing.
+Source-of-truth markdown table for the cost-model methodology pair (Schönhage–Strassen 1971, Ailon 2013) read through §7's frame. Designed for two audiences: a slide-deck reader (e.g., an FFT-history seminar that wants the structural-significance reading rather than the canonical-result reading), and a `paper/SCAFFOLD.md` §7 prose reader who has already seen §3.2's standard presentation and is now reading the impossibility-relocates-what-the-canon-was-seeing reframing.
 
 The table is dense — paragraph-sized cells — by design. The first three columns of `paper/tables/FFT-CANON-TABLE.md` (Setting / Result + mechanism / Where the mechanism unbinds) carry survey-style content; this table carries exegesis-style content. Both forms are tables in the sense of presenting parallel rows; only the first is a table in the sense of inviting cell-by-cell scanning. This one is "two big paragraphs in a table frame."
 
@@ -39,5 +39,5 @@ Lift the caption with the table for slide-deck use. The §6 reference and the "c
 
 When cell content changes, propagate to:
 
-- `paper/PAPER.md` §7 (the new "**The cost-model methodology, reread on the circle.**" block) — the table is inline-copied from this file; updates here should sync there.
-- `paper/PAPER.md` §7 multi-measure block — the cross-reference "(per Table 2 above)" should stay accurate; if Table 2 moves or restructures, the reference may need updating.
+- `paper/SCAFFOLD.md` §7 (the new "**The cost-model methodology, reread on the circle.**" block) — the table is inline-copied from this file; updates here should sync there.
+- `paper/SCAFFOLD.md` §7 multi-measure block — the cross-reference "(per Table 2 above)" should stay accurate; if Table 2 moves or restructures, the reference may need updating.

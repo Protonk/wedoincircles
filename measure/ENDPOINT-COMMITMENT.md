@@ -10,7 +10,7 @@ Inherits the faithful `(Z, ℱ, ν, δ)` structure from the T4b decomposition (`
 - *(Existence half)* Any FFT-style method `M` achieving `T(P)` pays `δ ≥ δ_min(P) > 0` at the bounded/unbounded coefficient boundary, currency-by-currency (Morgenstern bounded-additive, Winograd modular product, AFW cyclotomic-multiplicative).
 - *(Implication half)* Strict descent below `T(P)` requires `δ → 0`.
 
-The lemma ties descent below `T(P)` to the cost-coordinate value δ. Per PAPER §6.2: implication direction (descent → endpoint), not biconditional.
+The lemma ties descent below `T(P)` to the cost-coordinate value δ. Per SCAFFOLD §6.2: implication direction (descent → endpoint), not biconditional.
 
 **Debt #2(8) — floor extension bridge.** Sub-question (8) of debt #2's eight-sub-question algebra-of-δ decomposition: the structural bridge between #5's existence claim *at* `T(P)` and the implication claim *past* `T(P)`. Without (8), the halves are independent claims sharing a label; closing (8) collapses them into two readings of one floor-extension fact about the boundary.
 
@@ -18,7 +18,7 @@ The lemma ties descent below `T(P)` to the cost-coordinate value δ. Per PAPER �
 
 From Phase 1c: `(Z, ℱ_Z, ν, δ_Z)` with `δ_Z := max_i κ_i − min_i κ_i` over the 6 currency nodes. Substrate-side embedding `ι : L → Z` carries `(k, n) ↦ (trivial_M, trivial_W, trivial_AFW, n, γ_n, family(γ_n))`; on this image, `δ_Z(ι(k, n)) = max(Δ_n, α_n)` where `Δ_n = 4π⁴/(3n²) + O(1/n⁴) > 0` for `n ≥ 3`.
 
-Per `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1: the substrate-side iso-register currency-stratification has worked overhead `5π ≈ 15.7×` between rate and constant on the chained Sobolev → geometric route, plus a categorial type-gap to almost-every. The register-state ledger separates this resolved finite overhead from unresolved bridge/audit states: Fejes-Tóth certification and Beck → specific-`π` are not completed morphisms. This is the substrate-side `δ > 0` instance per §3.6.2 face (iv) (PAPER:202) where finite comparison is available — encoded measurably on Z via Phase 1c's clause (ii).
+Per `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1: the substrate-side iso-register currency-stratification has worked overhead `5π ≈ 15.7×` between rate and constant on the chained Sobolev → geometric route, plus a categorial type-gap to almost-every. The register-state ledger separates this resolved finite overhead from unresolved bridge/audit states: Fejes-Tóth certification and Beck → specific-`π` are not completed morphisms. This is the substrate-side `δ > 0` instance per §3.6.2 face (iv) (SCAFFOLD:202) where finite comparison is available — encoded measurably on Z via Phase 1c's clause (ii).
 
 For an FFT-style method `M`, the algorithm-side embedding `embed : S → Z` (Phase 1a / Phase 1b interface) places `M`'s algorithm-side state at a Z-point with positive substrate-side projections (every Z-point has a substrate-side coordinate by Z's product structure). The cross-currency / cross-register conversion costs read on `δ_Z` per Phase 1c's clauses (i) and (ii).
 

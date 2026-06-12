@@ -1,6 +1,6 @@
 # FFT canon table: the three lower bounds
 
-Source-of-truth ASCII table for the FFT lower-bound canon (Morgenstern 1973, Winograd 1978, Auslander–Feig–Winograd 1984). Designed to serve two audiences: a slide-deck reader teaching FFT lower bounds, and a `paper/PAPER.md` §3 prose reader who has just read §3.3–§3.5 in detail. The first wants self-contained cells; the second wants pattern visible at a glance. Column 4 is what serves the second audience; the first three columns serve both.
+Source-of-truth ASCII table for the FFT lower-bound canon (Morgenstern 1973, Winograd 1978, Auslander–Feig–Winograd 1984). Designed to serve two audiences: a slide-deck reader teaching FFT lower bounds, and a `paper/SCAFFOLD.md` §3 prose reader who has just read §3.3–§3.5 in detail. The first wants self-contained cells; the second wants pattern visible at a glance. Column 4 is what serves the second audience; the first three columns serve both.
 
 ## Optional caption
 
@@ -60,6 +60,6 @@ Lift the caption with the table for slide-deck use; drop it if the surrounding p
 
 When cell content changes, propagate to:
 
-- `paper/PAPER.md` §3.1 (parenthetical hook in the closing paragraph + table block before §3.2) — *landed 2026-05-02*.
-- `paper/PAPER.md` §3.6.2 (column-4-pattern reading is the content claim — keep the reference accurate).
+- `paper/SCAFFOLD.md` §3.1 (parenthetical hook in the closing paragraph + table block before §3.2) — *landed 2026-05-02*.
+- `paper/SCAFFOLD.md` §3.6.2 (column-4-pattern reading is the content claim — keep the reference accurate).
 - `paper/code/` if a typeset / figure-rendered version is built later (none currently).

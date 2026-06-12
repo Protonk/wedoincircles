@@ -14,7 +14,7 @@ Discharge of construction-debt #11 (channel exhaustiveness for §6.6 composition
 
 ## Setting
 
-**The four §6.6 channels** (named per PAPER §4.6 / §6.6):
+**The four §6.6 channels** (named per SCAFFOLD §4.6 / §6.6):
 
 - **Channel A (Farey recoding).** Method passes `(k, n) ∈ L` through the reduction `R : L → F` and tries to read the threshold position on the reduced fraction. *Mapped to faithfulness clause (i):* observables `f₁, f₂, f₃` factor through δ via the substrate-side L-route, not through F via R^*.
 - **Channel B (cross-register iso conversion).** Method trades a rate-form bound for a sharp-constant bound, treats an almost-every register as a pointwise bridge, or treats an isolated register as already program-resolved. *Mapped to clause (ii)-substrate:* the iso-register currency structure and register-state ledger (rate / constant / almost-every; resolved `5π` overhead, type-gap, and unresolved bridge/audit states) are encoded measurably on `(Z, ℱ, ν, δ)`.

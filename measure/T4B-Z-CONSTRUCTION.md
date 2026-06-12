@@ -16,11 +16,11 @@ Six nodes, each a measurable space `(X_i, ℱ_i)` with a cost coordinate `κ_i :
 
 ### Algorithm-side currency nodes
 
-**`N_M` (Morgenstern bounded-additive).** `X_M` = bounded-coefficient linear circuits computing the DFT, equipped with a coefficient bound `c`. `ℱ_M`: discrete on circuit topology × Borel on `c`. `κ_M(circuit, c)` = number of additive gates, weighted by Morgenstern's determinant-potential argument (PAPER §3.3 / Table 1). Threshold `T_M = Ω(n log n)` on the bounded-coefficient regime.
+**`N_M` (Morgenstern bounded-additive).** `X_M` = bounded-coefficient linear circuits computing the DFT, equipped with a coefficient bound `c`. `ℱ_M`: discrete on circuit topology × Borel on `c`. `κ_M(circuit, c)` = number of additive gates, weighted by Morgenstern's determinant-potential argument (SCAFFOLD §3.3 / Table 1). Threshold `T_M = Ω(n log n)` on the bounded-coefficient regime.
 
-**`N_W` (Winograd modular product).** `X_W` = bilinear circuits on polynomial-quotient rings `ℚ[x]/T_P`, indexed by the modulus polynomial `T_P`. `ℱ_W`: discrete on circuit / polynomial structure. `κ_W(circuit, T_P)` = number of essential bilinear multiplications. Threshold `T_W = 2n − k` where `k` = number of irreducible factors of `T_P` over the base field (PAPER §3.4 / Table 1).
+**`N_W` (Winograd modular product).** `X_W` = bilinear circuits on polynomial-quotient rings `ℚ[x]/T_P`, indexed by the modulus polynomial `T_P`. `ℱ_W`: discrete on circuit / polynomial structure. `κ_W(circuit, T_P)` = number of essential bilinear multiplications. Threshold `T_W = 2n − k` where `k` = number of irreducible factors of `T_P` over the base field (SCAFFOLD §3.4 / Table 1).
 
-**`N_AFW` (AFW cyclotomic-multiplicative).** `X_AFW` = rational-equivalence classes of cyclotomic decompositions of group DFTs `ℚ[G] = ∏_{d | |G|} ℚ(ζ_d)`, indexed by the abelian group `G`. `ℱ_AFW`: discrete on decomposition + group structure. `κ_AFW` = sum over cyclotomic factors of multiplicative complexity per factor. Threshold `T_AFW` per AFW 1984 (PAPER §3.5 / Table 1).
+**`N_AFW` (AFW cyclotomic-multiplicative).** `X_AFW` = rational-equivalence classes of cyclotomic decompositions of group DFTs `ℚ[G] = ∏_{d | |G|} ℚ(ζ_d)`, indexed by the abelian group `G`. `ℱ_AFW`: discrete on decomposition + group structure. `κ_AFW` = sum over cyclotomic factors of multiplicative complexity per factor. Threshold `T_AFW` per AFW 1984 (SCAFFOLD §3.5 / Table 1).
 
 ### Substrate-side iso register nodes
 

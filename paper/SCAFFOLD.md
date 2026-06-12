@@ -1,3 +1,42 @@
+# SCAFFOLD
+
+> **Frozen working scaffold — formerly `paper/PAPER.md`.** The export artifact now lives at [paper/FFT-CLASS-IMPOSSIBILITY-PAPER.md](FFT-CLASS-IMPOSSIBILITY-PAPER.md) and speaks the clean namespace; this document keeps the gestation namespace and the construction-debt ledger. Working-doc references to `PAPER §x.y` / `SCAFFOLD §x.y` resolve here. The paper cites repo documents directly; repo documents need not adopt paper names — translate through the concordance below.
+
+## Name concordance (gestation → paper)
+
+| Gestation name | Paper name | Notes |
+|---|---|---|
+| §4.5 main theorem | the Frontier Theorem | exact cost frontier of FFT-style closure |
+| Theorem K | the Coarsening Theorem (paper §5.1) | section moved from §5.6 to lead §5 |
+| T1 | the Contour Lemma (paper §5.1) | |
+| T2, T3 | "two open rigidity supports" (unnamed) | repo keeps the T-names |
+| T4a | unnamed | the shared lattice `L`, stated where used |
+| T4b | the boundary object `(Z, ℱ, ν, δ)` (Construction, paper §6.3) + the Faithfulness Proposition (clauses (i)–(iii)) | |
+| T6 | cross-chart invariance | outflow only |
+| Channels A–D, Propositions A–F, (H1), (H2) | unchanged | born clean |
+| NATIVE-F | the closure-mismatch companion | memo filename unchanged |
+| Lemma A (FIRST-PROOF) | retired | superseded by Proposition E |
+| debt #1 | the boundary-object construction (discharged at `paper/T4B-DECOMPOSITION.md`) | |
+| debt #2 | the algebra of `δ`; open piece = composition-law rigor | |
+| debt #2(8) | Proposition F(ii) (floor extension) | |
+| debt #3 | input (H1) | |
+| debt #4 | the transport coupling (closes when (H1) + (H2) land) | |
+| debt #5 | Proposition F (discharged at `measure/ENDPOINT-COMMITMENT.md`) | |
+| debt #6 | promotion of the closure-mismatch companion | |
+| debts #7, #8 | the two open rigidity supports | |
+| debt #9 | (a) set per §1.2; (b) absorbed by the limit's universality; (c) input (H2) | |
+| debt #10 | trust-boundary discipline (named practice) | |
+| debt #11 | Proposition E (discharged at `fft/CHANNEL-EXHAUSTIVENESS.md`) | |
+| debt #12 | the currency morphisms (`measure/CURRENCY-MORPHISMS.md`) | |
+| debt #13 | the substrate-side `δ` generalization (amortized definitional commitment) | |
+| debt #14 | the committed operational cost-norm | |
+| debt #15 | cross-chart invariance | |
+| route-3 | the inverse-limit diagram / construction | |
+| K2 instances | "direct instances" | |
+| §5 numbering | old §5.6 → paper §5.1; old §5.1 → remark inside paper §5.1; §5.2–§5.5 unchanged | |
+
+---
+
 ## Abstract
 
 The FFT canon — Schönhage–Strassen 1971, Morgenstern 1973, Winograd 1978, Auslander–Feig–Winograd 1984 — registers cost in heterogeneous currencies and reaches correspondingly distinct lower-bound thresholds.

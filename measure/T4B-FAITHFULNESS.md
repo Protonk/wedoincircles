@@ -4,7 +4,7 @@ Phase 1c of the T4b decomposition (`paper/T4B-DECOMPOSITION.md`): verify the thr
 
 ## Recap
 
-T4b's three faithfulness clauses (per PAPER §6.3 / `measure/THE-FIRST-BRIDGE.md`):
+T4b's three faithfulness clauses (per SCAFFOLD §6.3 / `measure/THE-FIRST-BRIDGE.md`):
 
 - *(i)* `f₁, f₂, f₃` factor through `δ`.
 - *(ii)* iso-register currency structure and register-state labels encoded measurably so cross-register conversion costs, type gaps, and unresolved bridge/audit states read on `δ` alongside `(μ, α)`.
@@ -12,9 +12,9 @@ T4b's three faithfulness clauses (per PAPER §6.3 / `measure/THE-FIRST-BRIDGE.md
 
 Phase 1c proves each clause, consuming a different witness:
 
-- *(i):* Theorem K (PAPER §5.6 / `measure/FOR-BREAKFAST.md` §K.0–§K.4).
+- *(i):* Theorem K (SCAFFOLD §5.6 / `measure/FOR-BREAKFAST.md` §K.0–§K.4).
 - *(ii):* `iso/THREE-REGISTER-SYNTHESIS.md` Claim 1 plus the register-state ledger (resolved `5π` overhead; categorial type-gap to almost-every; Fejes-Tóth and specific-`π` bridges unresolved).
-- *(iii):* PAPER §5.5 admissibility envelope + §4.2.1 regularity guard.
+- *(iii):* SCAFFOLD §5.5 admissibility envelope + §4.2.1 regularity guard.
 
 The three clauses parallelize across witnesses; we proceed sequentially because clause (i) sets up the substrate-side `L → Z` embedding that clause (ii) reuses.
 
@@ -147,4 +147,4 @@ With T4b (debt #1) closed at the structural level:
 - **Debt #11 (channel exhaustiveness)** is the next priority per `project_debt_11_priority.md` memory. The four §6.6 channels-to-clauses mapping is now stated against verified faithfulness clauses: Farey recoding → clause (i); cross-register iso → clause (ii)-substrate; mult-add trading → clause (ii)-algorithm; tables/advice → clause (iii). Path (i)-by-enumeration over §4.2.2's five native operations becomes a finite check against the now-verified clause structure.
 - **Debt #9(b) (cross-currency `T(P)` reconciliation)** substantially closes — `Z`'s universality *is* the reconciliation per the Coasean reading. Residual: per-entry currency check on the route-3 limit, debt #12-adjacent.
 
-The four-channel composition at PAPER §6.6 now has structurally complete faithfulness inputs; the §6.6 contradiction lands modulo (a) debt #5's endpoint commitment, (b) debt #11's channel exhaustiveness, (c) debt #12's per-morphism rigor. T4b's closure here was the keystone; the remaining ledger items are tractable rather than central.
+The four-channel composition at SCAFFOLD §6.6 now has structurally complete faithfulness inputs; the §6.6 contradiction lands modulo (a) debt #5's endpoint commitment, (b) debt #11's channel exhaustiveness, (c) debt #12's per-morphism rigor. T4b's closure here was the keystone; the remaining ledger items are tractable rather than central.
