@@ -81,4 +81,10 @@ Prose pass (sentence-level rewriting beyond S1's new sections); terminology alre
 
 ---
 
+## Resolutions (pre-recon)
+
+**Primary promise of new §1 (Q3, resolved): the method, instantiated by the frontier, with the geometry as fenced emblem.** By the end of §1 the non-specialist mathematically-serious reader should care that *algorithmic limits can be located by pricing conversions between incommensurable cost measures* — and should believe it because the FFT frontier is the worked arena and the polygon–circle deficit is what the method finds there. Order of emphasis in §1: seams → method → instance → emblem. Rationale: the method is the one promise the paper keeps unconditionally (construction + composition + audit instrument survive even if (H1)/(H2) stall); the frontier alone is the most specialist framing and triggers the vacuity reflex at first contact; the geometry alone would make §1 promise what the paper only conditionally delivers (see FLOOR-FORMULA-CONTRACT.md links 3–4). The geometric bet stays committed as the paper's *face* — abstract formula (D4), §8 ring, the memorable sentence — but face and §1-promise are different obligations: the face is what a reader remembers; the promise is what the paper must be audited against. This resolution does not weaken the bet; it makes the bet survivable.
+
+**Staging is governed by two contract documents:** the floor formula's phrasing at all four sites obeys [paper/FLOOR-FORMULA-CONTRACT.md](FLOOR-FORMULA-CONTRACT.md) (conditional theorem in a committed coordinate; the Deficit Identification named with status clause; value vs positivity discipline). The boundary object's presentation absorbs the four changes mandated by [paper/REFEREE-BOUNDARY-OBJECT-AUDIT.md](REFEREE-BOUNDARY-OBJECT-AUDIT.md) (composition-device reading in the paper's own voice; the two-fact division of non-vacuous measure theory; value/positivity block near Proposition F; falsifiability point in §7). Both are S1/S2 inputs; C2 verifies compliance.
+
 *Recon results appended below when Stage 1 runs.*
